@@ -7,7 +7,7 @@ Bu dosya, bu depoda çalışan Claude Code oturumları içindir. Kısa tutulmuş
 **ISTQB-PREP** — ISTQB sertifikasyon sınavlarına hazırlık için **ücretsiz, açık kaynaklı, iki dilli (TR/EN)** deneme sınavı ve çalışma platformu. Ürün adı depo adıyla aynı (D-01).
 **Öncelik: CTFL v4.0.1 (Temel Seviye).** Mimari tüm seviyeleri kapsayacak şekilde tasarlandı, ama içerik önce Foundation.
 
-**Mevcut durum: sadece dökümantasyon. Henüz hiç kod yok.** Bir sonraki adım Faz 0 (veri iskeleti) — bkz. `TODO.md`.
+**Mevcut durum: çalışan MVP.** Faz 0 ve Faz 1'in çekirdeği bitti — 120 soru yayında (64/64 öğrenme hedefi), deneme motoru resmî LO-grubu dağılımına göre üretiyor, sınav/sonuç/inceleme akışı uçtan uca işliyor. Sırada Faz 2 var — bkz. `TODO.md`.
 
 ## Önce bunları oku
 
@@ -52,15 +52,17 @@ Bu sayılar `data/ctfl-v4.0.1/syllabus.json` ve `meta.json` içinde; koda **sabi
 
 ## Komutlar
 
-Henüz yok — Faz 1'de (F1-01) kurulacak. Planlananlar:
+**Paket yöneticisi yarn** — npm kullanma. Bağımlılıklar tam sürüme sabitlenir (`^`/`~` yok).
 
 ```bash
-npm run dev             # Vite
-npm run validate:data   # JSON Schema + 13 tutarlılık kontrolü  ← her PR'da yeşil olmalı
-npm run build:index     # parçalardan questions/index.json üret
-npm run stats           # LO başına kapsama → docs/kapsama.md
-npm run test            # Vitest
-npm run lint
+yarn dev                # Vite (predev: data/ -> public/data/ senkronu)
+yarn validate:data      # JSON Schema + 15 tutarlılık kontrolü  ← her PR'da yeşil olmalı
+yarn build:index        # parçalardan questions/index.json + manifest sayaçları
+yarn stats              # LO başına kapsama → docs/kapsama.md + README rozetleri
+yarn publish:questions  # review -> published; --reviewer zorunlu (tek geçiş yolu)
+yarn test               # Vitest (birim)
+yarn e2e                # Playwright: akış + axe erişilebilirlik (kendi dev sunucusu, 5183)
+yarn lint && yarn typecheck && yarn format
 ```
 
 ## Klasör yapısı
@@ -69,8 +71,9 @@ npm run lint
 data/       İçerik — indekslenmiş, parçalanmış statik JSON (tek dosya YOK)
 schemas/    JSON Schema — CI kapısı
 docs/       Proje dökümanları + adr/
-scripts/    validate-data, build-index, fetch-glossary, stats   (henüz yok)
-src/        Uygulama                                            (henüz yok)
+scripts/    validate-data, build-index, stats, sync-data, publish-questions
+src/        Uygulama (Vite + React + TS)
+e2e/        Playwright: akış + erişilebilirlik
 ```
 
 ## Konvansiyonlar
@@ -97,10 +100,11 @@ src/        Uygulama                                            (henüz yok)
 
 `TODO.md` → **Faz 0**. Kritik yol:
 
-1. **F0-05** — Resmî LO-grubu tablosunun tamamını `data/ctfl-v4.0.1/exam-blueprint.json`'a çıkar. Şu an kısmi (17/40) ve `status: "INCOMPLETE"`. Kaynak: _ISTQB Exam Structures & Rules tables v1.19_. **Bu olmadan deneme motoru yazılamaz.**
-2. **F0-06** — 64 öğrenme hedefini `objectives.json`'a işle (şu an 3 örnek var).
-3. **F0-08** — `scripts/validate-data.ts` (13 kontrol, `docs/04-veri-modeli.md` §6).
-4. **F0-02** — ISTQB Glossary lisansını tarayıcıda gözle doğrula; doğrulanana kadar sözlük tanımları birebir kopyalanmaz.
+Faz 0 kapandı (blueprint 29 LO grubuyla tam, 64 öğrenme hedefi işlendi, doğrulayıcı 15 kontrolle çalışıyor). Açık kalanlar:
+
+1. **F0-02** — ISTQB Glossary lisansını tarayıcıda gözle doğrula; doğrulanana kadar sözlük tanımları birebir kopyalanmaz.
+2. **Havuzu derinleştir** — `yarn validate:data` 52 uyarı veriyor; hepsi "bu LO için 3'ten az yayınlanmış soru var". Faz 2 hedefi 200 soru, Faz 3 hedefi 300 ve her LO için ≥3.
+3. **Faz 2** — pratik modu, aralıklı tekrar (SRS), sözlük. `docs/09-yol-haritasi.md`.
 
 Açık karar kalmadı — D-01…D-05 19.09.2026'da kapandı (`docs/00-proje-ozeti.md §9`):
 ürün adı **ISTQB-PREP** (marka riski bilinçli üstlenildi — `10 §R-01b`; ad koda gömülmez) · alan adı yok, `*.github.io` · içerik lisansı **CC BY-SA 4.0** · topluluk soru PR'ları v1'de kapalı (Faz 4) · ISTQB/TTB'ye izin başvurusu **yapılmayacak** (dayanak: özgün içerik + ticari olmayan kullanım + kaynak gösterimi).
