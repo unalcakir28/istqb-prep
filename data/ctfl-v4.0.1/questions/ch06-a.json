@@ -10,16 +10,24 @@
       "chapter": 6,
       "section": "6.1",
       "syllabusRef": "§6.1",
-      "objectives": ["FL-6.1.1"],
+      "objectives": [
+        "FL-6.1.1"
+      ],
       "kLevel": "K2",
       "type": "multi",
       "selectCount": 2,
       "points": 1,
       "difficulty": 2,
-      "tags": ["test-tools", "tool-categories"],
+      "tags": [
+        "test-tools",
+        "tool-categories"
+      ],
       "origin": "original",
       "status": "review",
-      "correct": ["a", "b"],
+      "correct": [
+        "a",
+        "b"
+      ],
       "media": null,
       "i18n": {
         "tr": {
@@ -97,25 +105,44 @@
       "chapter": 6,
       "section": "6.1",
       "syllabusRef": "§6.1",
-      "objectives": ["FL-6.1.1"],
+      "objectives": [
+        "FL-6.1.1"
+      ],
       "kLevel": "K2",
       "type": "single",
       "selectCount": 1,
       "points": 1,
       "difficulty": 2,
-      "tags": ["test-tools", "test-design-tools"],
+      "tags": [
+        "test-tools",
+        "test-design-tools"
+      ],
       "origin": "original",
       "status": "review",
-      "correct": ["b"],
+      "correct": [
+        "b"
+      ],
       "media": null,
       "i18n": {
         "tr": {
           "stem": "Bir ekipte otomatik test koşumu ve kapsam ölçümü zaten kuruludur. Ekibin asıl darboğazı, her sürümde test senaryolarının, test verisinin ve test prosedürlerinin elle hazırlanmasıdır. Bu ihtiyaca EN İYİ karşılık veren araç kategorisi hangisidir?",
           "options": [
-            { "id": "a", "text": "Test koşumu ve kapsam araçları" },
-            { "id": "b", "text": "Test tasarımı ve test uygulama araçları" },
-            { "id": "c", "text": "Test yönetimi araçları" },
-            { "id": "d", "text": "Statik test araçları" }
+            {
+              "id": "a",
+              "text": "Test koşumu ve kapsam araçları"
+            },
+            {
+              "id": "b",
+              "text": "Test tasarımı ve test uygulama araçları"
+            },
+            {
+              "id": "c",
+              "text": "Test yönetimi araçları"
+            },
+            {
+              "id": "d",
+              "text": "Statik test araçları"
+            }
           ],
           "rationale": {
             "summary": "Test tasarımı ve test uygulama araçları, test senaryolarının, test verisinin ve test prosedürlerinin oluşturulmasını kolaylaştıran kategoridir. Senaryodaki darboğaz tam olarak bu üretim işidir; koşum ve kapsam tarafı zaten çözülmüştür.",
@@ -130,10 +157,22 @@
         "en": {
           "stem": "A team already has automated test execution and coverage measurement in place. Its real bottleneck is that test cases, test data and test procedures are prepared by hand for every release. Which category of test tool BEST addresses this need?",
           "options": [
-            { "id": "a", "text": "Test execution and test coverage tools" },
-            { "id": "b", "text": "Test design and test implementation tools" },
-            { "id": "c", "text": "Test management tools" },
-            { "id": "d", "text": "Static testing tools" }
+            {
+              "id": "a",
+              "text": "Test execution and test coverage tools"
+            },
+            {
+              "id": "b",
+              "text": "Test design and test implementation tools"
+            },
+            {
+              "id": "c",
+              "text": "Test management tools"
+            },
+            {
+              "id": "d",
+              "text": "Static testing tools"
+            }
           ],
           "rationale": {
             "summary": "Test design and test implementation tools are the category that facilitates generation of test cases, test data and test procedures. That generation work is exactly the bottleneck described; execution and coverage are already solved.",
@@ -160,16 +199,24 @@
       "chapter": 6,
       "section": "6.1",
       "syllabusRef": "§6.1",
-      "objectives": ["FL-6.1.1"],
+      "objectives": [
+        "FL-6.1.1"
+      ],
       "kLevel": "K2",
       "type": "single",
       "selectCount": 1,
       "points": 1,
       "difficulty": 3,
-      "tags": ["test-tools", "tool-categories", "non-functional-testing-tools"],
+      "tags": [
+        "test-tools",
+        "tool-categories",
+        "non-functional-testing-tools"
+      ],
       "origin": "original",
       "status": "review",
-      "correct": ["c"],
+      "correct": [
+        "d"
+      ],
       "media": null,
       "i18n": {
         "tr": {
@@ -177,28 +224,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Test yönetimi araçları – yazılım geliştirme yaşam döngüsünün, gereksinimlerin, testlerin, hataların (defect) ve yapılandırmanın yönetimini kolaylaştırır"
+              "text": "Ölçeklenebilirliği ve dağıtım standardizasyonunu destekleyen araçlar – sanal makineler ve konteynerleştirme araçları"
             },
             {
               "id": "b",
-              "text": "DevOps araçları – teslimat hattını, iş akışı takibini, otomatik derleme süreçlerini ve CI/CD'yi destekler"
+              "text": "Test yönetimi araçları – yazılım geliştirme yaşam döngüsünün, gereksinimlerin, testlerin, hataların (defect) ve yapılandırmanın yönetimini kolaylaştırır"
             },
             {
               "id": "c",
-              "text": "İş birliği araçları – manuel olarak yapılması zor veya imkansız olan testlerin yapılmasına olanak sağlar"
+              "text": "DevOps araçları – teslimat hattını, iş akışı takibini, otomatik derleme süreçlerini ve CI/CD'yi destekler"
             },
             {
               "id": "d",
-              "text": "Ölçeklenebilirliği ve dağıtım standardizasyonunu destekleyen araçlar – sanal makineler ve konteynerleştirme araçları"
+              "text": "İş birliği araçları – manuel olarak yapılması zor veya imkansız olan testlerin yapılmasına olanak sağlar"
             }
           ],
           "rationale": {
             "summary": "Manuel olarak yapılması zor veya imkansız olan testleri mümkün kılan kategori, fonksiyonel olmayan test araçlarıdır. İş birliği araçlarının müfredatta verilen işlevi ise yalnızca iletişimi kolaylaştırmaktır; bu nedenle (c) yanlış eşleştirmedir.",
             "byOption": {
-              "a": "Doğru eşleştirme, dolayısıyla aranan cevap değil. Test yönetimi araçları tam olarak bu yönetim işlerini kolaylaştırarak test sürecinin verimliliğini artırır.",
-              "b": "Doğru eşleştirme, dolayısıyla aranan cevap değil. DevOps araçlarının müfredatta sayılan desteği budur.",
-              "c": "Aranan cevap: yanlış eşleştirme. Manuel olarak yapılması zor veya imkansız olan testleri mümkün kılan kategori fonksiyonel olmayan test araçlarıdır. İş birliği araçlarının işlevi iletişimi kolaylaştırmaktır.",
-              "d": "Doğru eşleştirme, dolayısıyla aranan cevap değil. Müfredat bu kategorinin örnekleri olarak sanal makineleri ve konteynerleştirme araçlarını verir."
+              "a": "Doğru eşleştirme, dolayısıyla aranan cevap değil. Müfredat bu kategorinin örnekleri olarak sanal makineleri ve konteynerleştirme araçlarını verir.",
+              "b": "Doğru eşleştirme, dolayısıyla aranan cevap değil. Test yönetimi araçları tam olarak bu yönetim işlerini kolaylaştırarak test sürecinin verimliliğini artırır.",
+              "c": "Doğru eşleştirme, dolayısıyla aranan cevap değil. DevOps araçlarının müfredatta sayılan desteği budur.",
+              "d": "Aranan cevap: yanlış eşleştirme. Manuel olarak yapılması zor veya imkansız olan testleri mümkün kılan kategori fonksiyonel olmayan test araçlarıdır. İş birliği araçlarının işlevi iletişimi kolaylaştırmaktır."
             }
           }
         },
@@ -207,28 +254,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Test management tools – facilitate management of the SDLC, requirements, tests, defects and configuration"
+              "text": "Tools supporting scalability and deployment standardization – virtual machines and containerization tools"
             },
             {
               "id": "b",
-              "text": "DevOps tools – support the delivery pipeline, workflow tracking, automated build processes and CI/CD"
+              "text": "Test management tools – facilitate management of the SDLC, requirements, tests, defects and configuration"
             },
             {
               "id": "c",
-              "text": "Collaboration tools – allow testing that is difficult or impossible to perform manually"
+              "text": "DevOps tools – support the delivery pipeline, workflow tracking, automated build processes and CI/CD"
             },
             {
               "id": "d",
-              "text": "Tools supporting scalability and deployment standardization – virtual machines and containerization tools"
+              "text": "Collaboration tools – allow testing that is difficult or impossible to perform manually"
             }
           ],
           "rationale": {
             "summary": "The category that makes testing possible where it is difficult or impossible to perform manually is non-functional testing tools. The function the syllabus gives for collaboration tools is only to facilitate communication, which makes (c) the incorrect pairing.",
             "byOption": {
-              "a": "A correct pairing, so not the answer sought. Test management tools increase test process efficiency by facilitating exactly these management activities.",
-              "b": "A correct pairing, so not the answer sought. This is the support the syllabus lists for DevOps tools.",
-              "c": "The answer sought: an incorrect pairing. Testing that is difficult or impossible to perform manually is enabled by non-functional testing tools. Collaboration tools facilitate communication.",
-              "d": "A correct pairing, so not the answer sought. The syllabus gives virtual machines and containerization tools as the examples of this category."
+              "a": "A correct pairing, so not the answer sought. The syllabus gives virtual machines and containerization tools as the examples of this category.",
+              "b": "A correct pairing, so not the answer sought. Test management tools increase test process efficiency by facilitating exactly these management activities.",
+              "c": "A correct pairing, so not the answer sought. This is the support the syllabus lists for DevOps tools.",
+              "d": "The answer sought: an incorrect pairing. Testing that is difficult or impossible to perform manually is enabled by non-functional testing tools. Collaboration tools facilitate communication."
             }
           }
         }
@@ -247,16 +294,23 @@
       "chapter": 6,
       "section": "6.2",
       "syllabusRef": "§6.2",
-      "objectives": ["FL-6.2.1"],
+      "objectives": [
+        "FL-6.2.1"
+      ],
       "kLevel": "K1",
       "type": "single",
       "selectCount": 1,
       "points": 1,
       "difficulty": 1,
-      "tags": ["test-automation", "benefits"],
+      "tags": [
+        "test-automation",
+        "benefits"
+      ],
       "origin": "original",
       "status": "review",
-      "correct": ["a"],
+      "correct": [
+        "a"
+      ],
       "media": null,
       "i18n": {
         "tr": {
@@ -334,16 +388,23 @@
       "chapter": 6,
       "section": "6.2",
       "syllabusRef": "§6.2",
-      "objectives": ["FL-6.2.1"],
+      "objectives": [
+        "FL-6.2.1"
+      ],
       "kLevel": "K1",
       "type": "single",
       "selectCount": 1,
       "points": 1,
       "difficulty": 2,
-      "tags": ["test-automation", "risks"],
+      "tags": [
+        "test-automation",
+        "risks"
+      ],
       "origin": "original",
       "status": "review",
-      "correct": ["d"],
+      "correct": [
+        "b"
+      ],
       "media": null,
       "i18n": {
         "tr": {
@@ -351,28 +412,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Aracı kullanıma alma, test betiklerini sürdürme ve mevcut manuel süreci değiştirme için gereken zaman, maliyet ve eforun yanlış tahmin edilmesi"
-            },
-            {
-              "id": "b",
-              "text": "Otomasyon aracının geliştirme platformuyla uyumlu olmaması"
-            },
-            {
-              "id": "c",
               "text": "Araca aşırı güvenilerek insanın eleştirel düşünme ihtiyacının göz ardı edilmesi"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Test koşum süresinin kısalmasıyla hataların (defect) daha erken tespit edilmesi ve geri bildirimin hızlanması"
+            },
+            {
+              "id": "c",
+              "text": "Aracı kullanıma alma, test betiklerini sürdürme ve mevcut manuel süreci değiştirme için gereken zaman, maliyet ve eforun yanlış tahmin edilmesi"
+            },
+            {
+              "id": "d",
+              "text": "Otomasyon aracının geliştirme platformuyla uyumlu olmaması"
             }
           ],
           "rationale": {
             "summary": "Test koşum sürelerinin kısalması ve buna bağlı olarak hataların (defect) daha erken tespit edilmesi, geri bildirimin ve pazara sürümün hızlanması müfredatta bir fayda olarak sayılır; risk değildir. Diğer üç seçenek risk listesinden gelir.",
             "byOption": {
-              "a": "Bu bir risktir, dolayısıyla aranan cevap değil. Müfredat, aracın kullanıma alınması, test betiklerinin bakımı ve manuel sürecin değiştirilmesi için gereken zaman, maliyet ve eforun yanlış tahmin edilmesini risk olarak sayar.",
-              "b": "Bu bir risktir, dolayısıyla aranan cevap değil. Otomasyon aracının geliştirme platformuyla uyumsuz olması risk listesinde yer alır.",
-              "c": "Bu bir risktir, dolayısıyla aranan cevap değil. Araca aşırı güvenmek, örneğin insanın eleştirel düşünme ihtiyacını yok saymak, risk listesindedir.",
-              "d": "Aranan cevap. Bu bir risk değil, sayılan faydalardan biridir: test koşum süresinin kısalması daha erken hata (defect) tespiti, daha hızlı geri bildirim ve daha hızlı pazara sürüm sağlar."
+              "a": "Bu bir risktir, dolayısıyla aranan cevap değil. Araca aşırı güvenmek, örneğin insanın eleştirel düşünme ihtiyacını yok saymak, risk listesindedir.",
+              "b": "Aranan cevap. Bu bir risk değil, sayılan faydalardan biridir: test koşum süresinin kısalması daha erken hata (defect) tespiti, daha hızlı geri bildirim ve daha hızlı pazara sürüm sağlar.",
+              "c": "Bu bir risktir, dolayısıyla aranan cevap değil. Müfredat, aracın kullanıma alınması, test betiklerinin bakımı ve manuel sürecin değiştirilmesi için gereken zaman, maliyet ve eforun yanlış tahmin edilmesini risk olarak sayar.",
+              "d": "Bu bir risktir, dolayısıyla aranan cevap değil. Otomasyon aracının geliştirme platformuyla uyumsuz olması risk listesinde yer alır."
             }
           }
         },
@@ -381,28 +442,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Inaccurate estimation of the time, cost and effort needed to introduce the tool, maintain test scripts and change the existing manual process"
-            },
-            {
-              "id": "b",
-              "text": "The automation tool is not compatible with the development platform"
-            },
-            {
-              "id": "c",
               "text": "Relying on the tool too much, ignoring the need for human critical thinking"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Reduced test execution times providing earlier defect detection and faster feedback"
+            },
+            {
+              "id": "c",
+              "text": "Inaccurate estimation of the time, cost and effort needed to introduce the tool, maintain test scripts and change the existing manual process"
+            },
+            {
+              "id": "d",
+              "text": "The automation tool is not compatible with the development platform"
             }
           ],
           "rationale": {
             "summary": "Reduced test execution times, and the earlier defect detection, faster feedback and faster time to market that follow from them, are listed by the syllabus as a benefit, not a risk. The other three options come from the risk list.",
             "byOption": {
-              "a": "This is a risk, so not the answer sought. The syllabus lists inaccurate estimations of time, cost and effort to introduce a tool, maintain test scripts and change the manual process.",
-              "b": "This is a risk, so not the answer sought. Incompatibility of the automation tool with the development platform appears in the risk list.",
-              "c": "This is a risk, so not the answer sought. Relying on a tool too much, e.g. ignoring the need for human critical thinking, is in the risk list.",
-              "d": "The answer sought. This is not a risk but one of the listed benefits: reduced test execution times provide earlier defect detection, faster feedback and faster time to market."
+              "a": "This is a risk, so not the answer sought. Relying on a tool too much, e.g. ignoring the need for human critical thinking, is in the risk list.",
+              "b": "The answer sought. This is not a risk but one of the listed benefits: reduced test execution times provide earlier defect detection, faster feedback and faster time to market.",
+              "c": "This is a risk, so not the answer sought. The syllabus lists inaccurate estimations of time, cost and effort to introduce a tool, maintain test scripts and change the manual process.",
+              "d": "This is a risk, so not the answer sought. Incompatibility of the automation tool with the development platform appears in the risk list."
             }
           }
         }
@@ -421,16 +482,24 @@
       "chapter": 6,
       "section": "6.2",
       "syllabusRef": "§6.2",
-      "objectives": ["FL-6.2.1"],
+      "objectives": [
+        "FL-6.2.1"
+      ],
       "kLevel": "K1",
       "type": "single",
       "selectCount": 1,
       "points": 1,
       "difficulty": 2,
-      "tags": ["test-automation", "risks", "open-source"],
+      "tags": [
+        "test-automation",
+        "risks",
+        "open-source"
+      ],
       "origin": "original",
       "status": "review",
-      "correct": ["b"],
+      "correct": [
+        "c"
+      ],
       "media": null,
       "i18n": {
         "tr": {
@@ -438,28 +507,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Araç satıcısının faaliyetlerine son vermesi, aracı kullanımdan kaldırması veya farklı bir satıcıya satması"
+              "text": "Aracın fonksiyonalitesi ve kullanım kolaylığı konusunda gerçekçi olmayan beklentiler oluşması"
             },
             {
               "id": "b",
-              "text": "Yazılımın artık kullanılmaması nedeniyle yeni güncelleme gelmemesi veya dahili bileşenlerinin çok sık güncelleme gerektirmesi"
+              "text": "Araç satıcısının faaliyetlerine son vermesi, aracı kullanımdan kaldırması veya farklı bir satıcıya satması"
             },
             {
               "id": "c",
-              "text": "Seçilen aracın düzenleyici gereksinimlere ve/veya emniyet standartlarına uygun olmaması"
+              "text": "Yazılımın artık kullanılmaması nedeniyle yeni güncelleme gelmemesi veya dahili bileşenlerinin çok sık güncelleme gerektirmesi"
             },
             {
               "id": "d",
-              "text": "Aracın fonksiyonalitesi ve kullanım kolaylığı konusunda gerçekçi olmayan beklentiler oluşması"
+              "text": "Seçilen aracın düzenleyici gereksinimlere ve/veya emniyet standartlarına uygun olmaması"
             }
           ],
           "rationale": {
             "summary": "Müfredat, açık kaynaklı yazılım kullanmanın riskini iki yönüyle tanımlar: yazılımın terk edilmesi ve böylece yeni güncellemelerin gelmemesi ya da dahili bileşenlerinin geliştirme amaçlı çok sık güncelleme gerektirmesi. Diğer seçenekler de gerçek risklerdir, ancak farklı nedenlere bağlıdır.",
             "byOption": {
-              "a": "Yanlış. Bu, araç satıcısına bağımlılık riskidir ve satıcısı olan bir araçla ilgilidir; müfredatta ayrı bir madde olarak sayılır.",
-              "b": "Doğru. Açık kaynaklı yazılım kullanmanın müfredatta tanımlanan riski tam olarak budur: yazılımın terk edilmesi ve güncelleme gelmemesi ya da dahili bileşenlerin sık güncelleme gerektirmesi.",
-              "c": "Yanlış. Düzenleyici gereksinimlere ve/veya emniyet standartlarına uymayan bir araç seçmek ayrı bir risk maddesidir; aracın açık kaynaklı olup olmamasından bağımsızdır.",
-              "d": "Yanlış. Bir aracın faydaları, fonksiyonalitesi ve kullanım kolaylığı hakkındaki gerçekçi olmayan beklentiler ayrı bir risk maddesidir ve her tür araç için geçerlidir."
+              "a": "Yanlış. Bir aracın faydaları, fonksiyonalitesi ve kullanım kolaylığı hakkındaki gerçekçi olmayan beklentiler ayrı bir risk maddesidir ve her tür araç için geçerlidir.",
+              "b": "Yanlış. Bu, araç satıcısına bağımlılık riskidir ve satıcısı olan bir araçla ilgilidir; müfredatta ayrı bir madde olarak sayılır.",
+              "c": "Doğru. Açık kaynaklı yazılım kullanmanın müfredatta tanımlanan riski tam olarak budur: yazılımın terk edilmesi ve güncelleme gelmemesi ya da dahili bileşenlerin sık güncelleme gerektirmesi.",
+              "d": "Yanlış. Düzenleyici gereksinimlere ve/veya emniyet standartlarına uymayan bir araç seçmek ayrı bir risk maddesidir; aracın açık kaynaklı olup olmamasından bağımsızdır."
             }
           }
         },
@@ -468,28 +537,28 @@
           "options": [
             {
               "id": "a",
-              "text": "The vendor goes out of business, retires the tool or sells it to a different vendor"
+              "text": "Unrealistic expectations about the tool's functionality and ease of use"
             },
             {
               "id": "b",
-              "text": "The software is abandoned, so no further updates are available, or its internal components require quite frequent updates"
+              "text": "The vendor goes out of business, retires the tool or sells it to a different vendor"
             },
             {
               "id": "c",
-              "text": "The chosen tool does not comply with regulatory requirements and/or safety standards"
+              "text": "The software is abandoned, so no further updates are available, or its internal components require quite frequent updates"
             },
             {
               "id": "d",
-              "text": "Unrealistic expectations about the tool's functionality and ease of use"
+              "text": "The chosen tool does not comply with regulatory requirements and/or safety standards"
             }
           ],
           "rationale": {
             "summary": "The syllabus describes the open-source risk in two parts: the software may be abandoned, meaning no further updates are available, or its internal components may require quite frequent updates as further development. The other options are genuine risks too, but they arise from different causes.",
             "byOption": {
-              "a": "Incorrect. This is the risk of dependency on the tool vendor and concerns a tool that has a vendor; the syllabus lists it as a separate item.",
-              "b": "Correct. This is exactly the risk the syllabus attaches to using open-source software: abandonment with no further updates, or internal components requiring quite frequent updates.",
-              "c": "Incorrect. Choosing a tool that does not comply with regulatory requirements and/or safety standards is a separate risk item, independent of whether the tool is open source.",
-              "d": "Incorrect. Unrealistic expectations about the benefits of a tool, including its functionality and ease of use, is a separate risk item that applies to any kind of tool."
+              "a": "Incorrect. Unrealistic expectations about the benefits of a tool, including its functionality and ease of use, is a separate risk item that applies to any kind of tool.",
+              "b": "Incorrect. This is the risk of dependency on the tool vendor and concerns a tool that has a vendor; the syllabus lists it as a separate item.",
+              "c": "Correct. This is exactly the risk the syllabus attaches to using open-source software: abandonment with no further updates, or internal components requiring quite frequent updates.",
+              "d": "Incorrect. Choosing a tool that does not comply with regulatory requirements and/or safety standards is a separate risk item, independent of whether the tool is open source."
             }
           }
         }

@@ -61,6 +61,7 @@ const CHECKS: Record<number, CheckDef> = {
   11: { num: 11, level: "warning", name: "Her LO icin en az 3 yayinlanmis soru" },
   12: { num: 12, level: "warning", name: "kLevel, LO'larin en yuksegiyle uyumlu mu" },
   13: { num: 13, level: "warning", name: "Turkce metinde Ingilizce terim sizintisi" },
+  14: { num: 14, level: "warning", name: "Dogru cevabin sik konumu dengeli mi" },
 };
 
 interface Issue {
@@ -432,6 +433,46 @@ function checkTerminologyLeakage(questions: QuestionRecord[], patterns: LeakPatt
   }
 }
 
+/**
+ * #14 — Dogru cevabin sik konumu dengeli mi?
+ *
+ * Bu kontrol sonradan eklendi: ilk 87 soruluk partide tek secimli sorularin
+ * 78'inden 51'inde dogru cevap "a" siktaydi (%65). Hep "a" isaretleyen bir
+ * aday baraji gecerdi. Uretilen icerikte sistematik bir egilim oldugu icin
+ * tek seferlik duzeltme yetmez; kapi burada tutulur.
+ *
+ * Esik bilerek gevsek: kucuk havuzlarda sapma dogaldir, amac tesaduf degil
+ * SISTEMATIK egilimi yakalamak.
+ */
+function checkAnswerPositionBalance(questions: QuestionRecord[], file: string): void {
+  const singles = questions.filter(({ question }) => question?.type === "single");
+  if (singles.length < 20) return;
+
+  const counts = new Map<string, number>();
+  for (const { question } of singles) {
+    const first = Array.isArray(question.correct) ? question.correct[0] : undefined;
+    if (!isNonEmptyString(first)) continue;
+    counts.set(first, (counts.get(first) ?? 0) + 1);
+  }
+
+  const total = [...counts.values()].reduce((sum, n) => sum + n, 0);
+  if (total === 0) return;
+
+  const positions = Math.max(counts.size, 4);
+  const expected = total / positions;
+  const limit = expected * 1.6;
+
+  for (const [optionId, count] of [...counts].sort()) {
+    if (count <= limit) continue;
+    report(
+      14,
+      file,
+      undefined,
+      `Dogru cevap '${optionId}' sikkinda orantisiz siklikta. Beklenen: ~${expected.toFixed(1)} (${total} tek secimli soru / ${positions} sik); Bulunan: ${count}. Siklari dondurup yeniden etiketleyin.`,
+    );
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Objective coverage checks (#10, #11)
 // ---------------------------------------------------------------------------
@@ -695,6 +736,7 @@ function validateCertification(certEntry: any): void {
   const termsFile = path.join(certDir, "terms.json");
   const termsDoc = fs.existsSync(termsFile) ? readJson(termsFile) : null;
   checkTerminologyLeakage(allQuestions, buildLeakPatterns(termsDoc));
+  checkAnswerPositionBalance(allQuestions, indexFile);
 
   validateGlossaryDir(path.join(certDir, "glossary"));
 }

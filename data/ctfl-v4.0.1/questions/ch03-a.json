@@ -120,7 +120,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "a"
+        "b"
       ],
       "media": null,
       "i18n": {
@@ -129,28 +129,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Dinamik testle tespit edilemeyecek hataları (defect) bulabilmesi"
+              "text": "Düzeltilen hataların doğru düzeltildiğini teyit etmesi"
             },
             {
               "id": "b",
-              "text": "Sonraki test seviyelerinde dinamik test yapma ihtiyacını ortadan kaldırması"
+              "text": "Dinamik testle tespit edilemeyecek hataları (defect) bulabilmesi"
             },
             {
               "id": "c",
-              "text": "Kodun çalıştırılmasına bağlı kalite karakteristiklerini ölçmesi"
+              "text": "Sonraki test seviyelerinde dinamik test yapma ihtiyacını ortadan kaldırması"
             },
             {
               "id": "d",
-              "text": "Düzeltilen hataların doğru düzeltildiğini teyit etmesi"
+              "text": "Kodun çalıştırılmasına bağlı kalite karakteristiklerini ölçmesi"
             }
           ],
           "rationale": {
             "summary": "Statik test, dinamik testle tespit edilemeyecek hataları bulabilir; müfredatın verdiği örnekler tam olarak ulaşılamayan kod, istenildiği gibi uygulanmayan tasarım örüntüleri ve çalıştırılamayan iş ürünlerindeki hatalardır.",
             "byOption": {
-              "a": "Doğru. Ulaşılamayan kod ve istenildiği gibi uygulanmamış tasarım örüntüsü, müfredatta dinamik testle tespit edilemeyecek hatalara verilen örneklerdir.",
-              "b": "Yanlış. Statik ve dinamik test birbirinin yerine geçmez, birbirini tamamlar; bazı hata çeşitleri yalnızca statik, bazıları yalnızca dinamik testle bulunabilir.",
-              "c": "Yanlış. Kodun çalıştırılmasına bağlı kalite karakteristikleri (ör. performans verimliliği) dinamik testle ölçülür. Statik test, sürdürülebilirlik gibi çalıştırmaya bağlı olmayan karakteristikleri ölçer.",
-              "d": "Yanlış. Bu, bir düzeltmenin ardından yapılan onaylama testini (confirmation testing) tanımlar ve dinamik bir faaliyettir. Senaryoda statik test hataları tespit etmiştir, düzeltmeleri teyit etmemiştir."
+              "a": "Yanlış. Bu, bir düzeltmenin ardından yapılan onaylama testini (confirmation testing) tanımlar ve dinamik bir faaliyettir. Senaryoda statik test hataları tespit etmiştir, düzeltmeleri teyit etmemiştir.",
+              "b": "Doğru. Ulaşılamayan kod ve istenildiği gibi uygulanmamış tasarım örüntüsü, müfredatta dinamik testle tespit edilemeyecek hatalara verilen örneklerdir.",
+              "c": "Yanlış. Statik ve dinamik test birbirinin yerine geçmez, birbirini tamamlar; bazı hata çeşitleri yalnızca statik, bazıları yalnızca dinamik testle bulunabilir.",
+              "d": "Yanlış. Kodun çalıştırılmasına bağlı kalite karakteristikleri (ör. performans verimliliği) dinamik testle ölçülür. Statik test, sürdürülebilirlik gibi çalıştırmaya bağlı olmayan karakteristikleri ölçer."
             }
           }
         },
@@ -159,28 +159,28 @@
           "options": [
             {
               "id": "a",
-              "text": "It can find defects that cannot be detected by dynamic testing"
+              "text": "It confirms that defects have been fixed correctly"
             },
             {
               "id": "b",
-              "text": "It removes the need for dynamic testing at later test levels"
+              "text": "It can find defects that cannot be detected by dynamic testing"
             },
             {
               "id": "c",
-              "text": "It measures quality characteristics that depend on executing the code"
+              "text": "It removes the need for dynamic testing at later test levels"
             },
             {
               "id": "d",
-              "text": "It confirms that defects have been fixed correctly"
+              "text": "It measures quality characteristics that depend on executing the code"
             }
           ],
           "rationale": {
             "summary": "Static testing can identify defects that cannot be detected by dynamic testing. The syllabus gives exactly these examples: unreachable code, design patterns not implemented as desired, and defects in non-executable work products.",
             "byOption": {
-              "a": "Correct. Unreachable code and a design pattern not implemented as desired are the syllabus examples of defects that dynamic testing cannot detect.",
-              "b": "Incorrect. Static and dynamic testing complement rather than replace each other; some defect types can only be found by one of them.",
-              "c": "Incorrect. Quality characteristics that depend on executing code (e.g., performance efficiency) are measured by dynamic testing. Static testing measures characteristics that do not depend on execution, such as maintainability.",
-              "d": "Incorrect. This describes confirmation testing after a fix, which is a dynamic activity. Here static testing detected the defects; it did not verify fixes."
+              "a": "Incorrect. This describes confirmation testing after a fix, which is a dynamic activity. Here static testing detected the defects; it did not verify fixes.",
+              "b": "Correct. Unreachable code and a design pattern not implemented as desired are the syllabus examples of defects that dynamic testing cannot detect.",
+              "c": "Incorrect. Static and dynamic testing complement rather than replace each other; some defect types can only be found by one of them.",
+              "d": "Incorrect. Quality characteristics that depend on executing code (e.g., performance efficiency) are measured by dynamic testing. Static testing measures characteristics that do not depend on execution, such as maintainability."
             }
           }
         }
@@ -213,7 +213,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "a"
+        "d"
       ],
       "media": null,
       "i18n": {
@@ -222,28 +222,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Statik testler hataları (defect) doğrudan bulur; dinamik testler ise ilgili hataların sonradan analizle belirlendiği arızalara (failure) neden olur"
-            },
-            {
-              "id": "b",
               "text": "Statik testler yalnızca çalıştırılabilir iş ürünlerine uygulanabilir; dinamik testler her iş ürününe uygulanabilir"
             },
             {
-              "id": "c",
+              "id": "b",
               "text": "Statik test ve dinamik testin hedefleri tamamen farklıdır; ikisi birden hata tespitine katkı sağlayamaz"
             },
             {
-              "id": "d",
+              "id": "c",
               "text": "Statik testler, performans verimliliği gibi kodun çalıştırılmasına bağlı kalite karakteristiklerini ölçer"
+            },
+            {
+              "id": "d",
+              "text": "Statik testler hataları (defect) doğrudan bulur; dinamik testler ise ilgili hataların sonradan analizle belirlendiği arızalara (failure) neden olur"
             }
           ],
           "rationale": {
             "summary": "Müfredat farkı şöyle koyar: dinamik testler ilgili hataların daha sonra analiz yoluyla belirleneceği arızalara neden olurken, statik testler hataları doğrudan bulur. İki uygulama birbirini tamamlar.",
             "byOption": {
-              "a": "Doğru. Statik test hatayı iş ürünü üzerinde doğrudan görür; dinamik test önce bir arıza üretir ve hataya ancak sonraki analizle ulaşılır.",
-              "b": "Yanlış. İfade terstir: çalıştırılamayan iş ürünlerine statik testler uygulanabilir, dinamik testler ise yalnızca çalıştırılabilir iş ürünlerine uygulanabilir.",
-              "c": "Yanlış. İkisinin, iş ürünlerindeki hataların tespitine yardımcı olmak gibi benzer hedefleri vardır; fark hedeflerde değil, hangi hata çeşitlerini nasıl ortaya çıkardıklarındadır.",
-              "d": "Yanlış. Performans verimliliği kodun çalıştırılmasına bağlıdır ve dinamik testle ölçülür. Statik testin ölçebildiği karakteristiklere örnek sürdürülebilirliktir."
+              "a": "Yanlış. İfade terstir: çalıştırılamayan iş ürünlerine statik testler uygulanabilir, dinamik testler ise yalnızca çalıştırılabilir iş ürünlerine uygulanabilir.",
+              "b": "Yanlış. İkisinin, iş ürünlerindeki hataların tespitine yardımcı olmak gibi benzer hedefleri vardır; fark hedeflerde değil, hangi hata çeşitlerini nasıl ortaya çıkardıklarındadır.",
+              "c": "Yanlış. Performans verimliliği kodun çalıştırılmasına bağlıdır ve dinamik testle ölçülür. Statik testin ölçebildiği karakteristiklere örnek sürdürülebilirliktir.",
+              "d": "Doğru. Statik test hatayı iş ürünü üzerinde doğrudan görür; dinamik test önce bir arıza üretir ve hataya ancak sonraki analizle ulaşılır."
             }
           }
         },
@@ -252,28 +252,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Static testing finds defects directly, while dynamic testing causes failures from which the associated defects are determined by subsequent analysis"
-            },
-            {
-              "id": "b",
               "text": "Static testing can only be applied to executable work products, while dynamic testing can be applied to any work product"
             },
             {
-              "id": "c",
+              "id": "b",
               "text": "Static testing and dynamic testing have completely different objectives and cannot both contribute to defect detection"
             },
             {
-              "id": "d",
+              "id": "c",
               "text": "Static testing measures quality characteristics that depend on executing the code, such as performance efficiency"
+            },
+            {
+              "id": "d",
+              "text": "Static testing finds defects directly, while dynamic testing causes failures from which the associated defects are determined by subsequent analysis"
             }
           ],
           "rationale": {
             "summary": "The syllabus states the difference as follows: static testing finds defects directly, while dynamic testing causes failures from which the associated defects are determined through subsequent analysis. The two practices complement each other.",
             "byOption": {
-              "a": "Correct. Static testing sees the defect in the work product itself; dynamic testing first produces a failure, and the defect is reached only by analysing it afterwards.",
-              "b": "Incorrect. The statement is reversed: static testing can be applied to non-executable work products, while dynamic testing can only be applied to executable ones.",
-              "c": "Incorrect. They have similar objectives, such as supporting the detection of defects in work products; the difference lies in which defect types they reveal and how, not in their objectives.",
-              "d": "Incorrect. Performance efficiency depends on executing the code and is measured by dynamic testing. Maintainability is an example of what static testing can measure."
+              "a": "Incorrect. The statement is reversed: static testing can be applied to non-executable work products, while dynamic testing can only be applied to executable ones.",
+              "b": "Incorrect. They have similar objectives, such as supporting the detection of defects in work products; the difference lies in which defect types they reveal and how, not in their objectives.",
+              "c": "Incorrect. Performance efficiency depends on executing the code and is measured by dynamic testing. Maintainability is an example of what static testing can measure.",
+              "d": "Correct. Static testing sees the defect in the work product itself; dynamic testing first produces a failure, and the defect is reached only by analysing it afterwards."
             }
           }
         }
@@ -418,7 +418,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "a"
+        "d"
       ],
       "media": null,
       "i18n": {
@@ -427,28 +427,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Gereksinimler hakkındaki yanlış anlaşılmaları önler ve ekibin en çok değer katan özelliklere odaklanmasını sağlar"
-            },
-            {
-              "id": "b",
               "text": "Tek bir gözden geçirme (review) toplantısında maksimum sayıda anomalinin bulunmasını sağlar"
             },
             {
-              "id": "c",
+              "id": "b",
               "text": "Duruma göre uyarlanabilecek yapısal bir gözden geçirme süreci çerçevesi sunar"
             },
             {
-              "id": "d",
+              "id": "c",
               "text": "Tespit edilen her anomalinin bir hata (defect) olduğunun teyit edilmesini sağlar"
+            },
+            {
+              "id": "d",
+              "text": "Gereksinimler hakkındaki yanlış anlaşılmaları önler ve ekibin en çok değer katan özelliklere odaklanmasını sağlar"
             }
           ],
           "rationale": {
             "summary": "YGYD boyunca sıkça verilen paydaş geri bildirimi, gereksinimlerle ilgili yanlış anlaşılmaları önler, değişikliklerin daha erken anlaşılıp uygulanmasını sağlar ve ekibin en çok değer katan ve riskler üzerinde en olumlu etkiyi yapan özelliklere odaklanmasına imkân verir.",
             "byOption": {
-              "a": "Doğru. Müfredat bu faydayı doğrudan sayar: yanlış anlaşılmaların önlenmesi, değişikliklerin erken anlaşılması ve en çok değer katan özelliklere odaklanılması.",
-              "b": "Yanlış. Maksimum sayıda anomali bulmak teftişin (inspection) ana hedefidir; paydaş geri bildiriminin faydası değildir.",
-              "c": "Yanlış. Çerçeveleri belli ama duruma göre esnetilebilen yapısal gözden geçirme sürecini tanımlayan ISO/IEC 20246 standardıdır; bu bir geri bildirim faydası değildir.",
-              "d": "Yanlış. Gözden geçirmede tespit edilen anomalilerin hata olması gerekmez; her anomali önce analiz edilip tartışılır, ardından durumuna karar verilir."
+              "a": "Yanlış. Maksimum sayıda anomali bulmak teftişin (inspection) ana hedefidir; paydaş geri bildiriminin faydası değildir.",
+              "b": "Yanlış. Çerçeveleri belli ama duruma göre esnetilebilen yapısal gözden geçirme sürecini tanımlayan ISO/IEC 20246 standardıdır; bu bir geri bildirim faydası değildir.",
+              "c": "Yanlış. Gözden geçirmede tespit edilen anomalilerin hata olması gerekmez; her anomali önce analiz edilip tartışılır, ardından durumuna karar verilir.",
+              "d": "Doğru. Müfredat bu faydayı doğrudan sayar: yanlış anlaşılmaların önlenmesi, değişikliklerin erken anlaşılması ve en çok değer katan özelliklere odaklanılması."
             }
           }
         },
@@ -457,28 +457,28 @@
           "options": [
             {
               "id": "a",
-              "text": "It prevents misunderstandings about requirements and helps the team focus on the features that deliver the most value"
-            },
-            {
-              "id": "b",
               "text": "It ensures that the maximum number of anomalies is found in a single review meeting"
             },
             {
-              "id": "c",
+              "id": "b",
               "text": "It provides a structured framework from which a specific review process can be tailored"
             },
             {
-              "id": "d",
+              "id": "c",
               "text": "It ensures that every anomaly identified is confirmed as a defect"
+            },
+            {
+              "id": "d",
+              "text": "It prevents misunderstandings about requirements and helps the team focus on the features that deliver the most value"
             }
           ],
           "rationale": {
             "summary": "Frequent stakeholder feedback throughout the SDLC prevents misunderstandings about requirements, ensures changes are understood and implemented earlier, and lets the team focus on the features that deliver the most value and have the most positive impact on identified risks.",
             "byOption": {
-              "a": "Correct. The syllabus lists exactly this benefit: preventing misunderstandings, understanding changes earlier, and focusing on the most valuable features.",
-              "b": "Incorrect. Finding the maximum number of anomalies is the main objective of an inspection, not a benefit of stakeholder feedback.",
-              "c": "Incorrect. It is the ISO/IEC 20246 standard that defines a generic review process providing a structured but flexible framework; that is not a feedback benefit.",
-              "d": "Incorrect. Anomalies identified during a review are not necessarily defects; each one is analysed and discussed before a decision is made on its status."
+              "a": "Incorrect. Finding the maximum number of anomalies is the main objective of an inspection, not a benefit of stakeholder feedback.",
+              "b": "Incorrect. It is the ISO/IEC 20246 standard that defines a generic review process providing a structured but flexible framework; that is not a feedback benefit.",
+              "c": "Incorrect. Anomalies identified during a review are not necessarily defects; each one is analysed and discussed before a decision is made on its status.",
+              "d": "Correct. The syllabus lists exactly this benefit: preventing misunderstandings, understanding changes earlier, and focusing on the most valuable features."
             }
           }
         }
@@ -512,7 +512,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "b"
+        "c"
       ],
       "media": null,
       "i18n": {
@@ -521,28 +521,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Bireysel gözden geçirme"
+              "text": "Düzeltme ve raporlama"
             },
             {
               "id": "b",
-              "text": "İletişim ve analiz"
+              "text": "Bireysel gözden geçirme"
             },
             {
               "id": "c",
-              "text": "Gözden geçirme başlangıcı"
+              "text": "İletişim ve analiz"
             },
             {
               "id": "d",
-              "text": "Düzeltme ve raporlama"
+              "text": "Gözden geçirme başlangıcı"
             }
           ],
           "rationale": {
             "summary": "Gözden geçirme sırasında tespit edilen anomalilerin hata (defect) olması gerekmediğinden hepsinin analiz edilip tartışılması gerekir. Her anomali için durum, sahiplik ve gerekli aksiyonlara karar verilmesi iletişim ve analiz faaliyetine aittir.",
             "byOption": {
-              "a": "Yanlış. Bireysel gözden geçirmede her gözden geçirici tek başına, bir veya daha fazla gözden geçirme tekniğini uygulayarak anomalileri, tavsiyeleri ve soruları belirler ve kaydeder; ortak tartışma ve karar bu faaliyette yapılmaz.",
-              "b": "Doğru. Anomalilerin analiz edilip tartışıldığı, durum, sahiplik ve aksiyon kararlarının verildiği faaliyet budur; genellikle bir gözden geçirme toplantısında yapılır.",
-              "c": "Yanlış. Gözden geçirme başlangıcında amaç herkesin ve her şeyin hazır olmasıdır: katılımcıların iş ürününe erişmesi, rol ve sorumluluklarını anlaması ve gereken her şeyi almasıdır.",
-              "d": "Yanlış. Düzeltme ve raporlamada her hata için bir hata raporu oluşturulur, çıkış kriterleri sağlandığında iş ürünü kabul edilir ve sonuçlar raporlanır; bu, kararlar verildikten sonra gelir."
+              "a": "Yanlış. Düzeltme ve raporlamada her hata için bir hata raporu oluşturulur, çıkış kriterleri sağlandığında iş ürünü kabul edilir ve sonuçlar raporlanır; bu, kararlar verildikten sonra gelir.",
+              "b": "Yanlış. Bireysel gözden geçirmede her gözden geçirici tek başına, bir veya daha fazla gözden geçirme tekniğini uygulayarak anomalileri, tavsiyeleri ve soruları belirler ve kaydeder; ortak tartışma ve karar bu faaliyette yapılmaz.",
+              "c": "Doğru. Anomalilerin analiz edilip tartışıldığı, durum, sahiplik ve aksiyon kararlarının verildiği faaliyet budur; genellikle bir gözden geçirme toplantısında yapılır.",
+              "d": "Yanlış. Gözden geçirme başlangıcında amaç herkesin ve her şeyin hazır olmasıdır: katılımcıların iş ürününe erişmesi, rol ve sorumluluklarını anlaması ve gereken her şeyi almasıdır."
             }
           }
         },
@@ -551,28 +551,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Individual review"
+              "text": "Fixing and reporting"
             },
             {
               "id": "b",
-              "text": "Communication and analysis"
+              "text": "Individual review"
             },
             {
               "id": "c",
-              "text": "Review initiation"
+              "text": "Communication and analysis"
             },
             {
               "id": "d",
-              "text": "Fixing and reporting"
+              "text": "Review initiation"
             }
           ],
           "rationale": {
             "summary": "Since the anomalies identified during a review are not necessarily defects, they all need to be analyzed and discussed. Deciding on the status, ownership and required actions for every anomaly belongs to communication and analysis.",
             "byOption": {
-              "a": "Incorrect. In individual review each reviewer works alone, applying one or more review techniques to identify and log anomalies, recommendations and questions; the joint discussion and decisions do not happen there.",
-              "b": "Correct. This is the activity in which anomalies are analyzed and discussed and decisions on status, ownership and actions are made, typically in a review meeting.",
-              "c": "Incorrect. Review initiation makes sure everyone and everything is prepared: every participant has access to the work product, understands their role and responsibilities, and receives what is needed.",
-              "d": "Incorrect. In fixing and reporting a defect report is created for every defect, the work product is accepted once exit criteria are reached, and the results are reported; this follows after the decisions are made."
+              "a": "Incorrect. In fixing and reporting a defect report is created for every defect, the work product is accepted once exit criteria are reached, and the results are reported; this follows after the decisions are made.",
+              "b": "Incorrect. In individual review each reviewer works alone, applying one or more review techniques to identify and log anomalies, recommendations and questions; the joint discussion and decisions do not happen there.",
+              "c": "Correct. This is the activity in which anomalies are analyzed and discussed and decisions on status, ownership and actions are made, typically in a review meeting.",
+              "d": "Incorrect. Review initiation makes sure everyone and everything is prepared: every participant has access to the work product, understands their role and responsibilities, and receives what is needed."
             }
           }
         }
@@ -606,7 +606,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "a"
+        "b"
       ],
       "media": null,
       "i18n": {
@@ -615,28 +615,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Planlama"
+              "text": "İletişim ve analiz"
             },
             {
               "id": "b",
-              "text": "Gözden geçirme başlangıcı"
+              "text": "Planlama"
             },
             {
               "id": "c",
-              "text": "Bireysel gözden geçirme"
+              "text": "Gözden geçirme başlangıcı"
             },
             {
               "id": "d",
-              "text": "İletişim ve analiz"
+              "text": "Bireysel gözden geçirme"
             }
           ],
           "rationale": {
             "summary": "Planlama aşamasında gözden geçirmenin kapsamı tanımlanır: amaç, gözden geçirilecek çalışma ürünü, değerlendirilecek kalite karakteristikleri, odaklanılacak alanlar, çıkış kriterleri, standartlar gibi destekleyici bilgiler, efor ve zaman dilimleri.",
             "byOption": {
-              "a": "Doğru. Sayılan kalemlerin tamamı planlama aşamasında tanımlanan gözden geçirme kapsamının parçasıdır; çıkış kriterleri de burada belirlenir.",
-              "b": "Yanlış. Gözden geçirme başlangıcı, kapsamı tanımlamaz; ilgili herkesin ve her şeyin hazır olmasını, katılımcıların iş ürününe erişmesini ve rollerini anlamasını sağlar.",
-              "c": "Yanlış. Bireysel gözden geçirmede her gözden geçirici iş ürününün kalitesini tek başına değerlendirir ve anomalileri, tavsiyeleri ve soruları kaydeder.",
-              "d": "Yanlış. İletişim ve analizde anomaliler tartışılır, durumlarına ve aksiyonlara karar verilir; çıkış kriterleri burada tanımlanmaz, planlamada tanımlanmış olarak kullanılır."
+              "a": "Yanlış. İletişim ve analizde anomaliler tartışılır, durumlarına ve aksiyonlara karar verilir; çıkış kriterleri burada tanımlanmaz, planlamada tanımlanmış olarak kullanılır.",
+              "b": "Doğru. Sayılan kalemlerin tamamı planlama aşamasında tanımlanan gözden geçirme kapsamının parçasıdır; çıkış kriterleri de burada belirlenir.",
+              "c": "Yanlış. Gözden geçirme başlangıcı, kapsamı tanımlamaz; ilgili herkesin ve her şeyin hazır olmasını, katılımcıların iş ürününe erişmesini ve rollerini anlamasını sağlar.",
+              "d": "Yanlış. Bireysel gözden geçirmede her gözden geçirici iş ürününün kalitesini tek başına değerlendirir ve anomalileri, tavsiyeleri ve soruları kaydeder."
             }
           }
         },
@@ -645,28 +645,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Planning"
+              "text": "Communication and analysis"
             },
             {
               "id": "b",
-              "text": "Review initiation"
+              "text": "Planning"
             },
             {
               "id": "c",
-              "text": "Individual review"
+              "text": "Review initiation"
             },
             {
               "id": "d",
-              "text": "Communication and analysis"
+              "text": "Individual review"
             }
           ],
           "rationale": {
             "summary": "During planning the scope of the review is defined: the purpose, the work product to be reviewed, the quality characteristics to be evaluated, the areas to focus on, the exit criteria, supporting information such as standards, effort and the timeframes.",
             "byOption": {
-              "a": "Correct. All of the listed items are part of the review scope defined during planning, exit criteria included.",
-              "b": "Incorrect. Review initiation does not define the scope; it makes sure everyone and everything involved is prepared, with access to the work product and an understanding of roles.",
-              "c": "Incorrect. In individual review each reviewer assesses the quality of the work product alone and logs anomalies, recommendations and questions.",
-              "d": "Incorrect. Communication and analysis is where anomalies are discussed and decisions on their status and actions are made; exit criteria are not defined here, they are used as already defined in planning."
+              "a": "Incorrect. Communication and analysis is where anomalies are discussed and decisions on their status and actions are made; exit criteria are not defined here, they are used as already defined in planning.",
+              "b": "Correct. All of the listed items are part of the review scope defined during planning, exit criteria included.",
+              "c": "Incorrect. Review initiation does not define the scope; it makes sure everyone and everything involved is prepared, with access to the work product and an understanding of roles.",
+              "d": "Incorrect. In individual review each reviewer assesses the quality of the work product alone and logs anomalies, recommendations and questions."
             }
           }
         }
@@ -795,7 +795,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "a"
+        "d"
       ],
       "media": null,
       "i18n": {
@@ -804,28 +804,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Yönetici"
-            },
-            {
-              "id": "b",
               "text": "Gözden geçirme lideri"
             },
             {
-              "id": "c",
+              "id": "b",
               "text": "Moderatör"
             },
             {
-              "id": "d",
+              "id": "c",
               "text": "Yazar"
+            },
+            {
+              "id": "d",
+              "text": "Yönetici"
             }
           ],
           "rationale": {
             "summary": "Yönetici, neyin gözden geçirileceğine karar verir ve gözden geçirme için personel ve zaman gibi kaynakları sağlar. Gözden geçirme liderinin sorumluluğu ise gözden geçirmenin kendisini organize etmektir; ikisi sıkça karıştırılır.",
             "byOption": {
-              "a": "Doğru. Gözden geçirme konusunu belirlemek ve kaynak tahsis etmek yöneticinin sorumluluğudur.",
-              "b": "Yanlış. Gözden geçirme lideri, kimin işe dahil olacağına karar vermek ve gözden geçirmenin ne zaman ve nerede yapılacağını organize etmek gibi genel sorumluluğu üstlenir; kaynakları o sağlamaz.",
-              "c": "Yanlış. Moderatör (kolaylaştırıcı) gözden geçirme toplantılarının etkili yürütülmesini sağlar: arabuluculuk, zaman yönetimi ve herkesin özgürce konuşabileceği güvenli bir ortam.",
-              "d": "Yanlış. Yazar, gözden geçirilecek çalışma ürününü oluşturur ve düzeltir."
+              "a": "Yanlış. Gözden geçirme lideri, kimin işe dahil olacağına karar vermek ve gözden geçirmenin ne zaman ve nerede yapılacağını organize etmek gibi genel sorumluluğu üstlenir; kaynakları o sağlamaz.",
+              "b": "Yanlış. Moderatör (kolaylaştırıcı) gözden geçirme toplantılarının etkili yürütülmesini sağlar: arabuluculuk, zaman yönetimi ve herkesin özgürce konuşabileceği güvenli bir ortam.",
+              "c": "Yanlış. Yazar, gözden geçirilecek çalışma ürününü oluşturur ve düzeltir.",
+              "d": "Doğru. Gözden geçirme konusunu belirlemek ve kaynak tahsis etmek yöneticinin sorumluluğudur."
             }
           },
           "hints": [
@@ -837,28 +837,28 @@
           "options": [
             {
               "id": "a",
-              "text": "The manager"
-            },
-            {
-              "id": "b",
               "text": "The review leader"
             },
             {
-              "id": "c",
+              "id": "b",
               "text": "The moderator"
             },
             {
-              "id": "d",
+              "id": "c",
               "text": "The author"
+            },
+            {
+              "id": "d",
+              "text": "The manager"
             }
           ],
           "rationale": {
             "summary": "The manager decides what is to be reviewed and provides resources, such as staff and time, for the review. The review leader's responsibility is to organize the review itself; the two are frequently confused.",
             "byOption": {
-              "a": "Correct. Selecting the subject of the review and allocating resources is the manager's responsibility.",
-              "b": "Incorrect. The review leader takes overall responsibility for the review, such as deciding who will be involved and organizing when and where it will take place, but does not provide the resources.",
-              "c": "Incorrect. The moderator (also known as the facilitator) ensures the effective running of review meetings: mediation, time management and a safe review environment in which everyone can speak freely.",
-              "d": "Incorrect. The author creates and fixes the work product under review."
+              "a": "Incorrect. The review leader takes overall responsibility for the review, such as deciding who will be involved and organizing when and where it will take place, but does not provide the resources.",
+              "b": "Incorrect. The moderator (also known as the facilitator) ensures the effective running of review meetings: mediation, time management and a safe review environment in which everyone can speak freely.",
+              "c": "Incorrect. The author creates and fixes the work product under review.",
+              "d": "Correct. Selecting the subject of the review and allocating resources is the manager's responsibility."
             }
           },
           "hints": [
@@ -895,7 +895,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "a"
+        "c"
       ],
       "media": null,
       "i18n": {
@@ -904,28 +904,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Üzerinden geçme (walkthrough)"
-            },
-            {
-              "id": "b",
-              "text": "Teknik gözden geçirme"
-            },
-            {
-              "id": "c",
               "text": "Teftiş (inspection)"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Gayri resmi gözden geçirme"
+            },
+            {
+              "id": "c",
+              "text": "Üzerinden geçme (walkthrough)"
+            },
+            {
+              "id": "d",
+              "text": "Teknik gözden geçirme"
             }
           ],
           "rationale": {
             "summary": "Üzerinden geçme, yazarın öncülüğünde yürütülür ve kaliteyi değerlendirmek, güven oluşturmak, gözden geçiricileri eğitmek, fikir birliğine varmak, yeni fikirler üretmek ve anomalileri tespit etmek gibi birçok amaca hizmet edebilir. Gözden geçiriciler öncesinde bireysel gözden geçirme yapabilir, ancak bu gerekli değildir.",
             "byOption": {
-              "a": "Doğru. Yazarın öncülüğü ve sayılan çoklu hedefler üzerinden geçmeyi tanımlar; bireysel gözden geçirme isteğe bağlıdır.",
-              "b": "Yanlış. Teknik gözden geçirme, teknik açıdan nitelikli gözden geçiriciler tarafından gerçekleştirilir ve yazar tarafından değil, bir moderatör tarafından yönetilir; hedefleri arasında teknik bir problemde fikir birliği ve karar almak öne çıkar.",
-              "c": "Yanlış. Teftiş en resmi gözden geçirme çeşididir, tanımlı süreci eksiksiz izler ve ana hedefi maksimum sayıda anomali bulmaktır; ayrıca yazar gözden geçirme lideri veya katip olarak görev yapamaz.",
-              "d": "Yanlış. Gayri resmi gözden geçirmede tanımlanmış bir süreç izlenmez, resmi belgelenmiş çıktı gerekmez ve ana hedef yalnızca anomalileri tespit etmektir; senaryodaki tanımlı yazar öncülüğü ve çoklu hedef seti bunu dışlar."
+              "a": "Yanlış. Teftiş en resmi gözden geçirme çeşididir, tanımlı süreci eksiksiz izler ve ana hedefi maksimum sayıda anomali bulmaktır; ayrıca yazar gözden geçirme lideri veya katip olarak görev yapamaz.",
+              "b": "Yanlış. Gayri resmi gözden geçirmede tanımlanmış bir süreç izlenmez, resmi belgelenmiş çıktı gerekmez ve ana hedef yalnızca anomalileri tespit etmektir; senaryodaki tanımlı yazar öncülüğü ve çoklu hedef seti bunu dışlar.",
+              "c": "Doğru. Yazarın öncülüğü ve sayılan çoklu hedefler üzerinden geçmeyi tanımlar; bireysel gözden geçirme isteğe bağlıdır.",
+              "d": "Yanlış. Teknik gözden geçirme, teknik açıdan nitelikli gözden geçiriciler tarafından gerçekleştirilir ve yazar tarafından değil, bir moderatör tarafından yönetilir; hedefleri arasında teknik bir problemde fikir birliği ve karar almak öne çıkar."
             }
           },
           "hints": [
@@ -937,28 +937,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Walkthrough"
-            },
-            {
-              "id": "b",
-              "text": "Technical review"
-            },
-            {
-              "id": "c",
               "text": "Inspection"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Informal review"
+            },
+            {
+              "id": "c",
+              "text": "Walkthrough"
+            },
+            {
+              "id": "d",
+              "text": "Technical review"
             }
           ],
           "rationale": {
             "summary": "A walkthrough is led by the author and can serve many objectives, such as evaluating quality, building confidence, educating reviewers, gaining consensus, generating new ideas, motivating authors and detecting anomalies. Reviewers might perform an individual review beforehand, but this is not required.",
             "byOption": {
-              "a": "Correct. Author-led plus that set of multiple objectives defines a walkthrough, and individual review is optional.",
-              "b": "Incorrect. A technical review is performed by technically qualified reviewers and is led by a moderator, not by the author; its leading objectives are gaining consensus and making decisions regarding a technical problem.",
-              "c": "Incorrect. An inspection is the most formal review type, follows the complete generic process and aims mainly to find the maximum number of anomalies; moreover the author cannot act as review leader or scribe.",
-              "d": "Incorrect. An informal review follows no defined process, requires no formal documented output and has detecting anomalies as its only main objective; the defined author-led format and the broader set of objectives rule it out."
+              "a": "Incorrect. An inspection is the most formal review type, follows the complete generic process and aims mainly to find the maximum number of anomalies; moreover the author cannot act as review leader or scribe.",
+              "b": "Incorrect. An informal review follows no defined process, requires no formal documented output and has detecting anomalies as its only main objective; the defined author-led format and the broader set of objectives rule it out.",
+              "c": "Correct. Author-led plus that set of multiple objectives defines a walkthrough, and individual review is optional.",
+              "d": "Incorrect. A technical review is performed by technically qualified reviewers and is led by a moderator, not by the author; its leading objectives are gaining consensus and making decisions regarding a technical problem."
             }
           },
           "hints": [
@@ -996,7 +996,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "a"
+        "b"
       ],
       "media": null,
       "i18n": {
@@ -1005,28 +1005,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Tanımlı gözden geçirme sürecinin tamamı izlenir ve ana hedef maksimum sayıda anomali bulmaktır"
+              "text": "Teknik bir problemde fikir birliği sağlamak ve karar almak üzere teknik açıdan nitelikli gözden geçiriciler tarafından gerçekleştirilir"
             },
             {
               "id": "b",
-              "text": "Gözden geçirilen çalışma ürününün yazarı tarafından yönetilir"
+              "text": "Tanımlı gözden geçirme sürecinin tamamı izlenir ve ana hedef maksimum sayıda anomali bulmaktır"
             },
             {
               "id": "c",
-              "text": "Ana hedefi anomali tespiti olduğu için resmi olarak belgelenmiş bir çıktı gerektirmez"
+              "text": "Gözden geçirilen çalışma ürününün yazarı tarafından yönetilir"
             },
             {
               "id": "d",
-              "text": "Teknik bir problemde fikir birliği sağlamak ve karar almak üzere teknik açıdan nitelikli gözden geçiriciler tarafından gerçekleştirilir"
+              "text": "Ana hedefi anomali tespiti olduğu için resmi olarak belgelenmiş bir çıktı gerektirmez"
             }
           ],
           "rationale": {
             "summary": "Teftiş en resmi gözden geçirme çeşididir; tanımlı gözden geçirme sürecini eksiksiz izler ve ana hedefi maksimum sayıda anomali bulmaktır. Metrikler toplanır ve YGYD ile teftiş sürecini iyileştirmek için kullanılır; yazar gözden geçirme lideri veya katip olamaz.",
             "byOption": {
-              "a": "Doğru. En resmi çeşit olması nedeniyle tanımlı sürecin tamamı izlenir ve ana hedef maksimum sayıda anomali bulmaktır.",
-              "b": "Yanlış. Yazarın öncülüğündeki gözden geçirme çeşidi üzerinden geçmedir (walkthrough). Teftişte yazar gözden geçirme lideri veya katip olarak dahi görev yapamaz.",
-              "c": "Yanlış. Bu, gayri resmi gözden geçirmeyi tanımlar: tanımlanmış bir süreç izlenmez ve resmi belgelenmiş çıktı gerekmez.",
-              "d": "Yanlış. Bu, teknik gözden geçirmeyi tanımlar; teknik açıdan nitelikli gözden geçiriciler tarafından yapılır ve bir moderatör tarafından yönetilir."
+              "a": "Yanlış. Bu, teknik gözden geçirmeyi tanımlar; teknik açıdan nitelikli gözden geçiriciler tarafından yapılır ve bir moderatör tarafından yönetilir.",
+              "b": "Doğru. En resmi çeşit olması nedeniyle tanımlı sürecin tamamı izlenir ve ana hedef maksimum sayıda anomali bulmaktır.",
+              "c": "Yanlış. Yazarın öncülüğündeki gözden geçirme çeşidi üzerinden geçmedir (walkthrough). Teftişte yazar gözden geçirme lideri veya katip olarak dahi görev yapamaz.",
+              "d": "Yanlış. Bu, gayri resmi gözden geçirmeyi tanımlar: tanımlanmış bir süreç izlenmez ve resmi belgelenmiş çıktı gerekmez."
             }
           }
         },
@@ -1035,28 +1035,28 @@
           "options": [
             {
               "id": "a",
-              "text": "It follows the complete generic review process and its main objective is to find the maximum number of anomalies"
+              "text": "It is performed by technically qualified reviewers in order to gain consensus and make decisions regarding a technical problem"
             },
             {
               "id": "b",
-              "text": "It is led by the author of the work product under review"
+              "text": "It follows the complete generic review process and its main objective is to find the maximum number of anomalies"
             },
             {
               "id": "c",
-              "text": "It requires no formal documented output, since its main objective is detecting anomalies"
+              "text": "It is led by the author of the work product under review"
             },
             {
               "id": "d",
-              "text": "It is performed by technically qualified reviewers in order to gain consensus and make decisions regarding a technical problem"
+              "text": "It requires no formal documented output, since its main objective is detecting anomalies"
             }
           ],
           "rationale": {
             "summary": "As inspections are the most formal type of review, they follow the complete generic review process and their main objective is to find the maximum number of anomalies. Metrics are collected and used to improve the SDLC, and the author cannot act as review leader or scribe.",
             "byOption": {
-              "a": "Correct. Being the most formal type, an inspection follows the complete generic process, with finding the maximum number of anomalies as its main objective.",
-              "b": "Incorrect. The author-led review type is the walkthrough. In inspections the author cannot even act as the review leader or scribe.",
-              "c": "Incorrect. This describes an informal review, which does not follow a defined process and does not require a formal documented output.",
-              "d": "Incorrect. This describes a technical review, which is performed by technically qualified reviewers and led by a moderator."
+              "a": "Incorrect. This describes a technical review, which is performed by technically qualified reviewers and led by a moderator.",
+              "b": "Correct. Being the most formal type, an inspection follows the complete generic process, with finding the maximum number of anomalies as its main objective.",
+              "c": "Incorrect. The author-led review type is the walkthrough. In inspections the author cannot even act as the review leader or scribe.",
+              "d": "Incorrect. This describes an informal review, which does not follow a defined process and does not require a formal documented output."
             }
           }
         }

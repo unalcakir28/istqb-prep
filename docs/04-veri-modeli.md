@@ -434,7 +434,7 @@ GİRDİ:  blueprint (LO grupları), index.json, kullanıcı geçmişi, seçenekl
 
 ## 6. CI doğrulamaları
 
-Her PR'da çalışacak kontroller (`npm run validate:data`):
+Her PR'da çalışacak kontroller (`yarn validate:data`):
 
 | # | Kontrol | Sonuç |
 |---|---|---|
@@ -451,6 +451,7 @@ Her PR'da çalışacak kontroller (`npm run validate:data`):
 | 11 | Her LO için en az 3 yayınlanmış soru var mı? | ⚠️ uyarı |
 | 12 | `kLevel`, sorunun LO'larının en yükseğiyle uyumlu mu? | ⚠️ uyarı |
 | 13 | Türkçe metinde İngilizce terim sızıntısı var mı (sözlük kontrolü)? | ⚠️ uyarı |
+| 14 | Doğru cevabın şık konumu dengeli mi (sistematik "hep a" eğilimi)? | ⚠️ uyarı |
 
 ---
 

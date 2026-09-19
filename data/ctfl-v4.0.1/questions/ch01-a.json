@@ -25,7 +25,7 @@
       "origin": "original",
       "status": "published",
       "correct": [
-        "c"
+        "a"
       ],
       "media": null,
       "i18n": {
@@ -34,28 +34,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Testin amacı, yazılımda hataların olduğunu göstermektir; hata kalmadığını ispatlamak değildir"
-            },
-            {
-              "id": "b",
-              "text": "Yazılımı %100 test etmek imkansızdır"
-            },
-            {
-              "id": "c",
               "text": "Antibiyotik direnci"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Yazılım testi, projenin bağlamına ve koşullarına göre değişiklik gösterir"
+            },
+            {
+              "id": "c",
+              "text": "Testin amacı, yazılımda hataların olduğunu göstermektir; hata kalmadığını ispatlamak değildir"
+            },
+            {
+              "id": "d",
+              "text": "Yazılımı %100 test etmek imkansızdır"
             }
           ],
           "rationale": {
             "summary": "Antibiyotik direnci prensibi, aynı testlerin birçok kez tekrarlanmasının yeni hataları bulmada giderek etkisizleştiğini söyler (Beizer 1990). Bu etkiyi önlemek için mevcut testlerin ve test verilerinin değiştirilmesi, yeni testler yazılması gerekebilir.",
             "byOption": {
-              "a": "Yanlış. Bu prensip, testin test nesnesinde hataların (defect) mevcut olduğunu gösterebileceğini ama hiç hata kalmadığını ispatlayamayacağını söyler. Testin kanıtlama gücüyle ilgilidir; tekrarlanan testlerin zamanla etkisizleşmesiyle değil.",
-              "b": "Yanlış. Bu prensip, çok basit yazılımlar dışında her unsuru test etmenin imkansız olduğunu ve bu yüzden test teknikleri, önceliklendirme ve risk bazlı testin kullanıldığını söyler. Senaryodaki sorun kapsamın yetersizliği değil, paketin hiç değişmemesidir.",
-              "c": "Doğru. Aynı testler değiştirilmeden birçok kez tekrarlandığında yeni hataları bulmada giderek daha etkisiz olurlar. Paket geçmeye devam ederken arızaların canlı kullanımda artması tam olarak bu etkidir.",
-              "d": "Yanlış. Bu prensip, test konusunda evrensel olarak uygulanan tek bir yaklaşım olmadığını, testin farklı proje bağlamlarında farklı şekillerde gerçekleştirildiğini söyler. Senaryoda bağlam değişmiyor; değişmeyen şey test paketidir."
+              "a": "Doğru. Aynı testler değiştirilmeden birçok kez tekrarlandığında yeni hataları bulmada giderek daha etkisiz olurlar. Paket geçmeye devam ederken arızaların canlı kullanımda artması tam olarak bu etkidir.",
+              "b": "Yanlış. Bu prensip, test konusunda evrensel olarak uygulanan tek bir yaklaşım olmadığını, testin farklı proje bağlamlarında farklı şekillerde gerçekleştirildiğini söyler. Senaryoda bağlam değişmiyor; değişmeyen şey test paketidir.",
+              "c": "Yanlış. Bu prensip, testin test nesnesinde hataların (defect) mevcut olduğunu gösterebileceğini ama hiç hata kalmadığını ispatlayamayacağını söyler. Testin kanıtlama gücüyle ilgilidir; tekrarlanan testlerin zamanla etkisizleşmesiyle değil.",
+              "d": "Yanlış. Bu prensip, çok basit yazılımlar dışında her unsuru test etmenin imkansız olduğunu ve bu yüzden test teknikleri, önceliklendirme ve risk bazlı testin kullanıldığını söyler. Senaryodaki sorun kapsamın yetersizliği değil, paketin hiç değişmemesidir."
             }
           },
           "hints": [
@@ -67,28 +67,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Testing shows the presence, not the absence of defects"
-            },
-            {
-              "id": "b",
-              "text": "Exhaustive testing is impossible"
-            },
-            {
-              "id": "c",
               "text": "Tests wear out"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Testing is context dependent"
+            },
+            {
+              "id": "c",
+              "text": "Testing shows the presence, not the absence of defects"
+            },
+            {
+              "id": "d",
+              "text": "Exhaustive testing is impossible"
             }
           ],
           "rationale": {
             "summary": "The 'tests wear out' principle states that if the same tests are repeated many times, they become increasingly ineffective in finding new defects (Beizer 1990). Existing tests and test data may need to be changed, and new tests written, to counter this effect.",
             "byOption": {
-              "a": "Incorrect. This principle states that testing can show defects are present in the test object but cannot prove that none remain. It concerns what testing can prove, not the decay of repeated tests.",
-              "b": "Incorrect. This principle states that testing everything is not feasible except in trivial cases, which is why test techniques, prioritization and risk-based testing are used. The problem here is not insufficient coverage but an unchanged suite.",
-              "c": "Correct. The same tests repeated many times without change become increasingly ineffective at finding new defects. A suite that keeps passing while production failures rise is exactly this effect.",
-              "d": "Incorrect. This principle states that there is no single universally applicable approach and that testing is carried out differently in different project contexts. The context is not changing in this scenario; the test suite is what stays fixed."
+              "a": "Correct. The same tests repeated many times without change become increasingly ineffective at finding new defects. A suite that keeps passing while production failures rise is exactly this effect.",
+              "b": "Incorrect. This principle states that there is no single universally applicable approach and that testing is carried out differently in different project contexts. The context is not changing in this scenario; the test suite is what stays fixed.",
+              "c": "Incorrect. This principle states that testing can show defects are present in the test object but cannot prove that none remain. It concerns what testing can prove, not the decay of repeated tests.",
+              "d": "Incorrect. This principle states that testing everything is not feasible except in trivial cases, which is why test techniques, prioritization and risk-based testing are used. The problem here is not insufficient coverage but an unchanged suite."
             }
           },
           "hints": [
@@ -124,7 +124,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "b"
+        "d"
       ],
       "media": null,
       "i18n": {
@@ -133,28 +133,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Test nesnesinin kalitesi hakkında güven oluşturmak"
-            },
-            {
-              "id": "b",
-              "text": "Bulunan hataların (defect) kaynak koddaki nedenlerini bulup gidermek"
-            },
-            {
-              "id": "c",
               "text": "Belirtilen gereksinimlerin yerine getirilip getirilmediğini doğrulamak"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Test nesnesinin gerekli kapsamını sağlamak"
+            },
+            {
+              "id": "c",
+              "text": "Test nesnesinin kalitesi hakkında güven oluşturmak"
+            },
+            {
+              "id": "d",
+              "text": "Bulunan hataların (defect) kaynak koddaki nedenlerini bulup gidermek"
             }
           ],
           "rationale": {
             "summary": "Hataların nedenlerini bulmak, analiz etmek ve gidermek hata ayıklamanın (debugging) işidir; müfredat hata ayıklamayı test dışı bir aktivite olarak tanımlar. Diğer üç seçenek §1.1.1'de sayılan genel test hedefleridir.",
             "byOption": {
-              "a": "Genel test hedeflerinden biridir. Test, test nesnesinin kalitesi hakkında paydaşlarda güven oluşturmayı amaçlar. Bu nedenle sorunun aradığı seçenek değildir.",
-              "b": "Doğru seçim. Bu bir test hedefi değil, hata ayıklama aktivitesinin tanımıdır: bulunan hataların nedenlerinin bulunması, analiz edilmesi ve giderilmesi. Müfredat bunu test dışı bir aktivite olarak ayırır.",
-              "c": "Genel test hedeflerinden biridir ve doğrulamanın tanımına karşılık gelir: sistemin belirli gereksinimleri karşılayıp karşılamadığının kontrol edilmesi. Bu nedenle sorunun aradığı seçenek değildir.",
-              "d": "Genel test hedeflerinden biridir. Test nesnesinin gerekli kapsamının sağlanması §1.1.1 listesinde açıkça yer alır. Bu nedenle sorunun aradığı seçenek değildir."
+              "a": "Genel test hedeflerinden biridir ve doğrulamanın tanımına karşılık gelir: sistemin belirli gereksinimleri karşılayıp karşılamadığının kontrol edilmesi. Bu nedenle sorunun aradığı seçenek değildir.",
+              "b": "Genel test hedeflerinden biridir. Test nesnesinin gerekli kapsamının sağlanması §1.1.1 listesinde açıkça yer alır. Bu nedenle sorunun aradığı seçenek değildir.",
+              "c": "Genel test hedeflerinden biridir. Test, test nesnesinin kalitesi hakkında paydaşlarda güven oluşturmayı amaçlar. Bu nedenle sorunun aradığı seçenek değildir.",
+              "d": "Doğru seçim. Bu bir test hedefi değil, hata ayıklama aktivitesinin tanımıdır: bulunan hataların nedenlerinin bulunması, analiz edilmesi ve giderilmesi. Müfredat bunu test dışı bir aktivite olarak ayırır."
             }
           }
         },
@@ -163,28 +163,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Building confidence in the quality of the test object"
-            },
-            {
-              "id": "b",
-              "text": "Finding and eliminating the causes of defects in the source code"
-            },
-            {
-              "id": "c",
               "text": "Verifying whether specified requirements have been fulfilled"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Ensuring required coverage of a test object"
+            },
+            {
+              "id": "c",
+              "text": "Building confidence in the quality of the test object"
+            },
+            {
+              "id": "d",
+              "text": "Finding and eliminating the causes of defects in the source code"
             }
           ],
           "rationale": {
             "summary": "Finding, analyzing and eliminating the causes of defects is debugging, which the syllabus defines as a non-testing activity. The other three options are typical test objectives listed in §1.1.1.",
             "byOption": {
-              "a": "This is a typical test objective. Testing aims to build stakeholder confidence in the quality of the test object, so it is not the option the question asks for.",
-              "b": "Correct choice. This describes debugging, not testing: finding the causes of failures or defects, analyzing them and eliminating them. The syllabus explicitly separates debugging from testing.",
-              "c": "This is a typical test objective and matches the definition of verification: checking whether the system meets specified requirements. It is therefore not the option sought.",
-              "d": "This is a typical test objective. Ensuring required coverage of a test object appears explicitly in the §1.1.1 list, so it is not the option sought."
+              "a": "This is a typical test objective and matches the definition of verification: checking whether the system meets specified requirements. It is therefore not the option sought.",
+              "b": "This is a typical test objective. Ensuring required coverage of a test object appears explicitly in the §1.1.1 list, so it is not the option sought.",
+              "c": "This is a typical test objective. Testing aims to build stakeholder confidence in the quality of the test object, so it is not the option the question asks for.",
+              "d": "Correct choice. This describes debugging, not testing: finding the causes of failures or defects, analyzing them and eliminating them. The syllabus explicitly separates debugging from testing."
             }
           }
         }
@@ -218,7 +218,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "c"
+        "b"
       ],
       "media": null,
       "i18n": {
@@ -227,28 +227,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Arızaları (failure) tetiklemek ve hataları (defect) bulmak"
-            },
-            {
-              "id": "b",
               "text": "Test nesnesinin yasal ve düzenleyici gereksinimlere uyumluluğunu doğrulamak"
             },
             {
-              "id": "c",
+              "id": "b",
               "text": "Sağlıklı kararlar almalarını sağlamak için paydaşlara yeterli bilgiyi sunmak"
             },
             {
-              "id": "d",
+              "id": "c",
               "text": "Test nesnesinin gerekli kapsamını sağlamak"
+            },
+            {
+              "id": "d",
+              "text": "Arızaları (failure) tetiklemek ve hataları (defect) bulmak"
             }
           ],
           "rationale": {
             "summary": "Test sonuçlarının karar vericilere derlenip sunulması, §1.1.1'deki \"sağlıklı kararlar almalarını sağlamak için paydaşlara yeterli bilgiyi sunmak\" hedefidir. Müfredat, bu ölçümlerin sürüm kararı gibi geçiş kararlarına katkıda bulunduğunu belirtir.",
             "byOption": {
-              "a": "Yanlış. Bu hedef testin bulgu üretme yönüdür: dinamik testin arızaları tetiklemesi ve statik testin hataları doğrudan bulması. Senaryodaki aktivite bulgu üretmek değil, üretilmiş bulguları raporlamaktır.",
-              "b": "Yanlış. Bu hedef, test nesnesinin sözleşmeden kaynaklanan, yasal veya düzenleyici gereksinimlere uyumluluğunun doğrulanmasıdır. Senaryoda bir uyumluluk denetimi değil, bir geçiş kararı için bilgi hazırlığı vardır.",
-              "c": "Doğru. Bu hedef, testin ürettiği bilginin paydaşlara aktarılıp karar almalarını desteklemesiyle ilgilidir. Senaryodaki sürüm kararı tam olarak bu durumdur.",
-              "d": "Yanlış. Bu hedef, test nesnesinin önceden belirlenmiş kapsam kriterlerini karşılayacak ölçüde test edilmesiyle ilgilidir. Senaryoda ölçülen kapsam değil, karar vericilere sunulan bilgidir."
+              "a": "Yanlış. Bu hedef, test nesnesinin sözleşmeden kaynaklanan, yasal veya düzenleyici gereksinimlere uyumluluğunun doğrulanmasıdır. Senaryoda bir uyumluluk denetimi değil, bir geçiş kararı için bilgi hazırlığı vardır.",
+              "b": "Doğru. Bu hedef, testin ürettiği bilginin paydaşlara aktarılıp karar almalarını desteklemesiyle ilgilidir. Senaryodaki sürüm kararı tam olarak bu durumdur.",
+              "c": "Yanlış. Bu hedef, test nesnesinin önceden belirlenmiş kapsam kriterlerini karşılayacak ölçüde test edilmesiyle ilgilidir. Senaryoda ölçülen kapsam değil, karar vericilere sunulan bilgidir.",
+              "d": "Yanlış. Bu hedef testin bulgu üretme yönüdür: dinamik testin arızaları tetiklemesi ve statik testin hataları doğrudan bulması. Senaryodaki aktivite bulgu üretmek değil, üretilmiş bulguları raporlamaktır."
             }
           }
         },
@@ -257,28 +257,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Causing failures and finding defects"
-            },
-            {
-              "id": "b",
               "text": "Verifying that a test object complies with legal and regulatory requirements"
             },
             {
-              "id": "c",
+              "id": "b",
               "text": "Providing information to stakeholders to allow them to make informed decisions"
             },
             {
-              "id": "d",
+              "id": "c",
               "text": "Ensuring required coverage of a test object"
+            },
+            {
+              "id": "d",
+              "text": "Causing failures and finding defects"
             }
           ],
           "rationale": {
             "summary": "Compiling and presenting test results to decision makers is the §1.1.1 objective \"providing information to stakeholders to allow them to make informed decisions\". The syllabus notes that such measures contribute to decisions such as the release decision.",
             "byOption": {
-              "a": "Incorrect. This objective is testing's finding-generating side: dynamic testing triggering failures and static testing finding defects directly. The scenario is about reporting findings already produced, not producing them.",
-              "b": "Incorrect. This objective is verifying compliance with contractual, legal and regulatory requirements. The scenario describes preparing information for a transition decision, not a compliance check.",
-              "c": "Correct. This objective concerns conveying the information testing produces to stakeholders so they can decide. The release decision in the scenario is exactly that situation.",
-              "d": "Incorrect. This objective concerns testing the test object to the extent required by agreed coverage criteria. What is being measured in the scenario is not coverage but the information handed to decision makers."
+              "a": "Incorrect. This objective is verifying compliance with contractual, legal and regulatory requirements. The scenario describes preparing information for a transition decision, not a compliance check.",
+              "b": "Correct. This objective concerns conveying the information testing produces to stakeholders so they can decide. The release decision in the scenario is exactly that situation.",
+              "c": "Incorrect. This objective concerns testing the test object to the extent required by agreed coverage criteria. What is being measured in the scenario is not coverage but the information handed to decision makers.",
+              "d": "Incorrect. This objective is testing's finding-generating side: dynamic testing triggering failures and static testing finding defects directly. The scenario is about reporting findings already produced, not producing them."
             }
           }
         }
@@ -311,7 +311,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "d"
+        "a"
       ],
       "media": null,
       "i18n": {
@@ -320,28 +320,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Test koşullarının tanımlanması, test senaryolarının tasarlanması ve koşulması"
+              "text": "Arızanın yeniden oluşturulması, teşhis ve hatanın (defect) düzeltilmesi"
             },
             {
               "id": "b",
-              "text": "Kapsam öğelerinin belirlenmesi, test verisinin hazırlanması ve test ortamının kurulması"
+              "text": "Test koşullarının tanımlanması, test senaryolarının tasarlanması ve koşulması"
             },
             {
               "id": "c",
-              "text": "Anomalilerin kaydedilmesi, önceliklendirilmesi ve paydaşlara raporlanması"
+              "text": "Kapsam öğelerinin belirlenmesi, test verisinin hazırlanması ve test ortamının kurulması"
             },
             {
               "id": "d",
-              "text": "Arızanın yeniden oluşturulması, teşhis ve hatanın (defect) düzeltilmesi"
+              "text": "Anomalilerin kaydedilmesi, önceliklendirilmesi ve paydaşlara raporlanması"
             }
           ],
           "rationale": {
             "summary": "Müfredat, dinamik testin tetiklediği bir arızadan sonraki tipik hata ayıklama sürecini üç adımla tanımlar: arızanın yeniden oluşturulması, teşhis (hatanın bulunması) ve hatanın düzeltilmesi. Ardından düzeltmenin işe yarayıp yaramadığı onaylama testiyle kontrol edilir.",
             "byOption": {
-              "a": "Yanlış. Bu adımlar test analizi, test tasarımı ve test koşumu aktivitelerini tarif eder. Bunlar arızanın nedenini gidermez; arızayı ortaya çıkaran testleri üretir ve çalıştırır.",
-              "b": "Yanlış. Bu adımlar test tasarımı ve test uyarlama aktivitelerinin görevleridir; testin koşulabilmesi için gereken altyapıyı hazırlar. Hata ayıklamayla ilgisi yoktur.",
-              "c": "Yanlış. Bu, test koşumu sırasında yapılan anomali analizi ve raporlamadır. Raporlama hatanın nedenini bulup gidermez; hata ayıklama sürecini başlatan girdidir.",
-              "d": "Doğru. §1.1.2'de sayılan üç adım budur. Hata ayıklama, testin kendisi değil, testin tetiklediği arızanın nedenini bulup gideren test dışı bir aktivitedir."
+              "a": "Doğru. §1.1.2'de sayılan üç adım budur. Hata ayıklama, testin kendisi değil, testin tetiklediği arızanın nedenini bulup gideren test dışı bir aktivitedir.",
+              "b": "Yanlış. Bu adımlar test analizi, test tasarımı ve test koşumu aktivitelerini tarif eder. Bunlar arızanın nedenini gidermez; arızayı ortaya çıkaran testleri üretir ve çalıştırır.",
+              "c": "Yanlış. Bu adımlar test tasarımı ve test uyarlama aktivitelerinin görevleridir; testin koşulabilmesi için gereken altyapıyı hazırlar. Hata ayıklamayla ilgisi yoktur.",
+              "d": "Yanlış. Bu, test koşumu sırasında yapılan anomali analizi ve raporlamadır. Raporlama hatanın nedenini bulup gidermez; hata ayıklama sürecini başlatan girdidir."
             }
           }
         },
@@ -350,28 +350,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Defining test conditions, designing test cases and executing them"
+              "text": "Reproduction of the failure, diagnosis, and fixing the defect"
             },
             {
               "id": "b",
-              "text": "Identifying coverage items, preparing test data and setting up the test environment"
+              "text": "Defining test conditions, designing test cases and executing them"
             },
             {
               "id": "c",
-              "text": "Logging anomalies, prioritizing them and reporting them to stakeholders"
+              "text": "Identifying coverage items, preparing test data and setting up the test environment"
             },
             {
               "id": "d",
-              "text": "Reproduction of the failure, diagnosis, and fixing the defect"
+              "text": "Logging anomalies, prioritizing them and reporting them to stakeholders"
             }
           ],
           "rationale": {
             "summary": "The syllabus defines the typical debugging process after a failure triggered by dynamic testing in three steps: reproduction of the failure, diagnosis (finding the defect), and fixing the defect. Subsequent confirmation testing then checks whether the fix resolved the problem.",
             "byOption": {
-              "a": "Incorrect. These steps describe test analysis, test design and test execution. They do not remove the cause of a failure; they produce and run the tests that expose it.",
-              "b": "Incorrect. These are tasks of test design and test implementation, preparing the infrastructure needed to run tests. They have nothing to do with debugging.",
-              "c": "Incorrect. This is anomaly analysis and reporting during test execution. Reporting does not locate or remove the defect; it is the input that starts the debugging process.",
-              "d": "Correct. These are precisely the three steps listed in §1.1.2. Debugging is not testing; it is the non-testing activity that locates and removes the cause of the failure testing triggered."
+              "a": "Correct. These are precisely the three steps listed in §1.1.2. Debugging is not testing; it is the non-testing activity that locates and removes the cause of the failure testing triggered.",
+              "b": "Incorrect. These steps describe test analysis, test design and test execution. They do not remove the cause of a failure; they produce and run the tests that expose it.",
+              "c": "Incorrect. These are tasks of test design and test implementation, preparing the infrastructure needed to run tests. They have nothing to do with debugging.",
+              "d": "Incorrect. This is anomaly analysis and reporting during test execution. Reporting does not locate or remove the defect; it is the input that starts the debugging process."
             }
           }
         }
@@ -405,7 +405,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "a"
+        "c"
       ],
       "media": null,
       "i18n": {
@@ -414,28 +414,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Hata ayıklama yalnızca hatanın giderilmesiyle ilgilenir; yeniden oluşturmaya ve teşhise gerek yoktur"
-            },
-            {
-              "id": "b",
-              "text": "Statik test de arıza tetikleyebildiği için hata ayıklama daha uzun sürer"
-            },
-            {
-              "id": "c",
               "text": "Statik testte bulunan hatalar kök neden (root cause) analizi gerektirmez"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Statik testte hata ayıklamayı her zaman hatayı bulan test uzmanının kendisi yapar"
+            },
+            {
+              "id": "c",
+              "text": "Hata ayıklama yalnızca hatanın giderilmesiyle ilgilenir; yeniden oluşturmaya ve teşhise gerek yoktur"
+            },
+            {
+              "id": "d",
+              "text": "Statik test de arıza tetikleyebildiği için hata ayıklama daha uzun sürer"
             }
           ],
           "rationale": {
             "summary": "Statik test hataları doğrudan bulur ve arızaya neden olamaz. Bu yüzden statik testte hata ayıklama yalnızca hatanın giderilmesiyle ilgilenir; dinamik testteki yeniden oluşturma ve teşhis adımlarına ihtiyaç kalmaz.",
             "byOption": {
-              "a": "Doğru. Hata zaten doğrudan bulunmuş olduğu için yeniden oluşturacak bir arıza ve teşhis edilecek bir neden yoktur; geriye yalnızca giderme adımı kalır.",
-              "b": "Yanlış. Bu seçenek statik testi dinamik testle karıştırıyor. Statik test yazılımın çalıştırılmasını içermez, dolayısıyla arıza tetikleyemez; gözden geçirmeler ve statik analiz yoluyla hataları doğrudan bulur.",
-              "c": "Yanlış. Kök neden analizi, bir arıza oluştuğunda veya bir hata tespit edildiğinde yapılır; hatanın statik mi dinamik mi testle bulunduğuna bağlı değildir. Amacı benzer hataların yinelenmesini önlemektir.",
-              "d": "Yanlış. Müfredat, tercihen başlangıçtaki testi yapan kişinin onaylama testini yapmasını söyler; hata ayıklamayı kimin yapacağına dair böyle bir kural koymaz. Hata ayıklama zaten test dışı bir aktivitedir."
+              "a": "Yanlış. Kök neden analizi, bir arıza oluştuğunda veya bir hata tespit edildiğinde yapılır; hatanın statik mi dinamik mi testle bulunduğuna bağlı değildir. Amacı benzer hataların yinelenmesini önlemektir.",
+              "b": "Yanlış. Müfredat, tercihen başlangıçtaki testi yapan kişinin onaylama testini yapmasını söyler; hata ayıklamayı kimin yapacağına dair böyle bir kural koymaz. Hata ayıklama zaten test dışı bir aktivitedir.",
+              "c": "Doğru. Hata zaten doğrudan bulunmuş olduğu için yeniden oluşturacak bir arıza ve teşhis edilecek bir neden yoktur; geriye yalnızca giderme adımı kalır.",
+              "d": "Yanlış. Bu seçenek statik testi dinamik testle karıştırıyor. Statik test yazılımın çalıştırılmasını içermez, dolayısıyla arıza tetikleyemez; gözden geçirmeler ve statik analiz yoluyla hataları doğrudan bulur."
             }
           },
           "hints": [
@@ -447,28 +447,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Debugging is only concerned with removing the defect; no reproduction or diagnosis is needed"
-            },
-            {
-              "id": "b",
-              "text": "Static testing can also trigger failures, so debugging takes longer"
-            },
-            {
-              "id": "c",
               "text": "Defects found by static testing do not require root cause analysis"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "In static testing, debugging is always done by the tester who found the defect"
+            },
+            {
+              "id": "c",
+              "text": "Debugging is only concerned with removing the defect; no reproduction or diagnosis is needed"
+            },
+            {
+              "id": "d",
+              "text": "Static testing can also trigger failures, so debugging takes longer"
             }
           ],
           "rationale": {
             "summary": "Static testing finds defects directly and cannot cause failures. Debugging after static testing is therefore only concerned with removing the defect; the reproduction and diagnosis steps needed after dynamic testing do not apply.",
             "byOption": {
-              "a": "Correct. The defect has already been found directly, so there is no failure to reproduce and no cause to diagnose; only removal remains.",
-              "b": "Incorrect. This confuses static with dynamic testing. Static testing does not involve executing the software and therefore cannot cause failures; it finds defects directly through reviews and static analysis.",
-              "c": "Incorrect. Root cause analysis is typically performed when a failure occurs or a defect is identified, regardless of whether the defect came from static or dynamic testing. Its purpose is to prevent similar defects recurring.",
-              "d": "Incorrect. The syllabus states that confirmation testing is preferably done by the person who performed the initial test; it states no such rule about who debugs. Debugging is in any case a non-testing activity."
+              "a": "Incorrect. Root cause analysis is typically performed when a failure occurs or a defect is identified, regardless of whether the defect came from static or dynamic testing. Its purpose is to prevent similar defects recurring.",
+              "b": "Incorrect. The syllabus states that confirmation testing is preferably done by the person who performed the initial test; it states no such rule about who debugs. Debugging is in any case a non-testing activity.",
+              "c": "Correct. The defect has already been found directly, so there is no failure to reproduce and no cause to diagnose; only removal remains.",
+              "d": "Incorrect. This confuses static with dynamic testing. Static testing does not involve executing the software and therefore cannot cause failures; it finds defects directly through reviews and static analysis."
             }
           },
           "hints": [
@@ -505,7 +505,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "b"
+        "d"
       ],
       "media": null,
       "i18n": {
@@ -514,28 +514,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Testin, sözleşmeye bağlı ve yasal gereksinimleri kendiliğinden karşılaması"
-            },
-            {
-              "id": "b",
-              "text": "Testin, kullanıcıların projede dolaylı olarak temsil edilmesini sağlaması"
-            },
-            {
-              "id": "c",
               "text": "Testin, yazılımdaki hataları (defect) doğrudan gidermesi"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Testin, kalite güvence süreçlerinin yerini alması"
+            },
+            {
+              "id": "c",
+              "text": "Testin, sözleşmeye bağlı ve yasal gereksinimleri kendiliğinden karşılaması"
+            },
+            {
+              "id": "d",
+              "text": "Testin, kullanıcıların projede dolaylı olarak temsil edilmesini sağlaması"
             }
           ],
           "rationale": {
             "summary": "Müfredat, testin kullanıcıların yazılım geliştirme projesinde dolaylı olarak temsil edilmesini sağladığını belirtir. Temsili bir kullanıcı grubunu projeye dahil etmek yüksek maliyet ve uygun kullanıcı bulunamaması nedeniyle genellikle mümkün olmadığı için bu katkı önemlidir.",
             "byOption": {
-              "a": "Yanlış. Müfredat, testin sözleşmeye bağlı veya yasal gereksinimleri ya da düzenleyici standartları karşılamak için gerekli olabileceğini söyler. Bu bir uyum yükümlülüğüdür; testin kendiliğinden uyumu sağlaması değildir.",
-              "b": "Doğru. Test uzmanlarının kullanıcı ihtiyaçlarını yaşam döngüsü boyunca gözetmesi, müfredatın \"kullanıcıların dolaylı temsili\" dediği katkıdır.",
-              "c": "Yanlış. Test, hataların bulunmasına maliyet etkin bir yol sunar ancak hataları gidermez; giderme işi test dışı bir aktivite olan hata ayıklamaya aittir. Testin kaliteye katkısı bu yüzden dolaylıdır.",
-              "d": "Yanlış. Test, kalite kontrolünün bir biçimidir; kalite güvence ise süreç odaklı ve önleyici ayrı bir yaklaşımdır. Biri diğerinin yerini almaz, ikisi birlikte çalışır."
+              "a": "Yanlış. Test, hataların bulunmasına maliyet etkin bir yol sunar ancak hataları gidermez; giderme işi test dışı bir aktivite olan hata ayıklamaya aittir. Testin kaliteye katkısı bu yüzden dolaylıdır.",
+              "b": "Yanlış. Test, kalite kontrolünün bir biçimidir; kalite güvence ise süreç odaklı ve önleyici ayrı bir yaklaşımdır. Biri diğerinin yerini almaz, ikisi birlikte çalışır.",
+              "c": "Yanlış. Müfredat, testin sözleşmeye bağlı veya yasal gereksinimleri ya da düzenleyici standartları karşılamak için gerekli olabileceğini söyler. Bu bir uyum yükümlülüğüdür; testin kendiliğinden uyumu sağlaması değildir.",
+              "d": "Doğru. Test uzmanlarının kullanıcı ihtiyaçlarını yaşam döngüsü boyunca gözetmesi, müfredatın \"kullanıcıların dolaylı temsili\" dediği katkıdır."
             }
           }
         },
@@ -544,28 +544,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Testing automatically satisfies contractual and legal requirements"
-            },
-            {
-              "id": "b",
-              "text": "Testing provides users with indirect representation on the development project"
-            },
-            {
-              "id": "c",
               "text": "Testing directly removes the defects in the software"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Testing replaces the quality assurance processes"
+            },
+            {
+              "id": "c",
+              "text": "Testing automatically satisfies contractual and legal requirements"
+            },
+            {
+              "id": "d",
+              "text": "Testing provides users with indirect representation on the development project"
             }
           ],
           "rationale": {
             "summary": "The syllabus states that testing provides users with indirect representation on the development project. This matters because involving a representative set of real users is usually not possible due to high cost and lack of availability of suitable users.",
             "byOption": {
-              "a": "Incorrect. The syllabus says testing may be required in order to meet contractual or legal requirements or regulatory standards. That is an obligation to test, not testing satisfying compliance by itself.",
-              "b": "Correct. Testers keeping users' needs in view throughout the lifecycle is exactly what the syllabus calls indirect representation of users.",
-              "c": "Incorrect. Testing provides a cost-effective means of detecting defects but does not remove them; removal is debugging, a non-testing activity. This is why testing's contribution to quality is indirect.",
-              "d": "Incorrect. Testing is a form of quality control, whereas QA is a separate process-oriented, preventive approach. Neither replaces the other; they work together."
+              "a": "Incorrect. Testing provides a cost-effective means of detecting defects but does not remove them; removal is debugging, a non-testing activity. This is why testing's contribution to quality is indirect.",
+              "b": "Incorrect. Testing is a form of quality control, whereas QA is a separate process-oriented, preventive approach. Neither replaces the other; they work together.",
+              "c": "Incorrect. The syllabus says testing may be required in order to meet contractual or legal requirements or regulatory standards. That is an obligation to test, not testing satisfying compliance by itself.",
+              "d": "Correct. Testers keeping users' needs in view throughout the lifecycle is exactly what the syllabus calls indirect representation of users."
             }
           }
         }
@@ -599,7 +599,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "c"
+        "a"
       ],
       "media": null,
       "i18n": {
@@ -608,28 +608,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Testin, yazılımda hata (defect) kalmadığını ispatlaması"
-            },
-            {
-              "id": "b",
-              "text": "Testin, paydaşların iş ihtiyaçlarını tanımlaması"
-            },
-            {
-              "id": "c",
               "text": "Testin, yaşam döngüsünün çeşitli aşamalarında test nesnesinin kalitesini doğrudan değerlendirme imkânı sunması"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Testin, kalite maliyetini tamamen ortadan kaldırması"
+            },
+            {
+              "id": "c",
+              "text": "Testin, yazılımda hata (defect) kalmadığını ispatlaması"
+            },
+            {
+              "id": "d",
+              "text": "Testin, paydaşların iş ihtiyaçlarını tanımlaması"
             }
           ],
           "rationale": {
             "summary": "Müfredat, testin yazılım geliştirme yaşam döngüsünün çeşitli aşamalarında test nesnesinin kalitesini doğrudan değerlendirme imkânı sunduğunu ve bu ölçümlerin sürüm kararı gibi geçiş kararlarına katkıda bulunduğunu belirtir.",
             "byOption": {
-              "a": "Yanlış. Bu ifade birinci test prensibiyle doğrudan çelişir: test, hataların mevcut olduğunu gösterebilir ancak hiç hata kalmadığını ispatlayamaz.",
-              "b": "Yanlış. Paydaşların iş ihtiyaçları testin girdisidir, çıktısı değil; müfredat testin nihai hedefinin bu ihtiyaçların karşılanmasına yardımcı olmak olduğunu söyler.",
-              "c": "Doğru. Test, kaliteyi doğrudan ölçer; bu ölçümler daha geniş proje yönetimi kapsamında geçiş ve sürüm kararlarına girdi olur.",
-              "d": "Yanlış. Erken test prensibi kalite maliyetinin azalacağını söyler, ortadan kalkacağını değil. Test etme aktivitesinin kendisi de bir maliyettir."
+              "a": "Doğru. Test, kaliteyi doğrudan ölçer; bu ölçümler daha geniş proje yönetimi kapsamında geçiş ve sürüm kararlarına girdi olur.",
+              "b": "Yanlış. Erken test prensibi kalite maliyetinin azalacağını söyler, ortadan kalkacağını değil. Test etme aktivitesinin kendisi de bir maliyettir.",
+              "c": "Yanlış. Bu ifade birinci test prensibiyle doğrudan çelişir: test, hataların mevcut olduğunu gösterebilir ancak hiç hata kalmadığını ispatlayamaz.",
+              "d": "Yanlış. Paydaşların iş ihtiyaçları testin girdisidir, çıktısı değil; müfredat testin nihai hedefinin bu ihtiyaçların karşılanmasına yardımcı olmak olduğunu söyler."
             }
           }
         },
@@ -638,28 +638,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Testing proves that no defects remain in the software"
-            },
-            {
-              "id": "b",
-              "text": "Testing defines the stakeholders' business needs"
-            },
-            {
-              "id": "c",
               "text": "Testing provides a means of directly evaluating the quality of a test object at various phases of the lifecycle"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Testing eliminates the cost of quality entirely"
+            },
+            {
+              "id": "c",
+              "text": "Testing proves that no defects remain in the software"
+            },
+            {
+              "id": "d",
+              "text": "Testing defines the stakeholders' business needs"
             }
           ],
           "rationale": {
             "summary": "The syllabus states that testing provides a means of directly evaluating the quality of a test object at various phases of the SDLC, and that these measures contribute to decisions such as moving to the next phase or releasing.",
             "byOption": {
-              "a": "Incorrect. This contradicts the first testing principle: testing can show that defects are present but cannot prove that none remain.",
-              "b": "Incorrect. Stakeholders' business needs are an input to testing, not its output; the syllabus says testing's final goal is to help fulfil those needs.",
-              "c": "Correct. Testing measures quality directly, and those measures feed the larger project management activity that produces phase and release decisions.",
-              "d": "Incorrect. The early testing principle says the cost of quality will be reduced, not eliminated. Testing itself is also a cost."
+              "a": "Correct. Testing measures quality directly, and those measures feed the larger project management activity that produces phase and release decisions.",
+              "b": "Incorrect. The early testing principle says the cost of quality will be reduced, not eliminated. Testing itself is also a cost.",
+              "c": "Incorrect. This contradicts the first testing principle: testing can show that defects are present but cannot prove that none remain.",
+              "d": "Incorrect. Stakeholders' business needs are an input to testing, not its output; the syllabus says testing's final goal is to help fulfil those needs."
             }
           }
         }
@@ -693,7 +693,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "d"
+        "a"
       ],
       "media": null,
       "i18n": {
@@ -702,28 +702,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Test etme süreç odaklı ve önleyici, KG ise ürün odaklı ve düzeltici bir yaklaşımdır"
+              "text": "Test etme ürün odaklı ve düzeltici, KG ise süreç odaklı ve önleyici bir yaklaşımdır"
             },
             {
               "id": "b",
-              "text": "Test etme ve KG aynı aktivitenin iki farklı adıdır, birbirinin yerine kullanılabilir"
+              "text": "Test etme süreç odaklı ve önleyici, KG ise ürün odaklı ve düzeltici bir yaklaşımdır"
             },
             {
               "id": "c",
-              "text": "KG yalnızca test sürecine uygulanır, yazılım geliştirme süreci kapsam dışıdır"
+              "text": "Test etme ve KG aynı aktivitenin iki farklı adıdır, birbirinin yerine kullanılabilir"
             },
             {
               "id": "d",
-              "text": "Test etme ürün odaklı ve düzeltici, KG ise süreç odaklı ve önleyici bir yaklaşımdır"
+              "text": "KG yalnızca test sürecine uygulanır, yazılım geliştirme süreci kapsam dışıdır"
             }
           ],
           "rationale": {
             "summary": "Müfredat ayrımı açıkça kurar: test etme, uygun kalite seviyelerine ulaşılmasını destekleyen ürün odaklı ve düzeltici bir yaklaşımdır; KG ise süreçlerin uygulanması ve iyileştirilmesine odaklanan süreç odaklı ve önleyici bir yaklaşımdır.",
             "byOption": {
-              "a": "Yanlış. İki tanım yer değiştirilmiş. Önleyici ve süreç odaklı olan KG'dir; testin kendisi ürün üzerinde çalışan bir kalite kontrol biçimidir.",
-              "b": "Yanlış. Bu, müfredatın açıkça düzelttiği yaygın yanlış kanıdır. Terimler günlük dilde birbirinin yerine kullanılsa da aynı şey değildirler.",
-              "c": "Yanlış. KG hem yazılım geliştirme hem de test süreçleri için geçerlidir ve projedeki herkesin sorumluluğundadır.",
-              "d": "Doğru. §1.2.2'deki tanımların birebir karşılığıdır: test etme ürüne bakar ve düzeltmeye yöneliktir, KG sürece bakar ve önlemeye yöneliktir."
+              "a": "Doğru. §1.2.2'deki tanımların birebir karşılığıdır: test etme ürüne bakar ve düzeltmeye yöneliktir, KG sürece bakar ve önlemeye yöneliktir.",
+              "b": "Yanlış. İki tanım yer değiştirilmiş. Önleyici ve süreç odaklı olan KG'dir; testin kendisi ürün üzerinde çalışan bir kalite kontrol biçimidir.",
+              "c": "Yanlış. Bu, müfredatın açıkça düzelttiği yaygın yanlış kanıdır. Terimler günlük dilde birbirinin yerine kullanılsa da aynı şey değildirler.",
+              "d": "Yanlış. KG hem yazılım geliştirme hem de test süreçleri için geçerlidir ve projedeki herkesin sorumluluğundadır."
             }
           }
         },
@@ -732,28 +732,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Testing is a process-oriented, preventive approach; QA is a product-oriented, corrective approach"
+              "text": "Testing is a product-oriented, corrective approach; QA is a process-oriented, preventive approach"
             },
             {
               "id": "b",
-              "text": "Testing and QA are two names for the same activity and can be used interchangeably"
+              "text": "Testing is a process-oriented, preventive approach; QA is a product-oriented, corrective approach"
             },
             {
               "id": "c",
-              "text": "QA applies only to the test process; the development process is out of its scope"
+              "text": "Testing and QA are two names for the same activity and can be used interchangeably"
             },
             {
               "id": "d",
-              "text": "Testing is a product-oriented, corrective approach; QA is a process-oriented, preventive approach"
+              "text": "QA applies only to the test process; the development process is out of its scope"
             }
           ],
           "rationale": {
             "summary": "The syllabus draws the distinction explicitly: testing is a product-oriented, corrective approach focused on activities supporting the achievement of appropriate quality levels, while QA is a process-oriented, preventive approach focused on implementing and improving processes.",
             "byOption": {
-              "a": "Incorrect. The two definitions have been swapped. QA is the preventive, process-oriented one; testing is a form of quality control that works on the product.",
-              "b": "Incorrect. This is the common misconception the syllabus explicitly corrects. The terms are often used interchangeably in everyday speech, but they are not the same.",
-              "c": "Incorrect. QA applies to both the development and the testing processes, and is the responsibility of everyone on a project.",
-              "d": "Correct. This matches the §1.2.2 definitions exactly: testing looks at the product and corrects, QA looks at the process and prevents."
+              "a": "Correct. This matches the §1.2.2 definitions exactly: testing looks at the product and corrects, QA looks at the process and prevents.",
+              "b": "Incorrect. The two definitions have been swapped. QA is the preventive, process-oriented one; testing is a form of quality control that works on the product.",
+              "c": "Incorrect. This is the common misconception the syllabus explicitly corrects. The terms are often used interchangeably in everyday speech, but they are not the same.",
+              "d": "Incorrect. QA applies to both the development and the testing processes, and is the responsibility of everyone on a project."
             }
           }
         }
@@ -786,7 +786,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "a"
+        "b"
       ],
       "media": null,
       "i18n": {
@@ -795,28 +795,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Resmî yöntemler (model denetimi ve doğruluk kanıtı), simülasyon ve prototipleme"
+              "text": "Risk kaydının oluşturulması ve düzenli olarak güncellenmesi"
             },
             {
               "id": "b",
-              "text": "Süreç iyileştirme, süreç denetimleri ve süreç olgunluk modelleri"
+              "text": "Resmî yöntemler (model denetimi ve doğruluk kanıtı), simülasyon ve prototipleme"
             },
             {
               "id": "c",
-              "text": "Yapılandırma yönetimi ve sürüm yönetimi"
+              "text": "Süreç iyileştirme, süreç denetimleri ve süreç olgunluk modelleri"
             },
             {
               "id": "d",
-              "text": "Risk kaydının oluşturulması ve düzenli olarak güncellenmesi"
+              "text": "Yapılandırma yönetimi ve sürüm yönetimi"
             }
           ],
           "rationale": {
             "summary": "Müfredat, test etmenin kalite kontrolünün önemli bir biçimi olduğunu, diğer biçimler arasında ise resmî yöntemlerin (model denetimi ve doğruluk kanıtı), simülasyon ve prototiplemenin yer aldığını belirtir.",
             "byOption": {
-              "a": "Doğru. §1.2.2'de test etmenin yanında sayılan kalite kontrol biçimleri tam olarak bunlardır.",
-              "b": "Yanlış. Süreçlerin uygulanması ve iyileştirilmesi kalite güvencenin alanıdır; kalite kontrol ürüne, kalite güvence sürece bakar.",
-              "c": "Yanlış. Yapılandırma yönetimi, iş ürünleri arasında tutarlılık ve bütünlük sağlayan destekleyici bir aktivitedir; müfredat onu kalite kontrol biçimleri arasında saymaz.",
-              "d": "Yanlış. Risk kaydı bir test planlama iş ürünüdür: risk olasılığı, risk etkisi ve riski azaltma bilgisini içeren bir riskler listesidir. Kalite kontrol biçimi değildir."
+              "a": "Yanlış. Risk kaydı bir test planlama iş ürünüdür: risk olasılığı, risk etkisi ve riski azaltma bilgisini içeren bir riskler listesidir. Kalite kontrol biçimi değildir.",
+              "b": "Doğru. §1.2.2'de test etmenin yanında sayılan kalite kontrol biçimleri tam olarak bunlardır.",
+              "c": "Yanlış. Süreçlerin uygulanması ve iyileştirilmesi kalite güvencenin alanıdır; kalite kontrol ürüne, kalite güvence sürece bakar.",
+              "d": "Yanlış. Yapılandırma yönetimi, iş ürünleri arasında tutarlılık ve bütünlük sağlayan destekleyici bir aktivitedir; müfredat onu kalite kontrol biçimleri arasında saymaz."
             }
           }
         },
@@ -825,28 +825,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Formal methods (model checking and proof of correctness), simulation and prototyping"
+              "text": "Creating and regularly updating the risk register"
             },
             {
               "id": "b",
-              "text": "Process improvement, process audits and process maturity models"
+              "text": "Formal methods (model checking and proof of correctness), simulation and prototyping"
             },
             {
               "id": "c",
-              "text": "Configuration management and release management"
+              "text": "Process improvement, process audits and process maturity models"
             },
             {
               "id": "d",
-              "text": "Creating and regularly updating the risk register"
+              "text": "Configuration management and release management"
             }
           ],
           "rationale": {
             "summary": "The syllabus states that testing is a major form of quality control, while others include formal methods (model checking and proof of correctness), simulation and prototyping.",
             "byOption": {
-              "a": "Correct. These are exactly the forms of quality control listed alongside testing in §1.2.2.",
-              "b": "Incorrect. Implementing and improving processes is the domain of quality assurance; quality control looks at the product, QA at the process.",
-              "c": "Incorrect. Configuration management is a supporting activity that ensures consistency and integrity of work products; the syllabus does not list it as a form of quality control.",
-              "d": "Incorrect. The risk register is a test planning work product: a list of risks with risk likelihood, risk impact and mitigation information. It is not a form of quality control."
+              "a": "Incorrect. The risk register is a test planning work product: a list of risks with risk likelihood, risk impact and mitigation information. It is not a form of quality control.",
+              "b": "Correct. These are exactly the forms of quality control listed alongside testing in §1.2.2.",
+              "c": "Incorrect. Implementing and improving processes is the domain of quality assurance; quality control looks at the product, QA at the process.",
+              "d": "Incorrect. Configuration management is a supporting activity that ensures consistency and integrity of work products; the syllabus does not list it as a form of quality control."
             }
           }
         }
@@ -880,7 +880,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "b"
+        "d"
       ],
       "media": null,
       "i18n": {
@@ -889,28 +889,28 @@
           "options": [
             {
               "id": "a",
-              "text": "İnsan hatası (error) → kök neden (root cause) → arıza (failure)"
-            },
-            {
-              "id": "b",
-              "text": "İnsan hatası (error) → hata (defect) → arıza (failure)"
-            },
-            {
-              "id": "c",
               "text": "Hata (defect) → insan hatası (error) → arıza (failure)"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Arıza (failure) → insan hatası (error) → hata (defect)"
+            },
+            {
+              "id": "c",
+              "text": "İnsan hatası (error) → kök neden (root cause) → arıza (failure)"
+            },
+            {
+              "id": "d",
+              "text": "İnsan hatası (error) → hata (defect) → arıza (failure)"
             }
           ],
           "rationale": {
             "summary": "Müfredat zinciri şöyle kurar: insanlar insan hatası yapar, bu iş üründe bir hata bırakır, hata çalıştırıldığında arızaya yol açabilir. Yorgunluk insan hatasının sebebi, yanlış döngü koşulu koddaki hata, yanlış hesaplanan tutar ise gözlemlenen arızadır.",
             "byOption": {
-              "a": "Yanlış. Kök neden, bir problemin ortaya çıkmasının temel sebebidir (ör. insan hatasına yol açan durum) ve zincirde insan hatasından önce gelir. İnsan hatası ile arıza arasında duran halka hatadır.",
-              "b": "Doğru. Yazılımcının yaptığı yanlış insan hatası, koda yerleşen yanlış koşul hata, çalıştırıldığında ortaya çıkan yanlış tutar ise arızadır.",
-              "c": "Yanlış. Sıralama ters. Hata, insan hatasının iş üründe bıraktığı sonuçtur; bir hata insan hatası üretmez.",
-              "d": "Yanlış. Arıza zincirin son halkasıdır: sistemin çalıştırılması sırasında gözlemlenen sapmadır. Zinciri başlatan şey değildir."
+              "a": "Yanlış. Sıralama ters. Hata, insan hatasının iş üründe bıraktığı sonuçtur; bir hata insan hatası üretmez.",
+              "b": "Yanlış. Arıza zincirin son halkasıdır: sistemin çalıştırılması sırasında gözlemlenen sapmadır. Zinciri başlatan şey değildir.",
+              "c": "Yanlış. Kök neden, bir problemin ortaya çıkmasının temel sebebidir (ör. insan hatasına yol açan durum) ve zincirde insan hatasından önce gelir. İnsan hatası ile arıza arasında duran halka hatadır.",
+              "d": "Doğru. Yazılımcının yaptığı yanlış insan hatası, koda yerleşen yanlış koşul hata, çalıştırıldığında ortaya çıkan yanlış tutar ise arızadır."
             }
           }
         },
@@ -919,28 +919,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Error → root cause → failure"
-            },
-            {
-              "id": "b",
-              "text": "Error → defect → failure"
-            },
-            {
-              "id": "c",
               "text": "Defect → error → failure"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Failure → error → defect"
+            },
+            {
+              "id": "c",
+              "text": "Error → root cause → failure"
+            },
+            {
+              "id": "d",
+              "text": "Error → defect → failure"
             }
           ],
           "rationale": {
             "summary": "The syllabus sets out the chain as: human beings make errors, which produce defects, which in turn may result in failures. Tiredness is a reason for the error, the wrong loop condition is the defect in the code, and the wrong amount observed is the failure.",
             "byOption": {
-              "a": "Incorrect. A root cause is the fundamental reason for the occurrence of a problem (e.g. a situation that leads to an error) and sits before the error. The link between an error and a failure is the defect.",
-              "b": "Correct. The developer's mistake is the error, the wrong condition left in the code is the defect, and the wrong amount produced on execution is the failure.",
-              "c": "Incorrect. The order is reversed. A defect is what an error leaves behind in a work product; a defect does not produce an error.",
-              "d": "Incorrect. A failure is the last link in the chain: the deviation observed while the system is running. It does not start the chain."
+              "a": "Incorrect. The order is reversed. A defect is what an error leaves behind in a work product; a defect does not produce an error.",
+              "b": "Incorrect. A failure is the last link in the chain: the deviation observed while the system is running. It does not start the chain.",
+              "c": "Incorrect. A root cause is the fundamental reason for the occurrence of a problem (e.g. a situation that leads to an error) and sits before the error. The link between an error and a failure is the defect.",
+              "d": "Correct. The developer's mistake is the error, the wrong condition left in the code is the defect, and the wrong amount produced on execution is the failure."
             }
           }
         }
@@ -974,7 +974,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "d"
+        "b"
       ],
       "media": null,
       "i18n": {
@@ -983,28 +983,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Koddaki her hata, çalıştırıldığında mutlaka bir arızaya yol açar"
-            },
-            {
-              "id": "b",
-              "text": "Arızaların tek sebebi insan hataları (error) ve hatalardır"
-            },
-            {
-              "id": "c",
               "text": "Kök neden, bir arızanın çalışma sırasında gözlemlenen belirtisidir"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Bazı hatalar çalıştırıldığında her zaman arızaya yol açar, bazıları yalnızca belirli koşullarda yol açar, bazıları ise hiç yol açmaz"
+            },
+            {
+              "id": "c",
+              "text": "Koddaki her hata, çalıştırıldığında mutlaka bir arızaya yol açar"
+            },
+            {
+              "id": "d",
+              "text": "Arızaların tek sebebi insan hataları (error) ve hatalardır"
             }
           ],
           "rationale": {
             "summary": "Müfredat, hata ile arıza arasındaki ilişkinin kesin olmadığını vurgular: bazı hatalar çalıştırıldığında her zaman arızaya neden olur, bazıları yalnızca belirli koşullarda, bazıları ise hiçbir zaman neden olmayabilir.",
             "byOption": {
-              "a": "Yanlış. Bu, hata ile arızayı bire bir eşitleyen yaygın kavram yanılgısıdır. Doğruysa hiç arızaya yol açmayan hata diye bir şey olmazdı.",
-              "b": "Yanlış. Müfredat, arızaların çevresel koşullardan da kaynaklanabileceğini söyler; örneğin radyasyon veya elektromanyetik alanın donanım yazılımında hataya yol açması.",
-              "c": "Yanlış. Çalışma sırasında gözlemlenen belirti arızanın kendisidir. Kök neden ise bir problemin ortaya çıkmasının temel sebebidir ve kök neden analiziyle belirlenir.",
-              "d": "Doğru. §1.2.3'teki üçlü ayrımın birebir karşılığıdır ve bir hatanın varlığının arıza garantisi olmadığını gösterir."
+              "a": "Yanlış. Çalışma sırasında gözlemlenen belirti arızanın kendisidir. Kök neden ise bir problemin ortaya çıkmasının temel sebebidir ve kök neden analiziyle belirlenir.",
+              "b": "Doğru. §1.2.3'teki üçlü ayrımın birebir karşılığıdır ve bir hatanın varlığının arıza garantisi olmadığını gösterir.",
+              "c": "Yanlış. Bu, hata ile arızayı bire bir eşitleyen yaygın kavram yanılgısıdır. Doğruysa hiç arızaya yol açmayan hata diye bir şey olmazdı.",
+              "d": "Yanlış. Müfredat, arızaların çevresel koşullardan da kaynaklanabileceğini söyler; örneğin radyasyon veya elektromanyetik alanın donanım yazılımında hataya yol açması."
             }
           },
           "hints": [
@@ -1016,28 +1016,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Every defect in code inevitably results in a failure when executed"
-            },
-            {
-              "id": "b",
-              "text": "Errors and defects are the only causes of failures"
-            },
-            {
-              "id": "c",
               "text": "A root cause is the symptom of a failure observed during operation"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Some defects always result in a failure when executed, some only in specific circumstances, and some never do"
+            },
+            {
+              "id": "c",
+              "text": "Every defect in code inevitably results in a failure when executed"
+            },
+            {
+              "id": "d",
+              "text": "Errors and defects are the only causes of failures"
             }
           ],
           "rationale": {
             "summary": "The syllabus stresses that the link between a defect and a failure is not deterministic: some defects will always result in a failure if executed, others only in specific circumstances, and some may never result in a failure.",
             "byOption": {
-              "a": "Incorrect. This is the common misconception that equates defects with failures one-to-one. If it were true, defects that never cause a failure could not exist.",
-              "b": "Incorrect. The syllabus states that failures can also be caused by environmental conditions, such as radiation or electromagnetic fields causing defects in firmware.",
-              "c": "Incorrect. The symptom observed during operation is the failure itself. A root cause is the fundamental reason for the occurrence of a problem, identified through root cause analysis.",
-              "d": "Correct. This restates the three-way distinction in §1.2.3 and shows that the presence of a defect is no guarantee of a failure."
+              "a": "Incorrect. The symptom observed during operation is the failure itself. A root cause is the fundamental reason for the occurrence of a problem, identified through root cause analysis.",
+              "b": "Correct. This restates the three-way distinction in §1.2.3 and shows that the presence of a defect is no guarantee of a failure.",
+              "c": "Incorrect. This is the common misconception that equates defects with failures one-to-one. If it were true, defects that never cause a failure could not exist.",
+              "d": "Incorrect. The syllabus states that failures can also be caused by environmental conditions, such as radiation or electromagnetic fields causing defects in firmware."
             }
           },
           "hints": [
@@ -1186,7 +1186,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "c"
+        "b"
       ],
       "media": null,
       "i18n": {
@@ -1195,28 +1195,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Erken test, zaman ve para tasarrufu sağlar"
-            },
-            {
-              "id": "b",
               "text": "Yeni hata bulamıyoruz başarılı bir yazılım elde ettik yanılgısı"
             },
             {
-              "id": "c",
+              "id": "b",
               "text": "Hatalar yazılımın belli alanlarında yoğunlaşır"
             },
             {
-              "id": "d",
+              "id": "c",
               "text": "Yazılımı %100 test etmek imkansızdır"
+            },
+            {
+              "id": "d",
+              "text": "Erken test, zaman ve para tasarrufu sağlar"
             }
           ],
           "rationale": {
             "summary": "Bulunan hataların büyük çoğunluğunun çok az sayıda bileşende toplanması, Pareto prensibinin bir göstergesi olan dördüncü test prensibidir. Gözlemlenen hata kümeleri risk bazlı test için önemli bir girdidir.",
             "byOption": {
-              "a": "Yanlış. Bu prensip, hataların sürecin erken aşamalarında giderilmesinin kalite maliyetini azalttığını söyler. Senaryodaki karar testin ne zaman yapılacağıyla değil, nereye yoğunlaşacağıyla ilgilidir.",
-              "b": "Yanlış. Bu prensip, tüm gereksinimler test edilip tüm hatalar giderilse bile yazılımın kullanıcı ihtiyaçlarını karşılamayabileceğini söyler. Senaryoda bir sağlama eksikliği değil, bir yoğunlaşma gözlemi vardır.",
-              "c": "Doğru. Senaryoda gözlemlenen tam olarak budur: hataların az sayıda bileşende toplanması ve bu gözlemin test eforunun yönlendirilmesinde kullanılması.",
-              "d": "Yanlış. Bu prensip, çok basit yazılımlar dışında her unsuru test etmenin imkansız olduğunu söyler ve genel olarak odaklanma ihtiyacını gerekçelendirir; ancak eforun neden tam olarak ödeme modülüne kaydırıldığını açıklamaz."
+              "a": "Yanlış. Bu prensip, tüm gereksinimler test edilip tüm hatalar giderilse bile yazılımın kullanıcı ihtiyaçlarını karşılamayabileceğini söyler. Senaryoda bir sağlama eksikliği değil, bir yoğunlaşma gözlemi vardır.",
+              "b": "Doğru. Senaryoda gözlemlenen tam olarak budur: hataların az sayıda bileşende toplanması ve bu gözlemin test eforunun yönlendirilmesinde kullanılması.",
+              "c": "Yanlış. Bu prensip, çok basit yazılımlar dışında her unsuru test etmenin imkansız olduğunu söyler ve genel olarak odaklanma ihtiyacını gerekçelendirir; ancak eforun neden tam olarak ödeme modülüne kaydırıldığını açıklamaz.",
+              "d": "Yanlış. Bu prensip, hataların sürecin erken aşamalarında giderilmesinin kalite maliyetini azalttığını söyler. Senaryodaki karar testin ne zaman yapılacağıyla değil, nereye yoğunlaşacağıyla ilgilidir."
             }
           }
         },
@@ -1225,28 +1225,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Early testing saves time and money"
-            },
-            {
-              "id": "b",
               "text": "Absence-of-defects fallacy"
             },
             {
-              "id": "c",
+              "id": "b",
               "text": "Defects cluster together"
             },
             {
-              "id": "d",
+              "id": "c",
               "text": "Exhaustive testing is impossible"
+            },
+            {
+              "id": "d",
+              "text": "Early testing saves time and money"
             }
           ],
           "rationale": {
             "summary": "A small number of components containing most of the defects discovered is the fourth testing principle, an illustration of the Pareto principle. Observed defect clusters are an important input for risk-based testing.",
             "byOption": {
-              "a": "Incorrect. This principle states that removing defects early reduces the cost of quality. The decision in the scenario is about where to focus testing, not when to start it.",
-              "b": "Incorrect. This principle states that even testing all specified requirements and fixing all defects found may still produce a system that does not meet users' needs. The scenario shows a clustering observation, not a shortfall in validation.",
-              "c": "Correct. This is exactly what the scenario observes: defects concentrated in a few components, and that observation used to direct test effort.",
-              "d": "Incorrect. This principle states that testing everything is not feasible except in trivial cases and justifies focusing effort in general; it does not explain why the effort moved to the payment module specifically."
+              "a": "Incorrect. This principle states that even testing all specified requirements and fixing all defects found may still produce a system that does not meet users' needs. The scenario shows a clustering observation, not a shortfall in validation.",
+              "b": "Correct. This is exactly what the scenario observes: defects concentrated in a few components, and that observation used to direct test effort.",
+              "c": "Incorrect. This principle states that testing everything is not feasible except in trivial cases and justifies focusing effort in general; it does not explain why the effort moved to the payment module specifically.",
+              "d": "Incorrect. This principle states that removing defects early reduces the cost of quality. The decision in the scenario is about where to focus testing, not when to start it."
             }
           }
         }
@@ -1281,7 +1281,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "a"
+        "b"
       ],
       "media": null,
       "i18n": {
@@ -1290,28 +1290,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Yeni hata bulamıyoruz başarılı bir yazılım elde ettik yanılgısı; doğrulamanın yanında sağlama da yapılmalıdır"
+              "text": "Hatalar yazılımın belli alanlarında yoğunlaşır; risk bazlı test uygulanmalıdır"
             },
             {
               "id": "b",
-              "text": "Testin amacı hataların olduğunu göstermektir; daha fazla test senaryosu yazılmalıdır"
+              "text": "Yeni hata bulamıyoruz başarılı bir yazılım elde ettik yanılgısı; doğrulamanın yanında sağlama da yapılmalıdır"
             },
             {
               "id": "c",
-              "text": "Antibiyotik direnci; mevcut testler ve test verisi değiştirilmelidir"
+              "text": "Testin amacı hataların olduğunu göstermektir; daha fazla test senaryosu yazılmalıdır"
             },
             {
               "id": "d",
-              "text": "Hatalar yazılımın belli alanlarında yoğunlaşır; risk bazlı test uygulanmalıdır"
+              "text": "Antibiyotik direnci; mevcut testler ve test verisi değiştirilmelidir"
             }
           ],
           "rationale": {
             "summary": "Yedinci prensip, doğrulamanın tek başına sistemin başarısını garanti edeceğini beklemenin bir yanılgı olduğunu söyler. Çözüm, doğrulamanın yanı sıra sağlama da yapmak, yani sistemin kullanıcı ve paydaş ihtiyaçlarını karşılayıp karşılamadığını kontrol etmektir.",
             "byOption": {
-              "a": "Doğru. Senaryoda gereksinimler karşılanmış (doğrulama başarılı) ama kullanıcı ihtiyaçları karşılanmamıştır (sağlama eksiktir); prensip ve çözüm tam olarak budur.",
-              "b": "Yanlış. Bu prensip, testin hataların mevcut olduğunu gösterebileceğini ama hiç hata kalmadığını ispatlayamayacağını söyler. Senaryodaki sorun bulunmayan hatalar değil, karşılanmayan ihtiyaçlardır; test senaryosu sayısını artırmak bunu çözmez.",
-              "c": "Yanlış. Bu prensip, aynı testlerin tekrarlandıkça yeni hataları bulmada etkisizleşmesiyle ilgilidir. Senaryoda testlerin yıpranmasından değil, hiç yapılmayan bir sağlamadan söz ediliyor.",
-              "d": "Yanlış. Bu prensip, hataların az sayıda bileşende toplandığını ve bunun risk bazlı test için girdi olduğunu söyler. Senaryoda hataların nerede olduğu değil, doğru ürünün yapılıp yapılmadığı sorunu vardır."
+              "a": "Yanlış. Bu prensip, hataların az sayıda bileşende toplandığını ve bunun risk bazlı test için girdi olduğunu söyler. Senaryoda hataların nerede olduğu değil, doğru ürünün yapılıp yapılmadığı sorunu vardır.",
+              "b": "Doğru. Senaryoda gereksinimler karşılanmış (doğrulama başarılı) ama kullanıcı ihtiyaçları karşılanmamıştır (sağlama eksiktir); prensip ve çözüm tam olarak budur.",
+              "c": "Yanlış. Bu prensip, testin hataların mevcut olduğunu gösterebileceğini ama hiç hata kalmadığını ispatlayamayacağını söyler. Senaryodaki sorun bulunmayan hatalar değil, karşılanmayan ihtiyaçlardır; test senaryosu sayısını artırmak bunu çözmez.",
+              "d": "Yanlış. Bu prensip, aynı testlerin tekrarlandıkça yeni hataları bulmada etkisizleşmesiyle ilgilidir. Senaryoda testlerin yıpranmasından değil, hiç yapılmayan bir sağlamadan söz ediliyor."
             }
           },
           "hints": [
@@ -1323,28 +1323,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Absence-of-defects fallacy; validation should be carried out in addition to verification"
+              "text": "Defects cluster together; risk-based testing should be applied"
             },
             {
               "id": "b",
-              "text": "Testing shows the presence of defects; more test cases should be written"
+              "text": "Absence-of-defects fallacy; validation should be carried out in addition to verification"
             },
             {
               "id": "c",
-              "text": "Tests wear out; existing tests and test data should be modified"
+              "text": "Testing shows the presence of defects; more test cases should be written"
             },
             {
               "id": "d",
-              "text": "Defects cluster together; risk-based testing should be applied"
+              "text": "Tests wear out; existing tests and test data should be modified"
             }
           ],
           "rationale": {
             "summary": "The seventh principle states that it is a fallacy to expect software verification alone to ensure the success of a system. The remedy is to carry out validation as well as verification, i.e. to check whether the system meets users' and stakeholders' needs.",
             "byOption": {
-              "a": "Correct. In the scenario the requirements were met (verification succeeded) but users' needs were not (validation is missing); this is exactly the principle and its remedy.",
-              "b": "Incorrect. This principle states that testing can show defects are present but cannot prove none remain. The problem here is unmet needs, not undiscovered defects, and adding test cases would not address it.",
-              "c": "Incorrect. This principle concerns the same tests becoming less effective at finding new defects when repeated. Nothing in the scenario points to worn-out tests; validation was simply never done.",
-              "d": "Incorrect. This principle states that defects concentrate in a few components and that this is an input for risk-based testing. The scenario's problem is not where the defects are but whether the right product was built."
+              "a": "Incorrect. This principle states that defects concentrate in a few components and that this is an input for risk-based testing. The scenario's problem is not where the defects are but whether the right product was built.",
+              "b": "Correct. In the scenario the requirements were met (verification succeeded) but users' needs were not (validation is missing); this is exactly the principle and its remedy.",
+              "c": "Incorrect. This principle states that testing can show defects are present but cannot prove none remain. The problem here is unmet needs, not undiscovered defects, and adding test cases would not address it.",
+              "d": "Incorrect. This principle concerns the same tests becoming less effective at finding new defects when repeated. Nothing in the scenario points to worn-out tests; validation was simply never done."
             }
           },
           "hints": [
@@ -1381,7 +1381,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "d"
+        "b"
       ],
       "media": null,
       "i18n": {
@@ -1390,28 +1390,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Erken yapılan testler, yazılımda hiç hata kalmadığını ispatlayabilir"
-            },
-            {
-              "id": "b",
-              "text": "Erken yapılan testler, test senaryolarının zamanla etkisizleşmesini önler"
-            },
-            {
-              "id": "c",
               "text": "Erken yapılan testler, yazılımdaki her unsurun test edilmesini mümkün kılar"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Erken giderilen hatalar (defect), türetilen iş ürünlerinde yeni hatalara yol açmaz ve kalite maliyetini düşürür"
+            },
+            {
+              "id": "c",
+              "text": "Erken yapılan testler, yazılımda hiç hata kalmadığını ispatlayabilir"
+            },
+            {
+              "id": "d",
+              "text": "Erken yapılan testler, test senaryolarının zamanla etkisizleşmesini önler"
             }
           ],
           "rationale": {
             "summary": "Müfredat, erken giderilen hataların türetilen iş ürünlerinde sonradan hata ortaya çıkmasına yol açmayacağını ve yaşam döngüsünün ilerleyen aşamalarında daha az arıza (failure) oluşacağı için kalite maliyetinin azalacağını belirtir. Bu yüzden hem statik hem dinamik test mümkün olduğunca erken başlatılmalıdır.",
             "byOption": {
-              "a": "Yanlış. Bu, birinci prensibin çarpıtılmış hâlidir; test hataların varlığını gösterebilir, yokluğunu ispatlayamaz. Testin erken yapılması bu sınırı değiştirmez.",
-              "b": "Yanlış. Testlerin tekrarlandıkça etkisizleşmesi antibiyotik direnci prensibinin konusudur ve çözümü testleri ve test verisini değiştirmektir, erken başlamak değil.",
-              "c": "Yanlış. Her unsurun test edilmesi, yazılımı %100 test etmenin imkansız olduğunu söyleyen ikinci prensibe aykırıdır. Erken başlamak testi tüketici hâle getirmez.",
-              "d": "Doğru. Gerekçe, hataların yayılmasının erkenden kesilmesi ve bunun kalite maliyetini düşürmesidir."
+              "a": "Yanlış. Her unsurun test edilmesi, yazılımı %100 test etmenin imkansız olduğunu söyleyen ikinci prensibe aykırıdır. Erken başlamak testi tüketici hâle getirmez.",
+              "b": "Doğru. Gerekçe, hataların yayılmasının erkenden kesilmesi ve bunun kalite maliyetini düşürmesidir.",
+              "c": "Yanlış. Bu, birinci prensibin çarpıtılmış hâlidir; test hataların varlığını gösterebilir, yokluğunu ispatlayamaz. Testin erken yapılması bu sınırı değiştirmez.",
+              "d": "Yanlış. Testlerin tekrarlandıkça etkisizleşmesi antibiyotik direnci prensibinin konusudur ve çözümü testleri ve test verisini değiştirmektir, erken başlamak değil."
             }
           }
         },
@@ -1420,28 +1420,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Testing performed early can prove that no defects remain in the software"
-            },
-            {
-              "id": "b",
-              "text": "Testing performed early prevents test cases from becoming ineffective over time"
-            },
-            {
-              "id": "c",
               "text": "Testing performed early makes it possible to test everything in the software"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Defects removed early do not cause subsequent defects in derived work products, which reduces the cost of quality"
+            },
+            {
+              "id": "c",
+              "text": "Testing performed early can prove that no defects remain in the software"
+            },
+            {
+              "id": "d",
+              "text": "Testing performed early prevents test cases from becoming ineffective over time"
             }
           ],
           "rationale": {
             "summary": "The syllabus states that defects removed early will not cause subsequent defects in derived work products, and that the cost of quality is reduced because fewer failures occur later in the SDLC. This is why both static and dynamic testing should start as early as possible.",
             "byOption": {
-              "a": "Incorrect. This is a distortion of the first principle; testing can show the presence of defects but not their absence. Testing earlier does not change that limit.",
-              "b": "Incorrect. Tests becoming ineffective through repetition is the subject of the 'tests wear out' principle, and its remedy is modifying tests and test data, not starting earlier.",
-              "c": "Incorrect. Testing everything contradicts the second principle, that exhaustive testing is impossible. Starting earlier does not make testing exhaustive.",
-              "d": "Correct. The justification is that early removal cuts off the propagation of defects, which lowers the cost of quality."
+              "a": "Incorrect. Testing everything contradicts the second principle, that exhaustive testing is impossible. Starting earlier does not make testing exhaustive.",
+              "b": "Correct. The justification is that early removal cuts off the propagation of defects, which lowers the cost of quality.",
+              "c": "Incorrect. This is a distortion of the first principle; testing can show the presence of defects but not their absence. Testing earlier does not change that limit.",
+              "d": "Incorrect. Tests becoming ineffective through repetition is the subject of the 'tests wear out' principle, and its remedy is modifying tests and test data, not starting earlier."
             }
           }
         }
@@ -1570,7 +1570,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "c"
+        "d"
       ],
       "media": null,
       "i18n": {
@@ -1579,28 +1579,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Test uyarlama"
+              "text": "Test kontrolü"
             },
             {
               "id": "b",
-              "text": "Test koşumu"
+              "text": "Test uyarlama"
             },
             {
               "id": "c",
-              "text": "Test tamamlama"
+              "text": "Test koşumu"
             },
             {
               "id": "d",
-              "text": "Test kontrolü"
+              "text": "Test tamamlama"
             }
           ],
           "rationale": {
             "summary": "Test tamamlama genellikle proje kilometre taşlarında gerçekleşir: çözülmemiş hatalar için değişiklik talepleri veya ürün iş listesi öğeleri oluşturulur, faydalı test çalışma ürünleri arşivlenir veya devredilir, test ortamı kararlaştırılan duruma getirilerek kapatılır ve test tamamlama raporu hazırlanır.",
             "byOption": {
-              "a": "Yanlış. Test uyarlama, koşum için gereken test çalışma ürünlerini oluşturur ve test ortamını kurup kurulumunun doğruluğunu doğrular. Senaryodaki ortam kapatma bunun tam tersi yöndedir.",
-              "b": "Yanlış. Test koşumu, testleri çizelgeye göre çalıştırır, gerçek sonuçları beklenenlerle karşılaştırır, sonuçları kaydeder ve anomalileri analiz eder. Arşivleme ve kapatma buraya girmez.",
-              "c": "Doğru. Sayılan üç görev de §1.4.1'de test tamamlama aktivitesinin görevleri arasında yer alır.",
-              "d": "Yanlış. Test kontrolü, test hedeflerine ulaşmak için gereken aksiyonları almaktır ve test süreci devam ederken uygulanır; sürecin kapatılmasıyla ilgili değildir."
+              "a": "Yanlış. Test kontrolü, test hedeflerine ulaşmak için gereken aksiyonları almaktır ve test süreci devam ederken uygulanır; sürecin kapatılmasıyla ilgili değildir.",
+              "b": "Yanlış. Test uyarlama, koşum için gereken test çalışma ürünlerini oluşturur ve test ortamını kurup kurulumunun doğruluğunu doğrular. Senaryodaki ortam kapatma bunun tam tersi yöndedir.",
+              "c": "Yanlış. Test koşumu, testleri çizelgeye göre çalıştırır, gerçek sonuçları beklenenlerle karşılaştırır, sonuçları kaydeder ve anomalileri analiz eder. Arşivleme ve kapatma buraya girmez.",
+              "d": "Doğru. Sayılan üç görev de §1.4.1'de test tamamlama aktivitesinin görevleri arasında yer alır."
             }
           }
         },
@@ -1609,28 +1609,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Test implementation"
+              "text": "Test control"
             },
             {
               "id": "b",
-              "text": "Test execution"
+              "text": "Test implementation"
             },
             {
               "id": "c",
-              "text": "Test completion"
+              "text": "Test execution"
             },
             {
               "id": "d",
-              "text": "Test control"
+              "text": "Test completion"
             }
           ],
           "rationale": {
             "summary": "Test completion usually occurs at project milestones: change requests or product backlog items are created for unresolved defects, useful testware is archived or handed over, the test environment is shut down to an agreed state, and a test completion report is produced.",
             "byOption": {
-              "a": "Incorrect. Test implementation creates the testware needed for execution and builds the test environment, verifying it is set up correctly. Shutting the environment down is the opposite end of the process.",
-              "b": "Incorrect. Test execution runs the tests according to the schedule, compares actual with expected results, logs results and analyzes anomalies. Archiving and shutdown are not part of it.",
-              "c": "Correct. All three tasks listed appear among the test completion tasks in §1.4.1.",
-              "d": "Incorrect. Test control is taking the actions necessary to meet the test objectives while the test process is running; it is not about closing the process down."
+              "a": "Incorrect. Test control is taking the actions necessary to meet the test objectives while the test process is running; it is not about closing the process down.",
+              "b": "Incorrect. Test implementation creates the testware needed for execution and builds the test environment, verifying it is set up correctly. Shutting the environment down is the opposite end of the process.",
+              "c": "Incorrect. Test execution runs the tests according to the schedule, compares actual with expected results, logs results and analyzes anomalies. Archiving and shutdown are not part of it.",
+              "d": "Correct. All three tasks listed appear among the test completion tasks in §1.4.1."
             }
           }
         }
@@ -1869,7 +1869,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "d"
+        "b"
       ],
       "media": null,
       "i18n": {
@@ -1878,28 +1878,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Test senaryolarının gereksinimleri karşılayıp karşılamadığını"
-            },
-            {
-              "id": "b",
-              "text": "Test süreci için hangi giriş ve çıkış kriterlerinin tanımlanacağını"
-            },
-            {
-              "id": "c",
               "text": "Test ortamının doğru kurulup kurulmadığını"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Test nesnesindeki kalan risk seviyesini"
+            },
+            {
+              "id": "c",
+              "text": "Test senaryolarının gereksinimleri karşılayıp karşılamadığını"
+            },
+            {
+              "id": "d",
+              "text": "Test süreci için hangi giriş ve çıkış kriterlerinin tanımlanacağını"
             }
           ],
           "rationale": {
             "summary": "Müfredat iki izlenebilirlik örneği verir: test senaryolarının gereksinimlere izlenebilirliği gereksinimlerin kapsandığını doğrular, test sonuçlarının risklere izlenebilirliği ise test nesnesindeki kalan risk seviyesini değerlendirmede kullanılır.",
             "byOption": {
-              "a": "Yanlış. Bu, müfredattaki diğer izlenebilirlik örneğidir ve test senaryoları ile gereksinimler arasında kurulur, test sonuçları ile riskler arasında değil.",
-              "b": "Yanlış. Giriş ve çıkış kriterleri test planlama sırasında tanımlanır ve test planlama iş ürünleri arasında yer alır; izlenebilirliğin bir çıktısı değildir.",
-              "c": "Yanlış. Test ortamının kurulumunun doğruluğu test uyarlama aktivitesinde doğrulanır. İzlenebilirlik, test esası unsurları ile test çalışma ürünleri, sonuçlar ve hatalar arasındaki bağı kurar.",
-              "d": "Doğru. Sonuçların risklere bağlanması, hangi risklerin test edilip karşılandığını ve hangilerinin açık kaldığını gösterir; bu da kalan risk seviyesidir."
+              "a": "Yanlış. Test ortamının kurulumunun doğruluğu test uyarlama aktivitesinde doğrulanır. İzlenebilirlik, test esası unsurları ile test çalışma ürünleri, sonuçlar ve hatalar arasındaki bağı kurar.",
+              "b": "Doğru. Sonuçların risklere bağlanması, hangi risklerin test edilip karşılandığını ve hangilerinin açık kaldığını gösterir; bu da kalan risk seviyesidir.",
+              "c": "Yanlış. Bu, müfredattaki diğer izlenebilirlik örneğidir ve test senaryoları ile gereksinimler arasında kurulur, test sonuçları ile riskler arasında değil.",
+              "d": "Yanlış. Giriş ve çıkış kriterleri test planlama sırasında tanımlanır ve test planlama iş ürünleri arasında yer alır; izlenebilirliğin bir çıktısı değildir."
             }
           }
         },
@@ -1908,28 +1908,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Whether the test cases cover the requirements"
-            },
-            {
-              "id": "b",
-              "text": "Which entry and exit criteria should be defined for the test process"
-            },
-            {
-              "id": "c",
               "text": "Whether the test environment has been set up correctly"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "The level of residual risk in the test object"
+            },
+            {
+              "id": "c",
+              "text": "Whether the test cases cover the requirements"
+            },
+            {
+              "id": "d",
+              "text": "Which entry and exit criteria should be defined for the test process"
             }
           ],
           "rationale": {
             "summary": "The syllabus gives two traceability examples: traceability of test cases to requirements verifies that the requirements are covered, while traceability of test results to risks is used to evaluate the level of residual risk in a test object.",
             "byOption": {
-              "a": "Incorrect. This is the syllabus's other traceability example, established between test cases and requirements, not between test results and risks.",
-              "b": "Incorrect. Entry and exit criteria are defined during test planning and are test planning work products; they are not an output of traceability.",
-              "c": "Incorrect. Correct setup of the test environment is verified during test implementation. Traceability links test basis elements with testware, test results and defects.",
-              "d": "Correct. Linking results to risks shows which risks have been tested and addressed and which remain open, which is the residual risk level."
+              "a": "Incorrect. Correct setup of the test environment is verified during test implementation. Traceability links test basis elements with testware, test results and defects.",
+              "b": "Correct. Linking results to risks shows which risks have been tested and addressed and which remain open, which is the residual risk level.",
+              "c": "Incorrect. This is the syllabus's other traceability example, established between test cases and requirements, not between test results and risks.",
+              "d": "Incorrect. Entry and exit criteria are defined during test planning and are test planning work products; they are not an output of traceability."
             }
           }
         }
@@ -1963,7 +1963,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "b"
+        "c"
       ],
       "media": null,
       "i18n": {
@@ -1972,28 +1972,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Test koşumu"
+              "text": "Test uyarlama"
             },
             {
               "id": "b",
-              "text": "Test tamamlama"
+              "text": "Test koşumu"
             },
             {
               "id": "c",
-              "text": "Test tasarımı"
+              "text": "Test tamamlama"
             },
             {
               "id": "d",
-              "text": "Test uyarlama"
+              "text": "Test tasarımı"
             }
           ],
           "rationale": {
             "summary": "Müfredat test yönetimi rolünü test planlama, test gözetimi, test kontrolü ve test tamamlama aktivitelerine; test etme rolünü ise test analizi, test tasarımı, test uyarlama ve test koşumuna odaklı olarak tanımlar.",
             "byOption": {
-              "a": "Yanlış. Test koşumu, testlerin çizelgeye göre çalıştırılması ve sonuçların karşılaştırılmasıdır; teknik bir aktivite olarak test etme rolüne aittir.",
-              "b": "Doğru. Test tamamlama, test yönetimi rolünün odaklandığı dört aktiviteden biridir; sürecin kapatılması ve raporlanması bu rolün sorumluluğundadır.",
-              "c": "Yanlış. Test tasarımı, test koşullarının test senaryolarına dönüştürülmesidir ve testin mühendislik yönünü üstlenen test etme rolüne aittir.",
-              "d": "Yanlış. Test uyarlama, koşum için gereken test çalışma ürünlerinin oluşturulması ve test ortamının kurulmasıdır; bu da test etme rolünün odağındadır."
+              "a": "Yanlış. Test uyarlama, koşum için gereken test çalışma ürünlerinin oluşturulması ve test ortamının kurulmasıdır; bu da test etme rolünün odağındadır.",
+              "b": "Yanlış. Test koşumu, testlerin çizelgeye göre çalıştırılması ve sonuçların karşılaştırılmasıdır; teknik bir aktivite olarak test etme rolüne aittir.",
+              "c": "Doğru. Test tamamlama, test yönetimi rolünün odaklandığı dört aktiviteden biridir; sürecin kapatılması ve raporlanması bu rolün sorumluluğundadır.",
+              "d": "Yanlış. Test tasarımı, test koşullarının test senaryolarına dönüştürülmesidir ve testin mühendislik yönünü üstlenen test etme rolüne aittir."
             }
           }
         },
@@ -2002,28 +2002,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Test execution"
+              "text": "Test implementation"
             },
             {
               "id": "b",
-              "text": "Test completion"
+              "text": "Test execution"
             },
             {
               "id": "c",
-              "text": "Test design"
+              "text": "Test completion"
             },
             {
               "id": "d",
-              "text": "Test implementation"
+              "text": "Test design"
             }
           ],
           "rationale": {
             "summary": "The syllabus describes the test management role as mainly focused on test planning, test monitoring, test control and test completion, and the testing role as mainly focused on test analysis, test design, test implementation and test execution.",
             "byOption": {
-              "a": "Incorrect. Test execution runs the tests according to the schedule and compares results; as a technical activity it belongs to the testing role.",
-              "b": "Correct. Test completion is one of the four activities the test management role focuses on; closing down and reporting on the process is that role's responsibility.",
-              "c": "Incorrect. Test design elaborates test conditions into test cases and belongs to the testing role, which takes responsibility for the engineering aspect of testing.",
-              "d": "Incorrect. Test implementation creates the testware needed for execution and builds the test environment; this too is a focus of the testing role."
+              "a": "Incorrect. Test implementation creates the testware needed for execution and builds the test environment; this too is a focus of the testing role.",
+              "b": "Incorrect. Test execution runs the tests according to the schedule and compares results; as a technical activity it belongs to the testing role.",
+              "c": "Correct. Test completion is one of the four activities the test management role focuses on; closing down and reporting on the process is that role's responsibility.",
+              "d": "Incorrect. Test design elaborates test conditions into test cases and belongs to the testing role, which takes responsibility for the engineering aspect of testing."
             }
           }
         }
@@ -2057,7 +2057,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "c"
+        "a"
       ],
       "media": null,
       "i18n": {
@@ -2066,28 +2066,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Alan bilgisi"
-            },
-            {
-              "id": "b",
-              "text": "Titizlik, dikkat ve detaycı olmak"
-            },
-            {
-              "id": "c",
               "text": "İyi iletişim becerileri, aktif dinleme ve ekip oyuncusu olmak"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Teknik bilgi"
+            },
+            {
+              "id": "c",
+              "text": "Alan bilgisi"
+            },
+            {
+              "id": "d",
+              "text": "Titizlik, dikkat ve detaycı olmak"
             }
           ],
           "rationale": {
             "summary": "Müfredat, test uzmanlarının genellikle kötü haberi veren taraf olduğunu ve kötü haber vereni suçlamanın tipik bir insan davranışı olduğunu belirtir; bu nedenle iletişim becerileri kritik önemdedir ve hatalar ile arızalar hakkındaki bilgi yapıcı bir şekilde iletilmelidir.",
             "byOption": {
-              "a": "Yanlış. Alan bilgisi, son kullanıcıları ve iş temsilcilerini anlayabilmek ve onlarla iletişim kurabilmek içindir. Senaryodaki gerilim iş tarafıyla değil, yazılımcılarla yaşanmaktadır.",
-              "b": "Yanlış. Titizlik ve detaycılık, özellikle bulunması zor hataları tespit etmek için gereken becerilerdir; bulguları bulmayı kolaylaştırır, iletmeyi değil.",
-              "c": "Doğru. Bu beceri, tüm paydaşlarla etkin iletişim kurmak, anlaşılmak ve hataları raporlayıp görüşmek içindir; senaryodaki algı sorunu tam olarak bu alana girer.",
-              "d": "Yanlış. Teknik bilgi, uygun test araçlarının kullanılması gibi yollarla testin verimliliğini artırır. Bulguların nasıl karşılandığını değiştirmez."
+              "a": "Doğru. Bu beceri, tüm paydaşlarla etkin iletişim kurmak, anlaşılmak ve hataları raporlayıp görüşmek içindir; senaryodaki algı sorunu tam olarak bu alana girer.",
+              "b": "Yanlış. Teknik bilgi, uygun test araçlarının kullanılması gibi yollarla testin verimliliğini artırır. Bulguların nasıl karşılandığını değiştirmez.",
+              "c": "Yanlış. Alan bilgisi, son kullanıcıları ve iş temsilcilerini anlayabilmek ve onlarla iletişim kurabilmek içindir. Senaryodaki gerilim iş tarafıyla değil, yazılımcılarla yaşanmaktadır.",
+              "d": "Yanlış. Titizlik ve detaycılık, özellikle bulunması zor hataları tespit etmek için gereken becerilerdir; bulguları bulmayı kolaylaştırır, iletmeyi değil."
             }
           }
         },
@@ -2096,28 +2096,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Domain knowledge"
-            },
-            {
-              "id": "b",
-              "text": "Thoroughness, carefulness and attention to detail"
-            },
-            {
-              "id": "c",
               "text": "Good communication skills, active listening and being a team player"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Technical knowledge"
+            },
+            {
+              "id": "c",
+              "text": "Domain knowledge"
+            },
+            {
+              "id": "d",
+              "text": "Thoroughness, carefulness and attention to detail"
             }
           ],
           "rationale": {
             "summary": "The syllabus notes that testers are often the bearers of bad news and that blaming the bearer of bad news is a common human trait, which makes communication skills crucial; information about defects and failures should be communicated constructively.",
             "byOption": {
-              "a": "Incorrect. Domain knowledge is for understanding and communicating with end users and business representatives. The friction in the scenario is with developers, not the business side.",
-              "b": "Incorrect. Thoroughness and attention to detail are the skills for identifying defects, especially those that are difficult to find; they help find findings, not convey them.",
-              "c": "Correct. This skill exists to interact effectively with all stakeholders, to be understood, and to report and discuss defects — exactly the problem in the scenario.",
-              "d": "Incorrect. Technical knowledge increases the efficiency of testing, for example by using appropriate test tools. It does not change how findings are received."
+              "a": "Correct. This skill exists to interact effectively with all stakeholders, to be understood, and to report and discuss defects — exactly the problem in the scenario.",
+              "b": "Incorrect. Technical knowledge increases the efficiency of testing, for example by using appropriate test tools. It does not change how findings are received.",
+              "c": "Incorrect. Domain knowledge is for understanding and communicating with end users and business representatives. The friction in the scenario is with developers, not the business side.",
+              "d": "Incorrect. Thoroughness and attention to detail are the skills for identifying defects, especially those that are difficult to find; they help find findings, not convey them."
             }
           }
         }
@@ -2150,7 +2150,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "a"
+        "c"
       ],
       "media": null,
       "i18n": {
@@ -2159,28 +2159,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Gerekli bilgi ve beceriye sahip tüm ekip üyeleri her türlü görevi yapabilir ve kaliteden herkes sorumludur"
-            },
-            {
-              "id": "b",
-              "text": "Test sorumluluğu yalnızca test uzmanlarına aittir; diğer üyeler kaliteden sorumlu değildir"
-            },
-            {
-              "id": "c",
               "text": "Ekip üyelerinin ayrı çalışma alanlarında bulunması iletişimi güçlendirdiği için tercih edilir"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "Tüm ekip yaklaşımı her bağlamda uygundur ve yüksek test bağımsızlığının yerini alır"
+            },
+            {
+              "id": "c",
+              "text": "Gerekli bilgi ve beceriye sahip tüm ekip üyeleri her türlü görevi yapabilir ve kaliteden herkes sorumludur"
+            },
+            {
+              "id": "d",
+              "text": "Test sorumluluğu yalnızca test uzmanlarına aittir; diğer üyeler kaliteden sorumlu değildir"
             }
           ],
           "rationale": {
             "summary": "Ekstrem Programlama'dan gelen tüm ekip yaklaşımında, gerekli bilgi ve beceriye sahip her ekip üyesi her türlü görevi yapabilir ve kaliteden herkes sorumludur. Yaklaşım ekip ilişkilerini geliştirir, iletişimi ve iş birliğini artırır ve sinerji yaratır.",
             "byOption": {
-              "a": "Doğru. §1.5.2'nin tanımıdır ve yaklaşımın temel ilkesini oluşturur.",
-              "b": "Yanlış. Bu, tüm ekip yaklaşımının tam karşıtıdır; müfredat kaliteden herkesin sorumlu olduğunu açıkça söyler.",
-              "c": "Yanlış. Müfredat, ekip üyelerinin aynı çalışma alanını (fiziksel veya sanal) paylaştığını, çünkü ortak çalışma alanının iletişim ve etkileşimi kolaylaştırdığını söyler.",
-              "d": "Yanlış. Müfredat, yaklaşımın her zaman uygun olmayabileceğini belirtir; örneğin emniyet hassasiyetli durumlarda yüksek düzeyde test bağımsızlığı gerekebilir."
+              "a": "Yanlış. Müfredat, ekip üyelerinin aynı çalışma alanını (fiziksel veya sanal) paylaştığını, çünkü ortak çalışma alanının iletişim ve etkileşimi kolaylaştırdığını söyler.",
+              "b": "Yanlış. Müfredat, yaklaşımın her zaman uygun olmayabileceğini belirtir; örneğin emniyet hassasiyetli durumlarda yüksek düzeyde test bağımsızlığı gerekebilir.",
+              "c": "Doğru. §1.5.2'nin tanımıdır ve yaklaşımın temel ilkesini oluşturur.",
+              "d": "Yanlış. Bu, tüm ekip yaklaşımının tam karşıtıdır; müfredat kaliteden herkesin sorumlu olduğunu açıkça söyler."
             }
           }
         },
@@ -2189,28 +2189,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Any team member with the necessary knowledge and skills can perform any task, and everyone is responsible for quality"
-            },
-            {
-              "id": "b",
-              "text": "Responsibility for testing belongs to testers alone; other members are not responsible for quality"
-            },
-            {
-              "id": "c",
               "text": "Team members are kept in separate workspaces because this strengthens communication"
             },
             {
-              "id": "d",
+              "id": "b",
               "text": "The whole team approach is appropriate in every context and replaces high test independence"
+            },
+            {
+              "id": "c",
+              "text": "Any team member with the necessary knowledge and skills can perform any task, and everyone is responsible for quality"
+            },
+            {
+              "id": "d",
+              "text": "Responsibility for testing belongs to testers alone; other members are not responsible for quality"
             }
           ],
           "rationale": {
             "summary": "In the whole team approach, which comes from Extreme Programming, any team member with the necessary knowledge and skills can perform any task and everyone is responsible for quality. It improves team dynamics, enhances communication and collaboration, and creates synergy.",
             "byOption": {
-              "a": "Correct. This is the §1.5.2 definition and the core principle of the approach.",
-              "b": "Incorrect. This is the exact opposite of the whole team approach; the syllabus states plainly that everyone is responsible for quality.",
-              "c": "Incorrect. The syllabus states that team members share the same workspace (physical or virtual), because co-location facilitates communication and interaction.",
-              "d": "Incorrect. The syllabus states the approach may not always be appropriate; in safety-critical situations, for instance, a high level of test independence may be needed."
+              "a": "Incorrect. The syllabus states that team members share the same workspace (physical or virtual), because co-location facilitates communication and interaction.",
+              "b": "Incorrect. The syllabus states the approach may not always be appropriate; in safety-critical situations, for instance, a high level of test independence may be needed.",
+              "c": "Correct. This is the §1.5.2 definition and the core principle of the approach.",
+              "d": "Incorrect. This is the exact opposite of the whole team approach; the syllabus states plainly that everyone is responsible for quality."
             }
           }
         }
@@ -2243,7 +2243,7 @@
       "origin": "original",
       "status": "review",
       "correct": [
-        "d"
+        "a"
       ],
       "media": null,
       "i18n": {
@@ -2252,28 +2252,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Bağımsız test uzmanları, yazılımcılarla aynı bilişsel önyargıları paylaşır"
+              "text": "Yazılımcılar kalite konusunda sorumluluk bilincini kaybedebilir"
             },
             {
               "id": "b",
-              "text": "Bağımsız test uzmanları paydaşların varsayımlarını sorgulayamaz"
+              "text": "Bağımsız test uzmanları, yazılımcılarla aynı bilişsel önyargıları paylaşır"
             },
             {
               "id": "c",
-              "text": "Bağımsızlık yalnızca kurum dışı test uzmanlarıyla sağlanabilir"
+              "text": "Bağımsız test uzmanları paydaşların varsayımlarını sorgulayamaz"
             },
             {
               "id": "d",
-              "text": "Yazılımcılar kalite konusunda sorumluluk bilincini kaybedebilir"
+              "text": "Bağımsızlık yalnızca kurum dışı test uzmanlarıyla sağlanabilir"
             }
           ],
           "rationale": {
             "summary": "Müfredat bağımsızlığın sakıncalarını sayar: bağımsız test uzmanları geliştirme ekibinden farklı hareket edebilir ve iş birliği eksikliği, iletişim problemleri veya olumsuz ilişkiler doğabilir; yazılımcılar kalite konusunda sorumluluk bilincini kaybedebilir; bağımsız test uzmanları dar boğaz olarak görülebilir veya gecikmelerden sorumlu tutulabilir.",
             "byOption": {
-              "a": "Yanlış. Bu, bağımsızlığın işleyiş mekanizmasının tersidir. Bağımsızlık tam olarak yazarın ve test uzmanının bilişsel önyargılarının farklı olması sayesinde etkilidir.",
-              "b": "Yanlış. Bu bir sakınca değil, müfredatın saydığı bir faydadır: bağımsız bir test uzmanı paydaşların yaptığı varsayımları doğrulayabilir, sorgulayabilir veya çürütebilir.",
-              "c": "Yanlış. Müfredat dört bağımsızlık seviyesi tanımlar: yazarın kendisi (bağımsızlık yok), aynı ekipten arkadaşlar (biraz), ekip dışı kurum içi test uzmanları (yüksek) ve kurum dışı test uzmanları (çok yüksek).",
-              "d": "Doğru. Bu, §1.5.3'te açıkça sayılan sakıncalardan biridir: kalite sorumluluğunun test ekibine devredildiği algısı oluşabilir."
+              "a": "Doğru. Bu, §1.5.3'te açıkça sayılan sakıncalardan biridir: kalite sorumluluğunun test ekibine devredildiği algısı oluşabilir.",
+              "b": "Yanlış. Bu, bağımsızlığın işleyiş mekanizmasının tersidir. Bağımsızlık tam olarak yazarın ve test uzmanının bilişsel önyargılarının farklı olması sayesinde etkilidir.",
+              "c": "Yanlış. Bu bir sakınca değil, müfredatın saydığı bir faydadır: bağımsız bir test uzmanı paydaşların yaptığı varsayımları doğrulayabilir, sorgulayabilir veya çürütebilir.",
+              "d": "Yanlış. Müfredat dört bağımsızlık seviyesi tanımlar: yazarın kendisi (bağımsızlık yok), aynı ekipten arkadaşlar (biraz), ekip dışı kurum içi test uzmanları (yüksek) ve kurum dışı test uzmanları (çok yüksek)."
             }
           }
         },
@@ -2282,28 +2282,28 @@
           "options": [
             {
               "id": "a",
-              "text": "Independent testers share the same cognitive biases as developers"
+              "text": "Developers may lose a sense of responsibility for quality"
             },
             {
               "id": "b",
-              "text": "Independent testers cannot challenge stakeholders' assumptions"
+              "text": "Independent testers share the same cognitive biases as developers"
             },
             {
               "id": "c",
-              "text": "Independence can only be achieved with testers from outside the organization"
+              "text": "Independent testers cannot challenge stakeholders' assumptions"
             },
             {
               "id": "d",
-              "text": "Developers may lose a sense of responsibility for quality"
+              "text": "Independence can only be achieved with testers from outside the organization"
             }
           ],
           "rationale": {
             "summary": "The syllabus lists the drawbacks of independence: independent testers may be isolated from the development team, leading to lack of collaboration, communication problems or an adversarial relationship; developers may lose a sense of responsibility for quality; and independent testers may be seen as a bottleneck or blamed for delays.",
             "byOption": {
-              "a": "Incorrect. This inverts the mechanism by which independence works. Independence is effective precisely because the author's and the tester's cognitive biases differ.",
-              "b": "Incorrect. This is not a drawback but one of the benefits the syllabus lists: an independent tester can verify, challenge or disprove assumptions made by stakeholders.",
-              "c": "Incorrect. The syllabus describes four levels of independence: the author (none), the author's peers in the same team (some), testers outside the team but within the organization (high), and testers outside the organization (very high).",
-              "d": "Correct. This is one of the drawbacks listed explicitly in §1.5.3: responsibility for quality can be perceived as having been handed to the test team."
+              "a": "Correct. This is one of the drawbacks listed explicitly in §1.5.3: responsibility for quality can be perceived as having been handed to the test team.",
+              "b": "Incorrect. This inverts the mechanism by which independence works. Independence is effective precisely because the author's and the tester's cognitive biases differ.",
+              "c": "Incorrect. This is not a drawback but one of the benefits the syllabus lists: an independent tester can verify, challenge or disprove assumptions made by stakeholders.",
+              "d": "Incorrect. The syllabus describes four levels of independence: the author (none), the author's peers in the same team (some), testers outside the team but within the organization (high), and testers outside the organization (very high)."
             }
           }
         }
