@@ -34,7 +34,7 @@
           "options": [
             {
               "id": "a",
-              "text": "İş ürünü belgeleri hafifletilir ve manuel testlerin çoğu tecrübeye dayalı test teknikleriyle yapılır"
+              "text": "Test uzmanları yalnızca sistem test seviyesinden itibaren işin içine girer, çünkü tasarım tamamlanmadan test tabanı oluşmaz"
             },
             {
               "id": "b",
@@ -52,7 +52,7 @@
           "rationale": {
             "summary": "Sıralı yazılım geliştirme modellerinde çalıştırılabilir kod genellikle sonraki aşamalarda oluşturulur. Bu nedenle ilk aşamalarda test uzmanları gereksinim gözden geçirmelerine, test analizine ve test tasarımına katılır; dinamik test tipik olarak YGYD'nin erken aşamalarında gerçekleştirilemez.",
             "byOption": {
-              "a": "Yanlış. Bu, çevik yazılım geliştirmenin tercihlerini tanımlar; değişikliğin proje boyunca olabileceği varsayıldığı için hafif iş ürünü belgeleri ve tecrübeye dayalı teknikler öne çıkar.",
+              "a": "Yanlış. Sıralı modelde gereksinimler daha en baştan test tabanıdır ve müfredat test uzmanlarının erken aşamalardaki gözden geçirmelere katılmasını ister — sola kaydırma yaklaşımının özü budur. Erken bulunan bir hata, sonradan bulunana göre çok daha ucuza giderilir.",
               "b": "Yanlış. Tersi geçerlidir: sıralı YGYD modellerinde test seviyeleri genellikle bir seviyenin çıkış kriterleri bir sonraki seviyenin giriş kriterlerinin parçası olacak şekilde tanımlanır. Seviyelerin zaman içinde çakışması bazı döngüsel modellerde görülür.",
               "c": "Doğru. Sıralı modellerde çalıştırılabilir kod sonraki aşamalarda üretilir; bu yüzden erken aşamada yapılabilen iş, gereksinim gözden geçirmeleri, test analizi ve test tasarımıdır.",
               "d": "Yanlış. Bu, bazı döngüsel ve artımlı geliştirme modellerinin varsayımını tanımlar: her döngü çalışan bir prototip veya ürün özelliği teslim eder, bu da her döngüde tüm test seviyelerinde statik ve dinamik test yapılabilmesi anlamına gelir."
@@ -64,7 +64,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Work product documentation is kept lightweight and most manual testing uses experience-based test techniques"
+              "text": "Testers get involved only from the system test level onwards, because there is no test basis before the design is complete"
             },
             {
               "id": "b",
@@ -82,7 +82,7 @@
           "rationale": {
             "summary": "In sequential development models the executable code is usually created in the later phases. Therefore, in the initial phases testers typically participate in requirement reviews, test analysis and test design, and dynamic testing typically cannot be performed early in the SDLC.",
             "byOption": {
-              "a": "Incorrect. This describes what agile software development favors, because change is assumed to occur throughout the project: lightweight work product documentation and experience-based techniques.",
+              "a": "Incorrect. In a sequential model the requirements are a test basis from the very start, and the syllabus expects testers to take part in reviews in the early phases — that is what shift-left means. A defect found early is far cheaper to remove than the same defect found later.",
               "b": "Incorrect. The opposite holds: in sequential SDLC models the test levels are often defined such that the exit criteria of one level are part of the entry criteria for the next. Overlapping levels are seen in some iterative models.",
               "c": "Correct. In sequential models executable code appears late, so the work available early is requirement reviews, test analysis and test design.",
               "d": "Incorrect. This describes the assumption of some iterative and incremental development models: each iteration delivers a working prototype or product increment, which is what allows static and dynamic testing at all test levels in every iteration."

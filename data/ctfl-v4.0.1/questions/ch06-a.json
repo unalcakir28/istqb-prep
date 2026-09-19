@@ -43,7 +43,7 @@
             },
             {
               "id": "c",
-              "text": "Test yönetimi araçlarının işlevi, kod kapsamını ölçmektir"
+              "text": "Araçlar yalnızca test koşumunu destekleyebilir; test tasarımı ve test yönetimi her zaman elle yapılan faaliyetlerdir"
             },
             {
               "id": "d",
@@ -55,7 +55,7 @@
             "byOption": {
               "a": "Doğru. Müfredat, test araçları listesini 'bunlarla sınırlı değildir' diyerek açık bırakır ve teste yardımcı olan her türlü aracı test aracı sayar; verilen örnek tam olarak elektronik tablodur.",
               "b": "Doğru. Statik test araçları, tanımı gereği gözden geçirmeler ve statik analiz konusunda test uzmanına destek sağlayan araç kategorisidir.",
-              "c": "Yanlış. Kapsam ölçümü, test koşumu ve kapsam araçlarının işlevidir. Test yönetimi araçları, yazılım geliştirme yaşam döngüsünün (SDLC), gereksinimlerin, testlerin, hataların (defect) ve yapılandırmanın yönetimini kolaylaştırarak test sürecinin verimliliğini artırır.",
+              "c": "Yanlış. Müfredat, test sürecinin tamamı için araç desteği sayar: test tasarımı ve test verisi hazırlama araçları ile test yönetimi araçları da bunların arasındadır. Araç desteği testlerin koşulmasıyla sınırlı değildir.",
               "d": "Yanlış. Test senaryosu, test verisi ve test prosedürü üretimini kolaylaştıranlar test tasarımı ve test uygulama araçlarıdır. İş birliği araçlarının müfredatta belirtilen işlevi iletişimi kolaylaştırmaktır."
             }
           }
@@ -73,7 +73,7 @@
             },
             {
               "id": "c",
-              "text": "The function of test management tools is to measure code coverage"
+              "text": "Tools can only support test execution; test design and test management always remain manual activities"
             },
             {
               "id": "d",
@@ -85,7 +85,7 @@
             "byOption": {
               "a": "Correct. The syllabus leaves the tool list open with 'include, but are not limited to', and counts any other tool that assists in testing; the example given is exactly a spreadsheet.",
               "b": "Correct. Static testing tools are by definition the category that supports the tester in performing reviews and static analysis.",
-              "c": "Incorrect. Coverage measurement is what test execution and test coverage tools do. Test management tools increase test process efficiency by facilitating management of the SDLC, requirements, tests, defects and configuration.",
+              "c": "Incorrect. The syllabus lists tool support across the whole test process, including test design and test data preparation tools as well as test management tools. Tool support is not limited to executing tests.",
               "d": "Incorrect. Generation of test cases, test data and test procedures is facilitated by test design and test implementation tools. The function the syllabus gives for collaboration tools is to facilitate communication."
             }
           }

@@ -222,7 +222,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Statik testler yalnızca çalıştırılabilir iş ürünlerine uygulanabilir; dinamik testler her iş ürününe uygulanabilir"
+              "text": "Statik testler yalnızca elle yapılabilir; dinamik testler yalnızca araçlarla yapılabilir"
             },
             {
               "id": "b",
@@ -240,7 +240,7 @@
           "rationale": {
             "summary": "Müfredat farkı şöyle koyar: dinamik testler ilgili hataların daha sonra analiz yoluyla belirleneceği arızalara neden olurken, statik testler hataları doğrudan bulur. İki uygulama birbirini tamamlar.",
             "byOption": {
-              "a": "Yanlış. İfade terstir: çalıştırılamayan iş ürünlerine statik testler uygulanabilir, dinamik testler ise yalnızca çalıştırılabilir iş ürünlerine uygulanabilir.",
+              "a": "Yanlış. İki tekniğin hiçbiri belirli bir çalışma biçimine bağlı değildir: statik analiz genellikle araçla yapılır, gözden geçirmeler elle yürütülür; dinamik testler de hem elle hem araçla koşulabilir.",
               "b": "Yanlış. İkisinin, iş ürünlerindeki hataların tespitine yardımcı olmak gibi benzer hedefleri vardır; fark hedeflerde değil, hangi hata çeşitlerini nasıl ortaya çıkardıklarındadır.",
               "c": "Yanlış. Performans verimliliği kodun çalıştırılmasına bağlıdır ve dinamik testle ölçülür. Statik testin ölçebildiği karakteristiklere örnek sürdürülebilirliktir.",
               "d": "Doğru. Statik test hatayı iş ürünü üzerinde doğrudan görür; dinamik test önce bir arıza üretir ve hataya ancak sonraki analizle ulaşılır."
@@ -252,7 +252,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Static testing can only be applied to executable work products, while dynamic testing can be applied to any work product"
+              "text": "Static testing can only be performed manually, while dynamic testing can only be performed with tools"
             },
             {
               "id": "b",
@@ -270,7 +270,7 @@
           "rationale": {
             "summary": "The syllabus states the difference as follows: static testing finds defects directly, while dynamic testing causes failures from which the associated defects are determined through subsequent analysis. The two practices complement each other.",
             "byOption": {
-              "a": "Incorrect. The statement is reversed: static testing can be applied to non-executable work products, while dynamic testing can only be applied to executable ones.",
+              "a": "Incorrect. Neither technique is tied to a way of working: static analysis is normally tool-driven while reviews are carried out by people, and dynamic testing can be run manually as well as with tools.",
               "b": "Incorrect. They have similar objectives, such as supporting the detection of defects in work products; the difference lies in which defect types they reveal and how, not in their objectives.",
               "c": "Incorrect. Performance efficiency depends on executing the code and is measured by dynamic testing. Maintainability is an example of what static testing can measure.",
               "d": "Correct. Static testing sees the defect in the work product itself; dynamic testing first produces a failure, and the defect is reached only by analysing it afterwards."
