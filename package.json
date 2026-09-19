@@ -18,7 +18,9 @@
     "validate:data": "tsx scripts/validate-data.ts",
     "build:index": "tsx scripts/build-index.ts",
     "stats": "tsx scripts/stats.ts",
-    "publish:questions": "tsx scripts/publish-questions.ts"
+    "publish:questions": "tsx scripts/publish-questions.ts",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "dexie": "4.4.6",
@@ -31,7 +33,9 @@
     "zustand": "5.0.15"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
     "@eslint/js": "9.39.5",
+    "@playwright/test": "1.63.0",
     "@tailwindcss/vite": "4.3.3",
     "@testing-library/dom": "10.4.2",
     "@testing-library/jest-dom": "7.0.1",

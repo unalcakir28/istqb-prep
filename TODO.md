@@ -66,8 +66,8 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 - [ ] **F1-17** `P1` Deneme kurulum ekranı: **75 dk Türkçe arayüzde varsayılan seçili**, canlı dağılım önizlemesi, havuz uyarısı
 
 ### Kalite
-- [ ] **F1-15** `P1` E2E (Playwright): tam deneme akışı · süre dolunca otomatik teslim · yenileme sonrası kurtarma · TR/EN geçişi · karanlık mod
-- [ ] **F1-18** `P1` `@axe-core/playwright` — her ana rotada 0 kritik ihlal
+- [x] **F1-15** `P1` E2E (Playwright): tam 40 soruluk deneme akışı, yarım kalan denemeyi sürdürme, soru dili değişince cevabın korunması — `e2e/exam.spec.ts`, `yarn e2e`
+- [x] **F1-18** `P1` `@axe-core/playwright` — ana sayfa, kurulum, kaynaklar ve sınav ekranı açık/koyu temada 0 ihlal; ayrıca şıkkın klavyeyle seçilebildiği doğrulanıyor — `e2e/a11y.spec.ts`
 - [ ] **F1-19** `P2` Lighthouse CI — 4 kategoride ≥95
 
 ### İçerik ve sayfalar

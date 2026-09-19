@@ -11,7 +11,7 @@
  */
 
 import { useCallback, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { ScoreBar } from "@/components/ScoreBar";
@@ -60,7 +60,6 @@ function achievableByChapter(
 
 export default function Home() {
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
   const [data, setData] = useState<HomeData | null>(null);
   const [resume, setResume] = useState<ResumeState | null>(null);
@@ -172,13 +171,12 @@ export default function Home() {
             })}
           </p>
           <div className="flex flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={() => navigate(`/deneme/${resume.attempt.id}`)}
+            <Link
+              to={`/deneme/${resume.attempt.id}`}
               className="rounded-[var(--radius-btn)] bg-accent px-4 py-2 text-sm font-semibold text-accent-fg"
             >
               {t("home.resume")}
-            </button>
+            </Link>
             <button
               type="button"
               onClick={() => void onDiscard()}
