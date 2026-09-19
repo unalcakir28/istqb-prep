@@ -42,6 +42,7 @@ Detaylı gerekçe ve kaynaklar: [`docs/01-pazar-arastirmasi.md`](docs/01-pazar-a
 
 | Döküman | İçerik |
 |---|---|
+| [CLAUDE.md](CLAUDE.md) | **Claude Code oturumları için proje hafızası** — bozulmaz kurallar, doğrulanmış sabitler, konvansiyonlar |
 | [00 — Proje Özeti](docs/00-proje-ozeti.md) | Vizyon, hedef, kapsam, başarı tanımı |
 | [01 — Pazar Araştırması](docs/01-pazar-arastirmasi.md) | Rakip analizi, TR pazarı, kullanıcı acıları, fırsat alanları |
 | [02 — Ürün Gereksinimleri (PRD)](docs/02-urun-gereksinimleri.md) | Personalar, kullanıcı hikâyeleri, özellik listesi, MVP kapsamı |

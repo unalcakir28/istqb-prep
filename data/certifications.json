@@ -1,0 +1,39 @@
+{
+  "source": "ISTQB Exam Structures & Rules tables v1.19 (2026-08-19), Overview tablosu",
+  "verifiedAt": "2026-09-19",
+  "note": "Expert Level bu tabloda yer almaz (farklı sınav yapısı, essay içerir) — parametreleri doğrulanamadı.",
+  "certifications": [
+    { "acronym": "CTFL", "name": "Certified Tester Foundation Level", "version": "4.0", "stream": "core", "level": "foundation", "questions": 40, "points": 40, "passPoints": 26, "durationMinutes": 60, "extendedDurationMinutes": 75, "ttb": { "offered": true, "languages": ["tr", "en"] } },
+    { "acronym": "CTAL-AT", "name": "Advanced Level Agile Tester", "version": "2.0", "stream": "core", "level": "advanced", "questions": 40, "points": 52, "passPoints": 34, "durationMinutes": 90, "extendedDurationMinutes": 113, "ttb": { "offered": true } },
+    { "acronym": "CTAL-TA", "name": "Advanced Level Test Analyst", "version": "4.0", "stream": "core", "level": "advanced", "questions": 45, "points": 78, "passPoints": 51, "durationMinutes": 120, "extendedDurationMinutes": 150, "ttb": { "offered": true, "languages": ["tr"] } },
+    { "acronym": "CTAL-TA", "name": "Advanced Level Test Analyst", "version": "3.1", "stream": "core", "level": "advanced", "questions": 40, "points": 80, "passPoints": 52, "durationMinutes": 120, "extendedDurationMinutes": 150, "ttb": { "offered": false } },
+    { "acronym": "CTAL-TAE", "name": "Advanced Level Test Automation Engineering", "version": "2.0", "stream": "core", "level": "advanced", "questions": 40, "points": 66, "passPoints": 43, "durationMinutes": 90, "extendedDurationMinutes": 113, "ttb": { "offered": true } },
+    { "acronym": "CTAL-TM", "name": "Advanced Level Test Management", "version": "3.0", "stream": "core", "level": "advanced", "questions": 50, "points": 88, "passPoints": 58, "durationMinutes": 120, "extendedDurationMinutes": 150, "ttb": { "offered": true } },
+    { "acronym": "CTAL-TTA", "name": "Advanced Level Technical Test Analyst", "version": "4.0", "stream": "core", "level": "advanced", "questions": 45, "points": 78, "passPoints": 51, "durationMinutes": 120, "extendedDurationMinutes": 150, "ttb": { "offered": true } },
+    { "acronym": "CTFL-AT", "name": "Foundation Level Agile Tester", "version": null, "stream": "agile", "level": "foundation", "questions": 40, "points": 40, "passPoints": 26, "durationMinutes": 90, "extendedDurationMinutes": 113, "ttb": { "offered": true, "languages": ["en"] } },
+    { "acronym": "CTAL-ATT", "name": "Advanced Level Agile Technical Tester", "version": null, "stream": "agile", "level": "advanced", "questions": 40, "points": 64, "passPoints": 42, "durationMinutes": 90, "extendedDurationMinutes": 113, "ttb": { "offered": false } },
+    { "acronym": "CT-AcT", "name": "Acceptance Testing", "version": null, "stream": "specialist", "level": "specialist", "questions": 40, "points": 40, "passPoints": 26, "durationMinutes": 60, "extendedDurationMinutes": 75, "ttb": { "offered": false } },
+    { "acronym": "CT-AI", "name": "AI Testing", "version": "2.0", "stream": "specialist", "level": "specialist", "questions": 40, "points": 44, "passPoints": 29, "durationMinutes": 60, "extendedDurationMinutes": 75, "ttb": { "offered": true, "languages": ["tr"] } },
+    { "acronym": "CT-AI", "name": "AI Testing", "version": "1.0", "stream": "specialist", "level": "specialist", "questions": 40, "points": 47, "passPoints": 31, "durationMinutes": 60, "extendedDurationMinutes": 75, "ttb": { "offered": true, "languages": ["tr"] } },
+    { "acronym": "CT-ATLaS", "name": "Agile Test Leadership at Scale", "version": "2.0", "stream": "specialist", "level": "specialist", "questions": 40, "points": 71, "passPoints": 47, "durationMinutes": 120, "extendedDurationMinutes": 150, "ttb": { "offered": false } },
+    { "acronym": "CT-ATLaS", "name": "Agile Test Leadership at Scale (UPGRADE)", "version": "2.0", "stream": "specialist", "level": "specialist", "questions": 23, "points": 44, "passPoints": 29, "durationMinutes": 75, "extendedDurationMinutes": 94, "ttb": { "offered": false } },
+    { "acronym": "CT-AuT", "name": "Automotive Software Tester", "version": "2.1", "stream": "specialist", "level": "specialist", "questions": 40, "points": 40, "passPoints": 26, "durationMinutes": 60, "extendedDurationMinutes": 75, "ttb": { "offered": true, "languages": ["tr"] } },
+    { "acronym": "CT-AuT", "name": "Automotive Software Tester", "version": "1.0", "stream": "specialist", "level": "specialist", "questions": 40, "points": 40, "passPoints": 26, "durationMinutes": 60, "extendedDurationMinutes": 75, "ttb": { "offered": true } },
+    { "acronym": "CT-GaMe", "name": "Game Testing", "version": null, "stream": "specialist", "level": "specialist", "questions": 40, "points": 40, "passPoints": 26, "durationMinutes": 60, "extendedDurationMinutes": 75, "ttb": { "offered": true } },
+    { "acronym": "CT-GenAI", "name": "Testing with Generative AI", "version": null, "stream": "specialist", "level": "specialist", "questions": 40, "points": 46, "passPoints": 30, "durationMinutes": 60, "extendedDurationMinutes": 75, "ttb": { "offered": true } },
+    { "acronym": "CT-GT", "name": "Gambling Industry Tester", "version": null, "stream": "specialist", "level": "specialist", "questions": 40, "points": 40, "passPoints": 26, "durationMinutes": 60, "extendedDurationMinutes": 75, "ttb": { "offered": false } },
+    { "acronym": "CT-FT", "name": "Finance Testing", "version": null, "stream": "specialist", "level": "specialist", "questions": 40, "points": 45, "passPoints": 30, "durationMinutes": 60, "extendedDurationMinutes": 75, "ttb": { "offered": false } },
+    { "acronym": "CT-MAT", "name": "Mobile Application Testing", "version": null, "stream": "specialist", "level": "specialist", "questions": 40, "points": 40, "passPoints": 26, "durationMinutes": 60, "extendedDurationMinutes": 75, "ttb": { "offered": false } },
+    { "acronym": "CT-MBT", "name": "Model-Based Tester", "version": null, "stream": "specialist", "level": "specialist", "questions": 40, "points": 40, "passPoints": 26, "durationMinutes": 60, "extendedDurationMinutes": 75, "ttb": { "offered": false } },
+    { "acronym": "CT-PT", "name": "Performance Testing", "version": null, "stream": "specialist", "level": "specialist", "questions": 40, "points": 40, "passPoints": 26, "durationMinutes": 90, "extendedDurationMinutes": 113, "ttb": { "offered": true } },
+    { "acronym": "CT-QDO", "name": "Quality in DevOps", "version": null, "stream": "specialist", "level": "specialist", "questions": 40, "points": 45, "passPoints": 30, "durationMinutes": 60, "extendedDurationMinutes": 75, "ttb": { "offered": false } },
+    { "acronym": "CT-SEC", "name": "Security Tester", "version": null, "stream": "specialist", "level": "specialist", "questions": 45, "points": 80, "passPoints": 52, "durationMinutes": 120, "extendedDurationMinutes": 150, "ttb": { "offered": false } },
+    { "acronym": "CT-STE", "name": "Security Test Engineer", "version": null, "stream": "specialist", "level": "specialist", "questions": 40, "points": 43, "passPoints": 28, "durationMinutes": 75, "extendedDurationMinutes": 94, "ttb": { "offered": false } },
+    { "acronym": "CT-TAS", "name": "Test Automation Strategy", "version": "1.0", "stream": "specialist", "level": "specialist", "questions": 40, "points": 49, "passPoints": 32, "durationMinutes": 60, "extendedDurationMinutes": 75, "ttb": { "offered": false } },
+    { "acronym": "CT-UT", "name": "Usability Testing", "version": null, "stream": "specialist", "level": "specialist", "questions": 40, "points": 40, "passPoints": 26, "durationMinutes": 60, "extendedDurationMinutes": 75, "ttb": { "offered": false } }
+  ],
+  "expertLevel": {
+    "note": "Overview tablosunda yok; sınav parametreleri doğrulanamadı.",
+    "acronyms": ["CTEL-ITP-ATP", "CTEL-ITP-ITPI", "CTEL-TM-SM", "CTEL-TM-OTM", "CTEL-TM-MTT"]
+  }
+}

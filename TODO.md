@@ -21,10 +21,10 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 - [ ] **F0-05** `P0` **Resmî LO-grubu tablosunun tamamını `data/ctfl-v4.0.1/exam-blueprint.json`'a çıkar.** Kaynak: *Exam Structures & Rules tables v1.19*. Toplam 40 soru, bölüm dağılımı 8/6/4/11/9/2, K dağılımı 8/24/8 olmalı. **Kritik yol üzerinde — bu olmadan deneme motoru yazılamaz.**
 - [ ] **F0-06** `P0` `objectives.json` — 64 öğrenme hedefi, `FL-x.y.z` kodları, K-seviyeleri, TR+EN metinler. Kaynak: ISTQB v4.0.1 EN + TTB v4.0.1 TR müfredatı
 - [ ] **F0-07** `P0` `syllabus.json` (6 bölüm + alt bölümler, TR/EN başlıklar, sınav ağırlıkları) · `meta.json` · kök `manifest.json`
-- [ ] **F0-11** `P1` `certifications.json` — 28 satırlık tüm ISTQB sertifika tablosu ([`03 §5`](docs/03-istqb-referans.md) seed verisi)
+- [x] **F0-11** `P1` `certifications.json` — 28 satırlık tüm ISTQB sertifika tablosu ([`03 §5`](docs/03-istqb-referans.md) seed verisi)
 - [ ] **F0-08** `P0` JSON Schema dosyalarını tamamla (`schemas/`) + `scripts/validate-data.ts` (13 kontrol — [`04 §6`](docs/04-veri-modeli.md))
 - [ ] **F0-12** `P1` `scripts/build-index.ts` — parçalardan `questions/index.json` üret
-- [ ] **F0-13** `P1` `scripts/stats.ts` — LO başına kapsama raporu → `docs/kapsama.md`
+- [ ] **F0-13** `P1` `scripts/stats.ts` — LO başına kapsama raporu → `docs/kapsama.md` (iskelet hazır)
 - [ ] **F0-09** `P1` `scripts/fetch-glossary.ts` — Glossary API'den `used_in: Foundation v4.0` filtresiyle 215 terimi çek; TR karşılıklarını TTB müfredatından eşle, `trSource` işaretle
 - [ ] **F0-14** `P1` Türkçe terim sözlüğünü ([`07 §5`](docs/07-icerik-uretim-rehberi.md)) makine okunur hâle getir (CI'da terim sızıntısı uyarısı için)
 

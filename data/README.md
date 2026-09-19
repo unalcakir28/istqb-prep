@@ -5,7 +5,7 @@ Yapı, şemalar ve kurallar: [`../docs/04-veri-modeli.md`](../docs/04-veri-model
 
 ```
 manifest.json                  Kök indeks — sertifikalar, dataVersion
-certifications.json            Tüm ISTQB sertifikalarının sınav parametreleri  (TODO F0-11)
+certifications.json            Tüm ISTQB sertifikalarının sınav parametreleri (28)  ✅
 ctfl-v4.0.1/
   meta.json                    Sınav mekaniği + resmî kaynak bağlantıları      ✅
   syllabus.json                6 bölüm, ağırlıklar, K dağılımları              ✅
