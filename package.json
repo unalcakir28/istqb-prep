@@ -12,7 +12,8 @@
     "format:write": "prettier --write .",
     "test": "vitest run",
     "typecheck": "tsc -b --noEmit",
-    "validate:data": "tsx scripts/validate-data.ts"
+    "validate:data": "tsx scripts/validate-data.ts",
+    "build:index": "tsx scripts/build-index.ts"
   },
   "dependencies": {
     "react": "19.3.0",
