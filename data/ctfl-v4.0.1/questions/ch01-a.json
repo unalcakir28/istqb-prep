@@ -5,12 +5,12 @@
   "questions": [
     {
       "id": "ctfl4-0001",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
-      "section": "1.4",
-      "syllabusRef": "§1.4.3",
-      "objectives": ["FL-1.4.3"],
+      "section": "1.3",
+      "syllabusRef": "§1.3",
+      "objectives": ["FL-1.3.1"],
       "kLevel": "K2",
       "type": "single",
       "selectCount": 1,
@@ -23,47 +23,60 @@
       "media": null,
       "i18n": {
         "tr": {
-          "stem": "Bir ekip, aynı regresyon test paketini 18 aydır her sürümde değiştirmeden çalıştırıyor. Paket hâlâ geçiyor ancak sahada bulunan kusur sayısı artmış durumda. Bu durumu EN İYİ açıklayan test prensibi hangisidir?",
+          "stem": "Bir ekip, aynı regresyon test paketini 18 aydır her sürümde değiştirmeden çalıştırıyor. Paket hâlâ geçiyor ancak canlı kullanımda ortaya çıkan arıza sayısı artmış durumda. Bu durumu EN İYİ açıklayan test prensibi hangisidir?",
           "options": [
-            { "id": "a", "text": "Test, kusurların varlığını gösterir, yokluğunu gösteremez" },
-            { "id": "b", "text": "Kusursuz test imkânsızdır" },
-            { "id": "c", "text": "Testlerin etkisi zamanla azalır" },
-            { "id": "d", "text": "Test, bağlama bağlıdır" }
+            {
+              "id": "a",
+              "text": "Testin amacı, yazılımda hataların olduğunu göstermektir; hata kalmadığını ispatlamak değildir"
+            },
+            { "id": "b", "text": "Yazılımı %100 test etmek imkansızdır" },
+            { "id": "c", "text": "Antibiyotik direnci" },
+            {
+              "id": "d",
+              "text": "Yazılım testi, projenin bağlamına ve koşullarına göre değişiklik gösterir"
+            }
           ],
           "rationale": {
-            "summary": "Testlerin etkisi zamanla azalır prensibi (pesticide paradox), aynı testlerin değiştirilmeden tekrarlanmasının yeni kusur bulma kapasitesini düşürdüğünü söyler. Test paketi düzenli olarak gözden geçirilmeli ve çeşitlendirilmelidir.",
+            "summary": "Antibiyotik direnci prensibi, aynı testlerin birçok kez tekrarlanmasının yeni hataları bulmada giderek etkisizleştiğini söyler (Beizer 1990). Bu etkiyi önlemek için mevcut testlerin ve test verilerinin değiştirilmesi, yeni testler yazılması gerekebilir.",
             "byOption": {
-              "a": "Yanlış. Bu prensip, testin kusur bulabileceğini ama hiç kusur olmadığını kanıtlayamayacağını söyler. Testlerin zamanla etkisizleşmesiyle ilgili değildir.",
-              "b": "Yanlış. Bu prensip, tüm girdi ve ön koşul kombinasyonlarının test edilemeyeceğini ve bu yüzden risk ve önceliklendirmeye başvurulduğunu söyler. Buradaki senaryo bir kapsam sorunu değil, değişmeyen test paketiyle ilgilidir.",
-              "c": "Doğru. Aynı testler değişmeden tekrarlandıkça yeni kusur bulma oranı düşer. Testler gözden geçirilip yenilenmezse kapsanmayan alanlar sahada kusur olarak ortaya çıkar.",
-              "d": "Yanlış. Bu prensip, test yaklaşımının sistemin ve riskin bağlamına göre değişmesi gerektiğini söyler. Senaryoda bağlam değişikliği değil, testlerin sabitliği anlatılmaktadır."
+              "a": "Yanlış. Bu prensip, testin test nesnesinde hataların (defect) mevcut olduğunu gösterebileceğini ama hiç hata kalmadığını ispatlayamayacağını söyler. Testin kanıtlama gücüyle ilgilidir; tekrarlanan testlerin zamanla etkisizleşmesiyle değil.",
+              "b": "Yanlış. Bu prensip, çok basit yazılımlar dışında her unsuru test etmenin imkansız olduğunu ve bu yüzden test teknikleri, önceliklendirme ve risk bazlı testin kullanıldığını söyler. Senaryodaki sorun kapsamın yetersizliği değil, paketin hiç değişmemesidir.",
+              "c": "Doğru. Aynı testler değiştirilmeden birçok kez tekrarlandığında yeni hataları bulmada giderek daha etkisiz olurlar. Paket geçmeye devam ederken arızaların canlı kullanımda artması tam olarak bu etkidir.",
+              "d": "Yanlış. Bu prensip, test konusunda evrensel olarak uygulanan tek bir yaklaşım olmadığını, testin farklı proje bağlamlarında farklı şekillerde gerçekleştirildiğini söyler. Senaryoda bağlam değişmiyor; değişmeyen şey test paketidir."
             }
           },
-          "hints": ["Prensip, aynı tarım ilacına karşı zamanla direnç kazanan böceklere benzetilir."]
+          "hints": [
+            "Prensibin adı, aynı etkene karşı zamanla direnç geliştiren mikroorganizmalara yapılan benzetmeden gelir."
+          ]
         },
         "en": {
-          "stem": "A team has been running the same regression suite unchanged on every release for 18 months. The suite still passes, but the number of defects found in production has increased. Which testing principle BEST explains this situation?",
+          "stem": "A team has been running the same regression suite unchanged on every release for 18 months. The suite still passes, but the number of failures observed in production has increased. Which testing principle BEST explains this situation?",
           "options": [
-            { "id": "a", "text": "Testing shows the presence, not the absence of defects" },
+            {
+              "id": "a",
+              "text": "Testing shows the presence, not the absence of defects"
+            },
             { "id": "b", "text": "Exhaustive testing is impossible" },
             { "id": "c", "text": "Tests wear out" },
             { "id": "d", "text": "Testing is context dependent" }
           ],
           "rationale": {
-            "summary": "The 'tests wear out' principle (pesticide paradox) states that repeating the same unchanged tests reduces their ability to find new defects. Test suites must be reviewed and varied regularly.",
+            "summary": "The 'tests wear out' principle states that if the same tests are repeated many times, they become increasingly ineffective in finding new defects (Beizer 1990). Existing tests and test data may need to be changed, and new tests written, to counter this effect.",
             "byOption": {
-              "a": "Incorrect. This principle states that testing can reveal defects but cannot prove none exist. It does not address tests losing effectiveness over time.",
-              "b": "Incorrect. This principle states that all combinations of inputs and preconditions cannot be tested, which is why risk and prioritization are used. The scenario is about an unchanged suite, not coverage limits.",
-              "c": "Correct. Repeating identical tests lowers the rate of finding new defects. If the suite is not reviewed and refreshed, uncovered areas surface as production defects.",
-              "d": "Incorrect. This principle states that the test approach must vary with the context and risk of the system. The scenario describes static tests, not a change of context."
+              "a": "Incorrect. This principle states that testing can show defects are present in the test object but cannot prove that none remain. It concerns what testing can prove, not the decay of repeated tests.",
+              "b": "Incorrect. This principle states that testing everything is not feasible except in trivial cases, which is why test techniques, prioritization and risk-based testing are used. The problem here is not insufficient coverage but an unchanged suite.",
+              "c": "Correct. The same tests repeated many times without change become increasingly ineffective at finding new defects. A suite that keeps passing while production failures rise is exactly this effect.",
+              "d": "Incorrect. This principle states that there is no single universally applicable approach and that testing is carried out differently in different project contexts. The context is not changing in this scenario; the test suite is what stays fixed."
             }
           },
-          "hints": ["The principle is compared to insects becoming resistant to the same pesticide."]
+          "hints": [
+            "The principle is named after organisms developing resistance to the same agent over time."
+          ]
         }
       },
       "meta": {
         "author": "unal",
-        "reviewedBy": "",
+        "reviewedBy": "unal",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }

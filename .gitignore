@@ -18,3 +18,7 @@ Thumbs.db
 npm-debug.log*
 .eslintcache
 public/data/
+
+# Araç artıkları
+.playwright-mcp/
+*.tsbuildinfo
