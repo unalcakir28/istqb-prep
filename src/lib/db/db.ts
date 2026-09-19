@@ -92,6 +92,13 @@ export class AppDatabase extends Dexie {
       bookmarks: "questionId, certId, createdAt",
       settings: "key",
     });
+
+    // v2: yarim kalan denemeyi bulmak her acilista `{certId, status}` ile
+    // sorgulaniyor; bilesik indeks olmadan Dexie tabloyu tariyor ve konsola
+    // uyari basiyor. Tablolarin geri kalani degismedi, veri donusumu gerekmez.
+    this.version(2).stores({
+      attempts: "id, certId, status, startedAt, [certId+status]",
+    });
   }
 }
 

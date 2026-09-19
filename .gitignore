@@ -22,3 +22,5 @@ public/data/
 # Araç artıkları
 .playwright-mcp/
 *.tsbuildinfo
+*.png
+!docs/**/*.png
