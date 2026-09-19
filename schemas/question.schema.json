@@ -71,9 +71,29 @@
       "required": [
         "id", "revision", "syllabusVersion", "chapter", "syllabusRef",
         "objectives", "kLevel", "type", "selectCount", "points",
-        "origin", "status", "correct", "i18n"
+        "origin", "status", "correct", "i18n", "meta"
       ],
       "additionalProperties": false,
+      "allOf": [
+        {
+          "description": "meta.reviewedBy bos ise status 'published' OLAMAZ (CLAUDE.md ve docs/04 kurali).",
+          "if": {
+            "properties": { "status": { "const": "published" } },
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "meta": {
+                "type": "object",
+                "required": ["reviewedBy"],
+                "properties": {
+                  "reviewedBy": { "type": "string", "minLength": 1 }
+                }
+              }
+            }
+          }
+        }
+      ],
       "properties": {
         "id": { "type": "string", "pattern": "^[a-z0-9]+-[0-9]{4}$" },
         "revision": { "type": "integer", "minimum": 1 },
@@ -109,9 +129,14 @@
         },
         "meta": {
           "type": "object",
+          "required": ["author", "reviewedBy", "createdAt", "updatedAt"],
+          "additionalProperties": false,
           "properties": {
             "author": { "type": "string" },
-            "reviewedBy": { "type": "string" },
+            "reviewedBy": {
+              "type": "string",
+              "description": "Bos string = henuz gozden gecirilmedi. status='published' iken dolu olmak ZORUNDA (yukaridaki allOf/if/then)."
+            },
             "createdAt": { "type": "string" },
             "updatedAt": { "type": "string" }
           }

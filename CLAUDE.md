@@ -79,7 +79,7 @@ src/        Uygulama                                            (henüz yok)
 - **LO kodu `FL-x.y.z` birincil anahtardır** — Türkçe müfredatta da İngilizce kalıyor, dil-bağımsızdır.
 - **Soru ID'si `ctfl4-NNNN`**, asla yeniden kullanılmaz.
 - **Soru parçası başına en fazla 40 soru**; dosya adı asla değişmez (CDN + PWA önbelleği).
-- **Türkçe terimler:** `error/defect/failure` → **`hata/kusur/arıza`**. Üçü birden "hata" diye çevrilmez — bu ayrım sınavda doğrudan sorulur. Tam sözlük: `docs/07-icerik-uretim-rehberi.md §5`.
+- **Türkçe terimler:** `error/defect/failure` → **`insan hatası/hata/arıza`** (resmî TTB v4.0.1). Üçü birden "hata" diye çevrilmez — bu ayrım sınavda doğrudan sorulur. **`kusur` kullanılmaz**, müfredatta geçmez. Tek doğruluk kaynağı `data/ctfl-v4.0.1/terms.json` (97 terim, resmî anahtar kelime listelerinden hizalandı); okunabilir tablo `docs/07-icerik-uretim-rehberi.md §5`.
 - Vurgu kelimeleri soru metninde BÜYÜK HARF: `EN İYİ`, `HARİÇ`, `DEĞİLDİR`, `HANGİ İKİSİ`.
 - `meta.reviewedBy` boşsa `status` **`published` olamaz**.
 

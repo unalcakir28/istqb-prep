@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://istqb-prep/schemas/certifications.schema.json",
+  "title": "Tum ISTQB sertifikalarinin sinav parametreleri (seed)",
+  "description": "data/certifications.json. docs/04-veri-modeli.md §2 satir 24. Bu, sinav uretim motorunun okudugu meta.json'dan farklidir - burasi tum ISTQB katalogunun referans listesidir.",
+  "type": "object",
+  "required": ["source", "certifications"],
+  "additionalProperties": false,
+  "properties": {
+    "source": { "type": "string" },
+    "verifiedAt": { "type": "string", "format": "date" },
+    "note": { "type": "string" },
+    "certifications": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "acronym", "name", "version", "stream", "level",
+          "questions", "points", "passPoints", "durationMinutes",
+          "extendedDurationMinutes", "ttb"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "acronym": { "type": "string" },
+          "name": { "type": "string" },
+          "version": { "type": ["string", "null"] },
+          "stream": { "enum": ["core", "agile", "specialist"] },
+          "level": { "enum": ["foundation", "advanced", "expert", "specialist"] },
+          "questions": { "type": "integer", "minimum": 1 },
+          "points": { "type": "integer", "minimum": 1 },
+          "passPoints": { "type": "integer", "minimum": 1 },
+          "durationMinutes": { "type": "integer", "minimum": 1 },
+          "extendedDurationMinutes": { "type": "integer", "minimum": 1 },
+          "ttb": {
+            "type": "object",
+            "required": ["offered"],
+            "additionalProperties": false,
+            "properties": {
+              "offered": { "type": "boolean" },
+              "languages": {
+                "type": "array",
+                "items": { "enum": ["tr", "en"] }
+              }
+            }
+          }
+        }
+      }
+    },
+    "expertLevel": {
+      "type": "object",
+      "description": "Expert Level bu tabloda yok; parametreleri dogrulanamadi (bkz. docs/03-istqb-referans.md).",
+      "properties": {
+        "note": { "type": "string" },
+        "acronyms": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

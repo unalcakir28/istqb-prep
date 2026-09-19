@@ -1,0 +1,762 @@
+{
+  "syllabusVersion": "4.0.1",
+  "source": {
+    "en": "ISTQB® Certified Tester Foundation Level Syllabus v4.0.1 (2024-09-15), per-chapter Keywords lists",
+    "tr": "TTB Sertifikalı Test Uzmanı Temel Seviye (CTFL) v4.0.1 Türkçe müfredatı, bölüm başı Anahtar Kelimeler listeleri",
+    "method": "Her iki müfredattaki bölüm anahtar kelime listeleri aynı sırada yayımlanıyor; 6 bölümün tamamında terim sayıları birebir eşleşti (30/17/10/18/26/1). Eşleme konum bazlı yapıldı, editoryal çeviri kullanılmadı."
+  },
+  "trSource": "ttb-syllabus-v4.0.1",
+  "note": "trForbidden, docs/07 §5'in ilk sürümünde yer alan ve resmî müfredatla çelişen karşılıklardır; validate-data 13. kontrolü bunları Türkçe metinde yakalar.",
+  "termCount": 97,
+  "terms": [
+    {
+      "en": "acceptance criteria",
+      "tr": "kabul kriterleri",
+      "chapters": [
+        4
+      ]
+    },
+    {
+      "en": "acceptance test-driven development",
+      "tr": "kabul testi güdümlü yazılım geliştirme",
+      "chapters": [
+        4
+      ]
+    },
+    {
+      "en": "acceptance testing",
+      "tr": "kabul testi",
+      "chapters": [
+        2
+      ]
+    },
+    {
+      "en": "anomaly",
+      "tr": "anomali",
+      "chapters": [
+        3
+      ]
+    },
+    {
+      "en": "black-box test technique",
+      "tr": "kara kutu test tekniği",
+      "chapters": [
+        4
+      ]
+    },
+    {
+      "en": "black-box testing",
+      "tr": "kara kutu testi",
+      "chapters": [
+        2
+      ]
+    },
+    {
+      "en": "boundary value analysis",
+      "tr": "sınır değer analizi",
+      "chapters": [
+        4
+      ]
+    },
+    {
+      "en": "branch coverage",
+      "tr": "dal kapsamı",
+      "chapters": [
+        4
+      ],
+      "trForbidden": [
+        "dal kapsaması"
+      ]
+    },
+    {
+      "en": "checklist-based testing",
+      "tr": "kontrol listesine dayalı test etme",
+      "chapters": [
+        4
+      ]
+    },
+    {
+      "en": "collaboration-based test approach",
+      "tr": "iş birliğine dayalı test yaklaşımı",
+      "chapters": [
+        4
+      ]
+    },
+    {
+      "en": "component integration testing",
+      "tr": "bileşen entegrasyon testi",
+      "chapters": [
+        2
+      ]
+    },
+    {
+      "en": "component testing",
+      "tr": "bileşen testi",
+      "chapters": [
+        2
+      ]
+    },
+    {
+      "en": "confirmation testing",
+      "tr": "onaylama testi",
+      "chapters": [
+        2
+      ],
+      "trForbidden": [
+        "doğrulama testi"
+      ]
+    },
+    {
+      "en": "coverage",
+      "tr": "kapsam",
+      "chapters": [
+        1,
+        4
+      ],
+      "trForbidden": [
+        "kapsama"
+      ]
+    },
+    {
+      "en": "coverage item",
+      "tr": "kapsam öğesi",
+      "chapters": [
+        4
+      ]
+    },
+    {
+      "en": "debugging",
+      "tr": "hata ayıklama",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "decision table testing",
+      "tr": "karar tablosu testi",
+      "chapters": [
+        4
+      ]
+    },
+    {
+      "en": "defect",
+      "tr": "hata",
+      "chapters": [
+        1
+      ],
+      "trForbidden": [
+        "kusur"
+      ]
+    },
+    {
+      "en": "defect management",
+      "tr": "hata yönetimi",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "defect report",
+      "tr": "hata raporu",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "dynamic testing",
+      "tr": "dinamik test",
+      "chapters": [
+        3
+      ]
+    },
+    {
+      "en": "entry criteria",
+      "tr": "giriş kriterleri",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "equivalence partitioning",
+      "tr": "denklik paylarına ayırma",
+      "chapters": [
+        4
+      ],
+      "trForbidden": [
+        "eşdeğerlik bölümlemesi",
+        "denklik bölümleme"
+      ]
+    },
+    {
+      "en": "error",
+      "tr": "insan hatası",
+      "chapters": [
+        1
+      ],
+      "trForbidden": [
+        "hata"
+      ]
+    },
+    {
+      "en": "error guessing",
+      "tr": "hata tahminleme",
+      "chapters": [
+        4
+      ]
+    },
+    {
+      "en": "exit criteria",
+      "tr": "çıkış kriterleri",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "experience-based test technique",
+      "tr": "tecrübeye dayalı test tekniği",
+      "chapters": [
+        4
+      ]
+    },
+    {
+      "en": "exploratory testing",
+      "tr": "keşif testi",
+      "chapters": [
+        4
+      ],
+      "trForbidden": [
+        "keşifsel test",
+        "araştırmacı test"
+      ]
+    },
+    {
+      "en": "failure",
+      "tr": "arıza",
+      "chapters": [
+        1
+      ],
+      "trForbidden": [
+        "hata",
+        "başarısızlık"
+      ]
+    },
+    {
+      "en": "formal review",
+      "tr": "resmi gözden geçirme",
+      "chapters": [
+        3
+      ]
+    },
+    {
+      "en": "functional testing",
+      "tr": "fonksiyonel test",
+      "chapters": [
+        2
+      ]
+    },
+    {
+      "en": "informal review",
+      "tr": "gayri resmi gözden geçirme",
+      "chapters": [
+        3
+      ]
+    },
+    {
+      "en": "inspection",
+      "tr": "teftiş",
+      "chapters": [
+        3
+      ],
+      "trForbidden": [
+        "inceleme"
+      ]
+    },
+    {
+      "en": "integration testing",
+      "tr": "entegrasyon testi",
+      "chapters": [
+        2
+      ]
+    },
+    {
+      "en": "maintenance testing",
+      "tr": "bakım testi",
+      "chapters": [
+        2
+      ]
+    },
+    {
+      "en": "non-functional testing",
+      "tr": "fonksiyonel olmayan test",
+      "chapters": [
+        2
+      ]
+    },
+    {
+      "en": "product risk",
+      "tr": "ürün riski",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "project risk",
+      "tr": "proje riski",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "quality",
+      "tr": "kalite",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "quality assurance",
+      "tr": "kalite güvence",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "regression testing",
+      "tr": "regresyon testi",
+      "chapters": [
+        2
+      ],
+      "trForbidden": [
+        "gerileme testi"
+      ]
+    },
+    {
+      "en": "review",
+      "tr": "gözden geçirme",
+      "chapters": [
+        3
+      ],
+      "trForbidden": [
+        "inceleme"
+      ]
+    },
+    {
+      "en": "risk",
+      "tr": "risk",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "risk analysis",
+      "tr": "risk analizi",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "risk assessment",
+      "tr": "risk değerlendirmesi",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "risk control",
+      "tr": "risk kontrolü",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "risk identification",
+      "tr": "risk belirleme",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "risk level",
+      "tr": "risk seviyesi",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "risk management",
+      "tr": "risk yönetimi",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "risk mitigation",
+      "tr": "risk azaltma",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "risk monitoring",
+      "tr": "risk gözetimi",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "risk-based testing",
+      "tr": "risk bazlı test",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "root cause",
+      "tr": "kök neden",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "shift left",
+      "tr": "shift-left",
+      "chapters": [
+        2
+      ],
+      "trForbidden": [
+        "sola kaydırma"
+      ]
+    },
+    {
+      "en": "state transition testing",
+      "tr": "durum geçişi testi",
+      "chapters": [
+        4
+      ]
+    },
+    {
+      "en": "statement coverage",
+      "tr": "komut kapsama yüzdesi",
+      "chapters": [
+        4
+      ],
+      "trForbidden": [
+        "ifade kapsaması"
+      ]
+    },
+    {
+      "en": "static analysis",
+      "tr": "statik analiz",
+      "chapters": [
+        3
+      ]
+    },
+    {
+      "en": "static testing",
+      "tr": "statik test",
+      "chapters": [
+        3
+      ]
+    },
+    {
+      "en": "system integration testing",
+      "tr": "sistem entegrasyon testi",
+      "chapters": [
+        2
+      ]
+    },
+    {
+      "en": "system testing",
+      "tr": "sistem testi",
+      "chapters": [
+        2
+      ]
+    },
+    {
+      "en": "technical review",
+      "tr": "teknik gözden geçirme",
+      "chapters": [
+        3
+      ]
+    },
+    {
+      "en": "test analysis",
+      "tr": "test analizi",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "test approach",
+      "tr": "test yaklaşımı",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "test automation",
+      "tr": "test otomasyonu",
+      "chapters": [
+        6
+      ]
+    },
+    {
+      "en": "test basis",
+      "tr": "test esası",
+      "chapters": [
+        1
+      ],
+      "trForbidden": [
+        "test dayanağı",
+        "test tabanı"
+      ]
+    },
+    {
+      "en": "test case",
+      "tr": "test senaryosu",
+      "chapters": [
+        1
+      ],
+      "trForbidden": [
+        "test durumu"
+      ]
+    },
+    {
+      "en": "test completion",
+      "tr": "test tamamlama",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "test completion report",
+      "tr": "test tamamlama raporu",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "test condition",
+      "tr": "test koşulu",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "test control",
+      "tr": "test kontrolü",
+      "chapters": [
+        1,
+        5
+      ],
+      "trVariants": [
+        "test kontrol"
+      ]
+    },
+    {
+      "en": "test data",
+      "tr": "test verisi",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "test design",
+      "tr": "test tasarımı",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "test execution",
+      "tr": "test koşumu",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "test implementation",
+      "tr": "test uyarlama",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "test level",
+      "tr": "test seviyesi",
+      "chapters": [
+        2
+      ]
+    },
+    {
+      "en": "test monitoring",
+      "tr": "test gözetimi",
+      "chapters": [
+        1,
+        5
+      ],
+      "trForbidden": [
+        "test izleme"
+      ]
+    },
+    {
+      "en": "test object",
+      "tr": "test nesnesi",
+      "chapters": [
+        1,
+        2
+      ]
+    },
+    {
+      "en": "test objective",
+      "tr": "test hedefi",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "test plan",
+      "tr": "test planı",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "test planning",
+      "tr": "test planlama",
+      "chapters": [
+        1,
+        5
+      ]
+    },
+    {
+      "en": "test procedure",
+      "tr": "test prosedürü",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "test process",
+      "tr": "test süreci",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "test progress report",
+      "tr": "test ilerleme raporu",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "test pyramid",
+      "tr": "test piramidi",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "test result",
+      "tr": "test sonucu",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "test strategy",
+      "tr": "test stratejisi",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "test technique",
+      "tr": "test tekniği",
+      "chapters": [
+        4
+      ]
+    },
+    {
+      "en": "test type",
+      "tr": "test çeşidi",
+      "chapters": [
+        2
+      ]
+    },
+    {
+      "en": "testing",
+      "tr": "test etme",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "testing quadrants",
+      "tr": "test çeyrekleri",
+      "chapters": [
+        5
+      ]
+    },
+    {
+      "en": "testware",
+      "tr": "test çalışma ürünleri",
+      "chapters": [
+        1
+      ],
+      "trForbidden": [
+        "testware",
+        "test ürünleri"
+      ]
+    },
+    {
+      "en": "traceability",
+      "tr": "izlenebilirlik",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "validation",
+      "tr": "sağlama",
+      "chapters": [
+        1
+      ],
+      "trForbidden": [
+        "geçerleme"
+      ]
+    },
+    {
+      "en": "verification",
+      "tr": "doğrulama",
+      "chapters": [
+        1
+      ]
+    },
+    {
+      "en": "walkthrough",
+      "tr": "üzerinden geçme",
+      "chapters": [
+        3
+      ],
+      "trForbidden": [
+        "teknik gözden geçirme"
+      ]
+    },
+    {
+      "en": "white-box test technique",
+      "tr": "beyaz kutu test tekniği",
+      "chapters": [
+        4
+      ]
+    },
+    {
+      "en": "white-box testing",
+      "tr": "beyaz kutu testi",
+      "chapters": [
+        2
+      ]
+    }
+  ]
+}

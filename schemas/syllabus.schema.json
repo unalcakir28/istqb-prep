@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://istqb-prep/schemas/syllabus.schema.json",
+  "title": "Mufredat bolumleri ve K dagilimlari",
+  "description": "data/<cert>/syllabus.json. docs/04-veri-modeli.md §3.3.",
+  "type": "object",
+  "required": ["syllabusVersion", "chapters"],
+  "additionalProperties": false,
+  "properties": {
+    "syllabusVersion": { "type": "string" },
+    "source": { "type": "string" },
+    "chapters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "number", "title", "objectiveCount", "objectiveKDistribution",
+          "examQuestions", "examPoints", "examKDistribution"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "number": { "type": "integer", "minimum": 1 },
+          "title": {
+            "type": "object",
+            "required": ["en", "tr"],
+            "additionalProperties": false,
+            "properties": { "en": { "type": "string" }, "tr": { "type": "string" } }
+          },
+          "trainingMinutes": { "type": "integer", "minimum": 0 },
+          "objectiveCount": { "type": "integer", "minimum": 0 },
+          "objectiveKDistribution": {
+            "type": "object",
+            "required": ["K1", "K2", "K3"],
+            "additionalProperties": false,
+            "properties": {
+              "K1": { "type": "integer", "minimum": 0 },
+              "K2": { "type": "integer", "minimum": 0 },
+              "K3": { "type": "integer", "minimum": 0 }
+            }
+          },
+          "examQuestions": { "type": "integer", "minimum": 0 },
+          "examPoints": { "type": "integer", "minimum": 0 },
+          "examKDistribution": {
+            "type": "object",
+            "required": ["K1", "K2", "K3"],
+            "additionalProperties": false,
+            "properties": {
+              "K1": { "type": "integer", "minimum": 0 },
+              "K2": { "type": "integer", "minimum": 0 },
+              "K3": { "type": "integer", "minimum": 0 }
+            }
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "title"],
+              "additionalProperties": false,
+              "properties": {
+                "id": { "type": "string" },
+                "title": {
+                  "type": "object",
+                  "required": ["en", "tr"],
+                  "additionalProperties": false,
+                  "properties": { "en": { "type": "string" }, "tr": { "type": "string" } }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "trainingMinutes": { "type": "integer", "minimum": 0 },
+        "objectives": { "type": "integer", "minimum": 0 },
+        "objectiveKDistribution": {
+          "type": "object",
+          "required": ["K1", "K2", "K3"],
+          "additionalProperties": false,
+          "properties": {
+            "K1": { "type": "integer" }, "K2": { "type": "integer" }, "K3": { "type": "integer" }
+          }
+        },
+        "examQuestions": { "type": "integer", "minimum": 0 },
+        "examPoints": { "type": "integer", "minimum": 0 },
+        "examKDistribution": {
+          "type": "object",
+          "required": ["K1", "K2", "K3"],
+          "additionalProperties": false,
+          "properties": {
+            "K1": { "type": "integer" }, "K2": { "type": "integer" }, "K3": { "type": "integer" }
+          }
+        }
+      }
+    }
+  }
+}

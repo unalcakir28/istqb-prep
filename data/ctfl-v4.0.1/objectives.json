@@ -1,18 +1,336 @@
 {
   "syllabusVersion": "4.0.1",
-  "source": "ISTQB CTFL Syllabus v4.0.1 (EN) + TTB Türkçe çevirisi v4.0.1",
-  "status": "INCOMPLETE - F0-06 ile 64 LO'nun tamamı doldurulacak. Aşağıdakiler format örneğidir.",
+  "source": "ISTQB® CTFL Syllabus v4.0.1 (EN, 2024-09-15) + TTB CTFL v4.0.1 Türkçe müfredatı. LO metinleri her iki PDF'in 'Learning Objectives / Öğrenme Hedefleri' bölümlerinden birebir alınmıştır; editoryal çeviri kullanılmamıştır.",
   "objectives": [
+    {
+      "code": "FL-1.1.1",
+      "chapter": 1,
+      "section": "1.1",
+      "kLevel": "K1",
+      "text": {
+        "en": "Identify typical test objectives",
+        "tr": "Genel test hedeflerini tanımlamak"
+      }
+    },
+    {
+      "code": "FL-1.1.2",
+      "chapter": 1,
+      "section": "1.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Differentiate testing from debugging",
+        "tr": "Test ile hata ayıklamanın farklarını belirtmek"
+      }
+    },
+    {
+      "code": "FL-1.2.1",
+      "chapter": 1,
+      "section": "1.2",
+      "kLevel": "K2",
+      "text": {
+        "en": "Exemplify why testing is necessary",
+        "tr": "Örnekler vererek yazılım testinin neden gerekli olduğunu açıklamak"
+      }
+    },
+    {
+      "code": "FL-1.2.2",
+      "chapter": 1,
+      "section": "1.2",
+      "kLevel": "K1",
+      "text": {
+        "en": "Recall the relation between testing and quality assurance",
+        "tr": "Yazılım testi ve kalite güvence arasındaki ilişkiyi anımsamak"
+      }
+    },
+    {
+      "code": "FL-1.2.3",
+      "chapter": 1,
+      "section": "1.2",
+      "kLevel": "K2",
+      "text": {
+        "en": "Distinguish between root cause, error, defect, and failure",
+        "tr": "Kök neden, insan hatası, hata ve arıza arasındaki farkı ayırt etmek"
+      }
+    },
+    {
+      "code": "FL-1.3.1",
+      "chapter": 1,
+      "section": "1.3",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain the seven testing principles",
+        "tr": "Yedi test prensibini açıklamak"
+      }
+    },
+    {
+      "code": "FL-1.4.1",
+      "chapter": 1,
+      "section": "1.4",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain the different test activities and related tasks",
+        "tr": "Farklı test aktivitelerini ve ilgili görevleri açıklamak"
+      }
+    },
+    {
+      "code": "FL-1.4.2",
+      "chapter": 1,
+      "section": "1.4",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain the impact of context on the test process",
+        "tr": "Proje bağlamının test süreci üzerindeki etkisini açıklamak"
+      }
+    },
     {
       "code": "FL-1.4.3",
       "chapter": 1,
       "section": "1.4",
       "kLevel": "K2",
       "text": {
-        "en": "Explain the seven testing principles",
-        "tr": "Yedi test prensibini açıklamak"
-      },
-      "keywords": ["testing principles", "test prensipleri"]
+        "en": "Differentiate the testware that supports the test activities",
+        "tr": "Test aktivitelerini destekleyen test çalışma ürünlerini ayırt etmek"
+      }
+    },
+    {
+      "code": "FL-1.4.4",
+      "chapter": 1,
+      "section": "1.4",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain the value of maintaining traceability",
+        "tr": "İzlenebilirliğin sağlanmasının önemini açıklamak"
+      }
+    },
+    {
+      "code": "FL-1.4.5",
+      "chapter": 1,
+      "section": "1.4",
+      "kLevel": "K2",
+      "text": {
+        "en": "Compare the different roles in testing",
+        "tr": "Test etme sürecindeki farklı rolleri karşılaştırmak"
+      }
+    },
+    {
+      "code": "FL-1.5.1",
+      "chapter": 1,
+      "section": "1.5",
+      "kLevel": "K2",
+      "text": {
+        "en": "Give examples of the generic skills required for testing",
+        "tr": "Test etme sürecinde gerekli genel becerilere örnekler vermek"
+      }
+    },
+    {
+      "code": "FL-1.5.2",
+      "chapter": 1,
+      "section": "1.5",
+      "kLevel": "K1",
+      "text": {
+        "en": "Recall the advantages of the whole team approach",
+        "tr": "Tüm ekip yaklaşımının avantajlarını hatırlamak"
+      }
+    },
+    {
+      "code": "FL-1.5.3",
+      "chapter": 1,
+      "section": "1.5",
+      "kLevel": "K2",
+      "text": {
+        "en": "Distinguish the benefits and drawbacks of independence of testing",
+        "tr": "Testin bağımsızlığının yararlarını ve sakıncalarını açıklamak"
+      }
+    },
+    {
+      "code": "FL-2.1.1",
+      "chapter": 2,
+      "section": "2.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain the impact of the chosen software development lifecycle on testing",
+        "tr": "Seçilen yazılım geliştirme yaşam döngüsünün test üzerindeki etkisini açıklamak"
+      }
+    },
+    {
+      "code": "FL-2.1.2",
+      "chapter": 2,
+      "section": "2.1",
+      "kLevel": "K1",
+      "text": {
+        "en": "Recall good testing practices that apply to all software development lifecycles",
+        "tr": "Tüm yazılım geliştirme yaşam döngüsü için geçerli olan iyi test uygulamalarını hatırlamak"
+      }
+    },
+    {
+      "code": "FL-2.1.3",
+      "chapter": 2,
+      "section": "2.1",
+      "kLevel": "K1",
+      "text": {
+        "en": "Recall the examples of test-first approaches to development",
+        "tr": "Geliştirmeye yönelik önce-test-et yaklaşımlarının örneklerini hatırlamak"
+      }
+    },
+    {
+      "code": "FL-2.1.4",
+      "chapter": 2,
+      "section": "2.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Summarize how DevOps might have an impact on testing",
+        "tr": "DevOps'un test üzerinde nasıl bir etkisi olabileceğini özetlemek"
+      }
+    },
+    {
+      "code": "FL-2.1.5",
+      "chapter": 2,
+      "section": "2.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain shift left",
+        "tr": "Shift-left’i açıklamak"
+      }
+    },
+    {
+      "code": "FL-2.1.6",
+      "chapter": 2,
+      "section": "2.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain how retrospectives can be used as a mechanism for process improvement",
+        "tr": "Geçmişe dönük verilerin süreç iyileştirmesi için nasıl bir mekanizma olarak kullanılabileceğini açıklamak"
+      }
+    },
+    {
+      "code": "FL-2.2.1",
+      "chapter": 2,
+      "section": "2.2",
+      "kLevel": "K2",
+      "text": {
+        "en": "Distinguish the different test levels",
+        "tr": "Farklı test seviyelerini ayırt etmek"
+      }
+    },
+    {
+      "code": "FL-2.2.2",
+      "chapter": 2,
+      "section": "2.2",
+      "kLevel": "K2",
+      "text": {
+        "en": "Distinguish the different test types",
+        "tr": "Farklı test çeşitlerini ayırt etmek"
+      }
+    },
+    {
+      "code": "FL-2.2.3",
+      "chapter": 2,
+      "section": "2.2",
+      "kLevel": "K2",
+      "text": {
+        "en": "Distinguish confirmation testing from regression testing",
+        "tr": "Onaylama testleri ve regresyon testlerini birbirinden ayırmak"
+      }
+    },
+    {
+      "code": "FL-2.3.1",
+      "chapter": 2,
+      "section": "2.3",
+      "kLevel": "K2",
+      "text": {
+        "en": "Summarize maintenance testing and its triggers",
+        "tr": "Bakım testleri ve tetikleyicilerini özetlemek"
+      }
+    },
+    {
+      "code": "FL-3.1.1",
+      "chapter": 3,
+      "section": "3.1",
+      "kLevel": "K1",
+      "text": {
+        "en": "Recognize types of work products that can be examined by static testing",
+        "tr": "Statik test ile incelenebilecek iş ürünü çeşitlerini ayırt etmek"
+      }
+    },
+    {
+      "code": "FL-3.1.2",
+      "chapter": 3,
+      "section": "3.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain the value of static testing",
+        "tr": "Statik testin önemini açıklamak"
+      }
+    },
+    {
+      "code": "FL-3.1.3",
+      "chapter": 3,
+      "section": "3.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Compare and contrast static testing and dynamic testing",
+        "tr": "Statik testler ve dinamik testler arasındaki farklılıkları karşılaştırıp kıyaslayabilmek"
+      }
+    },
+    {
+      "code": "FL-3.2.1",
+      "chapter": 3,
+      "section": "3.2",
+      "kLevel": "K1",
+      "text": {
+        "en": "Identify the benefits of early and frequent stakeholder feedback",
+        "tr": "Erken ve sık paydaş geri bildiriminin faydalarını tanımlamak"
+      }
+    },
+    {
+      "code": "FL-3.2.2",
+      "chapter": 3,
+      "section": "3.2",
+      "kLevel": "K2",
+      "text": {
+        "en": "Summarize the activities of the review process",
+        "tr": "Gözden geçirme süreci faaliyetlerini özetlemek"
+      }
+    },
+    {
+      "code": "FL-3.2.3",
+      "chapter": 3,
+      "section": "3.2",
+      "kLevel": "K1",
+      "text": {
+        "en": "Recall which responsibilities are assigned to the principal roles when performing reviews",
+        "tr": "Gözden geçirme yapılırken ana rollere atanan sorumlulukları hatırlamak"
+      }
+    },
+    {
+      "code": "FL-3.2.4",
+      "chapter": 3,
+      "section": "3.2",
+      "kLevel": "K2",
+      "text": {
+        "en": "Compare and contrast the different review types",
+        "tr": "Farklı gözden geçirme çeşitlerini karşılaştırmak ve ayırt etmek"
+      }
+    },
+    {
+      "code": "FL-3.2.5",
+      "chapter": 3,
+      "section": "3.2",
+      "kLevel": "K1",
+      "text": {
+        "en": "Recall the factors that contribute to a successful review",
+        "tr": "Başarılı bir gözden geçirmeye katkıda bulunan faktörleri hatırlamak"
+      }
+    },
+    {
+      "code": "FL-4.1.1",
+      "chapter": 4,
+      "section": "4.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Distinguish black-box test techniques, white-box test techniques and experience-based test techniques",
+        "tr": "Kara kutu test teknikleri, beyaz kutu test teknikleri ve tecrübeye dayalı test teknikleri arasındaki farkı ayırt etmek"
+      }
     },
     {
       "code": "FL-4.2.1",
@@ -21,9 +339,8 @@
       "kLevel": "K3",
       "text": {
         "en": "Use equivalence partitioning to derive test cases",
-        "tr": "Test senaryoları türetmek için eşdeğerlik bölümlemesini kullanmak"
-      },
-      "keywords": ["equivalence partitioning", "eşdeğerlik bölümlemesi"]
+        "tr": "Test senaryoları elde etmek için denklik paylarına ayırma test tekniğini kullanmak"
+      }
     },
     {
       "code": "FL-4.2.2",
@@ -32,9 +349,298 @@
       "kLevel": "K3",
       "text": {
         "en": "Use boundary value analysis to derive test cases",
-        "tr": "Test senaryoları türetmek için sınır değer analizini kullanmak"
-      },
-      "keywords": ["boundary value analysis", "sınır değer analizi"]
+        "tr": "Test senaryoları elde etmek için sınır değer analizi test tekniğini kullanmak"
+      }
+    },
+    {
+      "code": "FL-4.2.3",
+      "chapter": 4,
+      "section": "4.2",
+      "kLevel": "K3",
+      "text": {
+        "en": "Use decision table testing to derive test cases",
+        "tr": "Test senaryoları elde etmek için karar tablosu test tekniğini kullanmak"
+      }
+    },
+    {
+      "code": "FL-4.2.4",
+      "chapter": 4,
+      "section": "4.2",
+      "kLevel": "K3",
+      "text": {
+        "en": "Use state transition testing to derive test cases",
+        "tr": "Test senaryoları elde etmek için durum geçişi test tekniğini kullanmak"
+      }
+    },
+    {
+      "code": "FL-4.3.1",
+      "chapter": 4,
+      "section": "4.3",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain statement testing",
+        "tr": "Komut test tekniğini açıklamak"
+      }
+    },
+    {
+      "code": "FL-4.3.2",
+      "chapter": 4,
+      "section": "4.3",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain branch testing",
+        "tr": "Dal test tekniğini açıklamak"
+      }
+    },
+    {
+      "code": "FL-4.3.3",
+      "chapter": 4,
+      "section": "4.3",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain the value of white-box testing",
+        "tr": "Beyaz kutu testinin önemini açıklamak"
+      }
+    },
+    {
+      "code": "FL-4.4.1",
+      "chapter": 4,
+      "section": "4.4",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain error guessing",
+        "tr": "Hata tahminlemeyi açıklamak"
+      }
+    },
+    {
+      "code": "FL-4.4.2",
+      "chapter": 4,
+      "section": "4.4",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain exploratory testing",
+        "tr": "Keşif testini açıklamak"
+      }
+    },
+    {
+      "code": "FL-4.4.3",
+      "chapter": 4,
+      "section": "4.4",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain checklist-based testing",
+        "tr": "Kontrol listesine dayalı test tekniğini açıklamak"
+      }
+    },
+    {
+      "code": "FL-4.5.1",
+      "chapter": 4,
+      "section": "4.5",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain how to write user stories in collaboration with developers and business representatives",
+        "tr": "Geliştiriciler ve iş birimleri ile iş birliği içinde nasıl kullanıcı hikayeleri yazılacağını açıklamak"
+      }
+    },
+    {
+      "code": "FL-4.5.2",
+      "chapter": 4,
+      "section": "4.5",
+      "kLevel": "K2",
+      "text": {
+        "en": "Classify the different options for writing acceptance criteria",
+        "tr": "Kabul kriteri yazımı için farklı seçenekleri sınıflandırmak"
+      }
+    },
+    {
+      "code": "FL-4.5.3",
+      "chapter": 4,
+      "section": "4.5",
+      "kLevel": "K3",
+      "text": {
+        "en": "Use acceptance test-driven development (ATDD) to derive test cases",
+        "tr": "Test senaryoları elde etmek için kabul testi güdümlü geliştirmeyi (ATDD) kullanmak"
+      }
+    },
+    {
+      "code": "FL-5.1.1",
+      "chapter": 5,
+      "section": "5.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Exemplify the purpose and content of a test plan",
+        "tr": "Bir test planının amacına ve içeriğine ilişkin örnekler vermek"
+      }
+    },
+    {
+      "code": "FL-5.1.2",
+      "chapter": 5,
+      "section": "5.1",
+      "kLevel": "K1",
+      "text": {
+        "en": "Recognize how a tester adds value to iteration and release planning",
+        "tr": "Bir test uzmanının döngü ve sürüm planlamasına nasıl değer kattığını anlamak"
+      }
+    },
+    {
+      "code": "FL-5.1.3",
+      "chapter": 5,
+      "section": "5.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Compare and contrast entry criteria and exit criteria",
+        "tr": "Giriş kriterleri ve çıkış kriterlerini karşılaştırıp kıyaslamak"
+      }
+    },
+    {
+      "code": "FL-5.1.4",
+      "chapter": 5,
+      "section": "5.1",
+      "kLevel": "K3",
+      "text": {
+        "en": "Use estimation techniques to calculate the required test effort",
+        "tr": "Gerekli test eforunu hesaplamak için tahminleme teknikleri kullanmak"
+      }
+    },
+    {
+      "code": "FL-5.1.5",
+      "chapter": 5,
+      "section": "5.1",
+      "kLevel": "K3",
+      "text": {
+        "en": "Apply test case prioritization",
+        "tr": "Test senaryosularını önceliklendirmek"
+      }
+    },
+    {
+      "code": "FL-5.1.6",
+      "chapter": 5,
+      "section": "5.1",
+      "kLevel": "K1",
+      "text": {
+        "en": "Recall the concepts of the test pyramid",
+        "tr": "Test piramidinin konseptlerini hatırlamak"
+      }
+    },
+    {
+      "code": "FL-5.1.7",
+      "chapter": 5,
+      "section": "5.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Summarize the testing quadrants and their relationships with test levels and test types",
+        "tr": "Test çeyreklerini ve bunların test seviyeleri ve test çeşitleri ile olan ilişkilerini özetlemek"
+      }
+    },
+    {
+      "code": "FL-5.2.1",
+      "chapter": 5,
+      "section": "5.2",
+      "kLevel": "K1",
+      "text": {
+        "en": "Identify risk level by using risk likelihood and risk impact",
+        "tr": "Risk olasılığı ve risk etkisini kullanarak risk seviyesini belirlemek"
+      }
+    },
+    {
+      "code": "FL-5.2.2",
+      "chapter": 5,
+      "section": "5.2",
+      "kLevel": "K2",
+      "text": {
+        "en": "Distinguish between project risks and product risks",
+        "tr": "Proje risklerinin ve ürün risklerinin farklarını belirtmek"
+      }
+    },
+    {
+      "code": "FL-5.2.3",
+      "chapter": 5,
+      "section": "5.2",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain how product risk analysis may influence thoroughness and test scope",
+        "tr": "Ürün riski analizinin testlerin bütünlüğünü ve test kapsamını nasıl etkileyebileceğini açıklamak"
+      }
+    },
+    {
+      "code": "FL-5.2.4",
+      "chapter": 5,
+      "section": "5.2",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain what measures can be taken in response to analyzed product risks",
+        "tr": "Analiz edilen ürün risklerine karşı alınacak önlemleri açıklamak"
+      }
+    },
+    {
+      "code": "FL-5.3.1",
+      "chapter": 5,
+      "section": "5.3",
+      "kLevel": "K1",
+      "text": {
+        "en": "Recall metrics used for testing",
+        "tr": "Testlerde kullanılan metrikleri anımsamak"
+      }
+    },
+    {
+      "code": "FL-5.3.2",
+      "chapter": 5,
+      "section": "5.3",
+      "kLevel": "K2",
+      "text": {
+        "en": "Summarize the purposes, content, and audiences for test reports",
+        "tr": "Test raporlarının amaçlarını, içeriklerini ve hedef kitlelerini özetlemek"
+      }
+    },
+    {
+      "code": "FL-5.3.3",
+      "chapter": 5,
+      "section": "5.3",
+      "kLevel": "K2",
+      "text": {
+        "en": "Exemplify how to communicate the status of testing",
+        "tr": "Testin durumunun nasıl iletileceğine örnekler vermek"
+      }
+    },
+    {
+      "code": "FL-5.4.1",
+      "chapter": 5,
+      "section": "5.4",
+      "kLevel": "K2",
+      "text": {
+        "en": "Summarize how configuration management supports testing",
+        "tr": "Yapılandırma yönetiminin testleri nasıl desteklediğini özetlemek"
+      }
+    },
+    {
+      "code": "FL-5.5.1",
+      "chapter": 5,
+      "section": "5.5",
+      "kLevel": "K3",
+      "text": {
+        "en": "Prepare a defect report",
+        "tr": "Bir hata raporu hazırlamak"
+      }
+    },
+    {
+      "code": "FL-6.1.1",
+      "chapter": 6,
+      "section": "6.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain how different types of test tools support testing",
+        "tr": "Farklı test araçlarının test sürecini nasıl desteklediğini açıklamak"
+      }
+    },
+    {
+      "code": "FL-6.2.1",
+      "chapter": 6,
+      "section": "6.2",
+      "kLevel": "K1",
+      "text": {
+        "en": "Recall the benefits and risks of test automation",
+        "tr": "Test otomasyonunun faydalarını ve risklerini hatırlamak"
+      }
     }
   ]
 }

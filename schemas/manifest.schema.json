@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://istqb-prep/schemas/manifest.schema.json",
+  "title": "Kok manifest - sertifikalar, veri surumu",
+  "description": "data/manifest.json. Uygulama ve validator bu dosyadan disari dogru okur (docs/04-veri-modeli.md §2, §7).",
+  "type": "object",
+  "required": ["dataVersion", "generatedAt", "certifications"],
+  "additionalProperties": false,
+  "properties": {
+    "dataVersion": { "type": "string" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "certifications": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id", "acronym", "syllabusVersion", "status", "path",
+          "languages", "questionCount", "coverage"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "acronym": { "type": "string" },
+          "syllabusVersion": { "type": "string" },
+          "status": {
+            "type": "string",
+            "description": "Dogrulanmamis kapali liste - docs/04 bu alan icin bir enum tanimlamiyor. Ornek: 'active'."
+          },
+          "path": {
+            "type": "string",
+            "description": "data/ altindaki alt dizin adi, orn. 'ctfl-v4.0.1'."
+          },
+          "languages": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "enum": ["tr", "en"] },
+            "description": "Proje kurali (CLAUDE.md): her sertifika TR ve EN icerir."
+          },
+          "questionCount": { "type": "integer", "minimum": 0 },
+          "coverage": {
+            "type": "object",
+            "required": ["objectivesTotal", "objectivesCovered", "minPerObjective"],
+            "additionalProperties": false,
+            "properties": {
+              "objectivesTotal": { "type": "integer", "minimum": 0 },
+              "objectivesCovered": { "type": "integer", "minimum": 0 },
+              "minPerObjective": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
+      }
+    }
+  }
+}

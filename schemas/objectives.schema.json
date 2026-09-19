@@ -4,9 +4,14 @@
   "title": "Ogrenme hedefleri (learning objectives)",
   "type": "object",
   "required": ["syllabusVersion", "objectives"],
+  "additionalProperties": false,
   "properties": {
     "syllabusVersion": { "type": "string" },
     "source": { "type": "string" },
+    "status": {
+      "type": "string",
+      "description": "Opsiyonel ilerleme notu, orn. 'INCOMPLETE - F0-06 ile tamamlanacak'."
+    },
     "objectives": {
       "type": "array",
       "minItems": 1,

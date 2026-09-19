@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Manual dark mode toggle: <html class="dark">, not prefers-color-scheme. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --surface-2: #f5f5f4;
+  --border: #e7e5e4;
+  --fg: #1c1917;
+  --fg-muted: #57534e;
+  --accent: #0f766e;
+  --correct: #15803d;
+  --incorrect: #b91c1c;
+  --flag: #b45309;
+  --info: #1d4ed8;
+}
+
+.dark {
+  --bg: #0c0a09;
+  --surface: #1c1917;
+  --surface-2: #292524;
+  --border: #292524;
+  --fg: #fafaf9;
+  --fg-muted: #a8a29e;
+  --accent: #2dd4bf;
+  --correct: #4ade80;
+  --incorrect: #f87171;
+  --flag: #fbbf24;
+  --info: #60a5fa;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+}

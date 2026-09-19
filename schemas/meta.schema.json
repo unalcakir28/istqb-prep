@@ -4,17 +4,24 @@
   "title": "Sertifika meta verisi",
   "type": "object",
   "required": ["id", "name", "acronym", "syllabusVersion", "exam"],
+  "additionalProperties": false,
   "properties": {
     "id": { "type": "string" },
-    "name": { "type": "object", "required": ["tr", "en"] },
+    "name": {
+      "type": "object",
+      "required": ["tr", "en"],
+      "additionalProperties": false,
+      "properties": { "tr": { "type": "string" }, "en": { "type": "string" } }
+    },
     "acronym": { "type": "string" },
     "stream": { "enum": ["core", "agile", "specialist"] },
     "level": { "enum": ["foundation", "advanced", "expert", "specialist"] },
     "syllabusVersion": { "type": "string" },
-    "syllabusReleaseDate": { "type": "string" },
+    "syllabusReleaseDate": { "type": "string", "format": "date" },
     "exam": {
       "type": "object",
       "required": ["questionCount", "totalPoints", "passPoints", "durationMinutes"],
+      "additionalProperties": false,
       "properties": {
         "questionCount": { "type": "integer" },
         "totalPoints": { "type": "integer" },

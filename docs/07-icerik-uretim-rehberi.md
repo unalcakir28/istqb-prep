@@ -89,65 +89,143 @@ Her gerekçe `syllabusRef` (`§4.2.3`), `objectives[]` ve `kLevel` taşır ve UI
 ## 5. Türkçe terminoloji
 
 ### Kaynak hiyerarşisi
-1. **Birincil:** TTB CTFL v4.0.1 Türkçe müfredatı
+1. **Birincil:** TTB CTFL v4.0.1 Türkçe müfredatı — `data/ctfl-v4.0.1/terms.json`
 2. **İkincil:** TTB *Yazılım Testi Terimler Sözlüğü* — ⚠️ **v3.7 tabanlı, v4.0 ile uyumsuz.** Sadece doğrulanarak kullanılır.
 3. **Son çare:** Editoryal çeviri — `trSource: "editorial"` olarak işaretlenir ve gözden geçirmeye tabidir.
 
-### Kritik ayrımlar — Türkçenin çöktüğü yer
+> ### ⚠️ Bu bölüm 19.09.2026'da tamamen değiştirildi
+> İlk sürümü resmî TR müfredat elde olmadan yazılmıştı ve **büyük bölümü yanlıştı** — üstelik bazı satırlarda
+> resmî terim "kullanılmayacak" sütununda listelenmişti (ör. *defect* için doğru karşılık olan **hata**,
+> yanlışlıkla yasaklanmış; yerine müfredatta hiç geçmeyen *kusur* dayatılmıştı).
+>
+> Aşağıdaki tablo artık **türetilmiş değil, ölçülmüş** bir veridir: ISTQB v4.0.1 (EN) ve TTB v4.0.1 (TR)
+> müfredatlarının bölüm başı anahtar kelime listeleri aynı sırada yayımlanıyor ve 6 bölümün tamamında
+> terim sayıları birebir eşleşti (30/17/10/18/26/1). Eşleme konum bazlıdır; tek bir terim bile
+> editoryal çeviriyle üretilmemiştir.
+>
+> Tek doğruluk kaynağı `data/ctfl-v4.0.1/terms.json`'dur. Bu tablo ondan üretilir — **elle düzenlenmez.**
+
+### Kritik ayrım — Türkçenin çöktüğü yer
 
 Pazar araştırmasında tespit edilen ana acı:
 > *"Error, bug, failure ingilizcede farklı anlamlara gelirken türkçede genellikle hepsi 'hata' başlığı altında ele alınıyor."*
 
-**Bu ayrım doğrudan sınanıyor.** Kuralımız: bu üçlü asla "hata" diye çevrilmez.
+**Bu ayrım doğrudan sınanıyor.** Resmî karşılıklar:
 
-| EN | TR (kullanılacak) | ❌ Kullanılmayacak |
+| EN | Resmî TR | Neden karıştırılıyor |
 |---|---|---|
-| error / mistake | **hata (insan kaynaklı)** — ilk geçişte `(error)` yazılır | "bug" |
-| defect / bug / fault | **kusur** | "hata" |
-| failure | **arıza** | "hata", "başarısızlık" |
+| **error** | **insan hatası** | Tek başına "hata" denirse *defect* ile karışır |
+| **defect** | **hata** | Türkçede "bug" karşılığı da bu |
+| **failure** | **arıza** | "başarısızlık" DEĞİL |
 | root cause | kök neden | |
-| test case | test senaryosu | "test durumu" |
-| test procedure | test prosedürü | |
-| test suite | test paketi | |
-| test basis | test dayanağı | "test tabanı" |
-| test object | test nesnesi | |
-| test condition | test koşulu | |
-| test data | test verisi | |
-| testware | testware / test ürünleri | ⚠️ v4.0'da `test documentation` yerine geldi |
-| work product | iş ürünü | ⚠️ v4.0'da `artifact` yerine geldi |
-| coverage | kapsama | "kapsam" |
-| statement coverage | ifade kapsaması | |
-| branch / decision coverage | dal / karar kapsaması | |
-| equivalence partitioning | eşdeğerlik bölümlemesi | "denklik bölümleme" |
-| boundary value analysis | sınır değer analizi | |
-| decision table testing | karar tablosu testi | |
-| state transition testing | durum geçiş testi | |
-| exploratory testing | keşifsel test | "araştırmacı test" |
-| regression testing | regresyon testi | "gerileme testi" |
-| confirmation testing / retesting | doğrulama testi (yeniden test) | |
-| verification | doğrulama | ⚠️ validation ile karıştırma |
-| validation | geçerleme | "doğrulama" |
-| severity | şiddet | "önem" |
-| priority | öncelik | |
-| risk likelihood | risk olasılığı | |
-| risk impact | risk etkisi | |
-| entry / exit criteria | giriş / çıkış kriterleri | |
-| definition of done | bitti tanımı | |
-| test monitoring | test izleme | ⚠️ control ile karıştırma |
-| test control | test kontrolü | |
-| performance efficiency | performans verimliliği | ⚠️ v4.0'da `performance` yerine geldi |
-| quality assurance | kalite güvence | |
-| static testing | statik test | |
-| dynamic testing | dinamik test | |
-| review | gözden geçirme | "inceleme" (bu `inspection`) |
-| walkthrough | teknik gözden geçirme (walkthrough) | |
-| inspection | inceleme | |
-| shift left | sola kaydırma (shift left) | |
-| whole team approach | bütün ekip yaklaşımı | |
-| test pyramid | test piramidi | |
-| testing quadrants | test çeyrekleri | |
 
-> **Yazım kuralı:** Bir terim bir soruda **ilk kez** geçtiğinde parantez içinde İngilizcesi verilir: *"kusur (defect)"*. Aynı soruda tekrar geçerse sade hâliyle kullanılır.
+Müfredat bölüm 1.2.3'ün resmî başlığı: *"İnsan Hataları, Hatalar, Arızalar ve Kök Nedenler"*.
+
+### Resmî terim tablosu (97 terim)
+
+`Bölüm` sütunu terimin anahtar kelime olarak tanımlandığı müfredat bölümüdür.
+
+| EN | Resmî TR | Bölüm | Kullanılmayacak |
+|---|---|:--:|---|
+| acceptance criteria | **kabul kriterleri** | 4 |  |
+| acceptance test-driven development | **kabul testi güdümlü yazılım geliştirme** | 4 |  |
+| acceptance testing | **kabul testi** | 2 |  |
+| anomaly | **anomali** | 3 |  |
+| black-box test technique | **kara kutu test tekniği** | 4 |  |
+| black-box testing | **kara kutu testi** | 2 |  |
+| boundary value analysis | **sınır değer analizi** | 4 |  |
+| branch coverage | **dal kapsamı** | 4 | ~~dal kapsaması~~ |
+| checklist-based testing | **kontrol listesine dayalı test etme** | 4 |  |
+| collaboration-based test approach | **iş birliğine dayalı test yaklaşımı** | 4 |  |
+| component integration testing | **bileşen entegrasyon testi** | 2 |  |
+| component testing | **bileşen testi** | 2 |  |
+| confirmation testing | **onaylama testi** | 2 | ~~doğrulama testi~~ |
+| coverage | **kapsam** | 1, 4 | ~~kapsama~~ |
+| coverage item | **kapsam öğesi** | 4 |  |
+| debugging | **hata ayıklama** | 1 |  |
+| decision table testing | **karar tablosu testi** | 4 |  |
+| defect | **hata** | 1 | ~~kusur~~ |
+| defect management | **hata yönetimi** | 5 |  |
+| defect report | **hata raporu** | 5 |  |
+| dynamic testing | **dinamik test** | 3 |  |
+| entry criteria | **giriş kriterleri** | 5 |  |
+| equivalence partitioning | **denklik paylarına ayırma** | 4 | ~~eşdeğerlik bölümlemesi~~ · ~~denklik bölümleme~~ |
+| error | **insan hatası** | 1 | ~~hata~~ |
+| error guessing | **hata tahminleme** | 4 |  |
+| exit criteria | **çıkış kriterleri** | 5 |  |
+| experience-based test technique | **tecrübeye dayalı test tekniği** | 4 |  |
+| exploratory testing | **keşif testi** | 4 | ~~keşifsel test~~ · ~~araştırmacı test~~ |
+| failure | **arıza** | 1 | ~~hata~~ · ~~başarısızlık~~ |
+| formal review | **resmi gözden geçirme** | 3 |  |
+| functional testing | **fonksiyonel test** | 2 |  |
+| informal review | **gayri resmi gözden geçirme** | 3 |  |
+| inspection | **teftiş** | 3 | ~~inceleme~~ |
+| integration testing | **entegrasyon testi** | 2 |  |
+| maintenance testing | **bakım testi** | 2 |  |
+| non-functional testing | **fonksiyonel olmayan test** | 2 |  |
+| product risk | **ürün riski** | 5 |  |
+| project risk | **proje riski** | 5 |  |
+| quality | **kalite** | 1 |  |
+| quality assurance | **kalite güvence** | 1 |  |
+| regression testing | **regresyon testi** | 2 | ~~gerileme testi~~ |
+| review | **gözden geçirme** | 3 | ~~inceleme~~ |
+| risk | **risk** | 5 |  |
+| risk analysis | **risk analizi** | 5 |  |
+| risk assessment | **risk değerlendirmesi** | 5 |  |
+| risk control | **risk kontrolü** | 5 |  |
+| risk identification | **risk belirleme** | 5 |  |
+| risk level | **risk seviyesi** | 5 |  |
+| risk management | **risk yönetimi** | 5 |  |
+| risk mitigation | **risk azaltma** | 5 |  |
+| risk monitoring | **risk gözetimi** | 5 |  |
+| risk-based testing | **risk bazlı test** | 5 |  |
+| root cause | **kök neden** | 1 |  |
+| shift left | **shift-left** | 2 | ~~sola kaydırma~~ |
+| state transition testing | **durum geçişi testi** | 4 |  |
+| statement coverage | **komut kapsama yüzdesi** | 4 | ~~ifade kapsaması~~ |
+| static analysis | **statik analiz** | 3 |  |
+| static testing | **statik test** | 3 |  |
+| system integration testing | **sistem entegrasyon testi** | 2 |  |
+| system testing | **sistem testi** | 2 |  |
+| technical review | **teknik gözden geçirme** | 3 |  |
+| test analysis | **test analizi** | 1 |  |
+| test approach | **test yaklaşımı** | 5 |  |
+| test automation | **test otomasyonu** | 6 |  |
+| test basis | **test esası** | 1 | ~~test dayanağı~~ · ~~test tabanı~~ |
+| test case | **test senaryosu** | 1 | ~~test durumu~~ |
+| test completion | **test tamamlama** | 1 |  |
+| test completion report | **test tamamlama raporu** | 5 |  |
+| test condition | **test koşulu** | 1 |  |
+| test control | **test kontrolü** <br><sub>müfredatta ayrıca: *test kontrol*</sub> | 1, 5 |  |
+| test data | **test verisi** | 1 |  |
+| test design | **test tasarımı** | 1 |  |
+| test execution | **test koşumu** | 1 |  |
+| test implementation | **test uyarlama** | 1 |  |
+| test level | **test seviyesi** | 2 |  |
+| test monitoring | **test gözetimi** | 1, 5 | ~~test izleme~~ |
+| test object | **test nesnesi** | 1, 2 |  |
+| test objective | **test hedefi** | 1 |  |
+| test plan | **test planı** | 5 |  |
+| test planning | **test planlama** | 1, 5 |  |
+| test procedure | **test prosedürü** | 1 |  |
+| test process | **test süreci** | 1 |  |
+| test progress report | **test ilerleme raporu** | 5 |  |
+| test pyramid | **test piramidi** | 5 |  |
+| test result | **test sonucu** | 1 |  |
+| test strategy | **test stratejisi** | 5 |  |
+| test technique | **test tekniği** | 4 |  |
+| test type | **test çeşidi** | 2 |  |
+| testing | **test etme** | 1 |  |
+| testing quadrants | **test çeyrekleri** | 5 |  |
+| testware | **test çalışma ürünleri** | 1 | ~~testware~~ · ~~test ürünleri~~ |
+| traceability | **izlenebilirlik** | 1 |  |
+| validation | **sağlama** | 1 | ~~geçerleme~~ |
+| verification | **doğrulama** | 1 |  |
+| walkthrough | **üzerinden geçme** | 3 | ~~teknik gözden geçirme~~ |
+| white-box test technique | **beyaz kutu test tekniği** | 4 |  |
+| white-box testing | **beyaz kutu testi** | 2 |  |
+
+> **Yazım kuralı:** Bir terim bir soruda **ilk kez** geçtiğinde parantez içinde İngilizcesi verilir: *"hata (defect)"*. Aynı soruda tekrar geçerse sade hâliyle kullanılır.
 
 > ⚠️ **Gerçek sınav kitapçığı iki dillidir.** Aday Türkçe terimi görüp İngilizcesini aramak zorunda kalmamalı — bizim yan yana modumuz bunu birebir taklit eder.
 

@@ -4,28 +4,50 @@
   "title": "Terimler sozlugu parcasi",
   "type": "object",
   "required": ["terms"],
+  "additionalProperties": false,
   "properties": {
     "terms": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["slug", "en", "tr"],
+        "required": ["slug", "en", "tr", "source", "trSource"],
+        "additionalProperties": false,
         "properties": {
-          "slug": { "type": "string" },
+          "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
           "en": {
-            "type": "object", "required": ["term", "definition"],
-            "properties": { "term": { "type": "string" }, "definition": { "type": "string" } }
+            "type": "object",
+            "required": ["term", "definition"],
+            "additionalProperties": false,
+            "properties": {
+              "term": { "type": "string", "minLength": 1 },
+              "definition": { "type": "string", "minLength": 1 }
+            }
           },
           "tr": {
-            "type": "object", "required": ["term", "definition"],
-            "properties": { "term": { "type": "string" }, "definition": { "type": "string" } }
+            "type": "object",
+            "required": ["term", "definition"],
+            "additionalProperties": false,
+            "properties": {
+              "term": { "type": "string", "minLength": 1 },
+              "definition": { "type": "string", "minLength": 1 }
+            }
           },
-          "usedIn": { "type": "array" },
-          "source": { "type": "string" },
-          "sourceUrl": { "type": "string" },
+          "usedIn": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["syllabus", "version"],
+              "properties": {
+                "syllabus": { "type": "string" },
+                "version": { "type": "string" }
+              }
+            }
+          },
+          "source": { "type": "string", "minLength": 1 },
+          "sourceUrl": { "type": "string", "format": "uri" },
           "trSource": {
-            "type": "string",
-            "description": "Turkce karsiligin kaynagi: 'ttb-syllabus-v4.0.1' | 'ttb-glossary-v3.7' | 'editorial'"
+            "enum": ["ttb-syllabus-v4.0.1", "ttb-glossary-v3.7", "editorial"],
+            "description": "Turkce karsiligin kaynagi. Bkz. docs/07-icerik-uretim-rehberi.md §5 kaynak hiyerarsisi."
           }
         }
       }

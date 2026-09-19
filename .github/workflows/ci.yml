@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Format check
+        run: yarn format
+
+      - name: Type check
+        run: yarn typecheck
+
+      - name: Test
+        run: yarn test
+
+      # Data validation runs last: it's fine if `validate:data` doesn't exist
+      # yet (scripts/ is owned by a separate workstream), but once it lands
+      # this step gates the build on a clean data set.
+      - name: Validate data
+        run: yarn validate:data

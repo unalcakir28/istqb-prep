@@ -1,0 +1,116 @@
+- generic [active] [ref=f1e1]:
+  - link "Skip to content" [ref=f1e2] [cursor=pointer]:
+    - /url: "#jupiterx-main"
+  - generic [ref=f1e3]:
+    - banner [ref=f1e4]:
+      - generic [ref=f1e8]:
+        - link [ref=f1e15] [cursor=pointer]:
+          - /url: https://www.turkishtestingboard.org
+          - img "Turkish Testing Board" [ref=f1e17]
+        - generic [ref=f1e19]:
+          - navigation [ref=f1e22]:
+            - list [ref=f1e23]:
+              - listitem [ref=f1e24]:
+                - link "Sertifikasyon" [ref=f1e25] [cursor=pointer]:
+                  - /url: https://www.turkishtestingboard.org/istqb-sinavlar-hakkinda-bilgi/
+              - listitem [ref=f1e26]:
+                - generic [ref=f1e27]: Etkinlikler
+              - listitem [ref=f1e28]:
+                - link "Akreditasyon" [ref=f1e29] [cursor=pointer]:
+                  - /url: https://www.turkishtestingboard.org/akreditasyon/
+              - listitem [ref=f1e30]:
+                - generic [ref=f1e31]: Yayınlar
+              - listitem [ref=f1e32]:
+                - link "Hakkımızda" [ref=f1e33] [cursor=pointer]:
+                  - /url: https://www.turkishtestingboard.org/yazilim-test-ve-kalite-dernegi-hakkinda/
+              - listitem [ref=f1e34]:
+                - link "İletişim" [ref=f1e35] [cursor=pointer]:
+                  - /url: https://www.turkishtestingboard.org/yazilim-test-ve-kalite-dernegi-iletisim/
+              - listitem [ref=f1e36]:
+                - link "EN" [ref=f1e37] [cursor=pointer]:
+                  - /url: https://www.turkishtestingboard.org/en/certified-tester-foundation-level-syllabus-turkish/
+          - link "SINAV KAYIT" [ref=f1e42] [cursor=pointer]:
+            - /url: /kayit
+            - generic [ref=f1e45]:
+              - generic: 
+              - generic [ref=f1e46]: SINAV KAYIT
+          - search [ref=f1e50]:
+            - generic [ref=f1e51]: 
+          - generic [ref=f1e56]:
+            - link " 0" [ref=f1e57] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=f1e58]: 
+              - generic [ref=f1e59]: "0"
+            - generic [ref=f1e60]:
+              - generic [ref=f1e61]:
+                - paragraph [ref=f1e62]: Cart
+                - button [ref=f1e63] [cursor=pointer]
+              - paragraph [ref=f1e68]: No products in the cart.
+    - main [ref=f1e69]:
+      - heading "Sertifikalı Test Uzmanı Temel Seviye (CTFL) v4.0.1 Müfredatı – Türkçe" [level=1] [ref=f1e72]
+      - main [ref=f1e77]:
+        - article [ref=f1e78]:
+          - generic [ref=f1e85]:
+            - generic [ref=f1e87]:
+              - paragraph [ref=f1e88]: ISTQB® CTFL Syllabus v4.0.1 TTB tarafından uygulanan sınavlarda 6 Mayıs 2024 tarihinden itibaren geçerli olacaktır. Sertifika üzerinde syllabus versiyonuna yer verilmekte olup, geçmiş tarihli sertifikalar da geçerliliğini koruyacaktır.
+              - paragraph [ref=f1e89]: ISTQB® Sertifikalı Test Uzmanı Temel Seviye Ders Programının 2018 Türkçe versiyonunun yayınlamasının üzerinden yaklaşık 5 yıl geçti. Bu süre zarfında hem yazılım test sektöründe çok önemli gelişmeler oldu hem de sektör Türkiye’de ve dünyada yıllık ortalama %20 oranında bir ivmeyle büyüme kaydetti. İşte bu doküman değişen yazılım ve yazılım test dünyasındaki son gelişmeleri yansıtmak amacıyla ISTQB® tarafından revize edilerek, Nisan 2023’de bilişim sektörünün hizmetine sunulmuştur. Dokümanda özellikle Çevik yazılım geliştirme ve DevOps yaklaşımlarının teste etkisi göze çarpmaktadır.
+              - paragraph [ref=f1e90]: Dokümana aşağıdaki butondan ulaşabilirsiniz.
+            - link "Syllabus" [ref=f1e94] [cursor=pointer]:
+              - /url: https://www.turkishtestingboard.org/files/pdfs/ISTQB_CTFL_Syllabus-v4.0.1.pdf
+              - generic [ref=f1e97]:
+                - generic: 
+                - generic [ref=f1e98]: Syllabus
+    - contentinfo [ref=f1e102]:
+      - generic [ref=f1e103]:
+        - generic [ref=f1e109]:
+          - generic [ref=f1e111]:
+            - link [ref=f1e114] [cursor=pointer]:
+              - /url: https://www.istqb.org/
+            - paragraph [ref=f1e117]: ISTQB®, 130’dan fazla ülkede kâr amacı gütmeyen, gönüllü dernekler şeklinde yazılım test ve kalitesi konusunda faaliyetlerini sürdüren dünya çapındaki en büyük uluslararası yazılım test organizasyondur.
+          - paragraph [ref=f1e124]: Yazılım Test ve Kalite Derneği, 2006 yılından bu yana uluslararası ISTQB® sertifika sınavlarını gerçekleştirerek sınavda başarılı olan katılımcılara uluslararası geçerliliği olan sertifikalar vermektedir.
+          - generic [ref=f1e125]: ISTQB® sertifikasyon sınavları için yetkili uluslararası sınav sağlayıcısı
+          - paragraph [ref=f1e145]: "TTB® kalite yönetim sistemi ISO 9001’e, TTB® personel belgelendirme sistemi ISO 17024’e uygundur. TTB® ISO 9001 ve ISO 17024 sertifikalarının geçerlilik tarihi: 14 Mayıs 2027."
+        - generic [ref=f1e157]:
+          - paragraph [ref=f1e160]: E-Bültene Üye Olun
+          - generic [ref=f1e162]:
+            - paragraph
+            - generic [ref=f1e166]:
+              - paragraph [ref=f1e167]:
+                - textbox "İsim" [ref=f1e168]
+              - paragraph [ref=f1e169]:
+                - textbox "E-Posta" [ref=f1e170]
+              - paragraph [ref=f1e171]:
+                - generic [ref=f1e172] [cursor=pointer]:
+                  - checkbox "Aydınlatma Metnini okudum, onaylıyorum." [ref=f1e173]
+                  - generic [ref=f1e174]:
+                    - link "Aydınlatma Metnini" [ref=f1e175]:
+                      - /url: https://www.turkishtestingboard.org/e-bulten-bilgilendirme-metni/
+                    - text: okudum, onaylıyorum.
+              - paragraph [ref=f1e176]:
+                - button "Gönder" [ref=f1e177] [cursor=pointer]
+            - paragraph
+          - generic [ref=f1e179]:
+            - navigation [ref=f1e180]:
+              - list [ref=f1e181]:
+                - listitem [ref=f1e182]:
+                  - link "• Ödeme Koşulları" [ref=f1e183] [cursor=pointer]:
+                    - /url: https://www.turkishtestingboard.org/odeme-kosullari/
+                - listitem [ref=f1e184]:
+                  - link "• Gizlilik Politikası" [ref=f1e185] [cursor=pointer]:
+                    - /url: https://www.turkishtestingboard.org/gizlilik-politikasi/
+                - listitem [ref=f1e186]:
+                  - link "• Kullanım Koşulları" [ref=f1e187] [cursor=pointer]:
+                    - /url: https://www.turkishtestingboard.org/kullanim-kosullari/
+                - listitem [ref=f1e188]:
+                  - link "• KVKK" [ref=f1e189] [cursor=pointer]:
+                    - /url: https://www.turkishtestingboard.org/aydinlatma-metni/
+            - text: 
+          - generic [ref=f1e191]:
+            - paragraph [ref=f1e192]:
+              - text: Maslak Mah. AOS 55.Sokak 42 Maslak, B Blok Sitesi No:4/542 Sarıyer, İstanbul — +90 212 276 06 48 —
+              - link "certification@turkishtestingboard.org" [ref=f1e193] [cursor=pointer]:
+                - /url: mailto:certification@turkishtestingboard.org
+            - paragraph [ref=f1e194]: © 2026 – Turkish Testing Board. Tüm hakları Saklıdır.
+    - button "Scroll to top" [ref=f1e196] [cursor=pointer]: 
+  - generic [ref=f1e197]: desktop
+  - status [ref=f1e198]

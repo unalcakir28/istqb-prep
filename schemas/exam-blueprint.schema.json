@@ -4,17 +4,36 @@
   "title": "Resmi sinav soru dagilimi (LO gruplari)",
   "type": "object",
   "required": ["syllabusVersion", "source", "groups"],
+  "additionalProperties": false,
   "properties": {
     "syllabusVersion": { "type": "string" },
     "source": { "type": "string" },
     "rule": { "type": "string" },
+    "status": {
+      "type": "string",
+      "description": "Opsiyonel ilerleme notu, orn. 'INCOMPLETE - F0-05 ile tamamlanacak'."
+    },
     "totals": {
       "type": "object",
-      "description": "CI tarafindan dogrulanir: questions=40, chapters=8/6/4/11/9/2, kLevels=8/24/8",
+      "description": "Kendi-beyan ozet alani. Beklenen degerler burada SABITLENMEZ - CLAUDE.md geregi tek dogruluk kaynagi syllabus.json/meta.json'dur. CI check #9 bu alani degil, groups[] toplamini syllabus.json ile karsilastirir.",
+      "required": ["questions", "byChapter", "byKLevel"],
+      "additionalProperties": false,
       "properties": {
-        "questions": { "const": 40 },
-        "byChapter": { "type": "object" },
-        "byKLevel": { "type": "object" }
+        "questions": { "type": "integer", "minimum": 1 },
+        "byChapter": {
+          "type": "object",
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        },
+        "byKLevel": {
+          "type": "object",
+          "required": ["K1", "K2", "K3"],
+          "additionalProperties": false,
+          "properties": {
+            "K1": { "type": "integer", "minimum": 0 },
+            "K2": { "type": "integer", "minimum": 0 },
+            "K3": { "type": "integer", "minimum": 0 }
+          }
+        }
       }
     },
     "groups": {
