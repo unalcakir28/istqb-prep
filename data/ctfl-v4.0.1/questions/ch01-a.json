@@ -1,0 +1,72 @@
+{
+  "chunk": "ch01-a",
+  "chapter": 1,
+  "dataVersion": "2026.09.19",
+  "questions": [
+    {
+      "id": "ctfl4-0001",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.3",
+      "objectives": ["FL-1.4.3"],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": ["seven-principles", "tests-wear-out"],
+      "origin": "original",
+      "status": "published",
+      "correct": ["c"],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, aynı regresyon test paketini 18 aydır her sürümde değiştirmeden çalıştırıyor. Paket hâlâ geçiyor ancak sahada bulunan kusur sayısı artmış durumda. Bu durumu EN İYİ açıklayan test prensibi hangisidir?",
+          "options": [
+            { "id": "a", "text": "Test, kusurların varlığını gösterir, yokluğunu gösteremez" },
+            { "id": "b", "text": "Kusursuz test imkânsızdır" },
+            { "id": "c", "text": "Testlerin etkisi zamanla azalır" },
+            { "id": "d", "text": "Test, bağlama bağlıdır" }
+          ],
+          "rationale": {
+            "summary": "Testlerin etkisi zamanla azalır prensibi (pesticide paradox), aynı testlerin değiştirilmeden tekrarlanmasının yeni kusur bulma kapasitesini düşürdüğünü söyler. Test paketi düzenli olarak gözden geçirilmeli ve çeşitlendirilmelidir.",
+            "byOption": {
+              "a": "Yanlış. Bu prensip, testin kusur bulabileceğini ama hiç kusur olmadığını kanıtlayamayacağını söyler. Testlerin zamanla etkisizleşmesiyle ilgili değildir.",
+              "b": "Yanlış. Bu prensip, tüm girdi ve ön koşul kombinasyonlarının test edilemeyeceğini ve bu yüzden risk ve önceliklendirmeye başvurulduğunu söyler. Buradaki senaryo bir kapsam sorunu değil, değişmeyen test paketiyle ilgilidir.",
+              "c": "Doğru. Aynı testler değişmeden tekrarlandıkça yeni kusur bulma oranı düşer. Testler gözden geçirilip yenilenmezse kapsanmayan alanlar sahada kusur olarak ortaya çıkar.",
+              "d": "Yanlış. Bu prensip, test yaklaşımının sistemin ve riskin bağlamına göre değişmesi gerektiğini söyler. Senaryoda bağlam değişikliği değil, testlerin sabitliği anlatılmaktadır."
+            }
+          },
+          "hints": ["Prensip, aynı tarım ilacına karşı zamanla direnç kazanan böceklere benzetilir."]
+        },
+        "en": {
+          "stem": "A team has been running the same regression suite unchanged on every release for 18 months. The suite still passes, but the number of defects found in production has increased. Which testing principle BEST explains this situation?",
+          "options": [
+            { "id": "a", "text": "Testing shows the presence, not the absence of defects" },
+            { "id": "b", "text": "Exhaustive testing is impossible" },
+            { "id": "c", "text": "Tests wear out" },
+            { "id": "d", "text": "Testing is context dependent" }
+          ],
+          "rationale": {
+            "summary": "The 'tests wear out' principle (pesticide paradox) states that repeating the same unchanged tests reduces their ability to find new defects. Test suites must be reviewed and varied regularly.",
+            "byOption": {
+              "a": "Incorrect. This principle states that testing can reveal defects but cannot prove none exist. It does not address tests losing effectiveness over time.",
+              "b": "Incorrect. This principle states that all combinations of inputs and preconditions cannot be tested, which is why risk and prioritization are used. The scenario is about an unchanged suite, not coverage limits.",
+              "c": "Correct. Repeating identical tests lowers the rate of finding new defects. If the suite is not reviewed and refreshed, uncovered areas surface as production defects.",
+              "d": "Incorrect. This principle states that the test approach must vary with the context and risk of the system. The scenario describes static tests, not a change of context."
+            }
+          },
+          "hints": ["The principle is compared to insects becoming resistant to the same pesticide."]
+        }
+      },
+      "meta": {
+        "author": "unal",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    }
+  ]
+}

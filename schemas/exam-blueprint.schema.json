@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://istqb-prep/schemas/exam-blueprint.schema.json",
+  "title": "Resmi sinav soru dagilimi (LO gruplari)",
+  "type": "object",
+  "required": ["syllabusVersion", "source", "groups"],
+  "properties": {
+    "syllabusVersion": { "type": "string" },
+    "source": { "type": "string" },
+    "rule": { "type": "string" },
+    "totals": {
+      "type": "object",
+      "description": "CI tarafindan dogrulanir: questions=40, chapters=8/6/4/11/9/2, kLevels=8/24/8",
+      "properties": {
+        "questions": { "const": 40 },
+        "byChapter": { "type": "object" },
+        "byKLevel": { "type": "object" }
+      }
+    },
+    "groups": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "chapter", "kLevel", "questions", "objectives"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "chapter": { "type": "integer", "minimum": 1, "maximum": 6 },
+          "kLevel": { "enum": ["K1", "K2", "K3"] },
+          "questions": { "type": "integer", "minimum": 1 },
+          "objectives": {
+            "type": "array", "minItems": 1,
+            "items": { "type": "string", "pattern": "^FL-[0-9]+\\.[0-9]+\\.[0-9]+$" }
+          }
+        }
+      }
+    }
+  }
+}

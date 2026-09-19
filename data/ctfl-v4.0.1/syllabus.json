@@ -1,0 +1,77 @@
+{
+  "syllabusVersion": "4.0.1",
+  "source": "ISTQB CTFL Syllabus v4.0.1 + Exam Structures & Rules tables v1.19 (2026-08-19)",
+  "chapters": [
+    {
+      "number": 1,
+      "title": { "en": "Fundamentals of Testing", "tr": "Yazılım Testinin Temelleri" },
+      "trainingMinutes": 180,
+      "objectiveCount": 14,
+      "objectiveKDistribution": { "K1": 3, "K2": 11, "K3": 0 },
+      "examQuestions": 8,
+      "examPoints": 8,
+      "examKDistribution": { "K1": 2, "K2": 6, "K3": 0 }
+    },
+    {
+      "number": 2,
+      "title": {
+        "en": "Testing Throughout the Software Development Lifecycle",
+        "tr": "Yazılım Geliştirme Yaşam Döngüsü Boyunca Test"
+      },
+      "trainingMinutes": 130,
+      "objectiveCount": 10,
+      "objectiveKDistribution": { "K1": 2, "K2": 8, "K3": 0 },
+      "examQuestions": 6,
+      "examPoints": 6,
+      "examKDistribution": { "K1": 2, "K2": 4, "K3": 0 }
+    },
+    {
+      "number": 3,
+      "title": { "en": "Static Testing", "tr": "Statik Testler" },
+      "trainingMinutes": 80,
+      "objectiveCount": 8,
+      "objectiveKDistribution": { "K1": 4, "K2": 4, "K3": 0 },
+      "examQuestions": 4,
+      "examPoints": 4,
+      "examKDistribution": { "K1": 2, "K2": 2, "K3": 0 }
+    },
+    {
+      "number": 4,
+      "title": { "en": "Test Analysis and Design", "tr": "Test Analizi ve Tasarımı" },
+      "trainingMinutes": 390,
+      "objectiveCount": 14,
+      "objectiveKDistribution": { "K1": 0, "K2": 9, "K3": 5 },
+      "examQuestions": 11,
+      "examPoints": 11,
+      "examKDistribution": { "K1": 0, "K2": 6, "K3": 5 }
+    },
+    {
+      "number": 5,
+      "title": { "en": "Managing the Test Activities", "tr": "Test Aktivitelerini Yönetme" },
+      "trainingMinutes": 335,
+      "objectiveCount": 16,
+      "objectiveKDistribution": { "K1": 4, "K2": 9, "K3": 3 },
+      "examQuestions": 9,
+      "examPoints": 9,
+      "examKDistribution": { "K1": 1, "K2": 5, "K3": 3 }
+    },
+    {
+      "number": 6,
+      "title": { "en": "Test Tools", "tr": "Test Araçları" },
+      "trainingMinutes": 20,
+      "objectiveCount": 2,
+      "objectiveKDistribution": { "K1": 1, "K2": 1, "K3": 0 },
+      "examQuestions": 2,
+      "examPoints": 2,
+      "examKDistribution": { "K1": 1, "K2": 1, "K3": 0 }
+    }
+  ],
+  "totals": {
+    "trainingMinutes": 1135,
+    "objectives": 64,
+    "objectiveKDistribution": { "K1": 14, "K2": 42, "K3": 8 },
+    "examQuestions": 40,
+    "examPoints": 40,
+    "examKDistribution": { "K1": 8, "K2": 24, "K3": 8 }
+  }
+}

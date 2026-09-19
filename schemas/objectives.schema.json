@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://istqb-prep/schemas/objectives.schema.json",
+  "title": "Ogrenme hedefleri (learning objectives)",
+  "type": "object",
+  "required": ["syllabusVersion", "objectives"],
+  "properties": {
+    "syllabusVersion": { "type": "string" },
+    "source": { "type": "string" },
+    "objectives": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["code", "chapter", "section", "kLevel", "text"],
+        "additionalProperties": false,
+        "properties": {
+          "code": { "type": "string", "pattern": "^FL-[0-9]+\\.[0-9]+\\.[0-9]+$" },
+          "chapter": { "type": "integer", "minimum": 1, "maximum": 6 },
+          "section": { "type": "string" },
+          "kLevel": { "enum": ["K1", "K2", "K3"] },
+          "text": {
+            "type": "object",
+            "required": ["en", "tr"],
+            "properties": { "en": { "type": "string" }, "tr": { "type": "string" } }
+          },
+          "keywords": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

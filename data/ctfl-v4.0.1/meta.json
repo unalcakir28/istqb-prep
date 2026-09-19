@@ -1,0 +1,32 @@
+{
+  "id": "ctfl-v4.0.1",
+  "name": {
+    "tr": "Sertifikalı Test Uzmanı Temel Seviye",
+    "en": "Certified Tester Foundation Level"
+  },
+  "acronym": "CTFL",
+  "stream": "core",
+  "level": "foundation",
+  "syllabusVersion": "4.0.1",
+  "syllabusReleaseDate": "2024-09-15",
+  "exam": {
+    "questionCount": 40,
+    "totalPoints": 40,
+    "passPoints": 26,
+    "passPercent": 65,
+    "durationMinutes": 60,
+    "extendedDurationMinutes": 75,
+    "pointsPerQuestion": 1,
+    "negativeMarking": null,
+    "questionKLevelDistribution": { "K1": 8, "K2": 24, "K3": 8 }
+  },
+  "sources": {
+    "syllabusEn": "https://istqb.org/?sdm_process_download=1&download_id=3345",
+    "syllabusTr": "https://www.turkishtestingboard.org/files/pdfs/ISTQB_CTFL_Syllabus-v4.0.1.pdf",
+    "examRules": "https://istqb.org/?sdm_process_download=1&download_id=3829",
+    "examTables": "https://istqb.org/?sdm_process_download=1&download_id=3832",
+    "glossaryApi": "https://api.glossary.istqb.org/v1/terms",
+    "sampleExamsEn": "https://istqb.org/sdm_categories/certified-tester-foundation-level-ctfl-v4-0/",
+    "sampleExamsTr": "https://www.turkishtestingboard.org/en/certified-tester-foundation-level-sample-exam-turkish/"
+  }
+}

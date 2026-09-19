@@ -1,0 +1,23 @@
+{
+  "dataVersion": "2026.09.19",
+  "count": 1,
+  "chunks": ["ch01-a"],
+  "questions": [
+    {
+      "id": "ctfl4-0001",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.4",
+      "objectives": ["FL-1.4.3"],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": ["seven-principles", "tests-wear-out"],
+      "languages": ["tr", "en"],
+      "syllabusVersion": "4.0.1",
+      "status": "published"
+    }
+  ]
+}

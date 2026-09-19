@@ -1,0 +1,16 @@
+{
+  "dataVersion": "2026.09.19",
+  "generatedAt": "2026-09-19T12:00:00Z",
+  "certifications": [
+    {
+      "id": "ctfl-v4.0.1",
+      "acronym": "CTFL",
+      "syllabusVersion": "4.0.1",
+      "status": "active",
+      "path": "ctfl-v4.0.1",
+      "languages": ["tr", "en"],
+      "questionCount": 1,
+      "coverage": { "objectivesTotal": 64, "objectivesCovered": 1, "minPerObjective": 0 }
+    }
+  ]
+}

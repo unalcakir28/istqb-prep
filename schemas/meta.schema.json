@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://istqb-prep/schemas/meta.schema.json",
+  "title": "Sertifika meta verisi",
+  "type": "object",
+  "required": ["id", "name", "acronym", "syllabusVersion", "exam"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "object", "required": ["tr", "en"] },
+    "acronym": { "type": "string" },
+    "stream": { "enum": ["core", "agile", "specialist"] },
+    "level": { "enum": ["foundation", "advanced", "expert", "specialist"] },
+    "syllabusVersion": { "type": "string" },
+    "syllabusReleaseDate": { "type": "string" },
+    "exam": {
+      "type": "object",
+      "required": ["questionCount", "totalPoints", "passPoints", "durationMinutes"],
+      "properties": {
+        "questionCount": { "type": "integer" },
+        "totalPoints": { "type": "integer" },
+        "passPoints": { "type": "integer" },
+        "passPercent": { "type": "number" },
+        "durationMinutes": { "type": "integer" },
+        "extendedDurationMinutes": { "type": "integer" },
+        "pointsPerQuestion": { "type": "integer" },
+        "negativeMarking": {
+          "type": ["boolean", "null"],
+          "description": "null = resmi dokumanlarda belirtilmemis. false YAZMA - dogrulanmamis iddiada bulunma."
+        },
+        "questionKLevelDistribution": { "type": "object" }
+      }
+    },
+    "sources": { "type": "object" }
+  }
+}

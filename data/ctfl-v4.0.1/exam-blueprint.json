@@ -1,0 +1,22 @@
+{
+  "syllabusVersion": "4.0.1",
+  "source": "ISTQB Exam Structures & Rules tables v1.19 (2026-08-19), sayfa: CTFL v4.0",
+  "rule": "Bir grupta LO sayısından çok soru varsa, her LO'dan EN AZ bir soru gelir. Sorudan çok LO varsa, her soru FARKLI bir LO'yu kapsar.",
+  "status": "INCOMPLETE - F0-05 ile resmî tablodan tamamlanacak",
+  "totals": {
+    "questions": 40,
+    "byChapter": { "1": 8, "2": 6, "3": 4, "4": 11, "5": 9, "6": 2 },
+    "byKLevel": { "K1": 8, "K2": 24, "K3": 8 }
+  },
+  "groups": [
+    { "id": "g1-1", "chapter": 1, "kLevel": "K1", "questions": 1, "objectives": ["FL-1.1.1", "FL-1.2.2"] },
+    { "id": "g1-2", "chapter": 1, "kLevel": "K1", "questions": 1, "objectives": ["FL-1.5.2"] },
+    { "id": "g1-3", "chapter": 1, "kLevel": "K2", "questions": 1, "objectives": ["FL-1.1.2", "FL-1.2.1", "FL-1.2.3", "FL-1.3.1", "FL-1.4.1", "FL-1.4.2"] },
+    { "id": "g1-4", "chapter": 1, "kLevel": "K2", "questions": 3, "objectives": ["FL-1.4.3", "FL-1.4.4", "FL-1.4.5"] },
+    { "id": "g1-5", "chapter": 1, "kLevel": "K2", "questions": 1, "objectives": ["FL-1.5.1", "FL-1.5.3"] },
+    { "id": "g4-k3", "chapter": 4, "kLevel": "K3", "questions": 5, "objectives": ["FL-4.2.1", "FL-4.2.2", "FL-4.2.3", "FL-4.2.4", "FL-4.5.3"] },
+    { "id": "g5-k3", "chapter": 5, "kLevel": "K3", "questions": 3, "objectives": ["FL-5.1.4", "FL-5.1.5", "FL-5.5.1"] },
+    { "id": "g6-1", "chapter": 6, "kLevel": "K2", "questions": 1, "objectives": ["FL-6.1.1"] },
+    { "id": "g6-2", "chapter": 6, "kLevel": "K1", "questions": 1, "objectives": ["FL-6.2.1"] }
+  ]
+}

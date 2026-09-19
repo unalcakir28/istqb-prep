@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://istqb-prep/schemas/glossary.schema.json",
+  "title": "Terimler sozlugu parcasi",
+  "type": "object",
+  "required": ["terms"],
+  "properties": {
+    "terms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["slug", "en", "tr"],
+        "properties": {
+          "slug": { "type": "string" },
+          "en": {
+            "type": "object", "required": ["term", "definition"],
+            "properties": { "term": { "type": "string" }, "definition": { "type": "string" } }
+          },
+          "tr": {
+            "type": "object", "required": ["term", "definition"],
+            "properties": { "term": { "type": "string" }, "definition": { "type": "string" } }
+          },
+          "usedIn": { "type": "array" },
+          "source": { "type": "string" },
+          "sourceUrl": { "type": "string" },
+          "trSource": {
+            "type": "string",
+            "description": "Turkce karsiligin kaynagi: 'ttb-syllabus-v4.0.1' | 'ttb-glossary-v3.7' | 'editorial'"
+          }
+        }
+      }
+    }
+  }
+}

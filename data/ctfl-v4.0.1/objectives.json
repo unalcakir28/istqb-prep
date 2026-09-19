@@ -1,0 +1,40 @@
+{
+  "syllabusVersion": "4.0.1",
+  "source": "ISTQB CTFL Syllabus v4.0.1 (EN) + TTB Türkçe çevirisi v4.0.1",
+  "status": "INCOMPLETE - F0-06 ile 64 LO'nun tamamı doldurulacak. Aşağıdakiler format örneğidir.",
+  "objectives": [
+    {
+      "code": "FL-1.4.3",
+      "chapter": 1,
+      "section": "1.4",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain the seven testing principles",
+        "tr": "Yedi test prensibini açıklamak"
+      },
+      "keywords": ["testing principles", "test prensipleri"]
+    },
+    {
+      "code": "FL-4.2.1",
+      "chapter": 4,
+      "section": "4.2",
+      "kLevel": "K3",
+      "text": {
+        "en": "Use equivalence partitioning to derive test cases",
+        "tr": "Test senaryoları türetmek için eşdeğerlik bölümlemesini kullanmak"
+      },
+      "keywords": ["equivalence partitioning", "eşdeğerlik bölümlemesi"]
+    },
+    {
+      "code": "FL-4.2.2",
+      "chapter": 4,
+      "section": "4.2",
+      "kLevel": "K3",
+      "text": {
+        "en": "Use boundary value analysis to derive test cases",
+        "tr": "Test senaryoları türetmek için sınır değer analizini kullanmak"
+      },
+      "keywords": ["boundary value analysis", "sınır değer analizi"]
+    }
+  ]
+}

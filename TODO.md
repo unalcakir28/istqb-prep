@@ -1,0 +1,132 @@
+# TODO
+
+Faz açıklamaları ve bağımlılıklar: [`docs/09-yol-haritasi.md`](docs/09-yol-haritasi.md)
+Tahminler: tek geliştirici, haftada ~10 saat.
+
+Öncelik: **P0** yapılmadan sonraki faz başlamaz · **P1** faz içinde gerekli · **P2** iyi olur
+
+---
+
+## Faz 0 — Temel ve doğrulama
+
+### Karar ve hukuk
+- [ ] **F0-01** `P0` Ürün adı kararı (D-01). ISTQB markasını çağrıştırmamalı — bkz. [`08 §K-4`](docs/08-hukuki-ve-telif.md). Adaylar: *Denemelik, SınavLab, TestKit, CertPath, Sorubank*
+- [ ] **F0-02** `P0` ISTQB Glossary lisansını tarayıcıda **gözle doğrula** (footer'da CC BY 4.0 var mı?), ekran görüntüsünü `docs/kanit/` altına koy
+- [ ] **F0-03** `P1` ISTQB'ye yazılı izin e-postası gönder (ücretsiz + açık kaynak + non-commercial vurgusuyla)
+- [ ] **F0-04** `P1` TTB'ye Türkçe içerik/işbirliği e-postası gönder
+- [ ] **F0-15** `P2` İçerik lisansı kararı (D-03): CC BY-SA 4.0 mı?
+- [ ] **F0-16** `P2` Alan adı kararı (D-02)
+
+### Veri iskeleti
+- [ ] **F0-05** `P0` **Resmî LO-grubu tablosunun tamamını `data/ctfl-v4.0.1/exam-blueprint.json`'a çıkar.** Kaynak: *Exam Structures & Rules tables v1.19*. Toplam 40 soru, bölüm dağılımı 8/6/4/11/9/2, K dağılımı 8/24/8 olmalı. **Kritik yol üzerinde — bu olmadan deneme motoru yazılamaz.**
+- [ ] **F0-06** `P0` `objectives.json` — 64 öğrenme hedefi, `FL-x.y.z` kodları, K-seviyeleri, TR+EN metinler. Kaynak: ISTQB v4.0.1 EN + TTB v4.0.1 TR müfredatı
+- [ ] **F0-07** `P0` `syllabus.json` (6 bölüm + alt bölümler, TR/EN başlıklar, sınav ağırlıkları) · `meta.json` · kök `manifest.json`
+- [ ] **F0-11** `P1` `certifications.json` — 28 satırlık tüm ISTQB sertifika tablosu ([`03 §5`](docs/03-istqb-referans.md) seed verisi)
+- [ ] **F0-08** `P0` JSON Schema dosyalarını tamamla (`schemas/`) + `scripts/validate-data.ts` (13 kontrol — [`04 §6`](docs/04-veri-modeli.md))
+- [ ] **F0-12** `P1` `scripts/build-index.ts` — parçalardan `questions/index.json` üret
+- [ ] **F0-13** `P1` `scripts/stats.ts` — LO başına kapsama raporu → `docs/kapsama.md`
+- [ ] **F0-09** `P1` `scripts/fetch-glossary.ts` — Glossary API'den `used_in: Foundation v4.0` filtresiyle 215 terimi çek; TR karşılıklarını TTB müfredatından eşle, `trSource` işaretle
+- [ ] **F0-14** `P1` Türkçe terim sözlüğünü ([`07 §5`](docs/07-icerik-uretim-rehberi.md)) makine okunur hâle getir (CI'da terim sızıntısı uyarısı için)
+
+### İçerik
+- [ ] **F0-10** `P0` İlk 20 soruyu yaz (Bölüm 1: 10, Bölüm 4: 10) — format ve süreç testi
+
+> **Faz 0 bitti:** `npm run validate:data` yeşil · blueprint 40'a toplanıyor · 20 soru şemaya uygun
+
+---
+
+## Faz 1 — MVP: Deneme sınavı
+
+### Altyapı
+- [ ] **F1-01** `P0` Vite 6 + React 19 + TS + Tailwind v4 + shadcn iskeleti
+- [ ] **F1-01b** `P0` GitHub Pages deploy hattı: `base` ayarı, `dist/404.html` kopyası, `.nojekyll`, `deploy.yml`
+- [ ] **F1-01c** `P0` CI: ESLint + Prettier + `tsc --noEmit` + Vitest + `validate:data` (veri bozuksa deploy yok)
+- [ ] **F1-02** `P0` `contentClient` — manifest/meta/index/parça yükleme, bellek + Cache API önbelleği, `dataVersion` ile geçersizleştirme
+- [ ] **F1-03** `P0` Dexie şeması (`attempts`, `responses`, `srsCards`, `bookmarks`, `settings`) + migrasyon altyapısı
+- [ ] **F1-04** `P0` i18next; **arayüz dili ≠ içerik dili** ayrımı; `lang` özniteliği yönetimi
+
+### Sınav motoru
+- [ ] **F1-05** `P0` `generateExam` — blueprint tabanlı üretim, LO-grubu kuralı, ağırlıklı seçim, soru + şık karıştırma
+- [ ] **F1-05b** `P0` Birim test: üretilen dağılım **tam olarak** 8/6/4/11/9/2 ve K 8/24/8
+- [ ] **F1-05c** `P1` Havuz yetersizse sessizce eksik üretme — açık uyarı döndür
+- [ ] **F1-06** `P0` `scoreExam` — multi-select **tam eşleşme**, kısmi puan yok, baraj `meta`'dan (sabit kodlama yok), bölüm + LO kırılımı
+- [ ] **F1-08** `P0` `ExamTimer` — `Date.now()` tabanlı (sekme arka planında kaymaz), 5 sn'de bir kalıcılaştırma, son 10 dk amber / son 1 dk kırmızı, gizle/göster
+
+### Arayüz
+- [ ] **F1-07** `P0` `QuestionCard` + `OptionList` (max 65ch, tam genişlik dokunma hedefi, 1–9 klavye seçimi) + `LangToggle` (cevap korunur)
+- [ ] **F1-07b** `P0` `multi` soru desteği: checkbox + **"HANGİ İKİSİ — 2 şık seçin"** başlığı
+- [ ] **F1-09** `P0` `QuestionNavigator` — masaüstünde panel, mobilde bottom sheet; boş/cevaplı/işaretli durumları
+- [ ] **F1-10** `P0` Sınav oturumu rotası + **yarım kalan denemeyi kurtarma** (ana sayfada şerit)
+- [ ] **F1-11** `P0` Sonuç ekranı: skor + **26/40 baraj çizgisi** + bölüm çubukları + **hayalet hedefler** + en zayıf 3 LO
+- [ ] **F1-12** `P0` İnceleme turu + `RationalePanel` — **her şık için gerekçe** + atıf çipleri (`FL-4.2.1` · `§4.2.1` · `K3` · `v4.0.1`)
+- [ ] **F1-13** `P0` Karanlık mod (token tabanlı) + klavye kısayolları + `?` overlay (ilk ziyarette bir kez)
+- [ ] **F1-14** `P1` `MediaRenderer`: `decision-table` ve `table` (gerçek `<table>`, görsel değil)
+- [ ] **F1-16** `P1` Ana sayfa — ilk kez gelene "Nereden başlamalı?" (birincil eylem **Pratik**, Deneme değil)
+- [ ] **F1-17** `P1` Deneme kurulum ekranı: **75 dk Türkçe arayüzde varsayılan seçili**, canlı dağılım önizlemesi, havuz uyarısı
+
+### Kalite
+- [ ] **F1-15** `P1` E2E (Playwright): tam deneme akışı · süre dolunca otomatik teslim · yenileme sonrası kurtarma · TR/EN geçişi · karanlık mod
+- [ ] **F1-18** `P1` `@axe-core/playwright` — her ana rotada 0 kritik ihlal
+- [ ] **F1-19** `P2` Lighthouse CI — 4 kategoride ≥95
+
+### İçerik ve sayfalar
+- [ ] **F1-C1** `P0` **120 soru** — her LO için ≥1, Bölüm 4/5 ağırlıklı, TR+EN, tam gerekçeli
+- [ ] **F1-C2** `P1` Kapsama rozeti README'de
+- [ ] **F1-C3** `P0` `/kaynaklar` (telif bildirimi tam metni + resmî bağlantılar) · gizlilik politikası · sorumluluk reddi footer'ı
+
+> **Faz 1 bitti:** [`02 §3`](docs/02-urun-gereksinimleri.md)'teki MVP sınırı karşılandı
+
+---
+
+## Faz 2 — Öğrenme modları
+
+- [ ] **F2-01** `P0` Pratik modu: bölüm/LO seçimi, **10 soruluk sabit oturum**, satır içi anlık geri bildirim
+- [ ] **F2-02** `P0` Yanlış cevabın **aynı oturumun sonuna yeniden kuyruklanması** (Duolingo deseni)
+- [ ] **F2-03** `P0` `/syllabus` müfredat gezgini — 64 LO, filtrelenebilir/sıralanabilir, senin doğruluk oranın sütunu (LeetCode deseni)
+- [ ] **F2-04** `P0` LO zayıflık analizi + "Çalış →" derin bağlantıları
+- [ ] **F2-05** `P1` `/glossary` — TR/EN eşzamanlı arama, terim kartı (EN+TR yan yana), **kaynak etiketi** (`trSource`)
+- [ ] **F2-06** `P1` TR/EN **yan yana** görünüm (geniş ekranda iki sütun, darda üst üste, tek radio grubu)
+- [ ] **F2-07** `P1` Listeler: yanlışlarım · işaretlediklerim · **hiç iki kez üst üste doğru yapamadıklarım**
+- [ ] **F2-08** `P1` Soru hata bildirimi → önceden doldurulmuş GitHub Issue (soru ID, sürüm, seçilen şık, dil)
+- [ ] **F2-09** `P1` `MediaRenderer`: `state-transition` (metin alternatifli), `control-flow`, `code`
+- [ ] **F2-10** `P0` **İçerik: 200 soru** (her LO ≥2)
+- [ ] **F2-11** `P2` Terim üzerine gelince tanım (tooltip)
+
+---
+
+## Faz 3 — Tekrar, ilerleme, çevrimdışı
+
+- [ ] **F3-01** `P0` `ts-fsrs` entegrasyonu + `srsCards` tablosu; yanlış cevaplar otomatik desteye
+- [ ] **F3-02** `P0` Tekrar ekranı: **Again / Hard / Good / Easy** + her düğmede **sonraki aralık önizlemesi**
+- [ ] **F3-03** `P1` Aynı LO'dan ardışık soru engelleme (sibling burying)
+- [ ] **F3-04** `P1` Vade tahmin grafiği + ana ekranda vadeli kart sayısı
+- [ ] **F3-05** `P1` İlerleme ekranı: skor eğilimi, bölüm bazlı gelişim, **affedici seri**
+- [ ] **F3-06** `P1` **Hazırlık tahmini** — son 3 zamanlı denemeye dayalı ("2'si barajı geçti, sınavı planlayabilirsin")
+- [ ] **F3-07** `P1` PWA: manifest, servis çalışanı, parça önbelleği (`StaleWhileRevalidate`), kurulabilirlik
+- [ ] **F3-08** `P0` İlerleme **dışa/içe aktarma** (JSON) — IndexedDB kaybı riskinin karşılığı
+- [ ] **F3-09** `P2` Kademeli ipucu (dürtme → ipucu → çözüm)
+- [ ] **F3-10** `P0` **İçerik: 300 soru** (her LO ≥3)
+- [ ] **F3-11** `P2` Sorunun `revision` artınca SRS kartını `relearning` yapma
+- [ ] **F3-12** `P2` Gizli sekme / kalıcılık yok tespiti + kullanıcı uyarısı
+
+---
+
+## Faz 4 — Ölçekleme
+
+- [ ] **F4-01** `P0` **CTFL-AT (Agile Tester)** — ikinci sertifika; mimarinin gerçek testi (kod değişikliği olmamalı)
+- [ ] **F4-02** `P1` CT-AI v2.0 (TTB'de Türkçe müfredatı var)
+- [ ] **F4-03** `P2` CT-PT (Performance Testing)
+- [ ] **F4-04** `P2` CTAL-TA v4.0 — ilk Advanced modül → **çok puanlı soru** desteği (puanlama motoru genişler)
+- [ ] **F4-05** `P1` Topluluk soru katkısı: PR şablonu + **özgünlük beyanı** + gözden geçirme akışı
+- [ ] **F4-06** `P2` Soru başına tartışma (GitHub Discussions üzerinden, sunucusuz)
+- [ ] **F4-07** `P1` **Türkçe süreç rehberi**: kayıt, online gözetim, sonuç, tekrar hakkı (pazar araştırmasında tespit edilen boşluk)
+- [ ] **F4-08** `P2` Soru başına global doğruluk oranı — gizlilik korunarak nasıl? (araştırma gerekli)
+
+---
+
+## Sürekli
+
+- [ ] Çeyreklik gözden geçirme kontrol listesi ([`10 §4`](docs/10-riskler-ve-metrikler.md))
+- [ ] Soru hata bildirimlerini haftalık elden geçir (kapanma < 7 gün)
+- [ ] ISTQB duyurularını izle (yeni müfredat sürümü = R-03)
+- [ ] Kapsama raporunu güncel tut
