@@ -81,11 +81,21 @@ Site ücretsizdir. Reklam yok, abonelik yok, bağış düğmesi bile v1'de yok. 
 ### K-4 — Marka kullanımı
 - "ISTQB" adı **yalnızca tanımlayıcı** olarak kullanılır ("ISTQB sınavına hazırlık"), marka gibi değil.
 - ISTQB veya TTB **logosu kullanılmaz**.
-- Ürün adı ISTQB'yi çağrıştıran bir marka olmamalı — *"ISTQB Prep"* ismi bile riskli olabilir. **Bu, D-01 (isim kararı) için ek bir kısıttır.**
-- Alan adı alınırsa "istqb" kelimesi içermemeli.
+- "ISTQB" adı ürün adında kullanıldığında **açıklayıcı kullanım savunması zayıflar**. Tescilli markanın kendi ürününe ad yapılması, "ISTQB sınavına hazırlık" gibi betimleyici kullanımla aynı korumaya sahip değildir.
+- ISTQB veya TTB'nin onayladığı/akredite ettiği izlenimi **hiçbir yerde** verilmez — bu, isim markaya yakın olduğu için normalden daha kritik hâle gelir (bkz. §6 sorumluluk reddi).
 
-### K-5 — Yazılı izin başvurusu (paralel yürütülür)
-ISTQB'ye ve TTB'ye, projenin ücretsiz ve açık kaynaklı olduğunu belirten bir izin başvurusu yapılır. Cevap beklenmeden K-1 ile geliştirmeye devam edilir; olumlu cevap gelirse resmî soruların gösterimi yeniden değerlendirilir.
+> **D-01 (19.09.2026): ürün adı `ISTQB-PREP` seçildi ve bu maddedeki risk bilinçli olarak üstlenildi.**
+> Gerekçe: arama görünürlüğü ve adayın zaten aradığı kelime olması. Proje ticari amaç taşımayan kişisel bir çalışmadır; bu, telif zeminini (K-2) güçlendirir ancak marka riskini tek başına ortadan kaldırmaz. Risk kaydı `10 §R-01b`'ye işlendi.
+> Bu kararın gerektirdiği telafiler:
+> - Sorumluluk reddi footer'ı **her sayfada** görünür olmalı, gömülü değil (F1-C3).
+> - ISTQB logosu, kurumsal rengi veya tipografisi kullanılmaz; wordmark ISTQB'den açıkça ayrışır.
+> - Ürün adı **koda ve veri dosyalarına gömülmez** — tek bir yerden (`meta`/i18n) okunur ki bir uyarı mektubu gelirse yeniden adlandırma tek satırlık iş olsun.
+> - Alan adı alınırsa (D-02: şimdilik alınmıyor) "istqb" kelimesini içermemesi önerilir; ad ile alan adının ayrışması riski azaltır.
+
+### K-5 — Yazılı izin başvurusu yapılmaz (D-05, 19.09.2026)
+ISTQB'ye ve TTB'ye izin başvurusu **yapılmayacak**. Gerekçe: izin istemek, izne ihtiyaç duyulduğu varsayımını doğurur; oysa dayanağımız izin değil, K-1 (tüm sorular özgün), K-2 (ticari kullanım yok) ve K-3 (her yerde kaynak gösterimi). Bu üçü başvurudan bağımsız olarak geçerlidir.
+
+Bunun bedeli bilinçli kabul edildi: resmî bir güvence ve TTB ile işbirliği ihtimali elde edilmiyor. Karar, ISTQB veya TTB'den doğrudan bir temas gelirse yeniden değerlendirilir; o durumda K-1'e sadık kalındığı için pozisyon savunulabilir durumdadır.
 
 ### K-6 — Lisanslama
 | Varlık | Lisans |
@@ -139,9 +149,10 @@ ISTQB'nin etik kuralları, gerçek sınav sorularının paylaşılmasını yasak
 ## 7. Yapılacaklar kontrol listesi
 
 - [ ] (F0-02) Glossary footer lisansını tarayıcıda gözle doğrula, ekran görüntüsü al
-- [ ] (F0-03) ISTQB'ye yazılı izin e-postası gönder
-- [ ] (F0-04) TTB'ye Türkçe içerik ve işbirliği için e-posta gönder
-- [ ] Ürün adının ISTQB markasını çağrıştırmadığından emin ol (D-01)
+- [x] ~~(F0-03) ISTQB'ye yazılı izin e-postası gönder~~ — D-05 ile iptal
+- [x] ~~(F0-04) TTB'ye Türkçe içerik ve işbirliği için e-posta gönder~~ — D-05 ile iptal
+- [x] ~~Ürün adının ISTQB markasını çağrıştırmadığından emin ol~~ — D-01 ile bu kısıttan **bilinçli olarak vazgeçildi** (ad: `ISTQB-PREP`)
+- [ ] Ürün adını tek bir kaynaktan okunur hâle getir (yeniden adlandırma maliyetini düşük tut) — D-01 telafisi
 - [ ] `/kaynaklar` sayfası: telif bildirimi tam metni + resmî bağlantılar
 - [ ] Gizlilik politikası sayfası
 - [ ] Sorumluluk reddi footer'ı

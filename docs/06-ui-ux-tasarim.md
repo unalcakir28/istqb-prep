@@ -63,7 +63,7 @@
 
 ```
 ┌───────────────────────────────────────────────────────────┐
-│  istqb-prep            [CTFL v4.0.1 ▾] [TR|EN] [🌙] [≡]  │
+│  ISTQB-PREP            [CTFL v4.0.1 ▾] [TR|EN] [🌙] [≡]  │
 ├───────────────────────────────────────────────────────────┤
 │                                                           │
 │   ISTQB Temel Seviye sınavına hazırlan                    │
@@ -293,4 +293,4 @@ LeetCode problem listesi deseni — filtrelenebilir, sıralanabilir, durum sütu
 - **Ton:** Sakin, teknik, gereksiz neşesiz. Ünlem az. Emoji yalnızca ikon yerine (🔥 seri, ⚑ işaret).
 - **Türkçe dili:** Sen-dili ("Çözdün", "Zayıf olduğun hedefler"). Resmî ISTQB terimleri TTB müfredatındaki hâliyle, ilk geçişte parantez içinde İngilizcesiyle.
 - **Kaçınılacak:** "Harika!", "Muhteşem!", oyunlaştırma dili, sahte aciliyet, "%99 başarı garantisi" tarzı iddialar.
-- **Logo/isim:** Açık karar (D-01). Wordmark yeterli; illüstrasyon gerekmiyor.
+- **Logo/isim:** **ISTQB-PREP** (D-01). Wordmark yeterli; illüstrasyon gerekmiyor. ISTQB logosu, renkleri veya tipografisi **kullanılmaz** — isim zaten markaya yakın olduğu için görsel kimliğin ISTQB'den açıkça ayrışması gerekir.

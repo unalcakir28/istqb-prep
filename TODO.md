@@ -10,12 +10,13 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 ## Faz 0 — Temel ve doğrulama
 
 ### Karar ve hukuk
-- [ ] **F0-01** `P0` Ürün adı kararı (D-01). ISTQB markasını çağrıştırmamalı — bkz. [`08 §K-4`](docs/08-hukuki-ve-telif.md). Adaylar: *Denemelik, SınavLab, TestKit, CertPath, Sorubank*
+- [x] **F0-01** `P0` Ürün adı kararı (D-01) → **ISTQB-PREP**, depo adıyla aynı. Marka riski bilinçli üstlenildi ([`08 §K-4`](docs/08-hukuki-ve-telif.md), [`10 §R-01b`](docs/10-riskler-ve-metrikler.md))
+- [ ] **F0-17** `P1` Ürün adını tek kaynaktan okunur yap (i18n/`meta`) — koda gömme; D-01 riskinin telafisi, yeniden adlandırmayı tek satıra indirir
 - [ ] **F0-02** `P0` ISTQB Glossary lisansını tarayıcıda **gözle doğrula** (footer'da CC BY 4.0 var mı?), ekran görüntüsünü `docs/kanit/` altına koy
-- [ ] **F0-03** `P1` ISTQB'ye yazılı izin e-postası gönder (ücretsiz + açık kaynak + non-commercial vurgusuyla)
-- [ ] **F0-04** `P1` TTB'ye Türkçe içerik/işbirliği e-postası gönder
-- [ ] **F0-15** `P2` İçerik lisansı kararı (D-03): CC BY-SA 4.0 mı?
-- [ ] **F0-16** `P2` Alan adı kararı (D-02)
+- [x] ~~**F0-03** ISTQB'ye yazılı izin e-postası~~ — **iptal** (D-05: başvuru yapılmayacak, dayanak K-1/K-2/K-3)
+- [x] ~~**F0-04** TTB'ye Türkçe içerik/işbirliği e-postası~~ — **iptal** (D-05)
+- [x] **F0-15** `P2` İçerik lisansı kararı (D-03) → **CC BY-SA 4.0**
+- [x] **F0-16** `P2` Alan adı kararı (D-02) → alan adı alınmıyor, `*.github.io` yeterli
 
 ### Veri iskeleti
 - [ ] **F0-05** `P0` **Resmî LO-grubu tablosunun tamamını `data/ctfl-v4.0.1/exam-blueprint.json`'a çıkar.** Kaynak: *Exam Structures & Rules tables v1.19*. Toplam 40 soru, bölüm dağılımı 8/6/4/11/9/2, K dağılımı 8/24/8 olmalı. **Kritik yol üzerinde — bu olmadan deneme motoru yazılamaz.**

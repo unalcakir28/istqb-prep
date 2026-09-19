@@ -175,7 +175,7 @@
 | Quizlet/Brainscape | ◐ | binlerce | Kul. üretimi, eski | ○ | ◐ | ○ | ● | ● | ● | ● | ○ | ○ |
 | **Ozan İlhan (TR)** | ○ | 254 | Özgün | ● | ○ | ● | ◐ | ○ | ● | ● | ◐ | **●** |
 | **Fatih Ünal (TR, ücretsiz)** | ● | 160 | Resmî | ◐ | ○ | ● | ○ | ○ | ◐ | ○ | ● | **● iki dilli** |
-| **→ istqb-prep (hedef)** | **●** | **300+** | **Özgün** | **●** | **●** | **●** | **●** | **●** | **●** | **●** | **●** | **● iki dilli** |
+| **→ ISTQB-PREP (hedef)** | **●** | **300+** | **Özgün** | **●** | **●** | **●** | **●** | **●** | **●** | **●** | **●** | **● iki dilli** |
 
 ---
 

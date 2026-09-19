@@ -13,10 +13,10 @@
 
 | # | Görev | Çıktı |
 |---|---|---|
-| F0-01 | Ürün adı kararı (D-01) + ISTQB marka riski kontrolü | Karar kaydı |
+| F0-01 | ~~Ürün adı kararı (D-01)~~ | ✅ **ISTQB-PREP** (marka riski kabul edildi) |
 | F0-02 | ISTQB Glossary lisansını tarayıcıda gözle doğrula | Ekran görüntüsü + karar |
-| F0-03 | ISTQB'ye yazılı izin e-postası | Gönderildi kaydı |
-| F0-04 | TTB'ye işbirliği e-postası | Gönderildi kaydı |
+| F0-03 | ~~ISTQB'ye yazılı izin e-postası~~ | ❌ D-05 ile iptal |
+| F0-04 | ~~TTB'ye işbirliği e-postası~~ | ❌ D-05 ile iptal |
 | F0-05 | **Resmî LO-grubu tablosunun tamamını `exam-blueprint.json`'a çıkar** | 40 soruya toplanan tam blueprint |
 | F0-06 | `objectives.json` — 64 LO, TR+EN metin, K-seviyeleri | Doğrulanmış veri |
 | F0-07 | `syllabus.json` + `meta.json` + `certifications.json` | Doğrulanmış veri |

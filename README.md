@@ -1,4 +1,4 @@
-# istqb-prep
+# ISTQB-PREP
 
 > ISTQB sertifikasyon sınavlarına hazırlık için açık kaynaklı, ücretsiz, iki dilli (TR/EN) deneme sınavı ve çalışma platformu.
 > **Öncelik: Temel Seviye — CTFL v4.0.1.** Mimari, diğer tüm seviye ve modülleri kapsayacak şekilde tasarlanmıştır.

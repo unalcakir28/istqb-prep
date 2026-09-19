@@ -4,7 +4,7 @@ Bu dosya, bu depoda çalışan Claude Code oturumları içindir. Kısa tutulmuş
 
 ## Proje
 
-ISTQB sertifikasyon sınavlarına hazırlık için **ücretsiz, açık kaynaklı, iki dilli (TR/EN)** deneme sınavı ve çalışma platformu.
+**ISTQB-PREP** — ISTQB sertifikasyon sınavlarına hazırlık için **ücretsiz, açık kaynaklı, iki dilli (TR/EN)** deneme sınavı ve çalışma platformu. Ürün adı depo adıyla aynı (D-01).
 **Öncelik: CTFL v4.0.1 (Temel Seviye).** Mimari tüm seviyeleri kapsayacak şekilde tasarlandı, ama içerik önce Foundation.
 
 **Mevcut durum: sadece dökümantasyon. Henüz hiç kod yok.** Bir sonraki adım Faz 0 (veri iskeleti) — bkz. `TODO.md`.
@@ -102,4 +102,5 @@ src/        Uygulama                                            (henüz yok)
 3. **F0-08** — `scripts/validate-data.ts` (13 kontrol, `docs/04-veri-modeli.md` §6).
 4. **F0-02** — ISTQB Glossary lisansını tarayıcıda gözle doğrula; doğrulanana kadar sözlük tanımları birebir kopyalanmaz.
 
-Açık kararlar (`docs/00-proje-ozeti.md §9`): ürün adı (D-01 — **ISTQB markasını çağrıştırmamalı**), alan adı, içerik lisansı, topluluk katkısı.
+Açık karar kalmadı — D-01…D-05 19.09.2026'da kapandı (`docs/00-proje-ozeti.md §9`):
+ürün adı **ISTQB-PREP** (marka riski bilinçli üstlenildi — `10 §R-01b`; ad koda gömülmez) · alan adı yok, `*.github.io` · içerik lisansı **CC BY-SA 4.0** · topluluk soru PR'ları v1'de kapalı (Faz 4) · ISTQB/TTB'ye izin başvurusu **yapılmayacak** (dayanak: özgün içerik + ticari olmayan kullanım + kaynak gösterimi).

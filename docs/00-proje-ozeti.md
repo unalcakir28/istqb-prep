@@ -69,7 +69,7 @@ Kabaca üç grup:
 ## 6. Konumlandırma cümlesi
 
 > ISTQB sınavına hazırlanan Türkçe konuşan test uzmanları için;
-> **istqb-prep**, müfredatın öğrenme hedeflerine birebir eşlenmiş, her şıkkın gerekçesini açıklayan ücretsiz bir deneme sınavı platformudur.
+> **ISTQB-PREP**, müfredatın öğrenme hedeflerine birebir eşlenmiş, her şıkkın gerekçesini açıklayan ücretsiz bir deneme sınavı platformudur.
 > Piyasadaki soru havuzlarından farklı olarak, hangi müfredat sürümüne ait olduğunu her soruda gösterir, hangi öğrenme hedefinde zayıf olduğunuzu söyler ve gerçek sınavın resmî soru dağılımını birebir taklit eder.
 
 ## 7. Başarı / başarısızlık tanımı
@@ -88,12 +88,14 @@ Kabaca üç grup:
 | **Tek geliştirici** | Kapsam disiplini şart; içerik üretimi en büyük darboğaz. |
 | **Müfredat sürümü** | Her içerik parçası sürüm etiketli olmalı; emeklilik politikası ilk günden yazılmalı. |
 
-## 9. Açık kararlar
+## 9. Kararlar
 
-| # | Karar | Durum |
+Beş açık kararın tamamı **19.09.2026**'da kapandı. Yeniden açılması için yeni bir gerekçe gerekir.
+
+| # | Karar | Sonuç |
 |---|---|---|
-| D-01 | Ürün adı / marka (`istqb-prep` çalışma adıdır) | **Açık** — aday isimler: *Denemelik*, *SınavLab*, *TestKit*, *CertPath*, *Sorubank* |
-| D-02 | Alan adı alınacak mı, yoksa `*.github.io` yeterli mi? | Açık |
-| D-03 | İçerik lisansı CC BY-SA 4.0 mı, CC BY-NC mi? | Öneri: **CC BY-SA 4.0** (NC, ISTQB'nin non-commercial kısıtıyla çakışmaz ama katkıyı caydırır) |
-| D-04 | Topluluk katkısı (soru PR'ları) v1'de açılsın mı? | Öneri: **Hayır** — önce editoryal kalite standardı oturmalı |
-| D-05 | ISTQB'ye yazılı izin başvurusu yapılsın mı? | Öneri: **Evet**, özgün içerikle başlayıp paralel yürütülsün |
+| D-01 | Ürün adı / marka | ✅ **ISTQB-PREP** — depo adıyla aynı, ayrıca bir marka yaratılmıyor. Ne aradığını bilen adayın aradığı kelime bu; arama görünürlüğü ve ilk bakışta anlaşılırlık en yüksek seçenek. **Karşılığında marka riski bilinçli olarak üstlenildi:** ISTQB® tescilli bir markadır ve `08 §K-4` bu ismi riskli örnek olarak sayar. Açıklayıcı kullanım ("ISTQB sınavına hazırlık") savunulabilir, ürün adı olarak kullanım daha zayıf zemindedir. Beklenen senaryo dava değil, uyarı mektubu + yeniden adlandırma talebidir; bu yüzden isim koda gömülmez (`08 §K-4`). |
+| D-02 | Alan adı alınacak mı? | ✅ **Hayır** — `*.github.io` yeterli. "Aylık altyapı maliyeti 0 ₺" hedefi korunuyor; alan adı ihtiyaç doğarsa CNAME ile sonradan eklenir. |
+| D-03 | İçerik lisansı | ✅ **CC BY-SA 4.0**. Gerekçe: `08 §K-6`. NC kısıtı katkıyı caydırırdı; SA, içeriğin kapalı bir ürüne alınmasını engelliyor. |
+| D-04 | Topluluk soru katkısı v1'de | ✅ **Hayır**. Önce editoryal kalite standardı oturmalı; soru PR'ları Faz 4'te (F4-05) açılır. Hata bildirimi (F2-08) ve kod katkısı baştan açık. |
+| D-05 | ISTQB'ye yazılı izin başvurusu | ✅ **Hayır, başvurulmayacak**. İzin istemek, izin gerektiği varsayımını doğurur. Hukuki dayanak zaten özgün içerik (K-1) + ticari olmayan kullanım (K-2) + kaynak gösterimi (K-3); bunlar başvurudan bağımsız geçerli. Karşılığında resmî bir güvence ve TTB işbirliği ihtimali bilinçli olarak feda edildi. |
