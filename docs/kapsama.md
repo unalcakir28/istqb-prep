@@ -6,13 +6,13 @@ Uretildi: 2026-09-19
 
 ## CTFL v4.0.1
 
-Havuzda **87** yayinlanmis soru · **50/64** ogrenme hedefi kapsaniyor.
+Havuzda **120** yayinlanmis soru · **64/64** ogrenme hedefi kapsaniyor.
 
 | Hedef | Soru | LO >= esik | Durum |
 |---|--:|--:|---|
-| Faz 1 (MVP) — 120 soru, her LO >= 1 | 87/120 | 50/64 | devam |
-| Faz 2 — 200 soru, her LO >= 2 | 87/200 | 29/64 | devam |
-| Faz 3 — 300 soru, her LO >= 3 | 87/300 | 8/64 | devam |
+| Faz 1 (MVP) — 120 soru, her LO >= 1 | 120/120 | 64/64 | tamam |
+| Faz 2 — 200 soru, her LO >= 2 | 120/200 | 41/64 | devam |
+| Faz 3 — 300 soru, her LO >= 3 | 120/300 | 12/64 | devam |
 
 ### Bolum 1 — Yazılım Testinin Temelleri
 
@@ -69,24 +69,24 @@ Havuzda **87** yayinlanmis soru · **50/64** ogrenme hedefi kapsaniyor.
 
 ### Bolum 4 — Test Analizi ve Tasarımı
 
-0 soru · sinavda 11 soru · 14 ogrenme hedefi
+33 soru · sinavda 11 soru · 14 ogrenme hedefi
 
 | LO | K | Soru | | Hedef metni |
 |---|:--:|--:|---|---|
-| `FL-4.1.1` | K2 | 0 | `············` | Kara kutu test teknikleri, beyaz kutu test teknikleri ve tecrübeye dayalı test teknikleri arasındaki farkı ayırt etmek |
-| `FL-4.2.1` | K3 | 0 | `············` | Test senaryoları elde etmek için denklik paylarına ayırma test tekniğini kullanmak |
-| `FL-4.2.2` | K3 | 0 | `············` | Test senaryoları elde etmek için sınır değer analizi test tekniğini kullanmak |
-| `FL-4.2.3` | K3 | 0 | `············` | Test senaryoları elde etmek için karar tablosu test tekniğini kullanmak |
-| `FL-4.2.4` | K3 | 0 | `············` | Test senaryoları elde etmek için durum geçişi test tekniğini kullanmak |
-| `FL-4.3.1` | K2 | 0 | `············` | Komut test tekniğini açıklamak |
-| `FL-4.3.2` | K2 | 0 | `············` | Dal test tekniğini açıklamak |
-| `FL-4.3.3` | K2 | 0 | `············` | Beyaz kutu testinin önemini açıklamak |
-| `FL-4.4.1` | K2 | 0 | `············` | Hata tahminlemeyi açıklamak |
-| `FL-4.4.2` | K2 | 0 | `············` | Keşif testini açıklamak |
-| `FL-4.4.3` | K2 | 0 | `············` | Kontrol listesine dayalı test tekniğini açıklamak |
-| `FL-4.5.1` | K2 | 0 | `············` | Geliştiriciler ve iş birimleri ile iş birliği içinde nasıl kullanıcı hikayeleri yazılacağını açıklamak |
-| `FL-4.5.2` | K2 | 0 | `············` | Kabul kriteri yazımı için farklı seçenekleri sınıflandırmak |
-| `FL-4.5.3` | K3 | 0 | `············` | Test senaryoları elde etmek için kabul testi güdümlü geliştirmeyi (ATDD) kullanmak |
+| `FL-4.1.1` | K2 | 2 | `████████····` | Kara kutu test teknikleri, beyaz kutu test teknikleri ve tecrübeye dayalı test teknikleri arasındaki farkı ayırt etmek |
+| `FL-4.2.1` | K3 | 4 | `████████████` | Test senaryoları elde etmek için denklik paylarına ayırma test tekniğini kullanmak |
+| `FL-4.2.2` | K3 | 4 | `████████████` | Test senaryoları elde etmek için sınır değer analizi test tekniğini kullanmak |
+| `FL-4.2.3` | K3 | 3 | `████████████` | Test senaryoları elde etmek için karar tablosu test tekniğini kullanmak |
+| `FL-4.2.4` | K3 | 4 | `████████████` | Test senaryoları elde etmek için durum geçişi test tekniğini kullanmak |
+| `FL-4.3.1` | K2 | 2 | `████████····` | Komut test tekniğini açıklamak |
+| `FL-4.3.2` | K2 | 2 | `████████····` | Dal test tekniğini açıklamak |
+| `FL-4.3.3` | K2 | 2 | `████████····` | Beyaz kutu testinin önemini açıklamak |
+| `FL-4.4.1` | K2 | 2 | `████████····` | Hata tahminlemeyi açıklamak |
+| `FL-4.4.2` | K2 | 2 | `████████····` | Keşif testini açıklamak |
+| `FL-4.4.3` | K2 | 2 | `████████····` | Kontrol listesine dayalı test tekniğini açıklamak |
+| `FL-4.5.1` | K2 | 1 | `████········` | Geliştiriciler ve iş birimleri ile iş birliği içinde nasıl kullanıcı hikayeleri yazılacağını açıklamak |
+| `FL-4.5.2` | K2 | 1 | `████········` | Kabul kriteri yazımı için farklı seçenekleri sınıflandırmak |
+| `FL-4.5.3` | K3 | 2 | `████████····` | Test senaryoları elde etmek için kabul testi güdümlü geliştirmeyi (ATDD) kullanmak |
 
 ### Bolum 5 — Test Aktivitelerini Yönetme
 

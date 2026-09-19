@@ -71,7 +71,7 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 - [ ] **F1-19** `P2` Lighthouse CI — 4 kategoride ≥95
 
 ### İçerik ve sayfalar
-- [~] **F1-C1** `P0` **120 soru** — 87 yazıldı (bölüm 1,2,3,5,6), bölüm 4 (33 soru) sürüyor. Hepsi `status: review`; bağımsız doğrulamadan sonra `published` olacak
+- [x] **F1-C1** `P0` **120 soru** — altı bölümün tamamı yazıldı, bağımsız doğrulamadan geçti ve `published` olarak yayına alındı (64/64 LO kapsanıyor). Bölüm 4 doğrulamasının bulguları uygulandı: `ctfl4-0063` 3 değerli SDA gerekçesi düzeltildi (sınır değer 500'dür, 498 kapsam öğesi değil), `ctfl4-0064` ve `ctfl4-0067` çeldiricileri, `ctfl4-0068` K3 için yeniden yazıldı, `ctfl4-0079` TR terim belirsizliği giderildi
 - [ ] **F1-C2** `P1` Kapsama rozeti README'de
 - [ ] **F1-C3** `P0` `/kaynaklar` (telif bildirimi tam metni + resmî bağlantılar) · gizlilik politikası · sorumluluk reddi footer'ı
 

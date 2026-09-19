@@ -3,8 +3,16 @@
 > ISTQB sertifikasyon sınavlarına hazırlık için açık kaynaklı, ücretsiz, iki dilli (TR/EN) deneme sınavı ve çalışma platformu.
 > **Öncelik: Temel Seviye — CTFL v4.0.1.** Mimari, diğer tüm seviye ve modülleri kapsayacak şekilde tasarlanmıştır.
 
-**Durum:** 📐 Planlama / dökümantasyon aşaması — henüz kod yazılmadı.
-**Hedef dağıtım:** GitHub Pages (statik, ücretsiz, sunucusuz)
+**Durum:** 🚧 Çalışan MVP — deneme sınavı uçtan uca işliyor.
+**Havuz:** 120 soru · 64/64 öğrenme hedefi kapsanıyor
+**Dağıtım:** GitHub Pages (statik, ücretsiz, sunucusuz)
+
+```bash
+yarn install
+yarn dev              # uygulama
+yarn validate:data    # 15 veri kontrolü — her PR'da yeşil olmalı
+yarn test             # birim testler
+```
 
 ---
 
@@ -56,8 +64,26 @@ Detaylı gerekçe ve kaynaklar: [`docs/01-pazar-arastirmasi.md`](docs/01-pazar-a
 | [10 — Riskler ve Metrikler](docs/10-riskler-ve-metrikler.md) | Risk kaydı, KPI'lar, analitik planı |
 | [ADR'ler](docs/adr/) | Mimari karar kayıtları |
 | [TODO](TODO.md) | Faz bazlı görev listesi |
+| [Kapsama](docs/kapsama.md) | LO başına soru sayısı (üretilen rapor) |
 
 ---
+
+## Ne çalışıyor
+
+| Alan | Durum |
+|---|---|
+| Veri iskeleti | ✅ Resmî müfredattan çıkarıldı — 64 öğrenme hedefi, 29 LO grubu, 97 terim |
+| Deneme motoru | ✅ Blueprint tabanlı üretim, tam eşleşmeli puanlama, 39 birim test |
+| Sınav ekranı | ✅ Kaymayan zamanlayıcı, soru gezgini, klavye ile tam kullanım |
+| Sonuç + inceleme | ✅ Baraj çizgisi, bölüm ve LO kırılımı, şık şık gerekçe |
+| Soru havuzu | ✅ 120 soru yayında, 64/64 öğrenme hedefi · Faz 2 hedefi 200 |
+| Pratik modu, SRS, sözlük | ⬜ Faz 2-3 |
+
+**Veri doğruluğu.** Sınav sabitleri, öğrenme hedefleri ve Türkçe terimler
+resmî ISTQB ve TTB PDF'lerinden çıkarıldı; hiçbiri elle tahmin edilmedi.
+Türkçe terim sözlüğü, iki müfredatın bölüm başı anahtar kelime listeleri
+konum bazlı hizalanarak üretildi — altı bölümün tamamında terim sayıları
+birebir eşleşti. Ayrıntı: [`data/ctfl-v4.0.1/terms.json`](data/ctfl-v4.0.1/terms.json)
 
 ## Teknik özet
 

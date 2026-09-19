@@ -24,7 +24,7 @@
         "classification"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -93,7 +93,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -119,7 +119,7 @@
         "multi"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a",
         "b"
@@ -199,7 +199,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -225,7 +225,7 @@
         "minimum-test-cases"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -300,7 +300,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -325,7 +325,7 @@
         "test-data-selection"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -400,7 +400,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -426,7 +426,7 @@
         "minimum-test-cases"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -501,7 +501,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -526,7 +526,7 @@
         "coverage-percentage"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -601,7 +601,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -627,7 +627,7 @@
         "coverage-items"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -702,7 +702,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -728,7 +728,7 @@
         "test-data-selection"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -803,7 +803,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -829,7 +829,7 @@
         "defect-detection"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -856,12 +856,12 @@
             }
           ],
           "rationale": {
-            "summary": "Sınır 499 ile 500 arasındadır. 2 değerli analiz 499 ve 500'ü verir; 3 değerli analiz buna 498 ve 501'i ekler. 498 ve 499'da hem doğru hem hatalı karar ücretsiz kargo vermez, 500'de ikisi de verir. Yalnızca 501'de doğru karar ücretsiz kargo verirken hatalı karar vermez; 3 değerli analizin daha titiz olmasının nedeni budur.",
+            "summary": "Geçerli pay 500 ve üzerini kapsar, yani sınır değer 500'dür. 2 değerli analizde kapsam öğeleri sınır değer 500 ile komşu paydaki en yakın komşusu 499'dur. 3 değerli analizde sınır değer ile HER İKİ komşusu alınır: 499, 500 ve 501. Dolayısıyla 3 değerli analizin eklediği tek öğe 501'dir. 499'da doğru karar da hatalı karar da ücretsiz kargo vermez, 500'de ikisi de verir; yalnızca 501'de doğru karar verirken hatalı karar vermez, test başarısız olur ve hata ortaya çıkar.",
             "byOption": {
-              "a": "Yanlış. 498 gerçekten de 3 değerli analizin eklediği bir kapsam öğesidir, ancak hem doğru karar (498 < 500) hem de hatalı karar (498 ile 500 eşit değil) ücretsiz kargo vermez; sonuç doğru görünür.",
+              "a": "Yanlış. 498 hiçbir sınır değer analizinde kapsam öğesi değildir: sınır değer 500'dür ve 3 değerli analiz yalnızca komşuları 499 ile 501'i ekler. Ayrıca 498'de hem doğru karar (498 < 500) hem de hatalı karar (498 ile 500 eşit değil) ücretsiz kargo vermez; sonuç doğru görünürdü.",
               "b": "Yanlış. 499 zaten 2 değerli analizin kapsam öğesidir ve bu değerde hem doğru hem hatalı karar ücretsiz kargo vermez, dolayısıyla hatayı ortaya çıkaramaz.",
               "c": "Yanlış. 500 zaten 2 değerli analizin kapsam öğesidir ve bu değerde hem doğru hem hatalı karar ücretsiz kargo verir, dolayısıyla sonuç doğru görünür.",
-              "d": "Doğru. 501 yalnızca 3 değerli analizde kapsam öğesidir. Doğru karar ücretsiz kargo verirken (501 >= 500) hatalı karar vermez (501 ile 500 eşit değil); test başarısız olur ve hata ortaya çıkar."
+              "d": "Doğru. 501 sınır değerin üst komşusudur ve yalnızca 3 değerli analizin kapsam öğesidir. Doğru karar ücretsiz kargo verirken (501 >= 500) hatalı karar vermez (501 ile 500 eşit değil); test başarısız olur ve hata ortaya çıkar."
             }
           },
           "hints": [
@@ -889,12 +889,12 @@
             }
           ],
           "rationale": {
-            "summary": "The boundary lies between 499 and 500. 2-value analysis yields 499 and 500; 3-value analysis adds 498 and 501. At 498 and 499 both the intended and the faulty decision deny free shipping, and at 500 both grant it. Only at 501 does the intended decision grant free shipping while the faulty one does not, which is why 3-value analysis is the more rigorous of the two.",
+            "summary": "The valid partition covers 500 and above, so the boundary value is 500. Under 2-value analysis the coverage items are the boundary value 500 and its closest neighbour in the adjacent partition, 499. Under 3-value analysis the boundary value and BOTH of its neighbours are taken: 499, 500 and 501. The only item added by 3-value analysis is therefore 501. At 499 neither the intended nor the faulty decision grants free shipping, and at 500 both grant it; only at 501 does the intended decision grant it while the faulty one does not, so the test fails and the defect is exposed.",
             "byOption": {
-              "a": "Incorrect. 498 is indeed an extra coverage item of 3-value analysis, but both the intended decision (498 < 500) and the faulty one (498 is not equal to 500) deny free shipping, so the outcome looks correct.",
+              "a": "Incorrect. 498 is not a coverage item of either form of boundary value analysis: the boundary value is 500 and 3-value analysis adds only its neighbours 499 and 501. On top of that, at 498 both the intended decision (498 < 500) and the faulty one (498 is not equal to 500) deny free shipping, so the outcome would look correct.",
               "b": "Incorrect. 499 is already a coverage item of 2-value analysis, and at that value both the intended and the faulty decision deny free shipping, so it cannot expose the defect.",
               "c": "Incorrect. 500 is already a coverage item of 2-value analysis, and at that value both the intended and the faulty decision grant free shipping, so the outcome looks correct.",
-              "d": "Correct. 501 is a coverage item only in 3-value analysis. The intended decision grants free shipping (501 >= 500) while the faulty one does not (501 is not equal to 500), so the test fails and the defect is exposed."
+              "d": "Correct. 501 is the upper neighbour of the boundary value and is a coverage item only in 3-value analysis. The intended decision grants free shipping (501 >= 500) while the faulty one does not (501 is not equal to 500), so the test fails and the defect is exposed."
             }
           },
           "hints": [
@@ -904,7 +904,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -930,7 +930,7 @@
         "coverage-percentage"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -941,7 +941,7 @@
           "options": [
             {
               "id": "a",
-              "text": "%80"
+              "text": "%33"
             },
             {
               "id": "b",
@@ -959,7 +959,7 @@
           "rationale": {
             "summary": "3 değerli sınır değer analizinde kapsam, denenen sınır değerlerin ve komşularının sayısının belirlenen toplam sayıya bölünmesiyle ölçülür. Belirlenen altı kapsam öğesinden dördü (8, 9, 16, 17) denenmiştir: 4/6, yani yaklaşık %67. Denenmeyenler 7 ve 15'tir.",
             "byOption": {
-              "a": "Yanlış. %80 beşte dörttür ve belirlenen kapsam öğelerinden biri paydadan düşürüldüğünde çıkar. Geçerli payın dışında kalsalar da belirlenen altı öğenin tamamı paydaya girer.",
+              "a": "Yanlış. %33 altı kapsam öğesinden ikisidir ve yalnızca sınır değerlerin (8 ve 16) sayılmasından çıkar. Komşu değerler 9 ve 17 de kendi başlarına kapsam öğesidir ve onlar da denenmiştir; denenen öğe sayısı dörttür.",
               "b": "Yanlış. %100, iki sınır değeri (8 ve 16) denemenin yeterli olduğu varsayımından çıkar; bu 2 değerli yaklaşımdır. 3 değerli analizde komşu değerler olan 7 ve 15 kendi başlarına kapsam öğesidir ve hâlâ denenmemiştir.",
               "c": "Yanlış. %50 altı kapsam öğesinden üçüne karşılık gelir. Denenen öğe sayısı dörttür: 8, 9, 16 ve 17; eksik olanlar yalnızca 7 ve 15'tir.",
               "d": "Doğru. Belirlenen altı kapsam öğesinden dördü denenmiştir: 4/6, yaklaşık %67."
@@ -974,7 +974,7 @@
           "options": [
             {
               "id": "a",
-              "text": "80%"
+              "text": "33%"
             },
             {
               "id": "b",
@@ -992,7 +992,7 @@
           "rationale": {
             "summary": "In 3-value boundary value analysis, coverage is the number of boundary values and their neighbours exercised divided by the total number identified. Four of the six identified coverage items (8, 9, 16, 17) are exercised: 4/6, i.e. about 67%. The items 7 and 15 remain untested.",
             "byOption": {
-              "a": "Incorrect. 80% is four of five and follows from dropping one of the identified coverage items from the denominator. All six identified items count, even those outside the valid partition.",
+              "a": "Incorrect. 33% is two of the six coverage items and follows from counting only the boundary values 8 and 16. The neighbours 9 and 17 are coverage items in their own right and were exercised too, so four items are covered.",
               "b": "Incorrect. 100% would follow from assuming that exercising the two boundary values 8 and 16 is enough, which is the 2-value reasoning. Under 3-value analysis the neighbours 7 and 15 are coverage items in their own right and are still untested.",
               "c": "Incorrect. 50% would be three of the six coverage items. Four are exercised (8, 9, 16 and 17); only 7 and 15 are missing.",
               "d": "Correct. Four of the six identified coverage items are exercised: 4/6, about 67%."
@@ -1005,7 +1005,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1030,7 +1030,7 @@
         "rule-evaluation"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -1105,7 +1105,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1131,7 +1131,7 @@
         "infeasible-combinations"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -1206,7 +1206,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1231,7 +1231,7 @@
         "coverage-percentage"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -1246,7 +1246,7 @@
             },
             {
               "id": "b",
-              "text": "%37"
+              "text": "%38"
             },
             {
               "id": "c",
@@ -1260,8 +1260,8 @@
           "rationale": {
             "summary": "Karar tablosu testinde kapsam, denenen sütun sayısının tüm uygulanabilir sütun sayısına bölünmesiyle ölçülür. Sekiz sütundan ikisi uygulanabilir olmadığı için payda 6'dır; üç sütun denenmiştir: 3/6 = %50.",
             "byOption": {
-              "a": "Yanlış. %100 için her uygulanabilir sütunun denenmesi gerekir. Her koşulu bir kez doğru bir kez yanlış denemek daha zayıf bir kriterdir ve tam karar tablosu kapsamı vermez.",
-              "b": "Yanlış. %37, sekizde üçtür ve paydaya tam tablonun tamamı alındığında çıkar. Bu teknikte kapsam yalnızca uygulanabilir kombinasyon içeren sütunlara göre ölçülür.",
+              "a": "Yanlış. %100 için kalan altı uygulanabilir sütunun tamamının denenmesi gerekirdi; test senaryoları bunlardan yalnızca üçünü denemektedir.",
+              "b": "Yanlış. %38 (3/8), paydaya tam tablonun sekiz sütununun tamamı alındığında çıkar. Bu teknikte kapsam yalnızca uygulanabilir kombinasyon içeren sütunlara göre ölçülür; silinen sütunlar paydadan da düşer.",
               "c": "Doğru. Geriye altı uygulanabilir sütun kalmıştır ve bunlardan üçü denenmiştir: 3/6 = %50.",
               "d": "Yanlış. %75, sekizde altıdır; bu, tam tablonun ne kadarının uygulanabilir olduğunu gösterir, test senaryolarının ne kadar kapsam elde ettiğini değil."
             }
@@ -1279,7 +1279,7 @@
             },
             {
               "id": "b",
-              "text": "37%"
+              "text": "38%"
             },
             {
               "id": "c",
@@ -1293,8 +1293,8 @@
           "rationale": {
             "summary": "In decision table testing, coverage is the number of exercised columns divided by the total number of feasible columns. Two of the eight columns are infeasible, so the denominator is 6, and three columns are exercised: 3/6 = 50%.",
             "byOption": {
-              "a": "Incorrect. 100% would require every feasible column to be exercised. Exercising each condition once as true and once as false is a weaker criterion and does not give full decision table coverage.",
-              "b": "Incorrect. 37% is three of eight and follows from using the whole full table as the denominator. Coverage with this technique is measured against the columns containing feasible combinations only.",
+              "a": "Incorrect. 100% would require all six remaining feasible columns to be exercised; the test cases exercise only three of them.",
+              "b": "Incorrect. 38% (3/8) follows from using all eight columns of the full table as the denominator. Coverage with this technique is measured against the columns containing feasible combinations only; the deleted columns drop out of the denominator as well.",
               "c": "Correct. Six feasible columns remain and three of them are exercised: 3/6 = 50%.",
               "d": "Incorrect. 75% is six of eight; that describes how much of the full table is feasible, not how much coverage the test cases have achieved."
             }
@@ -1306,7 +1306,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1332,39 +1332,39 @@
         "invalid-transition"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
-        "d"
+        "b"
       ],
       "media": null,
       "i18n": {
         "tr": {
-          "stem": "Bir otomat denetleyicisinin durumları Boşta, KrediVar ve Dağıtıyor'dur. Durum tablosu aşağıdaki gibidir (boş hücre \"-\" ile gösterilmiştir ve geçersiz geçiş anlamına gelir):\n\nDurum       paraAt     ürünSeç    dağıtımBitti  iade\nBoşta       KrediVar   -          -             -\nKrediVar    KrediVar   Dağıtıyor  -             Boşta\nDağıtıyor   -          -          Boşta         -\n\nBu durum tablosuna göre aşağıdakilerden hangisi GEÇERSİZ bir geçiştir?",
+          "stem": "Bir otomat denetleyicisinin durumları Boşta, KrediVar ve Dağıtıyor'dur. Durum tablosu aşağıdaki gibidir (boş hücre \"-\" ile gösterilmiştir ve geçersiz geçiş anlamına gelir):\n\nDurum       paraAt     ürünSeç    dağıtımBitti  iade\nBoşta       KrediVar   -          -             -\nKrediVar    KrediVar   Dağıtıyor  -             Boşta\nDağıtıyor   -          -          Boşta         -\n\nBoşta durumundan başlayan aşağıdaki olay dizilerinden hangisi YALNIZCA geçerli geçişlerden oluşur?",
           "options": [
             {
               "id": "a",
-              "text": "Boşta durumunda paraAt olayı"
+              "text": "paraAt, ürünSeç, iade"
             },
             {
               "id": "b",
-              "text": "Dağıtıyor durumunda dağıtımBitti olayı"
+              "text": "paraAt, paraAt, ürünSeç, dağıtımBitti"
             },
             {
               "id": "c",
-              "text": "KrediVar durumunda ürünSeç olayı"
+              "text": "paraAt, dağıtımBitti, ürünSeç"
             },
             {
               "id": "d",
-              "text": "Dağıtıyor durumunda iade olayı"
+              "text": "ürünSeç, paraAt, iade"
             }
           ],
           "rationale": {
-            "summary": "Durum tablosunun satırları durumları, sütunları olayları temsil eder; dolu bir hücre geçerli bir geçişin hedef durumunu verir, boş hücre ise geçersiz geçişi açıkça gösterir. Dağıtıyor durumunun iade olayı için girişi yoktur, dolayısıyla bu geçiş geçersizdir.",
+            "summary": "Her dizi Boşta durumundan başlanarak tablo üzerinde adım adım izlenir: her adımda o anki durumun satırı ile olayın sütunu kesiştirilir. Hücre doluysa geçiş geçerlidir ve hücredeki durum bir sonraki adımın başlangıcıdır; hücre boşsa dizi geçersiz bir geçiş içerir. Baştan sona dolu hücre kullanan tek dizi paraAt, paraAt, ürünSeç, dağıtımBitti dizisidir: Boşta → KrediVar → KrediVar → Dağıtıyor → Boşta. Bu dizi beş geçerli geçişin dördünü dener.",
             "byOption": {
-              "a": "Yanlış; bu geçerli bir geçiştir. Boşta/paraAt hücresi KrediVar hedef durumunu içerir.",
-              "b": "Yanlış; bu geçerli bir geçiştir. Dağıtıyor/dağıtımBitti hücresi Boşta hedef durumunu içerir.",
-              "c": "Yanlış; bu geçerli bir geçiştir. KrediVar/ürünSeç hücresi Dağıtıyor hedef durumunu içerir.",
-              "d": "Doğru. Dağıtıyor/iade hücresi boştur ve durum tablosunda boş hücre geçersiz geçiş anlamına gelir. Durum diyagramı bu geçişi hiç göstermezdi; geçersiz geçişleri açıkça gösteren model durum tablosudur."
+              "a": "Yanlış. İlk iki adım geçerlidir ve Dağıtıyor durumuna götürür, ancak Dağıtıyor satırında iade hücresi boştur; para iadesi yalnızca KrediVar durumunda geçerlidir.",
+              "b": "Doğru. Boşta/paraAt → KrediVar, KrediVar/paraAt → KrediVar, KrediVar/ürünSeç → Dağıtıyor, Dağıtıyor/dağıtımBitti → Boşta. Dört adımın dördü de dolu hücre kullanır.",
+              "c": "Yanlış. İlk adım geçerlidir ve KrediVar durumuna götürür, ancak KrediVar satırında dağıtımBitti hücresi boştur; bu olay yalnızca Dağıtıyor durumunda geçerlidir.",
+              "d": "Yanlış. Dizi daha ilk adımda geçersizdir: Boşta satırında ürünSeç hücresi boştur. Ürün seçilebilmesi için önce paraAt olayıyla KrediVar durumuna geçilmesi gerekir."
             }
           },
           "hints": [
@@ -1372,32 +1372,32 @@
           ]
         },
         "en": {
-          "stem": "A vending controller has the states Idle, HasCredit and Dispensing. Its state table is as follows (an empty cell, shown as \"-\", is an invalid transition):\n\nState       insertCoin  selectItem  dispenseDone  refund\nIdle        HasCredit   -           -             -\nHasCredit   HasCredit   Dispensing  -             Idle\nDispensing  -           -           Idle          -\n\nAccording to this state table, which of the following is an INVALID transition?",
+          "stem": "A vending controller has the states Idle, HasCredit and Dispensing. Its state table is as follows (an empty cell, shown as \"-\", is an invalid transition):\n\nState       insertCoin  selectItem  dispenseDone  refund\nIdle        HasCredit   -           -             -\nHasCredit   HasCredit   Dispensing  -             Idle\nDispensing  -           -           Idle          -\n\nStarting in state Idle, which of the following event sequences consists ONLY of valid transitions?",
           "options": [
             {
               "id": "a",
-              "text": "The insertCoin event in state Idle"
+              "text": "insertCoin, selectItem, refund"
             },
             {
               "id": "b",
-              "text": "The dispenseDone event in state Dispensing"
+              "text": "insertCoin, insertCoin, selectItem, dispenseDone"
             },
             {
               "id": "c",
-              "text": "The selectItem event in state HasCredit"
+              "text": "insertCoin, dispenseDone, selectItem"
             },
             {
               "id": "d",
-              "text": "The refund event in state Dispensing"
+              "text": "selectItem, insertCoin, refund"
             }
           ],
           "rationale": {
-            "summary": "The rows of a state table represent states and its columns represent events; a filled cell gives the target state of a valid transition, while an empty cell explicitly shows an invalid transition. Dispensing has no entry for the refund event, so that transition is invalid.",
+            "summary": "Each sequence is traced through the table step by step from state Idle: at every step the row of the current state is crossed with the column of the event. A filled cell means the transition is valid and its content is the state the next step starts from; an empty cell means the sequence contains an invalid transition. The only sequence that uses a filled cell throughout is insertCoin, insertCoin, selectItem, dispenseDone: Idle → HasCredit → HasCredit → Dispensing → Idle. It exercises four of the five valid transitions.",
             "byOption": {
-              "a": "Incorrect; this is a valid transition. The Idle/insertCoin cell contains the target state HasCredit.",
-              "b": "Incorrect; this is a valid transition. The Dispensing/dispenseDone cell contains the target state Idle.",
-              "c": "Incorrect; this is a valid transition. The HasCredit/selectItem cell contains the target state Dispensing.",
-              "d": "Correct. The Dispensing/refund cell is empty, and in a state table an empty cell means an invalid transition. A state diagram would not show this transition at all; the state table is the model that shows invalid transitions explicitly."
+              "a": "Incorrect. The first two steps are valid and lead to Dispensing, but the refund cell in the Dispensing row is empty; a refund is only valid in state HasCredit.",
+              "b": "Correct. Idle/insertCoin → HasCredit, HasCredit/insertCoin → HasCredit, HasCredit/selectItem → Dispensing, Dispensing/dispenseDone → Idle. All four steps use filled cells.",
+              "c": "Incorrect. The first step is valid and leads to HasCredit, but the dispenseDone cell in the HasCredit row is empty; that event is only valid in state Dispensing.",
+              "d": "Incorrect. The sequence is invalid at its very first step: the selectItem cell in the Idle row is empty. An item can only be selected after insertCoin has moved the controller to HasCredit."
             }
           },
           "hints": [
@@ -1407,7 +1407,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1433,7 +1433,7 @@
         "coverage-items"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -1508,7 +1508,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1534,7 +1534,7 @@
         "coverage-percentage"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -1609,7 +1609,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1634,7 +1634,7 @@
         "all-transitions-coverage"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -1709,7 +1709,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1735,7 +1735,7 @@
         "statement-coverage"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -1804,7 +1804,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1830,7 +1830,7 @@
         "limitations"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -1899,7 +1899,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1925,7 +1925,7 @@
         "definition"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -1994,7 +1994,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2020,7 +2020,7 @@
         "subsumption"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -2089,7 +2089,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2115,7 +2115,7 @@
         "strengths"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -2184,7 +2184,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2210,7 +2210,7 @@
         "coverage-measurement"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -2279,7 +2279,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2305,7 +2305,7 @@
         "except"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -2374,7 +2374,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2400,7 +2400,7 @@
         "fault-attacks"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -2419,7 +2419,7 @@
             },
             {
               "id": "c",
-              "text": "Test uzmanı olası insan hatalarının, hataların ve arızaların bir listesini oluşturur veya elde eder ve bu hataları ortaya çıkaracak ya da arızalara yol açacak testler tasarlar"
+              "text": "Test uzmanı olası insan hatalarının, hataların ve arızaların bir listesini oluşturur veya elde eder ve bu insan hatalarıyla ilişkili hataları ortaya çıkaracak ya da arızalara yol açacak testler tasarlar"
             },
             {
               "id": "d",
@@ -2427,7 +2427,7 @@
             }
           ],
           "rationale": {
-            "summary": "Kusur ortaya çıkarmaya yönelik saldırılar hata tahminlemenin metodik bir uygulanış biçimidir: test uzmanı olası insan hataları, hatalar ve arızaların bir listesini oluşturur veya edinir, ardından bu hataları tanımlayacak, ortaya çıkaracak veya arızalara neden olacak testler tasarlar. Listeler tecrübeye, hata ve arıza verilerine ya da yazılımların neden başarısız olduğuna dair genel bilgiye dayanabilir.",
+            "summary": "Kusur ortaya çıkarmaya yönelik saldırılar hata tahminlemenin metodik bir uygulanış biçimidir: test uzmanı olası insan hataları, hatalar ve arızaların bir listesini oluşturur veya edinir, ardından bu insan hatalarıyla ilişkili hataları tanımlayacak, bu hataları ortaya çıkaracak ya da arızalara neden olacak testler tasarlar. Listeler tecrübeye, hata ve arıza verilerine ya da yazılımların neden başarısız olduğuna dair genel bilgiye dayanabilir.",
             "byOption": {
               "a": "Yanlış. Bu, kontrol listesine dayalı testin tanımıdır; test koşulları önceden hazırlanmış bir kontrol listesinden gelir.",
               "b": "Yanlış. Bu, bir beyaz kutu tekniği olan dal testinin çalışma biçimidir; kapsam öğeleri kodun dallarıdır.",
@@ -2469,7 +2469,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2495,7 +2495,7 @@
         "session-based"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -2564,7 +2564,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2590,7 +2590,7 @@
         "multi"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a",
         "b"
@@ -2670,7 +2670,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2696,7 +2696,7 @@
         "item-quality"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -2765,7 +2765,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2791,7 +2791,7 @@
         "maintenance"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -2860,7 +2860,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2886,7 +2886,7 @@
         "three-perspectives"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -2955,7 +2955,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2982,7 +2982,7 @@
         "multi"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a",
         "c"
@@ -3062,7 +3062,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -3088,7 +3088,7 @@
         "scope-of-user-story"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -3163,7 +3163,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -3189,7 +3189,7 @@
         "test-case-order"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -3264,7 +3264,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
