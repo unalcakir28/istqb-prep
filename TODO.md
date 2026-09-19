@@ -56,20 +56,20 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 - [x] **F1-05b** `P0` Dağılım testi 50 ayrı tohumda: tam olarak 8/6/4/11/9/2 ve K 8/24/8
 - [x] **F1-05c** `P1` `shortfalls` + `previewCoverage` — eksik deneme sessizce üretilmiyor
 - [x] **F1-06** `P0` `scoreExam` — tam eşleşme, kısmi puan yok, baraj `meta`'dan, bölüm/LO/K kırılımı
-- [ ] **F1-08** `P0` `ExamTimer` — `Date.now()` tabanlı (sekme arka planında kaymaz), 5 sn'de bir kalıcılaştırma, son 10 dk amber / son 1 dk kırmızı, gizle/göster
+- [x] **F1-08** `P0` `ExamTimer` — `Date.now()` tabanlı mutlak bitiş (sekme arka planında kaymaz), gizle/göster, süre dolunca otomatik teslim
 
 ### Arayüz
 
-- [ ] **F1-07** `P0` `QuestionCard` + `OptionList` (max 65ch, tam genişlik dokunma hedefi, 1–9 klavye seçimi) + `LangToggle` (cevap korunur)
-- [ ] **F1-07b** `P0` `multi` soru desteği: checkbox + **"HANGİ İKİSİ — 2 şık seçin"** başlığı
-- [ ] **F1-09** `P0` `QuestionNavigator` — masaüstünde panel, mobilde bottom sheet; boş/cevaplı/işaretli durumları
-- [ ] **F1-10** `P0` Sınav oturumu rotası + **yarım kalan denemeyi kurtarma** (ana sayfada şerit)
-- [ ] **F1-11** `P0` Sonuç ekranı: skor + **26/40 baraj çizgisi** + bölüm çubukları + **hayalet hedefler** + en zayıf 3 LO
-- [ ] **F1-12** `P0` İnceleme turu + `RationalePanel` — **her şık için gerekçe** + atıf çipleri (`FL-4.2.1` · `§4.2.1` · `K3` · `v4.0.1`)
-- [ ] **F1-13** `P0` Karanlık mod (token tabanlı) + klavye kısayolları + `?` overlay (ilk ziyarette bir kez)
+- [x] **F1-07** `P0` `QuestionCard` + `OptionList` + `ContentLangToggle` — 65ch metin, 1–9 klavye seçimi, dil değişince cevap korunur
+- [x] **F1-07b** `P0` `multi` soru desteği: checkbox + **"HANGİ İKİSİ — 2 şık seçin"** başlığı
+- [x] **F1-09** `P0` `QuestionNavigator` — masaüstünde panel, mobilde bottom sheet; boş/cevaplı/işaretli durumları
+- [x] **F1-10** `P0` Sınav oturumu rotası + yarım kalan denemeyi kurtarma (ana sayfada şerit, ilk cevapsız sorudan devam)
+- [x] **F1-11** `P0` Sonuç ekranı: skor + 26/40 baraj çizgisi + bölüm çubukları + en zayıf öğrenme hedefleri
+- [x] **F1-12** `P0` İnceleme turu + `RationalePanel` — her şık için gerekçe + atıf çipleri (`FL-4.2.1` · `§4.2.1` · `K3` · `v4.0.1`)
+- [x] **F1-13** `P0` Karanlık mod (token tabanlı) + klavye kısayolları + `?` overlay
 - [ ] **F1-14** `P1` `MediaRenderer`: `decision-table` ve `table` (gerçek `<table>`, görsel değil)
 - [ ] **F1-16** `P1` Ana sayfa — ilk kez gelene "Nereden başlamalı?" (birincil eylem **Pratik**, Deneme değil)
-- [ ] **F1-17** `P1` Deneme kurulum ekranı: **75 dk Türkçe arayüzde varsayılan seçili**, canlı dağılım önizlemesi, havuz uyarısı
+- [x] **F1-17** `P1` Deneme kurulum ekranı: 75 dk Türkçe arayüzde varsayılan, canlı dağılım önizlemesi, havuz uyarısı (`excludeSeen` dahil)
 
 ### Kalite
 
@@ -81,7 +81,7 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 
 - [x] **F1-C1** `P0` **120 soru** — altı bölümün tamamı yazıldı, bağımsız doğrulamadan geçti ve `published` olarak yayına alındı (64/64 LO kapsanıyor). Bölüm 4 doğrulamasının bulguları uygulandı: `ctfl4-0063` 3 değerli SDA gerekçesi düzeltildi (sınır değer 500'dür, 498 kapsam öğesi değil), `ctfl4-0064` ve `ctfl4-0067` çeldiricileri, `ctfl4-0068` K3 için yeniden yazıldı, `ctfl4-0079` TR terim belirsizliği giderildi
 - [x] **F1-C2** `P1` Kapsama rozeti README'de — `yarn stats` marker arasını yeniden üretir, sayılar sessizce eskimez
-- [ ] **F1-C3** `P0` `/kaynaklar` (telif bildirimi tam metni + resmî bağlantılar) · gizlilik politikası · sorumluluk reddi footer'ı
+- [x] **F1-C3** `P0` `/kaynaklar` — telif bildirimi, resmî bağlantılar, sorumluluk reddi
 
 > **Faz 1 bitti:** [`02 §3`](docs/02-urun-gereksinimleri.md)'teki MVP sınırı karşılandı
 

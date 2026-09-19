@@ -34,8 +34,27 @@ jobs:
       - name: Test
         run: yarn test
 
-      # Data validation runs last: it's fine if `validate:data` doesn't exist
-      # yet (scripts/ is owned by a separate workstream), but once it lands
-      # this step gates the build on a clean data set.
+      # Content is the product here: a data set that fails validation must
+      # never reach the site, so this gates everything downstream.
       - name: Validate data
         run: yarn validate:data
+
+      - name: Build
+        run: yarn build
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      # End-to-end flow + axe accessibility scan. These start their own dev
+      # server (playwright.config.ts) and are the only check that exercises
+      # the real exam from the home page through to the review screen.
+      - name: End-to-end and accessibility
+        run: yarn e2e
+
+      - name: Upload Playwright report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
