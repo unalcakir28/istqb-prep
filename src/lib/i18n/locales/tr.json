@@ -1,0 +1,128 @@
+{
+  "app": {
+    "name": "ISTQB-PREP",
+    "tagline": "ISTQB Temel Seviye sınavına hazırlan",
+    "skipToContent": "İçeriğe geç"
+  },
+  "nav": {
+    "home": "Ana sayfa",
+    "exam": "Deneme",
+    "syllabus": "Müfredat",
+    "sources": "Kaynaklar",
+    "theme": "Temayı değiştir",
+    "uiLanguage": "Arayüz dili",
+    "menu": "Menü"
+  },
+  "home": {
+    "heroTitle": "ISTQB Temel Seviye sınavına hazırlan",
+    "heroSubtitle": "{{count}} soru · {{minutes}} dakika · geçme notu {{pass}}/{{total}}",
+    "startExam": "Deneme sınavına başla",
+    "resumeTitle": "Yarım kalan denemen var",
+    "resumeBody": "{{answered}}/{{total}} soru cevaplanmış.",
+    "resume": "Devam et",
+    "discard": "Sil",
+    "whatIsThis": "Bu nedir?",
+    "intro": "Her soru müfredatın öğrenme hedeflerinden sıfırdan yazıldı, her şık için gerekçesi var ve Türkçe–İngilizce yan yana çalışılabiliyor. Hesap yok, ücret yok, verilerin cihazından çıkmıyor.",
+    "coverage": "Havuzda {{questions}} soru · {{covered}}/{{total}} öğrenme hedefi kapsanıyor",
+    "poolWarningTitle": "Havuz henüz tam deneme üretemiyor",
+    "poolWarningBody": "Şu an en fazla {{available}}/{{required}} soruluk bir deneme kurulabiliyor. Eksik olan bölümler aşağıda."
+  },
+  "setup": {
+    "title": "Deneme kurulumu",
+    "duration": "Süre",
+    "duration60": "{{minutes}} dakika (standart)",
+    "duration75": "{{minutes}} dakika (ana dili İngilizce olmayan aday)",
+    "durationHint": "Ana dili İngilizce olmayan adaylar resmî sınavda %25 ek süre alır.",
+    "contentLanguage": "Soru dili",
+    "contentLanguageHint": "Sınav sırasında istediğin an değiştirebilirsin; cevabın korunur.",
+    "distribution": "Soru dağılımı",
+    "chapter": "Bölüm {{number}}",
+    "start": "Denemeyi başlat",
+    "excludeSeen": "Daha önce gördüğüm soruları elemeye çalış"
+  },
+  "exam": {
+    "question": "Soru {{current}} / {{total}}",
+    "selectOne": "1 şık seçin",
+    "selectTwo": "HANGİ İKİSİ — 2 şık seçin",
+    "flag": "İşaretle",
+    "unflag": "İşareti kaldır",
+    "previous": "Önceki",
+    "next": "Sonraki",
+    "navigator": "Sorular",
+    "submit": "Sınavı bitir",
+    "submitConfirmTitle": "Sınavı bitirmek istediğine emin misin?",
+    "submitConfirmBody": "{{unanswered}} soru cevapsız. Bitirdikten sonra cevap değiştirilemez.",
+    "submitConfirmBodyAll": "Tüm sorular cevaplanmış.",
+    "cancel": "Vazgeç",
+    "confirmSubmit": "Evet, bitir",
+    "timeUp": "Süre doldu — sınav otomatik teslim edildi.",
+    "hideTimer": "Süreyi gizle",
+    "showTimer": "Süreyi göster",
+    "answered": "Cevaplandı",
+    "unanswered": "Boş",
+    "flagged": "İşaretli",
+    "shortcuts": "Klavye kısayolları",
+    "autoSubmitting": "Süre doldu, teslim ediliyor…"
+  },
+  "result": {
+    "title": "Sonuç",
+    "passed": "Geçtin",
+    "failed": "Barajın altında",
+    "score": "{{points}} / {{total}}",
+    "passLine": "Baraj {{pass}}",
+    "percent": "%{{percent}}",
+    "byChapter": "Bölüm bazında",
+    "weakest": "En zayıf öğrenme hedeflerin",
+    "review": "Cevapları incele",
+    "retake": "Yeni deneme",
+    "backHome": "Ana sayfa",
+    "correct": "Doğru",
+    "incorrect": "Yanlış",
+    "unanswered": "Cevapsız",
+    "duration": "Süre: {{minutes}} dk {{seconds}} sn"
+  },
+  "review": {
+    "title": "İnceleme",
+    "yourAnswer": "Senin cevabın",
+    "correctAnswer": "Doğru cevap",
+    "whyTitle": "Neden?",
+    "summary": "Özet",
+    "perOption": "Şık şık gerekçe",
+    "onlyWrong": "Sadece yanlışlar",
+    "all": "Tümü",
+    "noneWrong": "Yanlış cevabın yok.",
+    "back": "Sonuca dön"
+  },
+  "question": {
+    "objective": "Öğrenme hedefi",
+    "syllabus": "Müfredat",
+    "kLevel": "Bilişsel seviye",
+    "version": "Sürüm",
+    "showEnglish": "İngilizce göster",
+    "showTurkish": "Türkçe göster",
+    "contentLang": "Soru dili"
+  },
+  "common": {
+    "loading": "Yükleniyor…",
+    "errorTitle": "Bir şeyler ters gitti",
+    "retry": "Tekrar dene",
+    "close": "Kapat",
+    "notFoundTitle": "Sayfa bulunamadı",
+    "notFoundBody": "Aradığın sayfa yok.",
+    "minutes": "dk",
+    "seconds": "sn"
+  },
+  "sources": {
+    "title": "Kaynaklar ve telif",
+    "disclaimer": "Bu platform bağımsız bir topluluk projesidir; ISTQB® veya Turkish Testing Board ile hiçbir bağlantısı yoktur, onlar tarafından onaylanmamıştır. İçerik resmî müfredata dayanılarak özgün olarak hazırlanmıştır ancak sınavda çıkacak soruları yansıtmaz. Sınav sonucunuza dair hiçbir garanti verilmez. Resmî ve güncel bilgi için istqb.org ve turkishtestingboard.org adreslerine başvurunuz.",
+    "officialLinks": "Resmî kaynaklar",
+    "privacyTitle": "Gizlilik",
+    "privacyBody": "Hesap yok, sunucu yok, analitik yok. Tüm ilerlemen yalnızca kendi tarayıcının IndexedDB deposunda tutulur ve hiçbir yere gönderilmez. Tarayıcı verisini temizlersen ilerleme de silinir.",
+    "licenseTitle": "Lisans",
+    "licenseBody": "Kod MIT, içerik CC BY-SA 4.0 ile lisanslanmıştır."
+  },
+  "footer": {
+    "disclaimerShort": "Bağımsız topluluk projesi · ISTQB® ile bağlantısı yoktur",
+    "sources": "Kaynaklar ve telif"
+  }
+}

@@ -178,78 +178,90 @@ function keyToFileName(key: keyof typeof validators): string {
 // loanword ("testware / test ürünleri"), not a mistranslation to flag.
 // ---------------------------------------------------------------------------
 
-const TERMINOLOGY_LEAKS: Array<{ en: string; tr: string }> = [
-  { en: "error", tr: "hata (insan kaynaklı)" },
-  { en: "defect", tr: "kusur" },
-  { en: "bug", tr: "kusur" },
-  { en: "fault", tr: "kusur" },
-  { en: "failure", tr: "arıza" },
-  { en: "root cause", tr: "kök neden" },
-  { en: "test case", tr: "test senaryosu" },
-  { en: "test procedure", tr: "test prosedürü" },
-  { en: "test suite", tr: "test paketi" },
-  { en: "test basis", tr: "test dayanağı" },
-  { en: "test object", tr: "test nesnesi" },
-  { en: "test condition", tr: "test koşulu" },
-  { en: "test data", tr: "test verisi" },
-  { en: "work product", tr: "iş ürünü" },
-  { en: "coverage", tr: "kapsama" },
-  { en: "statement coverage", tr: "ifade kapsaması" },
-  { en: "branch coverage", tr: "dal kapsaması" },
-  { en: "decision coverage", tr: "karar kapsaması" },
-  { en: "equivalence partitioning", tr: "eşdeğerlik bölümlemesi" },
-  { en: "boundary value analysis", tr: "sınır değer analizi" },
-  { en: "decision table testing", tr: "karar tablosu testi" },
-  { en: "state transition testing", tr: "durum geçiş testi" },
-  { en: "exploratory testing", tr: "keşifsel test" },
-  { en: "regression testing", tr: "regresyon testi" },
-  { en: "confirmation testing", tr: "doğrulama testi (yeniden test)" },
-  { en: "retesting", tr: "doğrulama testi (yeniden test)" },
-  { en: "verification", tr: "doğrulama" },
-  { en: "validation", tr: "geçerleme" },
-  { en: "severity", tr: "şiddet" },
-  { en: "priority", tr: "öncelik" },
-  { en: "risk likelihood", tr: "risk olasılığı" },
-  { en: "risk impact", tr: "risk etkisi" },
-  { en: "entry criteria", tr: "giriş kriterleri" },
-  { en: "exit criteria", tr: "çıkış kriterleri" },
-  { en: "definition of done", tr: "bitti tanımı" },
-  { en: "test monitoring", tr: "test izleme" },
-  { en: "test control", tr: "test kontrolü" },
-  { en: "performance efficiency", tr: "performans verimliliği" },
-  { en: "quality assurance", tr: "kalite güvence" },
-  { en: "static testing", tr: "statik test" },
-  { en: "dynamic testing", tr: "dinamik test" },
-  { en: "review", tr: "gözden geçirme" },
-  { en: "walkthrough", tr: "teknik gözden geçirme" },
-  { en: "inspection", tr: "inceleme" },
-  { en: "shift left", tr: "sola kaydırma" },
-  { en: "whole team approach", tr: "bütün ekip yaklaşımı" },
-  { en: "test pyramid", tr: "test piramidi" },
-  { en: "testing quadrants", tr: "test çeyrekleri" },
-];
+// Terim listesi terms.json'dan gelir — tek dogruluk kaynagi odur.
+// Buraya elle kopyalanan bir liste kaciniimaz olarak eskir; nitekim ilk
+// surumu "defect -> kusur" gibi resmi mufredatla CELISEN karsiliklar
+// tasiyordu ve yazarlari yanlis terime yonlendiriyordu.
+interface LeakPattern {
+  en: string;
+  tr: string;
+  regex: RegExp;
+}
 
-const LEAK_PATTERNS = TERMINOLOGY_LEAKS.map(({ en, tr }) => ({
-  en,
-  tr,
-  // Allowed: the term wrapped in parentheses, e.g. "kusur (defect)" or
-  // "sola kaydırma (shift left)" — that is the documented first-mention /
-  // permanent-gloss convention, not a leak.
-  regex: new RegExp(`(\\()?\\b${escapeRegExp(en)}\\b(\\))?`, "gi"),
-}));
+function buildLeakPatterns(termsDoc: any): LeakPattern[] {
+  const terms: any[] = Array.isArray(termsDoc?.terms) ? termsDoc.terms : [];
+  const patterns: LeakPattern[] = [];
 
-function findTerminologyLeaks(text: string): Array<{ en: string; tr: string }> {
-  const found: Array<{ en: string; tr: string }> = [];
-  for (const pattern of LEAK_PATTERNS) {
+  for (const term of terms) {
+    const en = String(term?.en ?? "").trim();
+    const tr = String(term?.tr ?? "").trim();
+    if (en.length === 0 || tr.length === 0) continue;
+
+    // Turkce karsilik Ingilizce terimi zaten iceriyorsa (ör. "shift left" ->
+    // "shift-left", "risk" -> "risk") arama anlamsizdir: dogru kullanim da
+    // eslesir ve her metin yanlis yere sizinti sayilir.
+    const normalizedEn = en.toLowerCase();
+    const normalizedTr = tr.toLowerCase().replace(/-/g, " ");
+    if (normalizedTr.includes(normalizedEn)) continue;
+
+    patterns.push({ en, tr, regex: new RegExp(`\\b${escapeRegExp(en)}\\b`, "gi") });
+  }
+
+  // Uzun terim once denensin: "branch coverage" eslesirse "coverage" ayrica
+  // raporlanmasin.
+  return patterns.sort((a, b) => b.en.length - a.en.length);
+}
+
+/**
+ * Metindeki parantez araliklari.
+ *
+ * Ilk gecişte parantez icinde Ingilizcesini vermek kurallidir:
+ * "hata (defect)". Eskiden parantez, terimin HEMEN oncesinde/sonrasinda
+ * aranıyordu; bu, "teknik gözden geçirme (technical review)" gibi cok
+ * kelimeli aciklamalarda kiriliyordu, cunku '(' 'technical'in onunde,
+ * aranan terim ise 'review'. Artik eslesmenin bir parantez araliginin
+ * ICINDE olup olmadigina bakiliyor.
+ */
+function parenSpans(text: string): Array<[number, number]> {
+  const spans: Array<[number, number]> = [];
+  const open: number[] = [];
+
+  for (let i = 0; i < text.length; i += 1) {
+    if (text[i] === "(") open.push(i);
+    if (text[i] !== ")") continue;
+    const start = open.pop();
+    if (start !== undefined) spans.push([start, i]);
+  }
+
+  return spans;
+}
+
+function findTerminologyLeaks(text: string, patterns: LeakPattern[]): Array<{ en: string; tr: string }> {
+  const spans = parenSpans(text);
+  const found = new Map<string, { en: string; tr: string }>();
+  const claimed: Array<[number, number]> = [];
+
+  for (const pattern of patterns) {
     pattern.regex.lastIndex = 0;
     let match: RegExpExecArray | null;
+
     while ((match = pattern.regex.exec(text)) !== null) {
-      const wrappedInParens = Boolean(match[1]) && Boolean(match[2]);
-      if (wrappedInParens) continue;
-      found.push({ en: pattern.en, tr: pattern.tr });
+      const from = match.index;
+      const to = from + match[0].length;
+
+      const inGloss = spans.some(([open, close]) => from > open && to <= close);
+      if (inGloss) continue;
+
+      // Daha uzun bir terim bu araligi zaten kapsadiysa tekrar sayma.
+      const covered = claimed.some(([start, end]) => from >= start && to <= end);
+      if (covered) continue;
+
+      claimed.push([from, to]);
+      found.set(pattern.en, { en: pattern.en, tr: pattern.tr });
     }
   }
-  return found;
+
+  return [...found.values()];
 }
 
 // ---------------------------------------------------------------------------
@@ -391,7 +403,9 @@ function checkKLevelConsistency(questions: QuestionRecord[], objectivesByCode: M
   }
 }
 
-function checkTerminologyLeakage(questions: QuestionRecord[]): void {
+function checkTerminologyLeakage(questions: QuestionRecord[], patterns: LeakPattern[]): void {
+  if (patterns.length === 0) return;
+
   for (const { question, file } of questions) {
     const tr = question.i18n?.tr;
     if (!tr) continue;
@@ -410,7 +424,7 @@ function checkTerminologyLeakage(questions: QuestionRecord[]): void {
     }
 
     for (const field of fields) {
-      const leaks = findTerminologyLeaks(field.text);
+      const leaks = findTerminologyLeaks(field.text, patterns);
       for (const leak of leaks) {
         report(13, file, question.id, `TR metninde (${field.label}) cevrilmemis Ingilizce terim: '${leak.en}'. Beklenen terim: '${leak.tr}' (bkz. docs/07-icerik-uretim-rehberi.md §5); ilk gecişte parantez icinde Ingilizcesi verilebilir, ama parantezsiz kullanim beklenmez.`);
       }
@@ -675,7 +689,12 @@ function validateCertification(certEntry: any): void {
 
   checkObjectiveCoverage(objectivesByCode, allQuestions, objectivesFile);
   checkKLevelConsistency(allQuestions, objectivesByCode);
-  checkTerminologyLeakage(allQuestions);
+
+  // terms.json yoksa 13. kontrol sessizce atlanir — uyari seviyesindeki bir
+  // kontrol icin veri eksikligi CI'yi kirmamali.
+  const termsFile = path.join(certDir, "terms.json");
+  const termsDoc = fs.existsSync(termsFile) ? readJson(termsFile) : null;
+  checkTerminologyLeakage(allQuestions, buildLeakPatterns(termsDoc));
 
   validateGlossaryDir(path.join(certDir, "glossary"));
 }

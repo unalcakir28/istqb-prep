@@ -1,0 +1,128 @@
+{
+  "app": {
+    "name": "ISTQB-PREP",
+    "tagline": "Prepare for the ISTQB Foundation Level exam",
+    "skipToContent": "Skip to content"
+  },
+  "nav": {
+    "home": "Home",
+    "exam": "Mock exam",
+    "syllabus": "Syllabus",
+    "sources": "Sources",
+    "theme": "Toggle theme",
+    "uiLanguage": "Interface language",
+    "menu": "Menu"
+  },
+  "home": {
+    "heroTitle": "Prepare for the ISTQB Foundation Level exam",
+    "heroSubtitle": "{{count}} questions · {{minutes}} minutes · pass mark {{pass}}/{{total}}",
+    "startExam": "Start a mock exam",
+    "resumeTitle": "You have an exam in progress",
+    "resumeBody": "{{answered}}/{{total}} questions answered.",
+    "resume": "Resume",
+    "discard": "Discard",
+    "whatIsThis": "What is this?",
+    "intro": "Every question is written from scratch against the syllabus learning objectives, every option has a rationale, and you can study Turkish and English side by side. No account, no fee, nothing leaves your device.",
+    "coverage": "{{questions}} questions in the pool · {{covered}}/{{total}} learning objectives covered",
+    "poolWarningTitle": "The pool cannot build a full exam yet",
+    "poolWarningBody": "At most {{available}}/{{required}} questions can be assembled right now. The gaps are listed below."
+  },
+  "setup": {
+    "title": "Exam setup",
+    "duration": "Duration",
+    "duration60": "{{minutes}} minutes (standard)",
+    "duration75": "{{minutes}} minutes (non-native English speaker)",
+    "durationHint": "Candidates sitting the exam in a non-native language get 25% extra time.",
+    "contentLanguage": "Question language",
+    "contentLanguageHint": "You can switch at any point during the exam; your answer is kept.",
+    "distribution": "Question distribution",
+    "chapter": "Chapter {{number}}",
+    "start": "Start exam",
+    "excludeSeen": "Try to avoid questions I have already seen"
+  },
+  "exam": {
+    "question": "Question {{current}} of {{total}}",
+    "selectOne": "Select 1 option",
+    "selectTwo": "WHICH TWO — select 2 options",
+    "flag": "Flag",
+    "unflag": "Unflag",
+    "previous": "Previous",
+    "next": "Next",
+    "navigator": "Questions",
+    "submit": "Finish exam",
+    "submitConfirmTitle": "Finish the exam?",
+    "submitConfirmBody": "{{unanswered}} questions are unanswered. You cannot change answers afterwards.",
+    "submitConfirmBodyAll": "All questions are answered.",
+    "cancel": "Cancel",
+    "confirmSubmit": "Yes, finish",
+    "timeUp": "Time is up — the exam was submitted automatically.",
+    "hideTimer": "Hide timer",
+    "showTimer": "Show timer",
+    "answered": "Answered",
+    "unanswered": "Empty",
+    "flagged": "Flagged",
+    "shortcuts": "Keyboard shortcuts",
+    "autoSubmitting": "Time is up, submitting…"
+  },
+  "result": {
+    "title": "Result",
+    "passed": "Passed",
+    "failed": "Below the pass mark",
+    "score": "{{points}} / {{total}}",
+    "passLine": "Pass mark {{pass}}",
+    "percent": "{{percent}}%",
+    "byChapter": "By chapter",
+    "weakest": "Your weakest learning objectives",
+    "review": "Review answers",
+    "retake": "New exam",
+    "backHome": "Home",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "unanswered": "Unanswered",
+    "duration": "Time: {{minutes}}m {{seconds}}s"
+  },
+  "review": {
+    "title": "Review",
+    "yourAnswer": "Your answer",
+    "correctAnswer": "Correct answer",
+    "whyTitle": "Why?",
+    "summary": "Summary",
+    "perOption": "Rationale per option",
+    "onlyWrong": "Incorrect only",
+    "all": "All",
+    "noneWrong": "You had no incorrect answers.",
+    "back": "Back to result"
+  },
+  "question": {
+    "objective": "Learning objective",
+    "syllabus": "Syllabus",
+    "kLevel": "Cognitive level",
+    "version": "Version",
+    "showEnglish": "Show English",
+    "showTurkish": "Show Turkish",
+    "contentLang": "Question language"
+  },
+  "common": {
+    "loading": "Loading…",
+    "errorTitle": "Something went wrong",
+    "retry": "Try again",
+    "close": "Close",
+    "notFoundTitle": "Page not found",
+    "notFoundBody": "That page does not exist.",
+    "minutes": "m",
+    "seconds": "s"
+  },
+  "sources": {
+    "title": "Sources and copyright",
+    "disclaimer": "This platform is an independent community project. It is not affiliated with, nor endorsed by, ISTQB® or the Turkish Testing Board. The content is written from scratch against the official syllabus and does not reproduce exam questions. No guarantee is given regarding your exam result. For official and current information, see istqb.org and turkishtestingboard.org.",
+    "officialLinks": "Official sources",
+    "privacyTitle": "Privacy",
+    "privacyBody": "No account, no server, no analytics. All your progress is stored only in your own browser's IndexedDB and is never sent anywhere. Clearing your browser data also clears your progress.",
+    "licenseTitle": "Licence",
+    "licenseBody": "Code is MIT licensed; content is CC BY-SA 4.0."
+  },
+  "footer": {
+    "disclaimerShort": "Independent community project · not affiliated with ISTQB®",
+    "sources": "Sources and copyright"
+  }
+}

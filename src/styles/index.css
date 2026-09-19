@@ -1,8 +1,23 @@
 @import "tailwindcss";
 
-/* Manual dark mode toggle: <html class="dark">, not prefers-color-scheme. */
-@custom-variant dark (&:where(.dark, .dark *));
+/*
+ * Tasarim sistemi — docs/06-ui-ux-tasarim.md §2.
+ * Renk asla tek basina anlam tasimaz: dogru/yanlis her zaman ikon + metinle
+ * birlikte gosterilir (WCAG 1.4.1).
+ */
 
+@theme {
+  --font-sans:
+    Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --radius-badge: 6px;
+}
+
+/* Acik tema varsayilan; koyu tema .dark sinifiyla acilir. */
 :root {
   --bg: #fafaf9;
   --surface: #ffffff;
@@ -11,10 +26,13 @@
   --fg: #1c1917;
   --fg-muted: #57534e;
   --accent: #0f766e;
+  --accent-fg: #ffffff;
   --correct: #15803d;
   --incorrect: #b91c1c;
   --flag: #b45309;
   --info: #1d4ed8;
+
+  color-scheme: light;
 }
 
 .dark {
@@ -25,13 +43,93 @@
   --fg: #fafaf9;
   --fg-muted: #a8a29e;
   --accent: #2dd4bf;
+  --accent-fg: #0c0a09;
   --correct: #4ade80;
   --incorrect: #f87171;
   --flag: #fbbf24;
   --info: #60a5fa;
+
+  color-scheme: dark;
 }
 
-body {
-  background-color: var(--bg);
-  color: var(--fg);
+/* Token'lari Tailwind yardimci siniflarina baglar: bg-surface, text-fg-muted... */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-correct: var(--correct);
+  --color-incorrect: var(--incorrect);
+  --color-flag: var(--flag);
+  --color-info: var(--info);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Klavye kullanicisi her yerde nerede oldugunu gormeli (docs/06 §1.5). */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Fareyle tiklamada halka gosterme, klavyede goster. */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Soru govdesi 65ch'i asmamali — uzun satir okunmuyor (docs/06 §2). */
+  .prose-question {
+    max-width: 65ch;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background: var(--accent);
+    color: var(--accent-fg);
+    border-radius: var(--radius-btn);
+  }
+
+  .skip-link:focus {
+    left: 0.5rem;
+    top: 0.5rem;
+  }
 }
