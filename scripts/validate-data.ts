@@ -62,6 +62,7 @@ const CHECKS: Record<number, CheckDef> = {
   12: { num: 12, level: "warning", name: "kLevel, LO'larin en yuksegiyle uyumlu mu" },
   13: { num: 13, level: "warning", name: "Turkce metinde Ingilizce terim sizintisi" },
   14: { num: 14, level: "warning", name: "Dogru cevabin sik konumu dengeli mi" },
+  15: { num: 15, level: "error", name: "Metinde sik harfine atif var mi" },
 };
 
 interface Issue {
@@ -473,6 +474,56 @@ function checkAnswerPositionBalance(questions: QuestionRecord[], file: string): 
   }
 }
 
+/**
+ * #15 — Soru metninde sik harfine atif var mi?
+ *
+ * "Bu nedenle (c) yanlis esleştirmedir" gibi bir cumle, siklarin sirasi
+ * degistigi anda YALAN olur. Siklar yeniden siralandiginda `byOption`
+ * anahtarlari programatik olarak tasinir ama duz metin icindeki harf
+ * kalir — ve cevap anahtarina duyulan guveni yok eden tam da bu tur bir
+ * kusurdur.
+ *
+ * Gercekten yasandi: sik konumu dengelemesi sonrasi bir sorunun ozeti
+ * adaya cevabin C oldugunu soyluyordu, anahtar ise D idi. Bu yuzden
+ * uyari degil HATA seviyesinde.
+ *
+ * Gerekce metinleri sikka konumuyla degil ICERIGIYLE atifta bulunmalidir:
+ * "(c) yanlistir" yerine "is birligi araclari satiri yanlistir".
+ */
+const OPTION_LETTER_REF =
+  /(?<![\w])\(([a-e])\)(?![\w])|\b(?:sik|şık|secenek|seçenek|option|choice)\s+\(?([a-e])\)?(?![\w])/i;
+
+function checkNoOptionLetterReferences(questions: QuestionRecord[]): void {
+  for (const { question, file } of questions) {
+    for (const [lang, content] of Object.entries(question.i18n ?? {})) {
+      const fields: Array<{ label: string; text: unknown }> = [
+        { label: "stem", text: (content as any)?.stem },
+        { label: "rationale.summary", text: (content as any)?.rationale?.summary },
+      ];
+
+      for (const [optionId, text] of Object.entries((content as any)?.rationale?.byOption ?? {})) {
+        fields.push({ label: `rationale.byOption.${optionId}`, text });
+      }
+      for (const [i, hint] of ((content as any)?.hints ?? []).entries()) {
+        fields.push({ label: `hints[${i}]`, text: hint });
+      }
+
+      for (const field of fields) {
+        if (!isNonEmptyString(field.text)) continue;
+        const match = OPTION_LETTER_REF.exec(field.text);
+        if (!match) continue;
+
+        report(
+          15,
+          file,
+          question.id,
+          `${lang}.${field.label} metninde sik harfine atif var: '${match[0]}'. Siklar yeniden siralandiginda bu atif yanlis sikki gosterir. Sikka konumuyla degil icerigiyle atifta bulunun.`,
+        );
+      }
+    }
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Objective coverage checks (#10, #11)
 // ---------------------------------------------------------------------------
@@ -737,6 +788,7 @@ function validateCertification(certEntry: any): void {
   const termsDoc = fs.existsSync(termsFile) ? readJson(termsFile) : null;
   checkTerminologyLeakage(allQuestions, buildLeakPatterns(termsDoc));
   checkAnswerPositionBalance(allQuestions, indexFile);
+  checkNoOptionLetterReferences(allQuestions);
 
   validateGlossaryDir(path.join(certDir, "glossary"));
 }

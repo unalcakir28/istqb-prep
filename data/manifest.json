@@ -15,7 +15,7 @@
       "questionCount": 120,
       "coverage": {
         "objectivesTotal": 64,
-        "objectivesCovered": 1,
+        "objectivesCovered": 50,
         "minPerObjective": 0
       }
     }

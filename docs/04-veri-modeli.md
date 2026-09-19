@@ -452,6 +452,7 @@ Her PR'da çalışacak kontroller (`yarn validate:data`):
 | 12 | `kLevel`, sorunun LO'larının en yükseğiyle uyumlu mu? | ⚠️ uyarı |
 | 13 | Türkçe metinde İngilizce terim sızıntısı var mı (sözlük kontrolü)? | ⚠️ uyarı |
 | 14 | Doğru cevabın şık konumu dengeli mi (sistematik "hep a" eğilimi)? | ⚠️ uyarı |
+| 15 | Gerekçe/soru metninde şık harfine atıf var mı ("(c) yanlıştır")? | ❌ |
 
 ---
 

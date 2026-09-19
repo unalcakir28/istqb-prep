@@ -17,7 +17,8 @@
     "sync:data": "tsx scripts/sync-data.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "build:index": "tsx scripts/build-index.ts",
-    "stats": "tsx scripts/stats.ts"
+    "stats": "tsx scripts/stats.ts",
+    "publish:questions": "tsx scripts/publish-questions.ts"
   },
   "dependencies": {
     "dexie": "4.4.6",

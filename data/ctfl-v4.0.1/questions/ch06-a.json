@@ -23,7 +23,7 @@
         "tool-categories"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a",
         "b"
@@ -93,7 +93,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -118,7 +118,7 @@
         "test-design-tools"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -187,7 +187,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -213,7 +213,7 @@
         "non-functional-testing-tools"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -240,7 +240,7 @@
             }
           ],
           "rationale": {
-            "summary": "Manuel olarak yapılması zor veya imkansız olan testleri mümkün kılan kategori, fonksiyonel olmayan test araçlarıdır. İş birliği araçlarının müfredatta verilen işlevi ise yalnızca iletişimi kolaylaştırmaktır; bu nedenle (c) yanlış eşleştirmedir.",
+            "summary": "Manuel olarak yapılması zor veya imkansız olan testleri mümkün kılan kategori, fonksiyonel olmayan test araçlarıdır. İş birliği araçlarının müfredatta verilen işlevi ise yalnızca iletişimi kolaylaştırmaktır; bu nedenle iş birliği araçları satırı yanlış eşleştirmedir.",
             "byOption": {
               "a": "Doğru eşleştirme, dolayısıyla aranan cevap değil. Müfredat bu kategorinin örnekleri olarak sanal makineleri ve konteynerleştirme araçlarını verir.",
               "b": "Doğru eşleştirme, dolayısıyla aranan cevap değil. Test yönetimi araçları tam olarak bu yönetim işlerini kolaylaştırarak test sürecinin verimliliğini artırır.",
@@ -270,7 +270,7 @@
             }
           ],
           "rationale": {
-            "summary": "The category that makes testing possible where it is difficult or impossible to perform manually is non-functional testing tools. The function the syllabus gives for collaboration tools is only to facilitate communication, which makes (c) the incorrect pairing.",
+            "summary": "The category that makes testing possible where it is difficult or impossible to perform manually is non-functional testing tools. The function the syllabus gives for collaboration tools is only to facilitate communication, which makes the collaboration-tools row the incorrect pairing.",
             "byOption": {
               "a": "A correct pairing, so not the answer sought. The syllabus gives virtual machines and containerization tools as the examples of this category.",
               "b": "A correct pairing, so not the answer sought. Test management tools increase test process efficiency by facilitating exactly these management activities.",
@@ -282,7 +282,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -307,7 +307,7 @@
         "benefits"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -376,7 +376,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -401,7 +401,7 @@
         "risks"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -470,7 +470,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -496,7 +496,7 @@
         "open-source"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -565,7 +565,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }

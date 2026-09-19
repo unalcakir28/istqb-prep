@@ -1,14 +1,14 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "@/App";
-import "@/styles/index.css";
 
-const rootElement = document.getElementById("root");
-if (!rootElement) {
-  throw new Error("Root element #root not found");
-}
+import "./styles/index.css";
+import "./lib/i18n";
+import { App } from "./App";
 
-createRoot(rootElement).render(
+const container = document.getElementById("root");
+if (!container) throw new Error("#root bulunamadi — index.html bozuk.");
+
+createRoot(container).render(
   <StrictMode>
     <App />
   </StrictMode>,

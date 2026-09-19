@@ -34,7 +34,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Antibiyotik direnci"
+              "text": "Antibiyotik direnci: aynı testler tekrarlandıkça yeni hata bulmada etkisizleşir"
             },
             {
               "id": "b",
@@ -59,7 +59,7 @@
             }
           },
           "hints": [
-            "Prensibin adı, aynı etkene karşı zamanla direnç geliştiren mikroorganizmalara yapılan benzetmeden gelir."
+            "Hangi prensip, hiç değiştirilmeyen bir test paketinin zamanla başına gelenle ilgilidir?"
           ]
         },
         "en": {
@@ -92,7 +92,7 @@
             }
           },
           "hints": [
-            "The principle is named after organisms developing resistance to the same agent over time."
+            "Which principle is about what happens to a test set that is never changed?"
           ]
         }
       },
@@ -122,7 +122,7 @@
         "test-objectives"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -191,7 +191,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -216,7 +216,7 @@
         "stakeholders"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -285,7 +285,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -309,7 +309,7 @@
         "debugging"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -378,7 +378,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -403,7 +403,7 @@
         "static-testing"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -478,7 +478,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -503,7 +503,7 @@
         "user-representation"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -572,7 +572,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -597,7 +597,7 @@
         "release-decision"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -666,7 +666,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -691,7 +691,7 @@
         "quality-control"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -760,7 +760,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -784,14 +784,14 @@
         "quality-control"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
       "media": null,
       "i18n": {
         "tr": {
-          "stem": "Müfredata göre test etmenin yanı sıra kalite kontrolünün biçimleri arasında aşağıdakilerden hangileri sayılır?",
+          "stem": "Müfredata göre test etmenin yanı sıra kalite kontrolünün biçimleri arasında aşağıdakilerden hangisi sayılır?",
           "options": [
             {
               "id": "a",
@@ -821,7 +821,7 @@
           }
         },
         "en": {
-          "stem": "According to the syllabus, which of the following are listed as forms of quality control alongside testing?",
+          "stem": "According to the syllabus, which of the following is listed as a form of quality control alongside testing?",
           "options": [
             {
               "id": "a",
@@ -853,7 +853,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -878,7 +878,7 @@
         "terminology"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -947,7 +947,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -972,7 +972,7 @@
         "root-cause"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -1047,7 +1047,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1073,7 +1073,7 @@
         "multi"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c",
         "e"
@@ -1159,7 +1159,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1184,7 +1184,7 @@
         "defects-cluster"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -1253,7 +1253,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1279,7 +1279,7 @@
         "validation"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -1354,7 +1354,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1379,7 +1379,7 @@
         "early-testing"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -1448,7 +1448,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1474,7 +1474,7 @@
         "test-design"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -1543,7 +1543,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1568,7 +1568,7 @@
         "test-completion"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -1637,7 +1637,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1661,7 +1661,7 @@
         "context-factors"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -1730,7 +1730,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1756,7 +1756,7 @@
         "multi"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a",
         "d"
@@ -1842,7 +1842,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1867,7 +1867,7 @@
         "residual-risk"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -1936,7 +1936,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1961,7 +1961,7 @@
         "test-management-role"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -1990,7 +1990,7 @@
           "rationale": {
             "summary": "Müfredat test yönetimi rolünü test planlama, test gözetimi, test kontrolü ve test tamamlama aktivitelerine; test etme rolünü ise test analizi, test tasarımı, test uyarlama ve test koşumuna odaklı olarak tanımlar.",
             "byOption": {
-              "a": "Yanlış. Test uyarlama, koşum için gereken test çalışma ürünlerinin oluşturulması ve test ortamının kurulmasıdır; bu da test etme rolünün odağındadır.",
+              "a": "Yanlış. Test uyarlama, koşum için gereken test çalışma ürünlerinin oluşturulması ve test ortamının kurulmasıdır; bu, test etme rolünün odağındadır.",
               "b": "Yanlış. Test koşumu, testlerin çizelgeye göre çalıştırılması ve sonuçların karşılaştırılmasıdır; teknik bir aktivite olarak test etme rolüne aittir.",
               "c": "Doğru. Test tamamlama, test yönetimi rolünün odaklandığı dört aktiviteden biridir; sürecin kapatılması ve raporlanması bu rolün sorumluluğundadır.",
               "d": "Yanlış. Test tasarımı, test koşullarının test senaryolarına dönüştürülmesidir ve testin mühendislik yönünü üstlenen test etme rolüne aittir."
@@ -2020,7 +2020,7 @@
           "rationale": {
             "summary": "The syllabus describes the test management role as mainly focused on test planning, test monitoring, test control and test completion, and the testing role as mainly focused on test analysis, test design, test implementation and test execution.",
             "byOption": {
-              "a": "Incorrect. Test implementation creates the testware needed for execution and builds the test environment; this too is a focus of the testing role.",
+              "a": "Incorrect. Test implementation creates the testware needed for execution and builds the test environment; this is a focus of the testing role.",
               "b": "Incorrect. Test execution runs the tests according to the schedule and compares results; as a technical activity it belongs to the testing role.",
               "c": "Correct. Test completion is one of the four activities the test management role focuses on; closing down and reporting on the process is that role's responsibility.",
               "d": "Incorrect. Test design elaborates test conditions into test cases and belongs to the testing role, which takes responsibility for the engineering aspect of testing."
@@ -2030,7 +2030,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2055,7 +2055,7 @@
         "communication"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -2124,7 +2124,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2148,7 +2148,7 @@
         "whole-team-approach"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -2217,7 +2217,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2241,7 +2241,7 @@
         "independence-of-testing"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -2310,7 +2310,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }

@@ -23,7 +23,7 @@
         "test-planning"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -54,8 +54,8 @@
             "byOption": {
               "a": "Yanlış. Tamamlanmış bir aktiviteyi özetleyen ve ürün kalitesini orijinal test planına ve çıkış kriterlerine göre değerlendiren şey test tamamlama raporudur (bkz. 5.3.2). Test planı testin başında hazırlanır.",
               "b": "Doğru. Müfredat, test planının işlevlerini tam olarak böyle sıralar: araçların ve zaman çizelgesinin dokümante edilmesi ve paydaşlarla iletişim aracı olması.",
-              "c": "Yanlış. Adım adım aksiyonları ve beklenen sonuçları içeren şey test senaryosu (test case) ve test prosedürüdür; test planı tek tek testlerin içeriğini değil, projenin genel yaklaşımını ve programını belirler.",
-              "d": "Yanlış. Bu, test politikasının tanımıdır. Test planı, testin mevcut test politikasına ve test stratejisine uyacağını gösterir (veya neden sapıldığını açıklar); politikanın kendisi değildir."
+              "c": "Yanlış. Test planı tek tek testlerin içeriğini değil, projenin genel yaklaşımını, kaynaklarını ve zaman çizelgesini belirler (bkz. 5.1.1).",
+              "d": "Yanlış. Bu bir test planının işlevi değildir. Müfredat, test planının mevcut test politikasına ve test stratejisine UYACAĞINI gösterdiğini söyler; planın kendisi politikayı tanımlamaz."
             }
           }
         },
@@ -84,15 +84,15 @@
             "byOption": {
               "a": "Incorrect. Summarizing a completed activity and evaluating product quality against the original test plan and exit criteria is the job of a test completion report (see 5.3.2). A test plan is prepared up front.",
               "b": "Correct. These are exactly the functions the syllabus lists for a test plan: documenting the means and schedule, and acting as a means of communication with stakeholders.",
-              "c": "Incorrect. Step-by-step actions and expected results belong to a test case and a test procedure. A test plan defines the overall approach and schedule of the project, not the content of individual tests.",
-              "d": "Incorrect. This describes a test policy. A test plan demonstrates that testing will adhere to the existing test policy and test strategy (or explains the deviation); it is not the policy itself."
+              "c": "Incorrect. A test plan defines the overall approach, resources and schedule of the project, not the content of individual tests (see 5.1.1).",
+              "d": "Incorrect. This is not what a test plan does. The syllabus says a test plan demonstrates that testing will ADHERE to the existing test policy and test strategy; the plan does not define the policy."
             }
           }
         }
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -117,7 +117,7 @@
         "test-approach"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -186,7 +186,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -211,7 +211,7 @@
         "release-planning"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -280,7 +280,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -305,7 +305,7 @@
         "entry-criteria"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a",
         "c"
@@ -375,7 +375,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -400,7 +400,7 @@
         "definition-of-ready"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -469,7 +469,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -494,7 +494,7 @@
         "ratios"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -563,7 +563,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -588,7 +588,7 @@
         "extrapolation"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -657,7 +657,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -682,7 +682,7 @@
         "three-point-estimation"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -711,7 +711,7 @@
           "rationale": {
             "summary": "Üç noktalı tahminlemede son tahmin E = (a + 4*m + b) / 6 ve ölçüm hatası SD = (b - a) / 6 şeklinde hesaplanır. Burada E = (8 + 4x14 + 26) / 6 = 90 / 6 = 15 ve SD = (26 - 8) / 6 = 3'tür.",
             "byOption": {
-              "a": "Yanlış. 14 kişi-saat yalnızca en olası tahmindir; en iyimser ve en kötümser değerler hesaba katılmamıştır. Üç noktalı tahminleme üç değeri de kullanır.",
+              "a": "Yanlış. Ölçüm hatası ±3 doğrudur, ancak 14 kişi-saat yalnızca en olası (m) değeridir; nihai tahmin ağırlıklı ortalama E = (8 + 4×14 + 26) / 6 = 15'tir.",
               "b": "Doğru. E = (8 + 56 + 26) / 6 = 15 kişi-saat, SD = (26 - 8) / 6 = 3 kişi-saat; yani tahmin 12 ile 18 kişi-saat arasındadır.",
               "c": "Yanlış. 16 kişi-saat, üç değerin ağırlıksız aritmetik ortalamasıdır: (8 + 14 + 26) / 3. Teknik ise en olası tahmini dört kez sayan ağırlıklı bir ortalama kullanır.",
               "d": "Yanlış. Son tahmin doğru hesaplanmış ancak ölçüm hatası (b - a) / 2 = 9 olarak bulunmuş. Formül (b - a) / 6'dır."
@@ -741,7 +741,7 @@
           "rationale": {
             "summary": "In three-point estimation the final estimate is E = (a + 4*m + b) / 6 and the measurement error is SD = (b - a) / 6. Here E = (8 + 4x14 + 26) / 6 = 90 / 6 = 15 and SD = (26 - 8) / 6 = 3.",
             "byOption": {
-              "a": "Incorrect. 14 person-hours is the most likely estimate on its own, ignoring the optimistic and pessimistic values. Three-point estimation uses all three.",
+              "a": "Incorrect. The measurement error of ±3 is right, but 14 person-hours is only the most likely value (m); the final estimate is the weighted mean E = (8 + 4×14 + 26) / 6 = 15.",
               "b": "Correct. E = (8 + 56 + 26) / 6 = 15 person-hours and SD = (26 - 8) / 6 = 3 person-hours, i.e. between 12 and 18 person-hours.",
               "c": "Incorrect. 16 person-hours is the unweighted arithmetic mean of the three values, (8 + 14 + 26) / 3. The technique uses a weighted mean in which the most likely estimate counts four times.",
               "d": "Incorrect. The final estimate is right, but the measurement error has been computed as (b - a) / 2 = 9. The formula is (b - a) / 6."
@@ -751,7 +751,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -776,7 +776,7 @@
         "risk-based"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -845,7 +845,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -870,14 +870,14 @@
         "coverage-based"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
       "media": null,
       "i18n": {
         "tr": {
-          "stem": "Bir bileşenin komutlarını dört test senaryosu şu şekilde kapsamaktadır: TC1 → S1, S2; TC2 → S3, S4, S5, S6; TC3 → S1, S2, S7; TC4 → S6, S8. Ek kapsam önceliklendirmesi uygulandığında ortaya çıkan koşum sırası hangisidir?",
+          "stem": "Bir bileşenin komutlarını dört test senaryosu şu şekilde kapsamaktadır: TC1 → S1, S2; TC2 → S3, S4, S5, S6; TC3 → S1, S2, S7; TC4 → S6, S8. EK KAPSAM önceliklendirmesi uygulandığında ortaya çıkan koşum sırası hangisidir?",
           "options": [
             {
               "id": "a",
@@ -939,7 +939,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -964,7 +964,7 @@
         "dependencies"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -1033,7 +1033,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1057,7 +1057,7 @@
         "test-pyramid"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -1126,7 +1126,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1150,7 +1150,7 @@
         "testing-quadrants"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -1219,7 +1219,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1244,7 +1244,7 @@
         "test-types"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a",
         "c"
@@ -1314,7 +1314,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1340,7 +1340,7 @@
         "risk-impact"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -1409,7 +1409,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1434,7 +1434,7 @@
         "product-risk"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a",
         "c"
@@ -1504,7 +1504,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1530,7 +1530,7 @@
         "consequences"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -1599,7 +1599,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1625,7 +1625,7 @@
         "thoroughness"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -1694,7 +1694,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1720,7 +1720,7 @@
         "risk-mitigation"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -1789,7 +1789,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1814,7 +1814,7 @@
         "risk-response"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -1883,7 +1883,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1908,7 +1908,7 @@
         "defect-metrics"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -1977,7 +1977,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2002,7 +2002,7 @@
         "test-completion-report"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -2071,7 +2071,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2097,7 +2097,7 @@
         "formality"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -2166,7 +2166,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2191,7 +2191,7 @@
         "distributed-teams"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -2260,7 +2260,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2286,7 +2286,7 @@
         "baseline"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -2355,7 +2355,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2380,7 +2380,7 @@
         "defect-management"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -2449,7 +2449,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -2475,7 +2475,7 @@
         "priority"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -2544,7 +2544,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }

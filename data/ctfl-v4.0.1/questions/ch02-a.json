@@ -23,7 +23,7 @@
         "sequential-model"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -92,7 +92,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -117,7 +117,7 @@
         "agile"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -186,7 +186,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -211,7 +211,7 @@
         "multi-answer"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a",
         "b"
@@ -291,7 +291,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -316,7 +316,7 @@
         "bdd"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -385,7 +385,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -410,7 +410,7 @@
         "scope"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -479,7 +479,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -504,7 +504,7 @@
         "benefits"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -573,7 +573,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -598,7 +598,7 @@
         "definition"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -667,7 +667,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -692,7 +692,7 @@
         "misconception"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -761,7 +761,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -786,7 +786,7 @@
         "scenario"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -855,7 +855,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -880,7 +880,7 @@
         "process-improvement"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -949,7 +949,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -974,7 +974,7 @@
         "scenario"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -1043,7 +1043,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1068,7 +1068,7 @@
         "acceptance-testing"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -1137,7 +1137,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1165,7 +1165,7 @@
         "classic-trap"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a",
         "c"
@@ -1245,7 +1245,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1270,7 +1270,7 @@
         "non-functional-testing"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "d"
       ],
@@ -1339,7 +1339,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1365,7 +1365,7 @@
         "white-box"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "a"
       ],
@@ -1434,7 +1434,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1459,7 +1459,7 @@
         "scenario"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -1528,7 +1528,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1554,7 +1554,7 @@
         "classic-trap"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "c"
       ],
@@ -1623,7 +1623,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
@@ -1649,7 +1649,7 @@
         "retirement"
       ],
       "origin": "original",
-      "status": "review",
+      "status": "published",
       "correct": [
         "b"
       ],
@@ -1718,7 +1718,7 @@
       },
       "meta": {
         "author": "claude",
-        "reviewedBy": "",
+        "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
         "updatedAt": "2026-09-19"
       }
