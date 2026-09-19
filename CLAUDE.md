@@ -62,8 +62,11 @@ yarn stats              # LO başına kapsama → docs/kapsama.md + README rozet
 yarn publish:questions  # review -> published; --reviewer zorunlu (tek geçiş yolu)
 yarn test               # Vitest (birim)
 yarn e2e                # Playwright: akış + axe erişilebilirlik (kendi dev sunucusu, 5183)
+yarn build              # tsc -b && vite build (CI kapısı)
 yarn lint && yarn typecheck && yarn format
 ```
+
+**Veri düzenledikten sonra sırayla:** `yarn build:index && yarn validate:data`.
 
 ## Klasör yapısı
 
@@ -76,6 +79,19 @@ src/        Uygulama (Vite + React + TS)
 e2e/        Playwright: akış + erişilebilirlik
 ```
 
+`src/` içinde iş nerede:
+
+```
+features/exam/   Deneme motoru — generateExam (blueprint'e göre seçim, tohumlu ve
+                 tekrar üretilebilir), scoreExam (tam eşleşme, kısmi puan YOK),
+                 examTimer (mutlak Date.now() bitişi), examStore (Zustand)
+lib/content/     Statik JSON erişimi + iki katmanlı önbellek (Map + Cache API),
+                 dataVersion ile geçersizleştirilir
+lib/db/          Dexie/IndexedDB — kalıcılığın tek yeri
+lib/i18n/        Arayüz dili; soru dili ayrı bir kavram (attempt.contentLang)
+routes/          Ekranlar · components/ paylaşılan arayüz · types/content.ts veri tipleri
+```
+
 ## Konvansiyonlar
 
 - **Dil:** Kullanıcıyla ve dökümanlarda **Türkçe**. Kod, değişken adları, commit mesajları İngilizce olabilir ama commit gövdesi Türkçe.
@@ -85,6 +101,19 @@ e2e/        Playwright: akış + erişilebilirlik
 - **Türkçe terimler:** `error/defect/failure` → **`insan hatası/hata/arıza`** (resmî TTB v4.0.1). Üçü birden "hata" diye çevrilmez — bu ayrım sınavda doğrudan sorulur. **`kusur` kullanılmaz**, müfredatta geçmez. Tek doğruluk kaynağı `data/ctfl-v4.0.1/terms.json` (97 terim, resmî anahtar kelime listelerinden hizalandı); okunabilir tablo `docs/07-icerik-uretim-rehberi.md §5`.
 - Vurgu kelimeleri soru metninde BÜYÜK HARF: `EN İYİ`, `HARİÇ`, `DEĞİLDİR`, `HANGİ İKİSİ`.
 - `meta.reviewedBy` boşsa `status` **`published` olamaz**.
+
+## Tuzaklar
+
+Hepsi bir kez ısırdı. Tekrar ısırmasın.
+
+- **`data/` düzenledikten sonra** `yarn build:index && yarn validate:data` çalıştır. Dev sunucusu açıkken `data/` değişirse `public/data/` bayat kalır: `predev`/`prebuild` yalnızca başlangıçta senkronlar, sonrası için `yarn sync:data`.
+- **`yarn test` (Vitest) `e2e/` dosyalarını toplamamalı.** `vitest.config.ts` içindeki exclude bunu engelliyor; kaldırılırsa Playwright'ın `test.beforeEach`'i patlar ve 39 birim testi geçse bile komut kırmızı döner.
+- **E2E tarayıcısı `tr-TR` yerel ayarıyla açılır.** Arayüz dili `navigator.language`'den seçilir; Playwright'ın varsayılanı `en-US` ve o durumda Türkçe etiket seçicileri tutmaz.
+- **`GITHUB_ACTIONS` set ise Vite `base` `/istqb-prep/` olur.** `playwright.config.ts` bu değişkeni bilerek boşaltır, yoksa `baseURL` tutmaz.
+- **`"resolutions": { "vite": "6.4.3" }` kaldırılmaz.** Vitest kendi Vite 7'sini getiriyor; iki tip ağacı aynı anda durunca `typecheck` ve `build` kırılıyor.
+- **Şıklar radio değil checkbox olabilir.** Çok seçimli ("HANGİ İKİSİ") soruda `getByRole("radio")` hiç eşleşmez; testte ikisini birden ara.
+- **Yarım kalan deneme ilk cevapsız sorudan devam eder**, kaldığı yerden değil (`examStore.resumeAttempt`).
+- **Soru metni içinde şıkka harfle atıf yapma** ("(c) şıkkı..."). 15. kontrol bunu hata sayar: şık konumları dengelenirken harfler değişir, prozadaki atıf yanlış kalır.
 
 ## Yapma
 
@@ -98,7 +127,7 @@ e2e/        Playwright: akış + erişilebilirlik
 
 ## Sıradaki iş
 
-`TODO.md` → **Faz 0**. Kritik yol:
+`TODO.md` → **Faz 2**. Faz 0 ve Faz 1'in çekirdeği kapandı; kalanlar:
 
 Faz 0 kapandı (blueprint 29 LO grubuyla tam, 64 öğrenme hedefi işlendi, doğrulayıcı 15 kontrolle çalışıyor). Açık kalanlar:
 
