@@ -1,0 +1,3273 @@
+{
+  "chunk": "ch04-a",
+  "chapter": 4,
+  "dataVersion": "2026.09.19",
+  "questions": [
+    {
+      "id": "ctfl4-0055",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.1",
+      "syllabusRef": "§4.1.1",
+      "objectives": [
+        "FL-4.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "test-techniques",
+        "black-box",
+        "classification"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, test nesnesinin iç yapısına atıfta bulunmadan, spesifikasyonda tanımlanan davranışa göre test senaryoları tasarlamaktadır. Kod yeniden düzenlendiği hâlde gerekli davranış aynı kaldığında bu test senaryoları hâlâ kullanılabilir olmaktadır. Burada kullanılan test tekniği kategorisi hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Tecrübeye dayalı test teknikleri"
+            },
+            {
+              "id": "b",
+              "text": "İş birliğine dayalı test yaklaşımları"
+            },
+            {
+              "id": "c",
+              "text": "Kara kutu test teknikleri"
+            },
+            {
+              "id": "d",
+              "text": "Beyaz kutu test teknikleri"
+            }
+          ],
+          "rationale": {
+            "summary": "Kara kutu test teknikleri (spesifikasyon bazlı teknikler olarak da bilinir) test nesnesinin iç yapısına atıfta bulunulmadan davranışının analiz edilmesine dayanır. Bu nedenle test senaryoları yazılımın nasıl yazıldığından bağımsızdır: kod değişir ancak davranış aynı kalırsa test senaryoları hâlâ faydalıdır.",
+            "byOption": {
+              "a": "Yanlış. Tecrübeye dayalı teknikler test senaryolarının tasarımı için test uzmanının bilgi ve deneyimini kullanır; etkinlikleri ağırlıklı olarak test uzmanının becerilerine bağlıdır, spesifikasyonun sistematik analizine değil.",
+              "b": "Yanlış. İş birliğine dayalı yaklaşımlar hataların iş birliği ve iletişim yoluyla önlenmesine odaklanır (ör. iş birlikçi kullanıcı hikayesi yazımı, ATDD); bir spesifikasyondan test senaryosu türetme tekniği değildir.",
+              "c": "Doğru. Kara kutu (spesifikasyon bazlı) teknikler iç yapıya bakmadan tanımlanmış davranışı analiz eder; senaryoların davranış değişmeyen bir kod düzenlemesinden sonra da geçerli kalmasının nedeni budur.",
+              "d": "Yanlış. Beyaz kutu (yapı bazlı) teknikler test nesnesinin iç yapısının ve işlemlerinin analizine dayanır; test senaryoları yazılımın nasıl tasarlandığına bağlıdır ve ancak tasarım veya kodlamadan sonra oluşturulabilir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team designs test cases from the specified behavior of the test object, without reference to its internal structure. When the implementation is reworked but the required behavior stays the same, the test cases are still useful. Which category of test techniques is being used?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Experience-based test techniques"
+            },
+            {
+              "id": "b",
+              "text": "Collaboration-based test approaches"
+            },
+            {
+              "id": "c",
+              "text": "Black-box test techniques"
+            },
+            {
+              "id": "d",
+              "text": "White-box test techniques"
+            }
+          ],
+          "rationale": {
+            "summary": "Black-box test techniques (also known as specification-based techniques) are based on an analysis of the specified behavior of the test object without reference to its internal structure. The test cases are therefore independent of how the software is implemented: if the implementation changes but the required behavior stays the same, the test cases remain useful.",
+            "byOption": {
+              "a": "Incorrect. Experience-based techniques use the knowledge and experience of testers to design test cases; their effectiveness depends heavily on the tester's skills rather than on a systematic analysis of a specification.",
+              "b": "Incorrect. Collaboration-based approaches focus on defect avoidance through collaboration and communication, for example collaborative user story writing and ATDD, rather than on deriving test cases from a specification.",
+              "c": "Correct. Black-box (specification-based) techniques analyze the specified behavior without reference to internal structure, which is exactly why the test cases survive an implementation change that leaves the behavior unchanged.",
+              "d": "Incorrect. White-box (structure-based) techniques are based on an analysis of the test object's internal structure and processing; their test cases depend on how the software is designed and can only be created after design or implementation."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0056",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.1",
+      "syllabusRef": "§4.1.1",
+      "objectives": [
+        "FL-4.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-techniques",
+        "experience-based",
+        "multi"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a",
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Tecrübeye dayalı test teknikleri hakkında HANGİ İKİ ifade doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Etkinlikleri ağırlıklı olarak test uzmanının becerilerine bağlıdır"
+            },
+            {
+              "id": "b",
+              "text": "Kara kutu ve beyaz kutu test tekniklerini tamamlayıcı niteliktedir"
+            },
+            {
+              "id": "c",
+              "text": "Test nesnesinin iç yapısının ve işlemlerinin analizine dayanır"
+            },
+            {
+              "id": "d",
+              "text": "Yalnızca test nesnesinin tasarımı veya kodlanmasından sonra oluşturulabilir"
+            },
+            {
+              "id": "e",
+              "text": "Gerçek kod kapsamının objektif olarak ölçülmesini sağlar"
+            }
+          ],
+          "rationale": {
+            "summary": "Tecrübeye dayalı test teknikleri test uzmanlarının bilgi ve deneyimlerini kullanır; etkinlikleri ağırlıklı olarak test uzmanının becerilerine bağlıdır. Kara kutu ve beyaz kutu tekniklerinde gözden kaçabilecek hataları bulabildikleri için bu tekniklerin tamamlayıcısı sayılırlar.",
+            "byOption": {
+              "a": "Doğru. Müfredat bu tekniklerin etkinliğinin ağırlıklı olarak test uzmanının becerilerine dayalı olduğunu açıkça belirtir.",
+              "b": "Doğru. Tecrübeye dayalı teknikler kara kutu ve beyaz kutu tekniklerinde gözden kaçırılabilecek hataları tespit edebildiği için bu tekniklerin yerine değil, tamamlayıcısı olarak kullanılır.",
+              "c": "Yanlış. İç yapının ve işlemlerin analizine dayanan teknikler beyaz kutu (yapı bazlı) tekniklerdir; tecrübeye dayalı teknikler böyle bir analiz gerektirmez.",
+              "d": "Yanlış. Bu kısıt beyaz kutu teknikleri için geçerlidir: test senaryoları yazılımın nasıl tasarlandığına bağlı olduğundan ancak tasarım veya kodlamadan sonra oluşturulabilir.",
+              "e": "Yanlış. Objektif kod kapsamı ölçümü beyaz kutu testinin sağladığı bir değerdir; yalnızca kara kutu veya tecrübeye dayalı test yapmak gerçek kod kapsamının ölçülmesini sağlamaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "WHICH TWO of the following statements about experience-based test techniques are correct?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Their effectiveness depends heavily on the tester's skills"
+            },
+            {
+              "id": "b",
+              "text": "They are complementary to black-box and white-box test techniques"
+            },
+            {
+              "id": "c",
+              "text": "They are based on an analysis of the test object's internal structure and processing"
+            },
+            {
+              "id": "d",
+              "text": "They can only be created after the design or implementation of the test object"
+            },
+            {
+              "id": "e",
+              "text": "They provide an objective measurement of actual code coverage"
+            }
+          ],
+          "rationale": {
+            "summary": "Experience-based test techniques use the knowledge and experience of testers, and their effectiveness depends heavily on the tester's skills. Because they can detect defects that may be missed by black-box and white-box techniques, they are complementary to those techniques.",
+            "byOption": {
+              "a": "Correct. The syllabus states explicitly that the effectiveness of these test techniques depends heavily on the tester's skills.",
+              "b": "Correct. Experience-based techniques can detect defects that may be missed using black-box and white-box techniques, so they complement rather than replace them.",
+              "c": "Incorrect. Techniques based on an analysis of internal structure and processing are the white-box (structure-based) techniques; experience-based techniques require no such analysis.",
+              "d": "Incorrect. That constraint applies to white-box techniques: because their test cases depend on how the software is designed, they can only be created after design or implementation.",
+              "e": "Incorrect. Objective measurement of code coverage is a value of white-box testing; performing only black-box or experience-based testing does not provide a measure of actual code coverage."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0057",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.1",
+      "objectives": [
+        "FL-4.2.1"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "equivalence-partitioning",
+        "coverage",
+        "minimum-test-cases"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir kargo firması, gram cinsinden tam sayı olarak girilen paket ağırlığına göre fiyat hesaplamaktadır:\n- 1-500 g: küçük paket\n- 501-2000 g: orta paket\n- 2001-5000 g: büyük paket\n- 1 g'dan küçük veya 5000 g'dan büyük ağırlıklar reddedilir\n\nBu girdi için denklik paylarına ayırma (equivalence partitioning) tekniğiyle %100 kapsam elde etmek üzere gereken MİNİMUM test senaryosu sayısı kaçtır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "4"
+            },
+            {
+              "id": "b",
+              "text": "5"
+            },
+            {
+              "id": "c",
+              "text": "6"
+            },
+            {
+              "id": "d",
+              "text": "3"
+            }
+          ],
+          "rationale": {
+            "summary": "Beş pay tanımlanır: üç geçerli pay (1-500, 501-2000, 2001-5000) ve iki geçersiz pay (1'den küçük, 5000'den büyük). Bu teknikte %100 kapsam için geçersiz paylar dahil belirlenmiş her payın en az bir kez denenmesi gerekir ve bir payın tüm unsurları aynı şekilde işleneceğinden pay başına tek test yeterlidir: 5 test senaryosu.",
+            "byOption": {
+              "a": "Yanlış. 4, üç geçerli payı ve iki geçersiz paydan yalnızca birini kapsar. 1'in altı ve 5000'in üstü tek bir pay değil, ayrı iki geçersiz paydır.",
+              "b": "Doğru. Üç geçerli, iki geçersiz olmak üzere beş pay vardır ve her pay için bir test senaryosu yeterlidir.",
+              "c": "Yanlış. 6, altı pay belirlenmiş olmasını gerektirirdi; spesifikasyon yalnızca beş pay tanımlar. Aynı payın içinden ikinci bir değer denemek kapsam eklemez, çünkü payın tüm unsurlarının aynı şekilde işlenmesi beklenir.",
+              "d": "Yanlış. 3 yalnızca geçerli payları karşılar. Bu teknikte %100 kapsam, belirlenmiş geçersiz payların da denenmesini gerektirir."
+            }
+          },
+          "hints": [
+            "Geçersiz paylar da kapsam öğesidir; önce spesifikasyonun kaç ayrı pay tanımladığını sayın."
+          ]
+        },
+        "en": {
+          "stem": "A parcel service calculates a price from the parcel weight, entered as a whole number of grams:\n- 1-500 g: small parcel\n- 501-2000 g: medium parcel\n- 2001-5000 g: large parcel\n- any weight below 1 g or above 5000 g is rejected\n\nWhat is the MINIMUM number of test cases needed to achieve 100% coverage of this input with equivalence partitioning?",
+          "options": [
+            {
+              "id": "a",
+              "text": "4"
+            },
+            {
+              "id": "b",
+              "text": "5"
+            },
+            {
+              "id": "c",
+              "text": "6"
+            },
+            {
+              "id": "d",
+              "text": "3"
+            }
+          ],
+          "rationale": {
+            "summary": "Five partitions are identified: three valid ones (1-500, 501-2000, 2001-5000) and two invalid ones (below 1, above 5000). To achieve 100% coverage with this technique, test cases must exercise every identified partition, invalid ones included, and one test per partition is sufficient because all elements of a partition are expected to be processed in the same way: 5 test cases.",
+            "byOption": {
+              "a": "Incorrect. 4 covers the three valid partitions plus only one of the two invalid ones. Weights below 1 g and weights above 5000 g are two separate invalid partitions, not one.",
+              "b": "Correct. There are five partitions, three valid and two invalid, and one test case per partition is sufficient.",
+              "c": "Incorrect. 6 would require six identified partitions; the specification defines only five. A second value from the same partition adds no coverage, because all elements of a partition are expected to be processed in the same way.",
+              "d": "Incorrect. 3 covers only the valid partitions. 100% coverage with this technique also requires the identified invalid partitions to be exercised."
+            }
+          },
+          "hints": [
+            "Invalid partitions are coverage items too; first count how many distinct partitions the specification defines."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0058",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.1",
+      "objectives": [
+        "FL-4.2.1"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "equivalence-partitioning",
+        "test-data-selection"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir sipariş bileşeni, TL cinsinden sipariş tutarına göre indirim uygular:\n- negatif tutar reddedilir\n- 0 ile 1000 arası (1000 hariç): indirim yok\n- 1000 ile 5000 arası (5000 hariç): %10 indirim\n- 5000 ve üzeri: %20 indirim\n\nAşağıdaki değer kümelerinden hangisi dört payın HER BİRİNİ tam olarak birer kez dener?",
+          "options": [
+            {
+              "id": "a",
+              "text": "-50, 500, 1000, 5000"
+            },
+            {
+              "id": "b",
+              "text": "0, 999, 1000, 4999"
+            },
+            {
+              "id": "c",
+              "text": "-1, 0, 999, 4999"
+            },
+            {
+              "id": "d",
+              "text": "500, 1500, 5000, 7000"
+            }
+          ],
+          "rationale": {
+            "summary": "Dört pay vardır: geçersiz (negatif), indirim yok (0-999), %10 (1000-4999) ve %20 (5000 ve üzeri). Denklik paylarına ayırmada %100 kapsam için her paydan en az bir değer gerekir; aynı paydan iki değer içeren bir küme, dört değerle kaçınılmaz olarak bir payı boş bırakır.",
+            "byOption": {
+              "a": "Doğru. -50 geçersiz paya, 500 indirimsiz paya, 1000 %10 payına ve 5000 %20 payına düşer; dört payın her birinden tam olarak bir değer vardır.",
+              "b": "Yanlış. 0 ve 999 aynı indirimsiz paya, 1000 ve 4999 ise aynı %10 payına düşer. Geçersiz pay ve %20 payı hiç denenmez.",
+              "c": "Yanlış. -1 geçersiz payı karşılar, ancak 0 ve 999 aynı indirimsiz paydadır ve %10 payını yalnızca 4999 temsil eder; %20 payı kapsanmaz.",
+              "d": "Yanlış. 5000 ve 7000 aynı %20 payına düşer ve kümede hiç negatif değer yoktur, dolayısıyla geçersiz pay denenmez."
+            }
+          },
+          "hints": [
+            "Her değeri önce ait olduğu payla etiketleyin; aynı etiketi iki kez alan küme elenir."
+          ]
+        },
+        "en": {
+          "stem": "An order component applies a discount according to the order value in TL:\n- a negative value is rejected\n- 0 up to but not including 1000: no discount\n- 1000 up to but not including 5000: 10% discount\n- 5000 and above: 20% discount\n\nWhich of the following sets of input values exercises EACH of the four partitions exactly once?",
+          "options": [
+            {
+              "id": "a",
+              "text": "-50, 500, 1000, 5000"
+            },
+            {
+              "id": "b",
+              "text": "0, 999, 1000, 4999"
+            },
+            {
+              "id": "c",
+              "text": "-1, 0, 999, 4999"
+            },
+            {
+              "id": "d",
+              "text": "500, 1500, 5000, 7000"
+            }
+          ],
+          "rationale": {
+            "summary": "There are four partitions: invalid (negative), no discount (0-999), 10% (1000-4999) and 20% (5000 and above). 100% coverage with equivalence partitioning requires at least one value from each partition; a four-value set that repeats a partition inevitably leaves another one uncovered.",
+            "byOption": {
+              "a": "Correct. -50 falls in the invalid partition, 500 in the no-discount partition, 1000 in the 10% partition and 5000 in the 20% partition: exactly one value from each of the four partitions.",
+              "b": "Incorrect. 0 and 999 both fall in the no-discount partition and 1000 and 4999 both fall in the 10% partition. The invalid partition and the 20% partition are never exercised.",
+              "c": "Incorrect. -1 covers the invalid partition, but 0 and 999 both lie in the no-discount partition and only 4999 represents the 10% partition; the 20% partition is left uncovered.",
+              "d": "Incorrect. 5000 and 7000 both fall in the 20% partition and the set contains no negative value, so the invalid partition is not exercised."
+            }
+          },
+          "hints": [
+            "Label each value with the partition it belongs to first; any set that produces the same label twice is out."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0059",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.1",
+      "objectives": [
+        "FL-4.2.1"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "equivalence-partitioning",
+        "each-choice",
+        "minimum-test-cases"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir rezervasyon formunda birbirinden bağımsız iki girdi parametresi vardır. \"Üyelik seviyesi\" parametresi için üç denklik payı belirlenmiştir (standart, gümüş, altın). \"Rezervasyon kanalı\" parametresi için iki denklik payı belirlenmiştir (web, mobil uygulama). Each Choice kapsamının (Her Seçeneği Kapsama) %100'üne ulaşmak için gereken MİNİMUM test senaryosu sayısı kaçtır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "6"
+            },
+            {
+              "id": "b",
+              "text": "2"
+            },
+            {
+              "id": "c",
+              "text": "3"
+            },
+            {
+              "id": "d",
+              "text": "5"
+            }
+          ],
+          "rationale": {
+            "summary": "Each Choice kapsamı, her pay grubundan her payın en az bir kez denenmesini gerektirir ve pay kombinasyonlarını dikkate almaz. Her test senaryosu iki parametreye de birer değer verdiğinden, üç test senaryosu üç üyelik payının tamamını karşılarken iki kanal payını da içerebilir.",
+            "byOption": {
+              "a": "Yanlış. 6, tüm kombinasyonların sayısıdır (3 x 2). Each Choice kapsamı pay kombinasyonlarını dikkate almaz; tüm kombinasyonları denemek daha güçlü bir kriterdir.",
+              "b": "Yanlış. İki test senaryosu her iki kanalı karşılayabilir ama üç üyelik payından en fazla ikisine ulaşır; bir üyelik payı denenmemiş kalır.",
+              "c": "Doğru. Üç test senaryosu, ör. (standart, web), (gümüş, mobil), (altın, web), her iki gruptaki her payı en az bir kez dener. Gereken sayı, en kalabalık pay grubunun büyüklüğüdür.",
+              "d": "Yanlış. 5, payların toplamıdır (3 + 2) ve ancak bir test senaryosu tek seferde tek bir payı deneyebilseydi gerekirdi. Her test senaryosu iki parametreye de değer verdiğinden her gruptan birer payı aynı anda kapsar."
+            }
+          },
+          "hints": [
+            "Each Choice kapsamı kombinasyon istemez; en çok paya sahip grubun büyüklüğü belirleyicidir."
+          ]
+        },
+        "en": {
+          "stem": "A booking form has two independent input parameters. For the parameter \"membership level\" three equivalence partitions have been identified (standard, silver, gold). For the parameter \"booking channel\" two equivalence partitions have been identified (web, mobile app). What is the MINIMUM number of test cases needed to achieve 100% Each Choice coverage?",
+          "options": [
+            {
+              "id": "a",
+              "text": "6"
+            },
+            {
+              "id": "b",
+              "text": "2"
+            },
+            {
+              "id": "c",
+              "text": "3"
+            },
+            {
+              "id": "d",
+              "text": "5"
+            }
+          ],
+          "rationale": {
+            "summary": "Each Choice coverage requires every partition from every set of partitions to be exercised at least once and does not take combinations of partitions into account. Since every test case supplies a value for both parameters, three test cases can cover all three membership partitions while also including both channel partitions.",
+            "byOption": {
+              "a": "Incorrect. 6 is the number of all combinations (3 x 2). Each Choice coverage explicitly does not take combinations of partitions into account; covering all combinations is a stronger criterion.",
+              "b": "Incorrect. Two test cases can cover both channels but reach at most two of the three membership partitions, leaving one membership partition unexercised.",
+              "c": "Correct. Three test cases, e.g. (standard, web), (silver, mobile), (gold, web), exercise every partition from both sets at least once. The number required is the size of the largest set of partitions.",
+              "d": "Incorrect. 5 is the sum of the partitions (3 + 2), which would only be needed if a test case could exercise a single partition at a time. Each test case supplies a value for both parameters and therefore covers one partition from each set at once."
+            }
+          },
+          "hints": [
+            "Each Choice coverage asks for no combinations; the deciding number is the size of the largest set of partitions."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0060",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.1",
+      "objectives": [
+        "FL-4.2.1"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "equivalence-partitioning",
+        "coverage-percentage"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir kontrol birimi, °C cinsinden tam sayı sıcaklık değerini şu şekilde işlemektedir:\n- -40'ın altı: reddedilir\n- -40 ile 0 arası: \"donma\"\n- 1 ile 35 arası: \"normal\"\n- 36 ile 60 arası: \"sıcak\"\n- 60'ın üstü: reddedilir\n\n-60, -10, 20 ve 30 girdileriyle dört test senaryosu koşulmuştur. Denklik paylarına ayırma tekniğine göre elde edilen kapsam yüzde kaçtır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "%40"
+            },
+            {
+              "id": "b",
+              "text": "%60"
+            },
+            {
+              "id": "c",
+              "text": "%75"
+            },
+            {
+              "id": "d",
+              "text": "%80"
+            }
+          ],
+          "rationale": {
+            "summary": "Spesifikasyon beş pay tanımlar: -40'ın altı (geçersiz), donma, normal, sıcak ve 60'ın üstü (geçersiz). Koşulan dört test senaryosu yalnızca üç ayrı payı dener (-60 geçersiz alt pay, -10 donma, 20 ve 30 ise ikisi de normal). Kapsam, denenen pay sayısının toplam pay sayısına bölünmesiyle ölçülür: 3/5 = %60.",
+            "byOption": {
+              "a": "Yanlış. %40 beş paydan ikisine karşılık gelir. Denenen ayrı pay sayısı üçtür: -40'ın altındaki geçersiz pay, \"donma\" ve \"normal\".",
+              "b": "Doğru. Beş paydan üçü denenmiştir: 3/5 = %60. \"Sıcak\" payı ve 60'ın üstündeki geçersiz pay hiç denenmemiştir.",
+              "c": "Yanlış. %75, dörtte üçtür ve yalnızca geçerli paylar sayıldığında çıkar. Bu teknikte kapsam, geçersiz paylar dahil belirlenmiş tüm paylara göre ölçülür.",
+              "d": "Yanlış. %80, beşte dörttür ve denenen ayrı pay sayısı yerine test senaryosu sayısı sayıldığında çıkar. 20 ve 30 aynı \"normal\" payına düşer, yani aynı kapsam öğesini dener."
+            }
+          },
+          "hints": [
+            "Kapsam öğesi test senaryosu değil, paydır: aynı paya düşen iki değer tek bir kapsam öğesi sayılır."
+          ]
+        },
+        "en": {
+          "stem": "A control unit processes a whole-number temperature in degrees Celsius as follows:\n- below -40: rejected\n- -40 to 0: \"freezing\"\n- 1 to 35: \"normal\"\n- 36 to 60: \"hot\"\n- above 60: rejected\n\nFour test cases have been executed, with the inputs -60, -10, 20 and 30. What equivalence partitioning coverage has been achieved?",
+          "options": [
+            {
+              "id": "a",
+              "text": "40%"
+            },
+            {
+              "id": "b",
+              "text": "60%"
+            },
+            {
+              "id": "c",
+              "text": "75%"
+            },
+            {
+              "id": "d",
+              "text": "80%"
+            }
+          ],
+          "rationale": {
+            "summary": "The specification defines five partitions: below -40 (invalid), freezing, normal, hot and above 60 (invalid). The four executed test cases exercise only three distinct partitions (-60 the lower invalid one, -10 freezing, and both 20 and 30 the normal one). Coverage is the number of partitions exercised divided by the total number identified: 3/5 = 60%.",
+            "byOption": {
+              "a": "Incorrect. 40% would be two of the five partitions. Three distinct partitions are exercised: the invalid partition below -40, \"freezing\" and \"normal\".",
+              "b": "Correct. Three of the five partitions are exercised: 3/5 = 60%. The \"hot\" partition and the invalid partition above 60 are never exercised.",
+              "c": "Incorrect. 75% is three of four and follows from counting only the valid partitions. Coverage with this technique is measured against all identified partitions, invalid ones included.",
+              "d": "Incorrect. 80% is four of five and follows from counting the four test cases instead of the distinct partitions they exercise. 20 and 30 both fall in the \"normal\" partition and exercise the same coverage item."
+            }
+          },
+          "hints": [
+            "The coverage item is the partition, not the test case: two values in the same partition count as one coverage item."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0061",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.2",
+      "objectives": [
+        "FL-4.2.2"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "boundary-value-analysis",
+        "2-value-bva",
+        "coverage-items"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir yaş alanı 18 ile 65 arasındaki tam sayıları (18 ve 65 dahil) kabul etmekte, diğer tüm değerleri reddetmektedir. 2 DEĞERLİ sınır değer analizi uygulandığında %100 kapsam için denenmesi gereken farklı test değeri sayısı kaçtır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "4"
+            },
+            {
+              "id": "b",
+              "text": "6"
+            },
+            {
+              "id": "c",
+              "text": "8"
+            },
+            {
+              "id": "d",
+              "text": "2"
+            }
+          ],
+          "rationale": {
+            "summary": "2 değerli sınır değer analizinde her sınır değer için iki kapsam öğesi vardır: sınır değerin kendisi ve bitişik paya ait en yakın komşusu. Geçerli payın sınırları 18 ve 65'tir; en yakın komşuları 17 ve 66'dır. Kapsam öğeleri 17, 18, 65 ve 66, yani dört farklı değerdir.",
+            "byOption": {
+              "a": "Doğru. Kapsam öğeleri 17, 18, 65 ve 66'dır; dört farklı test değeri %100 kapsam sağlar.",
+              "b": "Yanlış. 6, 3 DEĞERLİ sınır değer analizinin gerektirdiği sayıdır: her sınır değerin kendisi ve iki komşusu, yani 17, 18, 19 ile 64, 65, 66.",
+              "c": "Yanlış. 8, dört sınır değerin her biri için iki kapsam öğesi sayılmasından çıkar. 18'in komşusu 17'dir ve 17 zaten bu dört sınır değerden biridir; kapsam öğeleri çakışır, iki kez sayılmaz.",
+              "d": "Yanlış. 2, yalnızca spesifikasyonda yazılı 18 ve 65 değerlerini sayar. 2 değerli analiz her sınır için bitişik paydaki en yakın komşuyu da (17 ve 66) kapsam öğesi olarak ister."
+            }
+          },
+          "hints": [
+            "Önce hangi değerlerin sınır değer olduğunu listeleyin; komşuların bir kısmı zaten sınır değerdir."
+          ]
+        },
+        "en": {
+          "stem": "An age field accepts whole numbers from 18 to 65 inclusive and rejects every other value. Applying 2-VALUE boundary value analysis, how many distinct test values must be exercised to achieve 100% coverage?",
+          "options": [
+            {
+              "id": "a",
+              "text": "4"
+            },
+            {
+              "id": "b",
+              "text": "6"
+            },
+            {
+              "id": "c",
+              "text": "8"
+            },
+            {
+              "id": "d",
+              "text": "2"
+            }
+          ],
+          "rationale": {
+            "summary": "In 2-value boundary value analysis there are two coverage items for each boundary value: the boundary value itself and its closest neighbour belonging to the adjacent partition. The valid partition has the boundaries 18 and 65, whose closest neighbours are 17 and 66. The coverage items are 17, 18, 65 and 66: four distinct values.",
+            "byOption": {
+              "a": "Correct. The coverage items are 17, 18, 65 and 66; four distinct test values give 100% coverage.",
+              "b": "Incorrect. 6 is the number required by 3-VALUE boundary value analysis, which adds both neighbours of each boundary value: 17, 18, 19 and 64, 65, 66.",
+              "c": "Incorrect. 8 follows from counting two coverage items for each of the four boundary values. The neighbour of 18 is 17, which is itself one of those four boundary values, so the coverage items overlap and are not counted twice.",
+              "d": "Incorrect. 2 counts only the limits written in the specification, 18 and 65. 2-value analysis also requires the closest neighbour in the adjacent partition for each boundary, namely 17 and 66."
+            }
+          },
+          "hints": [
+            "List the boundary values first; some of the neighbours are themselves boundary values."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0062",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.2",
+      "objectives": [
+        "FL-4.2.2"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "boundary-value-analysis",
+        "3-value-bva",
+        "test-data-selection"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir indirim kuralı, tam sayı olarak girilen sipariş adedi 10 ile 20 arasında (10 ve 20 dahil) olduğunda uygulanmaktadır. 3 DEĞERLİ sınır değer analizi %100 kapsam için hangi test değeri kümesini gerektirir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "9, 10, 11, 20, 21, 22"
+            },
+            {
+              "id": "b",
+              "text": "10, 20"
+            },
+            {
+              "id": "c",
+              "text": "9, 10, 20, 21"
+            },
+            {
+              "id": "d",
+              "text": "9, 10, 11, 19, 20, 21"
+            }
+          ],
+          "rationale": {
+            "summary": "3 değerli sınır değer analizinde her sınır değer için üç kapsam öğesi vardır: sınır değerin kendisi ve her iki komşusu. Alt sınır 10 için 9, 10, 11; üst sınır 20 için 19, 20, 21. Dolayısıyla kapsam öğelerinin bir kısmı (11 ve 19) sınır değer değildir.",
+            "byOption": {
+              "a": "Yanlış. Üst sınırda bu küme 20, 21 ve 22'yi kullanır; böylece üç değerden ikisi geçerli payın dışında kalır ve payın içindeki komşu olan 19 atlanır.",
+              "b": "Yanlış. Bunlar yalnızca geçerli payın sınır değerleridir. Sınır değer analizinin hiçbir versiyonu burada durmaz; 2 değerli versiyon bile bitişik paydaki en yakın komşuyu ister.",
+              "c": "Yanlış. Bu küme 2 DEĞERLİ sınır değer analizinin kümesidir: her sınır değer (10, 20) ve bitişik paydaki en yakın komşusu (9, 21).",
+              "d": "Doğru. Alt sınır için 9, 10, 11 ve üst sınır için 19, 20, 21 kapsam öğeleridir; altı değer %100 kapsam sağlar."
+            }
+          },
+          "hints": [
+            "Her sınır değerin iki komşusu vardır: biri payın içinde, biri dışında."
+          ]
+        },
+        "en": {
+          "stem": "A discount rule is applied when the order quantity, a whole number, is between 10 and 20 inclusive. Which set of test values does 3-VALUE boundary value analysis require for 100% coverage?",
+          "options": [
+            {
+              "id": "a",
+              "text": "9, 10, 11, 20, 21, 22"
+            },
+            {
+              "id": "b",
+              "text": "10, 20"
+            },
+            {
+              "id": "c",
+              "text": "9, 10, 20, 21"
+            },
+            {
+              "id": "d",
+              "text": "9, 10, 11, 19, 20, 21"
+            }
+          ],
+          "rationale": {
+            "summary": "In 3-value boundary value analysis there are three coverage items for each boundary value: the boundary value itself and both of its neighbours. For the lower boundary 10 these are 9, 10 and 11; for the upper boundary 20 they are 19, 20 and 21. Some coverage items (11 and 19) are therefore not boundary values.",
+            "byOption": {
+              "a": "Incorrect. At the upper boundary this set uses 20, 21 and 22, which places two of the three values outside the valid partition and omits 19, the neighbour inside it.",
+              "b": "Incorrect. These are only the boundary values of the valid partition. No version of boundary value analysis stops there; even the 2-value version asks for the closest neighbour in the adjacent partition.",
+              "c": "Incorrect. This is the 2-VALUE boundary value analysis set: each boundary value (10, 20) together with its closest neighbour in the adjacent partition (9, 21).",
+              "d": "Correct. The coverage items are 9, 10, 11 for the lower boundary and 19, 20, 21 for the upper one; these six values give 100% coverage."
+            }
+          },
+          "hints": [
+            "Each boundary value has two neighbours: one inside the partition and one outside it."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0063",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.2",
+      "objectives": [
+        "FL-4.2.2"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "boundary-value-analysis",
+        "2-value-vs-3-value",
+        "defect-detection"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Ücretsiz kargonun, sipariş tutarı 500 ve üzeri olduğunda verilmesi gerekmektedir, yani karar \"tutar >= 500\" olmalıdır. Karar yanlışlıkla \"tutar = 500\" olarak kodlanmıştır. 3 DEĞERLİ sınır değer analizinin gerektirdiği ancak 2 değerli sınır değer analizinin gerektirmediği hangi test değeri bu hatayı ortaya çıkarır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "498"
+            },
+            {
+              "id": "b",
+              "text": "499"
+            },
+            {
+              "id": "c",
+              "text": "500"
+            },
+            {
+              "id": "d",
+              "text": "501"
+            }
+          ],
+          "rationale": {
+            "summary": "Sınır 499 ile 500 arasındadır. 2 değerli analiz 499 ve 500'ü verir; 3 değerli analiz buna 498 ve 501'i ekler. 498 ve 499'da hem doğru hem hatalı karar ücretsiz kargo vermez, 500'de ikisi de verir. Yalnızca 501'de doğru karar ücretsiz kargo verirken hatalı karar vermez; 3 değerli analizin daha titiz olmasının nedeni budur.",
+            "byOption": {
+              "a": "Yanlış. 498 gerçekten de 3 değerli analizin eklediği bir kapsam öğesidir, ancak hem doğru karar (498 < 500) hem de hatalı karar (498 ile 500 eşit değil) ücretsiz kargo vermez; sonuç doğru görünür.",
+              "b": "Yanlış. 499 zaten 2 değerli analizin kapsam öğesidir ve bu değerde hem doğru hem hatalı karar ücretsiz kargo vermez, dolayısıyla hatayı ortaya çıkaramaz.",
+              "c": "Yanlış. 500 zaten 2 değerli analizin kapsam öğesidir ve bu değerde hem doğru hem hatalı karar ücretsiz kargo verir, dolayısıyla sonuç doğru görünür.",
+              "d": "Doğru. 501 yalnızca 3 değerli analizde kapsam öğesidir. Doğru karar ücretsiz kargo verirken (501 >= 500) hatalı karar vermez (501 ile 500 eşit değil); test başarısız olur ve hata ortaya çıkar."
+            }
+          },
+          "hints": [
+            "Her aday değer için doğru kararın ve hatalı kararın sonucunu ayrı ayrı yazın; yalnızca ikisinin farklı olduğu değer hatayı gösterir."
+          ]
+        },
+        "en": {
+          "stem": "Free shipping should be granted when the order total is 500 or more, i.e. the decision should be \"total >= 500\". By mistake it has been implemented as \"total = 500\". Which test value, required by 3-VALUE boundary value analysis but NOT by 2-value boundary value analysis, exposes this defect?",
+          "options": [
+            {
+              "id": "a",
+              "text": "498"
+            },
+            {
+              "id": "b",
+              "text": "499"
+            },
+            {
+              "id": "c",
+              "text": "500"
+            },
+            {
+              "id": "d",
+              "text": "501"
+            }
+          ],
+          "rationale": {
+            "summary": "The boundary lies between 499 and 500. 2-value analysis yields 499 and 500; 3-value analysis adds 498 and 501. At 498 and 499 both the intended and the faulty decision deny free shipping, and at 500 both grant it. Only at 501 does the intended decision grant free shipping while the faulty one does not, which is why 3-value analysis is the more rigorous of the two.",
+            "byOption": {
+              "a": "Incorrect. 498 is indeed an extra coverage item of 3-value analysis, but both the intended decision (498 < 500) and the faulty one (498 is not equal to 500) deny free shipping, so the outcome looks correct.",
+              "b": "Incorrect. 499 is already a coverage item of 2-value analysis, and at that value both the intended and the faulty decision deny free shipping, so it cannot expose the defect.",
+              "c": "Incorrect. 500 is already a coverage item of 2-value analysis, and at that value both the intended and the faulty decision grant free shipping, so the outcome looks correct.",
+              "d": "Correct. 501 is a coverage item only in 3-value analysis. The intended decision grants free shipping (501 >= 500) while the faulty one does not (501 is not equal to 500), so the test fails and the defect is exposed."
+            }
+          },
+          "hints": [
+            "Write down the outcome of the intended and of the faulty decision for each candidate value; only the value where they differ reveals the defect."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0064",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.2",
+      "objectives": [
+        "FL-4.2.2"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "boundary-value-analysis",
+        "3-value-bva",
+        "coverage-percentage"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir parola alanı 8 ile 16 karakter arasındaki uzunlukları (8 ve 16 dahil) kabul etmektedir. Ekip, geçerli payın iki sınırına 3 DEĞERLİ sınır değer analizi uygulayarak altı kapsam öğesi belirlemiştir: 7, 8, 9, 15, 16 ve 17 karakter. Koşulan test senaryolarında 8, 9, 16 ve 17 karakterlik parolalar kullanılmıştır. Elde edilen sınır değer analizi kapsamı yüzde kaçtır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "%80"
+            },
+            {
+              "id": "b",
+              "text": "%100"
+            },
+            {
+              "id": "c",
+              "text": "%50"
+            },
+            {
+              "id": "d",
+              "text": "%67"
+            }
+          ],
+          "rationale": {
+            "summary": "3 değerli sınır değer analizinde kapsam, denenen sınır değerlerin ve komşularının sayısının belirlenen toplam sayıya bölünmesiyle ölçülür. Belirlenen altı kapsam öğesinden dördü (8, 9, 16, 17) denenmiştir: 4/6, yani yaklaşık %67. Denenmeyenler 7 ve 15'tir.",
+            "byOption": {
+              "a": "Yanlış. %80 beşte dörttür ve belirlenen kapsam öğelerinden biri paydadan düşürüldüğünde çıkar. Geçerli payın dışında kalsalar da belirlenen altı öğenin tamamı paydaya girer.",
+              "b": "Yanlış. %100, iki sınır değeri (8 ve 16) denemenin yeterli olduğu varsayımından çıkar; bu 2 değerli yaklaşımdır. 3 değerli analizde komşu değerler olan 7 ve 15 kendi başlarına kapsam öğesidir ve hâlâ denenmemiştir.",
+              "c": "Yanlış. %50 altı kapsam öğesinden üçüne karşılık gelir. Denenen öğe sayısı dörttür: 8, 9, 16 ve 17; eksik olanlar yalnızca 7 ve 15'tir.",
+              "d": "Doğru. Belirlenen altı kapsam öğesinden dördü denenmiştir: 4/6, yaklaşık %67."
+            }
+          },
+          "hints": [
+            "Payda, sorunun içinde sayılan altı kapsam öğesidir; pay ise bunlardan kaçının denendiğidir."
+          ]
+        },
+        "en": {
+          "stem": "A password field accepts lengths from 8 to 16 characters inclusive. Applying 3-VALUE boundary value analysis to the two boundaries of the valid partition, the team has identified six coverage items: lengths 7, 8, 9, 15, 16 and 17. The executed test cases use passwords of length 8, 9, 16 and 17. What boundary value analysis coverage has been achieved?",
+          "options": [
+            {
+              "id": "a",
+              "text": "80%"
+            },
+            {
+              "id": "b",
+              "text": "100%"
+            },
+            {
+              "id": "c",
+              "text": "50%"
+            },
+            {
+              "id": "d",
+              "text": "67%"
+            }
+          ],
+          "rationale": {
+            "summary": "In 3-value boundary value analysis, coverage is the number of boundary values and their neighbours exercised divided by the total number identified. Four of the six identified coverage items (8, 9, 16, 17) are exercised: 4/6, i.e. about 67%. The items 7 and 15 remain untested.",
+            "byOption": {
+              "a": "Incorrect. 80% is four of five and follows from dropping one of the identified coverage items from the denominator. All six identified items count, even those outside the valid partition.",
+              "b": "Incorrect. 100% would follow from assuming that exercising the two boundary values 8 and 16 is enough, which is the 2-value reasoning. Under 3-value analysis the neighbours 7 and 15 are coverage items in their own right and are still untested.",
+              "c": "Incorrect. 50% would be three of the six coverage items. Four are exercised (8, 9, 16 and 17); only 7 and 15 are missing.",
+              "d": "Correct. Four of the six identified coverage items are exercised: 4/6, about 67%."
+            }
+          },
+          "hints": [
+            "The denominator is the six coverage items listed in the question; the numerator is how many of them were exercised."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0065",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.3",
+      "objectives": [
+        "FL-4.2.3"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "decision-table",
+        "rule-evaluation"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir çevrimiçi mağaza aşağıdaki sınırlı giriş karar tablosunu kullanmaktadır (T = doğru, F = yanlış, X = aksiyon gerçekleşir, . = aksiyon gerçekleşmez):\n\nKural                          R1  R2  R3  R4\nC1 Sipariş tutarı 500 ve üzeri  T   T   F   F\nC2 Müşteri üyedir               T   F   T   F\nA1 Ücretsiz kargo               X   X   .   .\nA2 %10 indirim                  X   .   X   .\n\nÜye olan bir müşteri 300 TL tutarında sipariş vermektedir. Tabloya göre ne olur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "R3 kuralı geçerlidir: yalnızca %10 indirim"
+            },
+            {
+              "id": "b",
+              "text": "R1 kuralı geçerlidir: hem ücretsiz kargo hem %10 indirim"
+            },
+            {
+              "id": "c",
+              "text": "R4 kuralı geçerlidir: hiçbir aksiyon gerçekleşmez"
+            },
+            {
+              "id": "d",
+              "text": "R2 kuralı geçerlidir: yalnızca ücretsiz kargo"
+            }
+          ],
+          "rationale": {
+            "summary": "Karar tablosunun her sütunu bir karar kuralıdır: koşulların benzersiz bir kombinasyonu ve ilişkili aksiyonlar. 300 TL tutar C1'i yanlış, üyelik ise C2'yi doğru yapar; bu kombinasyon tam olarak R3 sütunudur ve R3'te yalnızca A2 işaretlidir.",
+            "byOption": {
+              "a": "Doğru. 300 TL tutar C1'i yanlış, üyelik C2'yi doğru yapar; bu R3 sütunudur. R3'te yalnızca A2 işaretlidir, yani %10 indirim uygulanır, ücretsiz kargo verilmez.",
+              "b": "Yanlış. R1 her iki koşulun da doğru olmasını gerektirir. 300 TL, 500'ün altında olduğu için C1 yanlıştır ve bu kural uygulanmaz.",
+              "c": "Yanlış. R4 her iki koşulun da yanlış olduğu kuraldır. Müşteri üye olduğu için C2 doğrudur; R4 uygulanmaz ve bir aksiyon, %10 indirim, gerçekleşir.",
+              "d": "Yanlış. R2, sipariş tutarının 500 ve üzeri olduğu ve müşterinin üye OLMADIĞI kuraldır (C1 = T, C2 = F). Buradaki durumda her iki koşul da ters değere sahiptir."
+            }
+          },
+          "hints": [
+            "Önce koşulların T/F değerlerini belirleyin, sonra bu kombinasyona uyan sütunu bulun."
+          ]
+        },
+        "en": {
+          "stem": "An online shop uses the following limited-entry decision table (T = true, F = false, X = the action occurs, . = the action does not occur):\n\nRule                            R1  R2  R3  R4\nC1 Order total is 500 or more    T   T   F   F\nC2 Customer is a member          T   F   T   F\nA1 Free shipping                 X   X   .   .\nA2 10% discount                  X   .   X   .\n\nA customer who is a member places an order with a total of 300. According to the table, what happens?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Rule R3 applies: a 10% discount only"
+            },
+            {
+              "id": "b",
+              "text": "Rule R1 applies: both free shipping and a 10% discount"
+            },
+            {
+              "id": "c",
+              "text": "Rule R4 applies: no action occurs"
+            },
+            {
+              "id": "d",
+              "text": "Rule R2 applies: free shipping only"
+            }
+          ],
+          "rationale": {
+            "summary": "Each column of a decision table is a decision rule: a unique combination of conditions together with the associated actions. A total of 300 makes C1 false and membership makes C2 true, which is exactly column R3, and R3 marks only A2.",
+            "byOption": {
+              "a": "Correct. A total of 300 makes C1 false and membership makes C2 true, which is column R3. R3 marks only A2, so a 10% discount is applied and free shipping is not.",
+              "b": "Incorrect. R1 requires both conditions to be true. Here C1 is false because 300 is below 500, so this rule does not apply.",
+              "c": "Incorrect. R4 is the rule where both conditions are false. C2 is true here because the customer is a member, so R4 does not apply and one action, the 10% discount, does occur.",
+              "d": "Incorrect. R2 is the rule where the order total is 500 or more and the customer is NOT a member (C1 = T, C2 = F). In this situation both conditions have the opposite values."
+            }
+          },
+          "hints": [
+            "Determine the T/F values of the conditions first, then find the column that matches that combination."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0066",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.3",
+      "objectives": [
+        "FL-4.2.3"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "decision-table",
+        "rule-count",
+        "infeasible-combinations"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir gereksinim, her biri yalnızca doğru veya yanlış olabilen dört bağımsız koşulla yönetilmektedir. Bu gereksinim için tam bir karar tablosu çizilmiştir. Tablonun sütunlarından üçünün uygulanabilir olmayan koşul kombinasyonları içerdiği görülmüş ve bu sütunlar silinmiştir. Karar tablosu testinde %100 kapsam için kaç test senaryosu gerekir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "19"
+            },
+            {
+              "id": "b",
+              "text": "8"
+            },
+            {
+              "id": "c",
+              "text": "13"
+            },
+            {
+              "id": "d",
+              "text": "16"
+            }
+          ],
+          "rationale": {
+            "summary": "Tam bir karar tablosunda her koşul kombinasyonunu kapsayacak kadar sütun vardır; dört Boolean koşul için bu 2^4 = 16 sütundur. Tablo, uygulanabilir olmayan kombinasyonları içeren sütunların silinmesiyle sadeleştirilir: 16 - 3 = 13. Karar tablosu testinde kapsam öğeleri uygulanabilir kombinasyon içeren sütunlar olduğundan 13 test senaryosu gerekir.",
+            "byOption": {
+              "a": "Yanlış. 19, üç sütunu silmek yerine eklemekten çıkar. Bu sütunlar tablodan çıkarılır, tablonun üzerine eklenmez.",
+              "b": "Yanlış. 8, 2^3'tür ve üç Boolean koşullu bir tam tablonun sütun sayısıdır. Dört koşul on altı kombinasyon üretir.",
+              "c": "Doğru. Tam tabloda 2^4 = 16 sütun vardır; uygulanabilir olmayan üç sütun silinince geriye 13 uygulanabilir sütun kalır ve bunların her biri bir kapsam öğesidir.",
+              "d": "Yanlış. 16, uygulanabilir olmayan sütunlar silinmeden önceki tam tablonun büyüklüğüdür. Uygulanabilir olmayan kombinasyonlar kapsam öğesi değildir."
+            }
+          },
+          "hints": [
+            "Önce tam tablonun sütun sayısını (2 üzeri koşul sayısı) hesaplayın, sonra uygulanabilir olmayanları düşün."
+          ]
+        },
+        "en": {
+          "stem": "A requirement is governed by four independent conditions, each of which can only be true or false. A full decision table has been drawn for it. Three of its columns turn out to contain infeasible combinations of conditions and have been deleted. How many test cases are needed for 100% decision table coverage?",
+          "options": [
+            {
+              "id": "a",
+              "text": "19"
+            },
+            {
+              "id": "b",
+              "text": "8"
+            },
+            {
+              "id": "c",
+              "text": "13"
+            },
+            {
+              "id": "d",
+              "text": "16"
+            }
+          ],
+          "rationale": {
+            "summary": "A full decision table has enough columns to cover every combination of conditions; for four Boolean conditions that is 2^4 = 16 columns. The table is simplified by deleting the columns containing infeasible combinations: 16 - 3 = 13. In decision table testing the coverage items are the columns containing feasible combinations, so 13 test cases are needed.",
+            "byOption": {
+              "a": "Incorrect. 19 follows from adding the three columns instead of deleting them. They are removed from the table, not tested on top of it.",
+              "b": "Incorrect. 8 is 2^3, the number of columns in a full table for three Boolean conditions. Four conditions produce sixteen combinations.",
+              "c": "Correct. The full table has 2^4 = 16 columns; deleting the three infeasible ones leaves 13 feasible columns, each of which is a coverage item.",
+              "d": "Incorrect. 16 is the size of the full table before the infeasible columns are deleted. Infeasible combinations are not coverage items."
+            }
+          },
+          "hints": [
+            "First work out the size of the full table (2 to the power of the number of conditions), then subtract the infeasible columns."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0067",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.3",
+      "objectives": [
+        "FL-4.2.3"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "decision-table",
+        "coverage-percentage"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir iş kuralı için hazırlanan karar tablosunda üç koşul vardır. Tam tablonun sekiz sütunundan ikisi uygulanabilir olmayan kombinasyonlar içerdiği için silinmiştir. Koşulan test senaryoları kalan sütunlardan üçünü denemektedir. Elde edilen karar tablosu kapsamı yüzde kaçtır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "%100"
+            },
+            {
+              "id": "b",
+              "text": "%37"
+            },
+            {
+              "id": "c",
+              "text": "%50"
+            },
+            {
+              "id": "d",
+              "text": "%75"
+            }
+          ],
+          "rationale": {
+            "summary": "Karar tablosu testinde kapsam, denenen sütun sayısının tüm uygulanabilir sütun sayısına bölünmesiyle ölçülür. Sekiz sütundan ikisi uygulanabilir olmadığı için payda 6'dır; üç sütun denenmiştir: 3/6 = %50.",
+            "byOption": {
+              "a": "Yanlış. %100 için her uygulanabilir sütunun denenmesi gerekir. Her koşulu bir kez doğru bir kez yanlış denemek daha zayıf bir kriterdir ve tam karar tablosu kapsamı vermez.",
+              "b": "Yanlış. %37, sekizde üçtür ve paydaya tam tablonun tamamı alındığında çıkar. Bu teknikte kapsam yalnızca uygulanabilir kombinasyon içeren sütunlara göre ölçülür.",
+              "c": "Doğru. Geriye altı uygulanabilir sütun kalmıştır ve bunlardan üçü denenmiştir: 3/6 = %50.",
+              "d": "Yanlış. %75, sekizde altıdır; bu, tam tablonun ne kadarının uygulanabilir olduğunu gösterir, test senaryolarının ne kadar kapsam elde ettiğini değil."
+            }
+          },
+          "hints": [
+            "Paydaya yalnızca uygulanabilir sütunlar girer; silinen sütunlar hesaba katılmaz."
+          ]
+        },
+        "en": {
+          "stem": "A decision table for a business rule has three conditions. Two of the eight columns of the full table contain infeasible combinations and have been deleted. The executed test cases exercise three of the remaining columns. What decision table coverage has been achieved?",
+          "options": [
+            {
+              "id": "a",
+              "text": "100%"
+            },
+            {
+              "id": "b",
+              "text": "37%"
+            },
+            {
+              "id": "c",
+              "text": "50%"
+            },
+            {
+              "id": "d",
+              "text": "75%"
+            }
+          ],
+          "rationale": {
+            "summary": "In decision table testing, coverage is the number of exercised columns divided by the total number of feasible columns. Two of the eight columns are infeasible, so the denominator is 6, and three columns are exercised: 3/6 = 50%.",
+            "byOption": {
+              "a": "Incorrect. 100% would require every feasible column to be exercised. Exercising each condition once as true and once as false is a weaker criterion and does not give full decision table coverage.",
+              "b": "Incorrect. 37% is three of eight and follows from using the whole full table as the denominator. Coverage with this technique is measured against the columns containing feasible combinations only.",
+              "c": "Correct. Six feasible columns remain and three of them are exercised: 3/6 = 50%.",
+              "d": "Incorrect. 75% is six of eight; that describes how much of the full table is feasible, not how much coverage the test cases have achieved."
+            }
+          },
+          "hints": [
+            "Only feasible columns go into the denominator; the deleted columns do not count."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0068",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.4",
+      "objectives": [
+        "FL-4.2.4"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "state-transition",
+        "state-table",
+        "invalid-transition"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir otomat denetleyicisinin durumları Boşta, KrediVar ve Dağıtıyor'dur. Durum tablosu aşağıdaki gibidir (boş hücre \"-\" ile gösterilmiştir ve geçersiz geçiş anlamına gelir):\n\nDurum       paraAt     ürünSeç    dağıtımBitti  iade\nBoşta       KrediVar   -          -             -\nKrediVar    KrediVar   Dağıtıyor  -             Boşta\nDağıtıyor   -          -          Boşta         -\n\nBu durum tablosuna göre aşağıdakilerden hangisi GEÇERSİZ bir geçiştir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Boşta durumunda paraAt olayı"
+            },
+            {
+              "id": "b",
+              "text": "Dağıtıyor durumunda dağıtımBitti olayı"
+            },
+            {
+              "id": "c",
+              "text": "KrediVar durumunda ürünSeç olayı"
+            },
+            {
+              "id": "d",
+              "text": "Dağıtıyor durumunda iade olayı"
+            }
+          ],
+          "rationale": {
+            "summary": "Durum tablosunun satırları durumları, sütunları olayları temsil eder; dolu bir hücre geçerli bir geçişin hedef durumunu verir, boş hücre ise geçersiz geçişi açıkça gösterir. Dağıtıyor durumunun iade olayı için girişi yoktur, dolayısıyla bu geçiş geçersizdir.",
+            "byOption": {
+              "a": "Yanlış; bu geçerli bir geçiştir. Boşta/paraAt hücresi KrediVar hedef durumunu içerir.",
+              "b": "Yanlış; bu geçerli bir geçiştir. Dağıtıyor/dağıtımBitti hücresi Boşta hedef durumunu içerir.",
+              "c": "Yanlış; bu geçerli bir geçiştir. KrediVar/ürünSeç hücresi Dağıtıyor hedef durumunu içerir.",
+              "d": "Doğru. Dağıtıyor/iade hücresi boştur ve durum tablosunda boş hücre geçersiz geçiş anlamına gelir. Durum diyagramı bu geçişi hiç göstermezdi; geçersiz geçişleri açıkça gösteren model durum tablosudur."
+            }
+          },
+          "hints": [
+            "Satır durumu, sütun olayı verir; kesiştikleri hücrenin dolu olup olmadığına bakın."
+          ]
+        },
+        "en": {
+          "stem": "A vending controller has the states Idle, HasCredit and Dispensing. Its state table is as follows (an empty cell, shown as \"-\", is an invalid transition):\n\nState       insertCoin  selectItem  dispenseDone  refund\nIdle        HasCredit   -           -             -\nHasCredit   HasCredit   Dispensing  -             Idle\nDispensing  -           -           Idle          -\n\nAccording to this state table, which of the following is an INVALID transition?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The insertCoin event in state Idle"
+            },
+            {
+              "id": "b",
+              "text": "The dispenseDone event in state Dispensing"
+            },
+            {
+              "id": "c",
+              "text": "The selectItem event in state HasCredit"
+            },
+            {
+              "id": "d",
+              "text": "The refund event in state Dispensing"
+            }
+          ],
+          "rationale": {
+            "summary": "The rows of a state table represent states and its columns represent events; a filled cell gives the target state of a valid transition, while an empty cell explicitly shows an invalid transition. Dispensing has no entry for the refund event, so that transition is invalid.",
+            "byOption": {
+              "a": "Incorrect; this is a valid transition. The Idle/insertCoin cell contains the target state HasCredit.",
+              "b": "Incorrect; this is a valid transition. The Dispensing/dispenseDone cell contains the target state Idle.",
+              "c": "Incorrect; this is a valid transition. The HasCredit/selectItem cell contains the target state Dispensing.",
+              "d": "Correct. The Dispensing/refund cell is empty, and in a state table an empty cell means an invalid transition. A state diagram would not show this transition at all; the state table is the model that shows invalid transitions explicitly."
+            }
+          },
+          "hints": [
+            "The row gives the state and the column gives the event; look at whether the cell where they meet is filled."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0069",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.4",
+      "objectives": [
+        "FL-4.2.4"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "state-transition",
+        "0-switch",
+        "coverage-items"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir otomat denetleyicisinin durumları Boşta, KrediVar ve Dağıtıyor'dur. Durum tablosu aşağıdaki gibidir (boş hücre \"-\" ile gösterilmiştir ve geçersiz geçiş anlamına gelir):\n\nDurum       paraAt     ürünSeç    dağıtımBitti  iade\nBoşta       KrediVar   -          -             -\nKrediVar    KrediVar   Dağıtıyor  -             Boşta\nDağıtıyor   -          -          Boşta         -\n\nGeçerli geçişler kapsamının (0-anahtar kapsamı) %100'üne ulaşmak için kaç kapsam öğesinin denenmesi gerekir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "3"
+            },
+            {
+              "id": "b",
+              "text": "5"
+            },
+            {
+              "id": "c",
+              "text": "7"
+            },
+            {
+              "id": "d",
+              "text": "12"
+            }
+          ],
+          "rationale": {
+            "summary": "Geçerli geçişler kapsamında (0-anahtar kapsamı) kapsam öğeleri tekil geçerli geçişlerdir, yani durum tablosunun dolu hücreleridir. Bu tabloda dolu hücreler Boşta/paraAt, KrediVar/paraAt, KrediVar/ürünSeç, KrediVar/iade ve Dağıtıyor/dağıtımBitti olmak üzere beş tanedir.",
+            "byOption": {
+              "a": "Yanlış. 3 durum sayısıdır ve tüm durumlar kapsamının kapsam öğesi sayısıdır. Tüm durumlar kapsamı geçerli geçişler kapsamından daha zayıftır ve genelde tüm geçişler denenmeden elde edilebilir.",
+              "b": "Doğru. Tablodaki beş dolu hücre beş tekil geçerli geçişi verir; bunlar 0-anahtar kapsamının kapsam öğeleridir.",
+              "c": "Yanlış. 7 boş hücrelerin, yani geçersiz geçişlerin sayısıdır. Bunlar tüm geçişler kapsamının kapsam öğesidir, geçerli geçişler kapsamının değil.",
+              "d": "Yanlış. 12 tablodaki tüm hücrelerdir (3 durum x 4 olay) ve tüm geçişler kapsamının kapsam öğesi sayısıdır; geçerli ve geçersiz geçişlerin toplamıdır."
+            }
+          },
+          "hints": [
+            "0-anahtar kapsamı yalnızca dolu hücreleri sayar."
+          ]
+        },
+        "en": {
+          "stem": "A vending controller has the states Idle, HasCredit and Dispensing. Its state table is as follows (an empty cell, shown as \"-\", is an invalid transition):\n\nState       insertCoin  selectItem  dispenseDone  refund\nIdle        HasCredit   -           -             -\nHasCredit   HasCredit   Dispensing  -             Idle\nDispensing  -           -           Idle          -\n\nHow many coverage items must be exercised to achieve 100% valid transitions coverage (0-switch coverage)?",
+          "options": [
+            {
+              "id": "a",
+              "text": "3"
+            },
+            {
+              "id": "b",
+              "text": "5"
+            },
+            {
+              "id": "c",
+              "text": "7"
+            },
+            {
+              "id": "d",
+              "text": "12"
+            }
+          ],
+          "rationale": {
+            "summary": "In valid transitions coverage (0-switch coverage) the coverage items are the single valid transitions, i.e. the filled cells of the state table. Here the filled cells are Idle/insertCoin, HasCredit/insertCoin, HasCredit/selectItem, HasCredit/refund and Dispensing/dispenseDone: five in total.",
+            "byOption": {
+              "a": "Incorrect. 3 is the number of states, which is the number of coverage items for all states coverage. All states coverage is weaker than valid transitions coverage and can typically be achieved without exercising all the transitions.",
+              "b": "Correct. The five filled cells of the table are five single valid transitions, and these are the coverage items of 0-switch coverage.",
+              "c": "Incorrect. 7 is the number of empty cells, i.e. the invalid transitions. Those are coverage items of all transitions coverage, not of valid transitions coverage.",
+              "d": "Incorrect. 12 is every cell of the table (3 states x 4 events) and is the number of coverage items of all transitions coverage, which is valid plus invalid transitions."
+            }
+          },
+          "hints": [
+            "0-switch coverage counts only the filled cells."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0070",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.4",
+      "objectives": [
+        "FL-4.2.4"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "state-transition",
+        "0-switch",
+        "coverage-percentage"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir otomat denetleyicisinin durumları Boşta, KrediVar ve Dağıtıyor'dur. Durum tablosu aşağıdaki gibidir (boş hücre \"-\" ile gösterilmiştir ve geçersiz geçiş anlamına gelir):\n\nDurum       paraAt     ürünSeç    dağıtımBitti  iade\nBoşta       KrediVar   -          -             -\nKrediVar    KrediVar   Dağıtıyor  -             Boşta\nDağıtıyor   -          -          Boşta         -\n\nBoşta durumundan başlayan tek bir test senaryosu şu olay dizisini yürütmektedir: paraAt, ürünSeç, dağıtımBitti. Bu test senaryosu geçerli geçişler kapsamının (0-anahtar kapsamı) yüzde kaçına ulaşır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "%75"
+            },
+            {
+              "id": "b",
+              "text": "%100"
+            },
+            {
+              "id": "c",
+              "text": "%25"
+            },
+            {
+              "id": "d",
+              "text": "%60"
+            }
+          ],
+          "rationale": {
+            "summary": "Dizi Boşta/paraAt, KrediVar/ürünSeç ve Dağıtıyor/dağıtımBitti geçişlerini dener; bu, beş geçerli geçişten üçüdür: 3/5 = %60. Denenmeyenler KrediVar/paraAt ve KrediVar/iade geçişleridir.",
+            "byOption": {
+              "a": "Yanlış. %75, dörtte üçtür ve geçerli geçiş sayısını eksik saymaktan çıkar; tabloda beş dolu hücre vardır, KrediVar/paraAt ve KrediVar/iade dahil.",
+              "b": "Yanlış. Bu test senaryosu üç durumun tamamını ziyaret ettiği için tüm durumlar kapsamının %100'üne ulaşır; ancak tüm durumlar kapsamı daha zayıf bir kriterdir ve iki geçerli geçiş hâlâ denenmemiştir.",
+              "c": "Yanlış. %25, on ikide üçtür ve paydaya tablodaki geçerli ve geçersiz tüm geçişler alındığında çıkar. Bu, tüm geçişler kapsamının ölçüsüdür, geçerli geçişler kapsamının değil.",
+              "d": "Doğru. Üç geçerli geçiş denenmiştir ve tabloda beş geçerli geçiş vardır: 3/5 = %60."
+            }
+          },
+          "hints": [
+            "Dizideki her olay için hangi hücrenin kullanıldığını işaretleyin, sonra beş dolu hücreye oranlayın."
+          ]
+        },
+        "en": {
+          "stem": "A vending controller has the states Idle, HasCredit and Dispensing. Its state table is as follows (an empty cell, shown as \"-\", is an invalid transition):\n\nState       insertCoin  selectItem  dispenseDone  refund\nIdle        HasCredit   -           -             -\nHasCredit   HasCredit   Dispensing  -             Idle\nDispensing  -           -           Idle          -\n\nStarting in state Idle, a single test case executes the event sequence insertCoin, selectItem, dispenseDone. What valid transitions coverage (0-switch coverage) does this test case achieve?",
+          "options": [
+            {
+              "id": "a",
+              "text": "75%"
+            },
+            {
+              "id": "b",
+              "text": "100%"
+            },
+            {
+              "id": "c",
+              "text": "25%"
+            },
+            {
+              "id": "d",
+              "text": "60%"
+            }
+          ],
+          "rationale": {
+            "summary": "The sequence exercises Idle/insertCoin, HasCredit/selectItem and Dispensing/dispenseDone, which is three of the five valid transitions: 3/5 = 60%. The transitions HasCredit/insertCoin and HasCredit/refund are not exercised.",
+            "byOption": {
+              "a": "Incorrect. 75% is three of four and follows from undercounting the valid transitions; the table has five filled cells, including HasCredit/insertCoin and HasCredit/refund.",
+              "b": "Incorrect. This test case does visit all three states and therefore achieves 100% all states coverage, but all states coverage is the weaker criterion and two valid transitions remain unexercised.",
+              "c": "Incorrect. 25% is three of twelve and follows from using all valid and invalid transitions of the table as the denominator. That is the measure for all transitions coverage, not for valid transitions coverage.",
+              "d": "Correct. Three valid transitions are exercised out of the five in the table: 3/5 = 60%."
+            }
+          },
+          "hints": [
+            "Mark which cell each event in the sequence uses, then compare against the five filled cells."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0071",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.4",
+      "objectives": [
+        "FL-4.2.4"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "state-transition",
+        "all-transitions-coverage"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir doküman iş akışının durumları Taslak, GözdenGeçirmede ve Onaylı'dır. Durum tablosu aşağıdaki gibidir (boş hücre \"-\" ile gösterilmiştir ve geçersiz geçiş anlamına gelir):\n\nDurum             gönder           onayla   reddet\nTaslak            GözdenGeçirmede  -        -\nGözdenGeçirmede   -                Onaylı   Taslak\nOnaylı            -                -        -\n\nEkip tüm geçişler kapsamının %100'üne ulaşmak zorundadır. Test senaryolarının kaç kapsam öğesini denemesi veya denemeye çalışması gerekir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "9"
+            },
+            {
+              "id": "b",
+              "text": "12"
+            },
+            {
+              "id": "c",
+              "text": "3"
+            },
+            {
+              "id": "d",
+              "text": "6"
+            }
+          ],
+          "rationale": {
+            "summary": "Tüm geçişler kapsamında kapsam öğeleri durum tablosunda gösterilen tüm geçişlerdir, yani her hücredir. Üç durum ve üç olayla dokuz hücre vardır: üçü geçerli geçiş, altısı geçersiz geçiş. Test senaryoları geçerli geçişlerin tamamını denemeli, geçersiz geçişleri ise denemeye çalışmalıdır.",
+            "byOption": {
+              "a": "Doğru. Tablonun dokuz hücresinin tamamı kapsam öğesidir: üç geçerli, altı geçersiz geçiş. Kusur maskelenmesini önlemek için tek bir test senaryosunda yalnızca bir geçersiz geçiş denenmelidir.",
+              "b": "Yanlış. 12, dokuz hücreye üç durumun eklenmesiyle çıkar. Durumlar tüm durumlar kapsamının kapsam öğesidir, tüm geçişler kapsamının değil.",
+              "c": "Yanlış. 3 geçerli geçişlerin sayısıdır ve geçerli geçişler kapsamının (0-anahtar kapsamı) kapsam öğesi sayısıdır. Tüm geçişler kapsamı ayrıca geçersiz geçişlerin de denenmeye çalışılmasını ister.",
+              "d": "Yanlış. 6 yalnızca boş hücrelerin, yani geçersiz geçişlerin sayısıdır. Tüm geçişler kapsamı geçerli geçişleri de içerir."
+            }
+          },
+          "hints": [
+            "Tüm geçişler kapsamı, durum tablosundaki her hücreyi kapsam öğesi sayar."
+          ]
+        },
+        "en": {
+          "stem": "A document workflow has the states Draft, InReview and Approved. Its state table is as follows (an empty cell, shown as \"-\", is an invalid transition):\n\nState      submit    approve   reject\nDraft      InReview  -         -\nInReview   -         Approved  Draft\nApproved   -         -         -\n\nThe team must achieve 100% all transitions coverage. How many coverage items must the test cases exercise or attempt to execute?",
+          "options": [
+            {
+              "id": "a",
+              "text": "9"
+            },
+            {
+              "id": "b",
+              "text": "12"
+            },
+            {
+              "id": "c",
+              "text": "3"
+            },
+            {
+              "id": "d",
+              "text": "6"
+            }
+          ],
+          "rationale": {
+            "summary": "In all transitions coverage the coverage items are all the transitions shown in the state table, i.e. every cell. With three states and three events there are nine cells: three valid transitions and six invalid ones. Test cases must exercise all the valid transitions and attempt to execute the invalid ones.",
+            "byOption": {
+              "a": "Correct. All nine cells of the table are coverage items: three valid and six invalid transitions. Only one invalid transition should be attempted per test case, to avoid defect masking.",
+              "b": "Incorrect. 12 follows from adding the three states to the nine cells. States are the coverage items of all states coverage, not of all transitions coverage.",
+              "c": "Incorrect. 3 is the number of valid transitions, which is the number of coverage items of valid transitions (0-switch) coverage. All transitions coverage additionally requires the invalid transitions to be attempted.",
+              "d": "Incorrect. 6 is only the number of empty cells, i.e. the invalid transitions. All transitions coverage includes the valid transitions as well."
+            }
+          },
+          "hints": [
+            "All transitions coverage counts every cell of the state table as a coverage item."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0072",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.1",
+      "objectives": [
+        "FL-4.3.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "white-box",
+        "statement-testing",
+        "statement-coverage"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Komut kapsama yüzdesinin %100 olması hakkında aşağıdaki ifadelerden hangisi doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kod içindeki tüm çalıştırılabilir komutların en az bir kez denendiğini garanti eder"
+            },
+            {
+              "id": "b",
+              "text": "Kod içindeki tüm karar mantığının test edildiğini garanti eder"
+            },
+            {
+              "id": "c",
+              "text": "Sıfıra bölme gibi veriye bağımlı hataların tespit edileceğini garanti eder"
+            },
+            {
+              "id": "d",
+              "text": "Ancak %100 dal kapsamı elde edildikten sonra ölçülebilir"
+            }
+          ],
+          "rationale": {
+            "summary": "Komut testinde kapsam öğeleri çalıştırılabilir komutlardır ve kapsam, denenen komut sayısının toplam çalıştırılabilir komut sayısına bölünmesiyle ölçülür. %100'e ulaşıldığında her çalıştırılabilir komut en az bir kez koşar; böylece hata içeren her komut yürütülür ve bu, hatanın varlığını gösteren bir arızaya yol açabilir.",
+            "byOption": {
+              "a": "Doğru. %100 komut kapsama yüzdesinin tam olarak anlamı budur: kod içindeki her çalıştırılabilir komut en az bir kez denenmiştir.",
+              "b": "Yanlış. %100 komut kapsama yüzdesi tüm karar mantığının test edilmesini sağlamaz, çünkü kod içindeki tüm dallar denenmemiş olabilir.",
+              "c": "Yanlış. Bir komutun denenmesi tüm hataların tespit edileceği anlamına gelmez; sıfıra bölme yalnızca payda gerçekten sıfır olduğunda arızaya yol açar, bu da kapsamın değil test verisinin konusudur.",
+              "d": "Yanlış. İlişki tersidir: dal kapsamı komut kapsama yüzdesini içerir, yani %100 dal kapsamı zaten %100 komut kapsama yüzdesini gerektirir. Komut kapsama yüzdesi kendi başına ölçülür."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following statements about achieving 100% statement coverage is correct?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It ensures that every executable statement in the code has been exercised at least once"
+            },
+            {
+              "id": "b",
+              "text": "It guarantees that all the decision logic in the code has been tested"
+            },
+            {
+              "id": "c",
+              "text": "It guarantees that data-dependent defects, such as a division by zero, will be detected"
+            },
+            {
+              "id": "d",
+              "text": "It can only be measured after 100% branch coverage has been achieved"
+            }
+          ],
+          "rationale": {
+            "summary": "In statement testing the coverage items are executable statements, and coverage is the number of statements exercised divided by the total number of executable statements. At 100% every executable statement has run at least once, so each statement with a defect is executed, which may cause a failure that demonstrates the defect.",
+            "byOption": {
+              "a": "Correct. This is exactly what 100% statement coverage means: every executable statement in the code has been exercised at least once.",
+              "b": "Incorrect. 100% statement coverage does not ensure that all the decision logic has been tested, because it may not exercise all the branches in the code.",
+              "c": "Incorrect. Exercising a statement will not detect defects in all cases; a division by zero only fails when the denominator is actually set to zero, which is a matter of test data rather than of statement coverage.",
+              "d": "Incorrect. The relationship is the other way round: branch coverage subsumes statement coverage, so 100% branch coverage already implies 100% statement coverage. Statement coverage is measured in its own right."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0073",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.1",
+      "objectives": [
+        "FL-4.3.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "white-box",
+        "statement-coverage",
+        "limitations"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip bir bileşende %100 komut kapsama yüzdesine ulaşmıştır; buna rağmen canlı ortamda sıfıra bölme kaynaklı bir arıza oluşmuştur. Bu durumu EN İYİ açıklayan ifade hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "%100 komut kapsama yüzdesi, veriye bağımlı hataların tespit edilmesini garanti etmez"
+            },
+            {
+              "id": "b",
+              "text": "Komut kapsama yüzdesi yalnızca statik testte ölçülebilir"
+            },
+            {
+              "id": "c",
+              "text": "Komut testi bir kara kutu tekniğidir ve kodun yapısını dikkate almaz"
+            },
+            {
+              "id": "d",
+              "text": "%100 komut kapsama yüzdesi %100 dal kapsamını da içerir, dolayısıyla hata bu bileşenin dışındadır"
+            }
+          ],
+          "rationale": {
+            "summary": "Bir komutun bir test senaryosuyla denenmesi, o komutla ilgili tüm hataların tespit edileceği anlamına gelmez. Bölme komutu koşmuş olabilir, ancak arıza yalnızca payda sıfır olduğunda ortaya çıkar; bu veriye bağımlı bir hatadır ve komut kapsama yüzdesi bunu garanti altına almaz.",
+            "byOption": {
+              "a": "Doğru. Müfredat bu sınırlamayı açıkça örnekler: yalnızca payda sıfır olduğunda başarısız olan bir sıfıra bölme işlemi, komut denenmiş olsa bile tespit edilmeyebilir.",
+              "b": "Yanlış. Komut kapsama yüzdesi, koşulan test senaryolarının denediği komutlardan hesaplanır; bu dinamik testtir. Beyaz kutu teknikleri statik testte de kullanılabilir ancak kapsam bu şekilde ölçülmez.",
+              "c": "Yanlış. Komut testi bir beyaz kutu (yapı bazlı) tekniktir; kapsam öğeleri kodun çalıştırılabilir komutlarıdır.",
+              "d": "Yanlış. İçerme ilişkisi ters yöndedir: dal kapsamı komut kapsama yüzdesini içerir, tersi geçerli değildir. %100 komut kapsama yüzdesi dal kapsamı hakkında hiçbir şey söylemez."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team has achieved 100% statement coverage on a component, yet a division-by-zero failure occurs in production. Which statement BEST explains this?",
+          "options": [
+            {
+              "id": "a",
+              "text": "100% statement coverage does not guarantee that data-dependent defects are detected"
+            },
+            {
+              "id": "b",
+              "text": "Statement coverage can only be measured during static testing"
+            },
+            {
+              "id": "c",
+              "text": "Statement testing is a black-box technique and ignores the structure of the code"
+            },
+            {
+              "id": "d",
+              "text": "100% statement coverage subsumes 100% branch coverage, so the defect must lie outside this component"
+            }
+          ],
+          "rationale": {
+            "summary": "Exercising a statement with a test case will not detect defects in all cases. The division statement may well have run, but the failure only occurs when the denominator is actually zero; this is a data-dependent defect, which statement coverage does not guard against.",
+            "byOption": {
+              "a": "Correct. The syllabus gives exactly this example of the limitation: a division by zero that only fails when the denominator is set to zero may go undetected even though the statement was exercised.",
+              "b": "Incorrect. Statement coverage is computed from the statements exercised by executed test cases, which is dynamic testing. White-box techniques can also be used in static testing, but coverage is not measured that way.",
+              "c": "Incorrect. Statement testing is a white-box (structure-based) technique; its coverage items are the executable statements of the code.",
+              "d": "Incorrect. The subsumption relationship runs the other way: branch coverage subsumes statement coverage, not vice versa. 100% statement coverage says nothing about branch coverage."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0074",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.2",
+      "objectives": [
+        "FL-4.3.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "white-box",
+        "branch-testing",
+        "definition"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Dal testinde bir dal EN İYİ nasıl tanımlanır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test nesnesinin giriş noktasından çıkış noktasına kadar uzanan eksiksiz bir yol"
+            },
+            {
+              "id": "b",
+              "text": "Bir \"if...then\" kararının yalnızca true çıktısı"
+            },
+            {
+              "id": "c",
+              "text": "Bir kararın içinde yer alan çalıştırılabilir bir komut"
+            },
+            {
+              "id": "d",
+              "text": "Kontrol akış grafiğindeki iki düğüm arasında gerçekleşen bir kontrol transferi"
+            }
+          ],
+          "rationale": {
+            "summary": "Dal, test nesnesinde komutların çalıştırıldığı olası sıraları gösteren kontrol akış grafiğindeki iki düğüm arasında gerçekleşen bir kontrol transferidir. Bu transfer koşulsuz (doğrudan açık kod) veya koşullu (bir karar çıktısı) olabilir.",
+            "byOption": {
+              "a": "Yanlış. Bu bir yolun tanımıdır. Tüm dalları denemek tüm yolları denemek anlamına gelmez; dal kapsamı, kodda spesifik bir yolun yürütülmesini gerektiren hataları tespit edemeyebilir.",
+              "b": "Yanlış. Koşullu bir dal, bir \"if...then\" kararının true VEYA false çıktısına, bir switch/case komutunun çıktısına ya da döngüden çıkma veya döngüye devam etme kararına karşılık gelir; ayrıca dallar koşulsuz da olabilir.",
+              "c": "Yanlış. Çalıştırılabilir komutlar komut testinin kapsam öğeleridir, dal testinin değil. Dal bir komut değil, bir kontrol transferidir.",
+              "d": "Doğru. Dal testinde kapsam öğeleri dallardır ve dal, kontrol akış grafiğinde iki düğüm arasındaki kontrol transferidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "In branch testing, a branch is BEST described as:",
+          "options": [
+            {
+              "id": "a",
+              "text": "A complete path from the entry point to an exit point of the test object"
+            },
+            {
+              "id": "b",
+              "text": "Only the true outcome of an \"if...then\" decision"
+            },
+            {
+              "id": "c",
+              "text": "An executable statement that lies inside a decision"
+            },
+            {
+              "id": "d",
+              "text": "A transfer of control between two nodes in the control flow graph"
+            }
+          ],
+          "rationale": {
+            "summary": "A branch is a transfer of control between two nodes in the control flow graph, which shows the possible sequences in which source code statements are executed in the test object. Each transfer of control can be either unconditional (straight-line code) or conditional (a decision outcome).",
+            "byOption": {
+              "a": "Incorrect. That is the definition of a path. Exercising every branch does not mean exercising every path; branch coverage may not detect defects requiring the execution of a specific path in the code.",
+              "b": "Incorrect. A conditional branch corresponds to the true OR the false outcome of an \"if...then\" decision, an outcome of a switch/case statement, or a decision to exit or continue a loop; branches may also be unconditional.",
+              "c": "Incorrect. Executable statements are the coverage items of statement testing, not of branch testing. A branch is a transfer of control, not a statement.",
+              "d": "Correct. In branch testing the coverage items are branches, and a branch is a transfer of control between two nodes in the control flow graph."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0075",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.2",
+      "objectives": [
+        "FL-4.3.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "white-box",
+        "branch-coverage",
+        "subsumption"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test senaryosu grubu bir bileşende %100 dal kapsamına ulaşmıştır. Bundan kesin olarak ne çıkarılabilir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bileşende hata kalmamıştır"
+            },
+            {
+              "id": "b",
+              "text": "Veriye bağımlı hataların tamamı tespit edilmiştir"
+            },
+            {
+              "id": "c",
+              "text": "Aynı bileşende %100 komut kapsama yüzdesine de ulaşılmıştır"
+            },
+            {
+              "id": "d",
+              "text": "Bileşendeki tüm yollar denenmiştir"
+            }
+          ],
+          "rationale": {
+            "summary": "Dal kapsamı komut kapsama yüzdesini içerir: %100 dal kapsamına ulaşan her test senaryosu grubu aynı zamanda %100 komut kapsama yüzdesine ulaşır. Bunun tersi geçerli değildir.",
+            "byOption": {
+              "a": "Yanlış. Hiçbir kapsam ölçüsü hata kalmadığını gösteremez. %100 dal kapsamı, koşulsuz ve koşullu tüm dalların denendiği anlamına gelir; bileşenin hatasız olduğu anlamına gelmez.",
+              "b": "Yanlış. Yalnızca payda sıfır olduğunda başarısız olan bir bölme gibi veriye bağımlı hatalar, hangi dalların denendiğine değil kullanılan test verisine bağlıdır.",
+              "c": "Doğru. Dal kapsamı komut kapsama yüzdesini içerir; %100 dal kapsamı otomatik olarak %100 komut kapsama yüzdesi anlamına gelir, ancak tersi doğru değildir.",
+              "d": "Yanlış. Dal ile yol aynı kapsam öğesi değildir. Bir dalın denenmesi tüm hataları tespit etmez; özellikle kodda spesifik bir yolun yürütülmesini gerektiren hatalar kaçabilir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A set of test cases achieves 100% branch coverage of a component. What can be concluded with certainty?",
+          "options": [
+            {
+              "id": "a",
+              "text": "No defects remain in the component"
+            },
+            {
+              "id": "b",
+              "text": "Every data-dependent defect has been detected"
+            },
+            {
+              "id": "c",
+              "text": "100% statement coverage of the same component has also been achieved"
+            },
+            {
+              "id": "d",
+              "text": "Every path through the component has been exercised"
+            }
+          ],
+          "rationale": {
+            "summary": "Branch coverage subsumes statement coverage: any set of test cases achieving 100% branch coverage also achieves 100% statement coverage. The converse does not hold.",
+            "byOption": {
+              "a": "Incorrect. No coverage measure can show that no defects remain. 100% branch coverage means all unconditional and conditional branches have been exercised, not that the component is defect-free.",
+              "b": "Incorrect. Data-dependent defects, such as a division that only fails for a zero denominator, depend on the test data used rather than on which branches are exercised.",
+              "c": "Correct. Branch coverage subsumes statement coverage; 100% branch coverage automatically means 100% statement coverage, but not the other way round.",
+              "d": "Incorrect. Branches and paths are not the same coverage item. Exercising a branch will not detect defects in all cases, in particular those requiring the execution of a specific path in the code."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0076",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.3",
+      "objectives": [
+        "FL-4.3.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "white-box",
+        "value",
+        "strengths"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden hangisi beyaz kutu test tekniklerinin başlıca kuvvetli yanıdır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kod değiştiğinde ancak gerekli davranış aynı kaldığında test senaryoları geçerli kalır"
+            },
+            {
+              "id": "b",
+              "text": "Yalnızca kod koşuma hazır olduktan sonra uygulanabilirler"
+            },
+            {
+              "id": "c",
+              "text": "Test sırasında yazılımın tamamı dikkate alınır; bu da spesifikasyon belirsiz, eski veya eksik olsa bile hata tespitini kolaylaştırır"
+            },
+            {
+              "id": "d",
+              "text": "Hiç kodlanmamış gereksinimlerden kaynaklanan hataları güvenilir şekilde tespit ederler"
+            }
+          ],
+          "rationale": {
+            "summary": "Tüm beyaz kutu test tekniklerinin paylaştığı başlıca kuvvetli yan, test sırasında yazılımın tamamının dikkate alınmasıdır; bu, spesifikasyon belirsiz, eski veya eksik olduğunda bile hata tespitini kolaylaştırır.",
+            "byOption": {
+              "a": "Yanlış. Bu, kara kutu tekniklerinin bir özelliğidir; onların test senaryoları yazılımın nasıl kodlandığından bağımsızdır. Beyaz kutu test senaryoları tasarıma bağlıdır ve tasarım değişince değişmeleri gerekebilir.",
+              "b": "Yanlış. Beyaz kutu teknikleri statik testte de kullanılabilir (ör. kodun deneme koşumları sırasında) ve henüz koşuma hazır olmayan kodun, kaba kodun ve kontrol akış grafiğiyle modellenebilen üst seviye mantığın gözden geçirilmesine uygundur.",
+              "c": "Doğru. Beyaz kutu teknikleri kodun tamamını dikkate aldığı için spesifikasyonun zayıf olduğu durumlarda bile hata bulmayı kolaylaştırır.",
+              "d": "Yanlış. Bu, kuvvetli yan değil karşılık gelen zafiyettir: yazılım bir veya daha fazla gereksinimi hiç kodlamadıysa, beyaz kutu testi bu eksiklikten kaynaklanan hataları tespit edemeyebilir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is a fundamental strength of white-box test techniques?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Their test cases stay valid when the implementation changes but the required behavior stays the same"
+            },
+            {
+              "id": "b",
+              "text": "They can only be applied once the code is ready for execution"
+            },
+            {
+              "id": "c",
+              "text": "The entire software implementation is taken into account, which facilitates defect detection even when the specification is vague, outdated or incomplete"
+            },
+            {
+              "id": "d",
+              "text": "They reliably detect defects caused by requirements that were never implemented"
+            }
+          ],
+          "rationale": {
+            "summary": "A fundamental strength that all white-box test techniques share is that the entire software implementation is taken into account during testing, which facilitates defect detection even when the software specification is vague, outdated or incomplete.",
+            "byOption": {
+              "a": "Incorrect. That is a property of black-box techniques, whose test cases are independent of how the software is implemented. White-box test cases depend on the design and may have to change with it.",
+              "b": "Incorrect. White-box test techniques can also be used in static testing (e.g. during dry runs of code) and suit reviewing code not yet ready for execution, pseudocode and other high-level logic that can be modeled with a control flow graph.",
+              "c": "Correct. Because white-box techniques take the whole implementation into account, they help find defects even where the specification is weak.",
+              "d": "Incorrect. This is the corresponding weakness, not a strength: if the software does not implement one or more requirements, white-box testing may not detect the resulting defects of omission."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0077",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.3",
+      "objectives": [
+        "FL-4.3.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "white-box",
+        "value",
+        "coverage-measurement"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip yalnızca kara kutu test teknikleri kullanmaktadır. Beyaz kutu test teknikleri eklenmiş olsaydı elde edilecek olan, bu yaklaşımın sağlayamadığı şey nedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Gerçek kod kapsamının objektif bir ölçümü"
+            },
+            {
+              "id": "b",
+              "text": "Yazılımın nasıl kodlandığından bağımsız test senaryoları"
+            },
+            {
+              "id": "c",
+              "text": "Hiç kodlanmamış gereksinimleri ortaya çıkarma imkânı"
+            },
+            {
+              "id": "d",
+              "text": "Kod yazılmadan önce test senaryosu tasarlayabilme imkânı"
+            }
+          ],
+          "rationale": {
+            "summary": "Sadece kara kutu testi gerçekleştirmek, gerçek kod kapsamının ölçülmesini sağlamaz. Beyaz kutu kapsam ölçüleri objektif bir ölçüm sağlar ve kapsamı büyütmek için üretilecek ek testlere olanak tanıyan bilgiyi sunar; bu da koda yönelik güveni artırır.",
+            "byOption": {
+              "a": "Doğru. Yalnızca kara kutu testi yapmak gerçek kod kapsamının ölçülmesini sağlamaz; objektif kapsam ölçümü beyaz kutu tekniklerinin sunduğu değerdir.",
+              "b": "Yanlış. Bunu kara kutu teknikleri zaten sağlar: iç yapıya atıfta bulunmadan tanımlanmış davranışı analiz ettikleri için test senaryoları kodlamadan bağımsızdır.",
+              "c": "Yanlış. Hiç kodlanmamış gereksinimleri yakalayamamak beyaz kutu testinin zafiyetidir. Kara kutu testi spesifikasyondan yola çıktığı için bu eksikliği ortaya çıkarabilen yaklaşım zaten odur.",
+              "d": "Yanlış. Bunu kara kutu teknikleri zaten sağlar, çünkü yalnızca tanımlanmış davranışa ihtiyaç duyarlar. Beyaz kutu test senaryoları ancak tasarım veya kodlamadan sonra oluşturulabilir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team tests exclusively with black-box test techniques. Compared with also using white-box test techniques, what does this approach fail to provide?",
+          "options": [
+            {
+              "id": "a",
+              "text": "An objective measurement of the actual code coverage achieved"
+            },
+            {
+              "id": "b",
+              "text": "Test cases that are independent of how the software is implemented"
+            },
+            {
+              "id": "c",
+              "text": "The ability to reveal requirements that were never implemented"
+            },
+            {
+              "id": "d",
+              "text": "The ability to design test cases before the code is written"
+            }
+          ],
+          "rationale": {
+            "summary": "Performing only black-box testing does not provide a measure of actual code coverage. White-box coverage measures provide an objective measurement and the information needed to generate additional tests that increase this coverage, and thereby increase confidence in the code.",
+            "byOption": {
+              "a": "Correct. Performing only black-box testing does not provide a measure of actual code coverage; objective coverage measurement is what white-box techniques add.",
+              "b": "Incorrect. Black-box techniques already provide this: because they analyze the specified behavior without reference to internal structure, their test cases are independent of the implementation.",
+              "c": "Incorrect. Failing to detect defects of omission is the weakness of white-box testing. Black-box testing works from the specification and is therefore already the approach that can reveal a requirement that was never implemented.",
+              "d": "Incorrect. Black-box techniques already provide this, because they need only the specified behavior. White-box test cases can only be created after the design or implementation of the test object."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0078",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.4",
+      "syllabusRef": "§4.4.1",
+      "objectives": [
+        "FL-4.4.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "experience-based",
+        "error-guessing",
+        "except"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Hata tahminleme, test uzmanının bilgisine dayanır. Aşağıdakilerden hangisi bu teknik için sayılan bilgi kaynaklarından biri DEĞİLDİR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Diğer benzer uygulamalarda oluşan arıza (failure) çeşitleri"
+            },
+            {
+              "id": "b",
+              "text": "Test nesnesinin kontrol akış grafiğinden sayılan dal sayısı"
+            },
+            {
+              "id": "c",
+              "text": "Uygulamanın geçmişte nasıl çalıştığı"
+            },
+            {
+              "id": "d",
+              "text": "Geliştiricilerin yapma eğiliminde olduğu insan hataları ve bunların yol açtığı hata (defect) çeşitleri"
+            }
+          ],
+          "rationale": {
+            "summary": "Hata tahminleme tecrübeye dayalı bir tekniktir ve üç bilgi kaynağına dayanır: uygulamanın geçmişte nasıl çalıştığı, geliştiricilerin yapma eğiliminde olduğu insan hataları ile bunların yol açtığı hatalar, ve benzer uygulamalarda oluşan arıza çeşitleri. Kontrol akış grafiğinden sayılan dal sayısı bir beyaz kutu ölçüsüdür.",
+            "byOption": {
+              "a": "Yanlış seçim; bu da sayılan bilgi kaynaklarından biridir. Benzer uygulamalarda görülen arıza çeşitleri test uzmanına yön verir.",
+              "b": "Doğru. Dal sayısı, dal testinde kullanılan bir beyaz kutu kapsam ölçüsüdür. Hata tahminleme tecrübeye dayalı bir tekniktir ve kodun yapısal sayımlarına dayanmaz.",
+              "c": "Yanlış seçim; bu gerçekten de sayılan bilgi kaynaklarından biridir. Uygulamanın geçmişteki davranışı, test uzmanının nereye bakacağını tahmin etmesini sağlar.",
+              "d": "Yanlış seçim; bu da sayılan bilgi kaynaklarından biridir. Geliştiricilerin tipik insan hataları ve bunlardan doğan hatalar tahminlemenin temelini oluşturur."
+            }
+          }
+        },
+        "en": {
+          "stem": "Error guessing is based on the tester's knowledge. Which of the following is NOT one of the knowledge sources named for this technique?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The types of failures that have occurred in other, similar applications"
+            },
+            {
+              "id": "b",
+              "text": "The number of branches counted in the control flow graph of the test object"
+            },
+            {
+              "id": "c",
+              "text": "How the application has worked in the past"
+            },
+            {
+              "id": "d",
+              "text": "The types of errors the developers tend to make and the types of defects that result from them"
+            }
+          ],
+          "rationale": {
+            "summary": "Error guessing is an experience-based technique and draws on three knowledge sources: how the application has worked in the past, the types of errors developers tend to make and the defects that result from them, and the types of failures that have occurred in other, similar applications. A branch count from the control flow graph is a white-box measure.",
+            "byOption": {
+              "a": "Not the answer; this is also one of the named knowledge sources. Failure types seen in similar applications point the tester in a direction.",
+              "b": "Correct. A branch count is a white-box coverage measure used in branch testing. Error guessing is an experience-based technique and does not rely on structural counts of the code.",
+              "c": "Not the answer; this is indeed one of the named knowledge sources. How the application has behaved in the past guides where the tester looks.",
+              "d": "Not the answer; this is also one of the named knowledge sources. The errors developers typically make and the defects that follow from them are the basis of the guess."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0079",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.4",
+      "syllabusRef": "§4.4.1",
+      "objectives": [
+        "FL-4.4.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "experience-based",
+        "error-guessing",
+        "fault-attacks"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Kusur ortaya çıkarmaya yönelik saldırılar (fault attacks) hata tahminlemeyi nasıl uygular?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test uzmanı bir kontrol listesindeki test koşullarını kapsayacak testler tasarlar"
+            },
+            {
+              "id": "b",
+              "text": "Test uzmanı kabul edilebilir bir dal kapsamı seviyesine ulaşana kadar test senaryosu tasarlar"
+            },
+            {
+              "id": "c",
+              "text": "Test uzmanı olası insan hatalarının, hataların ve arızaların bir listesini oluşturur veya elde eder ve bu hataları ortaya çıkaracak ya da arızalara yol açacak testler tasarlar"
+            },
+            {
+              "id": "d",
+              "text": "Test uzmanı belirli bir zaman dilimi içinde, test hedeflerini içeren bir test başlatma belgesi rehberliğinde çalışır"
+            }
+          ],
+          "rationale": {
+            "summary": "Kusur ortaya çıkarmaya yönelik saldırılar hata tahminlemenin metodik bir uygulanış biçimidir: test uzmanı olası insan hataları, hatalar ve arızaların bir listesini oluşturur veya edinir, ardından bu hataları tanımlayacak, ortaya çıkaracak veya arızalara neden olacak testler tasarlar. Listeler tecrübeye, hata ve arıza verilerine ya da yazılımların neden başarısız olduğuna dair genel bilgiye dayanabilir.",
+            "byOption": {
+              "a": "Yanlış. Bu, kontrol listesine dayalı testin tanımıdır; test koşulları önceden hazırlanmış bir kontrol listesinden gelir.",
+              "b": "Yanlış. Bu, bir beyaz kutu tekniği olan dal testinin çalışma biçimidir; kapsam öğeleri kodun dallarıdır.",
+              "c": "Doğru. Müfredat kusur ortaya çıkarmaya yönelik saldırıları tam olarak böyle tanımlar: olası insan hataları, hatalar ve arızaların listesi ve bu listeden türetilen testler.",
+              "d": "Yanlış. Bu, keşif testinde kullanılan oturum bazlı yaklaşımın tanımıdır; zaman dilimi ve test başlatma belgesi oraya aittir."
+            }
+          }
+        },
+        "en": {
+          "stem": "How do fault attacks implement error guessing?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The tester designs tests to cover the test conditions taken from a checklist"
+            },
+            {
+              "id": "b",
+              "text": "The tester designs test cases until an acceptable level of branch coverage is reached"
+            },
+            {
+              "id": "c",
+              "text": "The tester creates or acquires a list of possible errors, defects and failures and designs tests that expose those defects or cause those failures"
+            },
+            {
+              "id": "d",
+              "text": "The tester works within a defined time box, guided by a test charter containing test objectives"
+            }
+          ],
+          "rationale": {
+            "summary": "Fault attacks are a way to implement error guessing: the tester creates or acquires a list of possible errors, defects and failures, and designs tests that identify the defects associated with those errors, expose the defects, or cause the failures. The lists can be built from experience, defect and failure data, or common knowledge about why software fails.",
+            "byOption": {
+              "a": "Incorrect. This describes checklist-based testing, where the test conditions come from a checklist prepared in advance.",
+              "b": "Incorrect. This describes how branch testing, a white-box technique, works; its coverage items are the branches of the code.",
+              "c": "Correct. This is exactly how the syllabus describes fault attacks: a list of possible errors, defects and failures, and tests derived from that list.",
+              "d": "Incorrect. This describes the session-based approach used in exploratory testing; the time box and the test charter belong there."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0080",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.4",
+      "syllabusRef": "§4.4.2",
+      "objectives": [
+        "FL-4.4.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "experience-based",
+        "exploratory-testing",
+        "session-based"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Keşif testinde oturum bazlı yaklaşımı EN İYİ tanımlayan ifade hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Testler belirli bir zaman dilimi içinde, test hedeflerini içeren bir test başlatma belgesi rehberliğinde yapılır ve genelde paydaşlarla bir bilgilendirme toplantısıyla sonuçlanır"
+            },
+            {
+              "id": "b",
+              "text": "Tüm test senaryoları koşumdan önce ayrıntılı olarak dokümante edilir ve onaylanır"
+            },
+            {
+              "id": "c",
+              "text": "Testler yalnızca gereksinimler eksiksiz ve güncel olduğunda yürütülür"
+            },
+            {
+              "id": "d",
+              "text": "Test senaryoları kontrol akış grafiğinden otomatik olarak üretilir ve test uzmanının katkısı gerekmez"
+            }
+          ],
+          "rationale": {
+            "summary": "Oturum bazlı yaklaşımda keşif testi belirli bir zaman dilimi içinde yapılır. Test uzmanı test hedeflerini içeren bir test başlatma belgesi kullanır; oturumun ardından genellikle sonuçlarla ilgilenen paydaşlarla bir bilgilendirme toplantısı yapılır. Test hedefleri üst seviye test koşulları olarak görülebilir.",
+            "byOption": {
+              "a": "Doğru. Zaman dilimi, test başlatma belgesi ve bilgilendirme toplantısı oturum bazlı yaklaşımın üç belirleyici unsurudur.",
+              "b": "Yanlış. Keşif testinde testler test uzmanı test nesnesini öğrenirken eş zamanlı olarak tasarlanır, koşulur ve değerlendirilir; ayrıntılı senaryoların önceden yazılıp onaylanması bunun tam tersidir.",
+              "c": "Yanlış. Tersi geçerlidir: keşif testi tam da gereksinimler az veya yetersiz olduğunda ya da testler üzerinde ciddi zaman baskısı bulunduğunda işe yarar.",
+              "d": "Yanlış. Keşif testi test uzmanına dayanır; test uzmanı deneyimli, alan bilgisine sahip, analitik, meraklı ve yaratıcı olduğunda daha etkili olur."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which statement BEST describes the session-based approach in exploratory testing?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Testing is performed within a defined time box, guided by a test charter containing test objectives, and is usually followed by a debriefing with stakeholders"
+            },
+            {
+              "id": "b",
+              "text": "All test cases are documented in detail and approved before execution begins"
+            },
+            {
+              "id": "c",
+              "text": "Testing is carried out only when the requirements are complete and up to date"
+            },
+            {
+              "id": "d",
+              "text": "Test cases are generated automatically from the control flow graph, with no input from the tester"
+            }
+          ],
+          "rationale": {
+            "summary": "In a session-based approach, exploratory testing is performed within a defined time box. The tester uses a test charter containing test objectives, and the session is usually followed by a debriefing with the stakeholders interested in the results. The test objectives may be treated as high-level test conditions.",
+            "byOption": {
+              "a": "Correct. The time box, the test charter and the debriefing are the three defining elements of the session-based approach.",
+              "b": "Incorrect. In exploratory testing, tests are simultaneously designed, executed and evaluated while the tester learns about the test object; writing and approving detailed test cases up front is the opposite of that.",
+              "c": "Incorrect. The reverse holds: exploratory testing is useful precisely when there are few or inadequate specifications, or when there is significant time pressure on the testing.",
+              "d": "Incorrect. Exploratory testing relies on the tester and is more effective when the tester is experienced, has domain knowledge and strong analytical skills, curiosity and creativeness."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0081",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.4",
+      "syllabusRef": "§4.4.2",
+      "objectives": [
+        "FL-4.4.2"
+      ],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "experience-based",
+        "exploratory-testing",
+        "multi"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a",
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Keşif testi HANGİ İKİ durumda özellikle faydalıdır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Gereksinimler az veya yetersiz olduğunda"
+            },
+            {
+              "id": "b",
+              "text": "Testler üzerinde ciddi bir zaman baskısı olduğunda"
+            },
+            {
+              "id": "c",
+              "text": "Tüm test eforunun otomatikleştirilmesi gerektiğinde"
+            },
+            {
+              "id": "d",
+              "text": "Test uzmanının alan bilgisi ve deneyimi bulunmadığında"
+            },
+            {
+              "id": "e",
+              "text": "Emniyet hassasiyetli bir yazılımda tüm geçişler kapsamının kanıtlanması gerektiğinde"
+            }
+          ],
+          "rationale": {
+            "summary": "Keşif testleri, gereksinimler az veya yetersiz olduğunda ya da testler üzerinde önemli bir zaman baskısı olduğunda işe yarar; ayrıca daha resmi test tekniklerini tamamlamak için de kullanılır.",
+            "byOption": {
+              "a": "Doğru. Müfredat bu durumu açıkça sayar: keşif testi, üzerine test tasarlanacak yeterli spesifikasyon bulunmadığında işe yarar.",
+              "b": "Doğru. Müfredat bu durumu da açıkça sayar; zaman baskısı altında keşif testi hızlı geri bildirim sağlar.",
+              "c": "Yanlış. Keşif testinde testler test uzmanı öğrendikçe eş zamanlı tasarlanır, koşulur ve değerlendirilir; bu, test eforunun tamamen otomatikleştirilmesine giden bir yol değildir.",
+              "d": "Yanlış. Tam tersi geçerlidir: keşif testi, test uzmanı deneyimli olduğunda, alan bilgisine ve analitik beceri, merak, yaratıcılık gibi temel becerilere sahip olduğunda daha etkilidir.",
+              "e": "Yanlış. Tüm geçişler kapsamının kanıtlanması bir model (durum diyagramı veya durum tablosu) ve durum geçişi testi tekniğini gerektirir. Keşif testi modele karşı ölçülen böyle bir kapsam sağlamaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "In WHICH TWO situations is exploratory testing particularly useful?",
+          "options": [
+            {
+              "id": "a",
+              "text": "When there are few or inadequate specifications"
+            },
+            {
+              "id": "b",
+              "text": "When there is significant time pressure on the testing"
+            },
+            {
+              "id": "c",
+              "text": "When the whole test effort has to be automated"
+            },
+            {
+              "id": "d",
+              "text": "When the tester has no domain knowledge or experience"
+            },
+            {
+              "id": "e",
+              "text": "When full all transitions coverage has to be demonstrated for safety-critical software"
+            }
+          ],
+          "rationale": {
+            "summary": "Exploratory testing is useful when there are few or inadequate specifications or when there is significant time pressure on the testing. It is also useful to complement other, more formal test techniques.",
+            "byOption": {
+              "a": "Correct. The syllabus lists this situation explicitly: exploratory testing helps when there is not enough specification to design tests from.",
+              "b": "Correct. The syllabus lists this situation explicitly as well; under time pressure exploratory testing delivers feedback quickly.",
+              "c": "Incorrect. In exploratory testing, tests are designed, executed and evaluated at the same time as the tester learns; it is not a route to a fully automated test effort.",
+              "d": "Incorrect. The opposite holds: exploratory testing is more effective when the tester is experienced and has domain knowledge and essential skills such as analytical skills, curiosity and creativeness.",
+              "e": "Incorrect. Demonstrating full all transitions coverage requires a model (a state diagram or state table) and the state transition testing technique. Exploratory testing does not deliver that kind of model-based measured coverage."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0082",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.4",
+      "syllabusRef": "§4.4.3",
+      "objectives": [
+        "FL-4.4.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "experience-based",
+        "checklist-based",
+        "item-quality"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test kontrol listesindeki öğenin taşıması gereken özellik hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Öğenin bir giriş veya çıkış kriteri biçiminde yazılması"
+            },
+            {
+              "id": "b",
+              "text": "Öğenin uzun süre geçerli kalması için mümkün olduğunca genel tutulması"
+            },
+            {
+              "id": "c",
+              "text": "Öğenin ayrı ayrı ve doğrudan kontrol edilebilmesi"
+            },
+            {
+              "id": "d",
+              "text": "Öğenin otomatik olarak kontrol edilebilecek kadar spesifik olması"
+            }
+          ],
+          "rationale": {
+            "summary": "Kontrol listesi öğeleri genellikle soru şeklindedir ve her öğe ayrı ayrı ve doğrudan kontrol edilebilir olmalıdır. Öğeler gereksinimlere, arayüz özelliklerine, kalite karakteristiklerine veya diğer test koşulu biçimlerine ilişkin olabilir.",
+            "byOption": {
+              "a": "Yanlış. Daha çok giriş kriteri veya çıkış kriteri olmaya uygun öğeler test kontrol listesine konmamalıdır.",
+              "b": "Yanlış. Çok genel öğeler kontrol listesinde yer almamalıdır. Üst seviye kontrol listeleri gerçek testlerde değişkenliğe yol açar: potansiyel olarak daha büyük kapsam, ama daha düşük tekrarlanabilirlik.",
+              "c": "Doğru. Müfredat bunu açıkça şart koşar: her öğe ayrı ayrı ve doğrudan kontrol edilebilir olmalıdır.",
+              "d": "Yanlış. Kontrol listeleri otomatik olarak kontrol edilebilecek öğeleri içermemelidir; bu tür kontroller listeye değil otomasyona aittir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which property should an item on a test checklist have?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It should be phrased as an entry or exit criterion"
+            },
+            {
+              "id": "b",
+              "text": "It should be kept as general as possible so that it stays valid for a long time"
+            },
+            {
+              "id": "c",
+              "text": "It should be possible to check the item separately and directly"
+            },
+            {
+              "id": "d",
+              "text": "It should be specific enough to be checked automatically"
+            }
+          ],
+          "rationale": {
+            "summary": "Checklist items are often phrased in the form of a question, and it should be possible to check each item separately and directly. Items may refer to requirements, graphical interface properties, quality characteristics or other forms of test conditions.",
+            "byOption": {
+              "a": "Incorrect. Items better suited as entry criteria or exit criteria should not be placed on a test checklist.",
+              "b": "Incorrect. Items that are too general should not be on a checklist. High-level checklists produce variability in the actual testing: potentially greater coverage, but less repeatability.",
+              "c": "Correct. The syllabus requires this explicitly: it should be possible to check each item separately and directly.",
+              "d": "Incorrect. Checklists should not contain items that can be checked automatically; such checks belong in automation, not on the list."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0083",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.4",
+      "syllabusRef": "§4.4.3",
+      "objectives": [
+        "FL-4.4.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "experience-based",
+        "checklist-based",
+        "maintenance"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Kontrol listeleri neden hata analizine dayalı olarak düzenli şekilde güncellenmelidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kontrol listesi uzadıkça daha etkili hale geldiği için"
+            },
+            {
+              "id": "b",
+              "text": "Güncellenmiş bir kontrol listesi ayrıntılı test senaryolarına olan ihtiyacı tamamen ortadan kaldırdığı için"
+            },
+            {
+              "id": "c",
+              "text": "Güncelleme, kontrol listesine dayalı testin tekrarlanabilirliğini garanti ettiği için"
+            },
+            {
+              "id": "d",
+              "text": "Geliştiriciler aynı insan hatalarını yapmaktan kaçınmayı öğrendikçe bazı öğeler etkinliğini yitirir ve yeni bulunan yüksek şiddetli hataları yansıtacak yeni öğeler gerekir"
+            }
+          ],
+          "rationale": {
+            "summary": "Bazı kontrol listesi öğeleri zaman içinde etkinliğini yitirir, çünkü geliştiriciler aynı insan hatalarını yapmaktan kaçınmayı öğrenir. Yeni bulunan yüksek şiddetli hataları yansıtmak için yeni öğeler eklenmesi gerekebilir. Bu nedenle listeler hata analizine dayalı olarak düzenli güncellenmeli, ancak çok uzamamasına dikkat edilmelidir.",
+            "byOption": {
+              "a": "Yanlış. Tersine, kontrol listesinin çok uzun olmamasına dikkat edilmelidir; uzunluk etkinlik ölçüsü değildir.",
+              "b": "Yanlış. Ayrıntılı test senaryolarının olmadığı durumlarda kontrol listesi yol gösterici olabilir ve bir ölçüde tutarlılık sağlar, ama onların yerini almaz.",
+              "c": "Yanlış. Kontrol listeleri üst seviye olduğunda gerçek testlerde değişkenlik ortaya çıkması muhtemeldir; bu da potansiyel olarak daha büyük kapsam ama daha düşük tekrarlanabilirlik demektir. Güncelleme bu değişkenliği ortadan kaldırmaz.",
+              "d": "Doğru. Müfredat hem etkinliğin zamanla azalmasını hem de yeni yüksek şiddetli hatalar için yeni öğe eklenmesi gereğini güncellemenin gerekçesi olarak sayar."
+            }
+          }
+        },
+        "en": {
+          "stem": "Why should checklists be updated regularly on the basis of defect analysis?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Because the longer a checklist grows, the more effective it becomes"
+            },
+            {
+              "id": "b",
+              "text": "Because an updated checklist completely removes the need for detailed test cases"
+            },
+            {
+              "id": "c",
+              "text": "Because updating guarantees the repeatability of checklist-based testing"
+            },
+            {
+              "id": "d",
+              "text": "Some entries gradually become less effective as developers learn to avoid making the same errors, and new entries are needed to reflect newly found high severity defects"
+            }
+          ],
+          "rationale": {
+            "summary": "Some checklist entries gradually become less effective over time because developers learn to avoid making the same errors, and new entries may need to be added to reflect newly found high severity defects. Checklists should therefore be updated regularly based on defect analysis, while taking care that they do not become too long.",
+            "byOption": {
+              "a": "Incorrect. On the contrary, care should be taken to avoid letting the checklist become too long; length is not a measure of effectiveness.",
+              "b": "Incorrect. In the absence of detailed test cases a checklist can provide guidelines and some degree of consistency, but it does not replace them.",
+              "c": "Incorrect. If the checklists are high-level, some variability in the actual testing is likely, resulting in potentially greater coverage but less repeatability. Updating does not remove that variability.",
+              "d": "Correct. The syllabus names both the decay in effectiveness and the need for new entries covering newly found high severity defects as the reason for updating."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0084",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.5",
+      "syllabusRef": "§4.5.1",
+      "objectives": [
+        "FL-4.5.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "collaboration-based",
+        "user-story",
+        "three-perspectives"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "İş birlikçi kullanıcı hikayesi yazımının ekibe sağladığı temel fayda nedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test senaryolarının test nesnesinin iç yapısından bağımsız olmasını sağlamak"
+            },
+            {
+              "id": "b",
+              "text": "Kullanıcı hikayesi kodlandıktan sonra hataların daha hızlı düzeltilmesini sağlamak"
+            },
+            {
+              "id": "c",
+              "text": "Üç perspektifi (analiz, yazılım geliştirme ve test etme) dikkate alarak neyin teslim edilmesi gerektiğine yönelik ortak bir vizyon oluşturmak"
+            },
+            {
+              "id": "d",
+              "text": "Kullanıcı hikayesinin kabul kriterlerini otomatik olarak üretmek"
+            }
+          ],
+          "rationale": {
+            "summary": "İş birlikçi kullanıcı hikayesi yazımında beyin fırtınası ve zihin haritası gibi teknikler kullanılabilir. İş birliği, ekibin üç perspektifi dikkate alarak neyin teslim edilmesi gerektiğine yönelik ortak bir vizyon edinmesini sağlar. İyi kullanıcı hikayeleri INVEST ölçütlerini karşılamalıdır.",
+            "byOption": {
+              "a": "Yanlış. Bu, kara kutu test tekniklerinin bir özelliğidir; iç yapıya atıfta bulunmadan tanımlanmış davranışı analiz ederler. İş birlikçi hikaye yazımının amacı bu değildir.",
+              "b": "Yanlış. İş birliğine dayalı yaklaşımlar hataların iş birliği ve iletişim yoluyla önlenmesine odaklanır; yani hataları kodlamadan sonra hızlı düzeltmeye değil, baştan oluşmasını engellemeye yöneliktir.",
+              "c": "Doğru. Müfredat iş birliğinin faydasını tam olarak böyle tanımlar: üç perspektifi bir araya getirerek neyin teslim edileceğine dair ortak bir vizyon.",
+              "d": "Yanlış. Kabul kriterleri kullanıcı hikayesinin Onay (Confirmation) unsurudur ve genelde bir konuşmanın sonunda ortaya çıkar; otomatik üretilmez, ekipçe yazılır."
+            }
+          }
+        },
+        "en": {
+          "stem": "What is the main benefit that collaborative user story writing gives the team?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It makes the test cases independent of the internal structure of the test object"
+            },
+            {
+              "id": "b",
+              "text": "It makes defects faster to fix once the user story has been implemented"
+            },
+            {
+              "id": "c",
+              "text": "It creates a shared vision of what should be delivered, by taking three perspectives into account: business, development and testing"
+            },
+            {
+              "id": "d",
+              "text": "It generates the acceptance criteria for the user story automatically"
+            }
+          ],
+          "rationale": {
+            "summary": "Collaborative authorship of a user story can use techniques such as brainstorming and mind mapping. The collaboration allows the team to obtain a shared vision of what should be delivered by taking three perspectives into account: business, development and testing. Good user stories should meet the INVEST criteria.",
+            "byOption": {
+              "a": "Incorrect. That is a property of black-box test techniques, which analyze the specified behavior without reference to internal structure. It is not the purpose of collaborative story writing.",
+              "b": "Incorrect. Collaboration-based approaches focus on defect avoidance through collaboration and communication, i.e. on preventing defects rather than on fixing them faster after implementation.",
+              "c": "Correct. This is exactly how the syllabus describes the benefit of the collaboration: a shared vision of what should be delivered, formed by bringing three perspectives together.",
+              "d": "Incorrect. Acceptance criteria are the Confirmation of a user story and are usually a result of the Conversation; they are written by the team, not generated automatically."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0085",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.5",
+      "syllabusRef": "§4.5.2",
+      "objectives": [
+        "FL-4.5.2"
+      ],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "collaboration-based",
+        "acceptance-criteria",
+        "scenario-oriented",
+        "multi"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a",
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, alışveriş sepetiyle ilgili bir kullanıcı hikayesi için kabul kriterleri yazmaktadır. Aşağıdaki kabul kriterlerinden HANGİ İKİSİ senaryo odaklı formatta yazılmıştır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Given: kullanıcı oturum açmıştır. When: sepete bir ürün ekler. Then: sepet toplamı güncellenir."
+            },
+            {
+              "id": "b",
+              "text": "Sepet boşken ödeme düğmesi devre dışıdır."
+            },
+            {
+              "id": "c",
+              "text": "Given: sepet boştur. When: kullanıcı ödeme düğmesine tıklar. Then: bir uyarı mesajı gösterilir."
+            },
+            {
+              "id": "d",
+              "text": "Girdi-çıktı tablosu: 0 ürün ise uyarı; 1-10 ürün ise ödeme ekranı."
+            },
+            {
+              "id": "e",
+              "text": "Ödeme ekranı 2 saniyeden kısa sürede açılır."
+            }
+          ],
+          "rationale": {
+            "summary": "Kabul kriteri yazmanın en yaygın iki formatı vardır: senaryo odaklı (ör. BDD'de kullanılan Given/When/Then formatı) ve kural odaklı (ör. madde işaretli kontrol listesi veya girdi-çıktı eşlemesinin tablo hâli). Ekip, kriterler iyi tanımlanmış ve açık olduğu sürece başka bir özel format da kullanabilir.",
+            "byOption": {
+              "a": "Doğru. Bu, BDD'de kullanılan Given/When/Then formatıdır ve kabul kriteri yazmanın senaryo odaklı yoludur.",
+              "b": "Yanlış. Bu kural odaklıdır: madde işaretli kontrol listesindeki, kodlamanın karşılaması gereken tek bir kuralı ifade eden bir satırdır; senaryo yapısı yoktur.",
+              "c": "Doğru. Bu da Given/When/Then formatındadır ve negatif bir senaryoyu tanımlar. Kabul kriterlerinin hem pozitif hem negatif senaryoları açıklaması beklenir.",
+              "d": "Yanlış. Bu kural odaklıdır: girdi-çıktı eşlemesinin tablo hâline getirilmiş biçimi, kural odaklı yazımın ikinci yaygın örneğidir.",
+              "e": "Yanlış. Bu da kural odaklı bir kontrol listesi satırıdır. Fonksiyonel olmayan bir kalite karakteristiğini ilgilendirse de formatı senaryo değil kuraldır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team is writing acceptance criteria for a user story about a shopping cart. WHICH TWO of the following acceptance criteria are written in the scenario-oriented format?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Given: the user is logged in. When: the user adds an item to the cart. Then: the cart total is updated."
+            },
+            {
+              "id": "b",
+              "text": "The checkout button is disabled while the cart is empty."
+            },
+            {
+              "id": "c",
+              "text": "Given: the cart is empty. When: the user clicks the checkout button. Then: a warning message is shown."
+            },
+            {
+              "id": "d",
+              "text": "Input-output table: 0 items produces a warning; 1-10 items opens the checkout screen."
+            },
+            {
+              "id": "e",
+              "text": "The checkout screen opens in under 2 seconds."
+            }
+          ],
+          "rationale": {
+            "summary": "There are two most common formats for writing acceptance criteria: scenario-oriented (e.g. the Given/When/Then format used in BDD) and rule-oriented (e.g. a bullet point verification list, or a tabulated form of input-output mapping). A team may also use another custom format as long as the criteria are well-defined and unambiguous.",
+            "byOption": {
+              "a": "Correct. This is the Given/When/Then format used in BDD, which is the scenario-oriented way of writing acceptance criteria.",
+              "b": "Incorrect. This is rule-oriented: a bullet point verification list entry stating a single rule the implementation must satisfy, with no scenario structure.",
+              "c": "Correct. This is also the Given/When/Then format and describes a negative scenario. Acceptance criteria are expected to describe both positive and negative scenarios.",
+              "d": "Incorrect. This is rule-oriented: a tabulated form of input-output mapping, the second common example of rule-oriented writing.",
+              "e": "Incorrect. This is also a rule-oriented verification list entry. It concerns a non-functional quality characteristic, but its format is a rule, not a scenario."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0086",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.5",
+      "syllabusRef": "§4.5.3",
+      "objectives": [
+        "FL-4.5.3"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "collaboration-based",
+        "atdd",
+        "scope-of-user-story"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "ATDD uygulayan bir ekip şu kullanıcı hikayesi üzerinde çalışmaktadır:\n\n\"Kayıtlı bir müşteri olarak parolamı sıfırlamak istiyorum, böylece hesabıma yeniden erişebilirim.\"\n\nKabul kriterleri şunlardır:\nKK1 Kayıtlı e-posta adresine bir sıfırlama bağlantısı gönderilir.\nKK2 Sıfırlama bağlantısı gönderiminden 30 dakika sonra geçerliliğini yitirir.\nKK3 Kayıtlı olmayan bir e-posta adresi için \"adres bulunamadı\" mesajı gösterilir.\n\nEkip bu kabul kriterlerinden test senaryoları türetmektedir. Türetilen test senaryolarından hangisi REDDEDİLMELİDİR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Müşterinin hesabında kayıtlı e-posta adresini değiştirebildiğinin kontrol edilmesi"
+            },
+            {
+              "id": "b",
+              "text": "Kayıtlı e-posta adresine sıfırlama bağlantısının gönderildiğinin kontrol edilmesi"
+            },
+            {
+              "id": "c",
+              "text": "Sıfırlama bağlantısının gönderiminden 31 dakika sonra çalışmadığının kontrol edilmesi"
+            },
+            {
+              "id": "d",
+              "text": "Kayıtlı olmayan bir adres için \"adres bulunamadı\" mesajının gösterildiğinin kontrol edilmesi"
+            }
+          ],
+          "rationale": {
+            "summary": "ATDD'de test senaryoları kabul kriterlerine dayanır. Test senaryoları kullanıcı hikayesinin tüm karakteristiklerini ele almalı ve hikayenin ötesine geçmemelidir. Hesaptaki e-posta adresini değiştirmek ne hikayede ne de kabul kriterlerinde geçer, dolayısıyla bu test senaryosu hikayenin kapsamı dışındadır.",
+            "byOption": {
+              "a": "Doğru. Hesaptaki e-posta adresini değiştirmek bu kullanıcı hikayesinin veya kabul kriterlerinin parçası değildir. ATDD'de test senaryoları hikayenin tüm karakteristiklerini kapsamalı ama hikayenin ötesine geçmemelidir.",
+              "b": "Yanlış seçim; bu test senaryosu geçerlidir. KK1'i dener ve doğru davranışı onaylayan pozitif bir test senaryosudur.",
+              "c": "Yanlış seçim; bu test senaryosu geçerlidir. KK2'yi, belirtilen 30 dakikalık sınırın hemen ötesinde dener; ekibin pozitif senaryolardan sonra yazdığı negatif testlere örnektir.",
+              "d": "Yanlış seçim; bu test senaryosu geçerlidir. KK3'ü dener; kabul kriterlerinin açıkça tanımladığı negatif bir senaryodur."
+            }
+          },
+          "hints": [
+            "Her aday test senaryosunu bir kabul kriteriyle eşleştirmeye çalışın; eşleşmeyen senaryo hikayenin dışındadır."
+          ]
+        },
+        "en": {
+          "stem": "An ATDD team is working on this user story:\n\n\"As a registered customer, I want to reset my password, so that I can regain access to my account.\"\n\nIts acceptance criteria are:\nAC1 A reset link is sent to the registered e-mail address.\nAC2 The reset link stops being valid 30 minutes after it was sent.\nAC3 An e-mail address that is not registered produces the message \"address not found\".\n\nThe team derives test cases from these acceptance criteria. Which of the derived test cases must be REJECTED?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Check that the customer can change the e-mail address stored on the account"
+            },
+            {
+              "id": "b",
+              "text": "Check that a reset link is sent to the registered e-mail address"
+            },
+            {
+              "id": "c",
+              "text": "Check that the reset link no longer works 31 minutes after it was sent"
+            },
+            {
+              "id": "d",
+              "text": "Check that \"address not found\" is shown for an address that is not registered"
+            }
+          ],
+          "rationale": {
+            "summary": "In ATDD the test cases are based on the acceptance criteria. They must cover all the characteristics of the user story and should not go beyond the story. Changing the e-mail address stored on the account appears neither in the story nor in its acceptance criteria, so that test case is outside the scope of the story.",
+            "byOption": {
+              "a": "Correct. Changing the e-mail address stored on the account is part of neither this user story nor its acceptance criteria. In ATDD the test cases must cover all the characteristics of the user story but should not go beyond the story.",
+              "b": "Not the answer; this test case is valid. It exercises AC1 and is a positive test case confirming the correct behavior.",
+              "c": "Not the answer; this test case is valid. It exercises AC2 just beyond the stated 30-minute limit and is an example of the negative testing the team performs after the positive test cases.",
+              "d": "Not the answer; this test case is valid. It exercises AC3, a negative scenario explicitly described by the acceptance criteria."
+            }
+          },
+          "hints": [
+            "Try to map each candidate test case onto an acceptance criterion; the one that does not map lies outside the story."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0087",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.5",
+      "syllabusRef": "§4.5.3",
+      "objectives": [
+        "FL-4.5.3"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "collaboration-based",
+        "atdd",
+        "test-case-order"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip şu kullanıcı hikayesine ATDD uygulamaktadır:\n\n\"Bir kütüphane üyesi olarak bir kitabı ödünç almak istiyorum, böylece evde okuyabilirim.\"\n\nKabul kriterleri şunlardır:\nKK1 Üzerinde 5'ten az kitap bulunan bir üye kitap ödünç alabilir.\nKK2 Üzerinde zaten 5 kitap bulunan üyeye \"limit doldu\" mesajı gösterilir.\nKK3 Ödünç alma işlemi 2 saniyeden kısa sürede tamamlanır.\n\nEkip tipik olarak hangi test senaryosunu İLK oluşturur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Ödünç alma işleminin 2 saniyeden kısa sürdüğünün kontrol edilmesi"
+            },
+            {
+              "id": "b",
+              "text": "Üyelik kaydının silinmesinin ödünç alma geçmişini etkilemediğinin kontrol edilmesi"
+            },
+            {
+              "id": "c",
+              "text": "Üzerinde 3 kitap bulunan bir üyenin kitap ödünç alabildiğinin kontrol edilmesi"
+            },
+            {
+              "id": "d",
+              "text": "Üzerinde 5 kitap bulunan üyeye \"limit doldu\" mesajının gösterildiğinin kontrol edilmesi"
+            }
+          ],
+          "rationale": {
+            "summary": "ATDD'de tipik olarak ilk test senaryoları, istisnalar veya hata koşulları olmaksızın doğru davranışı onaylayan pozitif testlerdir. Pozitif test senaryolarından sonra negatif testler yapılır; en son olarak fonksiyonel olmayan kalite karakteristikleri (ör. performans verimliliği, kullanılabilirlik) ele alınır.",
+            "byOption": {
+              "a": "Yanlış. Bu test senaryosu fonksiyonel olmayan bir kalite karakteristiğini, performans verimliliğini ele alır. Fonksiyonel olmayan karakteristikler en son, pozitif ve negatif senaryolardan sonra kapsanır.",
+              "b": "Yanlış. Üyelik kaydının silinmesi ne kullanıcı hikayesinde ne de kabul kriterlerinde geçer; bu test senaryosu hikayenin ötesine geçer ve hiç yazılmamalıdır.",
+              "c": "Doğru. Bu, KK1'in geçerli durumunu deneyen pozitif bir test senaryosudur; her şeyin beklendiği gibi gittiği aktivite dizisini oluşturur ve ekibin ilk yazdığı senaryo tipidir.",
+              "d": "Yanlış. Bu, KK2'den türetilen negatif bir test senaryosudur. Ekip negatif testleri pozitif test senaryoları tamamlandıktan sonra yapar."
+            }
+          },
+          "hints": [
+            "Sıra: önce pozitif testler, sonra negatif testler, en son fonksiyonel olmayan karakteristikler."
+          ]
+        },
+        "en": {
+          "stem": "A team applies ATDD to this user story:\n\n\"As a library member, I want to borrow a book, so that I can read it at home.\"\n\nIts acceptance criteria are:\nAC1 A member holding fewer than 5 books can borrow a book.\nAC2 A member already holding 5 books is shown the message \"limit reached\".\nAC3 Borrowing is completed in under 2 seconds.\n\nWhich test case does the team typically create FIRST?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Check that borrowing is completed in under 2 seconds"
+            },
+            {
+              "id": "b",
+              "text": "Check that deleting a membership leaves the borrowing history unchanged"
+            },
+            {
+              "id": "c",
+              "text": "Check that a member holding 3 books can borrow a book"
+            },
+            {
+              "id": "d",
+              "text": "Check that a member holding 5 books is shown \"limit reached\""
+            }
+          ],
+          "rationale": {
+            "summary": "In ATDD the first test cases are typically positive ones, confirming the correct behavior without exceptions or error conditions. After the positive test cases the team performs negative testing, and finally it covers non-functional quality characteristics (e.g. performance efficiency, usability).",
+            "byOption": {
+              "a": "Incorrect. This test case addresses a non-functional quality characteristic, performance efficiency. Non-functional characteristics are covered last, after the positive and negative test cases.",
+              "b": "Incorrect. Deleting a membership appears neither in the user story nor in its acceptance criteria; this test case goes beyond the story and should not be written at all.",
+              "c": "Correct. This is a positive test case exercising the valid case of AC1; it is the sequence of activities executed when everything goes as expected, which is the type of test case the team writes first.",
+              "d": "Incorrect. This is a negative test case derived from AC2. The team performs negative testing after the positive test cases are done."
+            }
+          },
+          "hints": [
+            "The order is: positive test cases first, then negative testing, and non-functional characteristics last."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    }
+  ]
+}

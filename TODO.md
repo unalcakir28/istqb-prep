@@ -23,14 +23,14 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 - [x] **F0-06** `P0` `objectives.json` — **64 LO**, TR+EN metinler resmî PDF'lerden birebir, K1=14/K2=42/K3=8
 - [x] **F0-07** `P0` `syllabus.json` · `meta.json` · `manifest.json` — resmî kaynağa karşı denetlendi, sıfır tutarsızlık (başlıklar, süreler 1135 dk, sınav sabitleri 40/26/60/75)
 - [x] **F0-11** `P1` `certifications.json` — 28 satırlık tüm ISTQB sertifika tablosu ([`03 §5`](docs/03-istqb-referans.md) seed verisi)
-- [ ] **F0-08** `P0` JSON Schema dosyalarını tamamla (`schemas/`) + `scripts/validate-data.ts` (13 kontrol — [`04 §6`](docs/04-veri-modeli.md))
-- [ ] **F0-12** `P1` `scripts/build-index.ts` — parçalardan `questions/index.json` üret
-- [ ] **F0-13** `P1` `scripts/stats.ts` — LO başına kapsama raporu → `docs/kapsama.md` (iskelet hazır)
+- [x] **F0-08** `P0` `schemas/` tamamlandı + `scripts/validate-data.ts` — **14 kontrol** (13 + şık konumu dengesi). 1-9 hata, 10-14 uyarı
+- [x] **F0-12** `P1` `scripts/build-index.ts` — parçalardan `index.json` + manifest sayaçları
+- [x] **F0-13** `P1` `scripts/stats.ts` — LO başına kapsama → `docs/kapsama.md`
 - [ ] **F0-09** `P1` `scripts/fetch-glossary.ts` — Glossary API'den `used_in: Foundation v4.0` filtresiyle 215 terimi çek; TR karşılıklarını TTB müfredatından eşle, `trSource` işaretle
 - [x] **F0-14** `P1` `data/ctfl-v4.0.1/terms.json` — **97 terim**, resmî EN/TR anahtar kelime listelerinden konum bazlı hizalandı. ⚠️ `docs/07 §5`'in ilk sözlüğü büyük ölçüde yanlıştı, tamamen değiştirildi
 
 ### İçerik
-- [ ] **F0-10** `P0` İlk 20 soruyu yaz (Bölüm 1: 10, Bölüm 4: 10) — format ve süreç testi
+- [x] **F0-10** `P0` İlk sorular yazıldı — süreç kanıtlandı (bkz. F1-C1)
 
 > **Faz 0 bitti:** `npm run validate:data` yeşil · blueprint 40'a toplanıyor · 20 soru şemaya uygun
 
@@ -39,18 +39,18 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 ## Faz 1 — MVP: Deneme sınavı
 
 ### Altyapı
-- [ ] **F1-01** `P0` Vite 6 + React 19 + TS + Tailwind v4 + shadcn iskeleti
-- [ ] **F1-01b** `P0` GitHub Pages deploy hattı: `base` ayarı, `dist/404.html` kopyası, `.nojekyll`, `deploy.yml`
-- [ ] **F1-01c** `P0` CI: ESLint + Prettier + `tsc --noEmit` + Vitest + `validate:data` (veri bozuksa deploy yok)
-- [ ] **F1-02** `P0` `contentClient` — manifest/meta/index/parça yükleme, bellek + Cache API önbelleği, `dataVersion` ile geçersizleştirme
-- [ ] **F1-03** `P0` Dexie şeması (`attempts`, `responses`, `srsCards`, `bookmarks`, `settings`) + migrasyon altyapısı
-- [ ] **F1-04** `P0` i18next; **arayüz dili ≠ içerik dili** ayrımı; `lang` özniteliği yönetimi
+- [x] **F1-01** `P0` Vite 6 + React 19 + TS 5 + Tailwind v4; tüm sürümler tam sabitli, yarn
+- [x] **F1-01b** `P0` GitHub Pages deploy hattı kuruldu
+- [x] **F1-01c** `P0` CI: ESLint + Prettier + `tsc --noEmit` + Vitest + `validate:data`
+- [x] **F1-02** `P0` `contentClient` — indeks önce, sonra yalnızca gereken parçalar; bellek + Cache API, `dataVersion` ile geçersizleştirme
+- [x] **F1-03** `P0` Dexie şeması + kurtarma/atma yardımcıları
+- [x] **F1-04** `P0` i18next; arayüz dili ≠ içerik dili; TR/EN sözlükler 104 anahtarda eşit
 
 ### Sınav motoru
-- [ ] **F1-05** `P0` `generateExam` — blueprint tabanlı üretim, LO-grubu kuralı, ağırlıklı seçim, soru + şık karıştırma
-- [ ] **F1-05b** `P0` Birim test: üretilen dağılım **tam olarak** 8/6/4/11/9/2 ve K 8/24/8
-- [ ] **F1-05c** `P1` Havuz yetersizse sessizce eksik üretme — açık uyarı döndür
-- [ ] **F1-06** `P0` `scoreExam` — multi-select **tam eşleşme**, kısmi puan yok, baraj `meta`'dan (sabit kodlama yok), bölüm + LO kırılımı
+- [x] **F1-05** `P0` `generateExam` — blueprint tabanlı, LO-grubu kuralı, tohumlanmış PRNG
+- [x] **F1-05b** `P0` Dağılım testi 50 ayrı tohumda: tam olarak 8/6/4/11/9/2 ve K 8/24/8
+- [x] **F1-05c** `P1` `shortfalls` + `previewCoverage` — eksik deneme sessizce üretilmiyor
+- [x] **F1-06** `P0` `scoreExam` — tam eşleşme, kısmi puan yok, baraj `meta`'dan, bölüm/LO/K kırılımı
 - [ ] **F1-08** `P0` `ExamTimer` — `Date.now()` tabanlı (sekme arka planında kaymaz), 5 sn'de bir kalıcılaştırma, son 10 dk amber / son 1 dk kırmızı, gizle/göster
 
 ### Arayüz
@@ -71,7 +71,7 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 - [ ] **F1-19** `P2` Lighthouse CI — 4 kategoride ≥95
 
 ### İçerik ve sayfalar
-- [ ] **F1-C1** `P0` **120 soru** — her LO için ≥1, Bölüm 4/5 ağırlıklı, TR+EN, tam gerekçeli
+- [~] **F1-C1** `P0` **120 soru** — 87 yazıldı (bölüm 1,2,3,5,6), bölüm 4 (33 soru) sürüyor. Hepsi `status: review`; bağımsız doğrulamadan sonra `published` olacak
 - [ ] **F1-C2** `P1` Kapsama rozeti README'de
 - [ ] **F1-C3** `P0` `/kaynaklar` (telif bildirimi tam metni + resmî bağlantılar) · gizlilik politikası · sorumluluk reddi footer'ı
 

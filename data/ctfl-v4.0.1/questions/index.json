@@ -1,10 +1,11 @@
 {
   "dataVersion": "2026.09.19",
-  "count": 87,
+  "count": 120,
   "chunks": [
     "ch01-a",
     "ch02-a",
     "ch03-a",
+    "ch04-a",
     "ch05-a",
     "ch06-a"
   ],
@@ -1302,6 +1303,827 @@
       "hasMedia": false,
       "tags": [
         "review-success-factors"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0055",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.1",
+      "objectives": [
+        "FL-4.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "hasMedia": false,
+      "tags": [
+        "test-techniques",
+        "black-box",
+        "classification"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0056",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.1",
+      "objectives": [
+        "FL-4.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "test-techniques",
+        "experience-based",
+        "multi"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0057",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "FL-4.2.1"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "equivalence-partitioning",
+        "coverage",
+        "minimum-test-cases"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0058",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "FL-4.2.1"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "equivalence-partitioning",
+        "test-data-selection"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0059",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "FL-4.2.1"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "equivalence-partitioning",
+        "each-choice",
+        "minimum-test-cases"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0060",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "FL-4.2.1"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "equivalence-partitioning",
+        "coverage-percentage"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0061",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "FL-4.2.2"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "boundary-value-analysis",
+        "2-value-bva",
+        "coverage-items"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0062",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "FL-4.2.2"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "boundary-value-analysis",
+        "3-value-bva",
+        "test-data-selection"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0063",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "FL-4.2.2"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "boundary-value-analysis",
+        "2-value-vs-3-value",
+        "defect-detection"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0064",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "FL-4.2.2"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "boundary-value-analysis",
+        "3-value-bva",
+        "coverage-percentage"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0065",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "FL-4.2.3"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "decision-table",
+        "rule-evaluation"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0066",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "FL-4.2.3"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "decision-table",
+        "rule-count",
+        "infeasible-combinations"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0067",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "FL-4.2.3"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "decision-table",
+        "coverage-percentage"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0068",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "FL-4.2.4"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "state-transition",
+        "state-table",
+        "invalid-transition"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0069",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "FL-4.2.4"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "state-transition",
+        "0-switch",
+        "coverage-items"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0070",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "FL-4.2.4"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "state-transition",
+        "0-switch",
+        "coverage-percentage"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0071",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "FL-4.2.4"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "state-transition",
+        "all-transitions-coverage"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0072",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.3",
+      "objectives": [
+        "FL-4.3.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "white-box",
+        "statement-testing",
+        "statement-coverage"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0073",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.3",
+      "objectives": [
+        "FL-4.3.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "white-box",
+        "statement-coverage",
+        "limitations"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0074",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.3",
+      "objectives": [
+        "FL-4.3.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "white-box",
+        "branch-testing",
+        "definition"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0075",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.3",
+      "objectives": [
+        "FL-4.3.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "white-box",
+        "branch-coverage",
+        "subsumption"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0076",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.3",
+      "objectives": [
+        "FL-4.3.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "white-box",
+        "value",
+        "strengths"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0077",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.3",
+      "objectives": [
+        "FL-4.3.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "white-box",
+        "value",
+        "coverage-measurement"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0078",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.4",
+      "objectives": [
+        "FL-4.4.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "hasMedia": false,
+      "tags": [
+        "experience-based",
+        "error-guessing",
+        "except"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0079",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.4",
+      "objectives": [
+        "FL-4.4.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "experience-based",
+        "error-guessing",
+        "fault-attacks"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0080",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.4",
+      "objectives": [
+        "FL-4.4.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "experience-based",
+        "exploratory-testing",
+        "session-based"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0081",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.4",
+      "objectives": [
+        "FL-4.4.2"
+      ],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "experience-based",
+        "exploratory-testing",
+        "multi"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0082",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.4",
+      "objectives": [
+        "FL-4.4.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "experience-based",
+        "checklist-based",
+        "item-quality"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0083",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.4",
+      "objectives": [
+        "FL-4.4.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "experience-based",
+        "checklist-based",
+        "maintenance"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0084",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.5",
+      "objectives": [
+        "FL-4.5.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "collaboration-based",
+        "user-story",
+        "three-perspectives"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0085",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.5",
+      "objectives": [
+        "FL-4.5.2"
+      ],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "collaboration-based",
+        "acceptance-criteria",
+        "scenario-oriented",
+        "multi"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0086",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.5",
+      "objectives": [
+        "FL-4.5.3"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "collaboration-based",
+        "atdd",
+        "scope-of-user-story"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "4.0.1",
+      "status": "review"
+    },
+    {
+      "id": "ctfl4-0087",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.5",
+      "objectives": [
+        "FL-4.5.3"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "collaboration-based",
+        "atdd",
+        "test-case-order"
       ],
       "languages": [
         "en",

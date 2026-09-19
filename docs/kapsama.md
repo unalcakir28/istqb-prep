@@ -6,13 +6,13 @@ Uretildi: 2026-09-19
 
 ## CTFL v4.0.1
 
-Havuzda **28** yayinlanmis soru · **17/64** ogrenme hedefi kapsaniyor.
+Havuzda **1** yayinlanmis soru · **1/64** ogrenme hedefi kapsaniyor.
 
 | Hedef | Soru | LO >= esik | Durum |
 |---|--:|--:|---|
-| Faz 1 (MVP) — 120 soru, her LO >= 1 | 28/120 | 17/64 | devam |
-| Faz 2 — 200 soru, her LO >= 2 | 28/200 | 9/64 | devam |
-| Faz 3 — 300 soru, her LO >= 3 | 28/300 | 2/64 | devam |
+| Faz 1 (MVP) — 120 soru, her LO >= 1 | 1/120 | 1/64 | devam |
+| Faz 2 — 200 soru, her LO >= 2 | 1/200 | 0/64 | devam |
+| Faz 3 — 300 soru, her LO >= 3 | 1/300 | 0/64 | devam |
 
 ### Bolum 1 — Yazılım Testinin Temelleri
 
@@ -90,26 +90,26 @@ Havuzda **28** yayinlanmis soru · **17/64** ogrenme hedefi kapsaniyor.
 
 ### Bolum 5 — Test Aktivitelerini Yönetme
 
-27 soru · sinavda 9 soru · 16 ogrenme hedefi
+0 soru · sinavda 9 soru · 16 ogrenme hedefi
 
 | LO | K | Soru | | Hedef metni |
 |---|:--:|--:|---|---|
-| `FL-5.1.1` | K2 | 2 | `████████····` | Bir test planının amacına ve içeriğine ilişkin örnekler vermek |
-| `FL-5.1.2` | K1 | 1 | `████········` | Bir test uzmanının döngü ve sürüm planlamasına nasıl değer kattığını anlamak |
-| `FL-5.1.3` | K2 | 2 | `████████····` | Giriş kriterleri ve çıkış kriterlerini karşılaştırıp kıyaslamak |
-| `FL-5.1.4` | K3 | 3 | `████████████` | Gerekli test eforunu hesaplamak için tahminleme teknikleri kullanmak |
-| `FL-5.1.5` | K3 | 3 | `████████████` | Test senaryosularını önceliklendirmek |
-| `FL-5.1.6` | K1 | 1 | `████········` | Test piramidinin konseptlerini hatırlamak |
-| `FL-5.1.7` | K2 | 2 | `████████····` | Test çeyreklerini ve bunların test seviyeleri ve test çeşitleri ile olan ilişkilerini özetlemek |
-| `FL-5.2.1` | K1 | 1 | `████········` | Risk olasılığı ve risk etkisini kullanarak risk seviyesini belirlemek |
-| `FL-5.2.2` | K2 | 2 | `████████····` | Proje risklerinin ve ürün risklerinin farklarını belirtmek |
-| `FL-5.2.3` | K2 | 1 | `████········` | Ürün riski analizinin testlerin bütünlüğünü ve test kapsamını nasıl etkileyebileceğini açıklamak |
-| `FL-5.2.4` | K2 | 2 | `████████····` | Analiz edilen ürün risklerine karşı alınacak önlemleri açıklamak |
-| `FL-5.3.1` | K1 | 1 | `████········` | Testlerde kullanılan metrikleri anımsamak |
-| `FL-5.3.2` | K2 | 2 | `████████····` | Test raporlarının amaçlarını, içeriklerini ve hedef kitlelerini özetlemek |
-| `FL-5.3.3` | K2 | 1 | `████········` | Testin durumunun nasıl iletileceğine örnekler vermek |
-| `FL-5.4.1` | K2 | 1 | `████········` | Yapılandırma yönetiminin testleri nasıl desteklediğini özetlemek |
-| `FL-5.5.1` | K3 | 2 | `████████····` | Bir hata raporu hazırlamak |
+| `FL-5.1.1` | K2 | 0 | `············` | Bir test planının amacına ve içeriğine ilişkin örnekler vermek |
+| `FL-5.1.2` | K1 | 0 | `············` | Bir test uzmanının döngü ve sürüm planlamasına nasıl değer kattığını anlamak |
+| `FL-5.1.3` | K2 | 0 | `············` | Giriş kriterleri ve çıkış kriterlerini karşılaştırıp kıyaslamak |
+| `FL-5.1.4` | K3 | 0 | `············` | Gerekli test eforunu hesaplamak için tahminleme teknikleri kullanmak |
+| `FL-5.1.5` | K3 | 0 | `············` | Test senaryosularını önceliklendirmek |
+| `FL-5.1.6` | K1 | 0 | `············` | Test piramidinin konseptlerini hatırlamak |
+| `FL-5.1.7` | K2 | 0 | `············` | Test çeyreklerini ve bunların test seviyeleri ve test çeşitleri ile olan ilişkilerini özetlemek |
+| `FL-5.2.1` | K1 | 0 | `············` | Risk olasılığı ve risk etkisini kullanarak risk seviyesini belirlemek |
+| `FL-5.2.2` | K2 | 0 | `············` | Proje risklerinin ve ürün risklerinin farklarını belirtmek |
+| `FL-5.2.3` | K2 | 0 | `············` | Ürün riski analizinin testlerin bütünlüğünü ve test kapsamını nasıl etkileyebileceğini açıklamak |
+| `FL-5.2.4` | K2 | 0 | `············` | Analiz edilen ürün risklerine karşı alınacak önlemleri açıklamak |
+| `FL-5.3.1` | K1 | 0 | `············` | Testlerde kullanılan metrikleri anımsamak |
+| `FL-5.3.2` | K2 | 0 | `············` | Test raporlarının amaçlarını, içeriklerini ve hedef kitlelerini özetlemek |
+| `FL-5.3.3` | K2 | 0 | `············` | Testin durumunun nasıl iletileceğine örnekler vermek |
+| `FL-5.4.1` | K2 | 0 | `············` | Yapılandırma yönetiminin testleri nasıl desteklediğini özetlemek |
+| `FL-5.5.1` | K3 | 0 | `············` | Bir hata raporu hazırlamak |
 
 ### Bolum 6 — Test Araçları
 
