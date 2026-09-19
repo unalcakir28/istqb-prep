@@ -16,7 +16,8 @@
     "typecheck": "tsc -b --noEmit",
     "sync:data": "tsx scripts/sync-data.ts",
     "validate:data": "tsx scripts/validate-data.ts",
-    "build:index": "tsx scripts/build-index.ts"
+    "build:index": "tsx scripts/build-index.ts",
+    "stats": "tsx scripts/stats.ts"
   },
   "dependencies": {
     "dexie": "4.4.6",

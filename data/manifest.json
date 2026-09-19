@@ -8,9 +8,16 @@
       "syllabusVersion": "4.0.1",
       "status": "active",
       "path": "ctfl-v4.0.1",
-      "languages": ["tr", "en"],
-      "questionCount": 1,
-      "coverage": { "objectivesTotal": 64, "objectivesCovered": 1, "minPerObjective": 0 }
+      "languages": [
+        "tr",
+        "en"
+      ],
+      "questionCount": 87,
+      "coverage": {
+        "objectivesTotal": 64,
+        "objectivesCovered": 1,
+        "minPerObjective": 0
+      }
     }
   ]
 }

@@ -1,0 +1,2553 @@
+{
+  "chunk": "ch05-a",
+  "chapter": 5,
+  "dataVersion": "2026.09.19",
+  "questions": [
+    {
+      "id": "ctfl4-0088",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.1",
+      "objectives": [
+        "FL-5.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-plan",
+        "test-planning"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Yeni bir test projesi için bir test planı (test plan) hazırlanmaktadır. Aşağıdakilerden hangisi bir test planının amacını EN İYİ şekilde tanımlar?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test hedeflerine ulaşmaya yarayan araçları ve zaman çizelgesini dokümante eder; ekip üyeleri ve diğer paydaşlarla iletişim aracı olarak hizmet eder"
+            },
+            {
+              "id": "b",
+              "text": "Her bir testin adım adım aksiyonlarını ve beklenen sonuçlarını listeleyerek testlerin koşturulmasını sağlar"
+            },
+            {
+              "id": "c",
+              "text": "Tüm projelerin uyması gereken, kuruluş genelinde geçerli ve üründen bağımsız test ilkelerini tanımlar"
+            },
+            {
+              "id": "d",
+              "text": "Tamamlanmış bir test aktivitesini özetler ve ürün kalitesini çıkış kriterlerine göre değerlendirir"
+            }
+          ],
+          "rationale": {
+            "summary": "Test planı; bir test projesinin test hedeflerini, kaynaklarını ve süreçlerini belirtir. Test hedeflerine ulaşmaya yarayan araçları ve zaman çizelgesini dokümante eder, gerçekleştirilen test aktivitelerinin belirlenmiş kriterleri karşılamasına yardımcı olur, ekip üyeleri ve diğer paydaşlarla iletişim aracı olarak hizmet eder ve testin mevcut test politikasına ve test stratejisine uyacağını gösterir.",
+            "byOption": {
+              "a": "Doğru. Müfredat, test planının işlevlerini tam olarak böyle sıralar: araçların ve zaman çizelgesinin dokümante edilmesi ve paydaşlarla iletişim aracı olması.",
+              "b": "Yanlış. Adım adım aksiyonları ve beklenen sonuçları içeren şey test senaryosu (test case) ve test prosedürüdür; test planı tek tek testlerin içeriğini değil, projenin genel yaklaşımını ve programını belirler.",
+              "c": "Yanlış. Bu, test politikasının tanımıdır. Test planı, testin mevcut test politikasına ve test stratejisine uyacağını gösterir (veya neden sapıldığını açıklar); politikanın kendisi değildir.",
+              "d": "Yanlış. Tamamlanmış bir aktiviteyi özetleyen ve ürün kalitesini orijinal test planına ve çıkış kriterlerine göre değerlendiren şey test tamamlama raporudur (bkz. 5.3.2). Test planı testin başında hazırlanır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A test plan is being prepared for a new test project. Which of the following BEST describes the purpose of a test plan?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It documents the means and schedule for achieving the test objectives and serves as a means of communication with team members and other stakeholders"
+            },
+            {
+              "id": "b",
+              "text": "It lists the step-by-step actions and expected results of each individual test so that the tests can be executed"
+            },
+            {
+              "id": "c",
+              "text": "It defines the organization-wide, product-independent testing principles that all projects must follow"
+            },
+            {
+              "id": "d",
+              "text": "It summarizes a completed test activity and evaluates product quality against the exit criteria"
+            }
+          ],
+          "rationale": {
+            "summary": "A test plan describes the test objectives, resources and processes for a test project. It documents the means and schedule for achieving the test objectives, helps to ensure that the performed test activities will meet the established criteria, serves as a means of communication with team members and other stakeholders, and demonstrates that testing will adhere to the existing test policy and test strategy.",
+            "byOption": {
+              "a": "Correct. These are exactly the functions the syllabus lists for a test plan: documenting the means and schedule, and acting as a means of communication with stakeholders.",
+              "b": "Incorrect. Step-by-step actions and expected results belong to a test case and a test procedure. A test plan defines the overall approach and schedule of the project, not the content of individual tests.",
+              "c": "Incorrect. This describes a test policy. A test plan demonstrates that testing will adhere to the existing test policy and test strategy (or explains the deviation); it is not the policy itself.",
+              "d": "Incorrect. Summarizing a completed activity and evaluating product quality against the original test plan and exit criteria is the job of a test completion report (see 5.3.2). A test plan is prepared up front."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0089",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.1",
+      "objectives": [
+        "FL-5.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-plan",
+        "test-approach"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Tipik bir test planı içeriğinde aşağıdaki öğelerden hangisi test yaklaşımının (test approach) bir parçasıdır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Giriş kriterleri ve çıkış kriterleri"
+            },
+            {
+              "id": "b",
+              "text": "İşe alım ve eğitim ihtiyaçları"
+            },
+            {
+              "id": "c",
+              "text": "İletişimin şekli ve sıklığı"
+            },
+            {
+              "id": "d",
+              "text": "Ürün riskleri ve proje riskleri"
+            }
+          ],
+          "rationale": {
+            "summary": "Test planında test yaklaşımı başlığı; test seviyeleri, test çeşitleri, test teknikleri, test çıktıları, giriş kriterleri ve çıkış kriterleri, testin bağımsızlığı, toplanacak metrikler, test verisi ve test ortamı gereksinimleri ile test politikası ve test stratejisinden sapmaları kapsar.",
+            "byOption": {
+              "a": "Doğru. Giriş kriterleri ve çıkış kriterleri, müfredatta test yaklaşımı başlığı altında açıkça sayılan öğelerdendir.",
+              "b": "Yanlış. İşe alım ve eğitim ihtiyaçları test planının paydaşlar başlığı altında yer alır; roller, sorumluluklar ve teste uygunlukla birlikte listelenir.",
+              "c": "Yanlış. İletişimin şekli ve sıklığı, dokümantasyon şablonlarıyla birlikte test planının iletişim başlığı altındadır.",
+              "d": "Yanlış. Ürün riskleri ve proje riskleri test planının risk kaydı başlığı altında tutulur; test yaklaşımının değil."
+            }
+          }
+        },
+        "en": {
+          "stem": "In the typical content of a test plan, which of the following items is part of the test approach?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Entry criteria and exit criteria"
+            },
+            {
+              "id": "b",
+              "text": "Hiring and training needs"
+            },
+            {
+              "id": "c",
+              "text": "Forms and frequency of communication"
+            },
+            {
+              "id": "d",
+              "text": "Product risks and project risks"
+            }
+          ],
+          "rationale": {
+            "summary": "In a test plan, the test approach covers test levels, test types, test techniques, test deliverables, entry criteria and exit criteria, independence of testing, metrics to be collected, test data and test environment requirements, and deviations from the test policy and test strategy.",
+            "byOption": {
+              "a": "Correct. Entry criteria and exit criteria are explicitly listed among the items of the test approach.",
+              "b": "Incorrect. Hiring and training needs belong to the stakeholders item of a test plan, together with roles, responsibilities and relevance to testing.",
+              "c": "Incorrect. Forms and frequency of communication belong to the communication item, together with documentation templates.",
+              "d": "Incorrect. Product risks and project risks are held in the risk register item of the test plan, not in the test approach."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0090",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.2",
+      "objectives": [
+        "FL-5.1.2"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "iteration-planning",
+        "release-planning"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdaki aktivitelerden hangisi, sürüm planlamasının değil, DÖNGÜ planlamasının bir parçası olarak test uzmanı tarafından gerçekleştirilir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kullanıcı hikayelerini görevlere, özellikle de test görevlerine ayırmak"
+            },
+            {
+              "id": "b",
+              "text": "Test yaklaşımını belirlemek ve sürüm için testi planlamak"
+            },
+            {
+              "id": "c",
+              "text": "Test edilebilir kullanıcı hikayelerinin ve kabul kriterlerinin yazım sürecine katılmak"
+            },
+            {
+              "id": "d",
+              "text": "Ürün iş listesini tanımlamak ve yeniden tanımlamak"
+            }
+          ],
+          "rationale": {
+            "summary": "Döngü planlamasında yer alan test uzmanları; kullanıcı hikayelerine ilişkin detaylı risk analizine katılır, kullanıcı hikayelerinin test edilebilirliğini belirler, kullanıcı hikayelerini görevlere (özellikle test görevlerine) ayırır, tüm test görevleri için test eforunu tahmin eder ve test nesnesinin fonksiyonel ve fonksiyonel olmayan unsurlarını belirleyip iyileştirir.",
+            "byOption": {
+              "a": "Doğru. Kullanıcı hikayelerinin görevlere, özellikle test görevlerine ayrılması müfredatta döngü planlamasındaki test uzmanı aktiviteleri arasında sayılır.",
+              "b": "Yanlış. Test yaklaşımının belirlenmesi ve sürüm için testin planlanması, sürüm planlamasındaki test uzmanı aktivitelerindendir; sürüm planlaması tüm döngülerde test yaklaşımının ve test planının esasını oluşturur.",
+              "c": "Yanlış. Test edilebilir kullanıcı hikayelerinin ve kabul kriterlerinin yazımına katılmak sürüm planlamasında gerçekleşir.",
+              "d": "Yanlış. Ürün iş listesinin tanımlanması ve yeniden tanımlanması sürüm planlamasının işidir; döngü planlaması döngüye ait iş listesiyle ilgilenir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following activities is performed by a tester as part of ITERATION planning rather than release planning?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Breaking user stories down into tasks, particularly testing tasks"
+            },
+            {
+              "id": "b",
+              "text": "Determining the test approach and planning the testing for the release"
+            },
+            {
+              "id": "c",
+              "text": "Participating in writing testable user stories and acceptance criteria"
+            },
+            {
+              "id": "d",
+              "text": "Defining and re-defining the product backlog"
+            }
+          ],
+          "rationale": {
+            "summary": "Testers involved in iteration planning participate in the detailed risk analysis of user stories, determine the testability of user stories, break down user stories into tasks (particularly testing tasks), estimate test effort for all testing tasks, and identify and refine functional and non-functional aspects of the test object.",
+            "byOption": {
+              "a": "Correct. Breaking user stories down into tasks, particularly testing tasks, is listed among the tester activities in iteration planning.",
+              "b": "Incorrect. Determining the test approach and planning the testing for the release are release planning activities; release planning serves as the basis for the test approach and test plan across all iterations.",
+              "c": "Incorrect. Participating in writing testable user stories and acceptance criteria happens during release planning.",
+              "d": "Incorrect. Defining and re-defining the product backlog belongs to release planning; iteration planning is concerned with the iteration backlog."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0091",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.3",
+      "objectives": [
+        "FL-5.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "exit-criteria",
+        "entry-criteria"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a",
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "HANGİ İKİSİ tipik çıkış kriterlerine (exit criteria) örnektir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Planlanan tüm testler koşturulmuştur"
+            },
+            {
+              "id": "b",
+              "text": "Test ortamı ve test verisi elverişlidir"
+            },
+            {
+              "id": "c",
+              "text": "Planlanan kod kapsam seviyesine ulaşılmıştır"
+            },
+            {
+              "id": "d",
+              "text": "Tüm duman testleri geçmiştir"
+            }
+          ],
+          "rationale": {
+            "summary": "Tipik çıkış kriterleri iki gruptur: bütünlük ölçüleri (ör. ulaşılan kapsam seviyesi, çözülmemiş hata sayısı, hata yoğunluğu, başarısız test senaryosu sayısı) ve ikili evet/hayır kriterleri (ör. planlanan testler koşturuldu, statik test yapıldı). Giriş kriterleri ise aktiviteye başlamanın önkoşullarıdır.",
+            "byOption": {
+              "a": "Doğru. Planlanan testlerin koşturulmuş olması, müfredatta ikili evet/hayır çıkış kriterlerine örnek olarak verilir.",
+              "b": "Yanlış. Test ortamı ve test verisinin elverişliliği bir giriş kriteridir; kaynak elverişliliği başlığı altında aktiviteye başlamanın önkoşulu olarak sayılır.",
+              "c": "Doğru. Ulaşılan kapsam seviyesi, çıkış kriterlerinin bütünlük ölçüleri grubundadır.",
+              "d": "Yanlış. Tüm duman testlerinin geçmiş olması, test nesnesinin başlangıç kalite seviyesini gösteren tipik bir giriş kriteridir."
+            }
+          }
+        },
+        "en": {
+          "stem": "WHICH TWO are examples of typical exit criteria?",
+          "options": [
+            {
+              "id": "a",
+              "text": "All planned tests have been executed"
+            },
+            {
+              "id": "b",
+              "text": "The test environment and the test data are available"
+            },
+            {
+              "id": "c",
+              "text": "The planned level of code coverage has been achieved"
+            },
+            {
+              "id": "d",
+              "text": "All smoke tests have passed"
+            }
+          ],
+          "rationale": {
+            "summary": "Typical exit criteria fall into two groups: measures of thoroughness (e.g. achieved level of coverage, number of unresolved defects, defect density, number of failed test cases) and binary yes/no criteria (e.g. planned tests have been executed, static testing has been performed). Entry criteria, by contrast, are the preconditions for undertaking an activity.",
+            "byOption": {
+              "a": "Correct. The syllabus gives 'planned tests have been executed' as a binary yes/no exit criterion.",
+              "b": "Incorrect. Availability of the test environment and test data is an entry criterion, listed under availability of resources as a precondition for starting the activity.",
+              "c": "Correct. The achieved level of coverage belongs to the measures of thoroughness group of exit criteria.",
+              "d": "Incorrect. 'All smoke tests have passed' is the syllabus example of an entry criterion covering the initial quality level of the test object."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0092",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.3",
+      "objectives": [
+        "FL-5.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "definition-of-done",
+        "definition-of-ready"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Çevik yazılım geliştirmede Tamamlandı Tanımı (Definition of Done) ve Hazır Tanımı (Definition of Ready) kavramları için aşağıdakilerden hangisi doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Tamamlandı Tanımı çıkış kriterlerinin, Hazır Tanımı ise giriş kriterlerinin karşılığıdır"
+            },
+            {
+              "id": "b",
+              "text": "Tamamlandı Tanımı giriş kriterlerinin, Hazır Tanımı ise çıkış kriterlerinin karşılığıdır"
+            },
+            {
+              "id": "c",
+              "text": "Her ikisi de giriş kriterleridir; biri kullanıcı hikayesi, diğeri test seviyesi için tanımlanır"
+            },
+            {
+              "id": "d",
+              "text": "Her ikisi de çıkış kriterleridir; biri ekip, diğeri paydaşlar tarafından tanımlanır"
+            }
+          ],
+          "rationale": {
+            "summary": "Çevik yazılım geliştirmede çıkış kriterleri genellikle Tamamlandı Tanımı olarak adlandırılır ve ekibin piyasaya sürülebilir bir öğe için hedef metriklerini tanımlar. Bir kullanıcı hikayesinin geliştirme ve/veya test aktivitelerinin başlaması için karşılaması gereken giriş kriterleri ise Hazır Tanımı olarak adlandırılır.",
+            "byOption": {
+              "a": "Doğru. Tamamlandı Tanımı çıkış kriterlerine, Hazır Tanımı ise bir kullanıcı hikayesi üzerinde çalışmaya başlamak için gereken giriş kriterlerine karşılık gelir.",
+              "b": "Yanlış. İki kavramın karşılıkları yer değiştirilmiş. Hazır Tanımı bir aktiviteye başlamanın önkoşuludur, Tamamlandı Tanımı ise aktivitenin tamamlandığını ilan etmek için ulaşılması gerekenlerdir.",
+              "c": "Yanlış. Yalnızca Hazır Tanımı bir giriş kriteridir. Tamamlandı Tanımı, piyasaya sürülebilir bir öğe için ekibin hedef metriklerini tanımlayan çıkış kriteridir.",
+              "d": "Yanlış. Yalnızca Tamamlandı Tanımı bir çıkış kriteridir; ayrıca ayrım kriterleri kimin tanımladığına değil, aktivitenin başlangıcına mı sonuna mı ilişkin olduğuna dayanır."
+            }
+          }
+        },
+        "en": {
+          "stem": "In Agile software development, which statement about the Definition of Done and the Definition of Ready is correct?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The Definition of Done corresponds to exit criteria and the Definition of Ready corresponds to entry criteria"
+            },
+            {
+              "id": "b",
+              "text": "The Definition of Done corresponds to entry criteria and the Definition of Ready corresponds to exit criteria"
+            },
+            {
+              "id": "c",
+              "text": "Both are entry criteria; one is defined for a user story and the other for a test level"
+            },
+            {
+              "id": "d",
+              "text": "Both are exit criteria; one is defined by the team and the other by the stakeholders"
+            }
+          ],
+          "rationale": {
+            "summary": "In Agile software development, exit criteria are often called the Definition of Done, defining the team's objective metrics for a releasable item. Entry criteria that a user story must fulfil to start the development and/or testing activities are called the Definition of Ready.",
+            "byOption": {
+              "a": "Correct. The Definition of Done is the Agile name for exit criteria, and the Definition of Ready is the Agile name for the entry criteria a user story must fulfil before work starts.",
+              "b": "Incorrect. The two are swapped. The Definition of Ready is a precondition for starting an activity, while the Definition of Done states what must be achieved to declare it complete.",
+              "c": "Incorrect. Only the Definition of Ready is an entry criterion. The Definition of Done is an exit criterion defining the team's objective metrics for a releasable item.",
+              "d": "Incorrect. Only the Definition of Done is an exit criterion, and the distinction rests on whether the criteria concern the start or the end of an activity, not on who defines them."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0093",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.4",
+      "objectives": [
+        "FL-5.1.4"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "estimation",
+        "ratios"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir kuruluşun geçmiş verileri, bu türden projelerde geliştirme-test eforu oranının 5:2 olduğunu göstermektedir. Yeni projede geliştirme eforunun 350 kişi-gün olması beklenmektedir. Oranlara dayalı tahminleme kullanıldığında tahmini test eforu kaç kişi-gündür?",
+          "options": [
+            {
+              "id": "a",
+              "text": "100 kişi-gün"
+            },
+            {
+              "id": "b",
+              "text": "140 kişi-gün"
+            },
+            {
+              "id": "c",
+              "text": "250 kişi-gün"
+            },
+            {
+              "id": "d",
+              "text": "875 kişi-gün"
+            }
+          ],
+          "rationale": {
+            "summary": "Oranlara dayalı tahminlemede, kuruluşun geçmiş projelerinden elde edilen standart oran yeni projeye uygulanır. 5:2 oranında geliştirme 5 birime karşılık geldiğine göre bir birim 350 / 5 = 70 kişi-gündür; test eforu 2 birim, yani 2 x 70 = 140 kişi-gündür.",
+            "byOption": {
+              "a": "Yanlış. 350 x 2/7 = 100 hesabı, 350 kişi-günü geliştirme ve testin toplamı sayar. Oysa 350 kişi-gün yalnızca beklenen geliştirme eforudur.",
+              "b": "Doğru. 350 / 5 = 70 kişi-gün bir orantı birimidir; test eforu iki birim olduğundan 2 x 70 = 140 kişi-gün olarak tahmin edilir.",
+              "c": "Yanlış. 350 x 5/7 = 250 hesabı yine 350'yi toplam kabul eder ve sonuçta testin değil geliştirmenin payını verir.",
+              "d": "Yanlış. 350 x 5/2 = 875, oranın ters çevrilmesidir; test eforunun geliştirme eforunun 2,5 katı olduğu anlamına gelir ki 5:2 oranı bunun tersini söyler."
+            }
+          }
+        },
+        "en": {
+          "stem": "An organization's historical data shows a development-to-test effort ratio of 5:2 for projects of this kind. The development effort for the new project is expected to be 350 person-days. Using estimation based on ratios, what is the estimated test effort?",
+          "options": [
+            {
+              "id": "a",
+              "text": "100 person-days"
+            },
+            {
+              "id": "b",
+              "text": "140 person-days"
+            },
+            {
+              "id": "c",
+              "text": "250 person-days"
+            },
+            {
+              "id": "d",
+              "text": "875 person-days"
+            }
+          ],
+          "rationale": {
+            "summary": "In estimation based on ratios, a standard ratio derived from the organization's own previous projects is applied to the new project. In a 5:2 ratio, development accounts for 5 units, so one unit is 350 / 5 = 70 person-days, and the test effort of 2 units is 2 x 70 = 140 person-days.",
+            "byOption": {
+              "a": "Incorrect. The calculation 350 x 2/7 = 100 treats 350 person-days as the combined development and test effort, but 350 is the expected development effort alone.",
+              "b": "Correct. One unit of the ratio is 350 / 5 = 70 person-days, and the test effort is two units: 2 x 70 = 140 person-days.",
+              "c": "Incorrect. The calculation 350 x 5/7 = 250 again treats 350 as the total and then returns the development share rather than the test share.",
+              "d": "Incorrect. 350 x 5/2 = 875 inverts the ratio; it would mean the test effort is 2.5 times the development effort, which is the opposite of what 5:2 states."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0094",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.4",
+      "objectives": [
+        "FL-5.1.4"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "estimation",
+        "extrapolation"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Döngüsel bir YGYD'de çalışan bir ekip, gelecek döngünün test eforunu son üç döngünün ortalama eforu olarak dışdeğerleme ile tahmin etmektedir. Ölçülen test eforu şöyledir: 1. döngü 34 kişi-saat, 2. döngü 40 kişi-saat, 3. döngü 46 kişi-saat, 4. döngü 52 kişi-saat, 5. döngü 58 kişi-saat. 6. döngü için tahmin nedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "40 kişi-saat"
+            },
+            {
+              "id": "b",
+              "text": "46 kişi-saat"
+            },
+            {
+              "id": "c",
+              "text": "52 kişi-saat"
+            },
+            {
+              "id": "d",
+              "text": "58 kişi-saat"
+            }
+          ],
+          "rationale": {
+            "summary": "Dışdeğerlemede mevcut projede yapılan ölçümler kullanılarak kalan iş için gereken efor yaklaşık olarak belirlenir. Burada uygulanan model son üç döngünün ortalamasıdır: (46 + 52 + 58) / 3 = 156 / 3 = 52 kişi-saat.",
+            "byOption": {
+              "a": "Yanlış. 40 kişi-saat, ilk üç döngünün ortalamasıdır: (34 + 40 + 46) / 3. Model son üç döngüyü kullanmayı gerektirir, en eski üçünü değil.",
+              "b": "Yanlış. 46 kişi-saat, beş döngünün tamamının ortalamasıdır: 230 / 5. Ekibin seçtiği model yalnızca son üç döngüyü kapsar.",
+              "c": "Doğru. Son üç döngü 46, 52 ve 58 kişi-saattir; ortalamaları (46 + 52 + 58) / 3 = 52 kişi-saattir.",
+              "d": "Yanlış. 58 kişi-saat yalnızca en son döngünün değeridir. Dışdeğerleme tek bir gözlemi tekrarlamaz, birden fazla gözleme bir model uygular."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team working in an iterative SDLC estimates the test effort of the forthcoming iteration by extrapolation, as the averaged effort of the last three iterations. The measured test effort was: iteration 1: 34 person-hours, iteration 2: 40, iteration 3: 46, iteration 4: 52, iteration 5: 58. What is the estimate for iteration 6?",
+          "options": [
+            {
+              "id": "a",
+              "text": "40 person-hours"
+            },
+            {
+              "id": "b",
+              "text": "46 person-hours"
+            },
+            {
+              "id": "c",
+              "text": "52 person-hours"
+            },
+            {
+              "id": "d",
+              "text": "58 person-hours"
+            }
+          ],
+          "rationale": {
+            "summary": "In extrapolation, measurements made in the current project are used to approximate the effort required for the remaining work. The model applied here is the average of the last three iterations: (46 + 52 + 58) / 3 = 156 / 3 = 52 person-hours.",
+            "byOption": {
+              "a": "Incorrect. 40 person-hours is the average of the three earliest iterations, (34 + 40 + 46) / 3. The model calls for the last three iterations, not the first three.",
+              "b": "Incorrect. 46 person-hours is the average of all five iterations, 230 / 5. The model the team chose covers only the last three.",
+              "c": "Correct. The last three iterations are 46, 52 and 58 person-hours, so the estimate is (46 + 52 + 58) / 3 = 52 person-hours.",
+              "d": "Incorrect. 58 person-hours is simply the most recent iteration. Extrapolation applies a model to several observations rather than repeating a single one."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0095",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.4",
+      "objectives": [
+        "FL-5.1.4"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "estimation",
+        "three-point-estimation"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Uzmanlar bir test görevi için şu tahminleri vermiştir: en iyimser 8 kişi-saat, en olası 14 kişi-saat, en kötümser 26 kişi-saat. Üç noktalı tahminleme kullanıldığında son tahmin ve ölçüm hatası nedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "15 ± 3 kişi-saat"
+            },
+            {
+              "id": "b",
+              "text": "16 ± 3 kişi-saat"
+            },
+            {
+              "id": "c",
+              "text": "15 ± 9 kişi-saat"
+            },
+            {
+              "id": "d",
+              "text": "14 ± 3 kişi-saat"
+            }
+          ],
+          "rationale": {
+            "summary": "Üç noktalı tahminlemede son tahmin E = (a + 4*m + b) / 6 ve ölçüm hatası SD = (b - a) / 6 şeklinde hesaplanır. Burada E = (8 + 4x14 + 26) / 6 = 90 / 6 = 15 ve SD = (26 - 8) / 6 = 3'tür.",
+            "byOption": {
+              "a": "Doğru. E = (8 + 56 + 26) / 6 = 15 kişi-saat, SD = (26 - 8) / 6 = 3 kişi-saat; yani tahmin 12 ile 18 kişi-saat arasındadır.",
+              "b": "Yanlış. 16 kişi-saat, üç değerin ağırlıksız aritmetik ortalamasıdır: (8 + 14 + 26) / 3. Teknik ise en olası tahmini dört kez sayan ağırlıklı bir ortalama kullanır.",
+              "c": "Yanlış. Son tahmin doğru hesaplanmış ancak ölçüm hatası (b - a) / 2 = 9 olarak bulunmuş. Formül (b - a) / 6'dır.",
+              "d": "Yanlış. 14 kişi-saat yalnızca en olası tahmindir; en iyimser ve en kötümser değerler hesaba katılmamıştır. Üç noktalı tahminleme üç değeri de kullanır."
+            }
+          }
+        },
+        "en": {
+          "stem": "Experts have estimated a testing task as follows: most optimistic 8 person-hours, most likely 14 person-hours, most pessimistic 26 person-hours. Using three-point estimation, what is the final estimate and its measurement error?",
+          "options": [
+            {
+              "id": "a",
+              "text": "15 ± 3 person-hours"
+            },
+            {
+              "id": "b",
+              "text": "16 ± 3 person-hours"
+            },
+            {
+              "id": "c",
+              "text": "15 ± 9 person-hours"
+            },
+            {
+              "id": "d",
+              "text": "14 ± 3 person-hours"
+            }
+          ],
+          "rationale": {
+            "summary": "In three-point estimation the final estimate is E = (a + 4*m + b) / 6 and the measurement error is SD = (b - a) / 6. Here E = (8 + 4x14 + 26) / 6 = 90 / 6 = 15 and SD = (26 - 8) / 6 = 3.",
+            "byOption": {
+              "a": "Correct. E = (8 + 56 + 26) / 6 = 15 person-hours and SD = (26 - 8) / 6 = 3 person-hours, i.e. between 12 and 18 person-hours.",
+              "b": "Incorrect. 16 person-hours is the unweighted arithmetic mean of the three values, (8 + 14 + 26) / 3. The technique uses a weighted mean in which the most likely estimate counts four times.",
+              "c": "Incorrect. The final estimate is right, but the measurement error has been computed as (b - a) / 2 = 9. The formula is (b - a) / 6.",
+              "d": "Incorrect. 14 person-hours is the most likely estimate on its own, ignoring the optimistic and pessimistic values. Three-point estimation uses all three."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0096",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.5",
+      "objectives": [
+        "FL-5.1.5"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "test-case-prioritization",
+        "risk-based"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Nicel bir ürün riski analizi şu değerleri vermiştir: TC1'in kapsadığı riskin risk olasılığı 0,8 ve risk etkisi 3; TC2'nin kapsadığı riskin risk olasılığı 0,5 ve risk etkisi 8; TC3'ün kapsadığı riskin risk olasılığı 0,2 ve risk etkisi 9; TC4'ün kapsadığı riskin risk olasılığı 0,6 ve risk etkisi 5'tir. Test senaryoları arasında bağımlılık yoktur. Riske dayalı önceliklendirmede koşum sırası hangisi olmalıdır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "TC2, TC4, TC1, TC3"
+            },
+            {
+              "id": "b",
+              "text": "TC1, TC4, TC2, TC3"
+            },
+            {
+              "id": "c",
+              "text": "TC3, TC2, TC4, TC1"
+            },
+            {
+              "id": "d",
+              "text": "TC3, TC1, TC4, TC2"
+            }
+          ],
+          "rationale": {
+            "summary": "Nicel yaklaşımda risk seviyesi, risk olasılığı ile risk etkisinin çarpımıdır: TC1 için 0,8 x 3 = 2,4; TC2 için 0,5 x 8 = 4,0; TC3 için 0,2 x 9 = 1,8; TC4 için 0,6 x 5 = 3,0. Riske dayalı önceliklendirmede en önemli riskleri içeren test senaryoları ilk koşturulur, yani risk seviyesi büyükten küçüğe sıralanır.",
+            "byOption": {
+              "a": "Doğru. Risk seviyeleri 4,0 (TC2), 3,0 (TC4), 2,4 (TC1) ve 1,8 (TC3) olduğundan koşum sırası TC2, TC4, TC1, TC3'tür.",
+              "b": "Yanlış. Bu sıralama yalnızca risk olasılığına göre yapılmıştır (0,8; 0,6; 0,5; 0,2). Risk seviyesi tek bir faktörle değil, risk olasılığı ile risk etkisinin birlikte değerlendirilmesiyle belirlenir.",
+              "c": "Yanlış. Bu sıralama yalnızca risk etkisine göre yapılmıştır (9, 8, 5, 3). Yüksek etkili ama gerçekleşme olasılığı çok düşük bir risk, risk seviyesi olarak öne çıkmayabilir.",
+              "d": "Yanlış. Bu, risk seviyesine göre küçükten büyüğe sıralamadır. Riske dayalı önceliklendirme en önemli riskleri en sona değil, en başa koyar."
+            }
+          }
+        },
+        "en": {
+          "stem": "A quantitative product risk analysis produced the following figures: the risk covered by TC1 has risk likelihood 0.8 and risk impact 3; the risk covered by TC2 has risk likelihood 0.5 and risk impact 8; the risk covered by TC3 has risk likelihood 0.2 and risk impact 9; the risk covered by TC4 has risk likelihood 0.6 and risk impact 5. There are no dependencies between the test cases. In which order should they be executed under risk-based prioritization?",
+          "options": [
+            {
+              "id": "a",
+              "text": "TC2, TC4, TC1, TC3"
+            },
+            {
+              "id": "b",
+              "text": "TC1, TC4, TC2, TC3"
+            },
+            {
+              "id": "c",
+              "text": "TC3, TC2, TC4, TC1"
+            },
+            {
+              "id": "d",
+              "text": "TC3, TC1, TC4, TC2"
+            }
+          ],
+          "rationale": {
+            "summary": "In the quantitative approach the risk level is the multiplication of risk likelihood and risk impact: TC1 gives 0.8 x 3 = 2.4, TC2 gives 0.5 x 8 = 4.0, TC3 gives 0.2 x 9 = 1.8 and TC4 gives 0.6 x 5 = 3.0. In risk-based prioritization the test cases covering the most important risks are executed first, i.e. in descending risk level.",
+            "byOption": {
+              "a": "Correct. The risk levels are 4.0 (TC2), 3.0 (TC4), 2.4 (TC1) and 1.8 (TC3), so the execution order is TC2, TC4, TC1, TC3.",
+              "b": "Incorrect. This orders the test cases by risk likelihood alone (0.8, 0.6, 0.5, 0.2). Risk level is determined by risk likelihood and risk impact together, not by one factor.",
+              "c": "Incorrect. This orders the test cases by risk impact alone (9, 8, 5, 3). A high-impact risk that is very unlikely to occur need not have the highest risk level.",
+              "d": "Incorrect. This is ascending risk level. Risk-based prioritization executes the most important risks first, not last."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0097",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.5",
+      "objectives": [
+        "FL-5.1.5"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "test-case-prioritization",
+        "coverage-based"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir bileşenin komutlarını dört test senaryosu şu şekilde kapsamaktadır: TC1 → S1, S2; TC2 → S3, S4, S5, S6; TC3 → S1, S2, S7; TC4 → S6, S8. Ek kapsam önceliklendirmesi uygulandığında ortaya çıkan koşum sırası hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "TC2, TC3, TC4, TC1"
+            },
+            {
+              "id": "b",
+              "text": "TC2, TC3, TC1, TC4"
+            },
+            {
+              "id": "c",
+              "text": "TC2, TC4, TC3, TC1"
+            },
+            {
+              "id": "d",
+              "text": "TC1, TC4, TC3, TC2"
+            }
+          ],
+          "rationale": {
+            "summary": "Ek kapsam önceliklendirmesinde en yüksek kapsama ulaşan test senaryosu ilk koşturulur; sonraki her test senaryosu, o ana kadar kapsanmayan komutlara en çok ekleme yapandır. TC2 dört komutla başlar; ardından TC3 üç yeni komut (S1, S2, S7) ekler; sonra TC4 bir yeni komut (S8) ekler; TC1 ise hiç yeni komut eklemediği için en sona kalır.",
+            "byOption": {
+              "a": "Doğru. Sıra TC2 (4 komut), TC3 (+3: S1, S2, S7), TC4 (+1: S8), TC1 (+0) şeklindedir.",
+              "b": "Yanlış. Bu sıralama, her test senaryosunu yalnızca kendi kapsam büyüklüğüne göre dizer (4, 3, 2, 2). Bu, sade kapsama dayalı önceliklendirmedir; ek kapsam varyantı ise o ana kadar kapsanmış komutları hesaba katar ve TC1 üçüncü sırada hiç yeni komut eklemez.",
+              "c": "Yanlış. TC2'den sonra TC4'ün seçilmesi, TC4'ün TC2 ile S6 üzerinden örtüşmesine bakar. Oysa TC4 yalnızca bir yeni komut (S8) eklerken TC3 üç yeni komut ekler.",
+              "d": "Yanlış. Bu sıralama kapsamı küçükten büyüğe dizer. Kapsama dayalı önceliklendirme en yüksek kapsamla başlar, en düşükle değil."
+            }
+          }
+        },
+        "en": {
+          "stem": "Four test cases cover the statements of a component as follows: TC1 → S1, S2; TC2 → S3, S4, S5, S6; TC3 → S1, S2, S7; TC4 → S6, S8. Which execution order results from ADDITIONAL coverage prioritization?",
+          "options": [
+            {
+              "id": "a",
+              "text": "TC2, TC3, TC4, TC1"
+            },
+            {
+              "id": "b",
+              "text": "TC2, TC3, TC1, TC4"
+            },
+            {
+              "id": "c",
+              "text": "TC2, TC4, TC3, TC1"
+            },
+            {
+              "id": "d",
+              "text": "TC1, TC4, TC3, TC2"
+            }
+          ],
+          "rationale": {
+            "summary": "In additional coverage prioritization the test case achieving the highest coverage is executed first, and each subsequent test case is the one that achieves the highest additional coverage. TC2 starts with four statements; TC3 then adds three new ones (S1, S2, S7); TC4 adds one new one (S8); TC1 adds nothing new and comes last.",
+            "byOption": {
+              "a": "Correct. The sequence is TC2 (4 statements), TC3 (+3: S1, S2, S7), TC4 (+1: S8) and TC1 (+0).",
+              "b": "Incorrect. This orders the test cases by their own coverage size (4, 3, 2, 2). That is plain coverage-based prioritization; the additional variant accounts for what is already covered, and in third place TC1 would add no new statement at all.",
+              "c": "Incorrect. Choosing TC4 after TC2 follows the overlap on S6 rather than the new coverage. TC4 adds only one new statement (S8), whereas TC3 adds three.",
+              "d": "Incorrect. This orders the test cases by ascending coverage. Coverage-based prioritization starts with the highest coverage, not the lowest."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0098",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.5",
+      "objectives": [
+        "FL-5.1.5"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "test-case-prioritization",
+        "dependencies"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Gereksinime dayalı önceliklendirme sonucunda test senaryoları şu önceliklere sahiptir (1 = en yüksek): TC-A 1, TC-B 2, TC-C 3, TC-D 4. Ancak TC-A yalnızca TC-C koşturulduktan sonra koşturulabilmektedir. Bağımlılığa uyan ve bunun dışında önceliklendirmeyi koruyan koşum sırası hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "TC-A, TC-B, TC-C, TC-D"
+            },
+            {
+              "id": "b",
+              "text": "TC-C, TC-A, TC-B, TC-D"
+            },
+            {
+              "id": "c",
+              "text": "TC-C, TC-D, TC-A, TC-B"
+            },
+            {
+              "id": "d",
+              "text": "TC-D, TC-C, TC-B, TC-A"
+            }
+          ],
+          "rationale": {
+            "summary": "Test senaryoları ideal olarak öncelik seviyelerine göre sıralanır; ancak yüksek öncelikli bir test senaryosu düşük öncelikli birine bağımlıysa önce düşük öncelikli olan koşturulmalıdır. Burada yalnızca TC-C, TC-A'nın önüne çekilir; geri kalan sıra öncelik düzenini korur.",
+            "byOption": {
+              "a": "Yanlış. Bu saf öncelik sırasıdır ve bağımlılığı ihlal eder: TC-A, kendisinden önce koşması gereken TC-C'den önce koşturulmaktadır.",
+              "b": "Doğru. Bağımlılık nedeniyle TC-C öne alınır, ardından kalan test senaryoları öncelik sırasına göre TC-A, TC-B, TC-D olarak koşturulur.",
+              "c": "Yanlış. Bağımlılığa uyuyor ancak gereksiz yere TC-D'yi de öne çekiyor. Öne alınması gereken tek test senaryosu TC-A'nın bağımlı olduğu TC-C'dir; TC-D'nin erken koşturulması için bir neden yoktur.",
+              "d": "Yanlış. Bu, önceliklerin tam tersi sıradır; en yüksek öncelikli test senaryosu en sona bırakılmıştır ve önceliklendirme stratejisinin amacına aykırıdır."
+            }
+          }
+        },
+        "en": {
+          "stem": "Requirements-based prioritization has given the test cases the following priorities (1 = highest): TC-A 1, TC-B 2, TC-C 3, TC-D 4. However, TC-A can only be executed after TC-C has been executed. Which execution order respects the dependency while otherwise keeping the prioritization?",
+          "options": [
+            {
+              "id": "a",
+              "text": "TC-A, TC-B, TC-C, TC-D"
+            },
+            {
+              "id": "b",
+              "text": "TC-C, TC-A, TC-B, TC-D"
+            },
+            {
+              "id": "c",
+              "text": "TC-C, TC-D, TC-A, TC-B"
+            },
+            {
+              "id": "d",
+              "text": "TC-D, TC-C, TC-B, TC-A"
+            }
+          ],
+          "rationale": {
+            "summary": "Test cases are ideally ordered by their priority levels, but if a test case with a higher priority depends on one with a lower priority, the lower priority test case must be executed first. Only TC-C has to be moved ahead of TC-A; the rest of the order keeps the priority sequence.",
+            "byOption": {
+              "a": "Incorrect. This is the pure priority order and it violates the dependency: TC-A is executed before TC-C, which has to run first.",
+              "b": "Correct. TC-C is moved forward because of the dependency, and the remaining test cases then follow their priority order: TC-A, TC-B, TC-D.",
+              "c": "Incorrect. It respects the dependency but needlessly moves TC-D forward as well. Only TC-C, the test case TC-A depends on, has to precede it; there is no reason to run TC-D early.",
+              "d": "Incorrect. This is the reverse of the priority order, leaving the highest priority test case until last, which defeats the purpose of prioritization."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0099",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.6",
+      "objectives": [
+        "FL-5.1.6"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "test-pyramid"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Test piramidi modeline göre ÜST katmandaki testlerle ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Karmaşık, üst seviye ve uçtan uca testlerdir; genelde daha yavaştırlar ve makul bir kapsam için genellikle birkaç tanesi yeterlidir"
+            },
+            {
+              "id": "b",
+              "text": "Küçük, izole ve hızlıdırlar; makul bir kapsama ulaşmak için genellikle çok sayıda test gerekir"
+            },
+            {
+              "id": "c",
+              "text": "En yüksek test ayrıntısına ve en yüksek test izolasyonuna sahiptirler"
+            },
+            {
+              "id": "d",
+              "text": "Her zaman 'UI testleri' olarak adlandırılır; katmanların sayısı ve adları model tarafından sabitlenmiştir"
+            }
+          ],
+          "rationale": {
+            "summary": "Test piramidinde katman ne kadar yüksekse test ayrıntısı ve test izolasyonu o kadar düşük, test koşumu süresi ise o kadar yüksektir. Üst katman karmaşık, üst seviye ve uçtan uca testleri temsil eder; bu testler büyük bir fonksiyonalite parçasını kontrol ettiğinden makul bir kapsam seviyesine ulaşmak için genellikle birkaç tanesi yeterlidir.",
+            "byOption": {
+              "a": "Doğru. Üst katman testleri karmaşık, üst seviye ve uçtan uçadır; alt katmanlardaki testlerden daha yavaştır ve sayıca az olurlar.",
+              "b": "Yanlış. Bu, alt katmandaki testlerin tanımıdır: küçük, izole, hızlı ve küçük bir fonksiyonalite parçasını kontrol eden testler; bu yüzden çok sayıda gerekir.",
+              "c": "Yanlış. Model bunun tersini söyler: katman yükseldikçe test ayrıntısı ve test izolasyonu düşer, koşum süresi artar. En yüksek ayrıntı ve izolasyon alt katmandadır.",
+              "d": "Yanlış. Katmanların sayısı ve adlandırması değişebilir. Orijinal model 'birim testleri', 'servis testleri' ve 'UI testleri' derken bir başka model birim, entegrasyon ve uçtan uca testleri tanımlar."
+            }
+          }
+        },
+        "en": {
+          "stem": "According to the test pyramid model, which statement about the tests in the TOP layer is correct?",
+          "options": [
+            {
+              "id": "a",
+              "text": "They are complex, high-level, end-to-end tests; they are generally slower, and usually just a few of them are needed for a reasonable level of coverage"
+            },
+            {
+              "id": "b",
+              "text": "They are small, isolated and fast, so usually a lot of them are needed to achieve a reasonable coverage"
+            },
+            {
+              "id": "c",
+              "text": "They have the highest test granularity and the highest test isolation"
+            },
+            {
+              "id": "d",
+              "text": "They are always called 'UI tests', because the number and naming of the layers is fixed by the model"
+            }
+          ],
+          "rationale": {
+            "summary": "In the test pyramid, the higher the layer, the lower the test granularity, the lower the test isolation and the higher the test execution time. The top layer represents complex, high-level, end-to-end tests which typically check a large piece of functionality, so usually just a few of them are needed to reach a reasonable level of coverage.",
+            "byOption": {
+              "a": "Correct. Top-layer tests are complex, high level and end-to-end, slower than the tests in the lower layers, and few in number.",
+              "b": "Incorrect. This describes the bottom layer: small, isolated, fast tests that check a small piece of functionality, which is why a lot of them are needed.",
+              "c": "Incorrect. The model states the opposite: the higher the layer, the lower the granularity and the lower the isolation, while execution time rises. The highest granularity and isolation are in the bottom layer.",
+              "d": "Incorrect. The number and naming of the layers may differ. The original model uses 'unit tests', 'service tests' and 'UI tests', while another popular model uses unit, integration and end-to-end tests."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0100",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.7",
+      "objectives": [
+        "FL-5.1.7"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "testing-quadrants"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Keşif testi, kullanılabilirlik testi ve kullanıcı kabul testi test çeyrekleri modelinde hangi çeyrekte yer alır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Çeyrek Q1 (teknoloji odaklı, ekibi desteklemek için)"
+            },
+            {
+              "id": "b",
+              "text": "Çeyrek Q2 (iş odaklı, ekibi desteklemek için)"
+            },
+            {
+              "id": "c",
+              "text": "Çeyrek Q3 (iş odaklı, ürünün kritiğini yapmak için)"
+            },
+            {
+              "id": "d",
+              "text": "Çeyrek Q4 (teknoloji odaklı, ürünün kritiğini yapmak için)"
+            }
+          ],
+          "rationale": {
+            "summary": "Test çeyrekleri modelinde testler iş odaklı veya teknoloji odaklı olabilir ve ekibi destekleyebilir ya da ürünün kritiğini yapabilir. Keşif testi, kullanılabilirlik testi ve kullanıcı kabul testi kullanıcı odaklı ve genellikle manuel testlerdir; iş odaklı olup ürünün kritiğini yaptıkları için Q3'te yer alırlar.",
+            "byOption": {
+              "a": "Yanlış. Q1 teknoloji odaklıdır ve ekibi destekler; bileşen testleri ile bileşen entegrasyon testlerini içerir. Bu testlerin otomatikleştirilip CI sürecine dahil edilmesi beklenir.",
+              "b": "Yanlış. Q2 iş odaklıdır ancak ürünün kritiğini yapmak yerine ekibi destekler; fonksiyonel testler, örnekler, kullanıcı hikayesi testleri, kullanıcı deneyimi prototipleri, API testi ve simülasyonları içerir.",
+              "c": "Doğru. Q3 iş odaklıdır ve ürünün kritiğini yapar; keşif testi, kullanılabilirlik testi ve kullanıcı kabul testi bu çeyrektedir.",
+              "d": "Yanlış. Q4 teknoloji odaklıdır ve ürünün kritiğini yapar; duman testleri ile kullanılabilirlik testi HARİÇ fonksiyonel olmayan testleri içerir. Kullanılabilirlik testi bu çeyreğin dışında bırakılmıştır."
+            }
+          }
+        },
+        "en": {
+          "stem": "In the testing quadrants model, exploratory testing, usability testing and user acceptance testing belong to which quadrant?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Quadrant Q1 (technology facing, support the team)"
+            },
+            {
+              "id": "b",
+              "text": "Quadrant Q2 (business facing, support the team)"
+            },
+            {
+              "id": "c",
+              "text": "Quadrant Q3 (business facing, critique the product)"
+            },
+            {
+              "id": "d",
+              "text": "Quadrant Q4 (technology facing, critique the product)"
+            }
+          ],
+          "rationale": {
+            "summary": "In the testing quadrants model, tests can be business facing or technology facing, and can support the team or critique the product. Exploratory testing, usability testing and user acceptance testing are user-oriented and often manual; being business facing and critiquing the product, they sit in Q3.",
+            "byOption": {
+              "a": "Incorrect. Q1 is technology facing and supports the team; it contains component tests and component integration tests, which should be automated and included in the CI process.",
+              "b": "Incorrect. Q2 is business facing but supports the team rather than critiquing the product; it contains functional tests, examples, user story tests, user experience prototypes, API testing and simulations.",
+              "c": "Correct. Q3 is business facing and critiques the product, and it contains exploratory testing, usability testing and user acceptance testing.",
+              "d": "Incorrect. Q4 is technology facing and critiques the product; it contains smoke tests and non-functional tests EXCEPT usability tests, which are explicitly left out of this quadrant."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0101",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.7",
+      "objectives": [
+        "FL-5.1.7"
+      ],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "testing-quadrants",
+        "test-types"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a",
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Test çeyrekleri modelinde HANGİ İKİSİ Çeyrek Q4'te (teknoloji odaklı, ürünün kritiğini yapmak için) yer alır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Duman testleri"
+            },
+            {
+              "id": "b",
+              "text": "Bileşen entegrasyon testleri"
+            },
+            {
+              "id": "c",
+              "text": "Kullanılabilirlik testi HARİÇ fonksiyonel olmayan testler"
+            },
+            {
+              "id": "d",
+              "text": "Kullanıcı hikayesi testleri"
+            }
+          ],
+          "rationale": {
+            "summary": "Çeyrek Q4 teknoloji odaklıdır ve ürünün kritiğini yapar. Bu çeyrekte duman testleri ve kullanılabilirlik testi hariç fonksiyonel olmayan testler yer alır; bu testler genellikle otomatiktir.",
+            "byOption": {
+              "a": "Doğru. Duman testleri müfredatta Q4 içeriği olarak açıkça sayılır.",
+              "b": "Yanlış. Bileşen entegrasyon testleri, bileşen testleriyle birlikte Q1'dedir (teknoloji odaklı, ekibi desteklemek için) ve otomatikleştirilip CI sürecine dahil edilmelidir.",
+              "c": "Doğru. Fonksiyonel olmayan testler Q4'tedir; kullanılabilirlik testi bu gruptan açıkça dışlanmıştır çünkü o Q3'te yer alır.",
+              "d": "Yanlış. Kullanıcı hikayesi testleri Q2'dedir (iş odaklı, ekibi desteklemek için); fonksiyonel testler, örnekler, kullanıcı deneyimi prototipleri, API testi ve simülasyonlarla birlikte kabul kriterlerini kontrol eder."
+            }
+          }
+        },
+        "en": {
+          "stem": "In the testing quadrants model, WHICH TWO belong to Quadrant Q4 (technology facing, critique the product)?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Smoke tests"
+            },
+            {
+              "id": "b",
+              "text": "Component integration tests"
+            },
+            {
+              "id": "c",
+              "text": "Non-functional tests EXCEPT usability tests"
+            },
+            {
+              "id": "d",
+              "text": "User story tests"
+            }
+          ],
+          "rationale": {
+            "summary": "Quadrant Q4 is technology facing and critiques the product. It contains smoke tests and non-functional tests except usability tests; these tests are often automated.",
+            "byOption": {
+              "a": "Correct. Smoke tests are explicitly listed as content of Q4.",
+              "b": "Incorrect. Component integration tests sit in Q1 together with component tests (technology facing, support the team) and should be automated and included in the CI process.",
+              "c": "Correct. Non-functional tests are in Q4, with usability tests explicitly excluded because they belong to Q3.",
+              "d": "Incorrect. User story tests are in Q2 (business facing, support the team), alongside functional tests, examples, user experience prototypes, API testing and simulations, and they check the acceptance criteria."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0102",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.2",
+      "syllabusRef": "§5.2.1",
+      "objectives": [
+        "FL-5.2.1"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "risk-level",
+        "risk-likelihood",
+        "risk-impact"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Risk seviyesi (risk level) ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Risk seviyesi riskin bir ölçüsüdür ve risk olasılığı ile risk etkisi olmak üzere iki faktörle ifade edilir"
+            },
+            {
+              "id": "b",
+              "text": "Risk seviyesi, riskin meydana gelme olasılığıdır; sıfırdan büyük ve birden küçük bir değerdir"
+            },
+            {
+              "id": "c",
+              "text": "Risk seviyesi, riskin meydana gelmesinin paydaşlar açısından doğurduğu sonuçlardır"
+            },
+            {
+              "id": "d",
+              "text": "Risk seviyesi, meydana gelmesi olumsuz bir etkiye neden olan potansiyel olay, tehlike, tehdit veya durumdur"
+            }
+          ],
+          "rationale": {
+            "summary": "Bir risk iki faktörle karakterize edilir: risk olasılığı (riskin meydana gelme olasılığı) ve risk etkisi (meydana gelmesinin sonuçları). Bu iki faktör birlikte, riskin ölçüsü olan risk seviyesini belirtir; risk seviyesi ne kadar yüksekse riskin ele alınması o kadar önemlidir.",
+            "byOption": {
+              "a": "Doğru. Risk seviyesi bir risk ölçüsüdür ve risk olasılığı ile risk etkisinin birlikte ifade ettiği değerdir.",
+              "b": "Yanlış. Bu, risk olasılığının tanımıdır. Risk olasılığı risk seviyesinin yalnızca iki faktöründen biridir; tek başına risk seviyesi değildir.",
+              "c": "Yanlış. Bu, risk etkisinin (zararın) tanımıdır. Risk etkisi de risk seviyesinin yalnızca bir faktörüdür.",
+              "d": "Yanlış. Bu, riskin kendisinin tanımıdır. Risk bir olay ya da durumdur; risk seviyesi ise o riski ölçen değerdir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which statement about risk level is correct?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Risk level is a measure for the risk, expressed by two factors: risk likelihood and risk impact"
+            },
+            {
+              "id": "b",
+              "text": "Risk level is the probability of the risk occurrence, a value greater than zero and less than one"
+            },
+            {
+              "id": "c",
+              "text": "Risk level is the consequence for stakeholders of the risk occurring"
+            },
+            {
+              "id": "d",
+              "text": "Risk level is the potential event, hazard, threat or situation whose occurrence causes an adverse effect"
+            }
+          ],
+          "rationale": {
+            "summary": "A risk is characterized by two factors: risk likelihood (the probability of the risk occurrence) and risk impact (the consequences of that occurrence). Together these two factors express the risk level, which is a measure for the risk; the higher the risk level, the more important its treatment.",
+            "byOption": {
+              "a": "Correct. Risk level is a measure for the risk, expressed by risk likelihood and risk impact together.",
+              "b": "Incorrect. This defines risk likelihood, which is only one of the two factors of risk level, not the risk level itself.",
+              "c": "Incorrect. This defines risk impact (harm), which is likewise only one factor of the risk level.",
+              "d": "Incorrect. This defines the risk itself. A risk is an event or situation; the risk level is the measure applied to it."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0103",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.2",
+      "syllabusRef": "§5.2.2",
+      "objectives": [
+        "FL-5.2.2"
+      ],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "project-risk",
+        "product-risk"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a",
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "HANGİ İKİSİ proje riskine (project risk) örnektir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test ekibinde personel eksiği olması"
+            },
+            {
+              "id": "b",
+              "text": "Uygulamanın yanıt süresinin yetersiz kalması"
+            },
+            {
+              "id": "c",
+              "text": "Bir bileşeni teslim eden tedarikçinin iflas etmesi"
+            },
+            {
+              "id": "d",
+              "text": "Ödeme modülünde güvenlik açıkları bulunması"
+            }
+          ],
+          "rationale": {
+            "summary": "Proje riskleri projenin yönetimi ve kontrolüyle ilgilidir; organizasyonel, insan kaynaklı, teknik ve tedarikçi sorunlarını kapsar ve ortaya çıktıklarında projenin zaman çizelgesini, bütçesini veya kapsamını etkiler. Ürün riskleri ise ürünün kalite karakteristikleriyle ilgilidir.",
+            "byOption": {
+              "a": "Doğru. Personel eksiği, proje risklerinin insan kaynaklı sorunlar grubunda yer alır; yetersiz beceri, çatışma ve iletişim problemleriyle birlikte sayılır.",
+              "b": "Yanlış. Yetersiz yanıt süresi bir ürün riskidir; ürünün kalite karakteristikleriyle ilgilidir ve müfredatta ürün riski örnekleri arasında geçer.",
+              "c": "Doğru. Tedarikçinin iflası, proje risklerinin tedarikçi sorunları grubundadır; tedarikçi teslimat başarısızlığıyla birlikte sayılır.",
+              "d": "Yanlış. Güvenlik açıkları bir ürün riskidir; ortaya çıktığında gelir, güven ve itibar kaybı gibi sonuçlar doğurabilir."
+            }
+          }
+        },
+        "en": {
+          "stem": "WHICH TWO are examples of project risks?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A shortage of staff in the test team"
+            },
+            {
+              "id": "b",
+              "text": "Inadequate response time of the application"
+            },
+            {
+              "id": "c",
+              "text": "Bankruptcy of the supplier delivering a component"
+            },
+            {
+              "id": "d",
+              "text": "Security vulnerabilities in the payment module"
+            }
+          ],
+          "rationale": {
+            "summary": "Project risks are related to the management and control of the project. They cover organizational, people, technical and supplier issues and, when they occur, they may affect the project schedule, budget or scope. Product risks are related to the product quality characteristics.",
+            "byOption": {
+              "a": "Correct. Shortage of staff belongs to the people issues group of project risks, alongside insufficient skills, conflicts and communication problems.",
+              "b": "Incorrect. Inadequate response time is a product risk; it relates to the product quality characteristics and is listed among the syllabus examples of product risks.",
+              "c": "Correct. Bankruptcy of the supporting company belongs to the supplier issues group of project risks, alongside third-party delivery failure.",
+              "d": "Incorrect. Security vulnerabilities are a product risk; if they occur they may lead to loss of revenue, trust and reputation."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0104",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.2",
+      "syllabusRef": "§5.2.2",
+      "objectives": [
+        "FL-5.2.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "project-risk",
+        "product-risk",
+        "consequences"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Proje riskleri ile ürün risklerinin sonuçlarını doğru ayırt eden ifade hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Proje riskleri ortaya çıktığında projenin zaman çizelgesini, bütçesini veya kapsamını etkileyebilir; ürün riskleri ise kullanıcı memnuniyetsizliği, itibar kaybı veya yüksek bakım maliyetleri gibi sonuçlar doğurabilir"
+            },
+            {
+              "id": "b",
+              "text": "Proje riskleri ortaya çıktığında para cezaları ve diğer paydaşlara zarar doğurur; ürün riskleri yalnızca test ekibinin kendi işini etkiler"
+            },
+            {
+              "id": "c",
+              "text": "Proje riskleri ürünün kalite karakteristikleriyle, ürün riskleri ise projenin yönetimi ve kontrolüyle ilgilidir"
+            },
+            {
+              "id": "d",
+              "text": "Proje riskleri her zaman ürün risklerinden daha ciddidir; bu nedenle risk seviyelerine bakılmaksızın önce onlar azaltılır"
+            }
+          ],
+          "rationale": {
+            "summary": "Proje riskleri projenin yönetimi ve kontrolüyle ilgilidir ve ortaya çıktıklarında projenin zaman çizelgesini, bütçesini veya kapsamını etkileyerek projenin hedeflerine ulaşma kapasitesine etki eder. Ürün riskleri ürünün kalite karakteristikleriyle ilgilidir ve kullanıcı memnuniyetsizliğinden ekstrem durumlarda fiziksel zarara kadar uzanan sonuçlar doğurabilir.",
+            "byOption": {
+              "a": "Doğru. İki risk çeşidinin sonuçları müfredatta tam olarak böyle ayrılır: biri projenin hedeflerine, diğeri ürünün kalitesine ve kullanıcılara yöneliktir.",
+              "b": "Yanlış. Para cezaları ve diğer paydaşlara zarar, proje risklerinin değil ürün risklerinin olası sonuçları arasında sayılır. Ayrıca ürün riskleri test ekibiyle sınırlı değildir.",
+              "c": "Yanlış. İki tanım yer değiştirilmiş. Proje riskleri projenin yönetimi ve kontrolüyle, ürün riskleri ürünün kalite karakteristikleriyle ilgilidir.",
+              "d": "Yanlış. Risklerin ele alınma önceliğini risk çeşidi değil risk seviyesi belirler; risk seviyesi ne kadar yüksekse çözülmesi o kadar önemlidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which statement correctly distinguishes the consequences of project risks from those of product risks?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Project risks, when they occur, may impact the project schedule, budget or scope, while product risks may result in consequences such as user dissatisfaction, loss of reputation or high maintenance costs"
+            },
+            {
+              "id": "b",
+              "text": "Project risks, when they occur, result in criminal penalties and damage to third parties, while product risks only affect the internal work of the test team"
+            },
+            {
+              "id": "c",
+              "text": "Project risks are related to the product quality characteristics, while product risks are related to the management and control of the project"
+            },
+            {
+              "id": "d",
+              "text": "Project risks are always more severe than product risks, so they are mitigated first regardless of their risk level"
+            }
+          ],
+          "rationale": {
+            "summary": "Project risks are related to the management and control of the project and, when they occur, may impact the project schedule, budget or scope, which affects the project's ability to achieve its objectives. Product risks are related to the product quality characteristics and may result in consequences ranging from user dissatisfaction to, in extreme cases, physical damage.",
+            "byOption": {
+              "a": "Correct. This is exactly how the syllabus separates the consequences of the two risk types: one hits the project's objectives, the other the product's quality and its users.",
+              "b": "Incorrect. Criminal penalties and damage to third parties are listed among the possible consequences of product risks, not project risks, and product risks are not confined to the test team.",
+              "c": "Incorrect. The two definitions are swapped. Project risks concern the management and control of the project; product risks concern the product quality characteristics.",
+              "d": "Incorrect. Treatment priority follows the risk level, not the risk type: the higher the risk level, the more important its treatment."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0105",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.2",
+      "syllabusRef": "§5.2.3",
+      "objectives": [
+        "FL-5.2.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "product-risk-analysis",
+        "test-scope",
+        "thoroughness"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir bankacılık uygulamasının ürün riski analizi, faiz hesaplama modülünün risk seviyesini raporlama modülünden belirgin biçimde yüksek bulmuştur. Bu sonucun test yaklaşımına yansıması için EN UYGUN seçenek hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Faiz hesaplama modülünde daha kapsamlı test teknikleri ve daha yüksek kapsam seviyeleri uygulamak ve kritik hataların erken bulunması için bu modülün testlerini önceliklendirmek"
+            },
+            {
+              "id": "b",
+              "text": "Test eforunun eşit dağılması için iki modülü de aynı teknikler ve aynı kapsam seviyesiyle test etmek"
+            },
+            {
+              "id": "c",
+              "text": "Yalnızca en yüksek riskler test edilmeye değer olduğundan raporlama modülünü test kapsamından tamamen çıkarmak"
+            },
+            {
+              "id": "d",
+              "text": "Ortam kararlılığı sağlansın diye faiz hesaplama modülünün testine ancak raporlama modülü tüm testleri geçtikten sonra başlamak"
+            }
+          ],
+          "rationale": {
+            "summary": "Ürün riski analizinin sonuçları; test kapsamının, test seviyelerinin ve test çeşitlerinin, kullanılacak test tekniklerinin ve ulaşılacak kapsamın belirlenmesinde, her görev için test eforunun tahmininde ve kritik hataların mümkün olduğunca erken bulunması için testlerin önceliklendirilmesinde kullanılır. Amaç kalan ürün riskini en aza indirmektir.",
+            "byOption": {
+              "a": "Doğru. Yüksek risk seviyesi hem testlerin bütünlüğünü (teknik ve kapsam seviyesi) hem de önceliklendirmeyi etkiler; müfredatta risk analizi sonuçlarının kullanım amaçları tam olarak bunlardır.",
+              "b": "Yanlış. Eforu eşit dağıtmak risk analizinin amacını ortadan kaldırır; analizin amacı test eforunu kalan ürün riskini en aza indirecek şekilde yönlendirmektir.",
+              "c": "Yanlış. Risk analizi test kapsamının belirlenmesinde kullanılır, ancak düşük risk seviyesi sıfır risk demek değildir; bir modülü tümüyle dışarıda bırakmak kalan ürün riskini artırır.",
+              "d": "Yanlış. Bu, testleri risk seviyesinin tersi sırayla dizer. Önceliklendirmenin amacı kritik hataların mümkün olduğunca erken bulunmasıdır; en riskli modülün testi geciktirilmez."
+            }
+          }
+        },
+        "en": {
+          "stem": "The product risk analysis of a banking application rates the interest calculation module at a markedly higher risk level than the reporting module. What is the MOST appropriate consequence for the test approach?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Apply more thorough test techniques and higher coverage levels to the interest calculation module, and prioritize its tests so that critical defects are found as early as possible"
+            },
+            {
+              "id": "b",
+              "text": "Test both modules with identical techniques and the same coverage level, so that the test effort is distributed evenly"
+            },
+            {
+              "id": "c",
+              "text": "Remove the reporting module from the test scope entirely, because only the highest-rated risks are worth testing"
+            },
+            {
+              "id": "d",
+              "text": "Start testing the interest calculation module only after the reporting module has passed all its tests, so that the environment is stable"
+            }
+          ],
+          "rationale": {
+            "summary": "The results of product risk analysis are used to determine the test scope, the test levels and test types, the test techniques to be employed and the coverage to be achieved, to estimate the test effort for each task, and to prioritize testing in an attempt to find the critical defects as early as possible. The goal is to minimize the residual level of product risk.",
+            "byOption": {
+              "a": "Correct. A higher risk level influences both thoroughness (techniques and coverage level) and prioritization, which is exactly what the syllabus lists as uses of risk analysis results.",
+              "b": "Incorrect. Distributing effort evenly defeats the purpose of the analysis, which is to focus the test effort so that the residual level of product risk is minimized.",
+              "c": "Incorrect. Risk analysis is used to determine the test scope, but a lower risk level is not zero risk; dropping a module entirely raises the residual product risk.",
+              "d": "Incorrect. This runs the tests in the inverse order of risk level. Prioritization exists to find critical defects as early as possible, so the riskiest module is not delayed."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0106",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.2",
+      "syllabusRef": "§5.2.4",
+      "objectives": [
+        "FL-5.2.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "risk-control",
+        "risk-monitoring",
+        "risk-mitigation"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Ürün risk kontrolü kapsamında risk gözetiminin (risk monitoring) amacını EN İYİ tanımlayan ifade hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Risk azaltma aksiyonlarının etkili olmasını sağlamak, risk değerlendirmesini iyileştirecek ek bilgi elde etmek ve ortaya çıkan riskleri tanımlamak"
+            },
+            {
+              "id": "b",
+              "text": "Risk değerlendirmesinde önerilen aksiyonları uygulayarak risk seviyesini düşürmek"
+            },
+            {
+              "id": "c",
+              "text": "Beyin fırtınası, çalıştay veya görüşme gibi tekniklerle kapsamlı bir risk listesi oluşturmak"
+            },
+            {
+              "id": "d",
+              "text": "Belirlenen riskleri kategorilere ayırmak ve risk olasılıklarını, risk etkilerini ve risk seviyelerini belirlemek"
+            }
+          ],
+          "rationale": {
+            "summary": "Ürün risk kontrolü risk azaltma ve risk gözetiminden oluşur. Risk gözetiminin amacı risk azaltma aksiyonlarının etkili olmasını sağlamak, risk değerlendirmesini iyileştirmek için daha fazla bilgi elde etmek ve ortaya çıkan riskleri tanımlamaktır.",
+            "byOption": {
+              "a": "Doğru. Müfredat risk gözetiminin amacını tam olarak bu üç madde ile tanımlar.",
+              "b": "Yanlış. Bu, risk azaltmanın tanımıdır. Risk azaltma ve risk gözetimi birlikte risk kontrolünü oluşturur ancak farklı işlerdir.",
+              "c": "Yanlış. Bu, risk belirlemedir ve risk kontrolünün değil risk analizinin parçasıdır.",
+              "d": "Yanlış. Bu, risk değerlendirmesidir; risk belirlemeyle birlikte risk analizini oluşturur ve risk kontrolünden önce gelir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which statement BEST describes the aim of risk monitoring within product risk control?",
+          "options": [
+            {
+              "id": "a",
+              "text": "To ensure that the mitigation actions are effective, to obtain further information to improve risk assessment, and to identify emerging risks"
+            },
+            {
+              "id": "b",
+              "text": "To implement the actions proposed in risk assessment in order to reduce the risk level"
+            },
+            {
+              "id": "c",
+              "text": "To generate a comprehensive list of risks using techniques such as brainstorming, workshops or interviews"
+            },
+            {
+              "id": "d",
+              "text": "To categorize the identified risks and determine their risk likelihood, risk impact and risk level"
+            }
+          ],
+          "rationale": {
+            "summary": "Product risk control consists of risk mitigation and risk monitoring. The aim of risk monitoring is to ensure that the mitigation actions are effective, to obtain further information to improve risk assessment, and to identify emerging risks.",
+            "byOption": {
+              "a": "Correct. The syllabus defines the aim of risk monitoring with exactly these three points.",
+              "b": "Incorrect. This defines risk mitigation. Mitigation and monitoring together make up risk control, but they are distinct activities.",
+              "c": "Incorrect. This is risk identification, which is part of risk analysis rather than risk control.",
+              "d": "Incorrect. This is risk assessment, which together with risk identification forms risk analysis and precedes risk control."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0107",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.2",
+      "syllabusRef": "§5.2.4",
+      "objectives": [
+        "FL-5.2.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "risk-mitigation",
+        "risk-response"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden hangisi bir ürün riskini TEST YOLUYLA azaltmak için alınabilecek bir aksiyondur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Söz konusu risk çeşidine uygun deneyim ve beceri seviyesine sahip test uzmanlarını seçmek ve uygun bir test bağımsızlığı seviyesi uygulamak"
+            },
+            {
+              "id": "b",
+              "text": "Riski sözleşmeyle üçüncü bir tarafa devretmek"
+            },
+            {
+              "id": "c",
+              "text": "Riski kabul edip başka bir aksiyon almadan risk kaydına işlemek"
+            },
+            {
+              "id": "d",
+              "text": "Risk gerçekleşirse devreye alınacak bir acil durum planı hazırlamak"
+            }
+          ],
+          "rationale": {
+            "summary": "Bir risk analiz edildikten sonra riske yönelik birkaç yanıt seçeneği vardır: test yoluyla riskin azaltılması, risk kabulü, risk transferi veya acil durum planı. Test yoluyla azaltma aksiyonları arasında uygun test uzmanlarının seçilmesi, uygun bir test bağımsızlığı seviyesi, gözden geçirmeler ve statik analiz, uygun test teknikleri ve kapsam seviyeleri, uygun test çeşitleri ve regresyon testi dahil dinamik test yer alır.",
+            "byOption": {
+              "a": "Doğru. Uygun test uzmanlarının seçilmesi ve uygun test bağımsızlığı seviyesinin uygulanması, müfredatta test yoluyla risk azaltma aksiyonları listesinin ilk iki maddesidir.",
+              "b": "Yanlış. Bu risk transferidir; geçerli bir risk yanıt seçeneğidir ama test yoluyla azaltma değildir, riskin sahipliğini başka tarafa taşır.",
+              "c": "Yanlış. Bu risk kabulüdür; riskin bilinçli olarak üstlenilmesidir ve risk seviyesini düşürmeye yönelik bir test aksiyonu içermez.",
+              "d": "Yanlış. Bu bir acil durum planıdır; risk gerçekleştiğinde ne yapılacağını belirler, riskin gerçekleşme olasılığını veya etkisini test yoluyla azaltmaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is an action that can be taken to mitigate a product risk BY TESTING?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Selecting testers with the level of experience and skills suitable for the given risk type and applying an appropriate level of independence of testing"
+            },
+            {
+              "id": "b",
+              "text": "Transferring the risk to a third party by contract"
+            },
+            {
+              "id": "c",
+              "text": "Accepting the risk and recording it in the risk register without further action"
+            },
+            {
+              "id": "d",
+              "text": "Preparing a contingency plan to be executed if the risk occurs"
+            }
+          ],
+          "rationale": {
+            "summary": "Once a risk has been analyzed, several response options are possible: risk mitigation by testing, risk acceptance, risk transfer, or a contingency plan. Actions that mitigate product risks by testing include selecting suitable testers, applying an appropriate level of independence of testing, performing reviews and static analysis, applying appropriate test techniques and coverage levels, applying appropriate test types, and performing dynamic testing including regression testing.",
+            "byOption": {
+              "a": "Correct. Selecting suitable testers and applying an appropriate level of independence of testing are the first two actions the syllabus lists for mitigating product risks by testing.",
+              "b": "Incorrect. This is risk transfer; a valid risk response option, but it moves ownership of the risk elsewhere rather than mitigating it by testing.",
+              "c": "Incorrect. This is risk acceptance; the risk is knowingly taken on and no testing action is performed to reduce its risk level.",
+              "d": "Incorrect. This is a contingency plan; it defines what to do if the risk occurs rather than reducing its likelihood or impact by testing."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0108",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.3",
+      "syllabusRef": "§5.3.1",
+      "objectives": [
+        "FL-5.3.1"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "test-metrics",
+        "defect-metrics"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Hata yoğunluğu ve hata tespit yüzdesi hangi test metriği kategorisine örnektir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Hata metrikleri"
+            },
+            {
+              "id": "b",
+              "text": "Ürün kalite metrikleri"
+            },
+            {
+              "id": "c",
+              "text": "Test ilerleme metrikleri"
+            },
+            {
+              "id": "d",
+              "text": "Risk metrikleri"
+            }
+          ],
+          "rationale": {
+            "summary": "Yaygın test metrikleri; proje ilerleme, test ilerleme, ürün kalite, hata, risk, kapsam ve maliyet metrikleri olarak gruplanır. Hata metrikleri bulunan ve düzeltilen hataların sayısı ve öncelikleri, hata yoğunluğu ve hata tespit yüzdesini kapsar.",
+            "byOption": {
+              "a": "Doğru. Hata yoğunluğu ve hata tespit yüzdesi, müfredatta hata metriklerine verilen örneklerdir.",
+              "b": "Yanlış. Ürün kalite metrikleri elverişlilik, yanıt süresi ve arızalar arası ortalama süre gibi test nesnesinin mevcut kalitesini gösteren ölçümlerdir.",
+              "c": "Yanlış. Test ilerleme metrikleri test senaryosu uyarlama ilerlemesi, test ortamı hazırlık ilerlemesi, çalıştırılan/çalıştırılmayan ve geçen/geçmeyen test senaryosu sayısı ile test koşum süresini kapsar.",
+              "d": "Yanlış. Risk metrikleri, kalan risk seviyesi gibi risklerin durumunu gösteren ölçümlerdir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Defect density and defect detection percentage are examples of which category of test metrics?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Defect metrics"
+            },
+            {
+              "id": "b",
+              "text": "Product quality metrics"
+            },
+            {
+              "id": "c",
+              "text": "Test progress metrics"
+            },
+            {
+              "id": "d",
+              "text": "Risk metrics"
+            }
+          ],
+          "rationale": {
+            "summary": "Common test metrics are grouped into project progress, test progress, product quality, defect, risk, coverage and cost metrics. Defect metrics cover the number and priorities of defects found and fixed, defect density and defect detection percentage.",
+            "byOption": {
+              "a": "Correct. Defect density and defect detection percentage are the syllabus examples of defect metrics.",
+              "b": "Incorrect. Product quality metrics are measures of the current quality of the test object such as availability, response time and mean time to failure.",
+              "c": "Incorrect. Test progress metrics cover test case implementation progress, test environment preparation progress, the number of test cases run/not run and passed/failed, and test execution time.",
+              "d": "Incorrect. Risk metrics are measures of the state of the risks, such as the residual risk level."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0109",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.3",
+      "syllabusRef": "§5.3.2",
+      "objectives": [
+        "FL-5.3.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "test-progress-report",
+        "test-completion-report"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden hangisi tipik olarak test İLERLEME raporunda yer alır ancak test tamamlama raporunda yer ALMAZ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Sıradaki periyot için planlanan testler"
+            },
+            {
+              "id": "b",
+              "text": "Testle ilgili olarak alınan dersler"
+            },
+            {
+              "id": "c",
+              "text": "Orijinal test planına dayalı test ve ürün kalitesi değerlendirmesi"
+            },
+            {
+              "id": "d",
+              "text": "Etkisi azaltılmamış riskler ve düzeltilmemiş hatalar"
+            }
+          ],
+          "rationale": {
+            "summary": "Test ilerleme raporu testin devam eden kontrolünü destekler ve düzenli olarak hazırlanır; test periyodunu, ilerleme durumunu, engelleri, metrikleri, periyot içinde ortaya çıkan yeni ve değişen riskleri ve sıradaki periyot için planlanan testleri içerir. Test tamamlama raporu ise bir aktivite tamamlandığında hazırlanır ve geriye dönük bir değerlendirme sunar.",
+            "byOption": {
+              "a": "Doğru. Sıradaki periyot için planlanan testler ileriye dönük bir bilgidir ve yalnızca test ilerleme raporunda yer alır; tamamlanmış bir aktiviteyi özetleyen tamamlama raporunda böyle bir madde yoktur.",
+              "b": "Yanlış. Alınan dersler test tamamlama raporunun tipik içeriğindedir; deneyimin konsolide edildiği test tamamlama sırasında derlenir.",
+              "c": "Yanlış. Orijinal test planına (test hedefleri ve çıkış kriterleri) dayalı değerlendirme test tamamlama raporunun maddelerindendir.",
+              "d": "Yanlış. Etkisi azaltılmamış riskler ve düzeltilmemiş hatalar test tamamlama raporunda listelenir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is typically included in a test PROGRESS report but NOT in a test completion report?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The testing planned for the next period"
+            },
+            {
+              "id": "b",
+              "text": "Lessons learned that are relevant to the testing"
+            },
+            {
+              "id": "c",
+              "text": "Testing and product quality evaluation based on the original test plan"
+            },
+            {
+              "id": "d",
+              "text": "Unmitigated risks and defects that were not fixed"
+            }
+          ],
+          "rationale": {
+            "summary": "A test progress report supports ongoing test control and is generated on a regular basis; it includes the testing period, test progress, impediments, test metrics, new and changed risks within the period, and the testing planned for the next period. A test completion report is prepared when an activity is complete and looks back over it.",
+            "byOption": {
+              "a": "Correct. The testing planned for the next period is forward-looking and belongs only to the test progress report; a completion report summarizes an activity that has finished.",
+              "b": "Incorrect. Lessons learned are typical content of a test completion report, gathered during test completion when experience is consolidated.",
+              "c": "Incorrect. Evaluation against the original test plan (test objectives and exit criteria) is an item of the test completion report.",
+              "d": "Incorrect. Unmitigated risks and defects not fixed are listed in the test completion report."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0110",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.3",
+      "syllabusRef": "§5.3.2",
+      "objectives": [
+        "FL-5.3.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-reporting",
+        "audience",
+        "formality"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Test raporlamasının hedef kitlesi ve resmiyet derecesi konusunda aşağıdakilerden hangisi doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Aynı ekipteki kişilere yapılan test ilerleme raporlaması genellikle sık ve gayri resmiyken, test tamamlama raporlaması belirli bir şablonu izler ve yalnızca bir kez gerçekleşir"
+            },
+            {
+              "id": "b",
+              "text": "Test ilerleme raporu da test tamamlama raporu da belirli bir şablonu izler ve her paydaşa aynı sıklıkta iletilir"
+            },
+            {
+              "id": "c",
+              "text": "Test ilerleme raporu yalnızca test aktivitesinin sonunda bir kez hazırlanır ve üretilen en resmi rapordur"
+            },
+            {
+              "id": "d",
+              "text": "Resmiyet derecesi yalnızca test seviyesine bağlıdır; hedef kitlenin bir etkisi yoktur"
+            }
+          ],
+          "rationale": {
+            "summary": "Farklı hedef kitleleri raporlarda farklı bilgiler gerektirir ve raporların resmiyet derecesini ve sıklığını etkiler. Aynı ekipteki kişilere yapılan test ilerleme raporlaması genellikle sık ve gayri resmiyken, test tamamlama raporlaması belirli bir şablonu izler ve yalnızca bir kez gerçekleşir.",
+            "byOption": {
+              "a": "Doğru. Müfredat bu iki raporlama biçimini tam olarak bu şekilde karşılaştırır.",
+              "b": "Yanlış. Şablona bağlı olan test tamamlama raporudur; test ilerleme raporlaması ekip içinde genellikle gayri resmidir ve sıklığı hedef kitleye göre değişir.",
+              "c": "Yanlış. Yalnızca bir kez hazırlanan, belirli bir şablonu izleyen rapor test tamamlama raporudur. Test ilerleme raporu düzenli aralıklarla (ör. günlük, haftalık) hazırlanır.",
+              "d": "Yanlış. Müfredat, resmiyet derecesini ve sıklığı etkileyen unsurun hedef kitle olduğunu açıkça belirtir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which statement about the audience and the formality of test reporting is correct?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test progress reporting to others in the same team is often frequent and informal, while test completion reporting follows a set template and occurs only once"
+            },
+            {
+              "id": "b",
+              "text": "Both test progress reports and test completion reports follow a set template and are issued to every stakeholder at the same frequency"
+            },
+            {
+              "id": "c",
+              "text": "A test progress report is produced only once, at the end of the test activity, and is the most formal report produced"
+            },
+            {
+              "id": "d",
+              "text": "The degree of formality depends only on the test level; the audience has no influence on it"
+            }
+          ],
+          "rationale": {
+            "summary": "Different audiences require different information in the reports and influence the degree of formality and the frequency of test reporting. Test progress reporting to others in the same team is often frequent and informal, while test completion reporting follows a set template and occurs only once.",
+            "byOption": {
+              "a": "Correct. This is exactly how the syllabus contrasts the two forms of reporting.",
+              "b": "Incorrect. It is the test completion report that follows a set template; progress reporting within a team is often informal and its frequency varies with the audience.",
+              "c": "Incorrect. The report produced only once and following a set template is the test completion report. Test progress reports are generated on a regular basis (e.g. daily, weekly).",
+              "d": "Incorrect. The syllabus states explicitly that the audience influences the degree of formality and the frequency of reporting."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0111",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.3",
+      "syllabusRef": "§5.3.3",
+      "objectives": [
+        "FL-5.3.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "communicating-status",
+        "distributed-teams"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test ekibi farklı zaman dilimlerindeki üç ülkeye dağılmış durumdadır ve doğrudan yüz yüze iletişim çoğu zaman mümkün değildir. Testin durumunun bildirilmesi için EN UYGUN yaklaşım hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Resmi test raporları ve çevrim içi dokümantasyon gibi daha resmi iletişim biçimlerini kullanmak ve içeriği her paydaşın ilgilendiği bilgiye göre ayarlamak"
+            },
+            {
+              "id": "b",
+              "text": "Her bağlamda en hızlı seçenek olduğu için yalnızca ekip üyeleriyle sözlü iletişimi kullanmak"
+            },
+            {
+              "id": "c",
+              "text": "İletişimin ayarlanmaması gerektiğinden tüm paydaşlara birebir aynı içeriği gösteren tek bir gösterge paneli kullanmak"
+            },
+            {
+              "id": "d",
+              "text": "Yalnızca nihai bilginin paylaşılması için tüm durum bildirimlerini test tamamlama raporuna kadar ertelemek"
+            }
+          ],
+          "rationale": {
+            "summary": "Testin durumunu bildirme seçenekleri arasında sözlü iletişim, gösterge panelleri, elektronik iletişim kanalları, çevrim içi dokümantasyon ve resmi test raporları yer alır. Coğrafi mesafe veya zaman farkı nedeniyle yüz yüze iletişimin mümkün olmadığı dağınık ekipler için daha resmi bir iletişim daha uygun olabilir ve iletişim, farklı paydaşların ilgilendiği bilgiye göre ayarlanmalıdır.",
+            "byOption": {
+              "a": "Doğru. Dağınık ekipler için daha resmi iletişim önerilir ve farklı paydaşlar farklı bilgi çeşitleriyle ilgilendiğinden iletişim buna göre ayarlanır.",
+              "b": "Yanlış. Sözlü iletişim geçerli bir seçenektir ancak en iyi yol bağlama göre değişir; yüz yüze iletişimin mümkün olmadığı dağınık ekiplerde tek başına yeterli değildir.",
+              "c": "Yanlış. Gösterge panelleri geçerli bir seçenektir, ancak müfredat iletişimin paydaşlara göre ayarlanması gerektiğini söyler; herkese aynı içeriği vermek bu ilkeye aykırıdır.",
+              "d": "Yanlış. Testin durumunun bildirilmesi devam eden test kontrolünü besler; tüm bilgiyi sona ertelemek düzeltici aksiyon alma imkânını ortadan kaldırır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A test team is distributed across three countries in different time zones, so direct face-to-face communication is often not possible. Which approach to communicating the status of testing is MOST appropriate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Use more formal communication such as formal test reports and online documentation, tailoring the content to what each stakeholder is interested in"
+            },
+            {
+              "id": "b",
+              "text": "Use only verbal communication with team members, because it is the fastest option in every context"
+            },
+            {
+              "id": "c",
+              "text": "Use a single dashboard showing identical content to all stakeholders, because communication should not be tailored"
+            },
+            {
+              "id": "d",
+              "text": "Postpone all status communication until the test completion report, so that only final information is shared"
+            }
+          ],
+          "rationale": {
+            "summary": "The options for communicating test status include verbal communication, dashboards, electronic communication channels, online documentation and formal test reports. More formal communication may be more appropriate for distributed teams where face-to-face communication is not always possible, and communication should be tailored to the different information different stakeholders are interested in.",
+            "byOption": {
+              "a": "Correct. More formal communication is recommended for distributed teams, and because different stakeholders are interested in different types of information, communication should be tailored accordingly.",
+              "b": "Incorrect. Verbal communication is a valid option, but the best means varies with the context and it is not sufficient on its own where face-to-face contact is not possible.",
+              "c": "Incorrect. Dashboards are a valid option, but the syllabus states that communication should be tailored to the stakeholders, which giving everyone identical content does not do.",
+              "d": "Incorrect. Communicating the status of testing feeds ongoing test control; holding everything back until the end removes the opportunity to take corrective action."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0112",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.4",
+      "syllabusRef": "§5.4",
+      "objectives": [
+        "FL-5.4.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "configuration-management",
+        "traceability",
+        "baseline"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Yapılandırma yönetimi testleri nasıl destekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test öğeleri dahil tüm yapılandırma öğelerinin benzersiz tanımlanmasını, versiyon kontrolünü, değişikliklerinin izlenmesini ve birbirleriyle ilişkilendirilmesini sağlayarak test süreci boyunca izlenebilirliği sürdürür"
+            },
+            {
+              "id": "b",
+              "text": "Her test seviyesi için giriş kriterlerini ve çıkış kriterlerini tanımlar ve karşılanıp karşılanmadığını denetler"
+            },
+            {
+              "id": "c",
+              "text": "Test hakkında bilgi toplar ve test ilerlemesini değerlendirerek düzeltici kontrol yönergeleri sağlar"
+            },
+            {
+              "id": "d",
+              "text": "Anomalilerin keşfedilmesinden kapatılmasına kadar ele alınmasına yönelik iş akışını ve sınıflandırma kurallarını belirler"
+            }
+          ],
+          "rationale": {
+            "summary": "Test sürecinde yapılandırma yönetimi; test planı, test stratejisi, test koşulları, test senaryoları, test betikleri, test sonuçları, test kayıtları ve test raporları gibi iş ürünlerini yapılandırma öğesi olarak tanımlamak, kontrol etmek ve takip etmek için bir disiplin sağlar. Böylece test süreci boyunca izlenebilirlik sürdürülür ve önceki test sonuçlarını yeniden üretmek için önceki bir temel çizgiye dönülebilir.",
+            "byOption": {
+              "a": "Doğru. Müfredat, yapılandırma yönetiminin testi desteklemek için sağladığı iki koşuldan ilkini tam olarak böyle ifade eder.",
+              "b": "Yanlış. Giriş ve çıkış kriterlerinin tanımlanması test planlamanın, karşılanıp karşılanmadığının ölçülmesi ise test gözetiminin işidir (bkz. 5.1.3 ve 5.3).",
+              "c": "Yanlış. Bu, test gözetimi ve test kontrolüdür. Test gözetimi bilgi toplar, test kontrolü bu bilgiyi kullanarak kontrol yönergeleri üretir.",
+              "d": "Yanlış. Bu, hata yönetimi sürecinin tanımıdır (bkz. 5.5); anomalilerin kaydedilmesi, analiz edilmesi, sınıflandırılması ve kapatılmasıyla ilgilenir."
+            }
+          }
+        },
+        "en": {
+          "stem": "How does configuration management support testing?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It ensures that all configuration items, including test items, are uniquely identified, version controlled, tracked for changes and related to each other, so that traceability is maintained throughout the test process"
+            },
+            {
+              "id": "b",
+              "text": "It defines the entry criteria and exit criteria for each test level and checks whether they have been met"
+            },
+            {
+              "id": "c",
+              "text": "It gathers information about testing and assesses test progress in order to provide corrective control directives"
+            },
+            {
+              "id": "d",
+              "text": "It defines the workflow for handling anomalies from discovery to closure and the rules for their classification"
+            }
+          ],
+          "rationale": {
+            "summary": "In testing, configuration management provides a discipline for identifying, controlling and tracking work products such as test plans, test strategies, test conditions, test cases, test scripts, test results, test logs and test reports as configuration items. This keeps traceability throughout the test process, and it is possible to revert to a previous baseline to reproduce previous test results.",
+            "byOption": {
+              "a": "Correct. This is exactly the first of the two things the syllabus says configuration management ensures in order to properly support testing.",
+              "b": "Incorrect. Defining entry and exit criteria is part of test planning, and measuring whether they are satisfied is part of test monitoring (see 5.1.3 and 5.3).",
+              "c": "Incorrect. This describes test monitoring and test control. Test monitoring gathers the information and test control turns it into control directives.",
+              "d": "Incorrect. This describes the defect management process (see 5.5), which handles logging, analyzing, classifying and closing anomalies."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0113",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.5",
+      "syllabusRef": "§5.5",
+      "objectives": [
+        "FL-5.5.1"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "defect-report",
+        "defect-management"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test uzmanı dinamik test sırasında aşağıdaki hata raporunu (defect report) kaydetmiştir:\n- Tanımlayıcı: DR-1042\n- Başlık: İndirim kodu uygulandığında sipariş toplamı yanlış hesaplanıyor\n- Tarih: 12 Mart; yazar: J. Kaya (test uzmanı); bildiren organizasyon: Kalite ekibi\n- Test nesnesi ve test ortamı: Ödeme servisi v2.7, hazırlık ortamı\n- Bağlam: TC-317 test senaryosu, sistem testi, karar tablosu testi\n- Arızanın açıklaması: TC-317'nin 1-5. adımları ve ekteki test kaydı\n- Önem derecesi: yüksek · Düzeltilme önceliği: yüksek · Durum: açık\n- Referanslar: TC-317\nDinamik test sırasında kaydedilen bir hata raporunun tipik olarak içerdiği öğelerden hangisi bu raporda EKSİKTİR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Beklenen sonuçlar ve gerçekleşen sonuçlar"
+            },
+            {
+              "id": "b",
+              "text": "Benzersiz tanımlayıcı"
+            },
+            {
+              "id": "c",
+              "text": "Hatanın önem derecesi"
+            },
+            {
+              "id": "d",
+              "text": "Hatanın durumu"
+            }
+          ],
+          "rationale": {
+            "summary": "Dinamik test sırasında kaydedilen bir hata raporu tipik olarak benzersiz tanımlayıcı, başlık, tarih/yazar/organizasyon, test nesnesi ve test ortamı, hatanın bağlamı, arızanın yeniden oluşturulmasını sağlayacak açıklama, beklenen ve gerçekleşen sonuçlar, önem derecesi, düzeltilme önceliği, durum ve referansları içerir. Bu raporda beklenen ve gerçekleşen sonuçlar yer almamaktadır.",
+            "byOption": {
+              "a": "Doğru. Raporda arızanın açıklaması ve adımlar var, ancak beklenen sonuç ile gerçekleşen sonuç yazılmamış. Bu iki bilgi olmadan raporu okuyan kişi davranışın neden yanlış kabul edildiğini bilemez.",
+              "b": "Yanlış. Benzersiz tanımlayıcı raporda mevcuttur: DR-1042. Bu alan hatanın süreç boyunca tekil olarak izlenmesini sağlar.",
+              "c": "Yanlış. Önem derecesi raporda mevcuttur: yüksek. Bu alan hatanın paydaşların çıkarları veya gereksinimler üzerindeki etki derecesini ifade eder.",
+              "d": "Yanlış. Durum raporda mevcuttur: açık. Bu alan hatanın iş akışının neresinde olduğunu (ör. açık, ertelenmiş, düzeltilmeyi bekliyor, kapatıldı) gösterir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester logged the following defect report during dynamic testing:\n- Identifier: DR-1042\n- Title: Order total is calculated incorrectly when a discount code is applied\n- Date: 12 March; author: J. Kaya (tester); issuing organization: Quality team\n- Test object and test environment: Checkout service v2.7, staging environment\n- Context: test case TC-317, system testing, decision table testing\n- Description of the failure: steps 1-5 of TC-317, with the test log attached\n- Severity: high · Priority to fix: high · Status: open\n- References: TC-317\nWhich element that a defect report logged during dynamic testing typically contains is MISSING from this report?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Expected results and actual results"
+            },
+            {
+              "id": "b",
+              "text": "The unique identifier"
+            },
+            {
+              "id": "c",
+              "text": "The severity of the defect"
+            },
+            {
+              "id": "d",
+              "text": "The status of the defect"
+            }
+          ],
+          "rationale": {
+            "summary": "A defect report logged during dynamic testing typically includes a unique identifier, a title, the date/author/issuing organization, identification of the test object and test environment, the context of the defect, a description of the failure enabling reproduction, expected results and actual results, severity, priority to fix, status and references. Expected and actual results are absent from this report.",
+            "byOption": {
+              "a": "Correct. The report describes the failure and the steps, but never states the expected result and the actual result, without which a reader cannot tell why the observed behaviour is considered wrong.",
+              "b": "Incorrect. The unique identifier is present: DR-1042. This field allows the defect to be tracked individually through the process.",
+              "c": "Incorrect. Severity is present: high. This field expresses the degree of impact of the defect on the interests of stakeholders or requirements.",
+              "d": "Incorrect. Status is present: open. This field shows where the defect stands in the workflow (e.g. open, deferred, waiting to be fixed, closed)."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0114",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.5",
+      "syllabusRef": "§5.5",
+      "objectives": [
+        "FL-5.5.1"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "defect-report",
+        "severity",
+        "priority"
+      ],
+      "origin": "original",
+      "status": "review",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir hata raporu doldurulurken şu bilginin kaydedilmesi gerekmektedir: \"Müşteri sunumu Cuma günü olduğundan bu hatanın bir sonraki derlemeden önce düzeltilmesi gerekiyor.\" Bu bilgi hata raporunun hangi alanına yazılmalıdır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Düzeltilme önceliği"
+            },
+            {
+              "id": "b",
+              "text": "Hatanın önem derecesi"
+            },
+            {
+              "id": "c",
+              "text": "Hatanın durumu"
+            },
+            {
+              "id": "d",
+              "text": "Hatanın bağlamı"
+            }
+          ],
+          "rationale": {
+            "summary": "Hata raporunda önem derecesi ile düzeltilme önceliği ayrı alanlardır. Önem derecesi hatanın paydaşların çıkarları veya gereksinimler üzerindeki etki derecesini; düzeltilme önceliği ise hatanın ne kadar ivedilikle düzeltilmesi gerektiğini ifade eder. Cuma günkü sunum, düzeltmenin ne zaman yapılması gerektiğine dair bir gerekçedir.",
+            "byOption": {
+              "a": "Doğru. Düzeltmenin ivediliğine ve zamanlamasına ilişkin gerekçe düzeltilme önceliği alanına aittir.",
+              "b": "Yanlış. Önem derecesi, hatanın paydaşların çıkarları veya gereksinimler üzerindeki etki derecesidir. Etkisi düşük bir hata da iş takvimi nedeniyle yüksek öncelikli olabilir; iki alan bağımsızdır.",
+              "c": "Yanlış. Durum alanı hatanın iş akışındaki yerini gösterir (ör. açık, ertelenmiş, tekrarlanmış, düzeltilmeyi bekliyor, onaylama testi bekleniyor, yeniden açıldı, kapatıldı, reddedildi); düzeltme gerekçesini taşımaz.",
+              "d": "Yanlış. Bağlam alanı hatanın hangi koşullarda bulunduğunu kaydeder: çalıştırılan test senaryosu, yapılan test faaliyeti, YGYD aşaması ve kullanılan test tekniği, kontrol listesi veya test verisi."
+            }
+          }
+        },
+        "en": {
+          "stem": "While completing a defect report, a tester has to record the following information: \"The customer demonstration is on Friday, so this defect should be fixed before the next build.\" In which field of the defect report does this information belong?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Priority to fix"
+            },
+            {
+              "id": "b",
+              "text": "Severity of the defect"
+            },
+            {
+              "id": "c",
+              "text": "Status of the defect"
+            },
+            {
+              "id": "d",
+              "text": "Context of the defect"
+            }
+          ],
+          "rationale": {
+            "summary": "A defect report keeps severity and priority to fix as separate fields. Severity is the degree of impact of the defect on the interests of stakeholders or requirements, while priority to fix states how urgently it should be fixed. The Friday demonstration is a reason about when the fix is needed.",
+            "byOption": {
+              "a": "Correct. A justification about the urgency and timing of the fix belongs in the priority to fix field.",
+              "b": "Incorrect. Severity is the degree of impact on the interests of stakeholders or requirements. A low-impact defect can still be high priority because of a business deadline; the two fields are independent.",
+              "c": "Incorrect. The status field records where the defect stands in the workflow (e.g. open, deferred, duplicate, waiting to be fixed, awaiting confirmation testing, re-opened, closed, rejected), not the reason for fixing it.",
+              "d": "Incorrect. The context field records the circumstances in which the defect was found: the test case being run, the test activity, the SDLC phase and the test technique, checklist or test data used."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    }
+  ]
+}

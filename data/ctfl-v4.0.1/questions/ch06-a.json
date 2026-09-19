@@ -1,0 +1,505 @@
+{
+  "chunk": "ch06-a",
+  "chapter": 6,
+  "dataVersion": "2026.09.19",
+  "questions": [
+    {
+      "id": "ctfl4-0115",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1",
+      "objectives": ["FL-6.1.1"],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 2,
+      "tags": ["test-tools", "tool-categories"],
+      "origin": "original",
+      "status": "review",
+      "correct": ["a", "b"],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Test araçlarının test aktivitelerine sağladığı destekle ilgili aşağıdaki ifadelerden HANGİ İKİSİ doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test etme bağlamında kullanıldığında bir elektronik tablo da test aracıdır"
+            },
+            {
+              "id": "b",
+              "text": "Statik test araçları, gözden geçirmelerin ve statik analizin yürütülmesinde test uzmanına destek sağlar"
+            },
+            {
+              "id": "c",
+              "text": "Test yönetimi araçlarının işlevi, kod kapsamını ölçmektir"
+            },
+            {
+              "id": "d",
+              "text": "İş birliği araçları, test senaryosu ve test verisi üretimini kolaylaştırır"
+            }
+          ],
+          "rationale": {
+            "summary": "Test araçları listesi kapalı bir liste değildir: teste yardımcı olan her türlü araç, o bağlamda bir test aracıdır ve elektronik tablo müfredatta bunun örneği olarak verilir. Statik test araçları ise gözden geçirme ve statik analizde test uzmanına destek sağlayan kategoridir. Diğer iki ifade, adı geçen kategorileri başka kategorilerin işleviyle karıştırır.",
+            "byOption": {
+              "a": "Doğru. Müfredat, test araçları listesini 'bunlarla sınırlı değildir' diyerek açık bırakır ve teste yardımcı olan her türlü aracı test aracı sayar; verilen örnek tam olarak elektronik tablodur.",
+              "b": "Doğru. Statik test araçları, tanımı gereği gözden geçirmeler ve statik analiz konusunda test uzmanına destek sağlayan araç kategorisidir.",
+              "c": "Yanlış. Kapsam ölçümü, test koşumu ve kapsam araçlarının işlevidir. Test yönetimi araçları, yazılım geliştirme yaşam döngüsünün (SDLC), gereksinimlerin, testlerin, hataların (defect) ve yapılandırmanın yönetimini kolaylaştırarak test sürecinin verimliliğini artırır.",
+              "d": "Yanlış. Test senaryosu, test verisi ve test prosedürü üretimini kolaylaştıranlar test tasarımı ve test uygulama araçlarıdır. İş birliği araçlarının müfredatta belirtilen işlevi iletişimi kolaylaştırmaktır."
+            }
+          }
+        },
+        "en": {
+          "stem": "WHICH TWO of the following statements about how test tools support test activities are correct?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A spreadsheet is a test tool when it is used in the context of testing"
+            },
+            {
+              "id": "b",
+              "text": "Static testing tools support the tester in performing reviews and static analysis"
+            },
+            {
+              "id": "c",
+              "text": "The function of test management tools is to measure code coverage"
+            },
+            {
+              "id": "d",
+              "text": "Collaboration tools facilitate the generation of test cases and test data"
+            }
+          ],
+          "rationale": {
+            "summary": "The list of test tools is explicitly open-ended: any tool that assists in testing is a test tool in that context, and a spreadsheet is the example the syllabus gives. Static testing tools are the category defined as supporting the tester in reviews and static analysis. The other two statements attach the function of a different category to the one they name.",
+            "byOption": {
+              "a": "Correct. The syllabus leaves the tool list open with 'include, but are not limited to', and counts any other tool that assists in testing; the example given is exactly a spreadsheet.",
+              "b": "Correct. Static testing tools are by definition the category that supports the tester in performing reviews and static analysis.",
+              "c": "Incorrect. Coverage measurement is what test execution and test coverage tools do. Test management tools increase test process efficiency by facilitating management of the SDLC, requirements, tests, defects and configuration.",
+              "d": "Incorrect. Generation of test cases, test data and test procedures is facilitated by test design and test implementation tools. The function the syllabus gives for collaboration tools is to facilitate communication."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0116",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1",
+      "objectives": ["FL-6.1.1"],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": ["test-tools", "test-design-tools"],
+      "origin": "original",
+      "status": "review",
+      "correct": ["b"],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekipte otomatik test koşumu ve kapsam ölçümü zaten kuruludur. Ekibin asıl darboğazı, her sürümde test senaryolarının, test verisinin ve test prosedürlerinin elle hazırlanmasıdır. Bu ihtiyaca EN İYİ karşılık veren araç kategorisi hangisidir?",
+          "options": [
+            { "id": "a", "text": "Test koşumu ve kapsam araçları" },
+            { "id": "b", "text": "Test tasarımı ve test uygulama araçları" },
+            { "id": "c", "text": "Test yönetimi araçları" },
+            { "id": "d", "text": "Statik test araçları" }
+          ],
+          "rationale": {
+            "summary": "Test tasarımı ve test uygulama araçları, test senaryolarının, test verisinin ve test prosedürlerinin oluşturulmasını kolaylaştıran kategoridir. Senaryodaki darboğaz tam olarak bu üretim işidir; koşum ve kapsam tarafı zaten çözülmüştür.",
+            "byOption": {
+              "a": "Yanlış. Bu araçlar otomatik test koşumunu ve kapsam ölçümünü kolaylaştırır. Senaryoda bu yetenek zaten mevcuttur, dolayısıyla darboğazı gidermez.",
+              "b": "Doğru. Test tasarımı ve test uygulama araçları, test senaryosu, test verisi ve test prosedürü üretimini kolaylaştırır; ekibin elle yaptığı iş budur.",
+              "c": "Yanlış. Test yönetimi araçları yazılım geliştirme yaşam döngüsünün (SDLC), gereksinimlerin, testlerin, hataların (defect) ve yapılandırmanın yönetimini kolaylaştırır. Testlerin izlenmesine yardım eder, ancak test verisi veya test prosedürü üretmez.",
+              "d": "Yanlış. Statik test araçları, gözden geçirmeler ve statik analiz konusunda test uzmanına destek sağlar; test nesnesi çalıştırılmadan yapılan bu çalışma, senaryodaki üretim ihtiyacıyla ilgili değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team already has automated test execution and coverage measurement in place. Its real bottleneck is that test cases, test data and test procedures are prepared by hand for every release. Which category of test tool BEST addresses this need?",
+          "options": [
+            { "id": "a", "text": "Test execution and test coverage tools" },
+            { "id": "b", "text": "Test design and test implementation tools" },
+            { "id": "c", "text": "Test management tools" },
+            { "id": "d", "text": "Static testing tools" }
+          ],
+          "rationale": {
+            "summary": "Test design and test implementation tools are the category that facilitates generation of test cases, test data and test procedures. That generation work is exactly the bottleneck described; execution and coverage are already solved.",
+            "byOption": {
+              "a": "Incorrect. These tools facilitate automated test execution and coverage measurement. The team already has that capability, so it does not remove the bottleneck.",
+              "b": "Correct. Test design and test implementation tools facilitate generation of test cases, test data and test procedures, which is the work the team is doing by hand.",
+              "c": "Incorrect. Test management tools facilitate management of the SDLC, requirements, tests, defects and configuration. They help in tracking the tests but do not generate test data or test procedures.",
+              "d": "Incorrect. Static testing tools support the tester in performing reviews and static analysis, which is done without executing the test object and is unrelated to the generation need described."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0117",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1",
+      "objectives": ["FL-6.1.1"],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": ["test-tools", "tool-categories", "non-functional-testing-tools"],
+      "origin": "original",
+      "status": "review",
+      "correct": ["c"],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdaki eşleştirmelerden hangisi, bir test aracı kategorisini sağladığı destekle YANLIŞ eşleştirir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test yönetimi araçları – yazılım geliştirme yaşam döngüsünün, gereksinimlerin, testlerin, hataların (defect) ve yapılandırmanın yönetimini kolaylaştırır"
+            },
+            {
+              "id": "b",
+              "text": "DevOps araçları – teslimat hattını, iş akışı takibini, otomatik derleme süreçlerini ve CI/CD'yi destekler"
+            },
+            {
+              "id": "c",
+              "text": "İş birliği araçları – manuel olarak yapılması zor veya imkansız olan testlerin yapılmasına olanak sağlar"
+            },
+            {
+              "id": "d",
+              "text": "Ölçeklenebilirliği ve dağıtım standardizasyonunu destekleyen araçlar – sanal makineler ve konteynerleştirme araçları"
+            }
+          ],
+          "rationale": {
+            "summary": "Manuel olarak yapılması zor veya imkansız olan testleri mümkün kılan kategori, fonksiyonel olmayan test araçlarıdır. İş birliği araçlarının müfredatta verilen işlevi ise yalnızca iletişimi kolaylaştırmaktır; bu nedenle (c) yanlış eşleştirmedir.",
+            "byOption": {
+              "a": "Doğru eşleştirme, dolayısıyla aranan cevap değil. Test yönetimi araçları tam olarak bu yönetim işlerini kolaylaştırarak test sürecinin verimliliğini artırır.",
+              "b": "Doğru eşleştirme, dolayısıyla aranan cevap değil. DevOps araçlarının müfredatta sayılan desteği budur.",
+              "c": "Aranan cevap: yanlış eşleştirme. Manuel olarak yapılması zor veya imkansız olan testleri mümkün kılan kategori fonksiyonel olmayan test araçlarıdır. İş birliği araçlarının işlevi iletişimi kolaylaştırmaktır.",
+              "d": "Doğru eşleştirme, dolayısıyla aranan cevap değil. Müfredat bu kategorinin örnekleri olarak sanal makineleri ve konteynerleştirme araçlarını verir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following pairings matches a category of test tool with its support INCORRECTLY?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test management tools – facilitate management of the SDLC, requirements, tests, defects and configuration"
+            },
+            {
+              "id": "b",
+              "text": "DevOps tools – support the delivery pipeline, workflow tracking, automated build processes and CI/CD"
+            },
+            {
+              "id": "c",
+              "text": "Collaboration tools – allow testing that is difficult or impossible to perform manually"
+            },
+            {
+              "id": "d",
+              "text": "Tools supporting scalability and deployment standardization – virtual machines and containerization tools"
+            }
+          ],
+          "rationale": {
+            "summary": "The category that makes testing possible where it is difficult or impossible to perform manually is non-functional testing tools. The function the syllabus gives for collaboration tools is only to facilitate communication, which makes (c) the incorrect pairing.",
+            "byOption": {
+              "a": "A correct pairing, so not the answer sought. Test management tools increase test process efficiency by facilitating exactly these management activities.",
+              "b": "A correct pairing, so not the answer sought. This is the support the syllabus lists for DevOps tools.",
+              "c": "The answer sought: an incorrect pairing. Testing that is difficult or impossible to perform manually is enabled by non-functional testing tools. Collaboration tools facilitate communication.",
+              "d": "A correct pairing, so not the answer sought. The syllabus gives virtual machines and containerization tools as the examples of this category."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0118",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 6,
+      "section": "6.2",
+      "syllabusRef": "§6.2",
+      "objectives": ["FL-6.2.1"],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": ["test-automation", "benefits"],
+      "origin": "original",
+      "status": "review",
+      "correct": ["a"],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden hangisi test otomasyonu kullanmanın potansiyel faydalarından biridir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Daha fazla tutarlılık ve tekrarlanabilirlik sayesinde basit insan hatalarının (error) önlenmesi"
+            },
+            {
+              "id": "b",
+              "text": "Bir aracın edinilmiş olmasının gerçek ve kalıcı faydaları garanti etmesi"
+            },
+            {
+              "id": "c",
+              "text": "Testlerin gereksinimlerden türetilmesi ihtiyacının ortadan kalkması"
+            },
+            {
+              "id": "d",
+              "text": "Manuel testin daha uygun olduğu durumlarda da test aracı kullanılması"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredatta sayılan faydalardan biri, daha fazla tutarlılık ve tekrarlanabilirlik sayesinde basit insan hatalarının (error) önlenmesidir: testler gereksinimlerden tutarlı biçimde türetilir, test verisi sistematik olarak oluşturulur ve testler araç tarafından aynı sırada ve aynı sıklıkta koşulur.",
+            "byOption": {
+              "a": "Doğru. Tutarlılık ve tekrarlanabilirlik artışı sayesinde basit insan hatalarının (error) önlenmesi, müfredatta sayılan faydalardandır.",
+              "b": "Yanlış. Müfredat bunun tersini söyler: sadece bir araç edinmek başarıyı garanti etmez; her yeni araç gerçek ve kalıcı fayda için kullanıma alma, bakım ve eğitim eforu gerektirir.",
+              "c": "Yanlış. Otomasyonun faydası bu ihtiyacı ortadan kaldırmak değil, tam tersine testlerin gereksinimlerden tutarlı bir şekilde türetilmesini sağlamaktır.",
+              "d": "Yanlış. Bu bir fayda değil, müfredatta açıkça sayılan bir risktir: manuel testin daha uygun olduğu durumlarda test aracı kullanmak."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is a potential benefit of using test automation?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Prevention of simple human errors through greater consistency and repeatability"
+            },
+            {
+              "id": "b",
+              "text": "Acquiring a tool guarantees real and lasting benefits"
+            },
+            {
+              "id": "c",
+              "text": "The need to derive tests from requirements is removed"
+            },
+            {
+              "id": "d",
+              "text": "A test tool is used also where manual testing is more appropriate"
+            }
+          ],
+          "rationale": {
+            "summary": "One of the benefits the syllabus lists is prevention of simple human errors through greater consistency and repeatability: tests are consistently derived from requirements, test data is created systematically, and tests are executed by a tool in the same order with the same frequency.",
+            "byOption": {
+              "a": "Correct. Prevention of simple human errors through greater consistency and repeatability is one of the listed potential benefits.",
+              "b": "Incorrect. The syllabus states the opposite: simply acquiring a tool does not guarantee success, and each new tool requires effort for introduction, maintenance and training to achieve real and lasting benefits.",
+              "c": "Incorrect. The benefit is not that this need disappears but the reverse: tests are consistently derived from requirements.",
+              "d": "Incorrect. This is not a benefit but one of the risks the syllabus lists explicitly: using a test tool when manual testing is more appropriate."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0119",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 6,
+      "section": "6.2",
+      "syllabusRef": "§6.2",
+      "objectives": ["FL-6.2.1"],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": ["test-automation", "risks"],
+      "origin": "original",
+      "status": "review",
+      "correct": ["d"],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden hangisi test otomasyonu kullanmanın potansiyel risklerinden biri DEĞİLDİR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Aracı kullanıma alma, test betiklerini sürdürme ve mevcut manuel süreci değiştirme için gereken zaman, maliyet ve eforun yanlış tahmin edilmesi"
+            },
+            {
+              "id": "b",
+              "text": "Otomasyon aracının geliştirme platformuyla uyumlu olmaması"
+            },
+            {
+              "id": "c",
+              "text": "Araca aşırı güvenilerek insanın eleştirel düşünme ihtiyacının göz ardı edilmesi"
+            },
+            {
+              "id": "d",
+              "text": "Test koşum süresinin kısalmasıyla hataların (defect) daha erken tespit edilmesi ve geri bildirimin hızlanması"
+            }
+          ],
+          "rationale": {
+            "summary": "Test koşum sürelerinin kısalması ve buna bağlı olarak hataların (defect) daha erken tespit edilmesi, geri bildirimin ve pazara sürümün hızlanması müfredatta bir fayda olarak sayılır; risk değildir. Diğer üç seçenek risk listesinden gelir.",
+            "byOption": {
+              "a": "Bu bir risktir, dolayısıyla aranan cevap değil. Müfredat, aracın kullanıma alınması, test betiklerinin bakımı ve manuel sürecin değiştirilmesi için gereken zaman, maliyet ve eforun yanlış tahmin edilmesini risk olarak sayar.",
+              "b": "Bu bir risktir, dolayısıyla aranan cevap değil. Otomasyon aracının geliştirme platformuyla uyumsuz olması risk listesinde yer alır.",
+              "c": "Bu bir risktir, dolayısıyla aranan cevap değil. Araca aşırı güvenmek, örneğin insanın eleştirel düşünme ihtiyacını yok saymak, risk listesindedir.",
+              "d": "Aranan cevap. Bu bir risk değil, sayılan faydalardan biridir: test koşum süresinin kısalması daha erken hata (defect) tespiti, daha hızlı geri bildirim ve daha hızlı pazara sürüm sağlar."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is NOT one of the potential risks of using test automation?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Inaccurate estimation of the time, cost and effort needed to introduce the tool, maintain test scripts and change the existing manual process"
+            },
+            {
+              "id": "b",
+              "text": "The automation tool is not compatible with the development platform"
+            },
+            {
+              "id": "c",
+              "text": "Relying on the tool too much, ignoring the need for human critical thinking"
+            },
+            {
+              "id": "d",
+              "text": "Reduced test execution times providing earlier defect detection and faster feedback"
+            }
+          ],
+          "rationale": {
+            "summary": "Reduced test execution times, and the earlier defect detection, faster feedback and faster time to market that follow from them, are listed by the syllabus as a benefit, not a risk. The other three options come from the risk list.",
+            "byOption": {
+              "a": "This is a risk, so not the answer sought. The syllabus lists inaccurate estimations of time, cost and effort to introduce a tool, maintain test scripts and change the manual process.",
+              "b": "This is a risk, so not the answer sought. Incompatibility of the automation tool with the development platform appears in the risk list.",
+              "c": "This is a risk, so not the answer sought. Relying on a tool too much, e.g. ignoring the need for human critical thinking, is in the risk list.",
+              "d": "The answer sought. This is not a risk but one of the listed benefits: reduced test execution times provide earlier defect detection, faster feedback and faster time to market."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    },
+    {
+      "id": "ctfl4-0120",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 6,
+      "section": "6.2",
+      "syllabusRef": "§6.2",
+      "objectives": ["FL-6.2.1"],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": ["test-automation", "risks", "open-source"],
+      "origin": "original",
+      "status": "review",
+      "correct": ["b"],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir kuruluş, test otomasyonu için açık kaynaklı bir yazılım kullanmaya karar vermiştir. Müfredatta özellikle bu seçimle ilişkilendirilen risk hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Araç satıcısının faaliyetlerine son vermesi, aracı kullanımdan kaldırması veya farklı bir satıcıya satması"
+            },
+            {
+              "id": "b",
+              "text": "Yazılımın artık kullanılmaması nedeniyle yeni güncelleme gelmemesi veya dahili bileşenlerinin çok sık güncelleme gerektirmesi"
+            },
+            {
+              "id": "c",
+              "text": "Seçilen aracın düzenleyici gereksinimlere ve/veya emniyet standartlarına uygun olmaması"
+            },
+            {
+              "id": "d",
+              "text": "Aracın fonksiyonalitesi ve kullanım kolaylığı konusunda gerçekçi olmayan beklentiler oluşması"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredat, açık kaynaklı yazılım kullanmanın riskini iki yönüyle tanımlar: yazılımın terk edilmesi ve böylece yeni güncellemelerin gelmemesi ya da dahili bileşenlerinin geliştirme amaçlı çok sık güncelleme gerektirmesi. Diğer seçenekler de gerçek risklerdir, ancak farklı nedenlere bağlıdır.",
+            "byOption": {
+              "a": "Yanlış. Bu, araç satıcısına bağımlılık riskidir ve satıcısı olan bir araçla ilgilidir; müfredatta ayrı bir madde olarak sayılır.",
+              "b": "Doğru. Açık kaynaklı yazılım kullanmanın müfredatta tanımlanan riski tam olarak budur: yazılımın terk edilmesi ve güncelleme gelmemesi ya da dahili bileşenlerin sık güncelleme gerektirmesi.",
+              "c": "Yanlış. Düzenleyici gereksinimlere ve/veya emniyet standartlarına uymayan bir araç seçmek ayrı bir risk maddesidir; aracın açık kaynaklı olup olmamasından bağımsızdır.",
+              "d": "Yanlış. Bir aracın faydaları, fonksiyonalitesi ve kullanım kolaylığı hakkındaki gerçekçi olmayan beklentiler ayrı bir risk maddesidir ve her tür araç için geçerlidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "An organization has decided to use open-source software for test automation. Which risk does the syllabus associate specifically with this choice?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The vendor goes out of business, retires the tool or sells it to a different vendor"
+            },
+            {
+              "id": "b",
+              "text": "The software is abandoned, so no further updates are available, or its internal components require quite frequent updates"
+            },
+            {
+              "id": "c",
+              "text": "The chosen tool does not comply with regulatory requirements and/or safety standards"
+            },
+            {
+              "id": "d",
+              "text": "Unrealistic expectations about the tool's functionality and ease of use"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus describes the open-source risk in two parts: the software may be abandoned, meaning no further updates are available, or its internal components may require quite frequent updates as further development. The other options are genuine risks too, but they arise from different causes.",
+            "byOption": {
+              "a": "Incorrect. This is the risk of dependency on the tool vendor and concerns a tool that has a vendor; the syllabus lists it as a separate item.",
+              "b": "Correct. This is exactly the risk the syllabus attaches to using open-source software: abandonment with no further updates, or internal components requiring quite frequent updates.",
+              "c": "Incorrect. Choosing a tool that does not comply with regulatory requirements and/or safety standards is a separate risk item, independent of whether the tool is open source.",
+              "d": "Incorrect. Unrealistic expectations about the benefits of a tool, including its functionality and ease of use, is a separate risk item that applies to any kind of tool."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-19",
+        "updatedAt": "2026-09-19"
+      }
+    }
+  ]
+}
