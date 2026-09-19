@@ -14,11 +14,22 @@
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 
+import type { Lang } from "@/types/content";
 import tr from "./locales/tr.json";
 import en from "./locales/en.json";
 
 export const UI_LANGUAGES = ["tr", "en"] as const;
 export type UiLanguage = (typeof UI_LANGUAGES)[number];
+
+/**
+ * ICERIK dili secenekleri, kendi dillerindeki adlariyla. Arayuz dilinden
+ * bagimsizdir (yukaridaki nota bakin); kurulum ve inceleme ekranlarinda
+ * ayni liste sunulur.
+ */
+export const CONTENT_LANGUAGES: { value: Lang; label: string }[] = [
+  { value: "tr", label: "Türkçe" },
+  { value: "en", label: "English" },
+];
 
 const STORAGE_KEY = "istqb-prep:ui-lang";
 

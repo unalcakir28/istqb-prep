@@ -19,16 +19,6 @@ export function createRng(seed: number): () => number {
   };
 }
 
-/** Bir metni 32-bit tohuma cevirir (soru ID'sinden sik sirasi turetmek icin). */
-export function hashSeed(text: string): number {
-  let hash = 2166136261;
-  for (let i = 0; i < text.length; i += 1) {
-    hash ^= text.charCodeAt(i);
-    hash = Math.imul(hash, 16777619);
-  }
-  return hash >>> 0;
-}
-
 /** Fisher-Yates. Girdi dizisi degistirilmez. */
 export function shuffle<T>(items: readonly T[], rng: () => number): T[] {
   const result = [...items];

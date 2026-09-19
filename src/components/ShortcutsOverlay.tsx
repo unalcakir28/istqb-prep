@@ -1,5 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
+
+import { DialogScrim } from "./DialogScrim";
+import { useDialogFocus } from "@/lib/useDialogFocus";
 
 /**
  * Keyboard shortcut help (docs/06 §5), opened with `?` and from the top bar.
@@ -16,34 +19,9 @@ export function ShortcutsOverlay({ open, onClose }: ShortcutsOverlayProps) {
   const { t } = useTranslation();
   const panelRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!open) return;
-
-    const opener = document.activeElement as HTMLElement | null;
-    const panel = panelRef.current;
-    panel?.querySelector<HTMLElement>("button")?.focus();
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        event.stopPropagation();
-        onClose();
-        return;
-      }
-
-      if (event.key !== "Tab") return;
-
-      // Only the close button is focusable, so Tab simply stays put.
-      event.preventDefault();
-      panel?.querySelector<HTMLElement>("button")?.focus();
-    };
-
-    document.addEventListener("keydown", onKeyDown, true);
-
-    return () => {
-      document.removeEventListener("keydown", onKeyDown, true);
-      opener?.focus();
-    };
-  }, [open, onClose]);
+  // Only the close button is focusable, so the shared trap simply keeps Tab
+  // on it.
+  useDialogFocus(open, panelRef, onClose);
 
   if (!open) return null;
 
@@ -60,12 +38,7 @@ export function ShortcutsOverlay({ open, onClose }: ShortcutsOverlayProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center p-4 sm:items-center">
-      <button
-        type="button"
-        aria-label={t("common.close")}
-        onClick={onClose}
-        className="absolute inset-0 h-full w-full cursor-default bg-bg/80 backdrop-blur-sm"
-      />
+      <DialogScrim label={t("common.close")} onClose={onClose} />
 
       <div
         ref={panelRef}

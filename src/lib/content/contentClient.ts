@@ -14,6 +14,7 @@
  */
 
 import type {
+  CertificationSummary,
   CertMeta,
   ExamBlueprint,
   Manifest,
@@ -47,9 +48,26 @@ export class ContentClient {
   private memory = new Map<string, unknown>();
   private inflight = new Map<string, Promise<unknown>>();
   private dataVersion: string | null = null;
+  private versionCheck: Promise<void> | null = null;
+
+  /**
+   * Surum kontrolu yalnizca `getManifest` icinde yapiliyordu, o da sadece
+   * ana sayfa / kurulum / kaynaklar ekranlarindan cagriliyordu. Dogrudan
+   * /deneme/:id gibi bir adrese girildiginde (yenileme, yer imi, gecmis)
+   * kontrol hic calismiyor ve Cache API'deki eski icerik sonsuza kadar
+   * servis ediliyordu. Artik onbellege alinan her okuma once bunu bekler.
+   */
+  private ensureVersion(): Promise<void> {
+    this.versionCheck ??= this.getManifest().then(() => undefined);
+    return this.versionCheck;
+  }
 
   /** Ayni URL icin es zamanli iki istek tek fetch'e indirgenir. */
   private async fetchJson<T>(url: string, cacheable: boolean): Promise<T> {
+    // Manifest bu yoldan gecmez (kendi `no-cache` fetch'i var), dolayisiyla
+    // burada beklemek dongu yaratmaz.
+    await this.ensureVersion();
+
     const cached = this.memory.get(url);
     if (cached) return cached as T;
 
@@ -102,6 +120,21 @@ export class ContentClient {
     return manifest;
   }
 
+  /**
+   * Ekranlarin calistigi sertifika. Manifest birden fazla tasiyabilir ama
+   * Faz 1'de yalnizca `active` olan gosterilir; hicbiri isaretli degilse
+   * ilki kullanilir.
+   */
+  async getActiveCertification(): Promise<CertificationSummary> {
+    const manifest = await this.getManifest();
+    const cert =
+      manifest.certifications.find((item) => item.status === "active") ??
+      manifest.certifications[0];
+
+    if (!cert) throw new Error("manifest has no certification");
+    return cert;
+  }
+
   /** Surum degistiyse eski surume ait her sey atilir. */
   private async applyDataVersion(version: string): Promise<void> {
     if (this.dataVersion === version) return;
@@ -149,10 +182,7 @@ export class ContentClient {
   }
 
   getChunk(certPath: string, chunk: string): Promise<QuestionChunk> {
-    return this.fetchJson<QuestionChunk>(
-      dataUrl(certPath, "questions", `${chunk}.json`),
-      true,
-    );
+    return this.fetchJson<QuestionChunk>(dataUrl(certPath, "questions", `${chunk}.json`), true);
   }
 
   /**
@@ -181,9 +211,7 @@ export class ContentClient {
       throw new Error(`Indekste bulunmayan soru ID'leri: ${missing.join(", ")}`);
     }
 
-    const chunks = await Promise.all(
-      [...needed].map((chunk) => this.getChunk(certPath, chunk)),
-    );
+    const chunks = await Promise.all([...needed].map((chunk) => this.getChunk(certPath, chunk)));
 
     const byId = new Map<string, Question>();
     for (const chunk of chunks) {

@@ -38,7 +38,9 @@ describe("gercek soru bankasi", () => {
     // Eksik varsa hangi grup oldugu testte gorunsun — cıplak bir sayi
     // karsilastirmasi icerik yazarina hicbir sey soylemez.
     expect(
-      shortfalls.map((s) => `${s.groupId} (b${s.chapter} ${s.kLevel}): ${s.available}/${s.required}`),
+      shortfalls.map(
+        (s) => `${s.groupId} (b${s.chapter} ${s.kLevel}): ${s.available}/${s.required}`,
+      ),
     ).toEqual([]);
     expect(total).toBe(blueprint.totals.questions);
   });

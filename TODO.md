@@ -10,6 +10,7 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 ## Faz 0 — Temel ve doğrulama
 
 ### Karar ve hukuk
+
 - [x] **F0-01** `P0` Ürün adı kararı (D-01) → **ISTQB-PREP**, depo adıyla aynı. Marka riski bilinçli üstlenildi ([`08 §K-4`](docs/08-hukuki-ve-telif.md), [`10 §R-01b`](docs/10-riskler-ve-metrikler.md))
 - [ ] **F0-17** `P1` Ürün adını tek kaynaktan okunur yap (i18n/`meta`) — koda gömme; D-01 riskinin telafisi, yeniden adlandırmayı tek satıra indirir
 - [ ] **F0-02** `P0` ISTQB Glossary lisansını tarayıcıda **gözle doğrula** (footer'da CC BY 4.0 var mı?), ekran görüntüsünü `docs/kanit/` altına koy
@@ -19,7 +20,8 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 - [x] **F0-16** `P2` Alan adı kararı (D-02) → alan adı alınmıyor, `*.github.io` yeterli
 
 ### Veri iskeleti
-- [x] **F0-05** `P0` Resmî LO-grubu tablosu `exam-blueprint.json`'a çıkarıldı — **29 grup / 64 LO / 40 soru**, bölüm 8/6/4/11/9/2, K 8/24/8. Kaynak: *Exam Structures & Rules tables v1.19*, s. 4-5
+
+- [x] **F0-05** `P0` Resmî LO-grubu tablosu `exam-blueprint.json`'a çıkarıldı — **29 grup / 64 LO / 40 soru**, bölüm 8/6/4/11/9/2, K 8/24/8. Kaynak: _Exam Structures & Rules tables v1.19_, s. 4-5
 - [x] **F0-06** `P0` `objectives.json` — **64 LO**, TR+EN metinler resmî PDF'lerden birebir, K1=14/K2=42/K3=8
 - [x] **F0-07** `P0` `syllabus.json` · `meta.json` · `manifest.json` — resmî kaynağa karşı denetlendi, sıfır tutarsızlık (başlıklar, süreler 1135 dk, sınav sabitleri 40/26/60/75)
 - [x] **F0-11** `P1` `certifications.json` — 28 satırlık tüm ISTQB sertifika tablosu ([`03 §5`](docs/03-istqb-referans.md) seed verisi)
@@ -30,6 +32,7 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 - [x] **F0-14** `P1` `data/ctfl-v4.0.1/terms.json` — **97 terim**, resmî EN/TR anahtar kelime listelerinden konum bazlı hizalandı. ⚠️ `docs/07 §5`'in ilk sözlüğü büyük ölçüde yanlıştı, tamamen değiştirildi
 
 ### İçerik
+
 - [x] **F0-10** `P0` İlk sorular yazıldı — süreç kanıtlandı (bkz. F1-C1)
 
 > **Faz 0 bitti:** `npm run validate:data` yeşil · blueprint 40'a toplanıyor · 20 soru şemaya uygun
@@ -39,6 +42,7 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 ## Faz 1 — MVP: Deneme sınavı
 
 ### Altyapı
+
 - [x] **F1-01** `P0` Vite 6 + React 19 + TS 5 + Tailwind v4; tüm sürümler tam sabitli, yarn
 - [x] **F1-01b** `P0` GitHub Pages deploy hattı kuruldu
 - [x] **F1-01c** `P0` CI: ESLint + Prettier + `tsc --noEmit` + Vitest + `validate:data`
@@ -47,6 +51,7 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 - [x] **F1-04** `P0` i18next; arayüz dili ≠ içerik dili; TR/EN sözlükler 104 anahtarda eşit
 
 ### Sınav motoru
+
 - [x] **F1-05** `P0` `generateExam` — blueprint tabanlı, LO-grubu kuralı, tohumlanmış PRNG
 - [x] **F1-05b** `P0` Dağılım testi 50 ayrı tohumda: tam olarak 8/6/4/11/9/2 ve K 8/24/8
 - [x] **F1-05c** `P1` `shortfalls` + `previewCoverage` — eksik deneme sessizce üretilmiyor
@@ -54,6 +59,7 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 - [ ] **F1-08** `P0` `ExamTimer` — `Date.now()` tabanlı (sekme arka planında kaymaz), 5 sn'de bir kalıcılaştırma, son 10 dk amber / son 1 dk kırmızı, gizle/göster
 
 ### Arayüz
+
 - [ ] **F1-07** `P0` `QuestionCard` + `OptionList` (max 65ch, tam genişlik dokunma hedefi, 1–9 klavye seçimi) + `LangToggle` (cevap korunur)
 - [ ] **F1-07b** `P0` `multi` soru desteği: checkbox + **"HANGİ İKİSİ — 2 şık seçin"** başlığı
 - [ ] **F1-09** `P0` `QuestionNavigator` — masaüstünde panel, mobilde bottom sheet; boş/cevaplı/işaretli durumları
@@ -66,13 +72,15 @@ Tahminler: tek geliştirici, haftada ~10 saat.
 - [ ] **F1-17** `P1` Deneme kurulum ekranı: **75 dk Türkçe arayüzde varsayılan seçili**, canlı dağılım önizlemesi, havuz uyarısı
 
 ### Kalite
+
 - [x] **F1-15** `P1` E2E (Playwright): tam 40 soruluk deneme akışı, yarım kalan denemeyi sürdürme, soru dili değişince cevabın korunması — `e2e/exam.spec.ts`, `yarn e2e`
 - [x] **F1-18** `P1` `@axe-core/playwright` — ana sayfa, kurulum, kaynaklar ve sınav ekranı açık/koyu temada 0 ihlal; ayrıca şıkkın klavyeyle seçilebildiği doğrulanıyor — `e2e/a11y.spec.ts`
 - [ ] **F1-19** `P2` Lighthouse CI — 4 kategoride ≥95
 
 ### İçerik ve sayfalar
+
 - [x] **F1-C1** `P0` **120 soru** — altı bölümün tamamı yazıldı, bağımsız doğrulamadan geçti ve `published` olarak yayına alındı (64/64 LO kapsanıyor). Bölüm 4 doğrulamasının bulguları uygulandı: `ctfl4-0063` 3 değerli SDA gerekçesi düzeltildi (sınır değer 500'dür, 498 kapsam öğesi değil), `ctfl4-0064` ve `ctfl4-0067` çeldiricileri, `ctfl4-0068` K3 için yeniden yazıldı, `ctfl4-0079` TR terim belirsizliği giderildi
-- [ ] **F1-C2** `P1` Kapsama rozeti README'de
+- [x] **F1-C2** `P1` Kapsama rozeti README'de — `yarn stats` marker arasını yeniden üretir, sayılar sessizce eskimez
 - [ ] **F1-C3** `P0` `/kaynaklar` (telif bildirimi tam metni + resmî bağlantılar) · gizlilik politikası · sorumluluk reddi footer'ı
 
 > **Faz 1 bitti:** [`02 §3`](docs/02-urun-gereksinimleri.md)'teki MVP sınırı karşılandı

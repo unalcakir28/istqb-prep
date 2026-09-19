@@ -22,6 +22,12 @@ export interface CitationChipsProps {
   className?: string;
 }
 
+const CHIP =
+  "inline-flex items-center rounded-[var(--radius-badge)] border px-2 py-0.5 font-mono text-[12px]";
+/** LO kodu one cikar — diger cipler yardimci bilgidir. */
+const CHIP_EMPHASIS = "border-accent/40 bg-accent/10 font-medium text-accent";
+const CHIP_PLAIN = "border-border bg-surface-2 text-fg-muted";
+
 function Chip({
   label,
   value,
@@ -34,11 +40,7 @@ function Chip({
   return (
     <span
       title={`${label}: ${value}`}
-      className={
-        emphasis
-          ? "inline-flex items-center rounded-[var(--radius-badge)] border border-accent/40 bg-accent/10 px-2 py-0.5 font-mono text-[12px] font-medium text-accent"
-          : "inline-flex items-center rounded-[var(--radius-badge)] border border-border bg-surface-2 px-2 py-0.5 font-mono text-[12px] text-fg-muted"
-      }
+      className={`${CHIP} ${emphasis ? CHIP_EMPHASIS : CHIP_PLAIN}`}
     >
       <span className="sr-only">{label}: </span>
       {value}
@@ -62,7 +64,9 @@ export function CitationChips({
       ))}
       {syllabusRef ? <Chip label={t("question.syllabus")} value={syllabusRef} /> : null}
       {kLevel ? <Chip label={t("question.kLevel")} value={kLevel} /> : null}
-      {syllabusVersion ? <Chip label={t("question.version")} value={`v${syllabusVersion}`} /> : null}
+      {syllabusVersion ? (
+        <Chip label={t("question.version")} value={`v${syllabusVersion}`} />
+      ) : null}
     </div>
   );
 }

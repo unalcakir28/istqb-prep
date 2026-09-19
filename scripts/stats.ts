@@ -14,6 +14,9 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_DIR = path.join(ROOT, "data");
 const OUT = path.join(ROOT, "docs", "kapsama.md");
+const README = path.join(ROOT, "README.md");
+const BADGE_START = "<!-- kapsama:basla";
+const BADGE_END = "<!-- kapsama:bitti -->";
 
 type Json = Record<string, any>;
 
@@ -34,9 +37,54 @@ function bar(value: number, max: number, width = 12): string {
   return "█".repeat(filled) + "·".repeat(width - filled);
 }
 
+interface Badge {
+  questions: number;
+  covered: number;
+  objectives: number;
+  acronym: string;
+  version: string;
+}
+
+function shield(label: string, message: string, color: string): string {
+  const escape = (text: string) => encodeURIComponent(text.replace(/-/g, "--"));
+  return `https://img.shields.io/badge/${escape(label)}-${escape(message)}-${color}`;
+}
+
+/**
+ * README'deki rozetler elle yazilirsa sessizce eskir. Marker araligi her
+ * `yarn stats` calismasinda yeniden uretilir; markerlar yoksa README'ye
+ * dokunulmaz (uyari verilir), cunku dosyanin geri kalani bu betigin isi degil.
+ */
+function writeBadges(badges: Badge[]): void {
+  const first = badges[0];
+  if (!first) return;
+
+  const readme = fs.readFileSync(README, "utf8");
+  const start = readme.indexOf(BADGE_START);
+  const end = readme.indexOf(BADGE_END);
+  if (start === -1 || end === -1) {
+    console.warn("README.md icinde kapsama markerlari yok — rozetler guncellenmedi.");
+    return;
+  }
+
+  const complete = first.covered === first.objectives;
+  const block = [
+    readme.slice(start, readme.indexOf("\n", start)),
+    "",
+    `[![soru](${shield("soru", String(first.questions), "2ea043")})](docs/kapsama.md)`,
+    `[![hedef kapsama](${shield("hedef kapsama", `${first.covered}/${first.objectives}`, complete ? "2ea043" : "d29922")})](docs/kapsama.md)`,
+    `[![mufredat](${shield(first.acronym, `v${first.version}`, "0969da")})](docs/03-istqb-referans.md)`,
+    "",
+  ].join("\n");
+
+  fs.writeFileSync(README, readme.slice(0, start) + block + readme.slice(end), "utf8");
+  console.log(`README.md rozetleri guncellendi (${first.questions} soru, ${first.covered}/${first.objectives} LO)`);
+}
+
 function main(): void {
   const manifest = readJson(path.join(DATA_DIR, "manifest.json"));
   const lines: string[] = [];
+  const badges: Badge[] = [];
 
   lines.push("# Kapsama raporu");
   lines.push("");
@@ -66,6 +114,14 @@ function main(): void {
     const values = [...counts.values()];
     const covered = values.filter((n) => n > 0).length;
     const atLeast = (n: number) => values.filter((v) => v >= n).length;
+
+    badges.push({
+      questions: published.length,
+      covered,
+      objectives: objectives.length,
+      acronym: certification.acronym,
+      version: certification.syllabusVersion,
+    });
 
     lines.push(`## ${certification.acronym} v${certification.syllabusVersion}`);
     lines.push("");
@@ -109,6 +165,8 @@ function main(): void {
 
   fs.writeFileSync(OUT, `${lines.join("\n")}\n`, "utf8");
   console.log(`docs/kapsama.md yazildi (${lines.length} satir)`);
+
+  writeBadges(badges);
 }
 
 main();

@@ -1,5 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
+
+import { DialogScrim } from "./DialogScrim";
+import { useDialogFocus } from "@/lib/useDialogFocus";
 
 /**
  * F1-09 — question navigator.
@@ -96,9 +99,7 @@ export function QuestionNavigator({
   const { t } = useTranslation();
 
   const state = (index: number) => {
-    const marks: string[] = [];
-    if (answered[index]) marks.push(t("exam.answered"));
-    else marks.push(t("exam.unanswered"));
+    const marks = [answered[index] ? t("exam.answered") : t("exam.unanswered")];
     if (flagged[index]) marks.push(t("exam.flagged"));
 
     return marks.join(", ");
@@ -145,58 +146,13 @@ export function QuestionNavigatorSheet({ open, onClose, ...grid }: QuestionNavig
   const { t } = useTranslation();
   const panelRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!open) return;
-
-    const opener = document.activeElement as HTMLElement | null;
-    const panel = panelRef.current;
-    panel?.querySelector<HTMLElement>("button")?.focus();
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        event.stopPropagation();
-        onClose();
-        return;
-      }
-
-      if (event.key !== "Tab") return;
-
-      const focusable = panel?.querySelectorAll<HTMLElement>("button:not([disabled])");
-      if (!focusable || focusable.length === 0) return;
-
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-        return;
-      }
-
-      if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    };
-
-    document.addEventListener("keydown", onKeyDown, true);
-
-    return () => {
-      document.removeEventListener("keydown", onKeyDown, true);
-      opener?.focus();
-    };
-  }, [open, onClose]);
+  useDialogFocus(open, panelRef, onClose);
 
   if (!open) return null;
 
   return (
     <div className="fixed inset-0 z-40 lg:hidden">
-      <button
-        type="button"
-        aria-label={t("common.close")}
-        onClick={onClose}
-        className="absolute inset-0 h-full w-full cursor-default bg-bg/80 backdrop-blur-sm"
-      />
+      <DialogScrim label={t("common.close")} onClose={onClose} />
 
       <div
         ref={panelRef}

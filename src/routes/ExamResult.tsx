@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import { ErrorNotice } from "@/components/ErrorNotice";
 import { ScoreBar } from "@/components/ScoreBar";
 import { Spinner } from "@/components/Spinner";
 import { useExamStore } from "@/features/exam/examStore";
@@ -99,20 +100,7 @@ export default function ExamResult() {
   }, [certId]);
 
   if (loading && !ready) return <Spinner />;
-
-  if (!attempt || !score) {
-    return (
-      <div className="mx-auto flex max-w-2xl flex-col gap-4 px-4 py-16">
-        <h1 className="text-2xl font-semibold">{t("common.errorTitle")}</h1>
-        <Link
-          to="/"
-          className="w-fit rounded-[var(--radius-btn)] border border-border px-4 py-2 font-medium hover:bg-surface-2"
-        >
-          {t("result.backHome")}
-        </Link>
-      </div>
-    );
-  }
+  if (!attempt || !score) return <ErrorNotice />;
 
   // Teslim zamani yoksa (olmamasi gereken durum) tahmin uretmek yerine
   // ayrilan surenin tamami gosterilir — render saf kalir.
@@ -151,11 +139,9 @@ export default function ExamResult() {
         </p>
 
         <p
-          className={
-            score.passed
-              ? "flex items-center gap-2 text-lg font-semibold text-correct"
-              : "flex items-center gap-2 text-lg font-semibold text-incorrect"
-          }
+          className={`flex items-center gap-2 text-lg font-semibold ${
+            score.passed ? "text-correct" : "text-incorrect"
+          }`}
         >
           {score.passed ? <PassIcon /> : <FailIcon />}
           {verdict}

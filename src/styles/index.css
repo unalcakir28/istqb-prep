@@ -8,8 +8,7 @@
 
 @theme {
   --font-sans:
-    Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    sans-serif;
+    Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --radius-card: 12px;
@@ -29,7 +28,9 @@
   --accent-fg: #ffffff;
   --correct: #15803d;
   --incorrect: #b91c1c;
-  --flag: #b45309;
+  /* amber-800: #b45309 idi ama flag/10 zemin uzerinde 12px metinde
+     kontrast 4.19 cikiyor, WCAG AA esigi 4.5. Koyulastirildi -> 5.9. */
+  --flag: #92400e;
   --info: #1d4ed8;
 
   color-scheme: light;

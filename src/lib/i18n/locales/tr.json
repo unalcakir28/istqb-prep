@@ -62,7 +62,9 @@
     "unanswered": "Boş",
     "flagged": "İşaretli",
     "shortcuts": "Klavye kısayolları",
-    "autoSubmitting": "Süre doldu, teslim ediliyor…"
+    "autoSubmitting": "Süre doldu, teslim ediliyor…",
+    "shortExam": "Bu deneme {{count}} soru içeriyor; tam sınav {{expected}} soru. Havuzda yeterli soru bulunamadı.",
+    "persistFailed": "Cevapların bu cihaza kaydedilemiyor. Sayfayı yenilersen ilerlemen kaybolur."
   },
   "result": {
     "title": "Sonuç",

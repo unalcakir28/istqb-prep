@@ -118,7 +118,7 @@ export function Layout() {
               </NavLink>
             </nav>
 
-            <div className={isExamSession ? "" : "ml-auto flex items-center gap-2 sm:ml-0"}>
+            <div className="ml-auto flex items-center gap-2 sm:ml-0">
               <UiLanguageToggle />
               <ThemeToggle />
             </div>

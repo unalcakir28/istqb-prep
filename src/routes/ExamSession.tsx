@@ -3,12 +3,14 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { ContentLangToggle } from "@/components/ContentLangToggle";
+import { DialogScrim } from "@/components/DialogScrim";
 import { ExamTimer } from "@/components/ExamTimer";
 import { QuestionCard } from "@/components/QuestionCard";
 import { QuestionNavigator, QuestionNavigatorSheet } from "@/components/QuestionNavigator";
 import { ShortcutsOverlay } from "@/components/ShortcutsOverlay";
 import { Spinner } from "@/components/Spinner";
 import { useExamStore } from "@/features/exam/examStore";
+import { useDialogFocus } from "@/lib/useDialogFocus";
 
 /**
  * F1-07 / F1-10 — the exam session screen.
@@ -80,7 +82,9 @@ const TOP_BAR_BUTTON =
   "h-9 items-center gap-1.5 rounded-[var(--radius-btn)] border px-2.5 text-xs font-medium transition-colors sm:px-3";
 const TOP_BAR_IDLE = "border-border text-fg-muted hover:bg-surface-2 hover:text-fg";
 const TOP_BAR_ACTIVE = "border-flag text-flag hover:bg-flag/10";
-const SCRIM = "absolute inset-0 h-full w-full cursor-default bg-bg/80 backdrop-blur-sm";
+
+const BANNER =
+  "rounded-[var(--radius-card)] border border-flag/40 bg-flag/10 px-4 py-2.5 text-sm text-fg";
 
 const NAV_BUTTON =
   "flex min-h-11 items-center gap-2 rounded-[var(--radius-btn)] border border-border bg-surface px-4 text-sm font-medium transition-colors hover:bg-surface-2 disabled:cursor-not-allowed disabled:opacity-40";
@@ -100,53 +104,13 @@ function SubmitConfirm({
   const { t } = useTranslation();
   const panelRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!open) return;
-
-    const opener = document.activeElement as HTMLElement | null;
-    const panel = panelRef.current;
-    panel?.querySelector<HTMLElement>("button")?.focus();
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        event.stopPropagation();
-        onCancel();
-        return;
-      }
-
-      if (event.key !== "Tab") return;
-
-      const focusable = panel?.querySelectorAll<HTMLElement>("button");
-      if (!focusable || focusable.length === 0) return;
-
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-        return;
-      }
-
-      if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    };
-
-    document.addEventListener("keydown", onKeyDown, true);
-
-    return () => {
-      document.removeEventListener("keydown", onKeyDown, true);
-      opener?.focus();
-    };
-  }, [open, onCancel]);
+  useDialogFocus(open, panelRef, onCancel);
 
   if (!open) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center p-4 sm:items-center">
-      <button type="button" aria-label={t("exam.cancel")} onClick={onCancel} className={SCRIM} />
+      <DialogScrim label={t("exam.cancel")} onClose={onCancel} />
 
       <div
         ref={panelRef}
@@ -187,7 +151,7 @@ function SubmitConfirm({
   );
 }
 
-export function ExamSession() {
+export default function ExamSession() {
   const { attemptId } = useParams();
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -200,6 +164,8 @@ export function ExamSession() {
   const contentLang = useExamStore((state) => state.contentLang);
   const loading = useExamStore((state) => state.loading);
   const error = useExamStore((state) => state.error);
+  const meta = useExamStore((state) => state.meta);
+  const persistFailed = useExamStore((state) => state.persistFailed);
 
   const resumeAttempt = useExamStore((state) => state.resumeAttempt);
   const select = useExamStore((state) => state.select);
@@ -393,6 +359,12 @@ export function ExamSession() {
   const isFlagged = !!flagged[question.id];
   const flagLabel = isFlagged ? t("exam.unflag") : t("exam.flag");
 
+  // Kural 8: deneme sessizce eksik uretilmez. Bu, denemenin KENDISINDEN
+  // turetilir (gecici store durumundan degil), boylece yenilemeden ve
+  // yarim kalan denemeye donusten sonra da gorunur.
+  const expected = meta?.exam.questionCount ?? 0;
+  const isShortExam = expected > 0 && total < expected;
+
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-30 border-b border-border bg-surface">
@@ -447,6 +419,21 @@ export function ExamSession() {
           </div>
         </div>
       </header>
+
+      {isShortExam || persistFailed ? (
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-3 pt-3 sm:px-4">
+          {isShortExam ? (
+            <p role="status" className={BANNER}>
+              {t("exam.shortExam", { count: total, expected })}
+            </p>
+          ) : null}
+          {persistFailed ? (
+            <p role="alert" className={BANNER}>
+              {t("exam.persistFailed")}
+            </p>
+          ) : null}
+        </div>
+      ) : null}
 
       <div className="mx-auto flex max-w-6xl gap-8 px-4 py-6 sm:py-8">
         <section className="min-w-0 flex-1">
@@ -531,5 +518,3 @@ export function ExamSession() {
     </div>
   );
 }
-
-export default ExamSession;

@@ -13,18 +13,43 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import { ErrorNotice } from "@/components/ErrorNotice";
 import { QuestionCard } from "@/components/QuestionCard";
 import { RationalePanel } from "@/components/RationalePanel";
 import { Spinner } from "@/components/Spinner";
 import { useExamStore } from "@/features/exam/examStore";
-import type { Lang } from "@/types/content";
+import { CONTENT_LANGUAGES } from "@/lib/i18n";
 
 type Filter = "all" | "wrong";
 
-const CONTENT_LANGUAGES: { value: Lang; label: string }[] = [
-  { value: "tr", label: "Türkçe" },
-  { value: "en", label: "English" },
-];
+/** Iki segmentli dugme grubu — filtre ve soru dili ayni gorunumu paylasir. */
+function segmentClasses(active: boolean): string {
+  if (active) return "rounded-[6px] bg-accent px-3 py-1.5 text-xs font-semibold text-accent-fg";
+  return "rounded-[6px] px-3 py-1.5 text-xs font-medium text-fg-muted hover:text-fg";
+}
+
+/** Cevapsiz soru yanlistan ayri soylenir; renk tek basina yetmez (WCAG 1.4.1). */
+function OutcomeBadge({ isCorrect, answered }: { isCorrect: boolean; answered: boolean }) {
+  const { t } = useTranslation();
+
+  function label(): string {
+    if (isCorrect) return `✓ ${t("result.correct")}`;
+    if (!answered) return `– ${t("result.unanswered")}`;
+    return `✕ ${t("result.incorrect")}`;
+  }
+
+  const tone = isCorrect
+    ? "border-correct/40 bg-correct/10 text-correct"
+    : "border-incorrect/40 bg-incorrect/10 text-incorrect";
+
+  return (
+    <span
+      className={`rounded-[var(--radius-badge)] border px-2 py-0.5 text-xs font-semibold ${tone}`}
+    >
+      {label()}
+    </span>
+  );
+}
 
 export default function Review() {
   const { attemptId } = useParams<{ attemptId: string }>();
@@ -49,20 +74,7 @@ export default function Review() {
   }, [attemptId, ready, loadSubmitted]);
 
   if (loading && !ready) return <Spinner />;
-
-  if (!attempt || !score) {
-    return (
-      <div className="mx-auto flex max-w-2xl flex-col gap-4 px-4 py-16">
-        <h1 className="text-2xl font-semibold">{t("common.errorTitle")}</h1>
-        <Link
-          to="/"
-          className="w-fit rounded-[var(--radius-btn)] border border-border px-4 py-2 font-medium hover:bg-surface-2"
-        >
-          {t("result.backHome")}
-        </Link>
-      </div>
-    );
-  }
+  if (!attempt || !score) return <ErrorNotice />;
 
   const wrongIds = new Set(
     score.outcomes.filter((outcome) => !outcome.isCorrect).map((outcome) => outcome.questionId),
@@ -88,15 +100,9 @@ export default function Review() {
                 type="button"
                 onClick={() => setFilter(value)}
                 aria-pressed={filter === value}
-                className={
-                  filter === value
-                    ? "rounded-[6px] bg-accent px-3 py-1.5 text-xs font-semibold text-accent-fg"
-                    : "rounded-[6px] px-3 py-1.5 text-xs font-medium text-fg-muted hover:text-fg"
-                }
+                className={segmentClasses(filter === value)}
               >
-                {value === "all"
-                  ? t("review.all")
-                  : `${t("review.onlyWrong")} (${wrongIds.size})`}
+                {value === "all" ? t("review.all") : `${t("review.onlyWrong")} (${wrongIds.size})`}
               </button>
             ))}
           </div>
@@ -113,11 +119,7 @@ export default function Review() {
                 onClick={() => setContentLang(option.value)}
                 aria-pressed={contentLang === option.value}
                 lang={option.value}
-                className={
-                  contentLang === option.value
-                    ? "rounded-[6px] bg-accent px-3 py-1.5 text-xs font-semibold text-accent-fg"
-                    : "rounded-[6px] px-3 py-1.5 text-xs font-medium text-fg-muted hover:text-fg"
-                }
+                className={segmentClasses(contentLang === option.value)}
               >
                 {option.label}
               </button>
@@ -150,27 +152,10 @@ export default function Review() {
               >
                 <h2 className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-medium text-fg-muted">
                   {t("exam.question", { current: position, total: questions.length })}
-                  <span
-                    className={
-                      isCorrect
-                        ? "rounded-[var(--radius-badge)] border border-correct/40 bg-correct/10 px-2 py-0.5 text-xs font-semibold text-correct"
-                        : "rounded-[var(--radius-badge)] border border-incorrect/40 bg-incorrect/10 px-2 py-0.5 text-xs font-semibold text-incorrect"
-                    }
-                  >
-                    {isCorrect
-                      ? `✓ ${t("result.correct")}`
-                      : selected.length === 0
-                        ? `– ${t("result.unanswered")}`
-                        : `✕ ${t("result.incorrect")}`}
-                  </span>
+                  <OutcomeBadge isCorrect={isCorrect} answered={selected.length > 0} />
                 </h2>
 
-                <QuestionCard
-                  question={question}
-                  lang={contentLang}
-                  selected={selected}
-                  review
-                />
+                <QuestionCard question={question} lang={contentLang} selected={selected} review />
 
                 <RationalePanel question={question} lang={contentLang} selected={selected} />
               </li>

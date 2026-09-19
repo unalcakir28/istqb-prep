@@ -1,6 +1,7 @@
 ## Ne değişti?
 
 ## Tür
+
 - [ ] Kod
 - [ ] İçerik (soru / gerekçe / çeviri)
 - [ ] Döküman
@@ -9,6 +10,7 @@
 ---
 
 ## Kod PR'ı ise
+
 - [ ] `npm run lint` yeşil
 - [ ] `npm run test` yeşil
 - [ ] `npm run validate:data` yeşil
@@ -17,9 +19,11 @@
 ## İçerik PR'ı ise
 
 ### ⚖️ Özgünlük beyanı (zorunlu)
+
 - [ ] **Bu soruyu kendim yazdım.** Herhangi bir resmî ISTQB/TTB örnek sınavından, ücretli bir kurstan veya "dump" kaynağından kopyalamadım, çevirmedim veya uyarlamadım.
 
 ### Kalite kontrol listesi (`docs/07-icerik-uretim-rehberi.md` §6)
+
 - [ ] Tek bir LO'yu hedefliyor; `kLevel` LO ile uyumlu
 - [ ] `syllabusRef` doğru bölümü gösteriyor
 - [ ] `type` / `selectCount` / `correct` tutarlı

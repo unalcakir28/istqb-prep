@@ -10,7 +10,7 @@
 
 [![soru](https://img.shields.io/badge/soru-120-2ea043)](docs/kapsama.md)
 [![hedef kapsama](https://img.shields.io/badge/hedef%20kapsama-64%2F64-2ea043)](docs/kapsama.md)
-[![müfredat](https://img.shields.io/badge/CTFL-v4.0.1-0969da)](docs/03-istqb-referans.md)
+[![mufredat](https://img.shields.io/badge/CTFL-v4.0.1-0969da)](docs/03-istqb-referans.md)
 <!-- kapsama:bitti -->
 
 ```bash

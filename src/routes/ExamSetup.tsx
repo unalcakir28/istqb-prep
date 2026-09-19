@@ -10,35 +10,39 @@
  * bir dilde verir ve %25 ek sure hakki vardir.
  */
 
-import { useEffect, useMemo, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import { ErrorNotice } from "@/components/ErrorNotice";
 import { ScoreBar } from "@/components/ScoreBar";
 import { Spinner } from "@/components/Spinner";
-import { useExamStore } from "@/features/exam/examStore";
-import { previewCoverage, type GroupShortfall } from "@/features/exam/generateExam";
+import { collectSeenQuestionIds, useExamStore } from "@/features/exam/examStore";
+import {
+  previewCoverage,
+  shortfallsByChapter,
+  type GroupShortfall,
+} from "@/features/exam/generateExam";
 import { contentClient } from "@/lib/content/contentClient";
+import { CONTENT_LANGUAGES } from "@/lib/i18n";
+import { useAsyncData } from "@/lib/useAsyncData";
 import type {
   CertMeta,
   CertificationSummary,
   ExamBlueprint,
   Lang,
+  QuestionIndexEntry,
   Syllabus,
 } from "@/types/content";
-
-const CONTENT_LANGUAGES: { value: Lang; label: string }[] = [
-  { value: "tr", label: "Türkçe" },
-  { value: "en", label: "English" },
-];
 
 interface SetupData {
   cert: CertificationSummary;
   meta: CertMeta;
   blueprint: ExamBlueprint;
   syllabus: Syllabus;
-  achievable: number;
-  shortfalls: GroupShortfall[];
+  pool: QuestionIndexEntry[];
+  /** Daha once cozulmus sorular — "gordugumu eleme" onizlemesi icin. */
+  seen: Set<string>;
 }
 
 interface ChapterRow {
@@ -48,20 +52,32 @@ interface ChapterRow {
   available: number;
 }
 
-/**
- * Eksiksiz gruplar hedefleri kadar soru verir; bir bolumun ulasilabilir
- * sayisi yalnizca o bolumdeki eksik gruplarin farki kadar duser.
- */
+async function loadSetup(): Promise<SetupData> {
+  const cert = await contentClient.getActiveCertification();
+
+  const [meta, blueprint, syllabus, index] = await Promise.all([
+    contentClient.getMeta(cert.path),
+    contentClient.getBlueprint(cert.path),
+    contentClient.getSyllabus(cert.path),
+    contentClient.getIndex(cert.path),
+  ]);
+
+  return {
+    cert,
+    meta,
+    blueprint,
+    syllabus,
+    pool: index.questions.filter((entry) => entry.status === "published"),
+    seen: await collectSeenQuestionIds(meta.id),
+  };
+}
+
 function buildChapterRows(
   blueprint: ExamBlueprint,
   syllabus: Syllabus,
   shortfalls: GroupShortfall[],
 ): ChapterRow[] {
-  const missing = new Map<number, number>();
-  for (const shortfall of shortfalls) {
-    const current = missing.get(shortfall.chapter) ?? 0;
-    missing.set(shortfall.chapter, current + (shortfall.required - shortfall.available));
-  }
+  const missing = shortfallsByChapter(shortfalls);
 
   return syllabus.chapters.map((chapter) => {
     const required = blueprint.totals.byChapter[String(chapter.number)] ?? 0;
@@ -75,6 +91,9 @@ function buildChapterRows(
   });
 }
 
+const CHOICE_ROW =
+  "flex cursor-pointer items-start gap-3 rounded-[var(--radius-card)] border border-border bg-surface px-4 py-3 hover:bg-surface-2";
+
 export default function ExamSetup() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
@@ -82,8 +101,7 @@ export default function ExamSetup() {
   const startExam = useExamStore((state) => state.startExam);
   const starting = useExamStore((state) => state.loading);
 
-  const [data, setData] = useState<SetupData | null>(null);
-  const [failed, setFailed] = useState(false);
+  const { data, failed } = useAsyncData(loadSetup);
   const [extended, setExtended] = useState(() => i18n.language === "tr");
   const [contentLang, setContentLang] = useState<Lang>(() =>
     i18n.language === "en" ? "en" : "tr",
@@ -91,69 +109,26 @@ export default function ExamSetup() {
   const [excludeSeen, setExcludeSeen] = useState(true);
   const [startFailed, setStartFailed] = useState(false);
 
-  useEffect(() => {
-    let cancelled = false;
-
-    async function load() {
-      try {
-        const manifest = await contentClient.getManifest();
-        const cert =
-          manifest.certifications.find((item) => item.status === "active") ??
-          manifest.certifications[0];
-        if (!cert) throw new Error("manifest has no certification");
-
-        const [meta, blueprint, syllabus, index] = await Promise.all([
-          contentClient.getMeta(cert.path),
-          contentClient.getBlueprint(cert.path),
-          contentClient.getSyllabus(cert.path),
-          contentClient.getIndex(cert.path),
-        ]);
-
-        const pool = index.questions.filter((entry) => entry.status === "published");
-        const preview = previewCoverage(blueprint, pool);
-
-        if (cancelled) return;
-        setData({
-          cert,
-          meta,
-          blueprint,
-          syllabus,
-          achievable: preview.total,
-          shortfalls: preview.shortfalls,
-        });
-      } catch {
-        if (!cancelled) setFailed(true);
-      }
-    }
-
-    void load();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+  // Onizleme, denemeyi gercekten uretecek olan filtreyle ayni havuza
+  // bakmali. Aksi halde "gordugumu eleme" aciksa ekran "eksik yok" der,
+  // sonra 40 yerine 37 soruluk deneme baslar — kural 8'in ta kendisi.
+  const preview = useMemo(() => {
+    if (!data) return null;
+    const pool = excludeSeen ? data.pool.filter((entry) => !data.seen.has(entry.id)) : data.pool;
+    return previewCoverage(data.blueprint, pool);
+  }, [data, excludeSeen]);
 
   const rows = useMemo(
-    () => (data ? buildChapterRows(data.blueprint, data.syllabus, data.shortfalls) : []),
-    [data],
+    () =>
+      data && preview ? buildChapterRows(data.blueprint, data.syllabus, preview.shortfalls) : [],
+    [data, preview],
   );
 
-  if (failed) {
-    return (
-      <div className="mx-auto flex max-w-2xl flex-col gap-4 px-4 py-16">
-        <h1 className="text-2xl font-semibold">{t("common.errorTitle")}</h1>
-        <Link
-          to="/"
-          className="w-fit rounded-[var(--radius-btn)] border border-border px-4 py-2 font-medium hover:bg-surface-2"
-        >
-          {t("result.backHome")}
-        </Link>
-      </div>
-    );
-  }
+  if (failed) return <ErrorNotice />;
+  if (!data || !preview) return <Spinner />;
 
-  if (!data) return <Spinner />;
-
-  const { cert, meta, blueprint, achievable, shortfalls } = data;
+  const { cert, meta, blueprint } = data;
+  const { total: achievable, shortfalls } = preview;
   const exam = meta.exam;
   const durationMinutes = extended ? exam.extendedDurationMinutes : exam.durationMinutes;
   const canStart = achievable > 0;
@@ -186,7 +161,7 @@ export default function ExamSetup() {
       <fieldset className="flex flex-col gap-3">
         <legend className="mb-2 text-base font-semibold">{t("setup.duration")}</legend>
 
-        <label className="flex cursor-pointer items-start gap-3 rounded-[var(--radius-card)] border border-border bg-surface px-4 py-3 hover:bg-surface-2">
+        <label className={CHOICE_ROW}>
           <input
             type="radio"
             name="duration"
@@ -199,7 +174,7 @@ export default function ExamSetup() {
           </span>
         </label>
 
-        <label className="flex cursor-pointer items-start gap-3 rounded-[var(--radius-card)] border border-border bg-surface px-4 py-3 hover:bg-surface-2">
+        <label className={CHOICE_ROW}>
           <input
             type="radio"
             name="duration"
@@ -241,7 +216,7 @@ export default function ExamSetup() {
         <p className="max-w-[65ch] text-sm text-fg-muted">{t("setup.contentLanguageHint")}</p>
       </fieldset>
 
-      <label className="flex cursor-pointer items-start gap-3 rounded-[var(--radius-card)] border border-border bg-surface px-4 py-3 hover:bg-surface-2">
+      <label className={CHOICE_ROW}>
         <input
           type="checkbox"
           checked={excludeSeen}
@@ -284,11 +259,9 @@ export default function ExamSetup() {
                   <span lang={contentLang}>{row.title[contentLang]}</span>
                 </span>
                 <span
-                  className={
-                    row.available < row.required
-                      ? "shrink-0 font-mono text-flag"
-                      : "shrink-0 font-mono text-fg-muted"
-                  }
+                  className={`shrink-0 font-mono ${
+                    row.available < row.required ? "text-flag" : "text-fg-muted"
+                  }`}
                 >
                   {t("result.score", { points: row.available, total: row.required })}
                 </span>

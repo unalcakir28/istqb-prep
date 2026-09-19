@@ -19,9 +19,6 @@ export interface QuestionCardProps {
   lang: Lang;
   selected: string[];
   onSelect?: (optionId: string) => void;
-  /** Kacinci soru — gercek sinav gibi numara gosterilir. */
-  position?: number;
-  total?: number;
   review?: boolean;
 }
 
@@ -30,8 +27,6 @@ export function QuestionCard({
   lang,
   selected,
   onSelect,
-  position,
-  total,
   review = false,
 }: QuestionCardProps) {
   const { t } = useTranslation();
@@ -50,12 +45,6 @@ export function QuestionCard({
   return (
     <article className="flex flex-col gap-5">
       <header className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        {position !== undefined && total !== undefined ? (
-          <h1 className="text-sm font-medium text-fg-muted">
-            {t("exam.question", { current: position, total })}
-          </h1>
-        ) : null}
-
         {/* "HANGİ İKİSİ" sorularinda kac sik secilecegi acikca yazilir —
             adaylarin en cok gozden kacirdigi sey bu (docs/07 §5). */}
         <p

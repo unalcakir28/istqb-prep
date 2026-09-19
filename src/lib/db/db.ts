@@ -123,20 +123,27 @@ export async function getResponses(attemptId: string): Promise<Response[]> {
   return db.responses.where("attemptId").equals(attemptId).toArray();
 }
 
+/**
+ * Satirin TAMAMI yazilir; eksik alanlar diskten okunup tamamlanmaz.
+ *
+ * Eskiden bu fonksiyon once `get` sonra `put` yapiyordu. Iki cagri arasinda
+ * es zamanlilik korumasi yoktu: kullanici bir sikki secip hemen ayni soruyu
+ * isaretlediginde (ikisi de klavye kisayolu) ikinci cagrinin `get`'i birinci
+ * cagrinin `put`'undan once donebiliyor ve secimi bos dizi ile eziyordu.
+ * Ekranda cevap secili gorunuyor, diskte kayboluyordu. Cagiran tarafin her
+ * iki alani da zaten bellekte tuttugu icin okumaya hic gerek yok.
+ */
 export async function saveResponse(
   attemptId: string,
   questionId: string,
-  patch: Partial<Pick<Response, "selected" | "flagged">>,
+  row: Pick<Response, "selected" | "flagged">,
 ): Promise<void> {
-  const key = responseKey(attemptId, questionId);
-  const existing = await db.responses.get(key);
-
   await db.responses.put({
-    key,
+    key: responseKey(attemptId, questionId),
     attemptId,
     questionId,
-    selected: patch.selected ?? existing?.selected ?? [],
-    flagged: patch.flagged ?? existing?.flagged ?? false,
+    selected: row.selected,
+    flagged: row.flagged,
     updatedAt: Date.now(),
   });
 }

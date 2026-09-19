@@ -19,45 +19,50 @@ async function scan(page: Page): Promise<void> {
   // karsilastirmasi neyi duzeltecegini soylemez.
   expect(
     results.violations.map(
-      (violation) => `${violation.id} (${violation.nodes.length}): ${violation.help}`,
+      (violation) =>
+        `${violation.id} (${violation.nodes.length}): ${violation.help}\n${violation.nodes
+          .map((node) => `    ${node.target.join(" ")} — ${node.failureSummary ?? ""}`)
+          .join("\n")}`,
     ),
   ).toEqual([]);
 }
 
+/**
+ * Tema, sayfa ACILMADAN once ayarlanir. Uygulama kendi tema mantigini
+ * acilista calistirdigi icin sinifi disaridan sonradan degistirmek onunla
+ * yarisiyor ve koyu temada arada renk kontrasti hatasi uretiyordu.
+ */
 async function setTheme(page: Page, theme: (typeof THEMES)[number]): Promise<void> {
   await page.emulateMedia({ colorScheme: theme });
-  await page.evaluate((value) => {
-    document.documentElement.classList.toggle("dark", value === "dark");
-  }, theme);
 }
 
 for (const theme of THEMES) {
   test(`ana sayfa erisilebilir (${theme})`, async ({ page }) => {
-    await page.goto("/");
     await setTheme(page, theme);
+    await page.goto("/");
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
     await scan(page);
   });
 
   test(`kurulum ekrani erisilebilir (${theme})`, async ({ page }) => {
-    await page.goto("/deneme");
     await setTheme(page, theme);
+    await page.goto("/deneme");
     await expect(page.getByRole("button", { name: "Denemeyi başlat" })).toBeVisible();
     await scan(page);
   });
 
   test(`kaynaklar sayfasi erisilebilir (${theme})`, async ({ page }) => {
-    await page.goto("/kaynaklar");
     await setTheme(page, theme);
+    await page.goto("/kaynaklar");
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
     await scan(page);
   });
 
   test(`sinav ekrani erisilebilir (${theme})`, async ({ page }) => {
+    await setTheme(page, theme);
     await page.goto("/deneme");
     await page.getByRole("button", { name: "Denemeyi başlat" }).click();
     await expect(page).toHaveURL(/\/deneme\/[\w-]+$/);
-    await setTheme(page, theme);
     await scan(page);
   });
 }

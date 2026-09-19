@@ -62,7 +62,9 @@
     "unanswered": "Empty",
     "flagged": "Flagged",
     "shortcuts": "Keyboard shortcuts",
-    "autoSubmitting": "Time is up, submitting…"
+    "autoSubmitting": "Time is up, submitting…",
+    "shortExam": "This exam has {{count}} questions; a full exam has {{expected}}. The pool did not have enough questions.",
+    "persistFailed": "Your answers cannot be saved on this device. Reloading the page will lose your progress."
   },
   "result": {
     "title": "Result",

@@ -22,7 +22,20 @@ export interface OptionListProps {
   /** Inceleme modu: secim kilitlenir, dogru cevap isaretlenir. */
   review?: boolean;
   correct?: string[];
-  disabled?: boolean;
+}
+
+const ROW =
+  "flex w-full items-start gap-3 rounded-[var(--radius-card)] border px-4 py-3 text-left transition-colors";
+
+/**
+ * Inceleme durumu: dogru cevap her zaman isaretlenir; kullanicinin yanlis
+ * secimi ayrica kirmiziya doner.
+ */
+function rowState(showAsCorrect: boolean, showAsWrong: boolean, isSelected: boolean): string {
+  if (showAsCorrect) return "border-correct/60 bg-correct/10";
+  if (showAsWrong) return "border-incorrect/60 bg-incorrect/10";
+  if (isSelected) return "border-accent bg-accent/5";
+  return "border-border bg-surface hover:bg-surface-2";
 }
 
 function CheckIcon() {
@@ -50,7 +63,6 @@ export function OptionList({
   onSelect,
   review = false,
   correct = [],
-  disabled = false,
 }: OptionListProps) {
   const { t } = useTranslation();
   const multi = selectCount > 1;
@@ -60,30 +72,19 @@ export function OptionList({
       {options.map((option, position) => {
         const isSelected = selected.includes(option.id);
         const isCorrect = correct.includes(option.id);
-        // Inceleme durumu: dogru cevap her zaman isaretlenir; kullanicinin
-        // yanlis secimi ayrica kirmiziya doner.
         const showAsCorrect = review && isCorrect;
         const showAsWrong = review && isSelected && !isCorrect;
-
-        const base =
-          "flex w-full items-start gap-3 rounded-[var(--radius-card)] border px-4 py-3 text-left transition-colors";
-        const state = showAsCorrect
-          ? "border-correct/60 bg-correct/10"
-          : showAsWrong
-            ? "border-incorrect/60 bg-incorrect/10"
-            : isSelected
-              ? "border-accent bg-accent/5"
-              : "border-border bg-surface hover:bg-surface-2";
+        const state = rowState(showAsCorrect, showAsWrong, isSelected);
 
         return (
           <li key={option.id}>
-            <label className={`${base} ${state} ${disabled || review ? "" : "cursor-pointer"}`}>
+            <label className={`${ROW} ${state} ${review ? "" : "cursor-pointer"}`}>
               <input
                 type={multi ? "checkbox" : "radio"}
                 name={multi ? `${questionId}-${option.id}` : questionId}
                 value={option.id}
                 checked={isSelected}
-                disabled={disabled || review}
+                disabled={review}
                 onChange={() => onSelect?.(option.id)}
                 className="mt-1 size-4 shrink-0 accent-[var(--accent)]"
               />

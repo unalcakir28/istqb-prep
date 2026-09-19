@@ -17,6 +17,13 @@ export interface RationalePanelProps {
   selected: string[];
 }
 
+/** Sol kenar cizgisi: dogru sik yesil, adayin yanlis secimi kirmizi. */
+function optionBorder(isCorrect: boolean, wasSelected: boolean): string {
+  if (isCorrect) return "border-correct";
+  if (wasSelected) return "border-incorrect";
+  return "border-border";
+}
+
 export function RationalePanel({ question, lang, selected }: RationalePanelProps) {
   const { t } = useTranslation();
   const content = question.i18n[lang];
@@ -48,13 +55,10 @@ export function RationalePanel({ question, lang, selected }: RationalePanelProps
             return (
               <div
                 key={option.id}
-                className={
-                  isCorrect
-                    ? "rounded-[var(--radius-btn)] border-l-2 border-correct bg-surface px-3 py-2"
-                    : wasSelected
-                      ? "rounded-[var(--radius-btn)] border-l-2 border-incorrect bg-surface px-3 py-2"
-                      : "rounded-[var(--radius-btn)] border-l-2 border-border bg-surface px-3 py-2"
-                }
+                className={`rounded-[var(--radius-btn)] border-l-2 bg-surface px-3 py-2 ${optionBorder(
+                  isCorrect,
+                  wasSelected,
+                )}`}
               >
                 <dt className="flex items-center gap-2 text-xs font-semibold uppercase text-fg-muted">
                   <span className="font-mono">{option.id}</span>

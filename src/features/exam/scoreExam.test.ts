@@ -174,11 +174,7 @@ describe("weakestObjectives", () => {
       makeQuestion({ id: "b1", objectives: ["FL-2.1.1"], chapter: 2 }),
       makeQuestion({ id: "c1", objectives: ["FL-3.1.1"], chapter: 3 }),
     ];
-    const score = scoreExam(
-      questions,
-      { a1: ["a"], a2: ["b"], b1: ["b"], c1: ["a"] },
-      meta,
-    );
+    const score = scoreExam(questions, { a1: ["a"], a2: ["b"], b1: ["b"], c1: ["a"] }, meta);
 
     const weakest = weakestObjectives(score);
 

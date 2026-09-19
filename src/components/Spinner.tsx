@@ -10,7 +10,9 @@ export function Spinner({ full = false }: { full?: boolean }) {
   return (
     <div
       role="status"
-      className={full ? "flex min-h-screen items-center justify-center" : "flex justify-center py-12"}
+      className={
+        full ? "flex min-h-screen items-center justify-center" : "flex justify-center py-12"
+      }
     >
       <span className="sr-only">{t("common.loading")}</span>
       <span

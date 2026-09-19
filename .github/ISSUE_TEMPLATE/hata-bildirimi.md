@@ -9,9 +9,7 @@ labels: bug
 
 **Ne olmasını bekliyordun?**
 
-**Adımlar**
-1.
-2.
+**Adımlar** 1. 2.
 
 **Ortam:** tarayıcı / sürüm / işletim sistemi / mobil-masaüstü
 **Konsol hatası (varsa):**

@@ -15,14 +15,7 @@ import { create } from "zustand";
 
 import type { CertMeta, Lang, Question, QuestionIndexEntry } from "@/types/content";
 import { contentClient } from "@/lib/content/contentClient";
-import {
-  db,
-  discardAttempt,
-  findResumableAttempt,
-  getResponses,
-  saveResponse,
-  type Attempt,
-} from "@/lib/db/db";
+import { db, getResponses, saveResponse, type Attempt } from "@/lib/db/db";
 import { generateExam, type GroupShortfall } from "./generateExam";
 import { randomSeed } from "./rng";
 import { scoreExam, type AnswerMap, type ExamScore } from "./scoreExam";
@@ -46,6 +39,8 @@ interface ExamState {
   score: ExamScore | null;
   loading: boolean;
   error: string | null;
+  /** IndexedDB yazmasi basarisiz oldu — ilerleme diske gitmiyor (F3-12). */
+  persistFailed: boolean;
 
   startExam: (options: StartExamOptions) => Promise<string | null>;
   resumeAttempt: (attemptId: string) => Promise<boolean>;
@@ -57,8 +52,6 @@ interface ExamState {
   previous: () => void;
   setContentLang: (lang: Lang) => void;
   submit: (auto?: boolean) => Promise<void>;
-  abandon: () => Promise<void>;
-  reset: () => void;
 }
 
 const initial = {
@@ -73,10 +66,11 @@ const initial = {
   score: null,
   loading: false,
   error: null,
+  persistFailed: false,
 };
 
 /** Daha once gorulmus sorular — yeni denemede tekrar sorulmamasi tercih edilir. */
-async function collectSeenQuestionIds(certId: string): Promise<Set<string>> {
+export async function collectSeenQuestionIds(certId: string): Promise<Set<string>> {
   const attempts = await db.attempts.where({ certId }).toArray();
   const seen = new Set<string>();
 
@@ -86,6 +80,21 @@ async function collectSeenQuestionIds(certId: string): Promise<Set<string>> {
   }
 
   return seen;
+}
+
+/**
+ * Cevap ve isaret yazmalari "ates et unut" calisir: kullanici yazmanin
+ * bitmesini beklemez. Ama hata yutulmaz — gizli sekmede veya depolama
+ * kapaliyken yazma patlar, ekranda cevap secili gorunur ve yenilemede
+ * kaybolurdu. Bayrak kaldirilir, sinav ekrani kullaniciya soyler.
+ */
+function persist(
+  set: (partial: Partial<ExamState>) => void,
+  attemptId: string,
+  questionId: string,
+  row: { selected: string[]; flagged: boolean },
+): void {
+  saveResponse(attemptId, questionId, row).catch(() => set({ persistFailed: true }));
 }
 
 export const useExamStore = create<ExamState>((set, get) => ({
@@ -235,7 +244,10 @@ export const useExamStore = create<ExamState>((set, get) => ({
     }
 
     set({ answers: { ...answers, [questionId]: updated } });
-    void saveResponse(attempt.id, questionId, { selected: updated });
+    persist(set, attempt.id, questionId, {
+      selected: updated,
+      flagged: get().flagged[questionId] ?? false,
+    });
   },
 
   toggleFlag(questionId) {
@@ -244,7 +256,10 @@ export const useExamStore = create<ExamState>((set, get) => ({
 
     const next = !flagged[questionId];
     set({ flagged: { ...flagged, [questionId]: next } });
-    void saveResponse(attempt.id, questionId, { flagged: next });
+    persist(set, attempt.id, questionId, {
+      selected: get().answers[questionId] ?? [],
+      flagged: next,
+    });
   },
 
   goTo(index) {
@@ -285,18 +300,4 @@ export const useExamStore = create<ExamState>((set, get) => ({
     await db.attempts.put(submitted);
     set({ attempt: submitted, score });
   },
-
-  async abandon() {
-    const { attempt } = get();
-    if (!attempt) return;
-
-    await discardAttempt(attempt.id);
-    set({ ...initial });
-  },
-
-  reset() {
-    set({ ...initial });
-  },
 }));
-
-export { findResumableAttempt };

@@ -10,16 +10,27 @@
  *     Sessizce eksik deneme uretmek yasak (CLAUDE.md kural 8).
  */
 
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import { ErrorNotice } from "@/components/ErrorNotice";
 import { ScoreBar } from "@/components/ScoreBar";
 import { Spinner } from "@/components/Spinner";
-import { previewCoverage, type GroupShortfall } from "@/features/exam/generateExam";
+import {
+  previewCoverage,
+  shortfallsByChapter,
+  type GroupShortfall,
+} from "@/features/exam/generateExam";
 import { contentClient } from "@/lib/content/contentClient";
 import { discardAttempt, findResumableAttempt, getResponses, type Attempt } from "@/lib/db/db";
+import { useAsyncData } from "@/lib/useAsyncData";
 import type { CertMeta, CertificationSummary, ExamBlueprint } from "@/types/content";
+
+interface ResumeState {
+  attempt: Attempt;
+  answered: number;
+}
 
 interface HomeData {
   cert: CertificationSummary;
@@ -28,29 +39,46 @@ interface HomeData {
   poolSize: number;
   achievable: number;
   shortfalls: GroupShortfall[];
+  resume: ResumeState | null;
 }
 
-interface ResumeState {
-  attempt: Attempt;
-  answered: number;
+async function loadHome(): Promise<HomeData> {
+  const cert = await contentClient.getActiveCertification();
+
+  const [meta, blueprint, index] = await Promise.all([
+    contentClient.getMeta(cert.path),
+    contentClient.getBlueprint(cert.path),
+    contentClient.getIndex(cert.path),
+  ]);
+
+  // Yalnizca yayinlanmis sorular sayilir; taslak soru denemeye girmez.
+  const pool = index.questions.filter((entry) => entry.status === "published");
+  const preview = previewCoverage(blueprint, pool);
+
+  const attempt = await findResumableAttempt(cert.id);
+  const responses = attempt ? await getResponses(attempt.id) : [];
+
+  return {
+    cert,
+    meta,
+    blueprint,
+    poolSize: pool.length,
+    achievable: preview.total,
+    shortfalls: preview.shortfalls,
+    resume: attempt
+      ? {
+          attempt,
+          answered: responses.filter((response) => response.selected.length > 0).length,
+        }
+      : null,
+  };
 }
 
-/**
- * Eksik gruplari bolume indirger. Eksiksiz gruplar hedefleri kadar soru
- * verecegi icin, bolumun ulasilabilir sayisi hedeften yalnizca eksik
- * gruplarin farki kadar duser.
- */
 function achievableByChapter(
   blueprint: ExamBlueprint,
   shortfalls: GroupShortfall[],
 ): { chapter: number; available: number; required: number }[] {
-  const missing = new Map<number, number>();
-  for (const shortfall of shortfalls) {
-    const current = missing.get(shortfall.chapter) ?? 0;
-    missing.set(shortfall.chapter, current + (shortfall.required - shortfall.available));
-  }
-
-  return [...missing.entries()]
+  return [...shortfallsByChapter(shortfalls).entries()]
     .map(([chapter, gap]) => {
       const required = blueprint.totals.byChapter[String(chapter)] ?? 0;
       return { chapter, required, available: Math.max(0, required - gap) };
@@ -60,99 +88,26 @@ function achievableByChapter(
 
 export default function Home() {
   const { t } = useTranslation();
+  const { data, failed, reload } = useAsyncData(loadHome);
+  const [discardedId, setDiscardedId] = useState<string | null>(null);
 
-  const [data, setData] = useState<HomeData | null>(null);
-  const [resume, setResume] = useState<ResumeState | null>(null);
-  const [failed, setFailed] = useState(false);
-  const [reloadToken, setReloadToken] = useState(0);
-
-  useEffect(() => {
-    let cancelled = false;
-
-    async function load() {
-      try {
-        const manifest = await contentClient.getManifest();
-        const cert =
-          manifest.certifications.find((item) => item.status === "active") ??
-          manifest.certifications[0];
-        if (!cert) throw new Error("manifest has no certification");
-
-        const [meta, blueprint, index] = await Promise.all([
-          contentClient.getMeta(cert.path),
-          contentClient.getBlueprint(cert.path),
-          contentClient.getIndex(cert.path),
-        ]);
-
-        // Yalnizca yayinlanmis sorular sayilir; taslak soru denemeye girmez.
-        const pool = index.questions.filter((entry) => entry.status === "published");
-        const preview = previewCoverage(blueprint, pool);
-
-        const attempt = await findResumableAttempt(cert.id);
-        const responses = attempt ? await getResponses(attempt.id) : [];
-
-        if (cancelled) return;
-
-        setData({
-          cert,
-          meta,
-          blueprint,
-          poolSize: pool.length,
-          achievable: preview.total,
-          shortfalls: preview.shortfalls,
-        });
-        setResume(
-          attempt
-            ? {
-                attempt,
-                answered: responses.filter((response) => response.selected.length > 0).length,
-              }
-            : null,
-        );
-      } catch {
-        if (!cancelled) setFailed(true);
-      }
-    }
-
-    void load();
-    return () => {
-      cancelled = true;
-    };
-  }, [reloadToken]);
-
-  const onDiscard = useCallback(async () => {
-    if (!resume) return;
-    await discardAttempt(resume.attempt.id);
-    setResume(null);
-  }, [resume]);
-
-  if (failed) {
-    return (
-      <div className="mx-auto flex max-w-2xl flex-col gap-4 px-4 py-16">
-        <h1 className="text-2xl font-semibold">{t("common.errorTitle")}</h1>
-        <button
-          type="button"
-          onClick={() => {
-            setFailed(false);
-            setReloadToken((token) => token + 1);
-          }}
-          className="w-fit rounded-[var(--radius-btn)] border border-border px-4 py-2 font-medium hover:bg-surface-2"
-        >
-          {t("common.retry")}
-        </button>
-      </div>
-    );
-  }
-
+  if (failed) return <ErrorNotice onRetry={reload} />;
   if (!data) return <Spinner />;
 
   const { cert, meta, blueprint, poolSize, achievable, shortfalls } = data;
   const exam = meta.exam;
+  const resume = data.resume?.attempt.id === discardedId ? null : data.resume;
   const shortChapters = achievableByChapter(blueprint, shortfalls);
   const coverageLabel = t("home.coverage", {
     questions: poolSize,
     covered: cert.coverage.objectivesCovered,
     total: cert.coverage.objectivesTotal,
   });
+
+  async function onDiscard(attemptId: string) {
+    await discardAttempt(attemptId);
+    setDiscardedId(attemptId);
+  }
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-8 px-4 py-8 sm:py-12">
@@ -179,7 +134,7 @@ export default function Home() {
             </Link>
             <button
               type="button"
-              onClick={() => void onDiscard()}
+              onClick={() => void onDiscard(resume.attempt.id)}
               className="rounded-[var(--radius-btn)] border border-border px-4 py-2 text-sm font-medium hover:bg-surface-2"
             >
               {t("home.discard")}

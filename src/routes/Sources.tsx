@@ -7,12 +7,12 @@
  * sayfaya elle URL yazilmaz.
  */
 
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { Spinner } from "@/components/Spinner";
 import { contentClient } from "@/lib/content/contentClient";
+import { useAsyncData } from "@/lib/useAsyncData";
 import type { CertMeta } from "@/types/content";
 
 /** `syllabusEn` -> `Syllabus EN`. Kaynak anahtarlari dil-bagimsiz kimliklerdir. */
@@ -28,35 +28,15 @@ function humanize(key: string): string {
     .join(" ");
 }
 
+async function loadMeta(): Promise<CertMeta> {
+  const cert = await contentClient.getActiveCertification();
+  return contentClient.getMeta(cert.path);
+}
+
 export default function Sources() {
   const { t } = useTranslation();
-  const [meta, setMeta] = useState<CertMeta | null>(null);
-  const [failed, setFailed] = useState(false);
-
-  useEffect(() => {
-    let cancelled = false;
-
-    async function load() {
-      try {
-        const manifest = await contentClient.getManifest();
-        const cert =
-          manifest.certifications.find((item) => item.status === "active") ??
-          manifest.certifications[0];
-        if (!cert) throw new Error("manifest has no certification");
-
-        const loaded = await contentClient.getMeta(cert.path);
-        if (!cancelled) setMeta(loaded);
-      } catch {
-        // Baglanti listesi inmezse bile feragatname ve gizlilik gosterilir.
-        if (!cancelled) setFailed(true);
-      }
-    }
-
-    void load();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+  // Baglanti listesi inmezse bile feragatname ve gizlilik gosterilir.
+  const { data: meta, failed } = useAsyncData(loadMeta);
 
   if (!meta && !failed) return <Spinner />;
 

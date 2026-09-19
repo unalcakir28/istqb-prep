@@ -150,6 +150,23 @@ export function generateExam({
   return { seed, questionIds: shuffle(questionIds, rng), shortfalls };
 }
 
+/**
+ * Eksik gruplari bolume indirger: bolum -> o bolumde kac soru eksik kaldigi.
+ *
+ * Eksiksiz gruplar hedefleri kadar soru verecegi icin, bir bolumun
+ * ulasilabilir sayisi hedeften yalnizca bu fark kadar duser.
+ */
+export function shortfallsByChapter(shortfalls: GroupShortfall[]): Map<number, number> {
+  const missing = new Map<number, number>();
+
+  for (const shortfall of shortfalls) {
+    const current = missing.get(shortfall.chapter) ?? 0;
+    missing.set(shortfall.chapter, current + (shortfall.required - shortfall.available));
+  }
+
+  return missing;
+}
+
 /** Havuzun bir denemeyi eksiksiz uretip uretemeyecegini onceden soyler. */
 export function previewCoverage(
   blueprint: ExamBlueprint,

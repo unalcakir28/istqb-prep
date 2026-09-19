@@ -17,6 +17,10 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: process.env.CI ? [["github"], ["list"]] : [["list"]],
 
+  // Tam deneme testi 40 soruyu tek tek cevapliyor (~120 etkilesim) ve dev
+  // sunucusu modulleri ilk istekte derliyor; 30 sn yuk altinda yetmiyordu.
+  timeout: 60_000,
+
   use: {
     baseURL: HOST,
     trace: "on-first-retry",

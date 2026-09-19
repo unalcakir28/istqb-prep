@@ -27,6 +27,11 @@ async function clearStorage(page: Page): Promise<void> {
   await page.reload();
 }
 
+/** Sik denetimleri: tek secimli soruda radio, cok secimlide checkbox. */
+function options(page: Page) {
+  return page.getByRole("radio").or(page.getByRole("checkbox"));
+}
+
 /** Gorunen sorunun gerektirdigi kadar sik isaretler. */
 async function answerCurrentQuestion(page: Page): Promise<void> {
   const checkboxes = page.getByRole("checkbox");
@@ -98,23 +103,40 @@ test("yarim kalan deneme ana sayfadan kaldigi yerden surer", async ({ page }) =>
   await page.getByRole("link", { name: "Devam et" }).click();
 
   await expect(page).toHaveURL(sessionUrl);
-  // Verilen cevap korunmus olmali.
+
+  // Tam yenileme: durum bellekten degil IndexedDB'den geri gelir, yani
+  // cevabin gercekten diske yazildigi dogrulanmis olur.
+  await page.reload();
+
+  // Yarim kalan deneme ILK CEVAPSIZ sorudan devam eder (resumeAttempt);
+  // 1. soruyu cevapladigimiz icin 2. sorudan acilmasi beklenir.
+  await expect(page.getByText(/^Soru 2 \/ \d+$/)).toBeVisible();
+
   await page.getByRole("button", { name: "Önceki" }).click();
-  await expect(page.getByRole("radio").first()).toBeChecked();
+  await expect(page.getByText(/^Soru 1 \/ \d+$/)).toBeVisible();
+  await expect(options(page).first()).toBeChecked();
 });
 
 test("soru dili degistiginde isaretli cevap korunur", async ({ page }) => {
   await page.getByRole("link", { name: "Deneme sınavına başla" }).click();
   await page.getByRole("button", { name: "Denemeyi başlat" }).click();
+  // Kurulum ekraninda da radio var (sure ve dil secimi) ve React Router
+  // yeni ekran yuklenene kadar onu ekranda tutuyor. Once oturuma gectigimizi
+  // dogrulamazsak `.check()` yanlislikla sure radiosuna basabiliyor.
+  await expect(page).toHaveURL(/\/deneme\/[\w-]+$/);
+  await expect(page.getByText(/^Soru 1 \/ \d+$/)).toBeVisible();
 
-  const first = page.getByRole("radio").first();
+  const first = options(page).first();
   await first.check();
-  const trText = await page.getByRole("radio").first().locator("xpath=..").innerText();
+
+  // Dil degisikligi SORU METNINDEN okunur, siktan degil: sayisal siklari
+  // olan sorularda ("19", "%67") iki dilin sik metni ayni oluyor.
+  const stem = page.locator(".prose-question").first();
+  const trStem = await stem.innerText();
 
   // Butonun erisilebilir adi sr-only metindir; "EN" rozeti aria-hidden.
   await page.getByRole("button", { name: "İngilizce göster" }).click();
-  const enText = await page.getByRole("radio").first().locator("xpath=..").innerText();
+  await expect(stem).not.toHaveText(trStem);
 
-  expect(enText).not.toBe(trText);
-  await expect(page.getByRole("radio").first()).toBeChecked();
+  await expect(options(page).first()).toBeChecked();
 });

@@ -29,25 +29,28 @@ export function ContentLangToggle({ value, onChange }: ContentLangToggleProps) {
       aria-label={t("question.contentLang")}
       className="flex shrink-0 rounded-[var(--radius-btn)] border border-border p-0.5"
     >
-      {LANGS.map((lang) => (
-        <button
-          key={lang}
-          type="button"
-          onClick={() => onChange(lang)}
-          aria-pressed={value === lang}
-          title={lang === "tr" ? t("question.showTurkish") : t("question.showEnglish")}
-          className={
-            value === lang
-              ? "rounded-[6px] bg-accent px-2.5 py-1 text-xs font-semibold text-accent-fg"
-              : "rounded-[6px] px-2.5 py-1 text-xs font-medium text-fg-muted hover:text-fg"
-          }
-        >
-          <span className="sr-only">
-            {lang === "tr" ? t("question.showTurkish") : t("question.showEnglish")}
-          </span>
-          <span aria-hidden="true">{lang.toUpperCase()}</span>
-        </button>
-      ))}
+      {LANGS.map((lang) => {
+        // "TR" / "EN" rozeti tek basina anlasilmaz; erisilebilir ad tam cumle.
+        const label = lang === "tr" ? t("question.showTurkish") : t("question.showEnglish");
+
+        return (
+          <button
+            key={lang}
+            type="button"
+            onClick={() => onChange(lang)}
+            aria-pressed={value === lang}
+            title={label}
+            className={
+              value === lang
+                ? "rounded-[6px] bg-accent px-2.5 py-1 text-xs font-semibold text-accent-fg"
+                : "rounded-[6px] px-2.5 py-1 text-xs font-medium text-fg-muted hover:text-fg"
+            }
+          >
+            <span className="sr-only">{label}</span>
+            <span aria-hidden="true">{lang.toUpperCase()}</span>
+          </button>
+        );
+      })}
     </div>
   );
 }

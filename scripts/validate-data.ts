@@ -125,6 +125,23 @@ function highestKLevel(levels: string[]): string | null {
 const ajv = new Ajv2020({ allErrors: true, strict: false });
 addFormats(ajv);
 
+// Sema adlari tek yerde durur: hata mesaji hangi semanin konustugunu yazar
+// ve ikinci bir tablo tutulursa er gec biriyle otekinin arasi acilir.
+const SCHEMA_FILES = {
+  manifest: "manifest.schema.json",
+  certifications: "certifications.schema.json",
+  meta: "meta.schema.json",
+  syllabus: "syllabus.schema.json",
+  objectives: "objectives.schema.json",
+  examBlueprint: "exam-blueprint.schema.json",
+  questionsIndex: "questions-index.schema.json",
+  question: "question.schema.json",
+  glossaryIndex: "glossary-index.schema.json",
+  glossary: "glossary.schema.json",
+} as const;
+
+type SchemaKey = keyof typeof SCHEMA_FILES;
+
 function compileSchema(fileName: string) {
   const schemaPath = path.join(SCHEMAS_DIR, fileName);
   if (!fs.existsSync(schemaPath)) {
@@ -134,44 +151,18 @@ function compileSchema(fileName: string) {
   return ajv.compile(schema);
 }
 
-const validators = {
-  manifest: compileSchema("manifest.schema.json"),
-  certifications: compileSchema("certifications.schema.json"),
-  meta: compileSchema("meta.schema.json"),
-  syllabus: compileSchema("syllabus.schema.json"),
-  objectives: compileSchema("objectives.schema.json"),
-  examBlueprint: compileSchema("exam-blueprint.schema.json"),
-  questionsIndex: compileSchema("questions-index.schema.json"),
-  question: compileSchema("question.schema.json"),
-  glossaryIndex: compileSchema("glossary-index.schema.json"),
-  glossary: compileSchema("glossary.schema.json"),
-};
+const validators = Object.fromEntries(
+  Object.entries(SCHEMA_FILES).map(([key, fileName]) => [key, compileSchema(fileName)]),
+) as Record<SchemaKey, ReturnType<typeof compileSchema>>;
 
-function validateAgainstSchema(key: keyof typeof validators, data: unknown, file: string): void {
+function validateAgainstSchema(key: SchemaKey, data: unknown, file: string): void {
   const validate = validators[key];
-  const valid = validate(data);
-  if (valid) return;
+  if (validate(data)) return;
 
   for (const err of validate.errors ?? []) {
     const location = err.instancePath || "(kok)";
-    report(1, file, location, `${err.message} — schema: schemas/${keyToFileName(key)} (${JSON.stringify(err.params)})`);
+    report(1, file, location, `${err.message} — schema: schemas/${SCHEMA_FILES[key]} (${JSON.stringify(err.params)})`);
   }
-}
-
-function keyToFileName(key: keyof typeof validators): string {
-  const map: Record<keyof typeof validators, string> = {
-    manifest: "manifest.schema.json",
-    certifications: "certifications.schema.json",
-    meta: "meta.schema.json",
-    syllabus: "syllabus.schema.json",
-    objectives: "objectives.schema.json",
-    examBlueprint: "exam-blueprint.schema.json",
-    questionsIndex: "questions-index.schema.json",
-    question: "question.schema.json",
-    glossaryIndex: "glossary-index.schema.json",
-    glossary: "glossary.schema.json",
-  };
-  return map[key];
 }
 
 // ---------------------------------------------------------------------------
