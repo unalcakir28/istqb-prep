@@ -30,7 +30,7 @@ cannot be grounded in them, that is itself a finding.
 rationale, so the rationale cannot anchor you. For calculation questions do the
 arithmetic yourself and state it. Boundary value analysis is the usual trap: the
 boundary value is the value inside the partition, 2-value adds its closest
-neighbour in the adjacent partition, 3-value adds *both* neighbours. For
+neighbour in the adjacent partition, 3-value adds _both_ neighbours. For
 `total >= 500` the boundary value is 500 and 3-value coverage is {499, 500, 501}
 — 498 is not a coverage item at all.
 
@@ -43,7 +43,7 @@ supplied table is not K3 even if its objective is K3. K3 exists only in chapters
 4 and 5. There is no K4.
 
 **Per-option rationale.** Every option needs a rationale in both languages, and
-a wrong option's rationale must say *what that option actually describes* — not
+a wrong option's rationale must say _what that option actually describes_ — not
 "wrong, the answer is C". A distractor that cannot be attributed to a real
 misconception is a weak distractor; say so.
 
@@ -52,7 +52,7 @@ could genuinely believe. Numbers that cannot be derived by any wrong-but-
 plausible route are noise; report them with the arithmetic that fails.
 
 **Turkish terminology.** `error` = `insan hatası`, `defect` = `hata`,
-`failure` = `arıza`. The word `kusur` is not used for *defect*; it appears only
+`failure` = `arıza`. The word `kusur` is not used for _defect_; it appears only
 inside official phrases such as "kusur ortaya çıkarmaya yönelik saldırılar".
 Check ambiguity too: after a list containing both `insan hataları` and
 `hatalar`, a bare "bu hataları" does not say which one it means.
@@ -71,7 +71,7 @@ becomes actively wrong.
 whether one question's key reveals another's answer. The failure modes seen
 before: an option that is the exact inverse of another question's key, and a
 distractor that restates another question's key verbatim. Shared taxonomy
-vocabulary (test level names, review activity names) is *not* leakage — those
+vocabulary (test level names, review activity names) is _not_ leakage — those
 questions do not answer each other. Say which case you think it is.
 
 **Answer-position balance.** Count the keyed positions of single-answer

@@ -26,7 +26,7 @@ There is no `official` value for `origin`.
 Both languages, always. A question missing `tr` or `en` cannot be published.
 
 A rationale for **every** option, in both languages. For a wrong option the
-rationale says *what that option actually describes* — the concept the candidate
+rationale says _what that option actually describes_ — the concept the candidate
 confused it with. "Wrong, because the answer is C" is not a rationale, and this
 per-option explanation is the product's main differentiator.
 
@@ -44,7 +44,7 @@ chunk file, and a chunk's filename never changes — CDN and PWA caches key on i
 `error` = `insan hatası` · `defect` = `hata` · `failure` = `arıza`.
 
 These three are not all "hata". The distinction is examined directly. The word
-`kusur` is not used for *defect*; it appears only inside official phrases such
+`kusur` is not used for _defect_; it appears only inside official phrases such
 as "kusur ortaya çıkarmaya yönelik saldırılar". `terms.json` is the only source
 of truth — 97 terms, aligned from the official keyword lists. Check it rather
 than translating freshly.
@@ -72,7 +72,7 @@ not K3, whatever its objective says.
 
 Boundary value analysis is the recurring arithmetic trap: the boundary value is
 the value inside the partition, 2-value analysis adds its closest neighbour in
-the adjacent partition, and 3-value analysis adds *both* neighbours. For
+the adjacent partition, and 3-value analysis adds _both_ neighbours. For
 `total >= 500` that is {499, 500, 501}; 498 is not a coverage item.
 
 ## The publishing gate
