@@ -3,7 +3,8 @@
  * scripts/validate-data.ts
  *
  * Implements the 15 CI checks from docs/04-data-model.md §6.
- * Checks #1-9 are ERRORS (exit 1). Checks #10-13 are WARNINGS (exit 0, printed).
+ * Checks #1-9 and #15 are ERRORS (exit 1). Checks #10-14 are WARNINGS (exit 0,
+ * printed). The registry below is the source of truth for the severity levels.
  *
  * Design rules followed (see CLAUDE.md):
  *   - Guard clauses / early returns, no deep nesting, no hardcoded exam

@@ -20,6 +20,7 @@ npm-debug.log*
 public/data/
 
 # Tooling leftovers
+.claude/settings.local.json
 .playwright-mcp/
 *.tsbuildinfo
 *.png

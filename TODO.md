@@ -25,7 +25,7 @@ Priority: **P0** blocks the next phase from starting · **P1** required within t
 - [x] **F0-06** `P0` `objectives.json` — **64 LOs**, TR+EN text copied verbatim from the official PDFs, K1=14/K2=42/K3=8
 - [x] **F0-07** `P0` `syllabus.json` · `meta.json` · `manifest.json` — audited against the official source, zero discrepancies (titles, durations 1135 min, exam constants 40/26/60/75)
 - [x] **F0-11** `P1` `certifications.json` — the full 28-row ISTQB certification table ([`03 §5`](docs/03-istqb-reference.md) seed data)
-- [x] **F0-08** `P0` `schemas/` completed + `scripts/validate-data.ts` — **14 checks** (13 + option-position balance). 1-9 are errors, 10-14 are warnings
+- [x] **F0-08** `P0` `schemas/` completed + `scripts/validate-data.ts` — **15 checks** (#1 is JSON Schema conformance, #2-#15 are consistency checks). #1-#9 and #15 are errors, #10-#14 are warnings
 - [x] **F0-12** `P1` `scripts/build-index.ts` — builds `index.json` + manifest counts from the chunks
 - [x] **F0-13** `P1` `scripts/stats.ts` — per-LO coverage → `docs/coverage.md`
 - [ ] **F0-09** `P1` `scripts/fetch-glossary.ts` — pull 215 terms from the Glossary API with the `used_in: Foundation v4.0` filter; match TR equivalents from the TTB syllabus, flag `trSource`

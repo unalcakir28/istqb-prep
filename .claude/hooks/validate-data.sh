@@ -40,6 +40,12 @@ if ! validate_output=$(yarn validate:data 2>&1); then
   exit 2
 fi
 
+# The dev server reads public/data/, not data/, and `predev` only syncs once at
+# startup — so an edit made while it runs is invisible in the browser until the
+# two are synced again. Doing it here is what keeps "validated" and "what the
+# app actually serves" the same thing.
+yarn sync:data >/dev/null 2>&1
+
 # docs/coverage.md and the README badges are generated from the same content,
 # and guard-generated.sh blocks editing them by hand — so if this hook does not
 # regenerate them, nothing does and they silently disagree with data/.

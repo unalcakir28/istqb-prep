@@ -53,10 +53,11 @@ These numbers live in `data/ctfl-v4.0.1/syllabus.json` and `meta.json`; they are
 ## Commands
 
 **Package manager: yarn** — don't use npm. Dependencies are pinned to exact versions (no `^`/`~`).
+**Node 22** — that is what CI pins (`node-version: 22`). `package.json` has no `engines` field, so nothing warns you locally if you are on another major.
 
 ```bash
 yarn dev                # Vite (predev: syncs data/ -> public/data/)
-yarn validate:data      # JSON Schema + 15 consistency checks  ← must be green on every PR
+yarn validate:data      # JSON Schema (#1) + 14 consistency checks (#2-#15)  ← must be green on every PR
 yarn validate:i18n      # src/lib/i18n/locales/*.json key parity (TR/EN), CI gate
 yarn build:index        # builds questions/index.json + manifest counts from the chunks
 yarn stats              # per-LO coverage → docs/coverage.md + README badges
@@ -107,12 +108,13 @@ Two PreToolUse hooks **block** Edit/Write with exit 2. That is the design, not a
 
 PostToolUse, each one scoped to the paths it cares about:
 
-- `validate-data.sh` — on `data/*.json`: reruns `build:index`, `validate:data` and `stats`. An error comes back to the session; `stats` stays quiet because `docs/coverage.md` and the README badges are generated and cannot be written by hand.
+- `validate-data.sh` — on `data/*.json`: reruns `build:index`, `validate:data`, `sync:data` and `stats`. An error comes back to the session; `sync:data` and `stats` stay quiet because `public/data/`, `docs/coverage.md` and the README badges are generated and cannot be written by hand.
 - `typecheck.sh` — on `src/**/*.ts(x)`: `yarn typecheck`, reported back on failure.
+- `lint.sh` — on `src/**/*.ts(x)`: `yarn lint`. Types and formatting are already covered; this is here for the rules the compiler cannot see, `react-hooks/exhaustive-deps` above all.
 - `i18n-parity.sh` — on `src/lib/i18n/locales/*.json`: `yarn validate:i18n`. i18next falls back to English for a missing Turkish key and the E2E specs read English labels, so nothing else turns red.
 - `format.sh` — Prettier on the written file, always silent.
 
-Agents: `question-writer` (writes new questions at status `review`), `question-verifier` (adversarial check before publishing), `syllabus-fact-checker` (checks a claim against the verified sources).
+Agents: `question-writer` (writes new questions at status `review`), `question-verifier` (adversarial check before publishing), `syllabus-fact-checker` (checks a claim against the verified sources), `doc-drift-auditor` (checks whether a change made a documented count, path or behaviour false — no CI step does), `a11y-reviewer` (the accessibility failures axe cannot see: focus order, announcements, keyboard reachability).
 
 Skills: `question-authoring` (rules for `data/*/questions/`, model-loaded) · `/pre-pr` (runs the CI gate locally) · `/new-questions` (stats → write → verify → publish chain). The last two are user-invocable only, because publishing has side effects.
 
@@ -132,7 +134,7 @@ Skills: `question-authoring` (rules for `data/*/questions/`, model-loaded) · `/
 
 Each of these bit once. Don't let it bite twice.
 
-- **After editing `data/`**, run `yarn build:index && yarn validate:data`. If `data/` changes while the dev server is running, `public/data/` goes stale: `predev`/`prebuild` only sync at startup, use `yarn sync:data` after that.
+- **After editing `data/`**, run `yarn build:index && yarn validate:data`. If `data/` changes while the dev server is running, `public/data/` goes stale: `predev`/`prebuild` only sync at startup, use `yarn sync:data` after that. `validate-data.sh` does this for edits made from a session; an edit made by hand still needs the command.
 - **`yarn test` (Vitest) must not collect files from `e2e/`.** The exclude in `vitest.config.ts` prevents this; remove it and Playwright's `test.beforeEach` blows up, and the command comes back red even if all 39 unit tests pass.
 - **The E2E browser launches with the `en-US` locale**, set explicitly in `playwright.config.ts`. UI language is picked from `navigator.language`, so the specs select on English labels — read from `src/lib/i18n/locales/en.json` through `e2e/labels.ts`, never retyped in a spec. `ExamSetup` seeds the question language from the UI language too, so a test that cares about question language sets it explicitly instead of assuming the locale.
 - **If `GITHUB_ACTIONS` is set, Vite's `base` becomes `/istqb-prep/`.** `playwright.config.ts` deliberately clears this variable, otherwise `baseURL` won't hold.
@@ -153,7 +155,7 @@ Each of these bit once. Don't let it bite twice.
 
 ## Up next
 
-`TODO.md` → **Phase 2**. The core of Phase 0 and Phase 1 is closed — the blueprint has 29 LO groups, all 64 learning objectives are processed, the validator runs 15 checks. What's still open:
+`TODO.md` → **Phase 2**. The core of Phase 0 and Phase 1 is closed — the blueprint has 29 LO groups, all 64 learning objectives are processed, the validator runs 15 numbered checks (#1 is the JSON Schema gate). What's still open:
 
 1. **F0-02** — Visually verify the ISTQB Glossary license in the browser; glossary definitions aren't copied verbatim until this is verified.
 2. **Deepen the pool** — `yarn validate:data` reports 52 warnings; all of them are "this LO has fewer than 3 published questions." Phase 2 targets 200 questions, Phase 3 targets 300, with ≥3 per LO.
