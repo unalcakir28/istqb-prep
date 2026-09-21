@@ -39,6 +39,12 @@ jobs:
       - name: Validate data
         run: yarn validate:data
 
+      # Bilingualism is an inviolable rule, but i18next silently falls back to
+      # English for a missing Turkish key, so a half-translated UI is green
+      # everywhere else — this is the only step that fails on it.
+      - name: Validate UI locales
+        run: yarn validate:i18n
+
       - name: Build
         run: yarn build
 

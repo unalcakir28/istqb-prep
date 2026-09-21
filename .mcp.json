@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@0.0.82"]
+    },
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp?client=istqb-prep",
+      "headers": {
+        "Authorization": "${CONTEXT7_API_KEY:-}"
+      }
+    }
+  }
+}

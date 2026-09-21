@@ -16,6 +16,7 @@
     "typecheck": "tsc -b --noEmit",
     "sync:data": "tsx scripts/sync-data.ts",
     "validate:data": "tsx scripts/validate-data.ts",
+    "validate:i18n": "tsx scripts/check-i18n.ts",
     "build:index": "tsx scripts/build-index.ts",
     "stats": "tsx scripts/stats.ts",
     "publish:questions": "tsx scripts/publish-questions.ts",

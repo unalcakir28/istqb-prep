@@ -57,16 +57,22 @@ These numbers live in `data/ctfl-v4.0.1/syllabus.json` and `meta.json`; they are
 ```bash
 yarn dev                # Vite (predev: syncs data/ -> public/data/)
 yarn validate:data      # JSON Schema + 15 consistency checks  ← must be green on every PR
+yarn validate:i18n      # src/lib/i18n/locales/*.json key parity (TR/EN), CI gate
 yarn build:index        # builds questions/index.json + manifest counts from the chunks
 yarn stats              # per-LO coverage → docs/coverage.md + README badges
 yarn publish:questions  # review -> published; --reviewer is mandatory (the only path through)
+yarn sync:data          # data/ -> public/data/ (needed when data/ changes while the dev server runs)
 yarn test               # Vitest (unit)
 yarn e2e                # Playwright: flow + axe accessibility (its own dev server, 5183)
+yarn e2e:ui             # the same specs in Playwright's UI mode
 yarn build              # tsc -b && vite build (CI gate)
 yarn lint && yarn typecheck && yarn format
+yarn format:write       # prettier --write (yarn format is check-only, it fails CI)
 ```
 
 **After editing data, in order:** `yarn build:index && yarn validate:data`.
+
+**CI gate, in order:** `lint → format → typecheck → test → validate:data → validate:i18n → build → e2e`. All eight must be green.
 
 ## Folder structure
 
@@ -74,7 +80,7 @@ yarn lint && yarn typecheck && yarn format
 data/       Content — indexed, chunked static JSON (NO single file)
 schemas/    JSON Schema — CI gate
 docs/       Project docs + adr/
-scripts/    validate-data, build-index, stats, sync-data, publish-questions
+scripts/    validate-data, check-i18n, build-index, stats, sync-data, publish-questions
 src/        The app (Vite + React + TS)
 e2e/        Playwright: flow + accessibility
 ```
@@ -91,6 +97,26 @@ lib/db/          Dexie/IndexedDB — the single place for persistence
 lib/i18n/        UI language; question language is a separate concept (attempt.contentLang)
 routes/          Screens · components/ shared UI · types/content.ts data types
 ```
+
+## Claude Code tooling (`.claude/`)
+
+Two PreToolUse hooks **block** Edit/Write with exit 2. That is the design, not a bug:
+
+- `guard-publish.sh` — setting a question's `status` field to `published` by hand is blocked. The only path is `yarn publish:questions --reviewer "<name>" --chunk <chunk>`, because that is the one place the reviewer gets recorded. Editing the question text itself is not blocked.
+- `guard-generated.sh` — `questions/index.json`, `data/manifest.json`, `docs/coverage.md`, `public/data/*` and `yarn.lock` are outputs. Edit the source, then run `yarn build:index` (index, manifest), `yarn stats` (coverage.md), `yarn sync:data` (public/data) or `yarn add <pkg>@<exact-version>` (lockfile).
+
+PostToolUse, each one scoped to the paths it cares about:
+
+- `validate-data.sh` — on `data/*.json`: reruns `build:index`, `validate:data` and `stats`. An error comes back to the session; `stats` stays quiet because `docs/coverage.md` and the README badges are generated and cannot be written by hand.
+- `typecheck.sh` — on `src/**/*.ts(x)`: `yarn typecheck`, reported back on failure.
+- `i18n-parity.sh` — on `src/lib/i18n/locales/*.json`: `yarn validate:i18n`. i18next falls back to English for a missing Turkish key and the E2E specs read English labels, so nothing else turns red.
+- `format.sh` — Prettier on the written file, always silent.
+
+Agents: `question-writer` (writes new questions at status `review`), `question-verifier` (adversarial check before publishing), `syllabus-fact-checker` (checks a claim against the verified sources).
+
+Skills: `question-authoring` (rules for `data/*/questions/`, model-loaded) · `/pre-pr` (runs the CI gate locally) · `/new-questions` (stats → write → verify → publish chain). The last two are user-invocable only, because publishing has side effects.
+
+`.mcp.json` is checked in: Playwright (pinned `@playwright/mcp@0.0.82`) and context7. context7 reads `CONTEXT7_API_KEY` from the environment and works unauthenticated without it.
 
 ## Conventions
 
@@ -127,9 +153,7 @@ Each of these bit once. Don't let it bite twice.
 
 ## Up next
 
-`TODO.md` → **Phase 2**. The core of Phase 0 and Phase 1 is closed; what's left:
-
-Phase 0 is closed (blueprint complete with 29 LO groups, all 64 learning objectives processed, the validator runs 15 checks). What's still open:
+`TODO.md` → **Phase 2**. The core of Phase 0 and Phase 1 is closed — the blueprint has 29 LO groups, all 64 learning objectives are processed, the validator runs 15 checks. What's still open:
 
 1. **F0-02** — Visually verify the ISTQB Glossary license in the browser; glossary definitions aren't copied verbatim until this is verified.
 2. **Deepen the pool** — `yarn validate:data` reports 52 warnings; all of them are "this LO has fewer than 3 published questions." Phase 2 targets 200 questions, Phase 3 targets 300, with ≥3 per LO.

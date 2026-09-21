@@ -19,6 +19,8 @@ case $file_path in
     producer="yarn stats" ;;
   */public/data/*|public/data/*)
     producer="yarn sync:data" ;;
+  */yarn.lock|yarn.lock)
+    producer="yarn add <pkg>@<exact-version> (versions are pinned, no ^ or ~)" ;;
   *)
     exit 0 ;;
 esac

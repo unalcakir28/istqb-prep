@@ -40,4 +40,10 @@ if ! validate_output=$(yarn validate:data 2>&1); then
   exit 2
 fi
 
+# docs/coverage.md and the README badges are generated from the same content,
+# and guard-generated.sh blocks editing them by hand — so if this hook does not
+# regenerate them, nothing does and they silently disagree with data/.
+# A stale report is not a reason to interrupt the session, so this stays quiet.
+yarn stats >/dev/null 2>&1
+
 exit 0
