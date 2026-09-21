@@ -35,7 +35,7 @@ function makeQuestion(overrides: Partial<Question> = {}): Question {
 }
 
 describe("scoreExam", () => {
-  it("baraji meta.json'dan okur, koda gommez", () => {
+  it("reads the pass mark from meta.json rather than hard-coding it", () => {
     expect(meta.exam.passPoints).toBe(26);
 
     const questions = Array.from({ length: 40 }, (_, i) =>
@@ -51,7 +51,7 @@ describe("scoreExam", () => {
     expect(score.passed).toBe(true);
   });
 
-  it("25/40 barajin altindadir, 26/40 gecer", () => {
+  it("treats 25/40 as below the pass mark and 26/40 as a pass", () => {
     const questions = Array.from({ length: 40 }, (_, i) => makeQuestion({ id: `q${i}` }));
 
     const answer = (n: number): AnswerMap => {
@@ -64,7 +64,7 @@ describe("scoreExam", () => {
     expect(scoreExam(questions, answer(26), meta).passed).toBe(true);
   });
 
-  it("coktan secmeli soruda TAM ESLESME arar — kismi puan yoktur", () => {
+  it("requires an EXACT MATCH on a multiple-answer question — no partial credit", () => {
     const question = makeQuestion({
       id: "multi",
       type: "multi",
@@ -72,17 +72,17 @@ describe("scoreExam", () => {
       correct: ["a", "c"],
     });
 
-    // Ikisinden biri dogru: yine de 0 puan.
+    // One of the two correct: still 0 points.
     expect(scoreExam([question], { multi: ["a"] }, meta).points).toBe(0);
-    // Uc sik isaretlemek: 0 puan.
+    // Ticking three options: 0 points.
     expect(scoreExam([question], { multi: ["a", "c", "d"] }, meta).points).toBe(0);
-    // Ikisi de dogru: 1 puan.
+    // Both correct: 1 point.
     expect(scoreExam([question], { multi: ["a", "c"] }, meta).points).toBe(1);
-    // Sira onemsiz.
+    // Order does not matter.
     expect(scoreExam([question], { multi: ["c", "a"] }, meta).points).toBe(1);
   });
 
-  it("ayni sikkin iki kez gonderilmesini dogru saymaz", () => {
+  it("does not count the same option submitted twice as correct", () => {
     const question = makeQuestion({
       id: "multi",
       type: "multi",
@@ -93,7 +93,7 @@ describe("scoreExam", () => {
     expect(scoreExam([question], { multi: ["a", "a"] }, meta).points).toBe(0);
   });
 
-  it("yanlis cevap puan dusurmez — negatif puanlama yok", () => {
+  it("does not subtract points for a wrong answer — there is no negative marking", () => {
     const questions = [
       makeQuestion({ id: "q1", correct: ["a"] }),
       makeQuestion({ id: "q2", correct: ["a"] }),
@@ -104,7 +104,7 @@ describe("scoreExam", () => {
     expect(score.points).toBe(1);
   });
 
-  it("cevapsiz soruyu yanlistan ayri sayar", () => {
+  it("counts an unanswered question separately from a wrong one", () => {
     const questions = [
       makeQuestion({ id: "q1", correct: ["a"] }),
       makeQuestion({ id: "q2", correct: ["a"] }),
@@ -117,7 +117,7 @@ describe("scoreExam", () => {
     expect(score.unansweredCount).toBe(1);
   });
 
-  it("bolum, LO ve K-seviyesi kirilimi uretir", () => {
+  it("produces a breakdown by chapter, learning objective and K-level", () => {
     const questions = [
       makeQuestion({ id: "q1", chapter: 1, objectives: ["FL-1.1.1"], kLevel: "K1" }),
       makeQuestion({ id: "q2", chapter: 1, objectives: ["FL-1.1.2"], kLevel: "K2" }),
@@ -131,7 +131,7 @@ describe("scoreExam", () => {
     expect(score.byKLevel.K3).toEqual({ correct: 1, total: 1, percent: 100 });
   });
 
-  it("bir soru birden fazla LO'ya sayilir", () => {
+  it("counts one question towards several learning objectives", () => {
     const question = makeQuestion({
       id: "q1",
       objectives: ["FL-1.2.1", "FL-1.2.3"],
@@ -142,8 +142,8 @@ describe("scoreExam", () => {
     expect(score.byObjective["FL-1.2.3"].correct).toBe(1);
   });
 
-  it("eksik uretilmis denemede baraji yine resmi degerle karsilastirir", () => {
-    // 30 soruluk eksik deneme: 26 dogru hala gecer, 25 gecmez.
+  it("still compares against the official pass mark in a short exam", () => {
+    // A short 30-question exam: 26 correct still passes, 25 does not.
     const questions = Array.from({ length: 30 }, (_, i) => makeQuestion({ id: `q${i}` }));
     const answers: AnswerMap = {};
     for (let i = 0; i < 26; i += 1) answers[`q${i}`] = ["a"];
@@ -155,7 +155,7 @@ describe("scoreExam", () => {
     expect(score.passed).toBe(true);
   });
 
-  it("hic cevap verilmemis denemede cokmez", () => {
+  it("does not crash on an exam with no answers at all", () => {
     const questions = Array.from({ length: 40 }, (_, i) => makeQuestion({ id: `q${i}` }));
     const score = scoreExam(questions, {}, meta);
 
@@ -167,7 +167,7 @@ describe("scoreExam", () => {
 });
 
 describe("weakestObjectives", () => {
-  it("en dusuk basarili LO'lari siralar, tam dogrulari disarida birakir", () => {
+  it("ranks the weakest learning objectives and leaves out the fully correct ones", () => {
     const questions = [
       makeQuestion({ id: "a1", objectives: ["FL-1.1.1"] }),
       makeQuestion({ id: "a2", objectives: ["FL-1.1.1"] }),
@@ -180,6 +180,6 @@ describe("weakestObjectives", () => {
 
     expect(weakest[0]).toBe("FL-2.1.1"); // %0
     expect(weakest[1]).toBe("FL-1.1.1"); // %50
-    expect(weakest).not.toContain("FL-3.1.1"); // %100 — zayif degil
+    expect(weakest).not.toContain("FL-3.1.1"); // 100% — not weak
   });
 });

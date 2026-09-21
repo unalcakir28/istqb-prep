@@ -1,13 +1,17 @@
 import { test, expect, type Page } from "@playwright/test";
 
+import { en, fill, pattern } from "./labels";
+
 /**
- * F1-15 — tam deneme akisi: ana sayfa -> kurulum -> oturum -> sonuc ->
- * inceleme. Secici olarak erisilebilir rol/ad kullanilir; boylece test
- * ayni zamanda ekran okuyucunun gordugu seyi dogrular. `data-testid`
- * eklemek bu bagi koparirdi.
+ * F1-15 — full exam flow: home -> setup -> session -> result -> review.
+ * Selectors use accessible roles and names, so the test also verifies what
+ * a screen reader sees. Adding `data-testid` would break that link.
+ *
+ * The names themselves come from `en.json` via `./labels`, so UI copy has a
+ * single owner.
  */
 
-/** Her test temiz bir tarayici durumundan baslar: yarim deneme sizmasin. */
+/** Every test starts from a clean browser state: no half-finished exam leaks in. */
 async function clearStorage(page: Page): Promise<void> {
   await page.goto("/");
   await page.evaluate(async () => {
@@ -27,12 +31,12 @@ async function clearStorage(page: Page): Promise<void> {
   await page.reload();
 }
 
-/** Sik denetimleri: tek secimli soruda radio, cok secimlide checkbox. */
+/** Option controls: radio for a single-answer question, checkbox for a multi. */
 function options(page: Page) {
   return page.getByRole("radio").or(page.getByRole("checkbox"));
 }
 
-/** Gorunen sorunun gerektirdigi kadar sik isaretler. */
+/** Ticks as many options as the visible question requires. */
 async function answerCurrentQuestion(page: Page): Promise<void> {
   const checkboxes = page.getByRole("checkbox");
   const isMulti = (await checkboxes.count()) > 0;
@@ -42,101 +46,114 @@ async function answerCurrentQuestion(page: Page): Promise<void> {
     return;
   }
 
-  // "HANGI IKISI" sorusu — tam olarak iki sik isaretlenir.
+  // A "WHICH TWO" question — exactly two options get ticked.
   await checkboxes.nth(0).check();
   await checkboxes.nth(1).check();
+}
+
+/** The question counter, with the total left open as a capture group. */
+function counterPattern(current: number) {
+  return pattern(en.exam.question, { current: String(current), total: "(\\d+)" });
 }
 
 test.beforeEach(async ({ page }) => {
   await clearStorage(page);
 });
 
-test("ana sayfadan tam bir deneme kurulur, çözülür ve incelenir", async ({ page }) => {
+test("a full exam is set up, answered and reviewed from the home page", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 
-  await page.getByRole("link", { name: "Deneme sınavına başla" }).click();
+  await page.getByRole("link", { name: en.home.startExam }).click();
   await expect(page).toHaveURL(/\/deneme$/);
 
-  await page.getByRole("button", { name: "Denemeyi başlat" }).click();
+  await page.getByRole("button", { name: en.setup.start }).click();
   await expect(page).toHaveURL(/\/deneme\/[\w-]+$/);
 
-  // Toplam soru sayisi meta.json'dan gelir, teste gomulmez.
-  const counter = page.getByText(/^Soru 1 \/ \d+$/);
+  // The total question count comes from meta.json; it is not hard-coded here.
+  const counter = page.getByText(counterPattern(1));
   await expect(counter).toBeVisible();
-  const total = Number((await counter.innerText()).match(/\/ (\d+)$/)![1]);
+  const total = Number((await counter.innerText()).match(counterPattern(1))![1]);
   expect(total).toBeGreaterThan(0);
 
   for (let index = 1; index <= total; index += 1) {
-    await expect(page.getByText(`Soru ${index} / ${total}`)).toBeVisible();
+    await expect(page.getByText(fill(en.exam.question, { current: index, total }))).toBeVisible();
     await answerCurrentQuestion(page);
-    if (index < total) await page.getByRole("button", { name: "Sonraki" }).click();
+    if (index < total) await page.getByRole("button", { name: en.exam.next }).click();
   }
 
-  await page.getByRole("button", { name: "Sınavı bitir" }).click();
-  await expect(page.getByText("Tüm sorular cevaplanmış.")).toBeVisible();
-  await page.getByRole("button", { name: "Evet, bitir" }).click();
+  await page.getByRole("button", { name: en.exam.submit }).click();
+  await expect(page.getByText(en.exam.submitConfirmBodyAll)).toBeVisible();
+  await page.getByRole("button", { name: en.exam.confirmSubmit }).click();
 
   await expect(page).toHaveURL(/\/sonuc\/[\w-]+$/);
-  await expect(page.getByRole("heading", { name: "Sonuç", level: 1 })).toBeVisible();
-  // Hepsi cevaplandi: puan toplam soru sayisini asamaz ve cevapsiz sifirdir.
-  await expect(page.getByText(new RegExp(`\\b\\d+ / ${total}\\b`)).first()).toBeVisible();
+  await expect(page.getByRole("heading", { name: en.result.title, level: 1 })).toBeVisible();
+  // Everything was answered: the score cannot exceed the total and nothing is left empty.
+  const score = pattern(en.result.score, { points: "\\d+", total: String(total) });
+  await expect(page.getByText(score).first()).toBeVisible();
 
-  await page.getByRole("link", { name: "Cevapları incele" }).click();
+  await page.getByRole("link", { name: en.result.review }).click();
   await expect(page).toHaveURL(/\/inceleme\/[\w-]+$/);
-  await expect(page.getByRole("heading", { name: "İnceleme", level: 1 })).toBeVisible();
-  // Urunun ana farklilastiricisi: sik sik gerekce her soruda gorunur.
-  await expect(page.getByText("Şık şık gerekçe").first()).toBeVisible();
+  await expect(page.getByRole("heading", { name: en.review.title, level: 1 })).toBeVisible();
+  // The product's main differentiator: a per-option rationale on every question.
+  await expect(page.getByText(en.review.perOption).first()).toBeVisible();
 });
 
-test("yarim kalan deneme ana sayfadan kaldigi yerden surer", async ({ page }) => {
-  await page.getByRole("link", { name: "Deneme sınavına başla" }).click();
-  await page.getByRole("button", { name: "Denemeyi başlat" }).click();
+test("an unfinished exam resumes from the home page", async ({ page }) => {
+  await page.getByRole("link", { name: en.home.startExam }).click();
+  await page.getByRole("button", { name: en.setup.start }).click();
   await expect(page).toHaveURL(/\/deneme\/[\w-]+$/);
 
   await answerCurrentQuestion(page);
-  await page.getByRole("button", { name: "Sonraki" }).click();
-  await expect(page.getByText(/^Soru 2 \/ \d+$/)).toBeVisible();
+  await page.getByRole("button", { name: en.exam.next }).click();
+  await expect(page.getByText(counterPattern(2))).toBeVisible();
   const sessionUrl = page.url();
 
   await page.goto("/");
-  await expect(page.getByText("Yarım kalan denemen var")).toBeVisible();
-  await page.getByRole("link", { name: "Devam et" }).click();
+  await expect(page.getByText(en.home.resumeTitle)).toBeVisible();
+  await page.getByRole("link", { name: en.home.resume }).click();
 
   await expect(page).toHaveURL(sessionUrl);
 
-  // Tam yenileme: durum bellekten degil IndexedDB'den geri gelir, yani
-  // cevabin gercekten diske yazildigi dogrulanmis olur.
+  // A full reload: state comes back from IndexedDB rather than memory, which
+  // proves the answer really was written to disk.
   await page.reload();
 
-  // Yarim kalan deneme ILK CEVAPSIZ sorudan devam eder (resumeAttempt);
-  // 1. soruyu cevapladigimiz icin 2. sorudan acilmasi beklenir.
-  await expect(page.getByText(/^Soru 2 \/ \d+$/)).toBeVisible();
+  // An unfinished exam resumes at the FIRST UNANSWERED question
+  // (resumeAttempt); question 1 is answered, so it must open on question 2.
+  await expect(page.getByText(counterPattern(2))).toBeVisible();
 
-  await page.getByRole("button", { name: "Önceki" }).click();
-  await expect(page.getByText(/^Soru 1 \/ \d+$/)).toBeVisible();
+  await page.getByRole("button", { name: en.exam.previous }).click();
+  await expect(page.getByText(counterPattern(1))).toBeVisible();
   await expect(options(page).first()).toBeChecked();
 });
 
-test("soru dili degistiginde isaretli cevap korunur", async ({ page }) => {
-  await page.getByRole("link", { name: "Deneme sınavına başla" }).click();
-  await page.getByRole("button", { name: "Denemeyi başlat" }).click();
-  // Kurulum ekraninda da radio var (sure ve dil secimi) ve React Router
-  // yeni ekran yuklenene kadar onu ekranda tutuyor. Once oturuma gectigimizi
-  // dogrulamazsak `.check()` yanlislikla sure radiosuna basabiliyor.
+test("the selected answer survives a question-language switch", async ({ page }) => {
+  await page.getByRole("link", { name: en.home.startExam }).click();
+  await page.getByRole("button", { name: en.setup.start }).click();
+  // The setup screen also has radios (duration and language) and React Router
+  // keeps it on screen until the next one loads. Without first asserting that
+  // the session is up, `.check()` can hit a duration radio by mistake.
   await expect(page).toHaveURL(/\/deneme\/[\w-]+$/);
-  await expect(page.getByText(/^Soru 1 \/ \d+$/)).toBeVisible();
+  await expect(page.getByText(counterPattern(1))).toBeVisible();
 
   const first = options(page).first();
   await first.check();
 
-  // Dil degisikligi SORU METNINDEN okunur, siktan degil: sayisal siklari
-  // olan sorularda ("19", "%67") iki dilin sik metni ayni oluyor.
-  const stem = page.locator(".prose-question").first();
-  const trStem = await stem.innerText();
+  // The starting question language depends on the interface language, which
+  // depends on the browser locale. The test does not rely on that chain: it
+  // switches to Turkish first, so the language it switches away from is known
+  // whatever the locale is. The buttons' accessible names are their sr-only
+  // text; the "TR" / "EN" badges are aria-hidden.
+  await page.getByRole("button", { name: en.question.showTurkish }).click();
 
-  // Butonun erisilebilir adi sr-only metindir; "EN" rozeti aria-hidden.
-  await page.getByRole("button", { name: "İngilizce göster" }).click();
-  await expect(stem).not.toHaveText(trStem);
+  // The switch is read from the QUESTION STEM, not from an option: on
+  // questions with numeric options ("19", "67%") both languages render the
+  // same option text.
+  const stem = page.locator(".prose-question").first();
+  const turkishStem = await stem.innerText();
+
+  await page.getByRole("button", { name: en.question.showEnglish }).click();
+  await expect(stem).not.toHaveText(turkishStem);
 
   await expect(options(page).first()).toBeChecked();
 });

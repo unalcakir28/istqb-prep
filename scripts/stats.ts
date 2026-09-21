@@ -1,10 +1,10 @@
 /**
- * F0-13 — LO basina kapsama raporu -> docs/kapsama.md
+ * F0-13 — Per-LO coverage report -> docs/coverage.md
  *
- * "Her ogrenme hedefi icin en az 3 soru" hedefinin nerede durdugunu tek
- * bakista gosterir. Rapor uretilen bir dosyadir; elle duzenlenmez.
+ * Shows at a glance where the "at least 3 questions per learning objective"
+ * goal stands. The report is a generated file; it is never edited by hand.
  *
- * Kullanim:  yarn stats
+ * Usage:  yarn stats
  */
 
 import fs from "node:fs";
@@ -13,10 +13,17 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_DIR = path.join(ROOT, "data");
-const OUT = path.join(ROOT, "docs", "kapsama.md");
+const OUT = path.join(ROOT, "docs", "coverage.md");
 const README = path.join(ROOT, "README.md");
-const BADGE_START = "<!-- kapsama:basla";
-const BADGE_END = "<!-- kapsama:bitti -->";
+/**
+ * The language the generated report is written in. The repository's documents
+ * are English, so the bilingual data fields are read through this one constant
+ * rather than each call site picking a language of its own.
+ */
+const DOC_LANG = "en" as const;
+
+const BADGE_START = "<!-- coverage:start";
+const BADGE_END = "<!-- coverage:end -->";
 
 type Json = Record<string, any>;
 
@@ -24,11 +31,11 @@ function readJson(absPath: string): Json {
   return JSON.parse(fs.readFileSync(absPath, "utf8"));
 }
 
-/** Faz hedefleri — docs/09-yol-haritasi.md */
+/** Phase targets — docs/09-roadmap.md */
 const TARGETS = [
-  { phase: "Faz 1 (MVP)", questions: 120, perObjective: 1 },
-  { phase: "Faz 2", questions: 200, perObjective: 2 },
-  { phase: "Faz 3", questions: 300, perObjective: 3 },
+  { phase: "Phase 1 (MVP)", questions: 120, perObjective: 1 },
+  { phase: "Phase 2", questions: 200, perObjective: 2 },
+  { phase: "Phase 3", questions: 300, perObjective: 3 },
 ];
 
 function bar(value: number, max: number, width = 12): string {
@@ -51,9 +58,10 @@ function shield(label: string, message: string, color: string): string {
 }
 
 /**
- * README'deki rozetler elle yazilirsa sessizce eskir. Marker araligi her
- * `yarn stats` calismasinda yeniden uretilir; markerlar yoksa README'ye
- * dokunulmaz (uyari verilir), cunku dosyanin geri kalani bu betigin isi degil.
+ * Badges in the README go silently stale if written by hand. The marker
+ * span is regenerated on every `yarn stats` run; if the markers are
+ * missing, the README is left untouched (a warning is printed), because
+ * the rest of the file is not this script's job.
  */
 function writeBadges(badges: Badge[]): void {
   const first = badges[0];
@@ -63,7 +71,7 @@ function writeBadges(badges: Badge[]): void {
   const start = readme.indexOf(BADGE_START);
   const end = readme.indexOf(BADGE_END);
   if (start === -1 || end === -1) {
-    console.warn("README.md icinde kapsama markerlari yok — rozetler guncellenmedi.");
+    console.warn("No coverage markers found in README.md — badges not updated.");
     return;
   }
 
@@ -71,14 +79,14 @@ function writeBadges(badges: Badge[]): void {
   const block = [
     readme.slice(start, readme.indexOf("\n", start)),
     "",
-    `[![soru](${shield("soru", String(first.questions), "2ea043")})](docs/kapsama.md)`,
-    `[![hedef kapsama](${shield("hedef kapsama", `${first.covered}/${first.objectives}`, complete ? "2ea043" : "d29922")})](docs/kapsama.md)`,
-    `[![mufredat](${shield(first.acronym, `v${first.version}`, "0969da")})](docs/03-istqb-referans.md)`,
+    `[![questions](${shield("questions", String(first.questions), "2ea043")})](docs/coverage.md)`,
+    `[![objective coverage](${shield("objective coverage", `${first.covered}/${first.objectives}`, complete ? "2ea043" : "d29922")})](docs/coverage.md)`,
+    `[![syllabus](${shield(first.acronym, `v${first.version}`, "0969da")})](docs/03-istqb-reference.md)`,
     "",
   ].join("\n");
 
   fs.writeFileSync(README, readme.slice(0, start) + block + readme.slice(end), "utf8");
-  console.log(`README.md rozetleri guncellendi (${first.questions} soru, ${first.covered}/${first.objectives} LO)`);
+  console.log(`README.md badges updated (${first.questions} question(s), ${first.covered}/${first.objectives} LO)`);
 }
 
 function main(): void {
@@ -86,13 +94,13 @@ function main(): void {
   const lines: string[] = [];
   const badges: Badge[] = [];
 
-  lines.push("# Kapsama raporu");
+  lines.push("# Coverage report");
   lines.push("");
   lines.push(
-    "> Bu dosya `yarn stats` ile **uretilir**. Elle duzenlemeyin — bir sonraki calistirmada uzerine yazilir.",
+    "> This file is **generated** by `yarn stats`. Do not edit by hand — it is overwritten on the next run.",
   );
   lines.push("");
-  lines.push(`Uretildi: ${new Date().toISOString().slice(0, 10)}`);
+  lines.push(`Generated: ${new Date().toISOString().slice(0, 10)}`);
   lines.push("");
 
   for (const certification of manifest.certifications ?? []) {
@@ -101,8 +109,8 @@ function main(): void {
     const syllabus = readJson(path.join(certDir, "syllabus.json"));
     const index = readJson(path.join(certDir, "questions", "index.json"));
 
-    // Yalnizca yayinlanmis sorular sayilir — taslak soru havuza girmez,
-    // dolayisiyla kapsama da saymamali.
+    // Only published questions are counted — drafts don't count toward the
+    // pool, so they shouldn't count toward coverage either.
     const published = (index.questions ?? []).filter((q: Json) => q.status === "published");
     const counts = new Map<string, number>(objectives.map((o) => [o.code, 0]));
     for (const question of published) {
@@ -126,16 +134,16 @@ function main(): void {
     lines.push(`## ${certification.acronym} v${certification.syllabusVersion}`);
     lines.push("");
     lines.push(
-      `Havuzda **${published.length}** yayinlanmis soru · **${covered}/${objectives.length}** ogrenme hedefi kapsaniyor.`,
+      `**${published.length}** published question(s) in the pool · **${covered}/${objectives.length}** learning objective(s) covered.`,
     );
     lines.push("");
-    lines.push("| Hedef | Soru | LO >= esik | Durum |");
+    lines.push("| Target | Questions | LO >= threshold | Status |");
     lines.push("|---|--:|--:|---|");
     for (const target of TARGETS) {
       const reached = atLeast(target.perObjective);
       const done = published.length >= target.questions && reached === objectives.length;
       lines.push(
-        `| ${target.phase} — ${target.questions} soru, her LO >= ${target.perObjective} | ${published.length}/${target.questions} | ${reached}/${objectives.length} | ${done ? "tamam" : "devam"} |`,
+        `| ${target.phase} — ${target.questions} questions, every LO >= ${target.perObjective} | ${published.length}/${target.questions} | ${reached}/${objectives.length} | ${done ? "done" : "in progress"} |`,
       );
     }
     lines.push("");
@@ -144,19 +152,19 @@ function main(): void {
       const chapterObjectives = objectives.filter((o) => o.chapter === chapter.number);
       const total = chapterObjectives.reduce((sum, o) => sum + (counts.get(o.code) ?? 0), 0);
 
-      lines.push(`### Bolum ${chapter.number} — ${chapter.title.tr}`);
+      lines.push(`### Chapter ${chapter.number} — ${chapter.title[DOC_LANG]}`);
       lines.push("");
       lines.push(
-        `${total} soru · sinavda ${chapter.examQuestions} soru · ${chapterObjectives.length} ogrenme hedefi`,
+        `${total} question(s) · ${chapter.examQuestions} question(s) on the exam · ${chapterObjectives.length} learning objective(s)`,
       );
       lines.push("");
-      lines.push("| LO | K | Soru | | Hedef metni |");
+      lines.push("| LO | K | Questions | | Objective text |");
       lines.push("|---|:--:|--:|---|---|");
 
       for (const objective of chapterObjectives) {
         const count = counts.get(objective.code) ?? 0;
         lines.push(
-          `| \`${objective.code}\` | ${objective.kLevel} | ${count} | \`${bar(count, 3)}\` | ${objective.text.tr} |`,
+          `| \`${objective.code}\` | ${objective.kLevel} | ${count} | \`${bar(count, 3)}\` | ${objective.text[DOC_LANG]} |`,
         );
       }
       lines.push("");
@@ -164,7 +172,7 @@ function main(): void {
   }
 
   fs.writeFileSync(OUT, `${lines.join("\n")}\n`, "utf8");
-  console.log(`docs/kapsama.md yazildi (${lines.length} satir)`);
+  console.log(`docs/coverage.md written (${lines.length} line(s))`);
 
   writeBadges(badges);
 }

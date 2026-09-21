@@ -1,13 +1,14 @@
 /**
- * Statik veri yukleyen ekranlarin ortak durumu.
+ * Shared state for screens that load static data.
  *
- * Ana sayfa, kurulum ve kaynaklar ekranlari ayni uc durumu ayri ayri
- * kurmustu: yukleniyor, veri, hata + yeniden dene. Ucunde de ayni iptal
- * bayragi vardi, cunku bileşen sokulduktan sonra gelen bir yanit `setState`
- * cagirirsa React uyarir.
+ * The home, setup, and sources screens each built the same three states
+ * separately: loading, data, error + retry. All three also had the same
+ * cancellation flag, because if a response arrives after the component has
+ * unmounted and calls `setState`, React warns about it.
  *
- * `load` her render'da yeniden tanimlanabilir; hangi surumun calistigi
- * ref uzerinden okunur, boylece efekt kimlik degisiminden tetiklenmez.
+ * `load` may be redefined on every render; which version is currently
+ * running is read via a ref, so the effect isn't retriggered by identity
+ * changes.
  */
 
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -15,7 +16,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 export interface AsyncData<T> {
   data: T | null;
   failed: boolean;
-  /** Bastan yukler. Hata ekranindaki "yeniden dene" icin. */
+  /** Reloads from scratch. Used by the "retry" action on the error screen. */
   reload: () => void;
 }
 
@@ -48,8 +49,8 @@ export function useAsyncData<T>(load: () => Promise<T>): AsyncData<T> {
     };
   }, [attempt]);
 
-  // Hata ekrani aninda yukleniyor durumuna donsun; yanit beklenirken eski
-  // hata mesaji ekranda kalmaz.
+  // Immediately drop back to loading state; the old error message doesn't
+  // stay on screen while the response is pending.
   const reload = useCallback(() => {
     setState({ data: null, failed: false });
     setAttempt((value) => value + 1);

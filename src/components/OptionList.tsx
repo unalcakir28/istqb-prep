@@ -3,14 +3,16 @@ import { useTranslation } from "react-i18next";
 import type { Lang, QuestionOption } from "@/types/content";
 
 /**
- * Sik listesi.
+ * Option list.
  *
- * - Tum satir dokunma hedefidir (docs/06 §1.7 — mobilde tek elle kullanim).
- * - Klavyeyle 1-9 arasi tuslarla secim yapilir; kisayol satirda gorunur.
- * - Tek secimlide radio, cok secimlide checkbox semantigi kullanilir; Radix
- *   yerine dogal input tercih edildi cunku dogal davranis zaten dogru.
- * - Inceleme modunda dogru/yanlis ASLA yalniz renkle anlatilmaz: ikon ve
- *   metin de vardir (WCAG 1.4.1).
+ * - The whole row is the touch target (docs/06 §1.7 — one-handed use on
+ *   mobile).
+ * - Selection can be made with keys 1-9; the shortcut is shown on the row.
+ * - Single-select uses radio semantics, multi-select uses checkbox; a native
+ *   input was chosen over Radix because the native behavior is already
+ *   correct.
+ * - In review mode, correct/wrong is NEVER conveyed by color alone: an icon
+ *   and text are always present too (WCAG 1.4.1).
  */
 export interface OptionListProps {
   questionId: string;
@@ -19,7 +21,7 @@ export interface OptionListProps {
   selectCount: number;
   lang: Lang;
   onSelect?: (optionId: string) => void;
-  /** Inceleme modu: secim kilitlenir, dogru cevap isaretlenir. */
+  /** Review mode: selection is locked, the correct answer is marked. */
   review?: boolean;
   correct?: string[];
 }
@@ -28,8 +30,8 @@ const ROW =
   "flex w-full items-start gap-3 rounded-[var(--radius-card)] border px-4 py-3 text-left transition-colors";
 
 /**
- * Inceleme durumu: dogru cevap her zaman isaretlenir; kullanicinin yanlis
- * secimi ayrica kirmiziya doner.
+ * Review-mode state: the correct answer is always marked; the user's wrong
+ * pick additionally turns red.
  */
 function rowState(showAsCorrect: boolean, showAsWrong: boolean, isSelected: boolean): string {
   if (showAsCorrect) return "border-correct/60 bg-correct/10";

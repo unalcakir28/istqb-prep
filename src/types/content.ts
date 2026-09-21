@@ -1,6 +1,6 @@
 /**
  * data/ altindaki statik JSON'un tip karsiliklari.
- * Sekil kaynagi schemas/*.json ve docs/04-veri-modeli.md.
+ * Sekil kaynagi schemas/*.json ve docs/04-data-model.md.
  */
 
 export type Lang = "tr" | "en";
@@ -86,8 +86,8 @@ export interface Objective {
 }
 
 /**
- * Resmi sinavin soru dagilimi. Bir grup, bir veya daha fazla LO'yu ve o
- * gruptan gelmesi gereken soru sayisini tasir.
+ * The official exam's question distribution. A group carries one or more
+ * learning objectives and the number of questions that group must supply.
  */
 export interface BlueprintGroup {
   id: string;
@@ -109,7 +109,7 @@ export interface ExamBlueprint {
   groups: BlueprintGroup[];
 }
 
-/** Indeks girdisi — soru metni yok, sadece secim icin gereken alanlar. */
+/** Index entry — no question text, only the fields selection needs. */
 export interface QuestionIndexEntry {
   id: string;
   chunk: string;
@@ -144,7 +144,7 @@ export interface QuestionContent {
   options: QuestionOption[];
   rationale: {
     summary: string;
-    /** Her sik icin ayri gerekce — urunun ana farklilastiricisi, zorunlu. */
+    /** A separate rationale per option — the product's main differentiator, mandatory. */
     byOption: Record<string, string>;
   };
   hints?: string[];

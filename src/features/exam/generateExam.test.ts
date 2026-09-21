@@ -17,7 +17,7 @@ const objectives = (
   }
 ).objectives;
 
-/** Her LO icin `perObjective` adet yayinlanmis soru tasiyan sentetik havuz. */
+/** A synthetic pool carrying `perObjective` published questions per LO. */
 function buildPool(perObjective: number): QuestionIndexEntry[] {
   const pool: QuestionIndexEntry[] = [];
 
@@ -56,7 +56,7 @@ describe("generateExam", () => {
   const chapterOf = (id: string) => byId.get(id)!.chapter;
   const kLevelOf = (id: string) => byId.get(id)!.kLevel;
 
-  it("blueprint'teki toplam soru sayisini uretir", () => {
+  it("produces the total question count from the blueprint", () => {
     const exam = generateExam({ blueprint, pool, seed: 1 });
 
     expect(exam.questionIds).toHaveLength(blueprint.totals.questions);
@@ -64,8 +64,8 @@ describe("generateExam", () => {
     expect(exam.shortfalls).toEqual([]);
   });
 
-  it("bolum dagilimi TAM OLARAK 8/6/4/11/9/2 olur", () => {
-    // Tek tohumda tutmasi yeterli degil: dagilim sansa birakilmamali.
+  it("gets a chapter distribution of EXACTLY 8/6/4/11/9/2", () => {
+    // Holding for one seed is not enough: the distribution must not be left to chance.
     for (let seed = 0; seed < 50; seed += 1) {
       const exam = generateExam({ blueprint, pool, seed });
 
@@ -80,7 +80,7 @@ describe("generateExam", () => {
     }
   });
 
-  it("K-seviyesi dagilimi TAM OLARAK K1=8 K2=24 K3=8 olur", () => {
+  it("gets a K-level distribution of EXACTLY K1=8 K2=24 K3=8", () => {
     for (let seed = 0; seed < 50; seed += 1) {
       const exam = generateExam({ blueprint, pool, seed });
 
@@ -88,8 +88,8 @@ describe("generateExam", () => {
     }
   });
 
-  it("dagilimi blueprint'ten okur, sabit yazmaz", () => {
-    // Blueprint degistiginde motor kendiliginden uymali.
+  it("reads the distribution from the blueprint rather than hard-coding it", () => {
+    // When the blueprint changes, the engine must follow it on its own.
     const trimmed: ExamBlueprint = {
       ...blueprint,
       groups: blueprint.groups.filter((group) => group.chapter === 1),
@@ -100,7 +100,7 @@ describe("generateExam", () => {
     expect(new Set(exam.questionIds.map(chapterOf))).toEqual(new Set([1]));
   });
 
-  it("ayni soruyu bir denemede iki kez sormaz", () => {
+  it("never asks the same question twice in one exam", () => {
     for (let seed = 0; seed < 25; seed += 1) {
       const ids = generateExam({ blueprint, pool, seed }).questionIds;
 
@@ -108,7 +108,7 @@ describe("generateExam", () => {
     }
   });
 
-  it("ayni tohum ayni denemeyi uretir, farkli tohum farkli deneme", () => {
+  it("produces the same exam from the same seed, and a different one from another seed", () => {
     const a = generateExam({ blueprint, pool, seed: 42 }).questionIds;
     const b = generateExam({ blueprint, pool, seed: 42 }).questionIds;
     const c = generateExam({ blueprint, pool, seed: 43 }).questionIds;
@@ -117,7 +117,7 @@ describe("generateExam", () => {
     expect(a).not.toEqual(c);
   });
 
-  it("sorudan cok LO olan grupta her soru FARKLI bir LO'yu kapsar", () => {
+  it("covers a DIFFERENT LO with every question when a group has more LOs than questions", () => {
     const exam = generateExam({ blueprint, pool, seed: 11 });
     const selected = new Set(exam.questionIds);
 
@@ -138,7 +138,7 @@ describe("generateExam", () => {
     }
   });
 
-  it("LO'dan cok soru olan grupta her LO'dan en az bir soru gelir", () => {
+  it("takes at least one question from every LO when a group has more questions than LOs", () => {
     const exam = generateExam({ blueprint, pool, seed: 13 });
     const selected = exam.questionIds.map((id) => byId.get(id)!);
 
@@ -149,12 +149,12 @@ describe("generateExam", () => {
         const hit = selected.some(
           (entry) => entry.kLevel === group.kLevel && entry.objectives.includes(code),
         );
-        expect(hit, `${group.id} grubunda ${code} icin soru yok`).toBe(true);
+        expect(hit, `no question for ${code} in group ${group.id}`).toBe(true);
       }
     }
   });
 
-  it("gorulmus sorular yerine gorulmemisleri tercih eder", () => {
+  it("prefers unseen questions over ones already seen", () => {
     const first = generateExam({ blueprint, pool, seed: 5 });
     const second = generateExam({
       blueprint,
@@ -167,8 +167,8 @@ describe("generateExam", () => {
     expect(repeated).toHaveLength(0);
   });
 
-  it("havuz yetersizse SESSIZCE eksik uretmez, eksigi raporlar", () => {
-    // Her LO icin tek soru: 3 soru isteyen gruplar karsilanamaz.
+  it("never produces a SILENTLY short exam when the pool is too small, but reports the shortfall", () => {
+    // One question per LO: groups asking for 3 cannot be satisfied.
     const thin = buildPool(1).filter((entry) => entry.chapter !== 3);
     const exam = generateExam({ blueprint, pool: thin, seed: 3 });
 
@@ -183,14 +183,14 @@ describe("generateExam", () => {
     }
   });
 
-  it("bos havuzda cokmez, her grubu eksik raporlar", () => {
+  it("does not crash on an empty pool and reports every group as short", () => {
     const exam = generateExam({ blueprint, pool: [], seed: 1 });
 
     expect(exam.questionIds).toEqual([]);
     expect(exam.shortfalls).toHaveLength(blueprint.groups.length);
   });
 
-  it("yalnizca dogru bolum ve K-seviyesindeki sorulari secer", () => {
+  it("picks only questions of the right chapter and K-level", () => {
     const exam = generateExam({ blueprint, pool, seed: 21 });
 
     for (const id of exam.questionIds) {
@@ -207,14 +207,14 @@ describe("generateExam", () => {
 });
 
 describe("previewCoverage", () => {
-  it("yeterli havuzda 40 soru ve eksiksiz rapor verir", () => {
+  it("reports 40 questions and no shortfall when the pool is big enough", () => {
     const { total, shortfalls } = previewCoverage(blueprint, buildPool(3));
 
     expect(total).toBe(40);
     expect(shortfalls).toEqual([]);
   });
 
-  it("eksik havuzu deneme baslamadan once bildirir", () => {
+  it("reports a short pool before the exam starts", () => {
     const pool = buildPool(3).filter((entry) => entry.chapter !== 6);
     const { total, shortfalls } = previewCoverage(blueprint, pool);
 

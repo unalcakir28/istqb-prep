@@ -2,8 +2,9 @@ import { useRouteError, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 /**
- * Rota sinirinda yakalanan hata. Mesaj kullaniciya gosterilir cunku bu
- * uygulamada sunucu logu yok — hata gorunmezse hic bildirilmez.
+ * Error caught at the route boundary. The message is shown to the user
+ * because this app has no server-side log — if the error isn't visible here,
+ * it's never reported at all.
  */
 export function RouteError() {
   const error = useRouteError() as Error | undefined;

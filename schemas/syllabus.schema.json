@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://istqb-prep/schemas/syllabus.schema.json",
-  "title": "Mufredat bolumleri ve K dagilimlari",
-  "description": "data/<cert>/syllabus.json. docs/04-veri-modeli.md §3.3.",
+  "title": "Syllabus chapters and K-level distributions",
+  "description": "data/<cert>/syllabus.json. docs/04-data-model.md §3.3.",
   "type": "object",
   "required": ["syllabusVersion", "chapters"],
   "additionalProperties": false,

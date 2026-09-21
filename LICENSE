@@ -22,13 +22,13 @@ SOFTWARE.
 
 ---
 
-NOT: Bu lisans YALNIZCA kaynak kodu kapsar.
+NOTE: This licence covers the source code ONLY.
 
-İçerik (sorular, gerekçeler, çeviriler) CC BY-SA 4.0 ile lisanslanmıştır:
-https://creativecommons.org/licenses/by-sa/4.0/
+The content (questions, rationales, translations) is licensed under
+CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
 
-Alıntılanan ISTQB materyali (öğrenme hedefi kodları ve metinleri, bölüm
-başlıkları, sınav parametreleri) © ISTQB olarak kalır ve müfredatın telif
-bildirimindeki "Extracts, for non-commercial use, from this document may be
-copied if the source is acknowledged" maddesi kapsamında kullanılır.
-Ayrıntı: docs/08-hukuki-ve-telif.md
+Quoted ISTQB material (learning objective codes and texts, chapter titles,
+exam parameters) remains © ISTQB and is used under the clause in the
+syllabus copyright notice: "Extracts, for non-commercial use, from this
+document may be copied if the source is acknowledged".
+Details: docs/08-legal-and-copyright.md

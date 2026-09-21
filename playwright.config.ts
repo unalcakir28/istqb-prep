@@ -1,10 +1,10 @@
 import { defineConfig, devices } from "@playwright/test";
 
 /**
- * F1-15 / F1-18 — uctan uca ve erisilebilirlik testleri.
+ * F1-15 / F1-18 — end-to-end and accessibility tests.
  *
- * Vitest birim testlerinden ayri tutulur: `yarn test` hizli kalmali, E2E
- * gercek tarayici acar. Ikisi ayri komutlardir (`yarn e2e`).
+ * Kept separate from the Vitest unit tests: `yarn test` has to stay fast,
+ * while E2E opens a real browser. They are two different commands (`yarn e2e`).
  */
 const PORT = 5183;
 const HOST = `http://127.0.0.1:${PORT}`;
@@ -17,8 +17,8 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: process.env.CI ? [["github"], ["list"]] : [["list"]],
 
-  // Tam deneme testi 40 soruyu tek tek cevapliyor (~120 etkilesim) ve dev
-  // sunucusu modulleri ilk istekte derliyor; 30 sn yuk altinda yetmiyordu.
+  // The full-exam test answers 40 questions one by one (~120 interactions) and
+  // the dev server compiles modules on first request; 30s was not enough under load.
   timeout: 60_000,
 
   use: {
@@ -26,17 +26,17 @@ export default defineConfig({
     trace: "on-first-retry",
   },
 
-  // Arayuz dili `navigator.language` ile secilir (src/lib/i18n). Testler
-  // Turkce etiketlere bakiyor, dolayisiyla tarayici da Turkce acilmali.
-  projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"], locale: "tr-TR" } }],
+  // The interface language is picked from `navigator.language` (src/lib/i18n).
+  // The tests assert on English labels, so the browser must open in English.
+  projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"], locale: "en-US" } }],
 
   webServer: {
     command: `yarn dev --host 127.0.0.1 --port ${PORT} --strictPort`,
     url: HOST,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
-    // GITHUB_ACTIONS set ise vite uygulamayi '/istqb-prep/' altina tasir ve
-    // baseURL tutmaz. E2E her ortamda kok yoldan kossun.
+    // With GITHUB_ACTIONS set, vite moves the app under '/istqb-prep/' and the
+    // baseURL no longer matches. E2E must run from the root path everywhere.
     env: { GITHUB_ACTIONS: "" },
   },
 });

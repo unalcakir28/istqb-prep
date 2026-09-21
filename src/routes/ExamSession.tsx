@@ -359,9 +359,9 @@ export default function ExamSession() {
   const isFlagged = !!flagged[question.id];
   const flagLabel = isFlagged ? t("exam.unflag") : t("exam.flag");
 
-  // Kural 8: deneme sessizce eksik uretilmez. Bu, denemenin KENDISINDEN
-  // turetilir (gecici store durumundan degil), boylece yenilemeden ve
-  // yarim kalan denemeye donusten sonra da gorunur.
+  // Rule 8: an exam is never silently short. This is derived from the ATTEMPT
+  // ITSELF (not from transient store state), so it still shows after a reload
+  // and after returning to an unfinished exam.
   const expected = meta?.exam.questionCount ?? 0;
   const isShortExam = expected > 0 && total < expected;
 

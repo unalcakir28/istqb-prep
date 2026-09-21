@@ -1,10 +1,10 @@
 /**
- * F1-C3 — Kaynaklar, gizlilik ve lisans.
+ * F1-C3 — Sources, privacy and licence.
  *
- * Hukuki dayanak sayfasi: ISTQB'nin "for non-commercial use" kosulu telif
- * dayanagimiz oldugu icin bagimsizlik beyani acikca yazilir (CLAUDE.md
- * kural 6). Resmi baglantilar meta.json'daki `sources` alanindan gelir;
- * sayfaya elle URL yazilmaz.
+ * The legal-basis page: because ISTQB's "for non-commercial use" clause is
+ * what our copyright position rests on, the statement of independence is
+ * spelled out here (CLAUDE.md rule 6). The official links come from the
+ * `sources` field in meta.json; no URL is typed into this page by hand.
  */
 
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ import { contentClient } from "@/lib/content/contentClient";
 import { useAsyncData } from "@/lib/useAsyncData";
 import type { CertMeta } from "@/types/content";
 
-/** `syllabusEn` -> `Syllabus EN`. Kaynak anahtarlari dil-bagimsiz kimliklerdir. */
+/** `syllabusEn` -> `Syllabus EN`. Source keys are language-independent identifiers. */
 function humanize(key: string): string {
   const words = key.replace(/([a-z0-9])([A-Z])/g, "$1 $2").split(" ");
 
@@ -35,7 +35,7 @@ async function loadMeta(): Promise<CertMeta> {
 
 export default function Sources() {
   const { t } = useTranslation();
-  // Baglanti listesi inmezse bile feragatname ve gizlilik gosterilir.
+  // The disclaimer and the privacy note show even if the link list fails to load.
   const { data: meta, failed } = useAsyncData(loadMeta);
 
   if (!meta && !failed) return <Spinner />;

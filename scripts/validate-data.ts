@@ -2,7 +2,7 @@
 /**
  * scripts/validate-data.ts
  *
- * Implements the 13 CI checks from docs/04-veri-modeli.md §6.
+ * Implements the 15 CI checks from docs/04-data-model.md §6.
  * Checks #1-9 are ERRORS (exit 1). Checks #10-13 are WARNINGS (exit 0, printed).
  *
  * Design rules followed (see CLAUDE.md):
@@ -48,21 +48,21 @@ interface CheckDef {
 }
 
 const CHECKS: Record<number, CheckDef> = {
-  1: { num: 1, level: "error", name: "JSON Schema uygunlugu" },
-  2: { num: 2, level: "error", name: "objectives[] kodu objectives.json'da var mi" },
-  3: { num: 3, level: "error", name: "correct[] uzunlugu selectCount ile esit mi" },
-  4: { num: 4, level: "error", name: "correct[] icindeki ID'ler options'ta var mi" },
-  5: { num: 5, level: "error", name: "rationale.byOption her sik icin dolu mu (TR/EN)" },
-  6: { num: 6, level: "error", name: "i18n.tr ve i18n.en tutarli mi (sik sayisi/sirasi)" },
-  7: { num: 7, level: "error", name: "Soru ID'leri tum parcalar arasinda benzersiz mi" },
-  8: { num: 8, level: "error", name: "index.json parca dosyalariyla tutarli mi" },
-  9: { num: 9, level: "error", name: "exam-blueprint.json toplami syllabus.json ile uyusuyor mu" },
-  10: { num: 10, level: "warning", name: "Her LO icin en az 1 yayinlanmis soru" },
-  11: { num: 11, level: "warning", name: "Her LO icin en az 3 yayinlanmis soru" },
-  12: { num: 12, level: "warning", name: "kLevel, LO'larin en yuksegiyle uyumlu mu" },
-  13: { num: 13, level: "warning", name: "Turkce metinde Ingilizce terim sizintisi" },
-  14: { num: 14, level: "warning", name: "Dogru cevabin sik konumu dengeli mi" },
-  15: { num: 15, level: "error", name: "Metinde sik harfine atif var mi" },
+  1: { num: 1, level: "error", name: "JSON Schema conformance" },
+  2: { num: 2, level: "error", name: "Does the objectives[] code exist in objectives.json" },
+  3: { num: 3, level: "error", name: "Does correct[] length equal selectCount" },
+  4: { num: 4, level: "error", name: "Do the IDs in correct[] exist in options" },
+  5: { num: 5, level: "error", name: "Is rationale.byOption filled in for every option (TR/EN)" },
+  6: { num: 6, level: "error", name: "Are i18n.tr and i18n.en consistent (option count/order)" },
+  7: { num: 7, level: "error", name: "Are question IDs unique across all chunks" },
+  8: { num: 8, level: "error", name: "Is index.json consistent with the chunk files" },
+  9: { num: 9, level: "error", name: "Does the exam-blueprint.json total match syllabus.json" },
+  10: { num: 10, level: "warning", name: "At least 1 published question per LO" },
+  11: { num: 11, level: "warning", name: "At least 3 published questions per LO" },
+  12: { num: 12, level: "warning", name: "Is kLevel consistent with the highest LO K-level" },
+  13: { num: 13, level: "warning", name: "Untranslated English term leaking into Turkish text" },
+  14: { num: 14, level: "warning", name: "Is the correct answer's option position balanced" },
+  15: { num: 15, level: "error", name: "Does the text reference an option letter" },
 };
 
 interface Issue {
@@ -84,13 +84,13 @@ function report(checkNum: number, file: string, refId: string | undefined, messa
 // Small helpers
 // ---------------------------------------------------------------------------
 
-// Diskten okunan JSON'un sekli tanim geregi bilinmiyor — bu dosyanin isi
-// zaten o sekli dogrulamak. Cagri yerleri alanlara isaretsiz erisir; hatali
-// veri, tip sistemi tarafindan degil asagidaki kontroller tarafindan yakalanir.
+// The shape of JSON read from disk is unknown by definition — validating
+// that shape is this file's whole job. Call sites access fields without
+// type checking; bad data is caught by the checks below, not the type system.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function readJson(absPath: string): any {
   if (!fs.existsSync(absPath)) {
-    report(1, absPath, undefined, `Dosya bulunamadi: ${toRel(absPath)}`);
+    report(1, absPath, undefined, `File not found: ${toRel(absPath)}`);
     return null;
   }
 
@@ -98,7 +98,7 @@ function readJson(absPath: string): any {
   try {
     return JSON.parse(raw);
   } catch (err) {
-    report(1, absPath, undefined, `Gecersiz JSON (parse hatasi): ${(err as Error).message}`);
+    report(1, absPath, undefined, `Invalid JSON (parse error): ${(err as Error).message}`);
     return null;
   }
 }
@@ -125,8 +125,9 @@ function highestKLevel(levels: string[]): string | null {
 const ajv = new Ajv2020({ allErrors: true, strict: false });
 addFormats(ajv);
 
-// Sema adlari tek yerde durur: hata mesaji hangi semanin konustugunu yazar
-// ve ikinci bir tablo tutulursa er gec biriyle otekinin arasi acilir.
+// Schema names live in exactly one place: the error message names which
+// schema is speaking, and keeping a second table would eventually drift
+// out of sync with this one.
 const SCHEMA_FILES = {
   manifest: "manifest.schema.json",
   certifications: "certifications.schema.json",
@@ -145,7 +146,7 @@ type SchemaKey = keyof typeof SCHEMA_FILES;
 function compileSchema(fileName: string) {
   const schemaPath = path.join(SCHEMAS_DIR, fileName);
   if (!fs.existsSync(schemaPath)) {
-    throw new Error(`Sema dosyasi bulunamadi: schemas/${fileName} — validator calisamaz.`);
+    throw new Error(`Schema file not found: schemas/${fileName} — the validator cannot run.`);
   }
   const schema = JSON.parse(fs.readFileSync(schemaPath, "utf8"));
   return ajv.compile(schema);
@@ -160,21 +161,21 @@ function validateAgainstSchema(key: SchemaKey, data: unknown, file: string): voi
   if (validate(data)) return;
 
   for (const err of validate.errors ?? []) {
-    const location = err.instancePath || "(kok)";
+    const location = err.instancePath || "(root)";
     report(1, file, location, `${err.message} — schema: schemas/${SCHEMA_FILES[key]} (${JSON.stringify(err.params)})`);
   }
 }
 
 // ---------------------------------------------------------------------------
-// Turkish terminology leak table (docs/07-icerik-uretim-rehberi.md §5)
+// Turkish terminology leak table (docs/07-content-authoring-guide.md §5)
 // "testware" is intentionally excluded: the table marks it as an accepted
 // loanword ("testware / test ürünleri"), not a mistranslation to flag.
 // ---------------------------------------------------------------------------
 
-// Terim listesi terms.json'dan gelir — tek dogruluk kaynagi odur.
-// Buraya elle kopyalanan bir liste kaciniimaz olarak eskir; nitekim ilk
-// surumu "defect -> kusur" gibi resmi mufredatla CELISEN karsiliklar
-// tasiyordu ve yazarlari yanlis terime yonlendiriyordu.
+// The term list comes from terms.json — that is the single source of truth.
+// A list copied here by hand would inevitably go stale; in fact its first
+// version carried mappings like "defect -> kusur" that CONTRADICTED the
+// official syllabus and steered authors toward the wrong term.
 interface LeakPattern {
   en: string;
   tr: string;
@@ -190,9 +191,10 @@ function buildLeakPatterns(termsDoc: any): LeakPattern[] {
     const tr = String(term?.tr ?? "").trim();
     if (en.length === 0 || tr.length === 0) continue;
 
-    // Turkce karsilik Ingilizce terimi zaten iceriyorsa (ör. "shift left" ->
-    // "shift-left", "risk" -> "risk") arama anlamsizdir: dogru kullanim da
-    // eslesir ve her metin yanlis yere sizinti sayilir.
+    // If the Turkish equivalent already contains the English term (e.g.
+    // "shift left" -> "shift-left", "risk" -> "risk"), the search is
+    // meaningless: correct usage would also match, and flag every such text
+    // as a leak.
     const normalizedEn = en.toLowerCase();
     const normalizedTr = tr.toLowerCase().replace(/-/g, " ");
     if (normalizedTr.includes(normalizedEn)) continue;
@@ -200,20 +202,20 @@ function buildLeakPatterns(termsDoc: any): LeakPattern[] {
     patterns.push({ en, tr, regex: new RegExp(`\\b${escapeRegExp(en)}\\b`, "gi") });
   }
 
-  // Uzun terim once denensin: "branch coverage" eslesirse "coverage" ayrica
-  // raporlanmasin.
+  // Try longer terms first: if "branch coverage" matches, don't also
+  // report "coverage" separately.
   return patterns.sort((a, b) => b.en.length - a.en.length);
 }
 
 /**
- * Metindeki parantez araliklari.
+ * Parenthetical spans in the text.
  *
- * Ilk gecişte parantez icinde Ingilizcesini vermek kurallidir:
- * "hata (defect)". Eskiden parantez, terimin HEMEN oncesinde/sonrasinda
- * aranıyordu; bu, "teknik gözden geçirme (technical review)" gibi cok
- * kelimeli aciklamalarda kiriliyordu, cunku '(' 'technical'in onunde,
- * aranan terim ise 'review'. Artik eslesmenin bir parantez araliginin
- * ICINDE olup olmadigina bakiliyor.
+ * Giving the English term in parentheses on first use is the rule:
+ * "hata (defect)". Previously the parenthesis was searched for
+ * IMMEDIATELY before/after the term; that broke on multi-word glosses
+ * like "teknik gözden geçirme (technical review)", because the '(' sits
+ * before "technical" while the term being searched for is "review". Now
+ * we check whether the match falls INSIDE a parenthetical span.
  */
 function parenSpans(text: string): Array<[number, number]> {
   const spans: Array<[number, number]> = [];
@@ -245,7 +247,7 @@ function findTerminologyLeaks(text: string, patterns: LeakPattern[]): Array<{ en
       const inGloss = spans.some(([open, close]) => from > open && to <= close);
       if (inGloss) continue;
 
-      // Daha uzun bir terim bu araligi zaten kapsadiysa tekrar sayma.
+      // Don't count it again if a longer term already covers this span.
       const covered = claimed.some(([start, end]) => from >= start && to <= end);
       if (covered) continue;
 
@@ -271,7 +273,7 @@ function checkObjectivesExist(questions: QuestionRecord[], objectiveCodes: Set<s
     const objectives: string[] = Array.isArray(question.objectives) ? question.objectives : [];
     for (const code of objectives) {
       if (objectiveCodes.has(code)) continue;
-      report(2, file, question.id, `objectives[] icinde '${code}' var ama ${toRel(objectivesFile)} icinde boyle bir LO kodu yok. Beklenen: objectives.json'da tanimli bir kod; Bulunan: '${code}'.`);
+      report(2, file, question.id, `objectives[] contains '${code}' but no such LO code exists in ${toRel(objectivesFile)}. Expected: a code defined in objectives.json; Found: '${code}'.`);
     }
   }
 }
@@ -286,7 +288,7 @@ function checkBlueprintObjectivesExist(blueprint: any, blueprintFile: string, ob
     const objectives: string[] = Array.isArray(group.objectives) ? group.objectives : [];
     for (const code of objectives) {
       if (objectiveCodes.has(code)) continue;
-      report(2, blueprintFile, group.id, `groups[].objectives icinde '${code}' var ama ${toRel(objectivesFile)} icinde boyle bir LO kodu yok. Beklenen: objectives.json'da tanimli bir kod; Bulunan: '${code}'.`);
+      report(2, blueprintFile, group.id, `groups[].objectives contains '${code}' but no such LO code exists in ${toRel(objectivesFile)}. Expected: a code defined in objectives.json; Found: '${code}'.`);
     }
   }
 }
@@ -296,7 +298,7 @@ function checkCorrectLengthMatchesSelectCount(questions: QuestionRecord[]): void
     const correct: unknown[] = Array.isArray(question.correct) ? question.correct : [];
     const selectCount = question.selectCount;
     if (correct.length === selectCount) continue;
-    report(3, file, question.id, `correct[] uzunlugu selectCount ile eslesmiyor. Beklenen: selectCount=${selectCount}; Bulunan: correct=${JSON.stringify(correct)} (uzunluk ${correct.length}).`);
+    report(3, file, question.id, `correct[] length does not match selectCount. Expected: selectCount=${selectCount}; Found: correct=${JSON.stringify(correct)} (length ${correct.length}).`);
   }
 }
 
@@ -309,7 +311,7 @@ function checkCorrectIdsInOptions(questions: QuestionRecord[]): void {
       const optionIds: string[] = Array.isArray(localized.options) ? localized.options.map((o: any) => o.id) : [];
       const missing = correct.filter((id) => !optionIds.includes(id));
       if (missing.length === 0) continue;
-      report(4, file, question.id, `correct[] icinde options'ta olmayan ID var (i18n.${lang}). Beklenen: correct[] ⊆ options[].id (${JSON.stringify(optionIds)}); Bulunan eksik ID('lar): ${JSON.stringify(missing)}.`);
+      report(4, file, question.id, `correct[] contains an ID not present in options (i18n.${lang}). Expected: correct[] ⊆ options[].id (${JSON.stringify(optionIds)}); Found missing ID(s): ${JSON.stringify(missing)}.`);
     }
   }
 }
@@ -325,19 +327,19 @@ function checkRationaleByOptionComplete(questions: QuestionRecord[]): void {
 
       const missing = optionIds.filter((id) => !rationaleIds.includes(id));
       if (missing.length > 0) {
-        report(5, file, question.id, `rationale.byOption (i18n.${lang}) bazi siklar icin eksik. Beklenen: her sik icin bir gerekce (${JSON.stringify(optionIds)}); Bulunan eksik: ${JSON.stringify(missing)}.`);
+        report(5, file, question.id, `rationale.byOption (i18n.${lang}) is missing some options. Expected: a rationale for every option (${JSON.stringify(optionIds)}); Found missing: ${JSON.stringify(missing)}.`);
       }
 
       const extra = rationaleIds.filter((id) => !optionIds.includes(id));
       if (extra.length > 0) {
-        report(5, file, question.id, `rationale.byOption (i18n.${lang}) icinde options'ta olmayan sik ID'leri var. Beklenen: yalnizca ${JSON.stringify(optionIds)}; Bulunan fazladan: ${JSON.stringify(extra)}.`);
+        report(5, file, question.id, `rationale.byOption (i18n.${lang}) has option IDs not present in options. Expected: only ${JSON.stringify(optionIds)}; Found extra: ${JSON.stringify(extra)}.`);
       }
 
       for (const id of optionIds) {
         const text = byOption[id];
         if (isNonEmptyString(text) && text.trim().length >= 15) continue;
         if (missing.includes(id)) continue; // already reported above
-        report(5, file, question.id, `rationale.byOption.${id} (i18n.${lang}) bos veya cok kisa. Beklenen: en az 15 karakterlik, o sikkin neyi tanimladigini aciklayan bir gerekce; Bulunan: ${JSON.stringify(text)}.`);
+        report(5, file, question.id, `rationale.byOption.${id} (i18n.${lang}) is empty or too short. Expected: a rationale of at least 15 characters explaining what that option describes; Found: ${JSON.stringify(text)}.`);
       }
     }
   }
@@ -348,20 +350,20 @@ function checkI18nTrEnConsistent(questions: QuestionRecord[]): void {
     const tr = question.i18n?.tr;
     const en = question.i18n?.en;
     if (!tr || !en) {
-      report(6, file, question.id, `i18n icinde hem tr hem en gerekli. Bulunan: tr=${tr ? "var" : "YOK"}, en=${en ? "var" : "YOK"}.`);
+      report(6, file, question.id, `Both tr and en are required in i18n. Found: tr=${tr ? "present" : "MISSING"}, en=${en ? "present" : "MISSING"}.`);
       continue;
     }
 
     const trOptions: any[] = Array.isArray(tr.options) ? tr.options : [];
     const enOptions: any[] = Array.isArray(en.options) ? en.options : [];
     if (trOptions.length !== enOptions.length) {
-      report(6, file, question.id, `TR ve EN sik sayisi farkli. Beklenen: esit sayida sik; Bulunan: tr=${trOptions.length}, en=${enOptions.length}.`);
+      report(6, file, question.id, `TR and EN have a different number of options. Expected: equal option counts; Found: tr=${trOptions.length}, en=${enOptions.length}.`);
       continue;
     }
 
     for (let i = 0; i < trOptions.length; i += 1) {
       if (trOptions[i]?.id === enOptions[i]?.id) continue;
-      report(6, file, question.id, `TR ve EN siklarin sirasi/ID'leri uyusmuyor (index ${i}). Beklenen: ayni sirada ayni ID; Bulunan: tr='${trOptions[i]?.id}', en='${enOptions[i]?.id}'.`);
+      report(6, file, question.id, `TR and EN option order/IDs don't match (index ${i}). Expected: the same ID at the same position; Found: tr='${trOptions[i]?.id}', en='${enOptions[i]?.id}'.`);
     }
   }
 }
@@ -377,7 +379,7 @@ function checkQuestionIdsUnique(questions: QuestionRecord[]): void {
 
   for (const [id, files] of seen) {
     if (files.length <= 1) continue;
-    report(7, files[0], id, `Soru ID'si birden fazla yerde kullanilmis. Beklenen: her ID tam olarak bir kez; Bulunan: '${id}' su dosyalarda geciyor: ${files.map(toRel).join(", ")}.`);
+    report(7, files[0], id, `Question ID used in more than one place. Expected: each ID exactly once; Found: '${id}' appears in these files: ${files.map(toRel).join(", ")}.`);
   }
 }
 
@@ -392,7 +394,7 @@ function checkKLevelConsistency(questions: QuestionRecord[], objectivesByCode: M
 
     const expected = highestKLevel(knownKLevels);
     if (expected === question.kLevel) continue;
-    report(12, file, question.id, `Sorunun kLevel'i, LO'larinin en yuksek K-seviyesiyle uyumlu degil. Beklenen: ${expected} (LO'lar: ${JSON.stringify(objectives)} → ${JSON.stringify(knownKLevels)}); Bulunan: ${question.kLevel}.`);
+    report(12, file, question.id, `The question's kLevel does not match the highest K-level among its LOs. Expected: ${expected} (LOs: ${JSON.stringify(objectives)} → ${JSON.stringify(knownKLevels)}); Found: ${question.kLevel}.`);
   }
 }
 
@@ -419,22 +421,23 @@ function checkTerminologyLeakage(questions: QuestionRecord[], patterns: LeakPatt
     for (const field of fields) {
       const leaks = findTerminologyLeaks(field.text, patterns);
       for (const leak of leaks) {
-        report(13, file, question.id, `TR metninde (${field.label}) cevrilmemis Ingilizce terim: '${leak.en}'. Beklenen terim: '${leak.tr}' (bkz. docs/07-icerik-uretim-rehberi.md §5); ilk gecişte parantez icinde Ingilizcesi verilebilir, ama parantezsiz kullanim beklenmez.`);
+        report(13, file, question.id, `Untranslated English term in the TR text (${field.label}): '${leak.en}'. Expected term: '${leak.tr}' (see docs/07-content-authoring-guide.md §5); the English word may be given in parentheses on first use, but is not expected to appear unparenthesized.`);
       }
     }
   }
 }
 
 /**
- * #14 — Dogru cevabin sik konumu dengeli mi?
+ * #14 — Is the correct answer's option position balanced?
  *
- * Bu kontrol sonradan eklendi: ilk 87 soruluk partide tek secimli sorularin
- * 78'inden 51'inde dogru cevap "a" siktaydi (%65). Hep "a" isaretleyen bir
- * aday baraji gecerdi. Uretilen icerikte sistematik bir egilim oldugu icin
- * tek seferlik duzeltme yetmez; kapi burada tutulur.
+ * This check was added after the fact: in the first batch of 87 questions,
+ * 51 of the 78 single-choice questions had the correct answer on option
+ * "a" (65%). A candidate who always marked "a" would have passed. Because
+ * the generated content had a systematic bias, a one-off fix isn't enough;
+ * the gate stays here.
  *
- * Esik bilerek gevsek: kucuk havuzlarda sapma dogaldir, amac tesaduf degil
- * SISTEMATIK egilimi yakalamak.
+ * The threshold is deliberately loose: deviation is natural in small pools,
+ * the goal is to catch a SYSTEMATIC bias, not chance.
  */
 function checkAnswerPositionBalance(questions: QuestionRecord[], file: string): void {
   const singles = questions.filter(({ question }) => question?.type === "single");
@@ -460,26 +463,27 @@ function checkAnswerPositionBalance(questions: QuestionRecord[], file: string): 
       14,
       file,
       undefined,
-      `Dogru cevap '${optionId}' sikkinda orantisiz siklikta. Beklenen: ~${expected.toFixed(1)} (${total} tek secimli soru / ${positions} sik); Bulunan: ${count}. Siklari dondurup yeniden etiketleyin.`,
+      `Correct answer disproportionately falls on option '${optionId}'. Expected: ~${expected.toFixed(1)} (${total} single-choice questions / ${positions} options); Found: ${count}. Rotate and relabel the options.`,
     );
   }
 }
 
 /**
- * #15 — Soru metninde sik harfine atif var mi?
+ * #15 — Does the question text reference an option letter?
  *
- * "Bu nedenle (c) yanlis esleştirmedir" gibi bir cumle, siklarin sirasi
- * degistigi anda YALAN olur. Siklar yeniden siralandiginda `byOption`
- * anahtarlari programatik olarak tasinir ama duz metin icindeki harf
- * kalir — ve cevap anahtarina duyulan guveni yok eden tam da bu tur bir
- * kusurdur.
+ * A sentence like "Bu nedenle (c) yanlis esleştirmedir" ("So (c) is the
+ * wrong pairing") becomes FALSE the instant the options are reordered.
+ * When options are reshuffled, the `byOption` keys move programmatically,
+ * but the letter inside the plain-text sentence stays behind — and that
+ * exact kind of defect is what destroys trust in the answer key.
  *
- * Gercekten yasandi: sik konumu dengelemesi sonrasi bir sorunun ozeti
- * adaya cevabin C oldugunu soyluyordu, anahtar ise D idi. Bu yuzden
- * uyari degil HATA seviyesinde.
+ * This actually happened: after an option-position rebalancing pass, one
+ * question's summary told the candidate the answer was C, while the key
+ * said D. That's why this is an ERROR, not a warning.
  *
- * Gerekce metinleri sikka konumuyla degil ICERIGIYLE atifta bulunmalidir:
- * "(c) yanlistir" yerine "is birligi araclari satiri yanlistir".
+ * Rationale text must refer to an option by its CONTENT, not its
+ * position: "the collaboration-tools row is wrong" instead of "(c) is
+ * wrong".
  */
 const OPTION_LETTER_REF =
   /(?<![\w])\(([a-e])\)(?![\w])|\b(?:sik|şık|secenek|seçenek|option|choice)\s+\(?([a-e])\)?(?![\w])/i;
@@ -508,7 +512,7 @@ function checkNoOptionLetterReferences(questions: QuestionRecord[]): void {
           15,
           file,
           question.id,
-          `${lang}.${field.label} metninde sik harfine atif var: '${match[0]}'. Siklar yeniden siralandiginda bu atif yanlis sikki gosterir. Sikka konumuyla degil icerigiyle atifta bulunun.`,
+          `${lang}.${field.label} text references an option letter: '${match[0]}'. If the options are reordered, this reference will point at the wrong option. Refer to the option by its content, not its position.`,
         );
       }
     }
@@ -532,11 +536,11 @@ function checkObjectiveCoverage(objectivesByCode: Map<string, any>, questions: Q
     const count = publishedCountByCode.get(code) ?? 0;
 
     if (count < 1) {
-      report(10, objectivesFile, code, `LO icin yayinlanmis (status=published) hic soru yok. Beklenen: >=1; Bulunan: 0.`);
+      report(10, objectivesFile, code, `No published (status=published) questions exist for this LO. Expected: >=1; Found: 0.`);
     }
 
     if (count < 3) {
-      report(11, objectivesFile, code, `LO icin yayinlanmis soru sayisi denemelerin tekrarsiz uretilmesi icin yetersiz. Beklenen: >=3; Bulunan: ${count}.`);
+      report(11, objectivesFile, code, `The number of published questions for this LO is not enough to generate exams without repetition. Expected: >=3; Found: ${count}.`);
     }
   }
 }
@@ -549,7 +553,7 @@ function checkObjectiveCoverage(objectivesByCode: Map<string, any>, questions: Q
 
 function checkExamBlueprintTotals(blueprint: any, blueprintFile: string, syllabus: any, syllabusFile: string): void {
   if (!syllabus) {
-    report(9, blueprintFile, undefined, `Karsilastirma yapilamadi: ${toRel(syllabusFile)} okunamadi/gecersiz. exam-blueprint.json toplamlarini dogrulamak icin syllabus.json gerekli.`);
+    report(9, blueprintFile, undefined, `Comparison could not be made: ${toRel(syllabusFile)} could not be read/is invalid. syllabus.json is required to validate exam-blueprint.json totals.`);
     return;
   }
 
@@ -563,7 +567,7 @@ function checkExamBlueprintTotals(blueprint: any, blueprintFile: string, syllabu
   }
 
   if (typeof expectedTotal !== "number" || !expectedByKLevel) {
-    report(9, syllabusFile, undefined, `syllabus.json içinde totals.examQuestions / totals.examKDistribution eksik — beklenen degerler cikartilamadi.`);
+    report(9, syllabusFile, undefined, `syllabus.json is missing totals.examQuestions / totals.examKDistribution — expected values could not be derived.`);
     return;
   }
 
@@ -583,21 +587,21 @@ function checkExamBlueprintTotals(blueprint: any, blueprintFile: string, syllabu
   }
 
   if (actualTotal !== expectedTotal) {
-    report(9, blueprintFile, undefined, `groups[] toplam soru sayisi syllabus.json ile uyusmuyor. Beklenen (syllabus.totals.examQuestions): ${expectedTotal}; Bulunan (groups[].questions toplami): ${actualTotal}.`);
+    report(9, blueprintFile, undefined, `groups[] total question count does not match syllabus.json. Expected (syllabus.totals.examQuestions): ${expectedTotal}; Found (sum of groups[].questions): ${actualTotal}.`);
   }
 
   for (const chapterKey of Object.keys(expectedByChapter)) {
     const expected = expectedByChapter[chapterKey];
     const actual = actualByChapter[chapterKey] ?? 0;
     if (actual === expected) continue;
-    report(9, blueprintFile, `chapter-${chapterKey}`, `Bolum ${chapterKey} icin soru sayisi syllabus.json ile uyusmuyor. Beklenen: ${expected}; Bulunan: ${actual}.`);
+    report(9, blueprintFile, `chapter-${chapterKey}`, `Question count for chapter ${chapterKey} does not match syllabus.json. Expected: ${expected}; Found: ${actual}.`);
   }
 
   for (const kLevel of Object.keys(expectedByKLevel)) {
     const expected = expectedByKLevel[kLevel];
     const actual = actualByKLevel[kLevel] ?? 0;
     if (actual === expected) continue;
-    report(9, blueprintFile, kLevel, `K-seviyesi ${kLevel} icin soru sayisi syllabus.json ile uyusmuyor. Beklenen: ${expected}; Bulunan: ${actual}.`);
+    report(9, blueprintFile, kLevel, `Question count for K-level ${kLevel} does not match syllabus.json. Expected: ${expected}; Found: ${actual}.`);
   }
 }
 
@@ -620,16 +624,16 @@ function checkIndexConsistency(
 
   for (const chunk of declaredChunks) {
     if (actualChunkSet.has(chunk)) continue;
-    report(8, indexFile, chunk, `index.json 'chunks' icinde '${chunk}' listeleniyor ama questions/${chunk}.json dosyasi yok.`);
+    report(8, indexFile, chunk, `index.json 'chunks' lists '${chunk}' but questions/${chunk}.json does not exist.`);
   }
   for (const chunk of actualChunkNames) {
     if (declaredChunkSet.has(chunk)) continue;
-    report(8, indexFile, chunk, `questions/${chunk}.json dosyasi var ama index.json 'chunks' listesinde yok.`);
+    report(8, indexFile, chunk, `questions/${chunk}.json exists but is not listed in index.json 'chunks'.`);
   }
 
   const actualCount = chunkQuestions.length;
   if (typeof index.count === "number" && index.count !== actualCount) {
-    report(8, indexFile, undefined, `index.json 'count' alani gercek soru sayisiyla uyusmuyor. Beklenen (chunk dosyalarindaki gercek toplam): ${actualCount}; Bulunan (index.count): ${index.count}.`);
+    report(8, indexFile, undefined, `index.json 'count' field does not match the actual question count. Expected (actual total across chunk files): ${actualCount}; Found (index.count): ${index.count}.`);
   }
 
   const declaredQuestions: any[] = Array.isArray(index.questions) ? index.questions : [];
@@ -639,17 +643,17 @@ function checkIndexConsistency(
   for (const declared of declaredQuestions) {
     const actualChunk = chunkByQuestionId.get(declared.id);
     if (!actualChunk) {
-      report(8, indexFile, declared.id, `index.json icinde '${declared.id}' listeleniyor ama hicbir chunk dosyasinda bulunamadi.`);
+      report(8, indexFile, declared.id, `index.json lists '${declared.id}' but it was not found in any chunk file.`);
       continue;
     }
     if (declared.chunk !== actualChunk) {
-      report(8, indexFile, declared.id, `index.json 'chunk' alani yanlis. Beklenen: '${actualChunk}' (sorunun gercekte bulundugu dosya); Bulunan: '${declared.chunk}'.`);
+      report(8, indexFile, declared.id, `index.json 'chunk' field is wrong. Expected: '${actualChunk}' (the file the question is actually in); Found: '${declared.chunk}'.`);
     }
   }
 
   for (const id of actualIds) {
     if (declaredById.has(id)) continue;
-    report(8, indexFile, id, `'${id}' bir chunk dosyasinda var ama index.json icinde listelenmemis.`);
+    report(8, indexFile, id, `'${id}' exists in a chunk file but is not listed in index.json.`);
   }
 }
 
@@ -681,17 +685,17 @@ function validateGlossaryDir(glossaryDir: string): void {
 // ---------------------------------------------------------------------------
 
 function validateCertification(certEntry: any): void {
-  const certId = isNonEmptyString(certEntry?.id) ? certEntry.id : "(bilinmeyen sertifika)";
+  const certId = isNonEmptyString(certEntry?.id) ? certEntry.id : "(unknown certification)";
   const certPath = certEntry?.path;
 
   if (!isNonEmptyString(certPath)) {
-    report(1, "data/manifest.json", certId, `certifications[].path eksik/gecersiz — bu sertifika hic dogrulanamiyor.`);
+    report(1, "data/manifest.json", certId, `certifications[].path is missing/invalid — this certification cannot be validated at all.`);
     return;
   }
 
   const certDir = path.join(DATA_DIR, certPath);
   if (!fs.existsSync(certDir)) {
-    report(1, "data/manifest.json", certId, `Sertifika dizini bulunamadi: data/${certPath}/`);
+    report(1, "data/manifest.json", certId, `Certification directory not found: data/${certPath}/`);
     return;
   }
 
@@ -728,7 +732,7 @@ function validateCertification(certEntry: any): void {
   // questions/
   const questionsDir = path.join(certDir, "questions");
   if (!fs.existsSync(questionsDir)) {
-    report(1, path.join(questionsDir, "index.json"), certId, `questions/ dizini bulunamadi.`);
+    report(1, path.join(questionsDir, "index.json"), certId, `questions/ directory not found.`);
     return;
   }
 
@@ -773,8 +777,8 @@ function validateCertification(certEntry: any): void {
   checkObjectiveCoverage(objectivesByCode, allQuestions, objectivesFile);
   checkKLevelConsistency(allQuestions, objectivesByCode);
 
-  // terms.json yoksa 13. kontrol sessizce atlanir — uyari seviyesindeki bir
-  // kontrol icin veri eksikligi CI'yi kirmamali.
+  // If terms.json is missing, check #13 is silently skipped — missing data
+  // for a warning-level check should not break CI.
   const termsFile = path.join(certDir, "terms.json");
   const termsDoc = fs.existsSync(termsFile) ? readJson(termsFile) : null;
   checkTerminologyLeakage(allQuestions, buildLeakPatterns(termsDoc));
@@ -804,7 +808,7 @@ function main(): void {
 
   const certList: any[] = Array.isArray((manifest as any).certifications) ? (manifest as any).certifications : [];
   if (certList.length === 0) {
-    report(1, manifestPath, undefined, `manifest.certifications bos — dogrulanacak sertifika yok.`);
+    report(1, manifestPath, undefined, `manifest.certifications is empty — no certification to validate.`);
   }
 
   for (const certEntry of certList) {
@@ -831,7 +835,7 @@ function printReportAndExit(): void {
 
     const check = CHECKS[checkNum];
     const icon = check.level === "error" ? "❌" : "⚠️ ";
-    console.log(`\n${icon} #${check.num} ${check.name} — ${forCheck.length} bulgu`);
+    console.log(`\n${icon} #${check.num} ${check.name} — ${forCheck.length} finding(s)`);
     for (const issue of forCheck) {
       const ref = issue.refId ? ` [${issue.refId}]` : "";
       console.log(`   ${issue.file}${ref}: ${issue.message}`);
@@ -839,19 +843,19 @@ function printReportAndExit(): void {
   }
 
   console.log("\n" + "-".repeat(72));
-  console.log(`Ozet: ${errors.length} hata, ${warnings.length} uyari.`);
+  console.log(`Summary: ${errors.length} error(s), ${warnings.length} warning(s).`);
 
   if (errors.length > 0) {
-    console.log("SONUC: BASARISIZ (validate:data) — yukaridaki hatalar duzeltilmeden PR birlestirilemez.");
+    console.log("RESULT: FAILED (validate:data) — the PR cannot be merged until the errors above are fixed.");
     process.exit(1);
   }
 
   if (warnings.length > 0) {
-    console.log("SONUC: GECTI (uyarilarla) — icerik eksiklikleri var ama CI kirilmiyor.");
+    console.log("RESULT: PASSED (with warnings) — there are content gaps but CI is not broken.");
     process.exit(0);
   }
 
-  console.log("SONUC: GECTI — tum kontroller temiz.");
+  console.log("RESULT: PASSED — all checks are clean.");
   process.exit(0);
 }
 

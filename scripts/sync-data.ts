@@ -1,12 +1,12 @@
 /**
- * data/ -> public/data/ kopyalar.
+ * Copies data/ -> public/data/.
  *
- * Kaynak veri `data/` altinda tutulur ve Git'te gozden gecirilir; tarayiciya
- * servis edilen kopya `public/data/` altindadir ve .gitignore'dadir
- * (docs/05-teknik-mimari.md §3). Iki yerde ayni JSON'u elle tutmak yerine
- * dev ve build oncesi kopyalanir.
+ * Source data is kept under `data/` and reviewed in Git; the copy served
+ * to the browser lives under `public/data/` and is in .gitignore
+ * (docs/05-technical-architecture.md §3). Rather than maintaining the same
+ * JSON by hand in two places, it's copied before dev and before build.
  *
- * Kullanim:  yarn sync:data   (predev ve prebuild'den otomatik calisir)
+ * Usage:  yarn sync:data   (runs automatically from predev and prebuild)
  */
 
 import fs from "node:fs";
@@ -19,11 +19,11 @@ const TARGET = path.join(ROOT, "public", "data");
 
 function main(): void {
   if (!fs.existsSync(SOURCE)) {
-    console.error("HATA: data/ dizini yok.");
+    console.error("ERROR: data/ directory does not exist.");
     process.exit(1);
   }
 
-  // Silinen bir soru parcasi public/ altinda kalmasin diye once temizlenir.
+  // Cleared first so a deleted question chunk doesn't linger under public/.
   fs.rmSync(TARGET, { recursive: true, force: true });
   fs.mkdirSync(path.dirname(TARGET), { recursive: true });
   fs.cpSync(SOURCE, TARGET, { recursive: true });
@@ -32,7 +32,7 @@ function main(): void {
     .readdirSync(TARGET, { recursive: true, withFileTypes: true })
     .filter((entry) => entry.isFile()).length;
 
-  console.log(`data/ -> public/data/ (${count} dosya)`);
+  console.log(`data/ -> public/data/ (${count} file(s))`);
 }
 
 main();

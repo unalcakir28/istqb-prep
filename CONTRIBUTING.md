@@ -1,42 +1,42 @@
-# Katkı Rehberi
+# Contributing Guide
 
-> **Not:** Faz 4'e kadar dışarıdan soru katkısı kabul edilmiyor (editoryal kalite standardı henüz oturmadı — bkz. karar D-04). Hata bildirimi, öneri ve kod katkısı her zaman açıktır.
+> **Note:** External question contributions are not accepted until Phase 4 (the editorial quality bar hasn't settled yet — see decision D-04). Bug reports, suggestions, and code contributions are always open.
 
-## En değerli katkı: hatalı soru bildirimi
+## Most valuable contribution: reporting a bad question
 
-Bir soruda yanlış cevap, kötü çeviri, hatalı müfredat atfı veya zayıf gerekçe gördüysen **Soru Hatası** issue'su aç. Site üzerindeki "Bu soruda hata var" düğmesi issue'yu senin için doldurur.
+If you spot a wrong answer, a bad translation, an incorrect syllabus reference, or a weak rationale in a question, open a **Question Issue**. The "Report an error in this question" button on the site fills out the issue for you.
 
-## Kod katkısı
+## Code contribution
 
 ```bash
-npm ci
-npm run validate:data   # veri doğrulama
-npm run dev
-npm run test
-npm run lint
+yarn install --frozen-lockfile
+yarn validate:data   # data validation
+yarn dev
+yarn test
+yarn lint
 ```
 
-PR açmadan önce: `npm run lint && npm run test && npm run validate:data` yeşil olmalı.
+Before opening a PR: `yarn lint && yarn test && yarn validate:data` must be green.
 
-## Soru katkısı (Faz 4'ten itibaren)
+## Question contribution (starting Phase 4)
 
-Zorunlu okuma: [`docs/07-icerik-uretim-rehberi.md`](docs/07-icerik-uretim-rehberi.md)
+Required reading: [`docs/07-content-authoring-guide.md`](docs/07-content-authoring-guide.md)
 
-Özetle:
+In short:
 
-1. **Hiçbir soru resmî ISTQB/TTB örnek sınavından kopyalanamaz, çevrilemez veya "uyarlanamaz."** Sayıları değiştirmek uyarlama değil, türev eserdir.
-2. Her soru bir **öğrenme hedefinden (LO)** yola çıkılarak sıfırdan yazılır.
-3. **TR ve EN zorunlu.** Türkçe terimler [`07 §5`](docs/07-icerik-uretim-rehberi.md) sözlüğüne uymalı — özellikle `error / defect / failure` → `hata / kusur / arıza` ayrımı.
-4. **Her şık için gerekçe zorunlu.** "Yanlış, çünkü doğru cevap C'dir" bir gerekçe değildir; her yanlış şıkkın neyi tanımladığı yazılmalıdır.
-5. `syllabusRef`, `objectives[]` ve `kLevel` doğru olmalı.
-6. §6'daki kalite kontrol listesinin tamamı işaretlenmeli.
+1. **No question may be copied, translated, or "adapted" from an official ISTQB/TTB sample exam.** Changing the numbers isn't adaptation, it's a derivative work.
+2. Every question is written from scratch, starting from a **learning objective (LO)**.
+3. **TR and EN are mandatory.** Turkish terms must follow the glossary in [`07 §5`](docs/07-content-authoring-guide.md) — especially the `error / defect / failure` → `insan hatası / hata / arıza` distinction.
+4. **A rationale is required for every option.** "Wrong, because the correct answer is C" is not a rationale; you must state what each wrong option actually describes.
+5. `syllabusRef`, `objectives[]`, and `kLevel` must be correct.
+6. The entire quality-control checklist in §6 must be checked off.
 
-PR şablonundaki özgünlük beyanı kutusu işaretlenmeden PR incelenmez.
+A PR won't be reviewed until the originality declaration checkbox in the PR template is checked.
 
-## Yapay zekâ kullanımı
+## AI usage
 
-Taslak, çeviri önerisi ve dil kontrolü için kullanılabilir. **Doğrulanmamış AI çıktısı yayına alınamaz.** AI'dan "ISTQB örnek sınav sorusu yaz" istemek yasaktır — model eğitim verisinden resmî bir soruyu ezberden üretebilir. Ayrıntı: [`07 §8`](docs/07-icerik-uretim-rehberi.md).
+AI can be used for drafts, translation suggestions, and language checks. **Unverified AI output cannot go to publication.** Asking an AI to "write an ISTQB sample exam question" is forbidden — the model might reproduce an official question from memory out of its training data. Details: [`07 §8`](docs/07-content-authoring-guide.md).
 
-## Davranış
+## Conduct
 
-Saygılı ol, iyi niyet varsay, eleştiriyi işe yönelt kişiye değil.
+Be respectful, assume good faith, and direct criticism at the work, not the person.

@@ -14,9 +14,9 @@ const Sources = lazy(() => import("@/routes/Sources"));
 const NotFound = lazy(() => import("@/routes/NotFound"));
 
 /**
- * GitHub Pages alt yolunda calisir: `base` build sirasinda '/istqb-prep/'
- * olur ve router ayni onegi kullanir. Sunucu tarafi yonlendirme olmadigi
- * icin deploy adimi dist/index.html'i 404.html olarak da kopyalar.
+ * Runs under a GitHub Pages subpath: `base` becomes '/istqb-prep/' at build
+ * time, and the router uses the same prefix. Since there's no server-side
+ * redirect, the deploy step also copies dist/index.html as 404.html.
  */
 const router = createBrowserRouter(
   [

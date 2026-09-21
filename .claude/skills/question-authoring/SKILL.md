@@ -12,7 +12,7 @@ Applies to every file under `data/*/questions/`.
 
 Never write an exam fact from memory. `data/ctfl-v4.0.1/objectives.json` holds
 the 64 learning objectives and their K-levels, `meta.json` the exam mechanics,
-`terms.json` the terminology, and `docs/03-istqb-referans.md` the verified facts
+`terms.json` the terminology, and `docs/03-istqb-reference.md` the verified facts
 with sources. If a claim is not in those, it is not established — treat `null`
 as "not established", which is not the same as `false`.
 

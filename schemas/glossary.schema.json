@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://istqb-prep/schemas/glossary.schema.json",
-  "title": "Terimler sozlugu parcasi",
+  "title": "Glossary terms chunk",
   "type": "object",
   "required": ["terms"],
   "additionalProperties": false,
@@ -47,7 +47,7 @@
           "sourceUrl": { "type": "string", "format": "uri" },
           "trSource": {
             "enum": ["ttb-syllabus-v4.0.1", "ttb-glossary-v3.7", "editorial"],
-            "description": "Turkce karsiligin kaynagi. Bkz. docs/07-icerik-uretim-rehberi.md §5 kaynak hiyerarsisi."
+            "description": "Source of the Turkish equivalent. See docs/07-content-authoring-guide.md §5 for the source hierarchy."
           }
         }
       }

@@ -16,7 +16,7 @@ material this rule exists to keep out.
 
 ## Sources, in order of authority
 
-1. `docs/03-istqb-referans.md` — verified facts with their sources. Section 7
+1. `docs/03-istqb-reference.md` — verified facts with their sources. Section 7
    lists what could **not** be verified; a claim appearing there is unverified
    by definition, no matter how plausible it sounds.
 2. `data/ctfl-v4.0.1/meta.json` — exam mechanics (question count, pass mark,

@@ -1,139 +1,139 @@
 # CLAUDE.md
 
-Bu dosya, bu depoda çalışan Claude Code oturumları içindir. Kısa tutulmuştur; ayrıntı `docs/` altındadır.
+This file is for Claude Code sessions working in this repo. Kept short; details live under `docs/`.
 
-## Proje
+## Project
 
-**ISTQB-PREP** — ISTQB sertifikasyon sınavlarına hazırlık için **ücretsiz, açık kaynaklı, iki dilli (TR/EN)** deneme sınavı ve çalışma platformu. Ürün adı depo adıyla aynı (D-01).
-**Öncelik: CTFL v4.0.1 (Temel Seviye).** Mimari tüm seviyeleri kapsayacak şekilde tasarlandı, ama içerik önce Foundation.
+**ISTQB-PREP** — a **free, open-source, bilingual (TR/EN)** mock exam and study platform for ISTQB certification exam preparation. The product name matches the repo name (D-01).
+**Priority: CTFL v4.0.1 (Foundation Level).** The architecture is designed to cover all levels, but content comes Foundation-first.
 
-**Mevcut durum: çalışan MVP.** Faz 0 ve Faz 1'in çekirdeği bitti — 120 soru yayında (64/64 öğrenme hedefi), deneme motoru resmî LO-grubu dağılımına göre üretiyor, sınav/sonuç/inceleme akışı uçtan uca işliyor. Sırada Faz 2 var — bkz. `TODO.md`.
+**Current status: working MVP.** The core of Phase 0 and Phase 1 is done — 120 questions published (64/64 learning objectives covered), the exam engine generates from the official LO-group distribution, and the exam/results/review flow works end to end. Phase 2 is next — see `TODO.md`.
 
-## Önce bunları oku
+## Read these first
 
-| Ne yapacaksan             | Önce oku                                                                 |
-| ------------------------- | ------------------------------------------------------------------------ |
-| Her şey                   | `docs/00-proje-ozeti.md`                                                 |
-| Veri dosyası dokunacaksan | `docs/04-veri-modeli.md`                                                 |
-| Kod yazacaksan            | `docs/05-teknik-mimari.md` + `docs/adr/`                                 |
-| Arayüz yapacaksan         | `docs/06-ui-ux-tasarim.md`                                               |
-| **Soru yazacaksan**       | `docs/07-icerik-uretim-rehberi.md` (zorunlu)                             |
-| ISTQB verisi lazımsa      | `docs/03-istqb-referans.md` — **doğrulanmış olgular, yeniden araştırma** |
+| If you're going to... | Read first                                                           |
+| --------------------- | -------------------------------------------------------------------- |
+| Anything              | `docs/00-project-overview.md`                                        |
+| Touch a data file     | `docs/04-data-model.md`                                              |
+| Write code            | `docs/05-technical-architecture.md` + `docs/adr/`                    |
+| Build UI              | `docs/06-ui-ux-design.md`                                            |
+| **Write a question**  | `docs/07-content-authoring-guide.md` (mandatory)                     |
+| Need ISTQB data       | `docs/03-istqb-reference.md` — **verified facts, don't re-research** |
 
-## Bozulmaz kurallar
+## Inviolable rules
 
-Bunlar tartışmaya açık değil; ihlal edilirse proje ya hukuken ya da kimlik olarak çöker.
+These are not up for debate; violating them collapses the project either legally or as an identity.
 
-1. **Resmî ISTQB/TTB örnek sınav soruları kopyalanmaz, çevrilmez, "uyarlanmaz."** Sayıları değiştirmek uyarlama değil, türev eserdir. Her soru bir öğrenme hedefinden (LO) sıfırdan yazılır. → `docs/adr/0004-ozgun-soru-uretimi.md`
-   `origin` alanının `official` değeri **yoktur**.
-2. **Her şık için gerekçe zorunlu** (`rationale.byOption`), TR ve EN. _"Yanlış, çünkü doğru cevap C'dir"_ gerekçe değildir — her yanlış şıkkın **neyi tanımladığı** yazılır. Bu ürünün ana farklılaştırıcısı.
-3. **Her soru TR ve EN içerir.** Biri eksikse yayınlanamaz. → `docs/adr/0005-iki-dillilik.md`
-4. **Her içerik parçası `syllabusVersion` taşır** ve UI'da rozet olarak görünür. Eskiyen içerik silinmez, `status: "retired"` alır.
-5. **Doğrulanmamış hiçbir şey iddia edilmez.** Örnek: negatif puanlama hiçbir resmî dokümanda geçmiyor → `negativeMarking: null`. `false` yazmak yanlış olur. Doğrulanamayanların listesi: `docs/03-istqb-referans.md §7`.
-6. **Ticari kullanım yok.** Reklam, abonelik, ödeme yok — ISTQB'nin _"for non-commercial use"_ koşulu telif dayanağımız.
-7. **Backend yok, hesap yok, sunucuya veri gitmez.** Tüm ilerleme IndexedDB'de.
-8. **Deneme sessizce eksik üretilmez.** Havuz yetersizse kullanıcıya açıkça söylenir.
+1. **Official ISTQB/TTB sample exam questions are never copied, translated, or "adapted."** Changing the numbers isn't adaptation, it's a derivative work. Every question is written from scratch from a learning objective (LO). → `docs/adr/0004-original-question-authoring.md`
+   The `origin` field **has no** `official` value.
+2. **A rationale is mandatory for every option** (`rationale.byOption`), in TR and EN. _"Wrong, because the correct answer is C"_ is not a rationale — every wrong option states **what it actually describes**. This is the product's main differentiator.
+3. **Every question includes TR and EN.** If either is missing, it can't be published. → `docs/adr/0005-bilingualism.md`
+4. **Every content item carries a `syllabusVersion`** and shows up as a badge in the UI. Outdated content is never deleted, it gets `status: "retired"`.
+5. **Nothing unverified is asserted.** Example: negative marking doesn't appear in any official document → `negativeMarking: null`. Writing `false` would be wrong. The list of unverifiable items: `docs/03-istqb-reference.md §7`.
+6. **No commercial use.** No ads, no subscriptions, no payments — ISTQB's _"for non-commercial use"_ condition is our copyright basis.
+7. **No backend, no accounts, no data goes to a server.** All progress lives in IndexedDB.
+8. **A mock exam is never silently generated incomplete.** If the pool is insufficient, the user is told explicitly.
 
-## Doğrulanmış sabitler (yeniden araştırma)
+## Verified constants (don't re-research)
 
-CTFL v4.0.1 · 40 soru · 40 puan · baraj **26** (%65) · 60 dk (ana dili İngilizce olmayan **75 dk**)
-Her soru **tam olarak 1 puan** — Foundation'da çok puanlı K3 sorusu YOKTUR.
-Birden fazla doğru cevaplı soru ("HANGİ İKİSİ") **vardır**, yine 1 puan.
+CTFL v4.0.1 · 40 questions · 40 points · pass mark **26** (65%) · 60 min (**75 min** for non-native English speakers)
+Every question is worth **exactly 1 point** — Foundation has NO multi-point K3 questions.
+Questions with more than one correct answer ("HANGİ İKİSİ") **do exist**, still worth 1 point.
 
-| Bölüm | 1   | 2   | 3   | 4   | 5   | 6   | Toplam |
-| ----- | --- | --- | --- | --- | --- | --- | ------ |
-| Soru  | 8   | 6   | 4   | 11  | 9   | 2   | **40** |
-| LO    | 14  | 10  | 8   | 14  | 16  | 2   | **64** |
+| Section   | 1   | 2   | 3   | 4   | 5   | 6   | Total  |
+| --------- | --- | --- | --- | --- | --- | --- | ------ |
+| Questions | 8   | 6   | 4   | 11  | 9   | 2   | **40** |
+| LOs       | 14  | 10  | 8   | 14  | 16  | 2   | **64** |
 
-Soru K dağılımı: **K1=8, K2=24, K3=8** · LO K dağılımı: K1=14, K2=42, K3=8 (ikisi **farklıdır**, karıştırma)
-K3 soruları yalnızca Bölüm 4 ve 5'tedir. **K4 yoktur.**
+Question K-distribution: **K1=8, K2=24, K3=8** · LO K-distribution: K1=14, K2=42, K3=8 (the two **differ**, don't mix them up)
+K3 questions only appear in Sections 4 and 5. **There is no K4.**
 
-Bu sayılar `data/ctfl-v4.0.1/syllabus.json` ve `meta.json` içinde; koda **sabit yazılmaz**, oradan okunur.
+These numbers live in `data/ctfl-v4.0.1/syllabus.json` and `meta.json`; they are **never hardcoded**, they're read from there.
 
-## Komutlar
+## Commands
 
-**Paket yöneticisi yarn** — npm kullanma. Bağımlılıklar tam sürüme sabitlenir (`^`/`~` yok).
+**Package manager: yarn** — don't use npm. Dependencies are pinned to exact versions (no `^`/`~`).
 
 ```bash
-yarn dev                # Vite (predev: data/ -> public/data/ senkronu)
-yarn validate:data      # JSON Schema + 15 tutarlılık kontrolü  ← her PR'da yeşil olmalı
-yarn build:index        # parçalardan questions/index.json + manifest sayaçları
-yarn stats              # LO başına kapsama → docs/kapsama.md + README rozetleri
-yarn publish:questions  # review -> published; --reviewer zorunlu (tek geçiş yolu)
-yarn test               # Vitest (birim)
-yarn e2e                # Playwright: akış + axe erişilebilirlik (kendi dev sunucusu, 5183)
-yarn build              # tsc -b && vite build (CI kapısı)
+yarn dev                # Vite (predev: syncs data/ -> public/data/)
+yarn validate:data      # JSON Schema + 15 consistency checks  ← must be green on every PR
+yarn build:index        # builds questions/index.json + manifest counts from the chunks
+yarn stats              # per-LO coverage → docs/coverage.md + README badges
+yarn publish:questions  # review -> published; --reviewer is mandatory (the only path through)
+yarn test               # Vitest (unit)
+yarn e2e                # Playwright: flow + axe accessibility (its own dev server, 5183)
+yarn build              # tsc -b && vite build (CI gate)
 yarn lint && yarn typecheck && yarn format
 ```
 
-**Veri düzenledikten sonra sırayla:** `yarn build:index && yarn validate:data`.
+**After editing data, in order:** `yarn build:index && yarn validate:data`.
 
-## Klasör yapısı
+## Folder structure
 
 ```
-data/       İçerik — indekslenmiş, parçalanmış statik JSON (tek dosya YOK)
-schemas/    JSON Schema — CI kapısı
-docs/       Proje dökümanları + adr/
+data/       Content — indexed, chunked static JSON (NO single file)
+schemas/    JSON Schema — CI gate
+docs/       Project docs + adr/
 scripts/    validate-data, build-index, stats, sync-data, publish-questions
-src/        Uygulama (Vite + React + TS)
-e2e/        Playwright: akış + erişilebilirlik
+src/        The app (Vite + React + TS)
+e2e/        Playwright: flow + accessibility
 ```
 
-`src/` içinde iş nerede:
+Where things live inside `src/`:
 
 ```
-features/exam/   Deneme motoru — generateExam (blueprint'e göre seçim, tohumlu ve
-                 tekrar üretilebilir), scoreExam (tam eşleşme, kısmi puan YOK),
-                 examTimer (mutlak Date.now() bitişi), examStore (Zustand)
-lib/content/     Statik JSON erişimi + iki katmanlı önbellek (Map + Cache API),
-                 dataVersion ile geçersizleştirilir
-lib/db/          Dexie/IndexedDB — kalıcılığın tek yeri
-lib/i18n/        Arayüz dili; soru dili ayrı bir kavram (attempt.contentLang)
-routes/          Ekranlar · components/ paylaşılan arayüz · types/content.ts veri tipleri
+features/exam/   Exam engine — generateExam (blueprint-driven selection, seeded and
+                 reproducible), scoreExam (exact match, NO partial credit),
+                 examTimer (absolute Date.now() deadline), examStore (Zustand)
+lib/content/     Static JSON access + a two-tier cache (Map + Cache API),
+                 invalidated via dataVersion
+lib/db/          Dexie/IndexedDB — the single place for persistence
+lib/i18n/        UI language; question language is a separate concept (attempt.contentLang)
+routes/          Screens · components/ shared UI · types/content.ts data types
 ```
 
-## Konvansiyonlar
+## Conventions
 
-- **Dil:** Kullanıcıyla ve dökümanlarda **Türkçe**. Kod, değişken adları, commit mesajları İngilizce olabilir ama commit gövdesi Türkçe.
-- **LO kodu `FL-x.y.z` birincil anahtardır** — Türkçe müfredatta da İngilizce kalıyor, dil-bağımsızdır.
-- **Soru ID'si `ctfl4-NNNN`**, asla yeniden kullanılmaz.
-- **Soru parçası başına en fazla 40 soru**; dosya adı asla değişmez (CDN + PWA önbelleği).
-- **Türkçe terimler:** `error/defect/failure` → **`insan hatası/hata/arıza`** (resmî TTB v4.0.1). Üçü birden "hata" diye çevrilmez — bu ayrım sınavda doğrudan sorulur. **`kusur` kullanılmaz**, müfredatta geçmez. Tek doğruluk kaynağı `data/ctfl-v4.0.1/terms.json` (97 terim, resmî anahtar kelime listelerinden hizalandı); okunabilir tablo `docs/07-icerik-uretim-rehberi.md §5`.
-- Vurgu kelimeleri soru metninde BÜYÜK HARF: `EN İYİ`, `HARİÇ`, `DEĞİLDİR`, `HANGİ İKİSİ`.
-- `meta.reviewedBy` boşsa `status` **`published` olamaz**.
+- **Language:** Talk to the user in Turkish; everything written to a file is English.
+- **The LO code `FL-x.y.z` is the primary key** — it stays in English even in the Turkish syllabus, it's language-independent.
+- **Question IDs are `ctfl4-NNNN`**, never reused.
+- **At most 40 questions per question chunk**; the filename never changes (CDN + PWA caching).
+- **Turkish terminology:** `error/defect/failure` → **`insan hatası/hata/arıza`** (official TTB v4.0.1). The three are never all translated as "hata" — this distinction is asked directly on the exam. **`kusur` is not used**, it doesn't appear in the syllabus. The single source of truth is `data/ctfl-v4.0.1/terms.json` (97 terms, aligned from the official keyword lists); a readable table is in `docs/07-content-authoring-guide.md §5`.
+- Emphasis words in question text are UPPERCASE: `EN İYİ`, `HARİÇ`, `DEĞİLDİR`, `HANGİ İKİSİ`.
+- If `meta.reviewedBy` is empty, `status` **cannot be `published`**.
 
-## Tuzaklar
+## Pitfalls
 
-Hepsi bir kez ısırdı. Tekrar ısırmasın.
+Each of these bit once. Don't let it bite twice.
 
-- **`data/` düzenledikten sonra** `yarn build:index && yarn validate:data` çalıştır. Dev sunucusu açıkken `data/` değişirse `public/data/` bayat kalır: `predev`/`prebuild` yalnızca başlangıçta senkronlar, sonrası için `yarn sync:data`.
-- **`yarn test` (Vitest) `e2e/` dosyalarını toplamamalı.** `vitest.config.ts` içindeki exclude bunu engelliyor; kaldırılırsa Playwright'ın `test.beforeEach`'i patlar ve 39 birim testi geçse bile komut kırmızı döner.
-- **E2E tarayıcısı `tr-TR` yerel ayarıyla açılır.** Arayüz dili `navigator.language`'den seçilir; Playwright'ın varsayılanı `en-US` ve o durumda Türkçe etiket seçicileri tutmaz.
-- **`GITHUB_ACTIONS` set ise Vite `base` `/istqb-prep/` olur.** `playwright.config.ts` bu değişkeni bilerek boşaltır, yoksa `baseURL` tutmaz.
-- **`"resolutions": { "vite": "6.4.3" }` kaldırılmaz.** Vitest kendi Vite 7'sini getiriyor; iki tip ağacı aynı anda durunca `typecheck` ve `build` kırılıyor.
-- **Şıklar radio değil checkbox olabilir.** Çok seçimli ("HANGİ İKİSİ") soruda `getByRole("radio")` hiç eşleşmez; testte ikisini birden ara.
-- **Yarım kalan deneme ilk cevapsız sorudan devam eder**, kaldığı yerden değil (`examStore.resumeAttempt`).
-- **Soru metni içinde şıkka harfle atıf yapma** ("(c) şıkkı..."). 15. kontrol bunu hata sayar: şık konumları dengelenirken harfler değişir, prozadaki atıf yanlış kalır.
+- **After editing `data/`**, run `yarn build:index && yarn validate:data`. If `data/` changes while the dev server is running, `public/data/` goes stale: `predev`/`prebuild` only sync at startup, use `yarn sync:data` after that.
+- **`yarn test` (Vitest) must not collect files from `e2e/`.** The exclude in `vitest.config.ts` prevents this; remove it and Playwright's `test.beforeEach` blows up, and the command comes back red even if all 39 unit tests pass.
+- **The E2E browser launches with the `en-US` locale**, set explicitly in `playwright.config.ts`. UI language is picked from `navigator.language`, so the specs select on English labels — read from `src/lib/i18n/locales/en.json` through `e2e/labels.ts`, never retyped in a spec. `ExamSetup` seeds the question language from the UI language too, so a test that cares about question language sets it explicitly instead of assuming the locale.
+- **If `GITHUB_ACTIONS` is set, Vite's `base` becomes `/istqb-prep/`.** `playwright.config.ts` deliberately clears this variable, otherwise `baseURL` won't hold.
+- **`"resolutions": { "vite": "6.4.3" }` is never removed.** Vitest brings in its own Vite 7; with both type trees present at once, `typecheck` and `build` break.
+- **Options can be checkboxes, not radios.** In a multi-select ("HANGİ İKİSİ") question, `getByRole("radio")` never matches; look for both in tests.
+- **An unfinished attempt resumes from the first unanswered question**, not from where you left off (`examStore.resumeAttempt`).
+- **Never reference an option by letter inside the question text** ("option (c)..."). Check 15 flags this as an error: option positions get rebalanced, the letters change, and the reference in the prose goes stale.
 
-## Yapma
+## Don't
 
-- Resmî soruları havuza ekleme (kural 1)
-- `docs/03-istqb-referans.md`'deki olguları yeniden araştırma — doğrulanmış, kaynaklı
-- Sınav sabitlerini koda gömme — `meta.json`'dan oku
-- Next.js / Redux / TanStack Query ekleme — gerekçeler `docs/adr/0001-frontend-stack.md` ve `docs/05-teknik-mimari.md` §2'de
-- Runtime'da AI ile soru üretme — kalite ve telif riski (`docs/07-icerik-uretim-rehberi.md` §8)
-- `docs/09-yol-haritasi.md` sonundaki "bilinçli olarak sonraya bırakılanlar" listesindekileri, yeniden tartışmadan eklemeye kalkma
-- Yapay zekâdan "ISTQB örnek sınav sorusu yaz" isteme — model resmî bir soruyu ezberden üretebilir
+- Add official questions to the pool (rule 1)
+- Re-research the facts in `docs/03-istqb-reference.md` — they're verified and sourced
+- Hardcode exam constants in code — read them from `meta.json`
+- Add Next.js / Redux / TanStack Query — the reasoning is in `docs/adr/0001-frontend-stack.md` and `docs/05-technical-architecture.md` §2
+- Generate questions with AI at runtime — quality and copyright risk (`docs/07-content-authoring-guide.md` §8)
+- Add anything from the "deliberately deferred" list at the end of `docs/09-roadmap.md` without reopening the discussion first
+- Ask an AI to "write an ISTQB sample exam question" — the model might reproduce an official one from memory
 
-## Sıradaki iş
+## Up next
 
-`TODO.md` → **Faz 2**. Faz 0 ve Faz 1'in çekirdeği kapandı; kalanlar:
+`TODO.md` → **Phase 2**. The core of Phase 0 and Phase 1 is closed; what's left:
 
-Faz 0 kapandı (blueprint 29 LO grubuyla tam, 64 öğrenme hedefi işlendi, doğrulayıcı 15 kontrolle çalışıyor). Açık kalanlar:
+Phase 0 is closed (blueprint complete with 29 LO groups, all 64 learning objectives processed, the validator runs 15 checks). What's still open:
 
-1. **F0-02** — ISTQB Glossary lisansını tarayıcıda gözle doğrula; doğrulanana kadar sözlük tanımları birebir kopyalanmaz.
-2. **Havuzu derinleştir** — `yarn validate:data` 52 uyarı veriyor; hepsi "bu LO için 3'ten az yayınlanmış soru var". Faz 2 hedefi 200 soru, Faz 3 hedefi 300 ve her LO için ≥3.
-3. **Faz 2** — pratik modu, aralıklı tekrar (SRS), sözlük. `docs/09-yol-haritasi.md`.
+1. **F0-02** — Visually verify the ISTQB Glossary license in the browser; glossary definitions aren't copied verbatim until this is verified.
+2. **Deepen the pool** — `yarn validate:data` reports 52 warnings; all of them are "this LO has fewer than 3 published questions." Phase 2 targets 200 questions, Phase 3 targets 300, with ≥3 per LO.
+3. **Phase 2** — practice mode, spaced repetition (SRS), glossary. `docs/09-roadmap.md`.
 
-Açık karar kalmadı — D-01…D-05 19.09.2026'da kapandı (`docs/00-proje-ozeti.md §9`):
-ürün adı **ISTQB-PREP** (marka riski bilinçli üstlenildi — `10 §R-01b`; ad koda gömülmez) · alan adı yok, `*.github.io` · içerik lisansı **CC BY-SA 4.0** · topluluk soru PR'ları v1'de kapalı (Faz 4) · ISTQB/TTB'ye izin başvurusu **yapılmayacak** (dayanak: özgün içerik + ticari olmayan kullanım + kaynak gösterimi).
+No open decisions remain — D-01…D-05 were closed on 19.09.2026 (`docs/00-project-overview.md §9`):
+product name **ISTQB-PREP** (brand risk knowingly accepted — `10 §R-01b`; the name is never hardcoded in code) · no domain, `*.github.io` · content license **CC BY-SA 4.0** · community question PRs are closed in v1 (Phase 4) · **no** permission application will be filed with ISTQB/TTB (basis: original content + non-commercial use + source attribution).

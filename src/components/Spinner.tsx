@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 
 /**
- * Yukleniyor gostergesi. `role="status"` ile ekran okuyucuya duyurulur;
- * gorsel animasyon prefers-reduced-motion'da CSS tarafindan durdurulur.
+ * Loading indicator. Announced to the screen reader via `role="status"`;
+ * the visual animation is stopped by CSS under prefers-reduced-motion.
  */
 export function Spinner({ full = false }: { full?: boolean }) {
   const { t } = useTranslation();

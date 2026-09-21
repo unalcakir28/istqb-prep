@@ -1,18 +1,21 @@
 /**
- * F1-06 — Deneme puanlama.
+ * F1-06 — Exam scoring.
  *
- * Kurallar resmi sinavdan gelir ve buraya sabit yazilmaz:
- * - Her soru TAM OLARAK 1 puandir; Foundation'da cok puanli soru yoktur.
- * - Coktan secmeli (`multi`) sorularda puanlama TAM ESLESMEdir — kismi puan
- *   yoktur. Iki dogrudan birini isaretlemek 0 puandir.
- * - Baraj `meta.json`'dan okunur (CTFL v4.0.1 icin 26/40), koda gomulmez.
- * - Negatif puanlama hicbir resmi dokumanda gecmiyor; `negativeMarking: null`
- *   oldugu icin yanlis cevap yalnizca 0 puan getirir, puan dusurmez.
+ * The rules come from the official exam and are not hard-coded here:
+ * - Every question is worth EXACTLY 1 point; Foundation has no multi-point
+ *   questions.
+ * - Multiple-answer (`multi`) questions are scored on an EXACT MATCH — there
+ *   is no partial credit. Ticking one of the two correct options scores 0.
+ * - The pass mark is read from `meta.json` (26/40 for CTFL v4.0.1), never
+ *   embedded in the code.
+ * - Negative marking appears in no official document; because
+ *   `negativeMarking: null`, a wrong answer simply scores 0 and does not
+ *   subtract points.
  */
 
 import type { CertMeta, Question } from "@/types/content";
 
-/** Kullanicinin bir soruya verdigi cevap: secilen sik ID'leri. */
+/** The user's answer to one question: the ids of the selected options. */
 export type AnswerMap = Record<string, string[]>;
 
 export interface QuestionOutcome {
@@ -23,7 +26,7 @@ export interface QuestionOutcome {
   selected: string[];
   correct: string[];
   isCorrect: boolean;
-  /** Hic sik isaretlenmemis soru — yanlistan ayri raporlanir. */
+  /** A question with no option ticked — reported separately from a wrong answer. */
   isUnanswered: boolean;
   points: number;
 }
@@ -49,7 +52,7 @@ export interface ExamScore {
   outcomes: QuestionOutcome[];
 }
 
-/** Sira bagimsiz tam kume esitligi. */
+/** Order-independent exact set equality. */
 function isExactMatch(selected: readonly string[], correct: readonly string[]): boolean {
   if (selected.length !== correct.length) return false;
 
@@ -119,8 +122,8 @@ export function scoreExam(questions: Question[], answers: AnswerMap, meta: CertM
   finalize(byObjective);
   finalize(byKLevel);
 
-  // Toplam puan, cevaplanan soru sayisindan degil sorulan sorulardan gelir:
-  // eksik uretilmis bir denemede baraj yine resmi degerle karsilastirilir.
+  // The total comes from the questions asked, not from the questions answered:
+  // in a short exam the pass mark is still compared against the official value.
   const totalPoints = questions.reduce((sum, question) => sum + question.points, 0);
   const passPoints = meta.exam.passPoints;
 
@@ -140,7 +143,7 @@ export function scoreExam(questions: Question[], answers: AnswerMap, meta: CertM
   };
 }
 
-/** Sonuc ekranindaki "en zayif 3 ogrenme hedefi" icin. */
+/** For the "3 weakest learning objectives" block on the result screen. */
 export function weakestObjectives(score: ExamScore, limit = 3): string[] {
   return Object.entries(score.byObjective)
     .filter(([, breakdown]) => breakdown.total > 0 && breakdown.correct < breakdown.total)

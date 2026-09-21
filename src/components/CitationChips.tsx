@@ -3,16 +3,16 @@ import { useTranslation } from "react-i18next";
 import type { KLevel } from "@/types/content";
 
 /**
- * Musredat atif cipleri — bu urunun imza ogesi.
+ * Syllabus citation chips — this product's signature element.
  *
- * Her gerekcenin altinda LO kodu, mufredat bolumu, bilissel seviye ve
- * mufredat surumu durur (docs/06 §1.3: "Her iddia kaynaklidir"). Rakiplerin
- * hicbiri sorularin hangi surume ait oldugunu bile yazmiyor; bu satir hem
- * dogruluk hem guven isareti oldugu icin kucuk gri metadata gibi degil,
- * okunakli ve ayirt edilebilir bicimde gosterilir.
+ * Underneath every rationale sits the LO code, syllabus chapter, cognitive
+ * level, and syllabus version (docs/06 §1.3: "Every claim is sourced").
+ * None of the competitors even state which version a question belongs to;
+ * because this line is both an accuracy and a trust signal, it's shown
+ * legibly and distinctly rather than as small gray metadata.
  *
- * Etiketler `title` ve gorunmez metinle acilir — kisaltmalar tek basina
- * anlamli degil.
+ * Labels are expanded via `title` and visually-hidden text — the
+ * abbreviations aren't meaningful on their own.
  */
 export interface CitationChipsProps {
   objectives: string[];
@@ -24,7 +24,7 @@ export interface CitationChipsProps {
 
 const CHIP =
   "inline-flex items-center rounded-[var(--radius-badge)] border px-2 py-0.5 font-mono text-[12px]";
-/** LO kodu one cikar — diger cipler yardimci bilgidir. */
+/** Emphasizes the LO code — the other chips are supporting information. */
 const CHIP_EMPHASIS = "border-accent/40 bg-accent/10 font-medium text-accent";
 const CHIP_PLAIN = "border-border bg-surface-2 text-fg-muted";
 

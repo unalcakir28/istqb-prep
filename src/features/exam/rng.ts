@@ -1,12 +1,12 @@
 /**
- * Tohumlanmis, belirlenimci rastgelelik.
+ * Seeded, deterministic randomness.
  *
- * Deneme uretimi Math.random() ile yapilamaz: ayni denemeyi yeniden kurabilmek
- * (yarim kalan oturumu kurtarma, sonuc ekranini tekrar acma) ve dagilim
- * testlerinin tekrarlanabilir olmasi icin tohum saklanir.
+ * Exam generation cannot use Math.random(): the seed is stored so the same
+ * exam can be rebuilt (recovering an unfinished session, reopening the result
+ * screen) and so the distribution tests are repeatable.
  */
 
-/** mulberry32 — 32-bit tohumdan hizli, yeterince iyi dagilimli PRNG. */
+/** mulberry32 — a fast PRNG with good enough distribution, from a 32-bit seed. */
 export function createRng(seed: number): () => number {
   let state = seed >>> 0;
 
@@ -19,7 +19,7 @@ export function createRng(seed: number): () => number {
   };
 }
 
-/** Fisher-Yates. Girdi dizisi degistirilmez. */
+/** Fisher-Yates. The input array is not mutated. */
 export function shuffle<T>(items: readonly T[], rng: () => number): T[] {
   const result = [...items];
   for (let i = result.length - 1; i > 0; i -= 1) {
@@ -29,7 +29,7 @@ export function shuffle<T>(items: readonly T[], rng: () => number): T[] {
   return result;
 }
 
-/** Tohumdan uretilmis yeni bir deneme kimligi. */
+/** A new attempt id derived from the seed. */
 export function randomSeed(): number {
   return Math.floor(Math.random() * 0xffffffff) >>> 0;
 }

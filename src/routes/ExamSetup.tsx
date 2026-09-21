@@ -1,13 +1,15 @@
 /**
- * F1-11 — Deneme kurulumu (docs/06 §3.2).
+ * F1-11 — Exam setup (docs/06 §3.2).
  *
- * Ekranin asil isi, denemenin NE uretecegini basmadan once soylemektir:
- * bolum basina dagilim canli olarak hesaplanir ve havuz yetmiyorsa uyari
- * BURADA cikar (F1-05c). Sessizce eksik deneme uretmek yasak.
+ * The screen's main job is to say WHAT the exam will produce before the
+ * candidate starts: the per-chapter distribution is computed live, and if the
+ * pool falls short the warning appears RIGHT HERE (F1-05c). Silently
+ * generating a short exam is forbidden.
  *
- * Sure secenekleri meta.json'dan gelir. Arayuz Turkce ise uzatilmis sure
- * ONCEDEN SECILI gelir: Turkce konusan aday resmi sinavi ana dili olmayan
- * bir dilde verir ve %25 ek sure hakki vardir.
+ * Duration options come from meta.json. If the UI is in Turkish, the extended
+ * duration comes PRE-SELECTED: a Turkish-speaking candidate takes the real
+ * exam in a language that isn't their mother tongue, and is entitled to 25%
+ * extra time.
  */
 
 import { useMemo, useState } from "react";
@@ -41,7 +43,7 @@ interface SetupData {
   blueprint: ExamBlueprint;
   syllabus: Syllabus;
   pool: QuestionIndexEntry[];
-  /** Daha once cozulmus sorular — "gordugumu eleme" onizlemesi icin. */
+  /** Questions already answered — for the "avoid what I have seen" preview. */
   seen: Set<string>;
 }
 
@@ -109,9 +111,10 @@ export default function ExamSetup() {
   const [excludeSeen, setExcludeSeen] = useState(true);
   const [startFailed, setStartFailed] = useState(false);
 
-  // Onizleme, denemeyi gercekten uretecek olan filtreyle ayni havuza
-  // bakmali. Aksi halde "gordugumu eleme" aciksa ekran "eksik yok" der,
-  // sonra 40 yerine 37 soruluk deneme baslar — kural 8'in ta kendisi.
+  // The preview must look at the same pool as the filter that actually
+  // generates the exam. Otherwise, with "avoid what I have seen" on, the
+  // screen says "nothing missing" and then a 37-question exam starts instead
+  // of 40 — exactly what rule 8 forbids.
   const preview = useMemo(() => {
     if (!data) return null;
     const pool = excludeSeen ? data.pool.filter((entry) => !data.seen.has(entry.id)) : data.pool;
@@ -132,8 +135,8 @@ export default function ExamSetup() {
   const exam = meta.exam;
   const durationMinutes = extended ? exam.extendedDurationMinutes : exam.durationMinutes;
   const canStart = achievable > 0;
-  // Uyari, baslatma denenip basarisiz olduysa da gosterilir: dugme olu
-  // kalmaz, nedeni yazar.
+  // The warning also shows when starting was attempted and failed: the button
+  // never just sits dead, it states the reason.
   const showWarning = startFailed || shortfalls.length > 0;
 
   async function onStart() {

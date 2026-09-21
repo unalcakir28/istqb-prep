@@ -1,18 +1,21 @@
 /**
- * F1-05 — Resmi blueprint'e gore deneme sinavi uretimi.
+ * F1-05 — Exam generation against the official blueprint.
  *
- * Deneme, soru havuzundan rastgele 40 soru cekerek uretilmez. Resmi sinav,
- * `exam-blueprint.json`'daki LO gruplarina gore kurulur ve o dosyanin kurali
- * aynen uygulanir:
+ * An exam is not produced by pulling 40 random questions from the pool. The
+ * official exam is built from the LO groups in `exam-blueprint.json`, and that
+ * file's rule is applied verbatim:
  *
- *   "Bir grupta LO sayisindan cok soru varsa, her LO'dan EN AZ bir soru gelir.
- *    Sorudan cok LO varsa, her soru FARKLI bir LO'yu kapsar."
+ *   "If a group has more questions than learning objectives, every LO
+ *    contributes AT LEAST one question. If it has more LOs than questions,
+ *    every question covers a DIFFERENT LO."
  *
- * Sinav sabitleri (40 soru, 8/6/4/11/9/2, K 8/24/8) buraya SABIT YAZILMAZ —
- * hepsi blueprint'ten okunur. Blueprint degisirse motor kendiliginden uyar.
+ * The exam constants (40 questions, 8/6/4/11/9/2, K 8/24/8) are NOT hard-coded
+ * here — all of them are read from the blueprint. If the blueprint changes, the
+ * engine follows it on its own.
  *
- * Havuz yetersizse deneme sessizce eksik uretilmez (F1-05c): eksik kalan her
- * grup `shortfalls` icinde raporlanir ve cagiran taraf kullaniciya soyler.
+ * If the pool is too small, the exam is never silently short (F1-05c): every
+ * group that fell short is reported in `shortfalls`, and the caller tells the
+ * user.
  */
 
 import type { ExamBlueprint, BlueprintGroup, QuestionIndexEntry } from "@/types/content";
@@ -20,12 +23,12 @@ import { createRng, shuffle } from "./rng";
 
 export interface GenerateExamOptions {
   blueprint: ExamBlueprint;
-  /** Indeks girdileri. Yayinlanmamis sorular cagirmadan once elenmelidir. */
+  /** Index entries. Unpublished questions must be filtered out before calling. */
   pool: QuestionIndexEntry[];
   seed: number;
   /**
-   * Daha once gorulmus soru ID'leri. Onceliklidir ama zorunlu degildir:
-   * havuz yetmezse tekrar kullanilir, cunku eksik deneme uretmek daha kotudur.
+   * Ids of questions already seen. A preference, not a constraint: if the pool
+   * is too small they get reused, because producing a short exam is worse.
    */
   exclude?: ReadonlySet<string>;
 }
@@ -42,11 +45,11 @@ export interface GroupShortfall {
 export interface GeneratedExam {
   seed: number;
   questionIds: string[];
-  /** Bos degilse deneme eksiktir; kullaniciya acikca bildirilmelidir. */
+  /** If this is not empty the exam is short, and the user must be told plainly. */
   shortfalls: GroupShortfall[];
 }
 
-/** Bir grubun sorusu olmaya uygun havuz girdileri. */
+/** The pool entries eligible to serve as a question for a group. */
 function candidatesForGroup(group: BlueprintGroup, pool: QuestionIndexEntry[]) {
   const objectives = new Set(group.objectives);
 
@@ -58,7 +61,7 @@ function candidatesForGroup(group: BlueprintGroup, pool: QuestionIndexEntry[]) {
   );
 }
 
-/** Gorulmemis sorular basa alinir; siralama grup icinde tohuma baglidir. */
+/** Unseen questions come first; within a group the order depends on the seed. */
 function preferUnseen(
   entries: QuestionIndexEntry[],
   exclude: ReadonlySet<string>,
@@ -71,11 +74,13 @@ function preferUnseen(
 }
 
 /**
- * Bir gruptan istenen sayida soru secer ve blueprint'in LO kuralini uygular.
+ * Picks the requested number of questions from a group and applies the
+ * blueprint's LO rule.
  *
- * Once her LO'ya sirayla birer soru dagitilir (round-robin). Bu, iki kurali
- * birden saglar: soru sayisi LO sayisindan azsa her soru farkli bir LO'ya
- * duser; fazlaysa her LO en az bir soru alir, artanlar tekrar dagitilir.
+ * One question is handed to each LO in turn first (round-robin). That
+ * satisfies both halves of the rule at once: with fewer questions than LOs,
+ * every question lands on a different LO; with more, every LO gets at least
+ * one and the remainder is dealt out again.
  */
 function selectFromGroup(
   group: BlueprintGroup,
@@ -94,7 +99,7 @@ function selectFromGroup(
 
   const selected: string[] = [];
   const used = new Set<string>();
-  // LO sirasi da tohuma bagli: hangi LO'larin soru aldigi denemeden denemeye degissin.
+  // The LO order depends on the seed too, so which LOs get a question varies between exams.
   const objectiveOrder = shuffle([...byObjective.keys()], rng);
 
   while (selected.length < group.questions) {
@@ -112,7 +117,7 @@ function selectFromGroup(
       addedThisPass = true;
     }
 
-    // Hicbir LO yeni soru veremiyorsa havuz tukenmistir; sonsuz dongu olmaz.
+    // If no LO can supply a new question the pool is exhausted; no infinite loop.
     if (!addedThisPass) break;
   }
 
@@ -145,16 +150,17 @@ export function generateExam({
     });
   }
 
-  // Sorular blueprint sirasiyla degil karisik sorulur; aksi halde sinav
-  // bolum bolum ilerler ve gercek sinav boyle davranmaz.
+  // Questions are asked shuffled, not in blueprint order; otherwise the exam
+  // would walk chapter by chapter, and the real exam does not behave that way.
   return { seed, questionIds: shuffle(questionIds, rng), shortfalls };
 }
 
 /**
- * Eksik gruplari bolume indirger: bolum -> o bolumde kac soru eksik kaldigi.
+ * Reduces the short groups to chapters: chapter -> how many questions that
+ * chapter is missing.
  *
- * Eksiksiz gruplar hedefleri kadar soru verecegi icin, bir bolumun
- * ulasilabilir sayisi hedeften yalnizca bu fark kadar duser.
+ * Groups that are not short deliver their full target, so a chapter's
+ * achievable count falls below its target by exactly this difference.
  */
 export function shortfallsByChapter(shortfalls: GroupShortfall[]): Map<number, number> {
   const missing = new Map<number, number>();
@@ -167,7 +173,7 @@ export function shortfallsByChapter(shortfalls: GroupShortfall[]): Map<number, n
   return missing;
 }
 
-/** Havuzun bir denemeyi eksiksiz uretip uretemeyecegini onceden soyler. */
+/** Says in advance whether the pool can produce a complete exam. */
 export function previewCoverage(
   blueprint: ExamBlueprint,
   pool: QuestionIndexEntry[],

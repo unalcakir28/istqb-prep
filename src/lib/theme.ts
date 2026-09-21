@@ -1,10 +1,11 @@
 /**
- * Karanlik mod birinci siniftir (docs/06 §1.4): kitle gelistirici ve
- * rakiplerin hicbiri karanlik mod ilan etmiyor.
+ * Dark mode is a first-class citizen (docs/06 §1.4): the target developer
+ * audience skews dark, and none of the competitors even advertise a dark
+ * mode.
  *
- * Tema, ilk boyamadan once uygulanmalidir; aksi halde koyu tema kullanicisi
- * bir kare beyaz ekran gorur. `index.html` icindeki kucuk betik bunu yapar,
- * buradaki kod ise degistirme ve dinleme isini ustlenir.
+ * The theme must be applied before the first paint; otherwise a dark-mode
+ * user sees a flash of white screen. The small script inside `index.html`
+ * does that; the code here handles switching and listening.
  */
 
 export type ThemePreference = "light" | "dark" | "system";
@@ -21,7 +22,7 @@ export function readThemePreference(): ThemePreference {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === "light" || stored === "dark" || stored === "system") return stored;
   } catch {
-    // Depolama kapaliysa sistem tercihiyle devam.
+    // If storage is disabled, fall back to the system preference.
   }
   return "system";
 }
@@ -38,11 +39,11 @@ export function applyTheme(preference: ThemePreference): void {
   try {
     localStorage.setItem(STORAGE_KEY, preference);
   } catch {
-    // Tercih kalici olmasa da oturum icinde calisir.
+    // Still works within the session even if the preference isn't persisted.
   }
 }
 
-/** Kullanici "sistem" sectiyse isletim sistemi temasini canli takip eder. */
+/** If the user chose "system", tracks the OS theme live. */
 export function watchSystemTheme(onChange: () => void): () => void {
   if (typeof window === "undefined" || !window.matchMedia) return () => {};
 

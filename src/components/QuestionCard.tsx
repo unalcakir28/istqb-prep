@@ -5,14 +5,16 @@ import { OptionList } from "./OptionList";
 import type { Lang, Question } from "@/types/content";
 
 /**
- * Soru karti — sinav ekraninin kahramani (docs/06 §1.1).
+ * Question card — the hero of the exam screen (docs/06 §1.1).
  *
- * Icerik dili arayuz dilinden bagimsizdir: aday arayuzu Turkce birakip
- * soruyu Ingilizce okuyabilir. Soru govdesi kendi `lang` ozniteligini tasir,
- * boylece ekran okuyucu dogru sesletir.
+ * Content language is independent of the UI language: a candidate can
+ * leave the UI in Turkish and still read the question in English. The
+ * question body carries its own `lang` attribute, so the screen reader
+ * pronounces it correctly.
  *
- * Sinav sirasinda LO kodu GOSTERILMEZ — gercek sinavda da yoktur ve cevabi
- * ele verir. Atif cipleri yalnizca inceleme modunda gorunur.
+ * The LO code is NOT shown during the exam — it doesn't appear on the real
+ * exam either, and it would give away the answer. Citation chips only
+ * appear in review mode.
  */
 export interface QuestionCardProps {
   question: Question;
@@ -45,8 +47,9 @@ export function QuestionCard({
   return (
     <article className="flex flex-col gap-5">
       <header className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        {/* "HANGİ İKİSİ" sorularinda kac sik secilecegi acikca yazilir —
-            adaylarin en cok gozden kacirdigi sey bu (docs/07 §5). */}
+        {/* For "HANGİ İKİSİ" (WHICH TWO) questions, the number of options to
+            select is spelled out explicitly — this is what candidates miss
+            most often (docs/07 §5). */}
         <p
           className={
             multi

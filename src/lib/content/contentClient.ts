@@ -1,16 +1,17 @@
 /**
- * F1-02 — Icerik erisim katmani.
+ * F1-02 — Content access layer.
  *
- * Tek sorumluluk: "bu soru ID'lerini bana ver", mumkun olan en az ag
- * trafigiyle (docs/05-teknik-mimari.md §4).
+ * Single responsibility: "give me these question IDs", with as little
+ * network traffic as possible (docs/05-technical-architecture.md §4).
  *
- * Veri statik JSON olarak servis edilir. Uygulama once hafif indeksi ceker,
- * hangi parcalara ihtiyaci oldugunu hesaplar ve sadece o parcalari indirir —
- * 300 soruluk havuzun tamami hicbir zaman tek seferde inmez.
+ * Data is served as static JSON. The app fetches the lightweight index
+ * first, works out which chunks it needs, and downloads only those — the
+ * full 300-question pool is never downloaded in one go.
  *
- * Onbellek iki katmanli: sureç icinde Map, sureçler arasinda Cache API.
- * Ikisi de `dataVersion` ile gecersizlestirilir; manifest her acilista
- * taze cekilir, geri kalan her sey surumle birlikte onbellege alinir.
+ * The cache has two layers: an in-process Map, and the Cache API across
+ * processes. Both are invalidated by `dataVersion`; the manifest is always
+ * fetched fresh on each launch, and everything else is cached alongside
+ * that version.
  */
 
 import type {
@@ -28,14 +29,14 @@ import type {
 
 const CACHE_NAME = "istqb-prep-content";
 
-/** Vite `base` ayari GitHub Pages'te '/istqb-prep/' oluyor. */
+/** Vite's `base` setting becomes '/istqb-prep/' on GitHub Pages. */
 function dataUrl(...segments: string[]): string {
   const base = import.meta.env.BASE_URL || "/";
   return `${base.replace(/\/$/, "")}/data/${segments.join("/")}`;
 }
 
 async function openCache(): Promise<Cache | null> {
-  // Cache API gizli sekmede veya eski tarayicida yok; onbellek zorunlu degil.
+  // The Cache API doesn't exist in private browsing or older browsers; caching is optional.
   if (typeof caches === "undefined") return null;
   try {
     return await caches.open(CACHE_NAME);
@@ -51,21 +52,21 @@ export class ContentClient {
   private versionCheck: Promise<void> | null = null;
 
   /**
-   * Surum kontrolu yalnizca `getManifest` icinde yapiliyordu, o da sadece
-   * ana sayfa / kurulum / kaynaklar ekranlarindan cagriliyordu. Dogrudan
-   * /deneme/:id gibi bir adrese girildiginde (yenileme, yer imi, gecmis)
-   * kontrol hic calismiyor ve Cache API'deki eski icerik sonsuza kadar
-   * servis ediliyordu. Artik onbellege alinan her okuma once bunu bekler.
+   * The version check used to happen only inside `getManifest`, which was
+   * only called from the home / setup / sources screens. When a URL like
+   * /deneme/:id was entered directly (refresh, bookmark, back/forward
+   * history), the check never ran, and stale content in the Cache API was
+   * served forever. Now every cached read waits on this first.
    */
   private ensureVersion(): Promise<void> {
     this.versionCheck ??= this.getManifest().then(() => undefined);
     return this.versionCheck;
   }
 
-  /** Ayni URL icin es zamanli iki istek tek fetch'e indirgenir. */
+  /** Two concurrent requests for the same URL collapse into a single fetch. */
   private async fetchJson<T>(url: string, cacheable: boolean): Promise<T> {
-    // Manifest bu yoldan gecmez (kendi `no-cache` fetch'i var), dolayisiyla
-    // burada beklemek dongu yaratmaz.
+    // The manifest doesn't go through this path (it has its own `no-cache`
+    // fetch), so waiting here doesn't create a cycle.
     await this.ensureVersion();
 
     const cached = this.memory.get(url);
@@ -97,7 +98,7 @@ export class ContentClient {
 
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error(`Icerik yuklenemedi (${response.status}): ${url}`);
+      throw new Error(`Failed to load content (${response.status}): ${url}`);
     }
 
     if (cache) await cache.put(url, response.clone());
@@ -105,13 +106,13 @@ export class ContentClient {
   }
 
   /**
-   * Manifest her zaman agdan gelir — `dataVersion`'i o tasidigi icin
-   * onbellege alinirsa surum degisikligi hicbir zaman fark edilmez.
+   * The manifest always comes from the network — since it carries
+   * `dataVersion`, caching it would mean a version change is never noticed.
    */
   async getManifest(): Promise<Manifest> {
     const url = dataUrl("manifest.json");
     const response = await fetch(url, { cache: "no-cache" });
-    if (!response.ok) throw new Error(`Manifest yuklenemedi (${response.status})`);
+    if (!response.ok) throw new Error(`Failed to load manifest (${response.status})`);
 
     const manifest = (await response.json()) as Manifest;
     await this.applyDataVersion(manifest.dataVersion);
@@ -121,9 +122,9 @@ export class ContentClient {
   }
 
   /**
-   * Ekranlarin calistigi sertifika. Manifest birden fazla tasiyabilir ama
-   * Faz 1'de yalnizca `active` olan gosterilir; hicbiri isaretli degilse
-   * ilki kullanilir.
+   * The certification the screens operate on. The manifest can carry more
+   * than one, but in Phase 1 only the one marked `active` is shown; if none
+   * is marked, the first one is used.
    */
   async getActiveCertification(): Promise<CertificationSummary> {
     const manifest = await this.getManifest();
@@ -135,7 +136,7 @@ export class ContentClient {
     return cert;
   }
 
-  /** Surum degistiyse eski surume ait her sey atilir. */
+  /** If the version has changed, everything belonging to the old version is discarded. */
   private async applyDataVersion(version: string): Promise<void> {
     if (this.dataVersion === version) return;
 
@@ -145,7 +146,7 @@ export class ContentClient {
         try {
           await caches.delete(CACHE_NAME);
         } catch {
-          // Onbellek silinemezse de calismaya devam edilir.
+          // Keep working even if the cache can't be deleted.
         }
       }
     }
@@ -186,9 +187,9 @@ export class ContentClient {
   }
 
   /**
-   * Istenen sorulari getirir: once indeksten hangi parcalarda olduklari
-   * bulunur, sonra yalnizca o parcalar (paralel) indirilir.
-   * Donen dizi, istenen ID sirasini korur.
+   * Fetches the requested questions: first finds which chunks they're in
+   * via the index, then downloads only those chunks (in parallel).
+   * The returned array preserves the requested ID order.
    */
   async getQuestions(certPath: string, ids: string[]): Promise<Question[]> {
     if (ids.length === 0) return [];
@@ -208,7 +209,7 @@ export class ContentClient {
     }
 
     if (missing.length > 0) {
-      throw new Error(`Indekste bulunmayan soru ID'leri: ${missing.join(", ")}`);
+      throw new Error(`Question IDs not found in the index: ${missing.join(", ")}`);
     }
 
     const chunks = await Promise.all([...needed].map((chunk) => this.getChunk(certPath, chunk)));
@@ -220,12 +221,12 @@ export class ContentClient {
 
     return ids.map((id) => {
       const question = byId.get(id);
-      if (!question) throw new Error(`Soru parcasinda bulunamadi: ${id}`);
+      if (!question) throw new Error(`Question not found in chunk: ${id}`);
       return question;
     });
   }
 
-  /** Test ve oturum kapanisinda bellek onbellegini bosaltir. */
+  /** Clears the in-memory cache, used in tests and on session teardown. */
   clear(): void {
     this.memory.clear();
     this.inflight.clear();

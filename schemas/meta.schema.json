@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://istqb-prep/schemas/meta.schema.json",
-  "title": "Sertifika meta verisi",
+  "title": "Certification metadata",
   "type": "object",
   "required": ["id", "name", "acronym", "syllabusVersion", "exam"],
   "additionalProperties": false,
@@ -32,7 +32,7 @@
         "pointsPerQuestion": { "type": "integer" },
         "negativeMarking": {
           "type": ["boolean", "null"],
-          "description": "null = resmi dokumanlarda belirtilmemis. false YAZMA - dogrulanmamis iddiada bulunma."
+          "description": "null = not stated in official documents. Do NOT write false — do not make an unverified claim."
         },
         "questionKLevelDistribution": { "type": "object" }
       }

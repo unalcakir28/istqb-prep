@@ -1,13 +1,13 @@
 /**
- * F1-12 — Sonuc ekrani (docs/06 §3.4).
+ * F1-12 — Result screen (docs/06 §3.4).
  *
- * Ilke: durustluk > motivasyon. Baraj cizgisi HER ZAMAN cizilir, skor
- * yumusatilmaz, kalan bir deneme "neredeyse" diye suslenmez. Gecti/kaldi
- * yalnizca renkle degil ikon ve metinle de soylenir (WCAG 1.4.1).
+ * The principle: honesty over motivation. The pass line is ALWAYS drawn, the
+ * score is never softened, and a failed exam is not dressed up as "almost".
+ * Pass/fail is stated with an icon and text, not colour alone (WCAG 1.4.1).
  *
- * Tum sabitler veriden gelir: baraj `score.passPoints` (meta.json), bolum
- * basliklari syllabus.json, hedef soru sayilari syllabus'un `examQuestions`
- * alani, ogrenme hedefi metinleri objectives.json.
+ * Every constant comes from the data: the pass mark from `score.passPoints`
+ * (meta.json), chapter titles from syllabus.json, target question counts from
+ * the syllabus `examQuestions` field, objective texts from objectives.json.
  */
 
 import { useEffect, useState } from "react";
@@ -88,7 +88,7 @@ export default function ExamResult() {
         setChapters(syllabus.chapters);
         setObjectives(list);
       } catch {
-        // Basliklar inmezse sonuc yine gosterilir; sadece kodlar gorunur.
+        // If the titles fail to load the result still shows; only the codes appear.
         if (!cancelled) setChapters([]);
       }
     }
@@ -102,15 +102,15 @@ export default function ExamResult() {
   if (loading && !ready) return <Spinner />;
   if (!attempt || !score) return <ErrorNotice />;
 
-  // Teslim zamani yoksa (olmamasi gereken durum) tahmin uretmek yerine
-  // ayrilan surenin tamami gosterilir — render saf kalir.
+  // With no submission time (a state that should not happen), the full
+  // allotted duration is shown rather than a guess — the render stays pure.
   const elapsedSeconds =
     attempt.submittedAt === undefined
       ? attempt.durationMinutes * 60
       : Math.max(0, Math.round((attempt.submittedAt - attempt.startedAt) / 1000));
-  // Havuz yetmedigi icin 40'tan az soru sorulduysa bile cubuk resmi baraja
-  // kadar uzatilir: baraj cizgisi HER ZAMAN gorunur kalir, sorulmayan bolge
-  // taranarak isaretlenir (docs/06 §3.4).
+  // Even when fewer than 40 questions were asked because the pool fell short,
+  // the bar still runs to the official pass mark: the pass line stays visible
+  // ALWAYS, and the unasked region is marked with hatching (docs/06 §3.4).
   const scale = Math.max(score.totalPoints, score.passPoints);
   const scoreLabel = t("result.score", { points: score.points, total: score.totalPoints });
   const passLabel = t("result.passLine", { pass: score.passPoints });
@@ -196,7 +196,7 @@ export default function ExamResult() {
             .sort((a, b) => a.chapter - b.chapter)
             .map(({ chapter, breakdown }) => {
               const info = chapterById.get(chapter);
-              // Hayalet hedef: gercek sinavda bu bolumden kac soru gelir.
+              // Ghost target: how many questions this chapter contributes on the real exam.
               const target = info?.examQuestions ?? breakdown.total;
 
               return (

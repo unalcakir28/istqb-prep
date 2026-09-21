@@ -30,7 +30,7 @@ export function ContentLangToggle({ value, onChange }: ContentLangToggleProps) {
       className="flex shrink-0 rounded-[var(--radius-btn)] border border-border p-0.5"
     >
       {LANGS.map((lang) => {
-        // "TR" / "EN" rozeti tek basina anlasilmaz; erisilebilir ad tam cumle.
+        // A "TR" / "EN" badge means nothing on its own; the accessible name is a full sentence.
         const label = lang === "tr" ? t("question.showTurkish") : t("question.showEnglish");
 
         return (

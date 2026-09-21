@@ -1,33 +1,33 @@
 # ADR-0001 — Frontend stack: Vite + React + TypeScript
 
-**Durum:** Kabul edildi · **Tarih:** 19.09.2026
+**Status:** Accepted · **Date:** 19.09.2026
 
-## Bağlam
-Ürün, GitHub Pages üzerinde ücretsiz barındırılacak statik bir web uygulaması. Backend yok, sunucu maliyeti sıfır olmalı. Geliştirici React/Next.js ekosistemine hakim. Performans bütçesi dar (JS < 200 KB gzip), erişilebilirlik hedefi WCAG 2.1 AA.
+## Context
+The product is a static web app to be hosted for free on GitHub Pages. No backend, server cost must be zero. The developer is fluent in the React/Next.js ecosystem. Performance budget is tight (JS < 200 KB gzip), accessibility target is WCAG 2.1 AA.
 
-## Değerlendirilen seçenekler
+## Options considered
 
-| Seçenek | Artı | Eksi |
+| Option | Pro | Con |
 |---|---|---|
-| **Vite + React + TS** | En hızlı DX; saf statik çıktı; `base` ile alt yol desteği; ekosistem tam | Yönlendirme için Pages hilesi gerekir |
-| Next.js (`output: export`) | Geliştiricinin ana stack'i; dosya tabanlı yönlendirme | SSR/ISR/RSC'nin hiçbirinden faydalanamayız; statik export'ta kısıtlar; daha büyük bundle; gereksiz karmaşıklık |
-| Astro + React islands | En iyi Lighthouse; içerik sayfaları statik | Uygulamanın %90'ı interaktif (sınav motoru); island modeli burada avantaj sağlamaz; ekip aşinalığı düşük |
-| SvelteKit | Küçük bundle | Ekosistem ve aşinalık düşük; shadcn/Radix dengi olgunluk yok |
+| **Vite + React + TS** | Fastest DX; pure static output; subpath support via `base`; full ecosystem | Needs a Pages trick for routing |
+| Next.js (`output: export`) | Developer's primary stack; file-based routing | We get none of the benefit from SSR/ISR/RSC; static export has constraints; larger bundle; unnecessary complexity |
+| Astro + React islands | Best Lighthouse scores; content pages are static | 90% of the app is interactive (the exam engine); the islands model gains nothing here; low team familiarity |
+| SvelteKit | Small bundle | Low ecosystem and familiarity; no shadcn/Radix-equivalent maturity |
 
-## Karar
+## Decision
 **Vite 6 + React 19 + TypeScript 5.**
 
-Tamamlayıcılar:
-- **Tailwind CSS v4** — token'lar CSS değişkeni, karanlık mod bedava
-- **shadcn/ui (Radix)** — kaynak kod kopyalanır, bağımlılık şişmesi yok, erişilebilirlik hazır
-- **Zustand** — oturum durumu
-- **React Router v7** — 404.html hilesiyle temiz URL (bkz. [`../05-teknik-mimari.md §6`](../05-teknik-mimari.md))
+Complementary choices:
+- **Tailwind CSS v4** — tokens as CSS variables, dark mode for free
+- **shadcn/ui (Radix)** — source code is copied in, no dependency bloat, accessibility built in
+- **Zustand** — session state
+- **React Router v7** — clean URLs via a 404.html trick (see [`../05-technical-architecture.md §6`](../05-technical-architecture.md))
 
-## Gerekçe
-Uygulamanın kalbi bir sınav motoru — yani tamamen istemci tarafı, interaktif ve durum ağırlıklı. SSR'ın sunabileceği hiçbir şey yok. Next.js'in statik export modu, kullanılmayacak bir çerçevenin ağırlığını taşımak demek. Astro'nun island avantajı, sayfanın tamamı interaktif olduğunda kaybolur.
+## Rationale
+The heart of the app is an exam engine — meaning fully client-side, interactive, and state-heavy. There is nothing SSR can offer here. Next.js's static export mode means carrying the weight of a framework whose features go unused. Astro's islands advantage disappears once the whole page is interactive.
 
-## Sonuçlar
-- **+** Sıfır sunucu maliyeti, tek komutla derleme
-- **+** Bundle kontrolü kolay; rota bazlı `React.lazy` yeterli
-- **−** SPA yönlendirme için Pages'e özgü çözüm gerekir (404.html)
-- **−** SEO için sayfa bazlı statik HTML üretilmez; `/syllabus` gibi içerik sayfaları organik trafiğe yeterince açık olmayabilir → gerekirse ileride bu sayfalar için build-time prerender eklenir
+## Consequences
+- **+** Zero server cost, single-command build
+- **+** Bundle control is easy; route-based `React.lazy` is enough
+- **−** SPA routing needs a Pages-specific workaround (404.html)
+- **−** No page-level static HTML is generated for SEO; content pages like `/syllabus` may not be sufficiently exposed to organic traffic → build-time prerendering can be added for these pages later if needed

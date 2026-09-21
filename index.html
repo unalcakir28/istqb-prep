@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="tr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="ISTQB Temel Seviye (CTFL v4.0.1) sınavına hazırlık: özgün sorular, her şık için gerekçe, Türkçe–İngilizce yan yana. Ücretsiz ve açık kaynak."
+      content="Prepare for the ISTQB Foundation Level exam (CTFL v4.0.1): original questions, a rationale for every option, Turkish and English side by side. Free and open source."
     />
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="data:," />
@@ -17,8 +17,8 @@
     />
     <title>ISTQB-PREP</title>
     <script>
-      // Temayi ilk boyamadan ONCE uygula: aksi halde koyu tema kullanicisi
-      // bir kare beyaz ekran gorur (FOUC).
+      // Apply the theme BEFORE the first paint: otherwise a dark-theme user
+      // sees one frame of white screen (FOUC).
       (function () {
         try {
           var stored = localStorage.getItem("istqb-prep:theme");
@@ -28,7 +28,7 @@
               window.matchMedia("(prefers-color-scheme: dark)").matches);
           if (dark) document.documentElement.classList.add("dark");
         } catch (e) {
-          // Depolama kapaliysa acik tema ile devam.
+          // If storage is disabled, carry on with the light theme.
         }
       })();
     </script>

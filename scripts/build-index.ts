@@ -1,12 +1,13 @@
 /**
- * F0-12 — Soru parcalarindan questions/index.json ve data/manifest.json'daki
- * sayaclari yeniden uretir.
+ * F0-12 — Regenerates questions/index.json and the counters in
+ * data/manifest.json from the question chunks.
  *
- * Indeks, soru METNI icermez: uygulama once indeksi indirir, hangi parcalara
- * ihtiyaci oldugunu hesaplar, sadece onlari ceker (docs/04-veri-modeli.md §3.6).
- * Bu yuzden indeks elle duzenlenmez — tek kaynagi parca dosyalaridir.
+ * The index does not contain question TEXT: the app downloads the index
+ * first, works out which chunks it needs, and fetches only those
+ * (docs/04-data-model.md §3.6). That's why the index is never edited by
+ * hand — its only source is the chunk files.
  *
- * Kullanim:  yarn build:index
+ * Usage:  yarn build:index
  */
 
 import fs from "node:fs";
@@ -20,16 +21,16 @@ const MANIFEST = path.join(DATA_DIR, "manifest.json");
 type Json = Record<string, any>;
 
 function fail(message: string): never {
-  console.error(`HATA: ${message}`);
+  console.error(`ERROR: ${message}`);
   process.exit(1);
 }
 
 function readJson(absPath: string): Json {
-  if (!fs.existsSync(absPath)) fail(`Dosya bulunamadi: ${path.relative(ROOT, absPath)}`);
+  if (!fs.existsSync(absPath)) fail(`File not found: ${path.relative(ROOT, absPath)}`);
   try {
     return JSON.parse(fs.readFileSync(absPath, "utf8"));
   } catch (err) {
-    fail(`Gecersiz JSON: ${path.relative(ROOT, absPath)} — ${(err as Error).message}`);
+    fail(`Invalid JSON: ${path.relative(ROOT, absPath)} — ${(err as Error).message}`);
   }
 }
 
@@ -37,7 +38,7 @@ function writeJson(absPath: string, value: unknown): void {
   fs.writeFileSync(absPath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
 }
 
-/** Indekse giren alanlar — soru govdesi (i18n) bilerek disarida birakilir. */
+/** Fields that go into the index — the question body (i18n) is deliberately left out. */
 function toIndexEntry(question: Json, chunk: string): Json {
   const languages = Object.keys(question.i18n ?? {}).sort();
 
@@ -66,7 +67,7 @@ function buildCertificationIndex(certPath: string): {
 } {
   const certDir = path.join(DATA_DIR, certPath);
   const questionsDir = path.join(certDir, "questions");
-  if (!fs.existsSync(questionsDir)) fail(`questions/ dizini yok: data/${certPath}/`);
+  if (!fs.existsSync(questionsDir)) fail(`questions/ directory missing: data/${certPath}/`);
 
   const chunkFiles = fs
     .readdirSync(questionsDir)
@@ -84,9 +85,9 @@ function buildCertificationIndex(certPath: string): {
 
     for (const question of chunkDoc.questions ?? []) {
       const previous = seen.get(question.id);
-      // Soru ID'leri kalicidir ve asla yeniden kullanilmaz — carpisma sessizce
-      // gecilirse iki farkli soru ayni ID ile dolasir.
-      if (previous) fail(`Soru ID'si tekrar ediyor: ${question.id} (${previous} ve ${chunk})`);
+      // Question IDs are permanent and never reused — if a collision is
+      // silently ignored, two different questions end up sharing one ID.
+      if (previous) fail(`Duplicate question ID: ${question.id} (${previous} and ${chunk})`);
       seen.set(question.id, chunk);
       entries.push(toIndexEntry(question, chunk));
     }
@@ -102,7 +103,7 @@ function buildCertificationIndex(certPath: string): {
     questions: entries,
   });
 
-  // Kapsama: sadece yayinlanmis sorular sayilir, taslak soru havuza girmez.
+  // Coverage: only published questions are counted, drafts don't count toward the pool.
   const perObjective = new Map<string, number>();
   for (const objective of readJson(path.join(certDir, "objectives.json")).objectives ?? []) {
     perObjective.set(objective.code, 0);
@@ -116,7 +117,7 @@ function buildCertificationIndex(certPath: string): {
 
   const counts = [...perObjective.values()];
   console.log(
-    `  data/${certPath}/questions/index.json — ${entries.length} soru, ${chunks.length} parca`,
+    `  data/${certPath}/questions/index.json — ${entries.length} question(s), ${chunks.length} chunk(s)`,
   );
 
   return {
@@ -129,9 +130,9 @@ function buildCertificationIndex(certPath: string): {
 function main(): void {
   const manifest = readJson(MANIFEST);
   const certifications = manifest.certifications ?? [];
-  if (certifications.length === 0) fail("data/manifest.json icinde sertifika yok.");
+  if (certifications.length === 0) fail("data/manifest.json has no certifications.");
 
-  console.log("Indeks uretiliyor...");
+  console.log("Generating index...");
   for (const certification of certifications) {
     const stats = buildCertificationIndex(certification.path);
     certification.questionCount = stats.count;
@@ -143,8 +144,8 @@ function main(): void {
   }
 
   writeJson(MANIFEST, manifest);
-  console.log("  data/manifest.json sayaclari guncellendi");
-  console.log("Bitti.");
+  console.log("  data/manifest.json counters updated");
+  console.log("Done.");
 }
 
 main();

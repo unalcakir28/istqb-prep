@@ -15,7 +15,7 @@ case $file_path in
     producer="yarn build:index" ;;
   */data/manifest.json|data/manifest.json)
     producer="yarn build:index" ;;
-  */docs/kapsama.md|docs/kapsama.md)
+  */docs/coverage.md|docs/coverage.md)
     producer="yarn stats" ;;
   */public/data/*|public/data/*)
     producer="yarn sync:data" ;;
@@ -23,6 +23,6 @@ case $file_path in
     exit 0 ;;
 esac
 
-printf 'Engellendi: %s uretilen bir dosya, elle duzenlenmez.\n\nKaynagini duzenle, sonra calistir:\n\n    %s\n\nREADME rozetleri ve docs/kapsama.md icin: yarn stats\n' \
+printf 'Blocked: %s is a generated file, it is not edited by hand.\n\nEdit its source instead, then run:\n\n    %s\n\nFor README badges and docs/coverage.md: yarn stats\n' \
   "$file_path" "$producer" >&2
 exit 2

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://istqb-prep/schemas/objectives.schema.json",
-  "title": "Ogrenme hedefleri (learning objectives)",
+  "title": "Learning objectives",
   "type": "object",
   "required": ["syllabusVersion", "objectives"],
   "additionalProperties": false,
@@ -10,7 +10,7 @@
     "source": { "type": "string" },
     "status": {
       "type": "string",
-      "description": "Opsiyonel ilerleme notu, orn. 'INCOMPLETE - F0-06 ile tamamlanacak'."
+      "description": "Optional progress note, e.g. 'INCOMPLETE - to be completed with F0-06'."
     },
     "objectives": {
       "type": "array",

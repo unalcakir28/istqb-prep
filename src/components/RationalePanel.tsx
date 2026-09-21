@@ -4,12 +4,13 @@ import { CitationChips } from "./CitationChips";
 import type { Lang, Question } from "@/types/content";
 
 /**
- * Gerekce paneli — urunun ana farklilastiricisi (CLAUDE.md kural 2).
+ * Rationale panel — this product's main differentiator (CLAUDE.md rule 2).
  *
- * "Yanlis, cunku dogru cevap C'dir" gerekce degildir. Her yanlis sikkin
- * NEYI tanimladigi yazilir, boylece o sikki isaretleyen aday karistirdigi
- * kavrami ogrenir. Bu yuzden panel, ozet + SIK SIK gerekce olarak iki
- * katmanlidir ve sik sik kisim katlanmaz — asil deger orada.
+ * "Wrong, because the correct answer is C" is not a rationale. Every wrong
+ * option states WHAT it describes, so the candidate who picked it learns
+ * which concept they confused it with. That's why the panel has two layers
+ * — a summary plus a per-option rationale — and the per-option part is never
+ * collapsed: that's where the real value is.
  */
 export interface RationalePanelProps {
   question: Question;
@@ -17,7 +18,7 @@ export interface RationalePanelProps {
   selected: string[];
 }
 
-/** Sol kenar cizgisi: dogru sik yesil, adayin yanlis secimi kirmizi. */
+/** Left border color: green for the correct option, red for the candidate's wrong pick. */
 function optionBorder(isCorrect: boolean, wasSelected: boolean): string {
   if (isCorrect) return "border-correct";
   if (wasSelected) return "border-incorrect";

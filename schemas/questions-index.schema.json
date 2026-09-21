@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://istqb-prep/schemas/questions-index.schema.json",
-  "title": "Sorular icin hafif indeks (soru metni yok)",
-  "description": "data/<cert>/questions/index.json. docs/04-veri-modeli.md §3.6. CI check #8 bu dosyayi parca dosyalariyla karsilastirir.",
+  "title": "Lightweight index for questions (no question text)",
+  "description": "data/<cert>/questions/index.json. docs/04-data-model.md §3.6. CI check #8 compares this file against the chunk files.",
   "type": "object",
   "required": ["dataVersion", "count", "chunks", "questions"],
   "additionalProperties": false,

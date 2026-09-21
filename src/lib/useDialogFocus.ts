@@ -1,12 +1,13 @@
 /**
- * Acik bir diyalogun klavye sozlesmesi (docs/06 §7).
+ * The keyboard contract of an open dialog (docs/06 §7).
  *
- * Uc diyalog — gonderme onayi, gezinme cekmecesi, kisayol yardimi — ayni
- * dort kurali ayri ayri kurmustu: acilista ilk dugmeye odaklan, Tab'i panel
- * icinde tut, Escape ile kapan, kapanista odagi aciciya geri ver.
+ * Three dialogs — the submit confirmation, the navigation drawer and the
+ * shortcut help — each wired up the same four rules separately: focus the
+ * first button on open, keep Tab inside the panel, close on Escape, and
+ * return focus to the opener on close.
  *
- * Dinleyici yakalama (capture) asamasinda baglanir: oturum ekraninin genel
- * kisayollari diyalog aciken Escape'i gormemelidir.
+ * The listener is attached in the capture phase: the session screen's global
+ * shortcuts must not see Escape while a dialog is open.
  */
 
 import { useEffect, type RefObject } from "react";

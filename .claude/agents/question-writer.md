@@ -29,7 +29,7 @@ inverse, and must not contain an option that gives away another question's
 answer. Shared taxonomy vocabulary is fine.
 
 Never invent an exam fact. If something is not in `objectives.json`,
-`meta.json`, `terms.json` or `docs/03-istqb-referans.md`, dispatch the
+`meta.json`, `terms.json` or `docs/03-istqb-reference.md`, dispatch the
 `syllabus-fact-checker` agent rather than trusting your memory.
 
 Never reproduce or adapt an official ISTQB or TTB sample question, including

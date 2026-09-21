@@ -1,7 +1,7 @@
 /**
- * Diyalogun arkasindaki karartma. Dugme olmasinin nedeni erisilebilirlik:
- * disari tiklayarak kapatmak klavyeyle de yapilabilmeli ve ekran okuyucu
- * ne yaptigini soyleyebilmeli.
+ * The dimmed backdrop behind a dialog. It's a button for accessibility:
+ * closing by clicking outside must also be possible from the keyboard, and
+ * the screen reader must be able to say what it does.
  */
 export interface DialogScrimProps {
   label: string;

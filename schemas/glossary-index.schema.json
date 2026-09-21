@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://istqb-prep/schemas/glossary-index.schema.json",
-  "title": "Sozluk terim indeksi (arama icin)",
-  "description": "data/<cert>/glossary/index.json. docs/04-veri-modeli.md §3.9. Terimlerin tanimlarini degil sadece slug/tr/en/chunk'ini tasir.",
+  "title": "Glossary term index (for search)",
+  "description": "data/<cert>/glossary/index.json. docs/04-data-model.md §3.9. Carries only each term's slug/tr/en/chunk, not its definitions.",
   "type": "object",
   "required": ["terms"],
   "additionalProperties": false,

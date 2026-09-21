@@ -30,12 +30,12 @@ esac
 cd "${CLAUDE_PROJECT_DIR:-$(dirname "$0")/../..}" || exit 0
 
 if ! build_output=$(yarn build:index 2>&1); then
-  printf 'build:index basarisiz (%s duzenlendikten sonra):\n%s\n' "$file_path" "$build_output" >&2
+  printf 'build:index failed (after editing %s):\n%s\n' "$file_path" "$build_output" >&2
   exit 2
 fi
 
 if ! validate_output=$(yarn validate:data 2>&1); then
-  printf 'validate:data HATA verdi (%s duzenlendikten sonra). Yayina girmeden once duzeltilmeli:\n%s\n' \
+  printf 'validate:data reported an ERROR (after editing %s). Fix before publishing:\n%s\n' \
     "$file_path" "$validate_output" >&2
   exit 2
 fi

@@ -1,13 +1,14 @@
 /**
- * Puan cubugu (F1-12).
+ * Score bar (F1-12).
  *
- * Tasarim karari (docs/06 §3.4): baraj cizgisi HER ZAMAN cizilir — gecildiginde
- * de kalindiginda da. Skor yumusatilmaz, yuvarlanmaz; cubuk gercek puani
- * gosterir ve esik cubugun uzerinde acik bir isaret olarak durur.
+ * Design decision (docs/06 §3.4): the pass-mark line is ALWAYS drawn — both
+ * when the candidate passed and when they failed. The score is never
+ * smoothed or rounded; the bar shows the real score, and the threshold sits
+ * on top of the bar as a clear mark.
  *
- * Renk tek basina anlam tasimaz (WCAG 1.4.1): cubuk her zaman sayisal bir
- * etiketle birlikte kullanilir ve `aria-label` skoru metin olarak soyler.
- * Grafik icin kutuphane yok — saf CSS.
+ * Color never carries meaning on its own (WCAG 1.4.1): the bar is always
+ * paired with a numeric label, and `aria-label` states the score as text.
+ * No library for the chart — plain CSS.
  */
 
 export type ScoreBarTone = "accent" | "correct" | "incorrect";
@@ -15,18 +16,19 @@ export type ScoreBarTone = "accent" | "correct" | "incorrect";
 export interface ScoreBarProps {
   value: number;
   max: number;
-  /** Baraj gibi acikca isaretlenen esik. Verilmezse cizgi cizilmez. */
+  /** A threshold marked explicitly, such as the pass mark. No line is drawn if omitted. */
   markAt?: number;
-  /** Cubugun altinda esigin adi — orn. "Baraj 26". */
+  /** The threshold's name below the bar — e.g. "Pass mark 26". */
   markLabel?: string;
   /**
-   * Gercekte sorulan soru sayisi. `max` resmi hedef oldugunda, sorulmayan
-   * bolge taranarak gosterilir: eksik havuz gorsel olarak da gizlenmez.
+   * The number of questions actually asked. When `max` is the official
+   * target, the unasked region is shown hatched: a short pool is never
+   * visually hidden either.
    */
   reach?: number;
   tone?: ScoreBarTone;
   size?: "sm" | "lg";
-  /** Ekran okuyucu icin tam cumle — cubuk tek basina bilgi tasimaz. */
+  /** The full sentence for the screen reader — the bar carries no information on its own. */
   ariaLabel: string;
   startLabel?: string;
   endLabel?: string;
@@ -50,7 +52,7 @@ export function ScoreBar({
   startLabel,
   endLabel,
 }: ScoreBarProps) {
-  // Bolme hatasi ve tasma, cizim yapilmadan once elenir.
+  // Division-by-zero and overflow are ruled out before any drawing happens.
   const span = max > 0 ? max : 0;
   const ratio = (n: number) => (span === 0 ? 0 : Math.min(100, Math.max(0, (n / span) * 100)));
 
@@ -87,8 +89,9 @@ export function ScoreBar({
           <div
             aria-hidden="true"
             className="absolute inset-y-0 w-0.5 rounded-full bg-fg"
-            // Esik uclardayken de tam gorunur kalsin diye cubugun icine
-            // kenetlenir; baraj cizgisi hicbir durumda kirpilmaz.
+            // Clamped into the bar so the mark stays fully visible even when
+            // the threshold sits at either end; the pass-mark line is never
+            // clipped under any circumstance.
             style={{ left: `clamp(0px, calc(${ratio(markAt)}% - 1px), calc(100% - 2px))` }}
           />
         ) : null}

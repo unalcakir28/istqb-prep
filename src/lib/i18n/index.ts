@@ -1,14 +1,15 @@
 /**
- * F1-04 — Arayuz dili.
+ * F1-04 — UI language.
  *
- * ONEMLI: arayuz dili ile ICERIK dili ayri kavramlardir.
- * - Arayuz dili: dugmeler, basliklar, menuler. Burada yonetilir.
- * - Icerik dili: sorunun ve gerekcenin TR mi EN mi gosterildigi. Sinav
- *   oturumunda ayri tutulur, cunku aday arayuzu Turkce birakip soruyu
- *   Ingilizce okumak isteyebilir — gercek sinav kitapcigi da iki dillidir.
+ * IMPORTANT: the UI language and the CONTENT language are separate concepts.
+ * - UI language: buttons, headings, menus. Managed here.
+ * - Content language: whether the question and its rationale are shown in
+ *   TR or EN. Kept separate during the exam session, because a candidate
+ *   may want to leave the UI in Turkish while reading the question in
+ *   English — the real exam booklet is bilingual too.
  *
- * `<html lang>` her zaman ARAYUZ diline ayarlanir; soru govdesi kendi `lang`
- * ozniteligini tasir, boylece ekran okuyucu dogru sesletir.
+ * `<html lang>` is always set to the UI language; the question body carries
+ * its own `lang` attribute, so the screen reader pronounces it correctly.
  */
 
 import i18next from "i18next";
@@ -22,9 +23,9 @@ export const UI_LANGUAGES = ["tr", "en"] as const;
 export type UiLanguage = (typeof UI_LANGUAGES)[number];
 
 /**
- * ICERIK dili secenekleri, kendi dillerindeki adlariyla. Arayuz dilinden
- * bagimsizdir (yukaridaki nota bakin); kurulum ve inceleme ekranlarinda
- * ayni liste sunulur.
+ * CONTENT language options, named in their own language. Independent of the
+ * UI language (see the note above); the same list is presented on the setup
+ * and review screens.
  */
 export const CONTENT_LANGUAGES: { value: Lang; label: string }[] = [
   { value: "tr", label: "Türkçe" },
@@ -37,13 +38,13 @@ function isUiLanguage(value: unknown): value is UiLanguage {
   return typeof value === "string" && (UI_LANGUAGES as readonly string[]).includes(value);
 }
 
-/** Kayitli tercih > tarayici dili > Turkce. */
+/** Stored preference > browser language > Turkish. */
 export function detectUiLanguage(): UiLanguage {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (isUiLanguage(stored)) return stored;
   } catch {
-    // Gizli sekmede localStorage erisimi atabilir; varsayilana duseriz.
+    // localStorage access can throw in private browsing; fall back to the default.
   }
 
   const browser = typeof navigator === "undefined" ? "" : navigator.language.slice(0, 2);
@@ -57,7 +58,7 @@ export function setUiLanguage(language: UiLanguage): void {
   try {
     localStorage.setItem(STORAGE_KEY, language);
   } catch {
-    // Tercih kalici olmazsa da oturum icinde calisir.
+    // Still works within the session even if the preference isn't persisted.
   }
 }
 

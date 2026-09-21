@@ -1,13 +1,13 @@
 /**
- * F1-11 — Ana sayfa.
+ * F1-11 — Home page.
  *
- * Uc isi var ve sirasi onemli:
- *  1. Yarim kalan deneme varsa (F1-10) en ustte gosterilir — geri donen
- *     kullanicinin ilk ihtiyaci budur.
- *  2. Sinavin gercek sabitlerini soyler. 40/26/60/75 koda GOMULMEZ,
- *     hepsi meta.json'dan okunur (CLAUDE.md "Yapma" listesi).
- *  3. Havuz bir tam deneme uretemiyorsa bunu acikca yazar (F1-05c).
- *     Sessizce eksik deneme uretmek yasak (CLAUDE.md kural 8).
+ * It has three jobs, and their order matters:
+ *  1. An unfinished exam (F1-10) is shown at the top — that is the first thing
+ *     a returning user needs.
+ *  2. It states the exam's real constants. 40/26/60/75 are NEVER hard-coded;
+ *     all of them are read from meta.json (the CLAUDE.md "do not" list).
+ *  3. If the pool cannot produce a full exam it says so plainly (F1-05c).
+ *     Silently generating a short exam is forbidden (CLAUDE.md rule 8).
  */
 
 import { useState } from "react";
@@ -51,7 +51,7 @@ async function loadHome(): Promise<HomeData> {
     contentClient.getIndex(cert.path),
   ]);
 
-  // Yalnizca yayinlanmis sorular sayilir; taslak soru denemeye girmez.
+  // Only published questions are counted; a draft never enters an exam.
   const pool = index.questions.filter((entry) => entry.status === "published");
   const preview = previewCoverage(blueprint, pool);
 

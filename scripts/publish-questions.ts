@@ -1,17 +1,18 @@
 /**
- * Gozden gecirilmis sorulari yayina alir: status "review" -> "published".
+ * Publishes reviewed questions: status "review" -> "published".
  *
- * CLAUDE.md kurali: `meta.reviewedBy` bossa `status` `published` OLAMAZ.
- * Bu betik o kapinin tek gecis yoludur — elle sed atmak, gozden gecirenin
- * kim oldugunu kaydetmeden soruyu yayina sokar ve kurali sessizce deler.
+ * CLAUDE.md rule: `status` CANNOT be `published` while `meta.reviewedBy` is
+ * empty. This script is the only way through that gate — hand-editing with
+ * sed would publish a question without recording who reviewed it, silently
+ * breaking the rule.
  *
- * Kullanim:
- *   yarn publish:questions --reviewer "ad" --chunk ch04-a
- *   yarn publish:questions --reviewer "ad" --chunk ch04-a --except ctfl4-0067,ctfl4-0070
- *   yarn publish:questions --reviewer "ad" --all --dry-run
+ * Usage:
+ *   yarn publish:questions --reviewer "name" --chunk ch04-a
+ *   yarn publish:questions --reviewer "name" --chunk ch04-a --except ctfl4-0067,ctfl4-0070
+ *   yarn publish:questions --reviewer "name" --all --dry-run
  *
- * `--except` ile birakilan sorular `review` kalir; dogrulamada bulgu alan
- * sorular duzeltilene kadar yayina girmemelidir.
+ * Questions held back with `--except` stay in `review`; questions with
+ * findings from validation must not be published until they're fixed.
  */
 
 import fs from "node:fs";
@@ -29,7 +30,7 @@ interface Options {
 }
 
 function fail(message: string): never {
-  console.error(`HATA: ${message}`);
+  console.error(`ERROR: ${message}`);
   process.exit(1);
 }
 
@@ -42,12 +43,12 @@ function parseArgs(argv: string[]): Options {
 
   const reviewer = get("--reviewer");
   if (!reviewer || reviewer.startsWith("--")) {
-    fail("--reviewer zorunlu. Gozden gecireni kaydetmeden soru yayinlanamaz.");
+    fail("--reviewer is required. A question cannot be published without recording who reviewed it.");
   }
 
   const all = argv.includes("--all");
   const chunk = get("--chunk");
-  if (!all && !chunk) fail("--chunk <ad> veya --all gerekli.");
+  if (!all && !chunk) fail("--chunk <name> or --all is required.");
 
   return {
     reviewer,
@@ -86,7 +87,7 @@ function main(): void {
 
         if (options.except.has(question.id)) {
           held += 1;
-          console.log(`  bekletildi  ${question.id} (--except)`);
+          console.log(`  held        ${question.id} (--except)`);
           continue;
         }
 
@@ -99,15 +100,15 @@ function main(): void {
 
       if (!dirty || options.dryRun) continue;
       fs.writeFileSync(filePath, `${JSON.stringify(doc, null, 2)}\n`, "utf8");
-      console.log(`  yazildi     ${chunkName}`);
+      console.log(`  written     ${chunkName}`);
     }
   }
 
-  const prefix = options.dryRun ? "[kuru calisma] " : "";
-  console.log(`${prefix}${published} soru yayina alindi, ${held} soru bekletildi.`);
+  const prefix = options.dryRun ? "[dry run] " : "";
+  console.log(`${prefix}${published} question(s) published, ${held} question(s) held back.`);
   if (options.dryRun) return;
 
-  console.log("Simdi calistirin: yarn build:index && yarn validate:data");
+  console.log("Now run: yarn build:index && yarn validate:data");
 }
 
 main();

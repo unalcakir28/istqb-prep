@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://istqb-prep/schemas/exam-blueprint.schema.json",
-  "title": "Resmi sinav soru dagilimi (LO gruplari)",
+  "title": "Official exam question distribution (LO groups)",
   "type": "object",
   "required": ["syllabusVersion", "source", "groups"],
   "additionalProperties": false,
@@ -11,11 +11,11 @@
     "rule": { "type": "string" },
     "status": {
       "type": "string",
-      "description": "Opsiyonel ilerleme notu, orn. 'INCOMPLETE - F0-05 ile tamamlanacak'."
+      "description": "Optional progress note, e.g. 'INCOMPLETE - to be completed with F0-05'."
     },
     "totals": {
       "type": "object",
-      "description": "Kendi-beyan ozet alani. Beklenen degerler burada SABITLENMEZ - CLAUDE.md geregi tek dogruluk kaynagi syllabus.json/meta.json'dur. CI check #9 bu alani degil, groups[] toplamini syllabus.json ile karsilastirir.",
+      "description": "Self-reported summary field. Expected values are NOT hardcoded here — per CLAUDE.md, the single source of truth is syllabus.json/meta.json. CI check #9 compares the groups[] total against syllabus.json, not this field.",
       "required": ["questions", "byChapter", "byKLevel"],
       "additionalProperties": false,
       "properties": {

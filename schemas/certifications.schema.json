@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://istqb-prep/schemas/certifications.schema.json",
-  "title": "Tum ISTQB sertifikalarinin sinav parametreleri (seed)",
-  "description": "data/certifications.json. docs/04-veri-modeli.md §2 satir 24. Bu, sinav uretim motorunun okudugu meta.json'dan farklidir - burasi tum ISTQB katalogunun referans listesidir.",
+  "title": "Exam parameters for all ISTQB certifications (seed)",
+  "description": "data/certifications.json. docs/04-data-model.md §2 line 24. This differs from meta.json, which the exam generation engine reads — this is the reference list for the full ISTQB catalog.",
   "type": "object",
   "required": ["source", "certifications"],
   "additionalProperties": false,
@@ -49,7 +49,7 @@
     },
     "expertLevel": {
       "type": "object",
-      "description": "Expert Level bu tabloda yok; parametreleri dogrulanamadi (bkz. docs/03-istqb-referans.md).",
+      "description": "Expert Level is not in this table; its parameters could not be verified (see docs/03-istqb-reference.md).",
       "properties": {
         "note": { "type": "string" },
         "acronyms": { "type": "array", "items": { "type": "string" } }

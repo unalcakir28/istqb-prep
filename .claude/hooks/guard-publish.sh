@@ -26,15 +26,16 @@ written=$(printf '%s' "$payload" | jq -r '
 
 if printf '%s' "$written" | grep -qE '"status"[[:space:]]*:[[:space:]]*"published"'; then
   cat >&2 <<'MSG'
-Engellendi: soru durumu elle "published" yapilamaz.
+Blocked: a question's status cannot be set to "published" by hand.
 
-Yayin kapisi tek yoldan gecer, cunku gozden gecireni kaydeden tek yer orasi:
+The publishing gate has exactly one path, because that is the only place that
+records the reviewer:
 
-    yarn publish:questions --reviewer "<ad>" --chunk <parca>
+    yarn publish:questions --reviewer "<name>" --chunk <chunk>
 
-Once sorularin dogrulanmasi gerekiyorsa question-verifier ajanini calistir.
-Soru metnini duzeltmek icin bu dosyayi duzenlemek serbest — engellenen sey
-yalnizca status alanini published yapmak.
+If the questions still need verification, run the question-verifier agent
+first. Editing this file to fix the question text is fine — the only thing
+blocked is setting the status field to published.
 MSG
   exit 2
 fi

@@ -1,16 +1,16 @@
 /**
- * F1-03 — Istemci tarafi kalicilik (IndexedDB / Dexie).
+ * F1-03 — Client-side persistence (IndexedDB / Dexie).
  *
- * Backend yok, hesap yok: kullanicinin tum ilerlemesi yalnizca kendi
- * tarayicisindadir ve hicbir yere gonderilmez (CLAUDE.md kural 7).
+ * No backend, no account: all of the user's progress lives only in their own
+ * browser and is never sent anywhere (CLAUDE.md rule 7).
  *
- * Bunun bedeli, tarayici verisi temizlenirse ilerlemenin gitmesidir; bu
- * yuzden disa/ice aktarma (F3-08) planlanmistir ve gizlilik sayfasinda
- * acikca yazar.
+ * The cost of that is that progress is lost if the browser's data is
+ * cleared; that's why export/import (F3-08) is planned, and it's stated
+ * explicitly on the privacy page.
  *
- * Tablolar Faz 1'de tamami kullanilmaz (srsCards, bookmarks Faz 2-3), ama
- * semanin bastan tanimlanmasi ileride surum atlamadan migrasyon yapmayi
- * saglar.
+ * Not all tables are used in Phase 1 (srsCards and bookmarks are Phase 2-3),
+ * but defining the schema up front lets future migrations happen without
+ * skipping a version.
  */
 
 import Dexie, { type Table } from "dexie";
@@ -25,14 +25,14 @@ export interface Attempt {
   seed: number;
   questionIds: string[];
   status: AttemptStatus;
-  /** Denemenin kuruldugu andaki sure — meta'dan gelir, koda gomulmez. */
+  /** The duration at the moment the attempt was set up — comes from meta, never hardcoded. */
   durationMinutes: number;
   contentLang: Lang;
   startedAt: number;
-  /** Sayac `Date.now()` tabanlidir: sekme arka planda kalirsa kaymaz. */
+  /** The countdown is based on `Date.now()`: it doesn't drift if the tab stays in the background. */
   deadlineAt: number;
   submittedAt?: number;
-  /** Sure dolarak mi teslim edildi — sonuc ekraninda ayrica gosterilir. */
+  /** Whether it was submitted because time ran out — shown separately on the result screen. */
   autoSubmitted?: boolean;
   points?: number;
   totalPoints?: number;
@@ -42,7 +42,7 @@ export interface Attempt {
 }
 
 export interface Response {
-  /** `${attemptId}:${questionId}` — ayni soruya ikinci kayit olusmaz. */
+  /** `${attemptId}:${questionId}` — no second record is ever created for the same question. */
   key: string;
   attemptId: string;
   questionId: string;
@@ -93,9 +93,10 @@ export class AppDatabase extends Dexie {
       settings: "key",
     });
 
-    // v2: yarim kalan denemeyi bulmak her acilista `{certId, status}` ile
-    // sorgulaniyor; bilesik indeks olmadan Dexie tabloyu tariyor ve konsola
-    // uyari basiyor. Tablolarin geri kalani degismedi, veri donusumu gerekmez.
+    // v2: finding a resumable attempt on every launch queries by
+    // `{certId, status}`; without a compound index, Dexie scans the table
+    // and prints a console warning. The rest of the tables are unchanged, no
+    // data migration is needed.
     this.version(2).stores({
       attempts: "id, certId, status, startedAt, [certId+status]",
     });
@@ -109,8 +110,9 @@ export function responseKey(attemptId: string, questionId: string): string {
 }
 
 /**
- * Yarim kalan deneme (F1-10). Birden fazlaysa en yenisi dondurulur —
- * eskiler ana sayfada gosterilmez ama silinmez de.
+ * A resumable attempt (F1-10). If there's more than one, the newest is
+ * returned — older ones aren't shown on the home screen, but they aren't
+ * deleted either.
  */
 export async function findResumableAttempt(certId: string): Promise<Attempt | undefined> {
   const open = await db.attempts.where({ certId, status: "in-progress" }).toArray();
@@ -124,14 +126,16 @@ export async function getResponses(attemptId: string): Promise<Response[]> {
 }
 
 /**
- * Satirin TAMAMI yazilir; eksik alanlar diskten okunup tamamlanmaz.
+ * The ENTIRE row is written; missing fields are never filled in by reading
+ * from disk first.
  *
- * Eskiden bu fonksiyon once `get` sonra `put` yapiyordu. Iki cagri arasinda
- * es zamanlilik korumasi yoktu: kullanici bir sikki secip hemen ayni soruyu
- * isaretlediginde (ikisi de klavye kisayolu) ikinci cagrinin `get`'i birinci
- * cagrinin `put`'undan once donebiliyor ve secimi bos dizi ile eziyordu.
- * Ekranda cevap secili gorunuyor, diskte kayboluyordu. Cagiran tarafin her
- * iki alani da zaten bellekte tuttugu icin okumaya hic gerek yok.
+ * This function used to do a `get` followed by a `put`. There was no
+ * concurrency protection between the two calls: when the user picked an
+ * option and immediately flagged the same question (both are keyboard
+ * shortcuts), the second call's `get` could return before the first call's
+ * `put` did, and it would overwrite the selection with an empty array. The
+ * answer looked selected on screen but vanished on disk. The caller already
+ * holds both fields in memory, so there's no need to read at all.
  */
 export async function saveResponse(
   attemptId: string,
@@ -156,9 +160,9 @@ export async function discardAttempt(attemptId: string): Promise<void> {
 }
 
 /**
- * IndexedDB her ortamda calismaz (gizli sekme, depolama kapali, eski
- * tarayici). Uygulama bunu sessizce yutmamali: kullaniciya ilerlemesinin
- * kaydedilmeyecegi soylenir (F3-12).
+ * IndexedDB doesn't work in every environment (private tab, storage
+ * disabled, old browser). The app must not swallow this silently: the user
+ * is told their progress won't be saved (F3-12).
  */
 export async function isPersistenceAvailable(): Promise<boolean> {
   try {

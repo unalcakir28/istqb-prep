@@ -1,12 +1,12 @@
 /**
- * F1-16 — Inceleme turu (docs/06 §3.5).
+ * F1-16 — Review tour (docs/06 §3.5).
  *
- * Bu ekran urunun asil degerinin gosterildigi yerdir: her sik icin ayri
- * gerekce (CLAUDE.md kural 2). Gerekce paneli katlanmaz, varsayilan aciktir
- * ve her soruya yer verilir.
+ * This screen is where the product's real value shows: a separate rationale
+ * for every option (CLAUDE.md rule 2). The rationale panel does not collapse,
+ * it is open by default, and every question gets one.
  *
- * Soru dili burada da degistirilebilir; secim soru ve sik ID'si uzerinden
- * tutuldugu icin cevaplar etkilenmez.
+ * The question language can be switched here too; because a selection is held
+ * by question id and option id, the answers are unaffected.
  */
 
 import { useEffect, useState } from "react";
@@ -22,13 +22,13 @@ import { CONTENT_LANGUAGES } from "@/lib/i18n";
 
 type Filter = "all" | "wrong";
 
-/** Iki segmentli dugme grubu — filtre ve soru dili ayni gorunumu paylasir. */
+/** A two-segment button group — the filter and the question language share one look. */
 function segmentClasses(active: boolean): string {
   if (active) return "rounded-[6px] bg-accent px-3 py-1.5 text-xs font-semibold text-accent-fg";
   return "rounded-[6px] px-3 py-1.5 text-xs font-medium text-fg-muted hover:text-fg";
 }
 
-/** Cevapsiz soru yanlistan ayri soylenir; renk tek basina yetmez (WCAG 1.4.1). */
+/** An unanswered question is stated separately from a wrong one; colour alone is not enough (WCAG 1.4.1). */
 function OutcomeBadge({ isCorrect, answered }: { isCorrect: boolean; answered: boolean }) {
   const { t } = useTranslation();
 

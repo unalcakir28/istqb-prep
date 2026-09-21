@@ -18,8 +18,8 @@ You are **read-only**. Report findings; never edit a question.
 1. `data/ctfl-v4.0.1/objectives.json` — the 64 learning objectives and their K-levels
 2. `data/ctfl-v4.0.1/syllabus.json` and `data/ctfl-v4.0.1/meta.json` — exam structure
 3. `data/ctfl-v4.0.1/terms.json` — the only source of truth for EN↔TR terminology
-4. `docs/03-istqb-referans.md` — verified facts, already sourced; do not re-research
-5. `docs/07-icerik-uretim-rehberi.md` — the authoring rules
+4. `docs/03-istqb-reference.md` — verified facts, already sourced; do not re-research
+5. `docs/07-content-authoring-guide.md` — the authoring rules
 
 Never rely on your own memory of the syllabus over these files. If a claim
 cannot be grounded in them, that is itself a finding.

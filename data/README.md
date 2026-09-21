@@ -1,36 +1,36 @@
 # data/
 
-Tüm içerik burada, **indekslenmiş ve parçalanmış statik JSON** olarak durur.
-Yapı, şemalar ve kurallar: [`../docs/04-veri-modeli.md`](../docs/04-veri-modeli.md)
+All content lives here as **indexed, chunked static JSON**.
+Structure, schemas, and rules: [`../docs/04-data-model.md`](../docs/04-data-model.md)
 
 ```
-manifest.json                  Kök indeks — sertifikalar, dataVersion
-certifications.json            Tüm ISTQB sertifikalarının sınav parametreleri (28)  ✅
+manifest.json                  Root index — certifications, dataVersion
+certifications.json            Exam parameters for all ISTQB certifications (28)  ✅
 ctfl-v4.0.1/
-  meta.json                    Sınav mekaniği + resmî kaynak bağlantıları      ✅
-  syllabus.json                6 bölüm, ağırlıklar, K dağılımları              ✅
-  objectives.json              64 öğrenme hedefi                     ⚠️ 3/64 (F0-06)
-  exam-blueprint.json          Resmî LO-grubu → soru dağılımı        ⚠️ kısmi (F0-05)
+  meta.json                    Exam mechanics + official source links           ✅
+  syllabus.json                6 chapters, weights, K-level distributions       ✅
+  objectives.json              64 learning objectives                 ⚠️ 3/64 (F0-06)
+  exam-blueprint.json          Official LO-group → question distribution ⚠️ partial (F0-05)
   questions/
-    index.json                 Hafif indeks (soru metni YOK)                   ✅
-    ch01-a.json                Soru parçası, ≤40 soru                 ⚠️ 1 örnek soru
-  glossary/                                                          ⚠️ boş (F0-09)
-  exams/                       Küratörlü sabit denemeler                        —
+    index.json                 Lightweight index (NO question text)            ✅
+    ch01-a.json                Question chunk, ≤40 questions           ⚠️ 1 sample question
+  glossary/                                                          ⚠️ empty (F0-09)
+  exams/                       Curated fixed exams                              —
 ```
 
-## Kurallar
+## Rules
 
-1. **Soru parçası başına en fazla 40 soru.** Dolunca `-b`, `-c` ile devam et. **Dosya adı asla değişmez** (CDN + PWA önbelleği).
-2. **Soru silinmez.** Kaldırılan soru `status: "retired"` alır.
-3. **Soru ID'si yeniden kullanılmaz.**
-4. Her soru **TR ve EN** içermek zorunda; `rationale.byOption` **her şık için** dolu olmalı. Eksikse CI kırılır.
-5. `origin` alanının **`official` değeri yoktur** — resmî ISTQB/TTB soruları kopyalanmaz. Bkz. [`../docs/08-hukuki-ve-telif.md`](../docs/08-hukuki-ve-telif.md).
-6. `meta.reviewedBy` boşsa `status` **`published` olamaz**.
+1. **At most 40 questions per chunk.** Once full, continue with `-b`, `-c`. **The filename never changes** (CDN + PWA cache).
+2. **Questions are never deleted.** A removed question gets `status: "retired"`.
+3. **Question IDs are never reused.**
+4. Every question must include **both TR and EN**; `rationale.byOption` must be filled in **for every option**. CI fails if it isn't.
+5. The `origin` field **has no `official` value** — official ISTQB/TTB questions are never copied. See [`../docs/08-legal-and-copyright.md`](../docs/08-legal-and-copyright.md).
+6. If `meta.reviewedBy` is empty, `status` **cannot be `published`**.
 
-## Doğrulama
+## Validation
 
 ```bash
-npm run validate:data    # JSON Schema + 13 tutarlılık kontrolü
-npm run build:index      # parçalardan questions/index.json üret
-npm run stats            # LO başına kapsama raporu → docs/kapsama.md
+yarn validate:data    # JSON Schema + 15 consistency checks
+yarn build:index      # build questions/index.json from the chunks
+yarn stats            # per-LO coverage report → docs/coverage.md
 ```

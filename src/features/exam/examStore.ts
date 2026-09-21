@@ -1,14 +1,14 @@
 /**
- * Sinav oturumu durumu (Zustand) + IndexedDB kaliciligi.
+ * Exam session state (Zustand) + IndexedDB persistence.
  *
- * Tasarim notlari:
- * - Sayac `deadlineAt` (mutlak zaman damgasi) uzerinden yurur. Kalan sureyi
- *   saymak yerine bitis anini saklamak, sekme arka plana alindiginda veya
- *   cihaz uykuya gectiginde surenin kaymasini onler (F1-08).
- * - Her cevap aninda IndexedDB'ye yazilir; yenileme veya kaza ile kapatma
- *   sonrasi oturum kurtarilabilir (F1-10).
- * - Icerik dili oturum icinde degisebilir ve cevabi ETKILEMEZ: secim soru
- *   ID'si + sik ID'si uzerinden tutulur, metin uzerinden degil.
+ * Design notes:
+ * - The timer runs off `deadlineAt` (an absolute timestamp). Storing the end
+ *   instant rather than counting down the remaining time keeps the clock from
+ *   drifting when the tab goes to the background or the device sleeps (F1-08).
+ * - Every answer is written to IndexedDB immediately, so a session survives a
+ *   refresh or an accidental close (F1-10).
+ * - The content language may change mid-session and does NOT affect the
+ *   answer: a selection is held by question id + option id, never by text.
  */
 
 import { create } from "zustand";
@@ -39,7 +39,7 @@ interface ExamState {
   score: ExamScore | null;
   loading: boolean;
   error: string | null;
-  /** IndexedDB yazmasi basarisiz oldu — ilerleme diske gitmiyor (F3-12). */
+  /** An IndexedDB write failed — progress is not reaching disk (F3-12). */
   persistFailed: boolean;
 
   startExam: (options: StartExamOptions) => Promise<string | null>;
@@ -69,7 +69,7 @@ const initial = {
   persistFailed: false,
 };
 
-/** Daha once gorulmus sorular — yeni denemede tekrar sorulmamasi tercih edilir. */
+/** Questions already seen — preferably not asked again in a new exam. */
 export async function collectSeenQuestionIds(certId: string): Promise<Set<string>> {
   const attempts = await db.attempts.where({ certId }).toArray();
   const seen = new Set<string>();
@@ -83,10 +83,11 @@ export async function collectSeenQuestionIds(certId: string): Promise<Set<string
 }
 
 /**
- * Cevap ve isaret yazmalari "ates et unut" calisir: kullanici yazmanin
- * bitmesini beklemez. Ama hata yutulmaz — gizli sekmede veya depolama
- * kapaliyken yazma patlar, ekranda cevap secili gorunur ve yenilemede
- * kaybolurdu. Bayrak kaldirilir, sinav ekrani kullaniciya soyler.
+ * Answer and flag writes are fire-and-forget: the user does not wait for the
+ * write to finish. The error is not swallowed, though — in a private tab or
+ * with storage disabled the write throws, the answer still looks selected on
+ * screen, and it would vanish on refresh. The flag is raised and the exam
+ * screen tells the user.
  */
 function persist(
   set: (partial: Partial<ExamState>) => void,
@@ -110,7 +111,7 @@ export const useExamStore = create<ExamState>((set, get) => ({
         contentClient.getIndex(certPath),
       ]);
 
-      // Yalnizca yayinlanmis sorular havuza girer; taslak soru sinavda cikmaz.
+      // Only published questions enter the pool; a draft never appears in an exam.
       const pool: QuestionIndexEntry[] = index.questions.filter(
         (entry) => entry.status === "published",
       );
@@ -186,7 +187,7 @@ export const useExamStore = create<ExamState>((set, get) => ({
         if (response.flagged) flagged[response.questionId] = true;
       }
 
-      // Kaldigi yerden degil, ilk cevapsiz sorudan devam etmek daha faydali.
+      // Resuming at the first unanswered question is more useful than resuming where the user left off.
       const firstUnanswered = attempt.questionIds.findIndex((id) => !answers[id]);
 
       set({
@@ -231,13 +232,13 @@ export const useExamStore = create<ExamState>((set, get) => ({
     let updated: string[];
 
     if (question.selectCount === 1) {
-      // Tek secimli: ayni sikka tekrar basmak secimi kaldirir.
+      // Single-answer: pressing the same option again clears the selection.
       updated = current.includes(optionId) ? [] : [optionId];
     } else if (current.includes(optionId)) {
       updated = current.filter((id) => id !== optionId);
     } else if (current.length >= question.selectCount) {
-      // Sinir asilinca en eski secim dusurulur; kullanici once secimini
-      // kaldirmak zorunda kalmaz.
+      // Past the limit the oldest selection is dropped, so the user does not
+      // have to clear a selection first.
       updated = [...current.slice(1), optionId];
     } else {
       updated = [...current, optionId];

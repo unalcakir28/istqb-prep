@@ -54,7 +54,7 @@ function ThemeToggle() {
   );
 }
 
-/** Arayuz dili — sorunun dili DEGIL. O, sinav oturumunda ayrica yonetilir. */
+/** UI language — NOT the question's language. That is managed separately during the exam session. */
 function UiLanguageToggle() {
   const { t, i18n } = useTranslation();
   const active = i18n.language as UiLanguage;
@@ -88,8 +88,8 @@ export function Layout() {
   const { t } = useTranslation();
   const location = useLocation();
 
-  // Sinav sirasinda ekranda sorudan baska sey olmaz (docs/06 §1.1):
-  // ust menu ve altbilgi gizlenir.
+  // During the exam, nothing but the question appears on screen (docs/06
+  // §1.1): the top nav and footer are hidden.
   const isExamSession = /^\/deneme\/[^/]+$/.test(location.pathname);
 
   return (

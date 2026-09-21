@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://istqb-prep/schemas/question.schema.json",
-  "title": "Soru parçası (question chunk)",
+  "title": "Question chunk",
   "type": "object",
   "required": ["chunk", "chapter", "dataVersion", "questions"],
   "additionalProperties": false,
@@ -40,7 +40,7 @@
             "summary": { "type": "string", "minLength": 20 },
             "byOption": {
               "type": "object",
-              "description": "HER sik icin dolu olmali. CI ayrica kontrol eder.",
+              "description": "Must be filled in for EVERY option. CI also checks this.",
               "minProperties": 2,
               "patternProperties": { "^[a-f]$": { "type": "string", "minLength": 15 } },
               "additionalProperties": false
@@ -76,7 +76,7 @@
       "additionalProperties": false,
       "allOf": [
         {
-          "description": "meta.reviewedBy bos ise status 'published' OLAMAZ (CLAUDE.md ve docs/04 kurali).",
+          "description": "status CANNOT be 'published' while meta.reviewedBy is empty (rule from CLAUDE.md and docs/04).",
           "if": {
             "properties": { "status": { "const": "published" } },
             "required": ["status"]
@@ -113,7 +113,7 @@
         "tags": { "type": "array", "items": { "type": "string" } },
         "origin": {
           "enum": ["original", "adapted", "community"],
-          "description": "'official' DEGERI YOKTUR - resmi sorular kopyalanmaz. Bkz. docs/08-hukuki-ve-telif.md"
+          "description": "There is no 'official' value — official questions are never copied. See docs/08-legal-and-copyright.md"
         },
         "status": { "enum": ["draft", "review", "published", "retired"] },
         "correct": { "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^[a-f]$" } },
@@ -135,7 +135,7 @@
             "author": { "type": "string" },
             "reviewedBy": {
               "type": "string",
-              "description": "Bos string = henuz gozden gecirilmedi. status='published' iken dolu olmak ZORUNDA (yukaridaki allOf/if/then)."
+              "description": "Empty string = not yet reviewed. MUST be filled in while status='published' (see the allOf/if/then above)."
             },
             "createdAt": { "type": "string" },
             "updatedAt": { "type": "string" }

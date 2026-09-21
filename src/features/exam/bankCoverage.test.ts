@@ -1,13 +1,14 @@
 /**
- * Gercek soru bankasinin resmi blueprint'i karsilayip karsilamadigini sinar.
+ * Tests whether the real question bank satisfies the official blueprint.
  *
- * generateExam.test.ts sentetik havuzla MOTORU dogrular; bu dosya ICERIGI
- * dogrular. Ikisi ayri sorular: motor kusursuz olabilir ama havuzda bir LO
- * grubu icin yeterli soru yoksa kullanici eksik deneme alir.
+ * generateExam.test.ts validates the ENGINE against a synthetic pool; this
+ * file validates the CONTENT. The two are separate concerns: the engine can
+ * be flawless, but if the pool lacks enough questions for an LO group, the
+ * user still gets a short exam.
  *
- * Havuza `review` sorulari da dahil edilir: bunlar yazilmis ama heniz
- * yayinlanmamis sorulardir ve icerik kapsamasi acisindan mevcut sayilirlar.
- * Yayin kapisi ayri bir sey (validate-data #10/#11 onu tutar).
+ * `review` questions are included in the pool too: they're written but not
+ * yet published, and count as present for content-coverage purposes. The
+ * publishing gate is a separate matter (validate-data #10/#11 enforces it).
  */
 
 import { describe, it, expect } from "vitest";
@@ -31,12 +32,12 @@ const bank: QuestionIndexEntry[] = index.questions.filter(
   (entry) => entry.status === "published" || entry.status === "review",
 );
 
-describe("gercek soru bankasi", () => {
-  it("her blueprint grubunu karsilayacak kadar soru icerir", () => {
+describe("real question bank", () => {
+  it("contains enough questions to satisfy every blueprint group", () => {
     const { total, shortfalls } = previewCoverage(blueprint, bank);
 
-    // Eksik varsa hangi grup oldugu testte gorunsun — cıplak bir sayi
-    // karsilastirmasi icerik yazarina hicbir sey soylemez.
+    // If something is missing, show which group it is in the test output —
+    // a bare number comparison tells the content author nothing.
     expect(
       shortfalls.map(
         (s) => `${s.groupId} (b${s.chapter} ${s.kLevel}): ${s.available}/${s.required}`,
@@ -45,7 +46,7 @@ describe("gercek soru bankasi", () => {
     expect(total).toBe(blueprint.totals.questions);
   });
 
-  it("bankadan tam 40 soruluk gercek bir deneme uretilebilir", () => {
+  it("can generate a real 40-question exam from the bank", () => {
     for (let seed = 0; seed < 20; seed += 1) {
       const exam = generateExam({ blueprint, pool: bank, seed });
 
@@ -55,7 +56,7 @@ describe("gercek soru bankasi", () => {
     }
   });
 
-  it("uretilen denemenin bolum ve K dagilimi resmi sinavla ayni olur", () => {
+  it("has the generated exam's chapter and K-level distribution match the official exam", () => {
     const byId = new Map(bank.map((entry) => [entry.id, entry]));
 
     for (let seed = 0; seed < 20; seed += 1) {
@@ -74,7 +75,7 @@ describe("gercek soru bankasi", () => {
     }
   });
 
-  it("her ogrenme hedefi icin en az bir soru vardir", () => {
+  it("has at least one question per learning objective", () => {
     const objectives = (
       JSON.parse(readFileSync(resolve(DATA, "objectives.json"), "utf8")) as {
         objectives: Array<{ code: string }>;
@@ -87,7 +88,7 @@ describe("gercek soru bankasi", () => {
     expect(missing).toEqual([]);
   });
 
-  it("her sorunun iki dili de vardir", () => {
+  it("has both languages for every question", () => {
     const monolingual = bank
       .filter((entry) => !(entry.languages.includes("tr") && entry.languages.includes("en")))
       .map((entry) => entry.id);

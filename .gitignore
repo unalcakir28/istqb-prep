@@ -19,7 +19,7 @@ npm-debug.log*
 .eslintcache
 public/data/
 
-# Araç artıkları
+# Tooling leftovers
 .playwright-mcp/
 *.tsbuildinfo
 *.png
