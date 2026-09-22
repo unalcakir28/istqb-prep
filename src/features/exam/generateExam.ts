@@ -62,7 +62,7 @@ function candidatesForGroup(group: BlueprintGroup, pool: QuestionIndexEntry[]) {
 }
 
 /** Unseen questions come first; within a group the order depends on the seed. */
-function preferUnseen(
+export function preferUnseen(
   entries: QuestionIndexEntry[],
   exclude: ReadonlySet<string>,
   rng: () => number,
