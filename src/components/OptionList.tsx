@@ -11,8 +11,14 @@ import type { Lang, QuestionOption } from "@/types/content";
  * - Single-select uses radio semantics, multi-select uses checkbox; a native
  *   input was chosen over Radix because the native behavior is already
  *   correct.
- * - In review mode, correct/wrong is NEVER conveyed by color alone: an icon
+ * - Once revealed, correct/wrong is NEVER conveyed by color alone: an icon
  *   and text are always present too (WCAG 1.4.1).
+ * - The options are a NAMED group (WCAG 1.3.1 / 3.3.2). Without it a screen
+ *   reader entering the options reads four option texts and never the
+ *   question: single-select gets "1 of 4" for free from the shared radio
+ *   `name`, but multi-select gives each checkbox its own name — correct HTML,
+ *   and no grouping at all. `labelledBy` carries the stem and the
+ *   "select 2 options" instruction, so both are read on entry.
  */
 export interface OptionListProps {
   questionId: string;
@@ -21,16 +27,18 @@ export interface OptionListProps {
   selectCount: number;
   lang: Lang;
   onSelect?: (optionId: string) => void;
-  /** Review mode: selection is locked, the correct answer is marked. */
-  review?: boolean;
+  /** Once revealed: selection is locked, the correct answer is marked. */
+  revealed?: boolean;
   correct?: string[];
+  /** Space-separated ids naming the group — the stem and the instruction. */
+  labelledBy?: string;
 }
 
 const ROW =
   "flex w-full items-start gap-3 rounded-[var(--radius-card)] border px-4 py-3 text-left transition-colors";
 
 /**
- * Review-mode state: the correct answer is always marked; the user's wrong
+ * Revealed state: the correct answer is always marked; the user's wrong
  * pick additionally turns red.
  */
 function rowState(showAsCorrect: boolean, showAsWrong: boolean, isSelected: boolean): string {
@@ -63,62 +71,67 @@ export function OptionList({
   selectCount,
   lang,
   onSelect,
-  review = false,
+  revealed = false,
   correct = [],
+  labelledBy,
 }: OptionListProps) {
   const { t } = useTranslation();
   const multi = selectCount > 1;
 
   return (
-    <ul className="flex flex-col gap-2">
+    /* The group replaces the former `<ul>`: "list, 4 items" on top of
+       "radio group, 1 of 4" is noise, and a list cannot carry the name. */
+    <div
+      role={multi ? "group" : "radiogroup"}
+      aria-labelledby={labelledBy}
+      className="flex flex-col gap-2"
+    >
       {options.map((option, position) => {
         const isSelected = selected.includes(option.id);
         const isCorrect = correct.includes(option.id);
-        const showAsCorrect = review && isCorrect;
-        const showAsWrong = review && isSelected && !isCorrect;
+        const showAsCorrect = revealed && isCorrect;
+        const showAsWrong = revealed && isSelected && !isCorrect;
         const state = rowState(showAsCorrect, showAsWrong, isSelected);
 
         return (
-          <li key={option.id}>
-            <label className={`${ROW} ${state} ${review ? "" : "cursor-pointer"}`}>
-              <input
-                type={multi ? "checkbox" : "radio"}
-                name={multi ? `${questionId}-${option.id}` : questionId}
-                value={option.id}
-                checked={isSelected}
-                disabled={review}
-                onChange={() => onSelect?.(option.id)}
-                className="mt-1 size-4 shrink-0 accent-[var(--accent)]"
-              />
+          <label key={option.id} className={`${ROW} ${state} ${revealed ? "" : "cursor-pointer"}`}>
+            <input
+              type={multi ? "checkbox" : "radio"}
+              name={multi ? `${questionId}-${option.id}` : questionId}
+              value={option.id}
+              checked={isSelected}
+              disabled={revealed}
+              onChange={() => onSelect?.(option.id)}
+              className="mt-1 size-4 shrink-0 accent-[var(--accent)]"
+            />
 
-              <span
-                aria-hidden="true"
-                className="mt-0.5 hidden w-4 shrink-0 font-mono text-xs text-fg-muted sm:block"
-              >
-                {position + 1}
+            <span
+              aria-hidden="true"
+              className="mt-0.5 hidden w-4 shrink-0 font-mono text-xs text-fg-muted sm:block"
+            >
+              {position + 1}
+            </span>
+
+            <span lang={lang} className="flex-1 text-[16px] leading-relaxed">
+              {option.text}
+            </span>
+
+            {showAsCorrect ? (
+              <span className="mt-0.5 flex shrink-0 items-center gap-1 text-xs font-medium text-correct">
+                <CheckIcon />
+                {t("result.correct")}
               </span>
+            ) : null}
 
-              <span lang={lang} className="flex-1 text-[16px] leading-relaxed">
-                {option.text}
+            {showAsWrong ? (
+              <span className="mt-0.5 flex shrink-0 items-center gap-1 text-xs font-medium text-incorrect">
+                <CrossIcon />
+                {t("result.incorrect")}
               </span>
-
-              {showAsCorrect ? (
-                <span className="mt-0.5 flex shrink-0 items-center gap-1 text-xs font-medium text-correct">
-                  <CheckIcon />
-                  {t("result.correct")}
-                </span>
-              ) : null}
-
-              {showAsWrong ? (
-                <span className="mt-0.5 flex shrink-0 items-center gap-1 text-xs font-medium text-incorrect">
-                  <CrossIcon />
-                  {t("result.incorrect")}
-                </span>
-              ) : null}
-            </label>
-          </li>
+            ) : null}
+          </label>
         );
       })}
-    </ul>
+    </div>
   );
 }

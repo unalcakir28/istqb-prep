@@ -1,5 +1,5 @@
 /**
- * F1-16 — Review tour (docs/06 §3.5).
+ * F1-12 — Review tour (docs/06 §3.5).
  *
  * This screen is where the product's real value shows: a separate rationale
  * for every option (CLAUDE.md rule 2). The rationale panel does not collapse,
@@ -17,8 +17,10 @@ import { ErrorNotice } from "@/components/ErrorNotice";
 import { QuestionCard } from "@/components/QuestionCard";
 import { RationalePanel } from "@/components/RationalePanel";
 import { Spinner } from "@/components/Spinner";
-import { useExamStore } from "@/features/exam/examStore";
+import { useSessionStore } from "@/features/session/sessionStore";
 import { CONTENT_LANGUAGES } from "@/lib/i18n";
+import { useArrivalFocus } from "@/lib/useArrivalFocus";
+import { useDocumentTitle } from "@/lib/useDocumentTitle";
 
 type Filter = "all" | "wrong";
 
@@ -55,18 +57,24 @@ export default function Review() {
   const { attemptId } = useParams<{ attemptId: string }>();
   const { t } = useTranslation();
 
-  const attempt = useExamStore((state) => state.attempt);
-  const score = useExamStore((state) => state.score);
-  const questions = useExamStore((state) => state.questions);
-  const answers = useExamStore((state) => state.answers);
-  const contentLang = useExamStore((state) => state.contentLang);
-  const loading = useExamStore((state) => state.loading);
-  const setContentLang = useExamStore((state) => state.setContentLang);
-  const loadSubmitted = useExamStore((state) => state.loadSubmitted);
+  const attempt = useSessionStore((state) => state.attempt);
+  const score = useSessionStore((state) => state.score);
+  const questions = useSessionStore((state) => state.questions);
+  const answers = useSessionStore((state) => state.answers);
+  const contentLang = useSessionStore((state) => state.contentLang);
+  const loading = useSessionStore((state) => state.loading);
+  const setContentLang = useSessionStore((state) => state.setContentLang);
+  const loadSubmitted = useSessionStore((state) => state.loadSubmitted);
 
   const [filter, setFilter] = useState<Filter>("all");
 
   const ready = Boolean(attemptId && attempt?.id === attemptId && score);
+
+  // Arrived at from the result screen, which itself arrived from a session:
+  // without these the tour inherits "Question 40 of 40" as its title and lands
+  // the reader back at the top of the document with nothing said.
+  useDocumentTitle(t("review.title"));
+  const headingRef = useArrivalFocus<HTMLHeadingElement>(ready);
 
   useEffect(() => {
     if (!attemptId || ready) return;
@@ -86,7 +94,11 @@ export default function Review() {
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-8 px-4 py-8 sm:py-12">
       <div className="flex flex-col gap-4">
-        <h1 className="text-[28px] font-semibold leading-tight">{t("review.title")}</h1>
+        {/* `tabIndex={-1}` only so `useArrivalFocus` can put focus here; it
+            stays out of the tab order. */}
+        <h1 ref={headingRef} tabIndex={-1} className="text-[28px] font-semibold leading-tight">
+          {t("review.title")}
+        </h1>
 
         <div className="flex flex-wrap items-center gap-3">
           <div
@@ -155,9 +167,23 @@ export default function Review() {
                   <OutcomeBadge isCorrect={isCorrect} answered={selected.length > 0} />
                 </h2>
 
-                <QuestionCard question={question} lang={contentLang} selected={selected} review />
+                {/* Both nest under the counter heading above rather than
+                    sitting beside it: a 40-question review is 40 groups of
+                    three, not 120 headings in a row. */}
+                <QuestionCard
+                  question={question}
+                  lang={contentLang}
+                  selected={selected}
+                  revealed
+                  headingLevel={3}
+                />
 
-                <RationalePanel question={question} lang={contentLang} selected={selected} />
+                <RationalePanel
+                  question={question}
+                  lang={contentLang}
+                  selected={selected}
+                  headingLevel={3}
+                />
               </li>
             );
           })}

@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 /*
- * Tasarim sistemi — docs/06-ui-ux-design.md §2.
- * Renk asla tek basina anlam tasimaz: dogru/yanlis her zaman ikon + metinle
- * birlikte gosterilir (WCAG 1.4.1).
+ * Design system — docs/06-ui-ux-design.md §2.
+ * Colour never carries meaning on its own: correct and incorrect are always
+ * shown with an icon and text as well (WCAG 1.4.1).
  */
 
 @theme {
@@ -16,7 +16,7 @@
   --radius-badge: 6px;
 }
 
-/* Acik tema varsayilan; koyu tema .dark sinifiyla acilir. */
+/* Light is the default theme; dark is opened by the .dark class. */
 :root {
   --bg: #fafaf9;
   --surface: #ffffff;
@@ -24,12 +24,16 @@
   --border: #e7e5e4;
   --fg: #1c1917;
   --fg-muted: #57534e;
-  --accent: #0f766e;
+  /* teal-700 (#0f766e) reached only 4.37 as 12px text on an accent/10 chip
+     over surface-2 — the citation chip under a revealed rationale. WCAG AA
+     wants 4.5. teal-800 -> 5.98 there, and every other use of the token
+     (white on accent, focus outline, links) only gains contrast. */
+  --accent: #115e59;
   --accent-fg: #ffffff;
   --correct: #15803d;
   --incorrect: #b91c1c;
-  /* amber-800: #b45309 idi ama flag/10 zemin uzerinde 12px metinde
-     kontrast 4.19 cikiyor, WCAG AA esigi 4.5. Koyulastirildi -> 5.9. */
+  /* Was amber-700 #b45309, but as 12px text over a flag/10 background it
+     reached only 4.19 against WCAG AA's 4.5. Darkened to amber-800 -> 5.9. */
   --flag: #92400e;
   --info: #1d4ed8;
 
@@ -53,7 +57,7 @@
   color-scheme: dark;
 }
 
-/* Token'lari Tailwind yardimci siniflarina baglar: bg-surface, text-fg-muted... */
+/* Binds the tokens to Tailwind utility classes: bg-surface, text-fg-muted... */
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
@@ -86,14 +90,14 @@
     text-rendering: optimizeLegibility;
   }
 
-  /* Klavye kullanicisi her yerde nerede oldugunu gormeli (docs/06 §1.5). */
+  /* A keyboard user must see where they are, everywhere (docs/06 §1.5). */
   :focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
     border-radius: 4px;
   }
 
-  /* Fareyle tiklamada halka gosterme, klavyede goster. */
+  /* No ring on a mouse click; show it for the keyboard. */
   :focus:not(:focus-visible) {
     outline: none;
   }
@@ -111,7 +115,7 @@
 }
 
 @layer components {
-  /* Soru govdesi 65ch'i asmamali — uzun satir okunmuyor (docs/06 §2). */
+  /* A question body must not exceed 65ch — long lines do not get read (docs/06 §2). */
   .prose-question {
     max-width: 65ch;
     font-size: 17px;
