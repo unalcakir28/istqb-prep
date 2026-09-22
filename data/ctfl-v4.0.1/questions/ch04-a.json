@@ -1616,7 +1616,7 @@
     },
     {
       "id": "ctfl4-0071",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 4,
       "section": "4.2",
@@ -1663,7 +1663,7 @@
           "rationale": {
             "summary": "Tüm geçişler kapsamında kapsam öğeleri durum tablosunda gösterilen tüm geçişlerdir, yani her hücredir. Üç durum ve üç olayla dokuz hücre vardır: üçü geçerli geçiş, altısı geçersiz geçiş. Test senaryoları geçerli geçişlerin tamamını denemeli, geçersiz geçişleri ise denemeye çalışmalıdır.",
             "byOption": {
-              "a": "Doğru. Tablonun dokuz hücresinin tamamı kapsam öğesidir: üç geçerli, altı geçersiz geçiş. Kusur maskelenmesini önlemek için tek bir test senaryosunda yalnızca bir geçersiz geçiş denenmelidir.",
+              "a": "Doğru. Tablonun dokuz hücresinin tamamı kapsam öğesidir: üç geçerli, altı geçersiz geçiş. Hata maskelenmesini önlemek için tek bir test senaryosunda yalnızca bir geçersiz geçiş denenmelidir.",
               "b": "Yanlış. 12, dokuz hücreye üç durumun eklenmesiyle çıkar. Durumlar tüm durumlar kapsamının kapsam öğesidir, tüm geçişler kapsamının değil.",
               "c": "Yanlış. 3 geçerli geçişlerin sayısıdır ve geçerli geçişler kapsamının (0-anahtar kapsamı) kapsam öğesi sayısıdır. Tüm geçişler kapsamı ayrıca geçersiz geçişlerin de denenmeye çalışılmasını ister.",
               "d": "Yanlış. 6 yalnızca boş hücrelerin, yani geçersiz geçişlerin sayısıdır. Tüm geçişler kapsamı geçerli geçişleri de içerir."
@@ -1711,7 +1711,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-22"
       }
     },
     {
@@ -2381,7 +2381,7 @@
     },
     {
       "id": "ctfl4-0079",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 4,
       "section": "4.4",
@@ -2407,7 +2407,7 @@
       "media": null,
       "i18n": {
         "tr": {
-          "stem": "Kusur ortaya çıkarmaya yönelik saldırılar (fault attacks) hata tahminlemeyi nasıl uygular?",
+          "stem": "Hata ortaya çıkarmaya yönelik saldırılar (fault attacks) hata tahminlemeyi nasıl uygular?",
           "options": [
             {
               "id": "a",
@@ -2427,11 +2427,11 @@
             }
           ],
           "rationale": {
-            "summary": "Kusur ortaya çıkarmaya yönelik saldırılar hata tahminlemenin metodik bir uygulanış biçimidir: test uzmanı olası insan hataları, hatalar ve arızaların bir listesini oluşturur veya edinir, ardından bu insan hatalarıyla ilişkili hataları tanımlayacak, bu hataları ortaya çıkaracak ya da arızalara neden olacak testler tasarlar. Listeler tecrübeye, hata ve arıza verilerine ya da yazılımların neden başarısız olduğuna dair genel bilgiye dayanabilir.",
+            "summary": "Hata ortaya çıkarmaya yönelik saldırılar hata tahminlemenin metodik bir uygulanış biçimidir: test uzmanı olası insan hataları, hatalar ve arızaların bir listesini oluşturur veya edinir, ardından bu insan hatalarıyla ilişkili hataları tanımlayacak, bu hataları ortaya çıkaracak ya da arızalara neden olacak testler tasarlar. Listeler tecrübeye, hata ve arıza verilerine ya da yazılımların neden başarısız olduğuna dair genel bilgiye dayanabilir.",
             "byOption": {
               "a": "Yanlış. Bu, kontrol listesine dayalı testin tanımıdır; test koşulları önceden hazırlanmış bir kontrol listesinden gelir.",
               "b": "Yanlış. Bu, bir beyaz kutu tekniği olan dal testinin çalışma biçimidir; kapsam öğeleri kodun dallarıdır.",
-              "c": "Doğru. Müfredat kusur ortaya çıkarmaya yönelik saldırıları tam olarak böyle tanımlar: olası insan hataları, hatalar ve arızaların listesi ve bu listeden türetilen testler.",
+              "c": "Doğru. Müfredat hata ortaya çıkarmaya yönelik saldırıları tam olarak böyle tanımlar: olası insan hataları, hatalar ve arızaların listesi ve bu listeden türetilen testler.",
               "d": "Yanlış. Bu, keşif testinde kullanılan oturum bazlı yaklaşımın tanımıdır; zaman dilimi ve test başlatma belgesi oraya aittir."
             }
           }
@@ -2471,7 +2471,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-22"
       }
     },
     {

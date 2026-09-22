@@ -2,5 +2,838 @@
   "chunk": "ch05",
   "chapter": 5,
   "dataVersion": "2026.09.19",
-  "lessons": []
+  "lessons": [
+    {
+      "objective": "FL-5.1.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.1.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test planının amacı ve içeriği",
+          "paragraphs": [
+            "Test planı, bir test projesi için test hedeflerini, kaynakları ve süreçleri belirten dokümandır. Hedeflere ulaşmak için kullanılacak araçları ve programı belgeler, yapılan test aktivitelerinin belirlenmiş kriterleri karşılamasına yardımcı olur ve mevcut test politikasına ve test stratejisine uyumu (ya da bunlardan neden sapıldığını) gösterir.",
+            "Test planı aynı zamanda ekip üyeleri ve diğer paydaşlarla iletişim için bir araçtır. Test planlama, test uzmanını riskler, zaman çizelgeleri, insanlar, araçlar, maliyet ve efor gibi konularda ileride karşılaşılacak zorluklara karşı düşünmeye zorlar; bu yüzden planı hazırlama süreci, gereken eforu tahmin etmek için başlı başına faydalı bir egzersizdir.",
+            "Tipik bir test planı; test bağlamını (kapsam, hedefler, test esası), varsayım ve kısıtları, paydaşları, iletişim biçimini, risk kaydını, test yaklaşımını (test seviyeleri, çeşitleri, teknikleri, giriş/çıkış kriterleri gibi unsurlarla birlikte) ve bütçe ile zaman çizelgesini içerir. Örneğin bir mobil bankacılık projesinin test planında, ödeme akışının en yüksek risk taşıdığı risk kaydına, hangi test seviyelerinin kimin sorumluluğunda olacağına ve düzenleyici denetim tarihine göre belirlenen bütçeye yer verilir."
+          ],
+          "keyPoints": [
+            "Test planı; test hedeflerini, kaynaklarını ve süreçlerini belirten resmi dokümandır.",
+            "Ekip içi ve paydaşlarla iletişim aracı olarak da işlev görür.",
+            "Tipik içerik: bağlam, varsayım/kısıtlar, paydaşlar, iletişim, risk kaydı, test yaklaşımı, bütçe ve zaman çizelgesi.",
+            "Planı hazırlama süreci, test hedeflerine ulaşmak için gereken eforu düşünmeye zorlayan faydalı bir egzersizdir."
+          ],
+          "commonMistakes": [
+            "Test planını sadece 'hangi testler koşulacak' listesi sanmak; oysa kaynaklar, riskler, paydaşlar ve iletişim de plana dahildir.",
+            "Test planının test politikası ve test stratejisiyle ilişkisini kurmamak; plan bunlara uyumu göstermeli ya da sapmayı açıkça gerekçelendirmelidir."
+          ]
+        },
+        "en": {
+          "title": "Purpose and content of a test plan",
+          "paragraphs": [
+            "A test plan is a document describing the test objectives, resources and processes for a test project. It documents the means and schedule for achieving those objectives, helps ensure that performed test activities meet established criteria, and demonstrates that testing will adhere to the existing test policy and test strategy (or explains why it deviates from them).",
+            "A test plan also serves as a means of communication with team members and other stakeholders. Test planning forces testers to confront future challenges related to risks, schedules, people, tools, cost and effort, so the process of writing the plan is itself a useful exercise for thinking through the effort needed.",
+            "A typical test plan covers the context of testing (scope, objectives, test basis), assumptions and constraints, stakeholders, communication, a risk register, the test approach (including test levels, types, techniques, and entry/exit criteria), and the budget and schedule. For example, a mobile banking project's test plan would flag the payment flow as the highest risk in its risk register, assign test levels to specific owners, and size the budget around a fixed regulatory audit date."
+          ],
+          "keyPoints": [
+            "A test plan is a formal document stating the test objectives, resources and processes.",
+            "It also functions as a communication tool within the team and with stakeholders.",
+            "Typical content: context, assumptions/constraints, stakeholders, communication, risk register, test approach, budget and schedule.",
+            "Writing the plan is itself a useful exercise for thinking through the effort needed to reach the test objectives."
+          ],
+          "commonMistakes": [
+            "Treating the test plan as just a list of 'which tests will run'; it also covers resources, risks, stakeholders and communication.",
+            "Failing to connect the plan to the test policy and test strategy; the plan must show alignment or explicitly justify any deviation."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-5.1.2",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.1.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test uzmanının döngü ve sürüm planlamasına katkısı",
+          "paragraphs": [
+            "Döngüsel yazılım geliştirme yaşam döngülerinde (YGYD) iki tür planlama yapılır: sürüm planlaması ve döngü planlaması. Sürüm planlaması bir ürünün piyasaya sürülmesini öngörür, ürün iş listesini tanımlar ve büyük kullanıcı hikayelerini daha küçük parçalara böler; ayrıca tüm döngüler boyunca izlenecek test yaklaşımının ve test planının temelini oluşturur.",
+            "Sürüm planlamasında görev alan test uzmanı; test edilebilir kullanıcı hikayeleri ve kabul kriterlerinin yazımına katılır, proje ve ürün riski analizlerinde yer alır, kullanıcı hikayeleriyle ilişkili test eforunu tahmin eder, test yaklaşımını belirler ve sürümün testini planlar.",
+            "Döngü planlaması ise tek bir döngünün sonunu hedefler ve o döngünün iş listesiyle ilgilenir. Döngü planlamasında test uzmanı; kullanıcı hikayelerinin detaylı risk analizine katılır, test edilebilirliklerini değerlendirir, hikayeleri (özellikle test görevlerine) ayırır, bu görevler için efor tahmini yapar ve fonksiyonel/fonksiyonel olmayan unsurları netleştirir."
+          ],
+          "keyPoints": [
+            "Sürüm planlaması tüm döngüleri kapsayan test yaklaşımı ve test planının temelini oluşturur.",
+            "Döngü planlaması tek bir döngünün iş listesiyle ilgilenir.",
+            "Sürüm planlamasında test uzmanı: hikaye/kabul kriteri yazımı, risk analizi, efor tahmini, yaklaşım belirleme.",
+            "Döngü planlamasında test uzmanı: detaylı risk analizi, test edilebilirlik, görevlere bölme, görev bazlı efor tahmini."
+          ],
+          "commonMistakes": [
+            "Sürüm planlaması ile döngü planlamasını aynı aktivite sanmak; kapsamları (tüm sürüm mü, tek döngü mü) farklıdır.",
+            "Test uzmanının bu toplantılarda yalnızca 'sonradan test eden' bir izleyici olduğunu, planlamaya katkı sağlamadığını düşünmek."
+          ]
+        },
+        "en": {
+          "title": "Tester's contribution to iteration and release planning",
+          "paragraphs": [
+            "In iterative software development lifecycles (SDLCs), two kinds of planning occur: release planning and iteration planning. Release planning looks ahead to a product's release, defines and refines the product backlog, and may split large user stories into smaller ones; it also serves as the basis for the test approach and test plan across all iterations.",
+            "A tester involved in release planning participates in writing testable user stories and acceptance criteria, takes part in project and product risk analyses, estimates the test effort associated with user stories, determines the test approach, and plans the testing for the release.",
+            "Iteration planning looks ahead to the end of a single iteration and concerns the iteration backlog. A tester involved here participates in detailed risk analysis of user stories, assesses their testability, breaks stories down into tasks (particularly testing tasks), estimates test effort for those tasks, and identifies and refines functional and non-functional aspects of the test object."
+          ],
+          "keyPoints": [
+            "Release planning underpins the test approach and test plan used across all iterations.",
+            "Iteration planning is concerned with a single iteration's backlog.",
+            "In release planning, testers contribute: story/acceptance-criteria writing, risk analysis, effort estimation, approach setting.",
+            "In iteration planning, testers contribute: detailed risk analysis, testability, task breakdown, per-task effort estimation."
+          ],
+          "commonMistakes": [
+            "Treating release planning and iteration planning as the same activity; their scope (the whole release versus a single iteration) differs.",
+            "Assuming the tester is only a downstream executor in these meetings rather than an active contributor to the planning itself."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-5.1.3",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.1.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Giriş kriterleri ve çıkış kriterleri",
+          "paragraphs": [
+            "Giriş kriterleri, belirli bir aktiviteye başlamadan önce sağlanması gereken önkoşulları tanımlar. Karşılanmazsa aktivite genellikle daha zor, daha uzun süren, daha maliyetli ve daha riskli hale gelir. Tipik giriş kriterleri arasında kaynakların (insan, araç, ortam, test verisi, bütçe, zaman) elverişliliği, test çalışma ürünlerinin (test esası, edilebilir gereksinimler, test senaryoları) hazır olması ve test nesnesinin başlangıç kalite seviyesi (ör. duman testlerinin geçmiş olması) yer alır.",
+            "Çıkış kriterleri ise bir aktivitenin tamamlandığını ilan etmek için nelere ulaşılması gerektiğini tanımlar. Tipik çıkış kriterleri; bütünlük ölçüleri (ulaşılan kapsam seviyesi, çözülmemiş hata sayısı, hata yoğunluğu) ve ikili 'evet/hayır' kriterleridir (planlanan testler koşuldu mu, statik test yapıldı mı, bulunan tüm hatalar raporlandı mı). Zamanın veya bütçenin bitmesi de, paydaşlar bu riski gözden geçirip kabul ettiyse geçerli bir çıkış kriteri sayılabilir.",
+            "Giriş ve çıkış kriterleri her test seviyesi için ayrı ayrı tanımlanır ve test hedeflerine göre değişir. Çevik yazılım geliştirmede çıkış kriterlerine genellikle Tamamlandı Tanımı (Definition of Done), bir kullanıcı hikayesinin geliştirme ve/veya test aktivitelerine başlaması için karşılaması gereken giriş kriterlerine ise Hazır Tanımı (Definition of Ready) denir."
+          ],
+          "keyPoints": [
+            "Giriş kriterleri: bir aktiviteye başlamadan önce sağlanması gereken önkoşullardır.",
+            "Çıkış kriterleri: bir aktivitenin tamamlandığını ilan etmek için ulaşılması gereken hedeflerdir.",
+            "Çevik'te çıkış kriterleri = Tamamlandı Tanımı (DoD); giriş kriterleri = Hazır Tanımı (DoR).",
+            "Zamanın veya bütçenin bitmesi, paydaşlar riski kabul ettiyse geçerli bir çıkış kriteri olabilir."
+          ],
+          "commonMistakes": [
+            "Hazır Tanımı (Definition of Ready) ile Tamamlandı Tanımı (Definition of Done) kavramlarını ters eşleştirmek: Ready bir hikayenin BAŞLAMASI için gereken giriş kriterlerini, Done ise BİTMESİ için gereken çıkış kriterlerini tanımlar.",
+            "Giriş kriterleri karşılanmadığında aktivitenin imkânsız olduğunu düşünmek; aslında yalnızca daha zor, yavaş, maliyetli ve riskli hale gelir, tamamen engellenmez."
+          ]
+        },
+        "en": {
+          "title": "Entry criteria and exit criteria",
+          "paragraphs": [
+            "Entry criteria define the preconditions that must be satisfied before undertaking a given activity. If they are not met, the activity typically becomes more difficult, time-consuming, costly and riskier. Typical entry criteria include the availability of resources (people, tools, environments, test data, budget, time), the availability of testware (test basis, testable requirements, test cases), and the initial quality level of the test object (e.g., all smoke tests have passed).",
+            "Exit criteria define what must be achieved to declare an activity complete. Typical exit criteria include measures of thoroughness (achieved coverage level, number of unresolved defects, defect density) and binary 'yes/no' criteria (planned tests executed, static testing performed, all found defects reported). Running out of time or budget can also be a valid exit criterion, if stakeholders have reviewed and accepted the risk of going live without further testing.",
+            "Entry and exit criteria are defined separately for each test level and vary with the test objectives. In Agile software development, exit criteria are often called the Definition of Done, while the entry criteria a user story must fulfill before development and/or testing can start are called the Definition of Ready."
+          ],
+          "keyPoints": [
+            "Entry criteria are the preconditions that must be met before starting an activity.",
+            "Exit criteria are the targets that must be reached to declare an activity complete.",
+            "In Agile, exit criteria = Definition of Done; entry criteria = Definition of Ready.",
+            "Running out of time or budget can be a valid exit criterion if stakeholders have accepted the risk."
+          ],
+          "commonMistakes": [
+            "Swapping Definition of Ready and Definition of Done: Ready governs when a story can START, Done governs when it can be declared FINISHED.",
+            "Assuming unmet entry criteria make an activity impossible; they only make it harder, slower, costlier and riskier, not blocked outright."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-5.1.4",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.1.4",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test eforu tahminleme teknikleri",
+          "paragraphs": [
+            "Test eforu tahmini, bir test projesinin hedeflerine ulaşmak için gereken iş miktarını öngörmektir. Her tahmin bir dizi varsayıma dayanır ve her zaman hata payı taşır; küçük görevlerin tahmini büyük görevlerinkinden daha isabetli olduğu için büyük bir görev genellikle daha küçük parçalara bölünerek tahmin edilir.",
+            "Sık kullanılan dört teknik şunlardır: oranlara dayalı tahminleme (geçmiş projelerden elde edilen geliştirme-test oranlarının yeni projeye uygulanması), dışdeğerleme (mevcut projede erken toplanan verinin matematiksel olarak ileriye taşınması), Wideband Delphi (uzmanların önce tek başına, sonra geri bildirimle tekrar tekrar tahmin yaptığı, Planning Poker'ın da bir varyantı olduğu döngüsel teknik) ve üç noktalı tahminleme (en iyimser (a), en olası (m) ve en kötümser (b) tahminlerin E = (a + 4m + b) / 6 formülüyle birleştirilmesi; ölçüm hatası SD = (b − a) / 6 ile hesaplanır).",
+            "Örnek: Risk analizinde 'ödeme entegrasyonu' modülü hem yüksek olasılıklı hem yüksek etkili bulunmuş, yani risk seviyesi yüksek çıkmıştır. Ekip bu modül için üç noktalı tahminleme uygular: uzmanlar a=6, m=9, b=18 kişi-saat tahmin eder. E = (6 + 4×9 + 18) / 6 = 60 / 6 = 10 kişi-saat, SD = (18 − 6) / 6 = 2 kişi-saat. Sonuç olarak bu yüksek riskli modül için gereken test eforu 10±2 kişi-saat (yani 8 ile 12 kişi-saat arası) olarak tahmin edilir; risk seviyesi yüksek olduğu için bu tahmin, düşük riskli bir ekrana ayrılan süreden daha yüksek çıkar."
+          ],
+          "keyPoints": [
+            "Dört teknik: oranlara dayalı tahminleme, dışdeğerleme, Wideband Delphi, üç noktalı tahminleme.",
+            "Üç noktalı tahminleme formülü: E = (a + 4m + b) / 6; ölçüm hatası SD = (b − a) / 6.",
+            "Büyük görevler daha küçük parçalara bölünerek daha isabetli tahmin edilir.",
+            "Risk seviyesi yüksek bulunan bir öğe için ayrılan test eforu genellikle daha yüksektir ve daha dikkatli hesaplanır."
+          ],
+          "commonMistakes": [
+            "E formülünü basit aritmetik ortalama ((a + m + b) / 3) ile karıştırmak; oysa en olası tahmin (m) dört kat ağırlıklıdır.",
+            "Dışdeğerleme ile oranlara dayalı tekniği karıştırmak: dışdeğerleme mevcut projenin erken verisine dayanır, oranlar geçmiş projelerden aktarılır."
+          ]
+        },
+        "en": {
+          "title": "Test effort estimation techniques",
+          "paragraphs": [
+            "Test effort estimation predicts the amount of test-related work needed to meet a test project's objectives. Every estimate rests on assumptions and is always subject to error; because small tasks are estimated more accurately than large ones, a large task is usually decomposed into smaller ones before estimating.",
+            "Four techniques are commonly used: estimation based on ratios (applying a historical development-to-test effort ratio from past projects to the new one), extrapolation (measuring early in the current project and mathematically projecting the remaining effort), Wideband Delphi (an iterative, expert-based technique where experts estimate in isolation, then discuss and re-estimate until consensus; Planning Poker is a common variant), and three-point estimation (combining an optimistic (a), most likely (m) and pessimistic (b) estimate as E = (a + 4m + b) / 6, with measurement error SD = (b − a) / 6).",
+            "Example: risk analysis rated the 'payment integration' module as both high likelihood and high impact, so its risk level is high. The team applies three-point estimation to this module: experts estimate a=6, m=9 and b=18 person-hours. E = (6 + 4×9 + 18) / 6 = 60 / 6 = 10 person-hours, and SD = (18 − 6) / 6 = 2 person-hours. The resulting estimate for this high-risk module is 10±2 person-hours (i.e., between 8 and 12); because its risk level is high, this comes out higher than the effort assigned to a low-risk screen."
+          ],
+          "keyPoints": [
+            "Four techniques: estimation based on ratios, extrapolation, Wideband Delphi, three-point estimation.",
+            "Three-point estimation formula: E = (a + 4m + b) / 6; measurement error SD = (b − a) / 6.",
+            "Large tasks are decomposed into smaller ones for more accurate estimation.",
+            "An item with a high risk level is typically allotted more test effort, estimated with extra care."
+          ],
+          "commonMistakes": [
+            "Confusing the E formula with a simple average ((a + m + b) / 3); the most likely estimate (m) is actually weighted four times.",
+            "Mixing up extrapolation and estimation based on ratios: extrapolation projects forward from the current project's own early data, ratios are carried over from past projects."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-5.1.5",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.1.5",
+      "revision": 2,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test senaryosu önceliklendirme",
+          "paragraphs": [
+            "Test senaryoları ve prosedürleri belirlenip test gruplarına ayrıldıktan sonra, bunlar hangi sırayla koşulacağını belirleyen bir test koşum çizelgesinde düzenlenir. En yaygın üç önceliklendirme stratejisi şunlardır: riske dayalı önceliklendirme (koşum sırası risk analizi sonuçlarına dayanır; en önemli riskleri kapsayan senaryolar önce koşulur), kapsama dayalı önceliklendirme (en yüksek kapsamı sağlayan senaryolar önce koşulur; ek kapsam önceliklendirmesi varyantında her sonraki senaryo en yüksek EK kapsamı sağlayandır) ve gereksinime dayalı önceliklendirme (koşum sırası, paydaşların belirlediği gereksinim önceliklerine dayanır).",
+            "İdeal olarak senaryolar seçilen stratejiye göre öncelik sırasına konur; ancak senaryolar veya test edilen özellikler arasında bağımlılık varsa bu sıralama esnetilir: yüksek öncelikli bir senaryo düşük öncelikli bir senaryoya bağımlıysa, önce düşük öncelikli olan koşulmalıdır. Koşum sırasında ayrıca kaynakların (belirli bir zaman aralığında ancak erişilebilen araçlar, ortamlar veya kişiler) elverişliliği de dikkate alınmalıdır.",
+            "Örnek: 'Ödeme entegrasyonu' modülü risk analizinde yüksek olasılık ve yüksek etkiyle, yani yüksek risk seviyesiyle değerlendirilmişti (bkz. FL-5.1.4). Riske dayalı önceliklendirme uygulandığında, bu modülün arıza senaryolarını kapsayan test senaryoları programın en başına konur — kod kapsama yüzdesi daha yüksek görünen ama düşük riskli bir arayüz metni kontrolü koşuma hazır olsa bile önce çalıştırılmaz. Böylece en kritik hatalar mümkün olduğunca erken yakalanır."
+          ],
+          "keyPoints": [
+            "Üç ana strateji: riske dayalı, kapsama dayalı ve gereksinime dayalı önceliklendirme.",
+            "Riske dayalı önceliklendirmede, en önemli riskleri kapsayan test senaryoları ilk koşulur.",
+            "Bağımlılıklar önceliği geçersiz kılabilir: yüksek öncelikli ama başka bir senaryoya bağımlı test, önce koşulamaz.",
+            "Araç, ortam ve kişilerin elverişliliği de koşum sırasını etkileyen bir kısıttır."
+          ],
+          "commonMistakes": [
+            "Önceliklendirmeyi yalnızca 'en yüksek kapsama sahip olan önce koşulur' sanıp riske dayalı yaklaşımı göz ardı etmek.",
+            "Bağımlılıkları yok sayıp yüksek öncelikli bir senaryoyu, bağımlı olduğu düşük öncelikli senaryodan önce koşturmaya çalışmak."
+          ]
+        },
+        "en": {
+          "title": "Test case prioritization",
+          "paragraphs": [
+            "Once test cases and procedures are specified and assembled into test suites, they are arranged into a test execution schedule defining the order in which they run. The three most common strategies are: risk-based prioritization (execution order is based on risk analysis results; test cases covering the most important risks run first), coverage-based prioritization (test cases achieving the highest coverage run first; in the additional-coverage variant, each subsequent case is the one achieving the highest additional coverage), and requirements-based prioritization (execution order is based on stakeholder-defined requirement priorities).",
+            "Ideally, test cases are ordered by priority using one of these strategies, but dependencies can override this: if a higher-priority test case depends on a lower-priority one, the lower-priority case must run first. Execution order must also account for resource availability, such as tools, environments, or people that are only available during a specific time window.",
+            "Example: the 'payment integration' module was rated high likelihood and high impact in risk analysis, i.e. a high risk level (see FL-5.1.4). Applying risk-based prioritization, the test cases covering that module's failure scenarios are scheduled first — even if a lower-risk UI text check appears ready to run sooner or shows higher code coverage, it does not jump ahead. This way, the most critical defects are found as early as possible."
+          ],
+          "keyPoints": [
+            "Three main strategies: risk-based, coverage-based, and requirements-based prioritization.",
+            "In risk-based prioritization, test cases covering the most important risks run first.",
+            "Dependencies can override priority: a higher-priority case dependent on a lower-priority one cannot run first.",
+            "Availability of tools, environments and people is also a constraint on execution order."
+          ],
+          "commonMistakes": [
+            "Assuming prioritization only means 'run whatever has the highest coverage first', ignoring the risk-based approach.",
+            "Ignoring dependencies and trying to run a higher-priority case before the lower-priority case it depends on."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-5.1.6",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.1.6",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test piramidi",
+          "paragraphs": [
+            "Test piramidi, farklı testlerin farklı ayrıntı düzeylerine sahip olabileceğini gösteren bir modeldir. Ekibi test otomasyonu ve test eforu tahsisi konusunda destekler; çünkü farklı test hedeflerinin farklı otomasyon seviyeleriyle desteklendiğini görselleştirir. Piramidin her katmanı bir test grubunu temsil eder.",
+            "Katman yükseldikçe test ayrıntısı ve test izolasyonu (sistemin diğer unsurlarına bağımlılık derecesinin tersi) azalır, koşum süresi ise artar. Alt katmandaki testler küçük, izole ve hızlıdır; küçük bir fonksiyonalite parçasını kontrol ettikleri için makul bir kapsama ulaşmak üzere genellikle çok sayıda gerekir. Üst katman ise karmaşık, uçtan uca testleri temsil eder; büyük bir fonksiyonalite parçasını kontrol ettikleri ve daha yavaş oldukları için makul bir kapsama ulaşmak üzere yalnızca birkaç tanesi yeterlidir.",
+            "Katmanların sayısı ve adlandırması modelden modele değişebilir. Orijinal test piramidi modeli (Cohn, 2009) üç katman tanımlar: 'birim testleri', 'servis testleri' ve 'UI testleri'. Başka bir popüler model ise birim (bileşen) testleri, entegrasyon (bileşen entegrasyonu) testleri ve uçtan uca testleri tanımlar; farklı test seviyeleri de kullanılabilir."
+          ],
+          "keyPoints": [
+            "Piramidin alt katmanı: küçük, izole, hızlı testlerden oluşur ve çok sayıda gerekir.",
+            "Üst katman: karmaşık, uçtan uca testlerden oluşur ve az sayıda yeterlidir.",
+            "Katman yükseldikçe ayrıntı ve izolasyon azalır, koşum süresi artar.",
+            "Katman sayısı ve adlandırma modelden modele değişir (ör. Cohn'un birim/servis/UI katmanları)."
+          ],
+          "commonMistakes": [
+            "Test piramidinin katman sayısının her zaman üç olduğunu sanmak; oysa modelden modele değişebilir.",
+            "'Üst katmanda daha çok test olmalı' diye düşünmek; aslında tam tersi geçerlidir — alt katmanda çok, üst katmanda az test bulunur."
+          ]
+        },
+        "en": {
+          "title": "Test pyramid",
+          "paragraphs": [
+            "The test pyramid is a model showing that different tests can have different levels of granularity. It supports the team in test automation and test effort allocation by visualizing how different test objectives are supported by different levels of test automation. Each layer of the pyramid represents a group of tests.",
+            "The higher the layer, the lower the test granularity and test isolation (the inverse of dependency on other parts of the system), and the higher the execution time. Tests in the bottom layer are small, isolated and fast, checking a small piece of functionality, so usually many are needed for reasonable coverage. The top layer represents complex, end-to-end tests; being slower and checking a larger piece of functionality, only a few are usually needed for reasonable coverage.",
+            "The number and naming of layers can vary across models. The original test pyramid (Cohn, 2009) defines three layers: 'unit tests', 'service tests' and 'UI tests'. Another popular model defines unit (component) tests, integration (component integration) tests, and end-to-end tests; other test levels can also be used."
+          ],
+          "keyPoints": [
+            "The bottom layer of the pyramid consists of small, isolated, fast tests, and many of them are needed.",
+            "The top layer consists of complex, end-to-end tests, and only a few are needed.",
+            "Granularity and isolation decrease, and execution time increases, as layers get higher.",
+            "The number and naming of layers varies by model (e.g., Cohn's unit/service/UI layers)."
+          ],
+          "commonMistakes": [
+            "Assuming the test pyramid always has exactly three layers; the number varies by model.",
+            "Thinking the top layer should contain more tests; the opposite is true — the bottom layer has many, the top layer has few."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-5.1.7",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.1.7",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test çeyrekleri",
+          "paragraphs": [
+            "Brian Marick tarafından tanımlanan test çeyrekleri, çevik yazılım geliştirmede test seviyelerini uygun test çeşitleri, aktiviteler, teknikler ve iş ürünleriyle gruplandıran bir modeldir. Model, tüm uygun test çeşitlerinin ve seviyelerinin yaşam döngüsüne dahil edildiğini görselleştirmede test yönetimine yardımcı olur ve geliştiriciler, test uzmanları ile iş birimleri dahil tüm paydaşlara test çeşitlerini açıklamanın bir yolunu sunar.",
+            "Modelde testler iş odaklı veya teknoloji odaklı olabilir; ayrıca ekibi destekleyebilir (geliştirmeye rehberlik eder) ya da ürünü eleştirebilir (davranışını beklentilerle ölçer). Bu iki eksenin kombinasyonu dört çeyreği oluşturur.",
+            "Q1 (teknoloji odaklı, ekibi destekler): bileşen ve bileşen entegrasyon testlerini içerir; bunlar otomatikleştirilip CI sürecine dahil edilmelidir. Q2 (iş odaklı, ekibi destekler): fonksiyonel testler, örnekler, kullanıcı hikayesi testleri, API testleri ve simülasyonları içerir; kabul kriterlerini kontrol eder, manuel ya da otomatik olabilir. Q3 (iş odaklı, ürünü eleştirir): keşif testi, kullanılabilirlik testi ve kullanıcı kabul testini içerir; kullanıcı odaklıdır ve genellikle manueldir. Q4 (teknoloji odaklı, ürünü eleştirir): duman testleri ve kullanılabilirlik HARİÇ fonksiyonel olmayan testleri içerir; genellikle otomatiktir."
+          ],
+          "keyPoints": [
+            "İki eksen: iş odaklı/teknoloji odaklı ve ekibi destekleme/ürünü eleştirme.",
+            "Q1 (teknoloji + ekibi destekler): bileşen ve bileşen entegrasyon testleri, CI'da otomatik.",
+            "Q2 (iş + ekibi destekler): fonksiyonel/kullanıcı hikayesi testleri, manuel ya da otomatik.",
+            "Q3 (iş + ürünü eleştirir): keşif, kullanılabilirlik, kabul testi — genelde manuel.",
+            "Q4 (teknoloji + ürünü eleştirir): duman ve fonksiyonel olmayan testler (kullanılabilirlik hariç) — genelde otomatik."
+          ],
+          "commonMistakes": [
+            "Test çeyreklerini test piramidiyle aynı model sanmak; piramit ayrıntı seviyesine bakar, çeyrekler ise iş/teknoloji odağı ile amacına (destekleme/eleştirme) bakar.",
+            "Kullanılabilirlik testini Q4'e koymak; kullanılabilirlik testi Q3'te yer alır, Q4 tanımı açıkça kullanılabilirlik HARİÇ fonksiyonel olmayan testleri kapsar."
+          ]
+        },
+        "en": {
+          "title": "Testing quadrants",
+          "paragraphs": [
+            "The testing quadrants, defined by Brian Marick, group the test levels with appropriate test types, activities, techniques and work products in Agile software development. The model helps test management visualize that all appropriate test types and levels are included in the SDLC, and gives all stakeholders — developers, testers, and business representatives — a way to differentiate and describe the test types.",
+            "In this model, tests can be business-facing or technology-facing, and they can either support the team (guide development) or critique the product (measure its behavior against expectations). The combination of these two axes determines four quadrants.",
+            "Q1 (technology-facing, supports the team): contains component and component integration tests, which should be automated and included in the CI process. Q2 (business-facing, supports the team): contains functional tests, examples, user story tests, and API tests; these check acceptance criteria and can be manual or automated. Q3 (business-facing, critiques the product): contains exploratory testing, usability testing, and user acceptance testing; these are user-oriented and often manual. Q4 (technology-facing, critiques the product): contains smoke tests and non-functional tests EXCEPT usability tests; these are often automated."
+          ],
+          "keyPoints": [
+            "Two axes: business-facing/technology-facing, and support-the-team/critique-the-product.",
+            "Q1 (technology, supports the team): component and component integration tests, automated in CI.",
+            "Q2 (business, supports the team): functional/user story tests, manual or automated.",
+            "Q3 (business, critiques the product): exploratory, usability, acceptance testing — usually manual.",
+            "Q4 (technology, critiques the product): smoke and non-functional tests except usability — usually automated."
+          ],
+          "commonMistakes": [
+            "Treating the testing quadrants as the same model as the test pyramid; the pyramid is about granularity, the quadrants are about business/technology focus and purpose (support/critique).",
+            "Placing usability testing in Q4; usability testing belongs in Q3, and Q4 is explicitly defined as non-functional tests EXCEPT usability tests."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-5.2.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.2.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Risk seviyesi: olasılık ve etki",
+          "paragraphs": [
+            "Risk, gerçekleştiğinde olumsuz bir etkiye yol açan potansiyel bir olay, tehlike, tehdit veya durumdur. Bir risk iki faktörle karakterize edilir: risk olasılığı (riskin gerçekleşme ihtimali; sıfırdan büyük ve birden küçüktür) ve risk etkisi/zararı (risk gerçekleştiğinde ortaya çıkan sonuçlar).",
+            "Bu iki faktörün birleşimi risk seviyesini oluşturur; risk seviyesi, riskin önemini ölçen tek bir göstergedir. Risk seviyesi ne kadar yüksekse, o riskin ele alınması o kadar önceliklidir.",
+            "Risk seviyesi nicel yaklaşımla hesaplanabilir: risk seviyesi = risk olasılığı × risk etkisi. Nitel yaklaşımda ise risk seviyesi, sayısal çarpım yerine bir risk matrisi kullanılarak (ör. 'düşük olasılık × yüksek etki' gibi hücreler) belirlenir."
+          ],
+          "keyPoints": [
+            "Risk olasılığı: riskin gerçekleşme ihtimalidir (0'dan büyük, 1'den küçük).",
+            "Risk etkisi (zarar): risk gerçekleştiğinde ortaya çıkan sonuçlardır.",
+            "Risk seviyesi bu iki faktörün birleşimidir; nicel yaklaşımda çarpımla hesaplanır.",
+            "Risk seviyesi yüksek olan risklere daha yüksek öncelik verilmelidir."
+          ],
+          "commonMistakes": [
+            "Olasılık ile etkiyi birbirinin yerine kullanmak: olasılık riskin NE SIKLIKLA gerçekleşeceğidir, etki ise gerçekleştiğinde YARATACAĞI zarardır — ikisi farklı sorulara cevap verir.",
+            "Risk seviyesini yalnızca olasılığa (ya da yalnızca etkiye) bakarak belirlemek; risk seviyesi ikisinin BİRLİKTE değerlendirilmesiyle bulunur, örneğin düşük olasılıklı ama çok yüksek etkili bir risk yine de yüksek seviyeli sayılabilir."
+          ]
+        },
+        "en": {
+          "title": "Risk level: likelihood and impact",
+          "paragraphs": [
+            "A risk is a potential event, hazard, threat or situation whose occurrence causes an adverse effect. A risk is characterized by two factors: risk likelihood (the probability of the risk occurring; greater than zero and less than one) and risk impact/harm (the consequences of that occurrence).",
+            "These two factors together express the risk level, a single measure of how important the risk is. The higher the risk level, the more important its treatment becomes.",
+            "Risk level can be computed quantitatively: risk level = risk likelihood × risk impact. In a qualitative approach, the risk level is instead determined using a risk matrix (e.g., cells such as 'low likelihood × high impact') rather than a numeric product."
+          ],
+          "keyPoints": [
+            "Risk likelihood is the probability of the risk occurring (greater than zero, less than one).",
+            "Risk impact (harm) is the consequence that follows once the risk occurs.",
+            "Risk level combines both factors; in the quantitative approach it is their product.",
+            "Risks with a higher risk level should be given higher priority."
+          ],
+          "commonMistakes": [
+            "Using likelihood and impact interchangeably: likelihood answers HOW OFTEN the risk will occur, impact answers HOW BAD it will be — they answer different questions.",
+            "Determining risk level from only likelihood or only impact; it must combine BOTH — a low-likelihood but very high-impact risk can still count as a high-level risk."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-5.2.2",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.2.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Proje riskleri ve ürün riskleri",
+          "paragraphs": [
+            "Yazılım testinde genellikle iki tür riskle ilgilenilir. Proje riskleri, projenin yönetimi ve kontrolüyle ilgilidir: organizasyonel sorunlar (iş ürünü teslimatlarında gecikme, hatalı tahminler), insan kaynaklı sorunlar (yetersiz beceri, iletişim problemleri, personel eksiği), teknik sorunlar (kapsamın kontrolsüz büyümesi, zayıf araç desteği) ve tedarikçi sorunları (üçüncü taraf teslimat başarısızlığı) bu kategoriye girer. Gerçekleştiklerinde projenin zaman çizelgesini, bütçesini veya kapsamını, dolayısıyla hedeflere ulaşma kapasitesini etkilerler.",
+            "Ürün riskleri ise ürünün kalite karakteristikleriyle ilgilidir: eksik ya da yanlış fonksiyonalite, hatalı hesaplamalar, çalışma zamanı hataları, zayıf mimari, yetersiz yanıt süresi, kötü kullanıcı deneyimi ve güvenlik açıkları örnek olarak sayılabilir. Gerçekleştiklerinde kullanıcı memnuniyetsizliğine, gelir/güven/itibar kaybına, üçüncü taraflara zarara, yüksek bakım maliyetine, para cezalarına ve uç durumlarda fiziksel zarara ya da yaralanmaya kadar giden sonuçlar doğurabilirler.",
+            "Örneğin, bir kütüphanenin tedarikçiden geç teslim edilmesi bir proje riskidir çünkü zaman çizelgesini tehdit eder; buna karşılık ödeme modülünün tutarları yanlış hesaplaması bir ürün riskidir çünkü ürünün kendisinin kalitesini bozar."
+          ],
+          "keyPoints": [
+            "Proje riskleri: yönetim ve kontrolle ilgilidir (organizasyonel, insan, teknik, tedarikçi kaynaklı).",
+            "Ürün riskleri: ürünün kalite karakteristikleriyle ilgilidir (fonksiyonalite, performans, güvenlik vb.).",
+            "Proje riskleri gerçekleştiğinde zaman çizelgesi, bütçe veya kapsamı etkiler.",
+            "Ürün riskleri gerçekleştiğinde kullanıcı memnuniyetsizliğinden fiziksel zarara kadar geniş bir yelpazede sonuç doğurabilir."
+          ],
+          "commonMistakes": [
+            "Personel eksikliği gibi bir proje riskini ürün riski sanmak; personel eksikliği projenin yönetimiyle ilgilidir, ürünün kendisinin kalitesiyle değil.",
+            "Ürün risklerini yalnızca 'yazılım hatası' olarak görmek; güvenlik açığı ya da kötü mimari gibi daha geniş kalite endişelerini de kapsadığını gözden kaçırmak."
+          ]
+        },
+        "en": {
+          "title": "Project risks and product risks",
+          "paragraphs": [
+            "In software testing, two types of risk are generally of concern. Project risks relate to the management and control of the project: organizational issues (delays in work product deliveries, inaccurate estimates), people issues (insufficient skills, communication problems, staff shortages), technical issues (uncontrolled scope creep, poor tool support), and supplier issues (third-party delivery failure) all fall into this category. When they occur, they affect the project's schedule, budget or scope, and thus its ability to reach its objectives.",
+            "Product risks relate to the product's quality characteristics: examples include missing or wrong functionality, incorrect calculations, runtime errors, poor architecture, inadequate response time, poor user experience, and security vulnerabilities. When they occur, they can lead to consequences ranging from user dissatisfaction, loss of revenue/trust/reputation, damage to third parties, high maintenance costs, and criminal penalties, to physical damage or injury in extreme cases.",
+            "For example, a supplier delivering a library late is a project risk because it threatens the schedule, whereas a payment module miscalculating amounts is a product risk because it degrades the quality of the product itself."
+          ],
+          "keyPoints": [
+            "Project risks relate to management and control (organizational, people, technical, supplier issues).",
+            "Product risks relate to the product's quality characteristics (functionality, performance, security, etc.).",
+            "When project risks occur, they affect the schedule, budget, or scope.",
+            "When product risks occur, consequences can range from user dissatisfaction to physical harm."
+          ],
+          "commonMistakes": [
+            "Mistaking a project risk like staff shortage for a product risk; staff shortage concerns project management, not the quality of the product itself.",
+            "Viewing product risks as only 'software bugs', overlooking that they also cover broader quality concerns like security vulnerabilities or poor architecture."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-5.2.3",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.2.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Ürün riski analizi",
+          "paragraphs": [
+            "Test perspektifinden ürün riski analizinin amacı, kalan ürün riskini en aza indirecek şekilde test eforunu yönlendirmek için farkındalık sağlamaktır; ideal olarak yaşam döngüsünün erken aşamalarında başlar. İki adımdan oluşur: risk belirleme (beyin fırtınası, çalıştaylar, görüşmeler veya neden-sonuç diyagramları gibi tekniklerle kapsamlı bir risk listesi çıkarmak) ve risk değerlendirmesi (belirlenen riskleri kategorilere ayırmak, olasılık/etki/seviyelerini belirlemek, önceliklendirmek ve ele alma yolları önermek).",
+            "Risk değerlendirmesi nicel (risk seviyesi = olasılık × etki) ya da nitel (risk matrisi) bir yaklaşımla, ya da ikisinin karmasıyla yapılabilir; kategorilere ayırma, aynı kategorideki risklerin genellikle benzer bir yaklaşımla azaltılabilmesini sağlar.",
+            "Analiz sonuçları; yürütülecek test kapsamını, hangi test seviyeleri ve çeşitlerinin uygulanacağını, kullanılacak test tekniklerini ve ulaşılacak kapsamı, her görev için gereken test eforunu, kritik hataların erken bulunması için önceliklendirmeyi ve riski azaltmak üzere test dışında hangi aktivitelerin uygulanabileceğini belirlemek için kullanılır."
+          ],
+          "keyPoints": [
+            "Ürün riski analizi = risk belirleme + risk değerlendirmesi.",
+            "İdeal olarak yaşam döngüsünün erken aşamalarında başlar.",
+            "Sonuçlar; test kapsamını, seviyelerini/çeşitlerini, tekniklerini ve ulaşılacak kapsamı belirler.",
+            "Sonuçlar ayrıca görev başına efor tahminine, önceliklendirmeye ve test dışı önlemlerin değerlendirilmesine girdi sağlar."
+          ],
+          "commonMistakes": [
+            "Ürün riski analizini yalnızca test tasarımından SONRA yapılan bir aktivite sanmak; ideal olarak yaşam döngüsünün erken aşamalarında başlamalıdır.",
+            "Risk belirleme ile risk değerlendirmesini aynı adım sanmak; belirleme bir risk listesi çıkarır, değerlendirme ise bu listeyi kategorize edip seviyelendirir."
+          ]
+        },
+        "en": {
+          "title": "Product risk analysis",
+          "paragraphs": [
+            "From a testing perspective, the goal of product risk analysis is to provide awareness of product risk so that test effort can be focused to minimize residual product risk; ideally it begins early in the SDLC. It consists of two steps: risk identification (generating a comprehensive list of risks using techniques such as brainstorming, workshops, interviews, or cause-effect diagrams) and risk assessment (categorizing identified risks, determining their likelihood/impact/level, prioritizing them, and proposing ways to handle them).",
+            "Risk assessment can follow a quantitative approach (risk level = likelihood × impact), a qualitative approach (a risk matrix), or a mix of both; categorization helps because risks in the same category can usually be mitigated with a similar approach.",
+            "The analysis results are used to determine the test scope to be carried out, the test levels and types to apply, the test techniques and coverage to be achieved, the test effort required per task, the prioritization needed to find critical defects early, and whether any non-testing activities could also help reduce the risk."
+          ],
+          "keyPoints": [
+            "Product risk analysis = risk identification + risk assessment.",
+            "Ideally it begins early in the SDLC.",
+            "Results determine the test scope, levels/types, techniques, and coverage to achieve.",
+            "Results also feed per-task effort estimation, prioritization, and consideration of non-testing measures."
+          ],
+          "commonMistakes": [
+            "Assuming product risk analysis only happens AFTER test design; ideally it starts early in the SDLC.",
+            "Treating risk identification and risk assessment as the same step; identification produces a list of risks, assessment categorizes and levels that list."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-5.2.4",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.2.4",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Ürün risk kontrolü",
+          "paragraphs": [
+            "Ürün risk kontrolü, belirlenmiş ve değerlendirilmiş ürün risklerine karşı alınan tüm önlemleri kapsar; risk azaltma (risk değerlendirmesinde önerilen aksiyonları uygulayarak risk seviyesini düşürmek) ve risk gözetiminden (azaltma aksiyonlarının etkili olduğundan emin olmak, risk değerlendirmesini iyileştirecek bilgi toplamak ve ortaya çıkan yeni riskleri tespit etmek) oluşur.",
+            "Bir risk analiz edildikten sonra birkaç yanıt seçeneği mümkündür: test yoluyla riski azaltmak, riski kabul etmek, riski transfer etmek (ör. sigorta veya sözleşmeyle) ya da bir acil durum planı hazırlamak.",
+            "Test yoluyla ürün riskini azaltmak için alınabilecek somut aksiyonlar şunlardır: uygun deneyim ve beceriye sahip test uzmanlarını seçmek, uygun bir test bağımsızlığı seviyesi uygulamak, gözden geçirme ve statik analiz yapmak, uygun test tekniklerini ve kapsam seviyelerini uygulamak, etkilenen kalite karakteristiklerini hedefleyen uygun test çeşitlerini uygulamak ve regresyon testi dahil dinamik test gerçekleştirmek."
+          ],
+          "keyPoints": [
+            "Ürün risk kontrolü = risk azaltma + risk gözetimi.",
+            "Riske yanıt seçenekleri: test yoluyla azaltma, kabul, transfer, acil durum planı.",
+            "Test yoluyla azaltma: doğru test uzmanı seçimi, bağımsızlık seviyesi, gözden geçirme/statik analiz, uygun teknik/kapsam, uygun test çeşitleri, regresyon dahil dinamik test.",
+            "Risk gözetimi, azaltma aksiyonlarının işe yarayıp yaramadığını kontrol eder ve yeni ortaya çıkan riskleri yakalar."
+          ],
+          "commonMistakes": [
+            "Risk azaltma ile risk kabulünü karıştırmak; kabul riski bilerek üstlenip aksiyon almamaktır, azaltma ise aktif önlemler almaktır.",
+            "Risk kontrolünü sadece 'daha çok test yapmak' sanmak; kabul, transfer ve acil durum planı gibi test dışı seçenekler de mevcuttur."
+          ]
+        },
+        "en": {
+          "title": "Product risk control",
+          "paragraphs": [
+            "Product risk control comprises all measures taken in response to identified and assessed product risks; it consists of risk mitigation (implementing the actions proposed in risk assessment to reduce the risk level) and risk monitoring (ensuring mitigation actions are effective, gathering information to improve risk assessment, and identifying emerging risks).",
+            "Once a risk has been analyzed, several response options are possible: mitigating the risk through testing, accepting the risk, transferring the risk (e.g., via insurance or contract), or preparing a contingency plan.",
+            "Concrete actions to mitigate product risk through testing include: selecting testers with the right level of experience and skills, applying an appropriate level of test independence, performing reviews and static analysis, applying appropriate test techniques and coverage levels, applying test types that address the affected quality characteristics, and performing dynamic testing including regression testing."
+          ],
+          "keyPoints": [
+            "Product risk control = risk mitigation + risk monitoring.",
+            "Response options to a risk: mitigate through testing, accept, transfer, or use a contingency plan.",
+            "Mitigation through testing: right tester selection, independence level, reviews/static analysis, appropriate techniques/coverage, appropriate test types, dynamic testing including regression.",
+            "Risk monitoring checks whether mitigation actions are working and catches newly emerging risks."
+          ],
+          "commonMistakes": [
+            "Confusing risk mitigation with risk acceptance; acceptance means knowingly taking on the risk without action, mitigation means taking active measures.",
+            "Assuming risk control only means 'testing more'; non-testing options like acceptance, transfer, and contingency plans also exist."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-5.3.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.3.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Testte kullanılan metrikler",
+          "paragraphs": [
+            "Test metrikleri; planlanan zaman çizelgesi ve bütçeye göre ilerlemeyi, test nesnesinin mevcut kalitesini ve test aktivitelerinin hedeflere ya da döngü amacına göre etkinliğini göstermek için toplanır. Test gözetimi bu metrikleri toplar; test kontrolü ve test tamamlama süreçleri bunları kullanır.",
+            "Yaygın metrik kategorileri şunlardır: proje ilerleme metrikleri (görev tamamlama, kaynak kullanımı, test eforu), test ilerleme metrikleri (koşulan/koşulmayan, geçen/geçmeyen test senaryosu sayısı, test koşum süresi), ürün kalite metrikleri (elverişlilik, yanıt süresi, arızalar arası ortalama süre), hata metrikleri (bulunan/düzeltilen hata sayısı ve öncelikleri, hata yoğunluğu), risk metrikleri (kalan risk seviyesi), kapsam metrikleri (gereksinim kapsamı, kod kapsamı) ve maliyet metrikleri (test maliyeti, kalite maliyeti)."
+          ],
+          "keyPoints": [
+            "Metrikler; ilerleme, mevcut kalite ve test aktivitelerinin etkinliğini göstermek için toplanır.",
+            "Yedi kategori: proje ilerleme, test ilerleme, ürün kalite, hata, risk, kapsam, maliyet metrikleri.",
+            "Test gözetimi metrikleri toplar; test kontrolü ve test tamamlama bunları kullanır."
+          ],
+          "commonMistakes": [
+            "'Kaç test senaryosu koşuldu' gibi tek bir metriğin tüm resmi göstermeye yeteceğini düşünmek; farklı kategoriler farklı sorulara cevap verir.",
+            "Hata metriklerini (bulunan/düzeltilen sayısı) kapsam metrikleriyle (gereksinim/kod kapsamı) karıştırmak — ikisi farklı şeyleri ölçer."
+          ]
+        },
+        "en": {
+          "title": "Metrics used in testing",
+          "paragraphs": [
+            "Test metrics are gathered to show progress against the planned schedule and budget, the current quality of the test object, and the effectiveness of test activities relative to the objectives or an iteration goal. Test monitoring gathers these metrics; test control and test completion use them.",
+            "Common metric categories include: project progress metrics (task completion, resource usage, test effort), test progress metrics (test cases run/not run, passed/failed, execution time), product quality metrics (availability, response time, mean time to failure), defect metrics (number and priority of defects found/fixed, defect density), risk metrics (residual risk level), coverage metrics (requirements coverage, code coverage), and cost metrics (cost of testing, cost of quality)."
+          ],
+          "keyPoints": [
+            "Metrics are gathered to show progress, current quality, and the effectiveness of test activities.",
+            "Seven categories: project progress, test progress, product quality, defect, risk, coverage, and cost metrics.",
+            "Test monitoring gathers the metrics; test control and test completion use them."
+          ],
+          "commonMistakes": [
+            "Assuming a single metric like 'number of test cases run' tells the whole story; different categories answer different questions.",
+            "Confusing defect metrics (numbers found/fixed) with coverage metrics (requirements/code coverage) — they measure different things."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-5.3.2",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.3.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test raporlarının amacı, içeriği ve hedef kitlesi",
+          "paragraphs": [
+            "Test raporlaması, test öncesi ve sonrasındaki bilgileri özetler ve iletir. Test ilerleme raporları, testin devam eden kontrolünü destekler ve plandan sapma durumunda zaman çizelgesi, kaynak ya da test planında değişiklik yapmak için yeterli bilgi sağlar; genellikle düzenli aralıklarla (ör. günlük, haftalık) hazırlanır ve test periyodunu, ilerleme durumunu (plan önünde/gerisinde), engelleri, metrikleri, yeni/değişen riskleri ve sıradaki periyot için planlanan testleri içerir.",
+            "Test tamamlama raporları ise bir test seviyesi, döngü ya da proje tamamlandığında ve ideal olarak çıkış kriterleri karşılandığında, bir kez hazırlanır. Test özetini, orijinal test planına (hedefler ve çıkış kriterleri) göre değerlendirmeyi, plandan sapmaları, engelleri, ilerleme raporlarına dayalı metrikleri, azaltılmamış riskleri/düzeltilmemiş hataları ve alınan dersleri içerir.",
+            "Farklı hedef kitleler farklı bilgilere ihtiyaç duyar ve raporun resmiyet derecesini ile sıklığını etkiler: aynı ekibe yapılan ilerleme raporlaması genelde sık ve gayri resmiyken, tamamlama raporlaması belirli bir şablonu izler ve yalnızca bir kez gerçekleşir."
+          ],
+          "keyPoints": [
+            "Test ilerleme raporu: devam eden test kontrolünü destekler, düzenli aralıklarla hazırlanır.",
+            "Test tamamlama raporu: bir test faaliyeti (seviye/döngü/proje) bittiğinde bir kez hazırlanır.",
+            "İlerleme raporu içeriği: periyot, ilerleme durumu, engeller, metrikler, yeni riskler, sıradaki plan.",
+            "Tamamlama raporu içeriği: özet, plana göre değerlendirme, sapmalar, azaltılmamış risk/hatalar, alınan dersler.",
+            "Hedef kitle, raporun resmiyet derecesini ve sıklığını belirler."
+          ],
+          "commonMistakes": [
+            "Test ilerleme raporunu test tamamlama raporuyla aynı doküman sanmak; ilerleme raporu tekrarlıdır, tamamlama raporu testin sonunda bir kez hazırlanır.",
+            "Tamamlama raporunda orijinal test planındaki çıkış kriterlerine göre değerlendirmeye yer vermemek; bu, raporun temel amaçlarından biridir."
+          ]
+        },
+        "en": {
+          "title": "Purpose, content, and audience for test reports",
+          "paragraphs": [
+            "Test reporting summarizes and communicates test information during and after testing. Test progress reports support the ongoing test control and provide enough information to modify the schedule, resources, or test plan when the plan deviates; they are usually produced at regular intervals (e.g., daily, weekly) and include the testing period, progress status (ahead/behind schedule), impediments, metrics, new or changed risks, and the testing planned for the next period.",
+            "Test completion reports are prepared once when a test level, cycle, or project is complete and, ideally, its exit criteria have been met. They include a test summary, an evaluation against the original test plan (objectives and exit criteria), deviations from the plan, impediments, metrics based on progress reports, unmitigated risks or unfixed defects, and lessons learned.",
+            "Different audiences need different information, which affects the report's formality and frequency: progress reporting to the same team is often frequent and informal, while completion reporting follows a set template and happens only once."
+          ],
+          "keyPoints": [
+            "Test progress reports support ongoing test control and are produced at regular intervals.",
+            "Test completion reports are produced once, when a test activity (level/cycle/project) is done.",
+            "Progress report content: period, progress status, impediments, metrics, new risks, next period's plan.",
+            "Completion report content: summary, evaluation against the plan, deviations, unmitigated risks/defects, lessons learned.",
+            "The audience determines the report's formality and frequency."
+          ],
+          "commonMistakes": [
+            "Treating the test progress report and the test completion report as the same document; the progress report repeats, the completion report is a one-off at the end.",
+            "Leaving out an evaluation against the original plan's exit criteria in the completion report; this is one of its core purposes."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-5.3.3",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.3.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test durumunun bildirilmesi",
+          "paragraphs": [
+            "Test durumunu bildirmenin en iyi yolu; test yönetimi endişelerine, organizasyonel test stratejilerine, düzenleyici standartlara veya kendi kendini yöneten ekipler söz konusu olduğunda ekibin kendisine bağlı olarak değişir. Seçenekler arasında sözlü iletişim (ekip üyeleri ve diğer paydaşlarla), gösterge panelleri (CI/CD panoları, görev panoları, burn-down grafikleri), elektronik iletişim kanalları (e-posta, sohbet), çevrim içi dokümantasyon ve resmi test raporları yer alır.",
+            "Bu seçeneklerden biri veya birkaçı birlikte kullanılabilir. Coğrafi mesafe ya da zaman farkı nedeniyle yüz yüze iletişimin her zaman mümkün olmadığı dağınık ekipler için daha resmi iletişim daha uygundur; farklı paydaşlar farklı bilgi türleriyle ilgilendiği için iletişim buna göre uyarlanmalıdır."
+          ],
+          "keyPoints": [
+            "Seçenekler: sözlü iletişim, gösterge panelleri, elektronik kanallar, çevrim içi dokümantasyon, resmi raporlar.",
+            "Birden fazla yöntem birlikte kullanılabilir.",
+            "Dağınık/uzak ekipler için daha resmi iletişim genellikle daha uygundur.",
+            "İletişim, hedef kitlenin bilgi ihtiyacına göre uyarlanmalıdır."
+          ],
+          "commonMistakes": [
+            "Tek bir iletişim aracının (ör. yalnızca e-posta) her ekip ve durum için yeterli olduğunu varsaymak.",
+            "Coğrafi olarak dağınık ekiplerde de yüz yüze iletişimin her zaman mümkün ve yeterli olacağını varsaymak."
+          ]
+        },
+        "en": {
+          "title": "Communicating the status of testing",
+          "paragraphs": [
+            "The best means of communicating test status varies depending on test management concerns, organizational test strategies, regulatory standards, or — for self-organizing teams — the team itself. Options include verbal communication with team members and other stakeholders, dashboards (CI/CD dashboards, task boards, burn-down charts), electronic communication channels (email, chat), online documentation, and formal test reports.",
+            "One or more of these options can be combined. More formal communication tends to suit distributed teams, where face-to-face communication is not always possible due to geographical distance or time differences; since different stakeholders are interested in different information, communication should be tailored accordingly."
+          ],
+          "keyPoints": [
+            "Options: verbal communication, dashboards, electronic channels, online documentation, formal reports.",
+            "More than one method can be used together.",
+            "More formal communication generally suits distributed/remote teams.",
+            "Communication should be tailored to what each audience needs to know."
+          ],
+          "commonMistakes": [
+            "Assuming a single communication channel (e.g., email only) is enough for every team and situation.",
+            "Assuming face-to-face communication is always possible and sufficient even for geographically distributed teams."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-5.4.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.4",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Yapılandırma yönetimi testleri nasıl destekler",
+          "paragraphs": [
+            "Testte yapılandırma yönetimi (YY); test planları, test stratejileri, test koşulları, test senaryoları, test betikleri, test sonuçları, test kayıtları ve test raporları gibi çalışma ürünlerini yapılandırma öğeleri olarak tanımlamak, kontrol etmek ve izlemek için bir disiplin sağlar.",
+            "Karmaşık bir yapılandırma öğesi (ör. bir test ortamı) için YY, öğenin bileşenlerini, aralarındaki ilişkileri ve versiyonlarını kaydeder. Bir yapılandırma öğesi test için onaylandığında bir temel çizgi (baseline) haline gelir ve yalnızca resmi bir değişiklik kontrol süreciyle değiştirilebilir; yeni bir temel çizgi oluşturulduğunda değişen öğelerin kaydı tutulur, böylece önceki test sonuçlarını yeniden üretmek için önceki temel çizgiye geri dönülebilir.",
+            "Testleri düzgün desteklemek için YY şunları sağlar: test öğeleri dahil tüm yapılandırma öğelerinin benzersiz tanımlanması, versiyon kontrolü, değişikliklerin izlenmesi ve diğer öğelerle ilişkilendirilmesi (böylece test süreci boyunca izlenebilirlik korunur), ve tüm dokümantasyon ile yazılım öğelerinin test çalışma ürünlerinde açık şekilde referanslanması. Sürekli entegrasyon/teslimat/dağıtım hatları genellikle otomatikleştirilmiş YY'yi de içeren bir DevOps hattının parçası olarak uygulanır."
+          ],
+          "keyPoints": [
+            "YY, test çalışma ürünlerini yapılandırma öğeleri olarak tanımlar, kontrol eder ve izler.",
+            "Onaylanmış bir yapılandırma öğesi 'temel çizgi (baseline)' haline gelir; yalnızca resmi değişiklik süreciyle değiştirilebilir.",
+            "Önceki temel çizgiye dönerek geçmiş test sonuçları yeniden üretilebilir.",
+            "Otomatikleştirilmiş YY genellikle CI/CD DevOps hattının bir parçasıdır."
+          ],
+          "commonMistakes": [
+            "Yapılandırma yönetimini yalnızca bir versiyon kontrol sistemiyle (ör. git) eş tutmak; YY test ortamlarını, veriyi ve dokümantasyonu da kapsayan çok daha geniş bir disiplindir.",
+            "Bir öğe temel çizgi haline geldikten sonra bile serbestçe değiştirilebileceğini düşünmek; oysa yalnızca resmi bir değişiklik kontrol süreciyle değiştirilebilir."
+          ]
+        },
+        "en": {
+          "title": "How configuration management supports testing",
+          "paragraphs": [
+            "In testing, configuration management (CM) provides a discipline for identifying, controlling, and tracking work products such as test plans, test strategies, test conditions, test cases, test scripts, test results, test logs, and test reports as configuration items.",
+            "For a complex configuration item (e.g., a test environment), CM records its components, their relationships, and versions. Once a configuration item is approved for testing, it becomes a baseline and can only be changed through a formal change control process; when a new baseline is created, a record of the changed items is kept, so it is possible to revert to a previous baseline to reproduce earlier test results.",
+            "To properly support testing, CM ensures that all configuration items, including test items, are uniquely identified, version controlled, tracked for changes, and related to other items (so traceability is maintained throughout the test process), and that all documentation and software items are unambiguously referenced in testware. Continuous integration/delivery/deployment pipelines typically implement CM automatically as part of an automated DevOps pipeline."
+          ],
+          "keyPoints": [
+            "CM identifies, controls, and tracks test work products as configuration items.",
+            "An approved configuration item becomes a 'baseline', changeable only through formal change control.",
+            "Reverting to a previous baseline lets a team reproduce earlier test results.",
+            "Automated CM is typically part of a CI/CD DevOps pipeline."
+          ],
+          "commonMistakes": [
+            "Equating configuration management with just a version control system (e.g., git); CM is a broader discipline that also covers test environments, data, and documentation.",
+            "Assuming an item can still be freely changed once it becomes a baseline; it can only be changed through a formal change control process."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-5.5.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§5.5.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Hata raporu hazırlama",
+          "paragraphs": [
+            "Test hedeflerinden biri hataları bulmak olduğu için yerleşik bir hata yönetimi süreci esastır. Raporlanan anomaliler gerçek bir hata olabileceği gibi yanlış pozitif bir sonuç ya da bir değişiklik talebi de olabilir — bu, hata raporunu ele alma sürecinde çözülür. Süreç en az şunları içerir: anomaliyi kaydetme, analiz edip sınıflandırma, uygun bir yanıta (düzelt ya da olduğu gibi bırak) karar verme ve son olarak raporu kapatma. Not: rapora 'hata raporu' desek de, ilk gözlemlenen şey teknik olarak bir arızadır (failure) — kök nedeni (hata/insan hatası) rapor yazılırken henüz bilinmez, analiz sırasında ortaya çıkar (bkz. FL-1.2.3).",
+            "İyi bir hata raporunun üç amacı vardır: hatayı çözmekle sorumlu kişilere yeterli bilgiyi sağlamak, çalışma ürününün kalitesini izlemek için bir araç sunmak ve geliştirme/test sürecinin iyileştirilmesi için fikir üretmek. Dinamik test sırasında kaydedilen bir hata raporu tipik olarak şu alanları içerir: benzersiz tanımlayıcı; başlık ve kısa özet; tarih, bildiren organizasyon ve yazar (rolüyle); test nesnesi ve test ortamı; bağlam (ör. çalıştırılan test senaryosu, YGYD aşaması); yeniden üretimi sağlayacak açıklama (adımlar, loglar, ekran görüntüleri); beklenen ve gerçekleşen sonuçlar; önem derecesi (severity); düzeltme önceliği (priority); durum (açık, ertelenmiş, düzeltmeyi bekliyor, kapatıldı vb.); ve referanslar.",
+            "Örnek: DEF-1042 numaralı rapor — Başlık: 'Safari'de geçerli kimlik bilgileriyle giriş başarısız oluyor'. Tarih/Yazar: 10.09.2026, test uzmanı Ayşe K. Test nesnesi/ortam: Giriş modülü v2.3, Safari 17 / macOS. Bağlam: keşif testi oturumu, giriş test paketi. Adımlar: geçerli e-posta ve şifre girilir, 'Giriş Yap' tıklanır. Beklenen sonuç: kullanıcı gösterge paneline yönlendirilir. Gerçekleşen sonuç: yükleniyor simgesi donuyor, yönlendirme gerçekleşmiyor, konsolda 500 hatası görülüyor. Önem derecesi: yüksek (ana akışı engelliyor). Öncelik: yüksek. Durum: açık. Adımlar ve ortam olmadan kimse bu anomaliyi yeniden üretemez; önem derecesi ve öncelik olmadan kimse hangisinin önce ele alınacağını bilemez — raporu eyleme geçirilebilir kılan tam olarak bu alanlardır."
+          ],
+          "keyPoints": [
+            "Hata yönetimi iş akışı: kaydet → analiz et/sınıflandır → yanıt kararı ver (düzelt/olduğu gibi bırak) → kapat.",
+            "Bir hata raporunun üç amacı: çözüm için yeterli bilgi, kalite izleme, süreç iyileştirme fikirleri.",
+            "Zorunlu alanlar arasında tanımlayıcı, ortam, yeniden üretim adımları, beklenen/gerçekleşen sonuç, önem derecesi ve öncelik bulunur.",
+            "Önem derecesi (etkinin büyüklüğü) ile düzeltme önceliği (ne zaman ele alınacağı) farklı kavramlardır."
+          ],
+          "commonMistakes": [
+            "Sadece 'çalışmıyor' yazıp yeniden üretim adımlarını, ortamı veya beklenen/gerçekleşen sonucu eklememek; bu, raporu eyleme geçirilemez hale getirir.",
+            "Severity (önem derecesi/etki) ile priority'yi (düzeltme sırası) eş anlamlı sanmak; düşük etkili ama kolay düzeltilebilir bir hata yüksek öncelikli olabilir, ya da tam tersi.",
+            "Raporun adının 'hata raporu' olmasına bakıp ilk gözlemlenenin zaten kök nedeniyle (hata) belirlendiğini sanmak; rapor aslında gözlemlenen arızayı belgeler, kök neden analiz sırasında bulunur."
+          ]
+        },
+        "en": {
+          "title": "Preparing a defect report",
+          "paragraphs": [
+            "Since one of testing's main objectives is finding defects, an established defect management process is essential. A reported anomaly may turn out to be a real defect, a false-positive result, or a change request — this is resolved during the process of handling the defect report. At minimum, the process includes: logging the anomaly, analyzing and classifying it, deciding on a response (fix or keep as is), and finally closing the report. Note: although we call it a 'defect report', what is first observed is technically a failure — the root cause (the error) is not yet known when the report is written; it emerges during analysis (see FL-1.2.3).",
+            "A good defect report serves three purposes: giving those responsible enough information to resolve the issue, providing a means to track the quality of the work product, and generating ideas to improve the development and test process. A defect report logged during dynamic testing typically includes: a unique identifier; a title with a short summary; the date, issuing organization, and author (with role); the test object and test environment; context (e.g., the test case being run, SDLC phase); a description enabling reproduction (steps, logs, screenshots); expected and actual results; severity; priority to fix; status (open, deferred, awaiting fix, closed, etc.); and references.",
+            "Example: report DEF-1042 — Title: 'Login fails with valid credentials on Safari'. Date/Author: 2026-09-10, tester Ayşe K. Test object/environment: Login module v2.3, Safari 17 / macOS. Context: exploratory testing session, login test suite. Steps: enter a valid email and password, click 'Log In'. Expected result: the user is redirected to the dashboard. Actual result: the spinner freezes, no redirection happens, and the console shows a 500 error. Severity: high (blocks the core flow). Priority: high. Status: open. Without the steps and environment, nobody could reproduce this anomaly; without severity and priority, nobody would know which defect to handle first — these are exactly the fields that make the report actionable."
+          ],
+          "keyPoints": [
+            "Defect management workflow: log → analyze/classify → decide a response (fix/keep as is) → close.",
+            "A defect report serves three purposes: enough information to resolve it, quality tracking, and process improvement ideas.",
+            "Required fields include identifier, environment, reproduction steps, expected/actual results, severity, and priority.",
+            "Severity (size of the impact) and priority (when it gets addressed) are different concepts."
+          ],
+          "commonMistakes": [
+            "Writing only 'it doesn't work' without reproduction steps, environment, or expected/actual results; this makes the report unactionable.",
+            "Treating severity (impact) and priority (fix order) as synonyms; a low-impact but easy-to-fix defect can be high priority, or the reverse.",
+            "Assuming that because it's called a 'defect report', the root cause (the error) is already known when it's filed; the report documents the observed failure, and the root cause emerges during analysis."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    }
+  ]
 }

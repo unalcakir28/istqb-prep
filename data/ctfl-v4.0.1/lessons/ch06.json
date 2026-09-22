@@ -2,5 +2,124 @@
   "chunk": "ch06",
   "chapter": 6,
   "dataVersion": "2026.09.19",
-  "lessons": []
+  "lessons": [
+    {
+      "objective": "FL-6.1.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§6.1.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test araçlarının test sürecine desteği",
+          "paragraphs": [
+            "Bir test aracı, tek bir kategoriden ibaret değildir; her biri farklı bir test aktivitesini destekleyen çok sayıda araç türü vardır. Bu araçlar testi yapmaz, testi kolaylaştırır ve hızlandırır: manuel olarak saatler süren bir işi dakikalara indirir ya da elle yapılması pratik olmayan bir ölçümü mümkün kılar.",
+            "Yönetim araçları YGYD, gereksinim, test ve hata yönetimini kolaylaştırır; statik test araçları gözden geçirme ve statik analize destek verir; test tasarımı ve test uyarlama araçları test senaryosu, test verisi ve test prosedürü üretimini kolaylaştırır; test koşumu ve kapsam araçları otomatik koşum ile kapsam ölçümünü sağlar.",
+            "Fonksiyonel olmayan test araçları elle yapılması zor veya imkansız testleri (ör. performans testleri) mümkün kılar. DevOps araçları CI/CD ve derleme süreçlerini, iş birliği araçları ise ekip içi iletişimi destekler. Sanallaştırma ve konteynerleştirme araçları ölçeklenebilirliği ve dağıtım standardizasyonunu destekler.",
+            "Kategori listesi kapalı değildir: teste yardımcı olan her araç bir test aracıdır. Elektronik bir tablo, test verisini düzenlemek için kullanıldığında bu bağlamda bir test aracı sayılır."
+          ],
+          "keyPoints": [
+            "Test araçları testi yapmaz, test aktivitelerini destekler ve kolaylaştırır.",
+            "Yönetim araçları YGYD, gereksinim, test ve hata yönetimini kolaylaştırır.",
+            "Statik test araçları gözden geçirme ve statik analizi destekler.",
+            "Test tasarımı/uyarlama araçları senaryo, veri ve prosedür üretimini; test koşumu/kapsam araçları otomatik koşumu ve kapsam ölçümünü destekler.",
+            "Kategori listesi örnekseldir: teste yardımcı olan her araç (ör. bir elektronik tablo) test aracı sayılabilir."
+          ],
+          "commonMistakes": [
+            "Test araçlarını yalnızca 'test koşumunu otomatikleştiren araç' ile eşitlemek; oysa yönetim, statik test ve iş birliği araçları da test aracıdır.",
+            "Test tasarımı/uyarlama araçlarını test koşumu/kapsam araçlarıyla karıştırmak: biri senaryo ve veri üretir, diğeri koşumu ve kapsamı ölçer.",
+            "Listeyi kapalı sanmak: syllabus 'teste yardımcı her türlü araç' der, yani sıra dışı bir araç da (elektronik tablo gibi) bağlama göre test aracı olabilir."
+          ]
+        },
+        "en": {
+          "title": "How test tools support testing",
+          "paragraphs": [
+            "There is no single kind of test tool; several distinct tool types each support a different test activity. Tools do not perform testing themselves — they make specific activities faster, more consistent, or possible at all when a task would otherwise be impractical to do by hand.",
+            "Test management tools facilitate SDLC, requirements, test, and defect management. Static testing tools support the tester in performing reviews and static analysis. Test design and test implementation tools facilitate generating test cases, test data, and test procedures. Test execution and test coverage tools facilitate automated execution and coverage measurement.",
+            "Non-functional testing tools make testing possible that is difficult or impossible to do manually, such as performance testing. DevOps tools support the delivery pipeline, build automation, and CI/CD; collaboration tools facilitate team communication. Tools for scalability and deployment standardization include virtual machines and containerization tools.",
+            "The list of categories is not closed: any tool that assists testing counts as a test tool. A spreadsheet used to organize test data, for example, is a test tool in that context."
+          ],
+          "keyPoints": [
+            "Test tools do not perform testing — they support and facilitate test activities.",
+            "Test management tools facilitate SDLC, requirements, test, and defect management.",
+            "Static testing tools support reviews and static analysis.",
+            "Test design/implementation tools generate cases, data, and procedures; test execution/coverage tools automate execution and measure coverage.",
+            "The category list is illustrative, not exhaustive: any tool that assists testing (even a spreadsheet) can count as a test tool."
+          ],
+          "commonMistakes": [
+            "Equating 'test tool' with only test-execution automation tools, forgetting management, static-testing, and collaboration tools also qualify.",
+            "Confusing test design/implementation tools with test execution/coverage tools: one generates cases and data, the other runs and measures them.",
+            "Treating the syllabus list as exhaustive, when it explicitly says 'any other tool that assists in testing' — an unusual tool like a spreadsheet can qualify depending on context."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-6.2.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§6.2.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test otomasyonunun faydaları ve riskleri",
+          "paragraphs": [
+            "Bir test aracı edinmek başlı başına başarı getirmez. Her yeni araç, gerçek ve kalıcı bir fayda sağlaması için kullanıma alma, bakım ve eğitim eforu gerektirir. Bu efor göz ardı edilirse araç fayda yerine yeni bir yük haline gelir.",
+            "Test otomasyonunun faydaları somuttur: tekrarlayan manuel işlerden (regresyon testi koşumu, aynı verinin tekrar girilmesi gibi) zaman kazandırır, testleri tutarlı biçimde aynı sırada ve sıklıkta çalıştırarak basit insan hatalarını önler, insanların elle belirlemesi zor ölçütleri (kapsam gibi) daha objektif biçimde sağlar ve test ilerlemesi hakkındaki bilgiye daha kolay erişim sunar. Kısalan test koşum süresi de daha erken hata tespiti ve daha hızlı geri bildirim sağlar; kalan zaman testçilerin daha derin testler tasarlamasına ayrılabilir.",
+            "Riskler ise genellikle gözden kaçar. Bir aracın faydaları hakkında gerçekçi olmayan beklentiler kurulabilir; aracı kullanıma alma, test betiklerini sürdürme ve mevcut süreci değiştirme için gereken zaman ve maliyet yanlış tahmin edilebilir. Test betiklerinin bakımı, aracın kendisi kadar sürekli bir efor gerektirir ve bu genellikle hafife alınır.",
+            "Diğer riskler arasında manuel testin daha uygun olduğu durumlarda otomasyona başvurmak, araca aşırı güvenerek insanın eleştirel değerlendirmesini devre dışı bırakmak, araç satıcısına bağımlı kalmak (satıcının işi bırakması, desteği kesmesi gibi), açık kaynaklı bir aracın terk edilmesi, aracın geliştirme platformuyla uyumsuz olması ve düzenleyici/emniyet gereksinimlerine uymayan bir aracın seçilmesi sayılabilir."
+          ],
+          "keyPoints": [
+            "Bir aracı edinmek başarıyı garanti etmez; gerçek fayda için kullanıma alma, bakım ve eğitim eforu gerekir.",
+            "Faydalar: zaman tasarrufu, basit insan hatalarının önlenmesi, daha objektif ölçüm, test bilgisine kolay erişim, daha kısa koşum süresiyle erken hata tespiti.",
+            "Riskler: bir aracın faydaları hakkında gerçekçi olmayan beklentiler ve kullanıma alma/bakım maliyetinin yanlış tahmin edilmesi.",
+            "Test betiklerinin bakımı, aracın kendisinden bağımsız, sürekli bir efordur ve sıkça hafife alınır.",
+            "Diğer riskler: araca aşırı güvenerek insanın eleştirel düşünmesini devre dışı bırakmak, satıcı/açık kaynak bağımlılığı, platform uyumsuzluğu, düzenleyici uyumsuzluk."
+          ],
+          "commonMistakes": [
+            "Sadece faydaları hatırlayıp riskleri unutmak — sınav özellikle riskleri de sorar; ikisi de aynı ağırlıkta ezberlenmelidir.",
+            "Test otomasyonunu 'kur ve unut' sanmak: test betiklerinin sürdürülmesi, aracın kendisi kadar sürekli bir bakım eforu gerektirir; bu risk sıkça atlanır.",
+            "Araca aşırı güvenmeyi (insanın eleştirel düşünmesini yok saymak) sadece 'teknik bir risk' sanmak; syllabus bunu açıkça bir risk olarak sayar, göz ardı edilecek bir ayrıntı değildir.",
+            "Otomasyonun her durumda manuel testten üstün olduğunu varsaymak; syllabus, manuel testin daha uygun olduğu durumlarda otomasyon kullanmayı ayrı bir risk olarak sayar."
+          ]
+        },
+        "en": {
+          "title": "Benefits and risks of test automation",
+          "paragraphs": [
+            "Simply acquiring a tool does not guarantee success. Every new tool needs effort — for introduction, maintenance, and training — before it delivers real, lasting benefit. Skip that effort and the tool becomes a burden rather than a gain.",
+            "The benefits are concrete: automation saves time on repetitive manual work (running regression tests, re-entering the same data), prevents simple human errors by executing tests consistently in the same order and frequency, gives a more objective assessment of measures such as coverage that are hard for people to determine, and makes information about test progress easier to access. Shorter execution times also mean earlier defect detection and faster feedback, freeing testers to design deeper, more effective tests.",
+            "The risks are the part candidates tend to forget. Teams can hold unrealistic expectations about what a tool delivers, and can misjudge the time and cost needed to introduce the tool, maintain test scripts, and change the existing manual process. Maintaining automated test scripts is an ongoing effort in its own right, separate from the tool itself, and it is routinely underestimated.",
+            "Other risks include using a test tool when manual testing would be more appropriate, over-relying on the tool so that human critical thinking is bypassed, dependency on a tool vendor (who may cease support, retire the tool, or be acquired), an open-source tool being abandoned, incompatibility with the development platform, and choosing a tool that does not meet regulatory or safety requirements."
+          ],
+          "keyPoints": [
+            "Acquiring a tool does not guarantee success; real benefit needs effort for introduction, maintenance, and training.",
+            "Benefits: time saved, fewer simple human errors, more objective measures, easier access to test information, earlier defect detection from shorter execution times.",
+            "Risks: unrealistic expectations about a tool's benefits, and misjudged time/cost for introducing and maintaining it.",
+            "Maintaining test scripts is a continuous effort separate from the tool itself, and it is commonly underestimated.",
+            "Other risks: over-reliance on the tool at the expense of human critical thinking, vendor/open-source dependency, platform incompatibility, regulatory non-compliance."
+          ],
+          "commonMistakes": [
+            "Recalling only the benefits and forgetting the risks — the exam tests both sides with equal weight.",
+            "Assuming automation is 'set and forget': maintaining test scripts is an ongoing effort as demanding as the tool itself, and this risk is easy to overlook.",
+            "Treating over-reliance on the tool (bypassing human critical thinking) as a minor technical detail; the syllabus lists it as a named risk in its own right.",
+            "Assuming automation is always better than manual testing; the syllabus explicitly lists using a tool when manual testing is more appropriate as a risk."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    }
+  ]
 }

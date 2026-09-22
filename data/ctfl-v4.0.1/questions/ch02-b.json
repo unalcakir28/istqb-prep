@@ -1,0 +1,2105 @@
+{
+  "chunk": "ch02-b",
+  "chapter": 2,
+  "dataVersion": "2026.09.19",
+  "questions": [
+    {
+      "id": "ctfl4-0153",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.1",
+      "objectives": [
+        "FL-2.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "sdlc-impact",
+        "iterative-incremental"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir proje, her döngünün çalışan bir ürün artımı sunduğu döngüsel ve artımlı bir geliştirme modeli izlemektedir. Bunun test üzerindeki sonucu aşağıdakilerden hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Her test seviyesinde hem statik hem dinamik test tek bir döngüye sığar; sık artımlar kapsamlı regresyon gerektirir"
+            },
+            {
+              "id": "b",
+              "text": "Komple bir sisteme ihtiyaç duyulduğu için dinamik test ancak en son döngüde başlayabilir"
+            },
+            {
+              "id": "c",
+              "text": "Henüz çalıştırılabilir kod olmadığından, ilk döngülerde yalnızca gözden geçirme gibi statik test mümkündür"
+            },
+            {
+              "id": "d",
+              "text": "İlk artımlar için tam bir sistem test ortamı henüz mevcut olmadığından, tüm test seviyelerinin tamamen atlanması gerekir"
+            }
+          ],
+          "rationale": {
+            "summary": "Döngüsel ve artımlı modeller her döngünün çalışan bir prototip veya ürün artımı sunduğunu varsayar; bu, tek bir döngü içinde her test seviyesinde hem statik hem dinamik testin yapılabileceği, artımların sık teslimatının ise hızlı geri bildirim ve kapsamlı regresyon testi gerektirdiği anlamına gelir.",
+            "byOption": {
+              "a": "Doğru. Her döngü çalışan bir artım sunduğu için tüm test seviyeleri döngünün içinde açılır; artımların birbiri ardına gelmesi ise regresyon testini kapsamlı hale getiren şeydir.",
+              "b": "Yanlış. Bu, sıralı bir modelin aşırı bir yorumu olurdu; döngüsel/artımlı modellerde her döngü zaten çalışan bir artım sunar, dinamik test son döngüyü beklemez.",
+              "c": "Yanlış. Bu, sıralı modellerin erken aşamalarını tanımlar; sıralı modellerde çalıştırılabilir kod geç ortaya çıktığı için erken aşamada yalnızca statik çalışmalar mümkündür. Döngüsel/artımlı modellerde ise her döngü kod içerir.",
+              "d": "Yanlış. Bu, tam bir sistem test ortamının bulunmamasını test seviyelerinin uygulanabilirliğiyle karıştırır; bir artım, tam ortam hazır olmadan çok önce bileşen ve entegrasyon seviyelerinde test edilebilir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A project follows an iterative and incremental development model in which every iteration delivers a working product increment. Which consequence for testing follows from this?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Static and dynamic testing both fit within one iteration at every test level, and frequent increments demand heavy regression testing"
+            },
+            {
+              "id": "b",
+              "text": "Dynamic testing cannot start until the very last iteration, because a complete system is required first"
+            },
+            {
+              "id": "c",
+              "text": "Only static testing, such as reviews, is possible during the early iterations, since no executable code exists yet"
+            },
+            {
+              "id": "d",
+              "text": "Test levels have to be skipped entirely for the early increments, because a full system test environment is not yet available to run them in"
+            }
+          ],
+          "rationale": {
+            "summary": "Iterative and incremental models assume every iteration delivers a working prototype or product increment; this means both static and dynamic testing can happen at every test level within a single iteration, and the frequent delivery of increments requires fast feedback together with extensive regression testing.",
+            "byOption": {
+              "a": "Correct. Because each iteration delivers a working increment, all test levels are available inside the iteration, and it is the stream of increments that makes regression testing extensive.",
+              "b": "Incorrect. This would be an extreme reading of a sequential model; in iterative/incremental models every iteration already delivers a working increment, so dynamic testing does not wait for the last iteration.",
+              "c": "Incorrect. This describes the early phases of sequential models, where executable code appears late so only static work is possible early on. In iterative/incremental models, every iteration includes code.",
+              "d": "Incorrect. This confuses the absence of a full system test environment with the applicability of test levels; an increment can be tested at component and integration level long before a full environment exists."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0154",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.1",
+      "objectives": [
+        "FL-2.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "sdlc-impact",
+        "scope-of-influence"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Ders programına göre, seçilen yazılım geliştirme yaşam döngüsü (YGYD) modeli testle ilgili hangi unsurları etkiler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yalnızca test koşumunun zamanlamasını; test dokümantasyonunun ayrıntı düzeyi seçilen modelden bağımsız olarak sabit kalır"
+            },
+            {
+              "id": "b",
+              "text": "Test aktivitelerinin kapsamı ve zamanlaması, dokümantasyon ayrıntısı, teknik seçimi, otomasyon ve test uzmanının rolü"
+            },
+            {
+              "id": "c",
+              "text": "Projede hangi test seviyelerinin kullanılacağını, ancak testin ne kadarının otomatikleştirileceğini değil"
+            },
+            {
+              "id": "d",
+              "text": "Test ekibine ayrılan bütçenin büyüklüğünü; teknik veya dokümantasyon seçimini etkilemez"
+            }
+          ],
+          "rationale": {
+            "summary": "Seçilen YGYD modeli; test aktivitelerinin kapsamını ve zamanlamasını, test dokümantasyonunun ayrıntı düzeyini, hangi tekniklerin uygun olduğunu, otomasyonun ne kadar kullanılacağını ve test uzmanının rol ve sorumluluklarını belirler.",
+            "byOption": {
+              "a": "Yanlış. Bu, YGYD'yi yalnızca bir takvim meselesine indirger; oysa dokümantasyon ayrıntı düzeyi de doğrudan model seçiminden etkilenir ve sabit kalmaz.",
+              "b": "Doğru. Bu beş unsur, YGYD'nin test üzerindeki etkisi olarak birlikte sayılır.",
+              "c": "Yanlış. Bu, modelin yalnızca hangi seviyelerin var olduğuna karar verdiğini varsayar. Otomasyonun kapsamı da modelin belirlediği unsurlardan biridir: çevik projeler, değişim sürekli olduğu için yoğun otomasyona dayanır.",
+              "d": "Yanlış. Bu, bir proje yönetimi kaynak kararını YGYD'nin etkisiyle karıştırır; model, teknik ve dokümantasyon seçimini doğrudan şekillendirir ve bütçe sayılan unsurlar arasında değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "According to the syllabus, which elements of testing does the chosen software development lifecycle (SDLC) model influence?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The timing of test execution alone; the level of detail of test documentation stays fixed regardless of the model chosen"
+            },
+            {
+              "id": "b",
+              "text": "The scope and timing of test activities, documentation detail, technique choice, automation, and the tester's role"
+            },
+            {
+              "id": "c",
+              "text": "Which test levels the project uses, but not how much of the testing gets automated"
+            },
+            {
+              "id": "d",
+              "text": "The size of the budget allocated to the test team, with no effect on technique or documentation choices"
+            }
+          ],
+          "rationale": {
+            "summary": "The chosen SDLC model shapes the scope and timing of test activities, the level of detail of test documentation, which test techniques and approaches fit, how much testing gets automated, and a tester's role and responsibilities.",
+            "byOption": {
+              "a": "Incorrect. This reduces the SDLC to a scheduling question; the level of documentation detail is itself shaped by the model and does not stay fixed.",
+              "b": "Correct. These five elements are listed together as the impact of the chosen SDLC on testing.",
+              "c": "Incorrect. This treats the model as deciding only which levels exist. The extent of automation is itself one of the elements it shapes — agile projects lean on heavy automation precisely because change is constant.",
+              "d": "Incorrect. This confuses a project-management resource decision with the SDLC's influence; the model shapes technique and documentation choices directly, and budget is not among the elements listed."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0155",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.2",
+      "objectives": [
+        "FL-2.1.2"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "good-practices",
+        "test-levels"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Her YGYD modelinde geçerli olan iyi test uygulamalarına göre, test seviyeleri hakkında aşağıdaki ifadelerden hangisi doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Her test seviyesinin, diğer seviyelerden farklı, kendine özgü hedefleri olmalıdır"
+            },
+            {
+              "id": "b",
+              "text": "Her test seviyesi, önceki seviyenin testlerini tekrarlayarak sonuçları ikinci kez doğrulamalıdır"
+            },
+            {
+              "id": "c",
+              "text": "Bir test seviyesinin hedefleri, kapsamı garanti altına almak için bitişik seviyeyle tamamen çakışmalıdır"
+            },
+            {
+              "id": "d",
+              "text": "Test seviyeleri yalnızca kimin yürüttüğüne göre ayrılır, hedeflerine göre değil"
+            }
+          ],
+          "rationale": {
+            "summary": "İyi test uygulamalarından biri, her test seviyesinin diğerlerinden farklı ve çakışmayan hedeflere sahip olmasıdır; bu, testin gereksiz tekrara düşmeden kapsamlı olmasını sağlar.",
+            "byOption": {
+              "a": "Doğru. Farklı ve çakışmayan hedefler, testin gereksiz tekrara düşmeden kapsamlı olmasını sağlayan şeydir.",
+              "b": "Yanlış. Bu, test seviyelerinin amacını yanlış tanımlar; amaç aynı testleri tekrarlamak değil, farklı hedeflere hizmet etmektir.",
+              "c": "Yanlış. Tam tersine, hedeflerin çakışması gereksiz tekrara yol açar; iyi uygulama hedeflerin FARKLI olmasıdır.",
+              "d": "Yanlış. Sorumluluğun kimde olduğu, test seviyelerini birbirinden ayıran özelliklerden yalnızca biridir; test nesnesi, test hedefleri, test esası ve tipik olarak bulunan hatalar (defect) ile arızalar (failure) da bu özellikler arasındadır."
+            }
+          }
+        },
+        "en": {
+          "stem": "According to the good testing practices that apply across every SDLC model, which statement about test levels is correct?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Each test level should have its own specific objectives, distinct from the other levels"
+            },
+            {
+              "id": "b",
+              "text": "Every test level should repeat the previous level's tests, to double-check the earlier results"
+            },
+            {
+              "id": "c",
+              "text": "A test level's objectives should fully overlap with those of the adjacent level, to guarantee coverage"
+            },
+            {
+              "id": "d",
+              "text": "Test levels are told apart only by who performs them, not by their objectives"
+            }
+          ],
+          "rationale": {
+            "summary": "One good testing practice is that each test level has specific objectives that are distinct from the other levels; this lets testing be thorough without wastefully repeating the same checks.",
+            "byOption": {
+              "a": "Correct. Distinct, non-overlapping objectives are what let testing be thorough without repeating the same checks.",
+              "b": "Incorrect. This mischaracterizes the purpose of test levels; the point is not to repeat the same tests but to serve different objectives.",
+              "c": "Incorrect. On the contrary, overlapping objectives lead to needless repetition; the good practice is that objectives are DIFFERENT.",
+              "d": "Incorrect. Who is responsible is only one of the attributes that tell test levels apart; the test object, the test objectives, the test basis and the defects and failures typically found are the others."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0156",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.2",
+      "objectives": [
+        "FL-2.1.2"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "good-practices",
+        "reviews"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Her YGYD modelinde geçerli olan iyi test uygulamalarına göre, iş ürünlerinin gözden geçirilmesiyle ilgili aşağıdakilerden hangisi doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test uzmanları, bir iş ürününü ancak resmi ve nihai onaydan geçtikten sonra gözden geçirmelidir"
+            },
+            {
+              "id": "b",
+              "text": "Yalnızca kabul testi seviyesine ait iş ürünlerinin test uzmanları tarafından gözden geçirilmesi gerekir"
+            },
+            {
+              "id": "c",
+              "text": "Gözden geçirmeler proje başına bir kez, başlangıç toplantısından hemen önce planlanır"
+            },
+            {
+              "id": "d",
+              "text": "Test uzmanları, tamamlanmış sürümü beklemeden, taslak hazır olur olmaz iş ürününü gözden geçirir"
+            }
+          ],
+          "rationale": {
+            "summary": "İyi test uygulamalarından biri, test uzmanlarının iş ürünlerinin ilk taslakları ortaya çıkar çıkmaz onları gözden geçirmesidir; tamamlanmış bir sürümü beklemek yerine bu erken katılım shift-left yaklaşımını destekler.",
+            "byOption": {
+              "a": "Yanlış. Tam tersine iyi uygulama, resmi onayı beklemeden, taslak aşamasında gözden geçirmeyi önerir.",
+              "b": "Yanlış. Bu uygulama herhangi bir test seviyesiyle sınırlı değildir; tüm iş ürünleri için geçerlidir.",
+              "c": "Yanlış. Gözden geçirmelerin zamanlaması iş ürünlerinin taslaklarının hazır olmasına bağlıdır, tek seferlik bir proje başı etkinliği değildir.",
+              "d": "Doğru. Tamamlanmış sürüm yerine taslağı gözden geçirmek, shift-left'i pratiğe döken iyi uygulamadır."
+            }
+          }
+        },
+        "en": {
+          "stem": "According to the good testing practices that apply across every SDLC model, which statement about reviewing work products is correct?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Testers should review a work product only after it has passed formal, final sign-off"
+            },
+            {
+              "id": "b",
+              "text": "Only the work products belonging to the acceptance test level need to be reviewed by the testers"
+            },
+            {
+              "id": "c",
+              "text": "Reviews are scheduled once per project, immediately before the kick-off meeting"
+            },
+            {
+              "id": "d",
+              "text": "Testers review a work product as soon as a draft exists, without waiting for a finished version"
+            }
+          ],
+          "rationale": {
+            "summary": "One good testing practice is that testers review work products the moment drafts exist, rather than waiting for a finished version; this early involvement supports the shift-left approach.",
+            "byOption": {
+              "a": "Incorrect. On the contrary, the good practice is to review at the draft stage, without waiting for formal sign-off.",
+              "b": "Incorrect. This practice is not restricted to any single test level; it applies to work products in general.",
+              "c": "Incorrect. The timing of reviews depends on when drafts of work products become available, not on a single pre-kickoff event.",
+              "d": "Correct. Reviewing the draft rather than the finished version is the good practice that puts shift left into effect."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0157",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.2",
+      "objectives": [
+        "FL-2.1.2"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "early-testing",
+        "good-practices",
+        "retired-duplicate",
+        "scenario"
+      ],
+      "origin": "original",
+      "status": "retired",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, yeni bir alt sistemin tasarım aşamasındadır: ayrıntılı tasarım dokümanları yazılmakta, henüz kod bulunmamaktadır. Her YGYD modelinde geçerli olan iyi test uygulamalarına göre, test uzmanları bu alt sistemin entegrasyon testleri için ne yapmalıdır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Henüz bir şey yapmamalı; entegrasyon testlerinin analizi ve tasarımı, bileşenler kodlandıktan sonra başlar"
+            },
+            {
+              "id": "b",
+              "text": "Entegrasyon testlerini otomatikleştirmeli; böylece ilk bileşen derlenir derlenmez çalıştırılabilirler"
+            },
+            {
+              "id": "c",
+              "text": "Entegrasyon testlerinin analiz ve tasarımına şimdi, karşılık geldikleri tasarım aşamasında başlamalı"
+            },
+            {
+              "id": "d",
+              "text": "Entegrasyon testi için test ortamını hazırlamalı; kod yazılmadan başka hiçbir test aktivitesi mümkün değildir"
+            }
+          ],
+          "rationale": {
+            "summary": "İyi test uygulamalarından biri, belirli bir test seviyesi için test analizi ve tasarımının o seviyenin kendi geliştirme aşamasında başlamasıdır. Entegrasyon testlerinin karşılık geldiği aşama tasarım aşamasıdır, dolayısıyla analiz ve tasarım şimdi başlar.",
+            "byOption": {
+              "a": "Yanlış. Bu, test çalışmasının kodlamanın peşinden geldiği bir sıralamayı tanımlar; erken test ilkesi tam da bu geç test kalıbını önlemek için vardır.",
+              "b": "Yanlış. Bu, testlerin nasıl koşulacağına dair bir karardır, ne zaman analiz edilip tasarlanacağına dair değil; üstelik henüz tasarlanmamış testlerin var olduğunu varsayar.",
+              "c": "Doğru. Bir test seviyesinin analizi ve tasarımı, o seviyeye karşılık gelen geliştirme aşamasında başlar; entegrasyon testleri için bu, tasarım aşamasıdır.",
+              "d": "Yanlış. Ortam hazırlığı bir test gerçekleştirme aktivitesidir. Kodun yokluğu bunu engellemez, ama test analizi ve tasarımını da engellemez; bu aşamanın gerektirdiği iş budur."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team is in the design phase for a new subsystem: the detailed design documents are being written and no code exists yet. According to the good testing practices that apply across every SDLC model, what should the testers do about the integration tests for this subsystem?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Nothing yet; analysis and design of the integration tests start once the components have been coded"
+            },
+            {
+              "id": "b",
+              "text": "Automate the integration tests, so that they can run as soon as the first component compiles"
+            },
+            {
+              "id": "c",
+              "text": "Start test analysis and design for the integration tests now, during the design phase they correspond to"
+            },
+            {
+              "id": "d",
+              "text": "Prepare the test environment for integration testing, since no other test activity is possible before code exists"
+            }
+          ],
+          "rationale": {
+            "summary": "One good testing practice is that test analysis and design for a given test level begin during that level's own development phase. For integration tests, the corresponding phase is the design phase, so analysis and design start now.",
+            "byOption": {
+              "a": "Incorrect. This describes a code-first sequencing in which test work only ever follows implementation — the late-testing pattern that the early-testing principle exists to prevent.",
+              "b": "Incorrect. This is a decision about how the tests will be executed, not about when they are analysed and designed; it also presumes tests that have not been designed yet.",
+              "c": "Correct. Test analysis and design for a level begin during that level's corresponding development phase, which for integration tests is the design phase.",
+              "d": "Incorrect. Preparing an environment is a test implementation activity. The absence of code does not block it — but neither does it block test analysis and design, which is the work this phase calls for."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0158",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.3",
+      "objectives": [
+        "FL-2.1.3"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "test-first",
+        "tdd"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Hangi önce-test-et yaklaşımı, önce bir test yazılmasını, ardından bu testi geçecek kadar kodun yazılmasını ve son olarak hem testin hem de kodun yeniden düzenlenmesini (refactor) önerir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kabul testi güdümlü yazılım geliştirme (ATDD)"
+            },
+            {
+              "id": "b",
+              "text": "Test güdümlü yazılım geliştirme (TDD)"
+            },
+            {
+              "id": "c",
+              "text": "Davranış güdümlü yazılım geliştirme (BDD)"
+            },
+            {
+              "id": "d",
+              "text": "Keşif testi"
+            }
+          ],
+          "rationale": {
+            "summary": "TDD, kodlamayı kapsamlı bir ön tasarım yerine test senaryolarıyla yönlendirir: önce bir test yazılır, testi karşılamak için kod yazılır, ardından hem test hem kod yeniden düzenlenir.",
+            "byOption": {
+              "a": "Yanlış. ATDD testleri kabul kriterlerinden türetir ve sistem tasarımının bir parçası olarak yazar; test-kod-refactor döngüsü TDD'yi tanımlayan özelliktir, ATDD'yi değil.",
+              "b": "Doğru. Test-kod-refactor döngüsü tam olarak TDD'nin tanımıdır.",
+              "c": "Yanlış. BDD davranışı Given/When/Then formatında doğal dille ifade eder; test-kod-refactor döngüsü BDD'nin tanımlayıcı özelliği değildir.",
+              "d": "Yanlış. Keşif testi, önceden tanımlanmış test senaryoları olmadan eşzamanlı test tasarımı, koşumu ve öğrenmeyi içerir; bir önce-test-et yaklaşımı değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which test-first approach directs coding by writing a test first, then writing just enough code to satisfy it, and finally refactoring both the test and the code?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Acceptance test-driven development (ATDD)"
+            },
+            {
+              "id": "b",
+              "text": "Test-driven development (TDD)"
+            },
+            {
+              "id": "c",
+              "text": "Behavior-driven development (BDD)"
+            },
+            {
+              "id": "d",
+              "text": "Exploratory testing"
+            }
+          ],
+          "rationale": {
+            "summary": "TDD directs coding through test cases instead of extensive upfront design: a test is written first, code is written just to satisfy it, and the test and code are then refactored.",
+            "byOption": {
+              "a": "Incorrect. ATDD derives tests from acceptance criteria and writes them as part of system design; the test-code-refactor cycle characterizes TDD, not ATDD.",
+              "b": "Correct. The test-code-refactor cycle is exactly the definition of TDD.",
+              "c": "Incorrect. BDD expresses behavior in natural language, typically Given/When/Then; the test-code-refactor cycle is not what defines BDD.",
+              "d": "Incorrect. Exploratory testing involves simultaneous test design, execution and learning without predefined test cases; it is not a test-first approach."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0159",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.3",
+      "objectives": [
+        "FL-2.1.3"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "test-first",
+        "atdd"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Hangi önce-test-et yaklaşımı, testleri kabul kriterlerinden türetir ve bunu sistem tasarım sürecinin bir parçası olarak yapar; böylece testler, uygulamanın ilgili bölümü geliştirilmeden önce zaten mevcuttur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test güdümlü yazılım geliştirme (TDD)"
+            },
+            {
+              "id": "b",
+              "text": "Davranış güdümlü yazılım geliştirme (BDD)"
+            },
+            {
+              "id": "c",
+              "text": "Sürekli entegrasyon (CI)"
+            },
+            {
+              "id": "d",
+              "text": "Kabul testi güdümlü yazılım geliştirme (ATDD)"
+            }
+          ],
+          "rationale": {
+            "summary": "ATDD, testleri kabul kriterlerinden türetir ve sistem tasarım sürecinin bir parçası olarak yazar; testler uygulamanın ilgili bölümü geliştirilmeden önce zaten vardır.",
+            "byOption": {
+              "a": "Yanlış. TDD kodlamayı test senaryolarıyla yönlendirir; testler kabul kriterlerinden değil, geliştiricinin birim düzeyindeki tasarım kararlarından türetilir.",
+              "b": "Yanlış. BDD davranışı Given/When/Then formatında doğal dille ifade eder; testlerin kaynağı kabul kriterleri değil, paydaşlarca okunabilir davranış senaryolarıdır.",
+              "c": "Yanlış. CI, kaynak kodun bileşen testleri ve statik analiz eşliğinde sık sık entegre edilmesini sağlayan bir DevOps/geliştirme uygulamasıdır; bir önce-test-et yaklaşımı değildir.",
+              "d": "Doğru. Kabul kriterlerinden türetme ve sistem tasarımının bir parçası olma, ATDD'yi tanımlar."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which test-first approach derives its tests from acceptance criteria as part of the system design process, so that the tests already exist before the corresponding part of the application is built?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test-driven development (TDD)"
+            },
+            {
+              "id": "b",
+              "text": "Behavior-driven development (BDD)"
+            },
+            {
+              "id": "c",
+              "text": "Continuous integration (CI)"
+            },
+            {
+              "id": "d",
+              "text": "Acceptance test-driven development (ATDD)"
+            }
+          ],
+          "rationale": {
+            "summary": "ATDD derives tests from acceptance criteria and writes them as part of the system design process; the tests exist before the corresponding part of the application is developed.",
+            "byOption": {
+              "a": "Incorrect. TDD drives coding through test cases; the tests come from the developer's unit-level design decisions, not from acceptance criteria.",
+              "b": "Incorrect. BDD expresses behavior in natural language, typically Given/When/Then; its tests are stakeholder-readable behavior scenarios, not derivations of acceptance criteria specifically.",
+              "c": "Incorrect. CI is a DevOps/development practice of integrating source code frequently, accompanied by component tests and static analysis; it is not a test-first approach.",
+              "d": "Correct. Deriving tests from acceptance criteria and writing them as part of system design defines ATDD."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0160",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.3",
+      "objectives": [
+        "FL-2.1.3"
+      ],
+      "kLevel": "K1",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-first",
+        "multi-answer"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b",
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "TDD, ATDD ve BDD'nin ÜÇÜ için de doğru olan ifadeler HANGİ İKİSİdir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Herhangi bir test yazılmadan önce, tamamen resmi onaydan geçmiş bir gereksinim spesifikasyonu şarttır"
+            },
+            {
+              "id": "b",
+              "text": "Üçü de testleri ilgili koddan önce tanımlar ve geliştirmeyi yönlendirmek için kullanır"
+            },
+            {
+              "id": "c",
+              "text": "Üçü de sistem entegrasyon testi tamamlandıktan sonra uygulanan test seviyeleridir"
+            },
+            {
+              "id": "d",
+              "text": "Üçü de döngüsel bir çalışma biçimini desteklemeyi amaçlar"
+            },
+            {
+              "id": "e",
+              "text": "Üçü de projenin ilerleyen aşamalarında manuel teste artık gerek kalmayacağını garanti eder"
+            }
+          ],
+          "rationale": {
+            "summary": "TDD, ATDD ve BDD'nin ortak noktası, testlerin ilgili koddan önce tanımlanması ve geliştirmeyi yönlendirmek için kullanılmasıdır; üçü de döngüsel bir çalışma biçimini destekler.",
+            "byOption": {
+              "a": "Yanlış. Bu, sıralı ve önce-gereksinim yaklaşımlı bir süreci tanımlar; orada test tasarımı onaylanmış bir spesifikasyonu bekler, önce-test-et yaklaşımlarında ise beklemez.",
+              "b": "Doğru. Üçünde de testler önce gelir ve neyin inşa edileceğini yönlendirir, sonradan kontrol etmekle yetinmez; üçünün de tanımlayıcı ortak noktası budur.",
+              "c": "Yanlış. Bunlar geliştirme yaklaşımlarıdır, test seviyesi değildir; test seviyesi bir geliştirme aşamasına bağlıdır ve tamamen farklı bir taksonomiye aittir.",
+              "d": "Doğru. Üçü de döngüsel bir çalışma biçimine uyan ve onu destekleyen yaklaşımlar olarak tanımlanır.",
+              "e": "Yanlış. Bu yaklaşımlar geliştirmeyi test senaryolarıyla yönlendirir; projenin ilerleyen aşamalarında manuel testin tamamen gereksiz kalacağı garantisi verilmez."
+            }
+          }
+        },
+        "en": {
+          "stem": "WHICH TWO of the following statements are true of ALL THREE of TDD, ATDD and BDD?",
+          "options": [
+            {
+              "id": "a",
+              "text": "All three require a fully signed-off requirements specification before any test may be written"
+            },
+            {
+              "id": "b",
+              "text": "All three define tests before the corresponding code and use them to drive development"
+            },
+            {
+              "id": "c",
+              "text": "All three are test levels, performed after system integration testing has completed"
+            },
+            {
+              "id": "d",
+              "text": "All three are intended to support an iterative way of working"
+            },
+            {
+              "id": "e",
+              "text": "All three guarantee that manual testing will no longer be needed later in the project"
+            }
+          ],
+          "rationale": {
+            "summary": "TDD, ATDD and BDD share the trait that tests are defined before the corresponding code and are used to drive development; all three also support an iterative way of working.",
+            "byOption": {
+              "a": "Incorrect. This describes a sequential, requirements-first process, in which test design waits for an approved specification; the test-first approaches do not wait.",
+              "b": "Correct. In all three, the tests come first and steer what gets built rather than checking it after the fact; that is the shared, defining trait.",
+              "c": "Incorrect. These are development approaches, not test levels; a test level is tied to a stage of development and belongs to an entirely different taxonomy.",
+              "d": "Correct. All three are presented as approaches that fit and support an iterative way of working.",
+              "e": "Incorrect. These approaches drive development through test cases; they do not guarantee that manual testing becomes entirely unnecessary later on."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0161",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.4",
+      "objectives": [
+        "FL-2.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "devops",
+        "challenges"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Ders programına göre, DevOps'un test açısından maliyetlerinden veya zorluklarından biri aşağıdakilerden hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Sürekli entegrasyonun (CI), bir değişikliğin mevcut davranışı bozup bozmadığına dair hızlı geri bildirim vermesi"
+            },
+            {
+              "id": "b",
+              "text": "Ölçekli çalışan otomatik regresyon test gruplarının regresyon riskini azaltması"
+            },
+            {
+              "id": "c",
+              "text": "CI/CD araç setinin kendisinin kurulması ve çalışır durumda tutulması gerekmesi"
+            },
+            {
+              "id": "d",
+              "text": "Kontrolleri hattın çalıştırması sayesinde tekrarlayan manuel test ihtiyacının azalması"
+            }
+          ],
+          "rationale": {
+            "summary": "DevOps, faydaları ortaya çıkmadan önce kendi yatırımını ister: teslimat hattının tasarlanıp sürdürülmesi ve CI/CD araç setinin kurulup çalışır durumda tutulması gerekir.",
+            "byOption": {
+              "a": "Yanlış. Bir değişikliğin mevcut davranışı bozup bozmadığına dair hızlı geri bildirim, DevOps'un teste sağladığı faydalardan biridir, maliyetlerinden değil.",
+              "b": "Yanlış. Otomatik regresyonun ölçekli çalıştırılması DevOps'ta regresyon riskini azaltan şeydir; faydalar arasında sayılır.",
+              "c": "Doğru. Teslimat hattı ve test otomasyonunun yanı sıra CI/CD araç setinin de kurulması ve ardından çalışır durumda tutulması gerekir; bu, DevOps'un talep ettiği bir yatırımdır.",
+              "d": "Yanlış. Tekrarlayan manuel test ihtiyacının azalması, CI/CD hatlarının getirdiği bir faydadır; bir maliyet değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "According to the syllabus, which of the following is one of the costs or challenges of DevOps from a testing perspective?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Continuous integration (CI) gives fast feedback on whether a change breaks existing behavior"
+            },
+            {
+              "id": "b",
+              "text": "Automated regression suites, run at scale, reduce the risk of regression"
+            },
+            {
+              "id": "c",
+              "text": "The CI/CD tooling itself has to be introduced and then kept running"
+            },
+            {
+              "id": "d",
+              "text": "Repetitive manual testing is needed less often, because the pipeline runs the checks"
+            }
+          ],
+          "rationale": {
+            "summary": "DevOps demands its own investment before any of its benefits appear: the delivery pipeline has to be designed and maintained, and the CI/CD tooling itself has to be introduced and kept running.",
+            "byOption": {
+              "a": "Incorrect. Fast feedback on whether a change breaks existing behavior is one of the testing benefits DevOps brings, not one of its costs.",
+              "b": "Incorrect. Running automated regression at scale is what reduces regression risk under DevOps; it is listed among the benefits.",
+              "c": "Correct. Alongside the delivery pipeline and test automation, the CI/CD tooling has to be introduced and then kept running — an investment DevOps demands.",
+              "d": "Incorrect. Reducing the need for repetitive manual testing is a benefit that CI/CD pipelines bring; it is not a cost."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0162",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.4",
+      "objectives": [
+        "FL-2.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "devops",
+        "ci-cd",
+        "scenario"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, DevOps'u benimsemenin bir parçası olarak bir CI/CD hattı kurmaktadır. Ders programına göre, bu özellikle hangi test faydasını destekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Stabil test ortamı kurmak kolaylaşır ve fonksiyonel olmayan kalitelere görünürlük artar"
+            },
+            {
+              "id": "b",
+              "text": "Testleri hat otomatik çalıştırdığı için statik analize artık gerek kalmaz"
+            },
+            {
+              "id": "c",
+              "text": "Geliştirme ve operasyon, ek bir çaba göstermeden kendiliğinden ortak bir kültür benimser"
+            },
+            {
+              "id": "d",
+              "text": "Bir hata (defect) düzeltmesinden sonra onaylama testi yapmaya artık gerek kalmaz"
+            }
+          ],
+          "rationale": {
+            "summary": "CI/CD hatları, stabil test ortamları kurmayı kolaylaştırır, fonksiyonel olmayan kalite özelliklerine görünürlüğü artırır ve tekrarlayan manuel test ihtiyacını azaltır.",
+            "byOption": {
+              "a": "Doğru. CI/CD hatları stabil test ortamı kurmayı kolaylaştırır ve fonksiyonel olmayan kalite özelliklerine görünürlüğü artırır.",
+              "b": "Yanlış. CI tam tersi yönde çalışır: geliştiricileri kodu bileşen testleri VE statik analiz eşliğinde teslim etmeye teşvik eder; shift-left'i desteklemesinin yolu da budur.",
+              "c": "Yanlış. Ortak kültür, DevOps'un talep ettiği ve ekibin bilinçli olarak üzerinde çalışması gereken bir şeydir; hat bir araçtır ve bunu kendiliğinden yaratmaz.",
+              "d": "Yanlış. Onaylama testi, hata düzeltmelerinden sonra hangi test seviyesinde olursa olsun gereklidir; CI/CD bu ihtiyacı ortadan kaldırmaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team is setting up a CI/CD pipeline as part of adopting DevOps. According to the syllabus, which testing-related benefit does this specifically support?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Stable test environments get easier to establish, and non-functional qualities more visible"
+            },
+            {
+              "id": "b",
+              "text": "Static analysis can be dropped, because the pipeline runs the tests automatically"
+            },
+            {
+              "id": "c",
+              "text": "Development and operations automatically adopt a shared culture without any additional effort"
+            },
+            {
+              "id": "d",
+              "text": "Confirmation testing is no longer needed after a defect fix"
+            }
+          ],
+          "rationale": {
+            "summary": "CI/CD pipelines make it easier to establish stable test environments, increase visibility into non-functional quality characteristics, and reduce the need for repetitive manual testing.",
+            "byOption": {
+              "a": "Correct. CI/CD pipelines make stable test environments easier to set up and raise visibility into non-functional quality characteristics.",
+              "b": "Incorrect. CI works the other way round: it encourages developers to submit code accompanied by component tests AND static analysis, which is how it promotes shift left.",
+              "c": "Incorrect. A shared culture is something DevOps requires and a team has to work at deliberately; a pipeline is a tool and does not create it on its own.",
+              "d": "Incorrect. Confirmation testing is needed after defect fixes at whatever test level they occur; CI/CD does not remove that need."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0163",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.5",
+      "objectives": [
+        "FL-2.1.5"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "shift-left",
+        "good-practices"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Ders programına göre, aşağıdakilerden hangisi bir shift-left uygulamasına örnektir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Tam regresyon grubunu yalnızca bir kez, üretime son geçişten hemen önce çalıştırmak"
+            },
+            {
+              "id": "b",
+              "text": "Kod yazılmadan önce spesifikasyonları test uzmanı bakış açısıyla gözden geçirmek"
+            },
+            {
+              "id": "c",
+              "text": "Bir bileşen tamamen kodlanana kadar onun için hiçbir test senaryosu yazmamak"
+            },
+            {
+              "id": "d",
+              "text": "Projenin sonunda daha fazla test uzmanı bulunabilmesi için test ekibinin büyüklüğünü artırmak"
+            }
+          ],
+          "rationale": {
+            "summary": "İyi shift-left uygulamaları arasında, kod yazılmadan önce spesifikasyonların testçi bakış açısıyla gözden geçirilerek belirsizlik, eksiklik ve tutarsızlıkların erken yakalanması sayılır.",
+            "byOption": {
+              "a": "Yanlış. Bu, testi mümkün olduğunca geç ve tek seferlik yapmayı tanımlar; shift-left'in tam tersidir.",
+              "b": "Doğru. Bir spesifikasyondaki belirsizlik, eksiklik ve tutarsızlığı kod var olmadan yakalamak, sayılan shift-left uygulamalarından biridir.",
+              "c": "Yanlış. Bu da shift-left'in tam tersidir: iyi uygulama, test senaryolarının kod yazılmadan ÖNCE hazırlanmasıdır.",
+              "d": "Yanlış. Ekip büyüklüğü bir kaynak konusudur; shift-left'i tanımlayan, testin YGYD'de daha erkene taşınmasıdır, ekip büyüklüğü değil."
+            }
+          }
+        },
+        "en": {
+          "stem": "According to the syllabus, which of the following is an example of a shift-left practice?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Running the full regression suite only once, right before the final release to production"
+            },
+            {
+              "id": "b",
+              "text": "Reviewing specifications from a tester's perspective before any code is written"
+            },
+            {
+              "id": "c",
+              "text": "Waiting until a component is fully coded before writing any test cases for it"
+            },
+            {
+              "id": "d",
+              "text": "Increasing the size of the test team so that more testers are available at the end of the project"
+            }
+          ],
+          "rationale": {
+            "summary": "Good shift-left practices include reviewing specifications from a tester's perspective to catch ambiguity, incompleteness and inconsistency early, before code is written.",
+            "byOption": {
+              "a": "Incorrect. This describes doing testing as late and as a one-off as possible; it is the opposite of shift left.",
+              "b": "Correct. Catching ambiguity, incompleteness and inconsistency in a specification before any code exists is one of the listed shift-left practices.",
+              "c": "Incorrect. This is also the opposite of shift left: the good practice is writing test cases BEFORE the code exists.",
+              "d": "Incorrect. Team size is a resource matter; what defines shift left is moving testing earlier in the SDLC, not team size."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0164",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.5",
+      "objectives": [
+        "FL-2.1.5"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "shift-left",
+        "stakeholder-buy-in"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Ders programı, shift-left için paydaşların ikna edilmesinin ve konsepte inanmasının önemini neden vurgular?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Çünkü shift-left'in projenin hiçbir aşamasında maliyet sonucu yoktur; ikna etmek yalnızca bir formaliteden ibarettir"
+            },
+            {
+              "id": "b",
+              "text": "Çünkü shift-left, paydaşların teste dahil olma ihtiyacını tamamen ortadan kaldırır"
+            },
+            {
+              "id": "c",
+              "text": "Çünkü shift-left başta ilave eğitim, efor veya maliyet getirir; tasarruf ise sonradan ortaya çıkar"
+            },
+            {
+              "id": "d",
+              "text": "Çünkü shift-left hiçbir ödünleşim olmadan projenin maliyetinde anında bir azalma garanti eder"
+            }
+          ],
+          "rationale": {
+            "summary": "Shift-left, süreç başında ek eğitim, efor veya maliyet getirebilir; buna karşılık ilerleyen aşamalarda tasarruf sağlaması beklenir. Bu yüzden paydaşların baştaki yatırımı desteklemesi önemlidir.",
+            "byOption": {
+              "a": "Yanlış. Tam tersine shift-left süreç başında ek maliyete yol açabilir; bu maliyet gerçektir, ikna etmek bir formalite değildir.",
+              "b": "Yanlış. Bu, paydaş desteğini paydaşların devreden çıkmasıyla karıştırır; destek, onların konsepte ikna olmuş olması demektir.",
+              "c": "Doğru. Baştaki eğitim, efor ve maliyet gerçektir, geri dönüşü ise sonradan gelir; paydaşların yatırım yapılmadan önce ikna edilmesi bu yüzden gerekir.",
+              "d": "Yanlış. Shift-left anında bir maliyet azalması garanti etmez; tersine başta ek maliyet getirebilir, tasarruf ancak ilerleyen aşamalarda beklenir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Why does the syllabus emphasize the importance of stakeholders being convinced and bought into the concept of shift left?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Because shift left has no cost implications at any point in the project, so convincing stakeholders is merely a formality"
+            },
+            {
+              "id": "b",
+              "text": "Because shift left removes the need for stakeholders to be involved in testing at all"
+            },
+            {
+              "id": "c",
+              "text": "Because shift left typically adds training, effort or cost earlier, while the expected savings appear later"
+            },
+            {
+              "id": "d",
+              "text": "Because shift left guarantees an immediate reduction in project cost with no trade-offs"
+            }
+          ],
+          "rationale": {
+            "summary": "Shift left may add training, effort or cost earlier in the process, but is expected to save effort and cost later; that is why stakeholder buy-in for the upfront investment matters.",
+            "byOption": {
+              "a": "Incorrect. On the contrary, shift left can add cost earlier in the process; that cost is real, and buy-in is not merely a formality.",
+              "b": "Incorrect. This confuses stakeholder buy-in with stakeholders stepping back; buy-in means they are convinced of the concept, not that their involvement ends.",
+              "c": "Correct. The upfront training, effort and cost are real and the payback comes later, which is why stakeholders have to be convinced before the investment is made.",
+              "d": "Incorrect. Shift left does not guarantee an immediate cost reduction; it can add cost upfront, with savings expected only later."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0165",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.6",
+      "objectives": [
+        "FL-2.1.6"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "retrospective",
+        "participants"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Ders programına göre, geçmişe dönük değerlendirmelere test uzmanlarının yanı sıra hangi grup katılır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yalnızca geliştiriciler, çünkü tartışmanın konusu kod kalitesidir"
+            },
+            {
+              "id": "b",
+              "text": "Test yöneticisi ve proje yöneticisi; sonucu ekibin geri kalanına onlar aktarır"
+            },
+            {
+              "id": "c",
+              "text": "Geliştirme ekibi ve ürün sahibi; iş analistleri ile mimarlar bu toplantıya katılmaz"
+            },
+            {
+              "id": "d",
+              "text": "Geliştiriciler, mimarlar, ürün sahibi ve iş analistleri"
+            }
+          ],
+          "rationale": {
+            "summary": "Ders programı, geçmişe dönük değerlendirmelere yalnızca testçilerin değil; geliştiricilerin, mimarların, ürün sahibinin ve iş analistlerinin de katıldığını açıkça belirtir.",
+            "byOption": {
+              "a": "Yanlış. Bu, geçmişe dönük değerlendirmeyi bir kod gözden geçirmesine daraltır. Değerlendirme sürecin tamamına — test esasına, test çalışma ürünlerine ve ekibin çalışma biçimine — bakar, dolayısıyla bunları şekillendiren roller de masadadır.",
+              "b": "Yanlış. Bu, bir yönetim bilgilendirmesini tanımlar. Geçmişe dönük değerlendirmede işi yapanlar bizzat katılıp tartışır; geliştirme ile test arasındaki iş birliğinin gelişmesi de buradan gelir.",
+              "c": "Yanlış. Bu liste, sayılan rollerden ikisini dışarıda bırakır. İş analistleri ve mimarlar da katılır; tartışmanın yalnızca uygulamada değil, test esasında ve tasarımda kalmasını sağlayan şey budur.",
+              "d": "Doğru. Test uzmanlarının yanı sıra bu dört rol katılımcı olarak sayılır."
+            }
+          }
+        },
+        "en": {
+          "stem": "According to the syllabus, besides testers, which group participates in retrospectives?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Developers only, since the discussion is about code quality"
+            },
+            {
+              "id": "b",
+              "text": "The test manager and the project manager, who then cascade the outcome to the rest of the team"
+            },
+            {
+              "id": "c",
+              "text": "The development team and the product owner; business analysts and architects do not attend"
+            },
+            {
+              "id": "d",
+              "text": "Developers, architects, the product owner and business analysts"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus explicitly states that retrospectives are attended not only by testers but also by developers, architects, the product owner and business analysts.",
+            "byOption": {
+              "a": "Incorrect. This narrows a retrospective to a code review. A retrospective looks at the whole process — the test basis, the testware and the way the team worked — so the roles that shaped those are present too.",
+              "b": "Incorrect. This describes a management report-out. In a retrospective the people who did the work attend and discuss it themselves, which is where the improved cooperation between development and testing comes from.",
+              "c": "Incorrect. This list drops two of the roles that are named. Business analysts and architects attend as well, which is what keeps the discussion on the test basis and the design, not only on the implementation.",
+              "d": "Correct. Alongside testers, these are the four participant roles that are named."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0166",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.6",
+      "objectives": [
+        "FL-2.1.6"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "retrospective",
+        "timing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Ders programına göre, geçmişe dönük değerlendirmeler tipik olarak ne zaman yapılır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bir kez, herhangi bir geliştirme çalışması başlamadan önce, projenin en başında"
+            },
+            {
+              "id": "b",
+              "text": "Proje veya döngü sonunda, bir sürüm kilometre taşında ya da gerektiğinde"
+            },
+            {
+              "id": "c",
+              "text": "Yalnızca üretim ortamında kritik bir olay meydana geldiğinde"
+            },
+            {
+              "id": "d",
+              "text": "Her döngünün başında, yaklaşan işin planlanmasının bir parçası olarak"
+            }
+          ],
+          "rationale": {
+            "summary": "Geçmişe dönük değerlendirmeler genellikle bir proje veya döngü sonunda, bir sürüm kilometre taşında ya da gerektiğinde yapılır; zamanlaması ve biçimi izlenen YGYD modeline bağlıdır.",
+            "byOption": {
+              "a": "Yanlış. Bu, bir proje başlangıç toplantısını tanımlar. Geçmişe dönük değerlendirme ise tamamlanmış bir işe bakar; başlangıçta bakılacak bir iş henüz yoktur.",
+              "b": "Doğru. Geçmişe dönük değerlendirme tamamlanmış işin ardından gelir; kesin zamanlaması ve biçimi izlenen YGYD modeline bağlıdır.",
+              "c": "Yanlış. Kritik bir üretim olayı bir tetikleyici olabilir ama zamanlama bununla sınırlı değildir; düzenli döngü/proje sonları ve kilometre taşları da sayılır.",
+              "d": "Yanlış. Bu, bir döngü planlama toplantısını tanımlar; o toplantı ileriye, yapılacak işe bakar. Geçmişe dönük değerlendirme ise geriye bakıp neyin korunacağını, neyin iyileştirileceğini ve bunların nasıl hayata geçirileceğini sorar."
+            }
+          }
+        },
+        "en": {
+          "stem": "According to the syllabus, when are retrospectives typically held?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Just once, at the very start of a project, before any development work begins"
+            },
+            {
+              "id": "b",
+              "text": "At the end of a project or iteration, at a release milestone, or when needed"
+            },
+            {
+              "id": "c",
+              "text": "Only when a critical incident occurs in the production environment"
+            },
+            {
+              "id": "d",
+              "text": "At the start of every iteration, as part of planning the work that is coming"
+            }
+          ],
+          "rationale": {
+            "summary": "Retrospectives are typically held at the end of a project or iteration, at a release milestone, or whenever needed; their timing and format depend on the SDLC model in use.",
+            "byOption": {
+              "a": "Incorrect. This describes a project kick-off meeting. A retrospective looks back at completed work, and at the very start there is no completed work to look back at.",
+              "b": "Correct. A retrospective follows completed work; its exact timing and format depend on the SDLC model in use.",
+              "c": "Incorrect. A critical production incident can be a trigger, but timing is not limited to that; regular iteration and project ends and release milestones count too.",
+              "d": "Incorrect. This describes an iteration planning session, which looks forward at what will be built. A retrospective looks back and asks what to keep, what to improve and how to carry both forward."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0167",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.6",
+      "objectives": [
+        "FL-2.1.6"
+      ],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "retrospective",
+        "benefits",
+        "multi-answer"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a",
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Ders programına göre, geçmişe dönük değerlendirmelerin teste sağladığı faydalar arasında HANGİ İKİSİ sayılır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test etkinliğinin ve verimliliğinin artması"
+            },
+            {
+              "id": "b",
+              "text": "Geliştirme ile test arasındaki iş birliğinin gelişmesi"
+            },
+            {
+              "id": "c",
+              "text": "Üretime kaçan hatalar (defect) için sorumluluğun kime ait olduğunun belirlenmesi"
+            },
+            {
+              "id": "d",
+              "text": "Kaydedilen her hataya otomatik olarak bir kök nedenin atanması"
+            },
+            {
+              "id": "e",
+              "text": "Test tamamlama raporunun yerini alarak onu üretmeye artık gerek kalmaması"
+            }
+          ],
+          "rationale": {
+            "summary": "Ders programı, geçmişe dönük değerlendirmelerin teste sağladığı faydalar arasında test etkinliği ve verimliliğinin artmasını, test çalışma ürünlerinin kalitesinin yükselmesini ve geliştirme ile test arasındaki iş birliğinin gelişmesini sayar.",
+            "byOption": {
+              "a": "Doğru. Bu, ders programında adı geçen faydalardan biridir.",
+              "b": "Doğru. Bu da ders programında adı geçen faydalardan biridir.",
+              "c": "Yanlış. Bu, suçlu arayan bir olay sonrası incelemeyi tanımlar. Geçmişe dönük değerlendirme sürece, test esasına ve test çalışma ürünlerine bakıp bunların nasıl iyileştirileceğini sorar; belirli bir kaçağın sorumlusunu değil.",
+              "d": "Yanlış. Tek tek hatalara kök neden atamak, hata yönetimi faaliyetinin bir parçasıdır; geçmişe dönük değerlendirmenin konusu sürecin, test esasının ve test çalışma ürünlerinin genel kalitesidir, tek tek hatalar değil.",
+              "e": "Yanlış. Geçmişe dönük değerlendirmenin sonuçları normalde test tamamlama raporunun BİR PARÇASI olur; onun yerini almaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "WHICH TWO of the following are benefits that retrospectives can bring to testing, according to the syllabus?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Increased test effectiveness and efficiency"
+            },
+            {
+              "id": "b",
+              "text": "Improved cooperation between development and testing"
+            },
+            {
+              "id": "c",
+              "text": "Assignment of accountability for the defects that escaped to production"
+            },
+            {
+              "id": "d",
+              "text": "Automatic assignment of a root cause to every recorded defect"
+            },
+            {
+              "id": "e",
+              "text": "Replacement of the test completion report, so it no longer needs to be produced"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus lists increased test effectiveness and efficiency, higher quality of testware, and improved cooperation between development and testing among the benefits retrospectives bring to testing.",
+            "byOption": {
+              "a": "Correct. This is one of the benefits named in the syllabus.",
+              "b": "Correct. This is also one of the benefits named in the syllabus.",
+              "c": "Incorrect. This describes a blame-oriented post-mortem. A retrospective looks at the process, the test basis and the testware and asks how to improve them, not at who is answerable for a particular escape.",
+              "d": "Incorrect. Assigning a root cause to individual defects is part of defect management activity; a retrospective is about the overall quality of the process, the test basis and the testware, not individual defects.",
+              "e": "Incorrect. Retrospective outcomes normally become PART OF the test completion report; they do not replace it."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0168",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.2",
+      "syllabusRef": "§2.2.1",
+      "objectives": [
+        "FL-2.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-levels",
+        "component-testing",
+        "scenario"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir geliştirici, henüz yazdığı yeni bir modülün her fonksiyonunu, diğer modüllerin hazır olmasını beklemeden, bir birim test çerçevesi kullanarak tek başına test etmektedir. Bu hangi test seviyesidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bileşen testi (birim testi)"
+            },
+            {
+              "id": "b",
+              "text": "Sistem testi"
+            },
+            {
+              "id": "c",
+              "text": "Kabul testi"
+            },
+            {
+              "id": "d",
+              "text": "Sistem entegrasyon testi"
+            }
+          ],
+          "rationale": {
+            "summary": "Bileşen testi (birim testi), bileşenleri tek başına test eder, genelde bir test kuluçkası veya birim test çerçevesi gerektirir ve normalde geliştiriciler tarafından kendi ortamlarında, diğer bileşenlerin hazır olmasını beklemeden yapılır.",
+            "byOption": {
+              "a": "Doğru. Birim test çerçevesiyle tek bir modülü izole test etmek, tam olarak bileşen testinin tanımıdır.",
+              "b": "Yanlış. Sistem testi, bir sistemin bütününün davranışına ve yeteneklerine bakar; senaryoda ise tek bir modül, izole şekilde test edilmektedir.",
+              "c": "Yanlış. Kabul testi, geliştirmenin en sonunda, bütün bir sistem üzerinde yapılır; senaryoda ise geliştirici, sistemin geri kalanı ortada yokken kendi modülünü çalıştırmaktadır.",
+              "d": "Yanlış. Sistem entegrasyon testi, test edilen sistem ile diğer sistemler veya harici hizmetler arasındaki arayüzlere odaklanır; senaryoda böyle bir arayüz söz konusu değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A developer tests each function of a newly written module in isolation, using a unit test framework, without waiting for other modules to be ready. Which test level is being performed?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Component testing (unit testing)"
+            },
+            {
+              "id": "b",
+              "text": "System testing"
+            },
+            {
+              "id": "c",
+              "text": "Acceptance testing"
+            },
+            {
+              "id": "d",
+              "text": "System integration testing"
+            }
+          ],
+          "rationale": {
+            "summary": "Component testing (unit testing) tests components in isolation, usually needs a harness or unit-test framework, and is normally carried out by developers in their own environment without waiting for other components.",
+            "byOption": {
+              "a": "Correct. Testing a single module in isolation with a unit test framework is exactly the definition of component testing.",
+              "b": "Incorrect. System testing looks at the overall behavior and capabilities of an entire system; here a single module is being tested in isolation.",
+              "c": "Incorrect. Acceptance testing sits at the far end of development, on a complete system; here a developer is exercising one module while the rest of the system does not yet exist.",
+              "d": "Incorrect. System integration testing focuses on the interfaces between the system under test and other systems or external services; no such interface appears here."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0169",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.2",
+      "syllabusRef": "§2.2.2",
+      "objectives": [
+        "FL-2.2.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-types",
+        "functional-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Fonksiyonel testin hedefini EN İYİ hangisi tanımlar?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Sistemin belirli bir yük altında ne kadar iyi performans gösterdiğini kontrol etmek"
+            },
+            {
+              "id": "b",
+              "text": "Altta yatan kod yapısını kabul edilebilir bir seviyeye kadar kapsamak"
+            },
+            {
+              "id": "c",
+              "text": "Bir bileşen veya sistemin yerine getirmesi gereken fonksiyonları değerlendirmek"
+            },
+            {
+              "id": "d",
+              "text": "Sistemin, spesifikasyonda yer almayan hiçbir şeyi yapmadığını kontrol etmek"
+            }
+          ],
+          "rationale": {
+            "summary": "Fonksiyonel test, bir bileşen veya sistemin yerine getirmesi gereken fonksiyonları değerlendirir; ana hedefi fonksiyonel bütünlük, doğruluk ve uygunluğu kontrol etmektir.",
+            "byOption": {
+              "a": "Yanlış. Bu, fonksiyonel olmayan testin, özellikle performans verimliliğinin, tanımıdır.",
+              "b": "Yanlış. Bu, beyaz kutu testinin tanımıdır; yapı bazlıdır ve test çeşidini kalite özelliğine göre değil, testlerin nereden türetildiğine göre tanımlar.",
+              "c": "Doğru. Fonksiyonel test, test nesnesinin ne yapması gerektiğini değerlendirir ve fonksiyonel bütünlüğü, doğruluğu ve uygunluğu kontrol eder.",
+              "d": "Yanlış. Bu, hiç belirtilmemiş bir davranışın varlığını aramayı, yani istenmeyen yan etkileri tanımlar; fonksiyonel test ise bileşen veya sistemin yapması GEREKEN fonksiyonlarla tanımlanır."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which statement BEST describes the objective of functional testing?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Checking how well the system performs under a specified workload"
+            },
+            {
+              "id": "b",
+              "text": "Covering the underlying code structure to an acceptable level"
+            },
+            {
+              "id": "c",
+              "text": "Evaluating the functions a component or system should perform"
+            },
+            {
+              "id": "d",
+              "text": "Checking that the system does nothing it was not specified to do"
+            }
+          ],
+          "rationale": {
+            "summary": "Functional testing evaluates the functions a component or system should perform; its main objective is checking functional completeness, correctness and appropriateness.",
+            "byOption": {
+              "a": "Incorrect. This is the definition of non-functional testing, specifically performance efficiency.",
+              "b": "Incorrect. This is the definition of white-box testing, which is structure-based and defines the test type by where tests come from, not by quality characteristic.",
+              "c": "Correct. Functional testing evaluates what the test object should do, checking functional completeness, correctness and appropriateness.",
+              "d": "Incorrect. This describes looking for behavior that was never specified, that is, for unintended side effects; functional testing is defined by the functions the component or system SHOULD perform."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0170",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.2",
+      "syllabusRef": "§2.2.3",
+      "objectives": [
+        "FL-2.2.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "regression-testing",
+        "scenario"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir döngü sırasında, ekip geliştirme aşamasındaki sistemin zaten kararlı olan bir modülüne tamamen yeni bir özellik ekliyor. Herhangi bir hata (defect) düzeltilmemiş olsa da, test ekibi modülün ilgisiz kısımlarını kapsayan testleri yeniden çalıştırarak değişikliğin başka bir yeri bozmadığını kontrol ediyor. Ekip ne yapmaktadır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Onaylama testi, çünkü modülde bir değişiklik yapılmıştır"
+            },
+            {
+              "id": "b",
+              "text": "Bakım testi, çünkü bir modülde yapılan her değişiklik bakım sayılır"
+            },
+            {
+              "id": "c",
+              "text": "Kabul testi, çünkü yeni özelliğin önce hedeflenen kullanıcılar tarafından sağlanması gerekir"
+            },
+            {
+              "id": "d",
+              "text": "Regresyon testi, çünkü hata düzeltmeleri değil, her değişiklik başka bir yeri bozabilir"
+            }
+          ],
+          "rationale": {
+            "summary": "Regresyon testi, bir hata düzeltmesinin ardından değil, herhangi bir değişiklikten (yeni bir özellik eklenmesi dahil) sonra, o değişikliğin başka bir yeri bozup bozmadığını kontrol etmek için yapılır.",
+            "byOption": {
+              "a": "Yanlış. Onaylama testi, giderilen belirli bir hatanın gerçekten düzeldiğini doğrular; senaryoda giderilmiş bir hata yoktur.",
+              "b": "Yanlış. Bakım testi, canlı/operasyonel bir ortamdaki bir sisteme yapılan değişikliklerin testidir; senaryoda sistem hâlâ geliştirme aşamasındadır, operasyonel kullanımda değildir.",
+              "c": "Yanlış. Kabul testi sağlamaya odaklanır ve ideal olarak hedeflenen kullanıcılar tarafından yapılır; senaryoda test ekibi kendi içinde regresyon kontrolü yapmaktadır.",
+              "d": "Doğru. Senaryo tam olarak regresyon testinin tanımına uyar: değişikliğin, bir hata düzeltmesi olsun ya da olmasın, başka bir yeri bozup bozmadığını kontrol etmek."
+            }
+          }
+        },
+        "en": {
+          "stem": "During an iteration, a team adds a brand-new feature to an already-stable module of the system under development. No defect was fixed, but the test team re-runs tests covering unrelated parts of the module, to check that the change broke nothing else. What is the team doing?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Confirmation testing, since a change was made to the module"
+            },
+            {
+              "id": "b",
+              "text": "Maintenance testing, because any change to a module counts as maintenance"
+            },
+            {
+              "id": "c",
+              "text": "Acceptance testing, since the new feature must first be validated by the intended users"
+            },
+            {
+              "id": "d",
+              "text": "Regression testing, because any change, not just a defect fix, can break other things"
+            }
+          ],
+          "rationale": {
+            "summary": "Regression testing follows any change, including a new feature and not only a defect fix, and checks whether that change broke anything else.",
+            "byOption": {
+              "a": "Incorrect. Confirmation testing confirms that a specific, previously reported defect has actually been fixed; no such defect exists in this scenario.",
+              "b": "Incorrect. Maintenance testing tests changes made to a system in live/operational use; here the system is still under development, not operational.",
+              "c": "Incorrect. Acceptance testing focuses on validation and is ideally performed by the intended users; here the test team itself is checking for regression.",
+              "d": "Correct. The scenario exactly matches the definition of regression testing: checking whether a change, whether or not it is a defect fix, broke anything else."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0171",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.2",
+      "syllabusRef": "§2.2.3",
+      "objectives": [
+        "FL-2.2.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "regression-testing",
+        "confirmation-testing",
+        "automation"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Regresyon testi, onaylama testine kıyasla test otomasyonu için neden daha güçlü bir adaydır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Çünkü regresyon test grupları defalarca çalıştırılır ve zamanla büyür; onaylama testi tek bir düzeltmeye bağlıdır"
+            },
+            {
+              "id": "b",
+              "text": "Çünkü onaylama testinin tanımlı bir test esası yoktur ve bu yüzden hiç otomatikleştirilemez"
+            },
+            {
+              "id": "c",
+              "text": "Çünkü regresyon testi öngörülemeyen alanları hedeflediğinden her zaman manuel olarak yapılır"
+            },
+            {
+              "id": "d",
+              "text": "Çünkü onaylama testini, hatayı (defect) raporlayan test uzmanının elle tekrarlaması gerekir; yerine bir betik geçemez"
+            }
+          ],
+          "rationale": {
+            "summary": "Regresyon test grupları defalarca çalıştırıldığı ve her döngü veya sürümle büyüme eğiliminde olduğu için regresyon testi güçlü bir otomasyon adayıdır; onaylama testi ise genelde tek seferliktir ve belirli bir düzeltmeye bağlıdır.",
+            "byOption": {
+              "a": "Doğru. Regresyon test grupları defalarca çalıştırılır ve zamanla büyür, bu yüzden otomasyon kendini amorti eder; onaylama testi ise belirli bir düzeltmeye bağlıdır.",
+              "b": "Yanlış. Onaylama testinin test esası, giderilmesi amaçlanan belirli hatadır; 'hiç otomatikleştirilemez' iddiası uydurmadır.",
+              "c": "Yanlış. Tam tersine, tekrar tekrar çalıştırılan büyük gruplar hâlinde olması regresyon testini otomasyona UYGUN kılar; 'her zaman manuel' iddiası yanlıştır.",
+              "d": "Yanlış. Onaylama testinin ideal olarak hatayı raporlayan test uzmanınca yapılması, testi kimin koşacağına dair bir tercihtir, otomasyonun önünde bir engel değildir; regresyonu daha iyi bir aday yapan şey zaman içindeki tekrardır."
+            }
+          }
+        },
+        "en": {
+          "stem": "Why is regression testing a stronger candidate for test automation than confirmation testing?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Because regression suites are re-run repeatedly and grow over time, while confirmation testing is tied to one fix"
+            },
+            {
+              "id": "b",
+              "text": "Because confirmation testing has no defined test basis, so it cannot be automated at all"
+            },
+            {
+              "id": "c",
+              "text": "Because regression testing is always performed manually, since it targets unpredictable areas of the system"
+            },
+            {
+              "id": "d",
+              "text": "Because confirmation testing has to be repeated by hand by the tester who reported the defect, so no script can stand in"
+            }
+          ],
+          "rationale": {
+            "summary": "Regression suites are re-run repeatedly and tend to grow with every iteration or release, which is what makes regression testing a strong candidate for automation; confirmation testing is typically a one-off tied to a specific fix.",
+            "byOption": {
+              "a": "Correct. Regression suites are run repeatedly and grow over time, so automation pays back; confirmation testing is tied to one specific fix.",
+              "b": "Incorrect. Confirmation testing's test basis is the specific defect it aims to confirm as fixed; the claim that it 'cannot be automated at all' is fabricated.",
+              "c": "Incorrect. On the contrary, being run repeatedly in large suites makes regression testing WELL SUITED to automation; the 'always manual' claim is wrong.",
+              "d": "Incorrect. Confirmation testing is ideally done by the tester who reported the defect, but that is a preference about who runs it, not a bar on automating it; what makes regression the better candidate is repetition over time."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0172",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.3",
+      "syllabusRef": "§2.3.1",
+      "objectives": [
+        "FL-2.3.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "maintenance-testing",
+        "triggers",
+        "modifications"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, hâlihazırda operasyonel kullanımda olan bir sisteme planlı bir iyileştirme dağıtmaktadır. Bu hangi bakım testi tetikleyici kategorisine girer ve testin neyi kapsaması gerekir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kullanımdan kaldırma; yalnızca veri arşivleme prosedürlerinin test edilmesi gerekir"
+            },
+            {
+              "id": "b",
+              "text": "Operasyonel ortamın yükseltilmesi veya taşınması; yalnızca veri dönüşümünün test edilmesi gerekir"
+            },
+            {
+              "id": "c",
+              "text": "Değişiklikler; hem iyileştirmenin kendisi hem de değişmeyen kısımdaki olası regresyonlar test edilmelidir"
+            },
+            {
+              "id": "d",
+              "text": "Değişiklikler; tanımı gereği sistemin geri kalanı etkilenmediği için yalnızca iyileştirmenin kendisi test edilmelidir"
+            }
+          ],
+          "rationale": {
+            "summary": "Planlı iyileştirmeler 'değişiklikler' tetikleyici kategorisine girer. Canlı bir sisteme yapılan değişikliği test etmek hem değişikliğin kendisinin çalıştığını hem de sistemin değişmeyen — genelde çok daha büyük — kısmında regresyon olmadığını kontrol etmek anlamına gelir.",
+            "byOption": {
+              "a": "Yanlış. Kullanımdan kaldırma, bir uygulamanın kullanım ömrünün sonuna gelmesiyle ilgilidir; burada sistem hâlâ operasyonel kullanımdadır ve bir iyileştirme almaktadır.",
+              "b": "Yanlış. Bu kategori, yazılımın değil operasyonel ortamın değiştiği durumları kapsar; burada ortam aynı kalırken iyileştirilen sistemin kendisidir.",
+              "c": "Doğru. Planlı bir iyileştirme bir değişikliktir ve canlı bir sistemdeki değişikliğin testi hem değişikliği hem de değişmeyen — genelde çok daha büyük — kısmı kapsar.",
+              "d": "Yanlış. Kategori doğru ama kapsam yanlıştır: canlı bir sistemdeki değişiklik, dokunulmayan yerlerde de sonuç doğurabilir; değişmeyen kısmın da test edilmesinin nedeni budur."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team is deploying a planned enhancement to a system that is already in operational use. Which maintenance testing trigger category does this belong to, and what must the testing cover?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Retirement; only the data archiving procedures need to be tested"
+            },
+            {
+              "id": "b",
+              "text": "Upgrade or migration of the operational environment; only data conversion needs to be tested"
+            },
+            {
+              "id": "c",
+              "text": "Modifications; both the enhancement itself and possible regressions in the unchanged part"
+            },
+            {
+              "id": "d",
+              "text": "Modifications; only the enhancement itself, since by definition the rest of the system is unaffected"
+            }
+          ],
+          "rationale": {
+            "summary": "Planned enhancements fall under the modifications trigger category. Testing a change to a live system means checking both that the change itself works and that the unchanged — usually much larger — part of the system has not regressed.",
+            "byOption": {
+              "a": "Incorrect. Retirement concerns an application reaching end of life; here the system is still in operational use and is receiving an enhancement.",
+              "b": "Incorrect. This category covers changes to the operational environment rather than to the software; here the environment stays as it is and the system itself is being enhanced.",
+              "c": "Correct. A planned enhancement is a modification, and testing a change to a live system covers both the change and the unchanged — usually much larger — remainder.",
+              "d": "Incorrect. The category is right but the scope is wrong: a change to a live system can have consequences in parts that were never touched, which is why the unchanged remainder is tested too."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0173",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.3",
+      "syllabusRef": "§2.3.1",
+      "objectives": [
+        "FL-2.3.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "maintenance-testing",
+        "triggers",
+        "upgrade-migration"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir kuruluş, uygulama yazılımının kendisinde herhangi bir değişiklik yapmadan, üretim sunucularının işletim sistemini yükseltmektedir. Bu hangi bakım testi tetikleyici kategorisine girer ve test neyi kapsayabilir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Değişiklikler; yalnızca geliştiricilerin yaptığı kaynak kod değişiklikleri"
+            },
+            {
+              "id": "b",
+              "text": "Operasyonel ortamın yükseltilmesi veya taşınması; yeni ortam, çalışan yazılım veya veri dönüşümü"
+            },
+            {
+              "id": "c",
+              "text": "Kullanımdan kaldırma; bir uygulama kullanım ömrünün sonuna geldiğinde tetiklenen testler"
+            },
+            {
+              "id": "d",
+              "text": "Yalnızca ortam değiştiği ve uygulamanın kendisi değiştirilmediği için hiçbir bakım testine gerek yoktur"
+            }
+          ],
+          "rationale": {
+            "summary": "Operasyonel ortamın yükseltilmesi veya taşınması, yeni ortamın, ortamda çalışan yazılımın veya başka bir uygulamadan veri taşınıyorsa veri dönüşümünün test edilmesini gerektirebilen bir bakım testi tetikleyicisidir.",
+            "byOption": {
+              "a": "Yanlış. Senaryoda uygulama yazılımının kaynak kodunda bir değişiklik yoktur; değişen operasyonel ortamdır (işletim sistemi).",
+              "b": "Doğru. İşletim sistemi yükseltmesi, operasyonel ortamın yükseltilmesi veya taşınması tetikleyicisinin doğrudan bir örneğidir ve bu tetikleyici için sayılan testlerle örtüşür.",
+              "c": "Yanlış. Kullanımdan kaldırma gerçek bir tetikleyici kategorisidir, ancak bir uygulama hizmet dışına alındığında geçerlidir; buradaki uygulama yalnızca yeni bir işletim sisteminde çalışmaya devam etmektedir.",
+              "d": "Yanlış. Sadece ortam değişse bile, üzerinde çalışan değişmemiş yazılımın yeni ortamda hâlâ doğru çalıştığının test edilmesi gerekir; bu bir bakım testi tetikleyicisidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "An organization upgrades the operating system on its production servers, without changing the application software itself. Which maintenance testing trigger category applies, and what might the testing need to cover?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Modifications; only the source code changes introduced by developers"
+            },
+            {
+              "id": "b",
+              "text": "Upgrade or migration of the operational environment; the new environment, the software on it, or data conversion"
+            },
+            {
+              "id": "c",
+              "text": "Retirement; the testing that is triggered when an application reaches the end of its life"
+            },
+            {
+              "id": "d",
+              "text": "No maintenance testing is required, since only the environment changed and the application itself was not modified"
+            }
+          ],
+          "rationale": {
+            "summary": "An upgrade or migration of the operational environment is a maintenance trigger that may require testing the new environment, the software running on it, or data conversion when data moves in from another application.",
+            "byOption": {
+              "a": "Incorrect. There is no source code change to the application in this scenario; what changed is the operational environment (the operating system).",
+              "b": "Correct. An OS upgrade is a direct example of the upgrade or migration of the operational environment trigger, and matches the testing named for it.",
+              "c": "Incorrect. Retirement is a real trigger category, but it applies when an application is taken out of service; the application here simply carries on running, on a new operating system.",
+              "d": "Incorrect. Even though only the environment changed, the unchanged software still needs to be tested to confirm it still behaves correctly in the new environment; this is exactly a maintenance testing trigger."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0157 retired as a duplicate of ctfl4-0027, ch02-a ctfl4-0034 rationale reworded to close the ctfl4-0165 leak)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0257",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.2",
+      "objectives": [
+        "FL-2.1.2"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "good-testing-practices",
+        "sdlc-independence"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Kullanılan yazılım geliştirme yaşam döngüsü (YGYD) modelinden bağımsız olarak geçerli olan iyi test uygulamalarından biri aşağıdakilerden hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kullanılan test teknikleri, proje hangi YGYD modeliyle yürütülürse yürütülsün birebir aynı olmalıdır."
+            },
+            {
+              "id": "b",
+              "text": "Test analizi ve tasarımı, karşılık gelen geliştirme aktivitesi tamamen bitmeden başlamamalıdır."
+            },
+            {
+              "id": "c",
+              "text": "Bu iyi uygulamalar yalnızca çevik (agile) projeler için geçerlidir, çünkü sürekli test yalnızca çevikte yerleşiktir."
+            },
+            {
+              "id": "d",
+              "text": "Her yazılım geliştirme aktivitesine karşılık gelen bir test aktivitesi bulunmalıdır."
+            }
+          ],
+          "rationale": {
+            "summary": "Syllabus, seçilen YGYD modelinden bağımsız olarak geçerli iyi test uygulamalarından birini, her geliştirme aktivitesine karşılık gelen bir test aktivitesi bulunması olarak tanımlar; diğer seçenekler ya başka bir uygulamayı tersine çevirir ya da bu model bağımsızlığını yanlış bir alana uygular.",
+            "byOption": {
+              "a": "Yanlış: hangi test tekniklerinin uygun olduğu, syllabus'a göre tam olarak YGYD modeline bağlı olarak değişen şeylerden biridir; sabit kalan, modelden bağımsız uygulamalar arasında test tekniklerinin seçimi yer almaz.",
+              "b": "Yanlış: bu, erken test ilkesinin (shift left) tam tersidir; iyi uygulama, bir seviyenin test analizi ve tasarımının o seviyenin geliştirme aşamasında BAŞLAMASIdır, aşama bitene kadar beklenmesi değil.",
+              "c": "Yanlış: syllabus bu uygulamaları seçilen YGYD modelinden bağımsız olarak tanımlar; yalnızca çevik projelere özgü olduğu iddiası, LO'nun kendisiyle çelişen yaygın bir yanılgıdır.",
+              "d": "Doğru: her geliştirme aktivitesine karşılık gelen bir test aktivitesi bulunması, geliştirmenin her parçasının kalite kontrolden geçmesini sağlayan ve seçilen YGYD modelinden bağımsız olan iyi test uygulamalarından biridir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is one of the good testing practices that apply regardless of the software development lifecycle (SDLC) model a project follows?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The specific test techniques used should be identical, whichever SDLC model the project follows."
+            },
+            {
+              "id": "b",
+              "text": "Test analysis and design should not begin until the corresponding development activity is fully finished."
+            },
+            {
+              "id": "c",
+              "text": "These good practices apply only to agile projects, since continuous testing is unique to agile."
+            },
+            {
+              "id": "d",
+              "text": "For every software development activity, there is a corresponding test activity."
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus names having a corresponding test activity for every development activity as one of the good testing practices that hold regardless of the SDLC model; the other options either reverse a different practice or misapply this model-independence to something that does vary with the model.",
+            "byOption": {
+              "a": "Incorrect: which test techniques fit is exactly one of the things the syllabus says DOES vary with the SDLC model; the choice of test techniques is not among the practices that stay constant.",
+              "b": "Incorrect: this is the reverse of the early-testing (shift-left) principle; the good practice is that test analysis and design for a level BEGIN during that level's development phase, not that they wait until it is finished.",
+              "c": "Incorrect: the syllabus states these practices independently of the chosen SDLC model, sequential models included; treating them as agile-specific contradicts the LO itself.",
+              "d": "Correct: having a corresponding test activity for every development activity is what subjects all of development to quality control, and it holds regardless of the SDLC model."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "checked against syllabus-en/tr §1.4.3 and §2.1.1-2.1.2, 2026-09-22; 'control directives' confirmed as a monitoring-and-control work product, the 'four practices' overclaim removed",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    }
+  ]
+}

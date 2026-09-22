@@ -1,0 +1,2205 @@
+{
+  "chunk": "ch04-b",
+  "chapter": 4,
+  "dataVersion": "2026.09.19",
+  "questions": [
+    {
+      "id": "ctfl4-0194",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.1",
+      "syllabusRef": "§4.1.1",
+      "objectives": [
+        "FL-4.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-techniques",
+        "experience-based",
+        "classification"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test uzmanı, üzerinde çalıştığı eski bir sistem için yeterli ve güncel bir spesifikasyon bulunmadığını, ayrıca test için ayrılan sürenin çok kısıtlı olduğunu fark ediyor. Bu koşullarda test uzmanı, sistemin geçmişte nasıl davrandığına dair kendi bilgisine dayanarak testler tasarlıyor. Burada kullanılan test tekniği kategorisi hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Tecrübeye dayalı test teknikleri"
+            },
+            {
+              "id": "b",
+              "text": "Kara kutu test teknikleri"
+            },
+            {
+              "id": "c",
+              "text": "Beyaz kutu test teknikleri"
+            },
+            {
+              "id": "d",
+              "text": "İş birliğine dayalı test yaklaşımları"
+            }
+          ],
+          "rationale": {
+            "summary": "Tecrübeye dayalı teknikler test uzmanının bilgi ve deneyimine dayanır; spesifikasyon yetersiz olduğunda veya zaman kısıtlıyken özellikle faydalıdır.",
+            "byOption": {
+              "a": "Doğru. Test uzmanının kendi bilgi ve deneyimine, yani sistemin geçmiş davranışına, dayanarak test tasarlaması tecrübeye dayalı tekniklerin tanımıdır.",
+              "b": "Yanlış. Kara kutu teknikleri sistematik olarak analiz edilmiş bir spesifikasyona dayanır; burada spesifikasyon yetersizdir ve test uzmanı spesifikasyon yerine kendi bilgisini kullanmaktadır.",
+              "c": "Yanlış. Beyaz kutu teknikleri test nesnesinin iç yapısının analizine dayanır; burada iç yapıdan söz edilmemektedir.",
+              "d": "Yanlış. İş birliğine dayalı yaklaşımlar ekip üyeleri arasındaki konuşma ve iş birliğiyle hataların önlenmesine odaklanır; burada tek bir test uzmanının bireysel bilgisi söz konusudur."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester working on a legacy system notices there is no adequate, up-to-date specification available, and the time allotted for testing is very limited. Under these conditions, the tester designs tests based on personal knowledge of how the system has behaved in the past. Which category of test techniques is being used here?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Experience-based test techniques"
+            },
+            {
+              "id": "b",
+              "text": "Black-box test techniques"
+            },
+            {
+              "id": "c",
+              "text": "White-box test techniques"
+            },
+            {
+              "id": "d",
+              "text": "Collaboration-based test approaches"
+            }
+          ],
+          "rationale": {
+            "summary": "Experience-based techniques rely on the tester's knowledge and experience, and are especially useful when the specification is inadequate or time is limited.",
+            "byOption": {
+              "a": "Correct. Designing tests from the tester's own knowledge and experience, i.e. how the system behaved in the past, is the definition of experience-based techniques.",
+              "b": "Wrong. Black-box techniques are based on a systematically analyzed specification; here the specification is inadequate and the tester is relying on personal knowledge instead.",
+              "c": "Wrong. White-box techniques are based on analyzing the internal structure of the test object; no internal structure is mentioned here.",
+              "d": "Wrong. Collaboration-based approaches focus on preventing defects through conversation and collaboration among team members; here a single tester's individual knowledge is involved."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0195",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.1",
+      "syllabusRef": "§4.1.1",
+      "objectives": [
+        "FL-4.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-techniques",
+        "white-box",
+        "technique-selection"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, bir bileşen için mevcut testlerin hiç çalıştırmadığı kod parçalarına ulaşan yeni testler tasarlamak istemektedir. Bileşenin kaynak kodu ve tasarım belgeleri ekibe açıktır. Ekibin bu amaç için kullanacağı test tekniği kategorisi hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Tecrübeye dayalı test teknikleri; çünkü hangi kod parçasının denenmediğini bulmak test uzmanının sezgisine bağlıdır"
+            },
+            {
+              "id": "b",
+              "text": "İş birliğine dayalı test yaklaşımları; çünkü ekip üyeleri birlikte çalışarak hataların oluşmasını önler"
+            },
+            {
+              "id": "c",
+              "text": "Kara kutu test teknikleri; çünkü test nesnesinin tanımlanmış davranışının analizine dayanırlar"
+            },
+            {
+              "id": "d",
+              "text": "Beyaz kutu test teknikleri; çünkü test nesnesinin iç yapısının ve işleyişinin analizine dayanırlar"
+            }
+          ],
+          "rationale": {
+            "summary": "Beyaz kutu test teknikleri test nesnesinin iç yapısının ve işleyişinin analizine dayanır. Kodun hangi parçalarının denenmediğini görmek ve tam da o parçaları hedefleyen testler tasarlamak ancak bu analizle mümkündür.",
+            "byOption": {
+              "a": "Yanlış. Tecrübeye dayalı teknikler test uzmanının bilgi, deneyim ve sezgisini kullanır; spesifikasyon yetersizken veya zaman kısıtlıyken değerlidirler. Ancak belirli kod parçalarının denenip denenmediğini sezgi değil, iç yapının analizi gösterir.",
+              "b": "Yanlış. İş birliğine dayalı yaklaşımlar, ör. iş birlikli kullanıcı hikayesi yazımı ve ATDD, iletişim ve iş birliği yoluyla hataların en baştan önlenmesine odaklanır; var olan kodun denenmemiş parçalarına ulaşmayı hedeflemezler.",
+              "c": "Yanlış. Kara kutu teknikleri test nesnesinin tanımlanmış davranışını, iç yapısına bakmaksızın analiz eder; bu nedenle kodun hangi parçasının çalıştırılmadığı sorusuna yanıt veremezler.",
+              "d": "Doğru. Beyaz kutu teknikleri test nesnesinin iç yapısının ve işleyişinin analizine dayanır; ekibin aradığı, denenmemiş kod parçalarını hedefleyen testler ancak böyle bir analizle tasarlanabilir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team wants to design new tests for a component that reach the parts of its code no existing test ever executes. The component's source code and design documents are available to the team. Which category of test techniques will the team use for this purpose?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Experience-based test techniques, because finding which part of the code goes untested depends on the tester's intuition"
+            },
+            {
+              "id": "b",
+              "text": "Collaboration-based test approaches, because team members working together prevent defects from being introduced"
+            },
+            {
+              "id": "c",
+              "text": "Black-box test techniques, because they are based on analyzing the specified behavior of the test object"
+            },
+            {
+              "id": "d",
+              "text": "White-box test techniques, because they are based on analyzing the internal structure and processing of the test object"
+            }
+          ],
+          "rationale": {
+            "summary": "White-box test techniques are based on an analysis of the test object's internal structure and processing. Seeing which parts of the code go unexercised, and designing tests that target exactly those parts, is only possible through that analysis.",
+            "byOption": {
+              "a": "Wrong. Experience-based techniques draw on the tester's knowledge, experience and intuition, and are valuable when the specification is inadequate or time is short. But whether a particular part of the code has been exercised is shown by analyzing the internal structure, not by intuition.",
+              "b": "Wrong. Collaboration-based approaches, e.g. collaborative user story writing and ATDD, focus on preventing defects in the first place through communication and collaboration; they do not aim at reaching unexercised parts of existing code.",
+              "c": "Wrong. Black-box techniques analyze the specified behavior of the test object without reference to its internal structure, so they cannot answer the question of which part of the code was never executed.",
+              "d": "Correct. White-box techniques are based on an analysis of the test object's internal structure and processing; tests aimed at the unexercised parts of the code can only be designed through such an analysis."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0196",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.3",
+      "objectives": [
+        "FL-4.2.3"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "decision-table",
+        "test-data-selection",
+        "rule-coverage"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir çevrimiçi sertifika platformu aşağıdaki sınırlı girişli karar tablosunu kullanmaktadır (T = doğru, F = yanlış, X = aksiyon gerçekleşir, . = aksiyon gerçekleşmez):\n\nKural                                    R1  R2  R3  R4\nC1 Kurs tamamlama oranı %80 ve üzeri     T   T   F   F\nC2 Final sınavı notu 60 ve üzeri         T   F   T   F\nA1 Sertifika verilir                     X   .   .   .\nA2 Sınavı tekrar alma önerisi sunulur    .   X   X   X\n\nAşağıdaki dört öğrenci kaydından (tamamlama oranı, sınav notu) hangi küme tablonun dört kuralının HER BİRİNİ TAM OLARAK birer kez dener?",
+          "options": [
+            {
+              "id": "a",
+              "text": "%85, 65 puan; %95, 75 puan; %60, 65 puan; %50, 40 puan"
+            },
+            {
+              "id": "b",
+              "text": "%85, 65 puan; %85, 50 puan; %70, 65 puan; %70, 50 puan"
+            },
+            {
+              "id": "c",
+              "text": "%85, 65 puan; %70, 65 puan; %70, 50 puan; %60, 45 puan"
+            },
+            {
+              "id": "d",
+              "text": "%90, 70 puan; %90, 50 puan; %95, 80 puan; %85, 55 puan"
+            }
+          ],
+          "rationale": {
+            "summary": "Her kayıt önce C1 ve C2'nin doğru/yanlış değerine, sonra bu kombinasyona karşılık gelen kurala dönüştürülmelidir. Dört kuralın (R1: T,T; R2: T,F; R3: F,T; R4: F,F) her birinden tam olarak bir kayıt içeren tek küme bu seçenektir.",
+            "byOption": {
+              "a": "Yanlış. %85/65 ve %95/75 kayıtlarının ikisi de C1=doğru, C2=doğru olduğundan R1 kuralına düşer; R1 iki kez denenirken R2 (doğru, yanlış) hiç denenmez.",
+              "b": "Doğru. %85/65 → R1 (doğru, doğru); %85/50 → R2 (doğru, yanlış); %70/65 → R3 (yanlış, doğru); %70/50 → R4 (yanlış, yanlış). Dört kuralın her biri tam olarak bir kez denenmiştir.",
+              "c": "Yanlış. %70/50 ve %60/45 kayıtlarının ikisi de C1=yanlış, C2=yanlış olduğundan R4 kuralına düşer; R4 iki kez denenirken R2 (doğru, yanlış) hiç denenmez.",
+              "d": "Yanlış. Bu kümedeki dört kaydın tamamında C1=doğrudur, yani tamamlama oranı hep %80 ve üzeridir; dolayısıyla yalnızca R1 ve R2 kuralları denenir, R3 ve R4 hiç denenmez."
+            }
+          }
+        },
+        "en": {
+          "stem": "An online certificate platform uses the following limited-entry decision table (T = true, F = false, X = action occurs, . = action does not occur):\n\nRule                                          R1  R2  R3  R4\nC1 Course completion is 80% or more           T   T   F   F\nC2 Final exam score is 60 or more             T   F   T   F\nA1 Certificate is issued                      X   .   .   .\nA2 Retake-exam suggestion is offered          .   X   X   X\n\nWhich of the following four sets of learner records (completion %, exam score) exercises EACH of the table's four rules EXACTLY once?",
+          "options": [
+            {
+              "id": "a",
+              "text": "85%, 65; 95%, 75; 60%, 65; 50%, 40"
+            },
+            {
+              "id": "b",
+              "text": "85%, 65; 85%, 50; 70%, 65; 70%, 50"
+            },
+            {
+              "id": "c",
+              "text": "85%, 65; 70%, 65; 70%, 50; 60%, 45"
+            },
+            {
+              "id": "d",
+              "text": "90%, 70; 90%, 50; 95%, 80; 85%, 55"
+            }
+          ],
+          "rationale": {
+            "summary": "Each record must first be converted to true/false values for C1 and C2, then mapped to the rule that combination corresponds to. Only this option contains exactly one record for each of the four rules (R1: T,T; R2: T,F; R3: F,T; R4: F,F).",
+            "byOption": {
+              "a": "Wrong. 85%/65 and 95%/75 are both C1=true, C2=true, so both fall under R1; R1 is exercised twice while R2 (true, false) is never exercised.",
+              "b": "Correct. 85%/65 -> R1 (true, true); 85%/50 -> R2 (true, false); 70%/65 -> R3 (false, true); 70%/50 -> R4 (false, false). Each of the four rules is exercised exactly once.",
+              "c": "Wrong. 70%/50 and 60%/45 are both C1=false, C2=false, so both fall under R4; R4 is exercised twice while R2 (true, false) is never exercised.",
+              "d": "Wrong. All four records in this set have C1=true, i.e. completion is always 80% or more, so only R1 and R2 are ever exercised; R3 and R4 are never exercised."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0197",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.1",
+      "objectives": [
+        "FL-4.3.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "white-box",
+        "statement-testing",
+        "coverage-items"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Komut testinde kapsam öğesi olarak ne sayılır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kontrol akış grafiğinde iki düğüm arasındaki bir kontrol transferi (dal)"
+            },
+            {
+              "id": "b",
+              "text": "Test nesnesinin giriş noktasından çıkış noktasına kadar uzanan eksiksiz bir yol"
+            },
+            {
+              "id": "c",
+              "text": "Kodun içindeki çalıştırılabilir bir komut"
+            },
+            {
+              "id": "d",
+              "text": "Bir kararın doğru veya yanlış çıktısı"
+            }
+          ],
+          "rationale": {
+            "summary": "Komut testinde kapsam öğeleri kodun çalıştırılabilir komutlarıdır; kapsam, denenen komut sayısının toplam çalıştırılabilir komut sayısına bölünmesiyle ölçülür.",
+            "byOption": {
+              "a": "Yanlış. Bu bir dalın tanımıdır ve dal testinin kapsam öğesidir, komut testinin değil.",
+              "b": "Yanlış. Bu bir yolun tanımıdır; yol, ne komut testinin ne de dal testinin kapsam öğesidir.",
+              "c": "Doğru. Komut testinde kapsam öğeleri kodun çalıştırılabilir komutlarıdır.",
+              "d": "Yanlış. Bir kararın çıktısı dal testinin kapsam öğesidir; komut testi kararların çıktılarını değil, komutların çalıştırılıp çalıştırılmadığını sayar."
+            }
+          }
+        },
+        "en": {
+          "stem": "What is counted as a coverage item in statement testing?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A branch, i.e. a transfer of control between two nodes in the control flow graph"
+            },
+            {
+              "id": "b",
+              "text": "A complete path from the entry point to an exit point of the test object"
+            },
+            {
+              "id": "c",
+              "text": "An executable statement in the code"
+            },
+            {
+              "id": "d",
+              "text": "The true or false outcome of a decision"
+            }
+          ],
+          "rationale": {
+            "summary": "In statement testing, coverage items are the executable statements in the code; coverage is measured by dividing the number of statements exercised by the total number of executable statements.",
+            "byOption": {
+              "a": "Wrong. This is the definition of a branch, and it is the coverage item of branch testing, not statement testing.",
+              "b": "Wrong. This is the definition of a path; a path is not the coverage item of either statement or branch testing.",
+              "c": "Correct. In statement testing, coverage items are the executable statements in the code.",
+              "d": "Wrong. A decision's outcome is the coverage item of branch testing; statement testing counts whether statements are executed, not decision outcomes."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0198",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.1",
+      "objectives": [
+        "FL-4.3.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "white-box",
+        "statement-testing",
+        "coverage-measurement"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test setinin bir bileşen üzerinde ulaştığı komut kapsama yüzdesi nasıl hesaplanır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Koşulan test senaryosu sayısının, tasarlanmış toplam test senaryosu sayısına bölünmesiyle"
+            },
+            {
+              "id": "b",
+              "text": "Çalıştırılan kaynak kod satırı sayısının, dosyadaki toplam satır sayısına bölünmesiyle"
+            },
+            {
+              "id": "c",
+              "text": "Denenen karar çıktısı sayısının, toplam karar çıktısı sayısına bölünmesiyle"
+            },
+            {
+              "id": "d",
+              "text": "Denenen çalıştırılabilir komut sayısının, toplam çalıştırılabilir komut sayısına bölünmesiyle"
+            }
+          ],
+          "rationale": {
+            "summary": "Komut testinde kapsam öğeleri çalıştırılabilir komutlardır. Komut kapsama yüzdesi, denenen çalıştırılabilir komut sayısının test nesnesindeki toplam çalıştırılabilir komut sayısına bölünmesiyle bulunur ve yüzde olarak ifade edilir.",
+            "byOption": {
+              "a": "Yanlış. Bu oran test koşum ilerlemesini, yani planlanan testlerin ne kadarının koşulduğunu gösteren bir izleme ölçüsüdür; test nesnesinin ne kadarının denendiğini söylemez.",
+              "b": "Yanlış. Bu, çalıştırılabilir komutları kaynak dosyadaki fiziksel satırlarla karıştırır; yorum satırları, boş satırlar ve bildirimler kapsam öğesi değildir.",
+              "c": "Yanlış. Bu, dal kapsamının hesaplanma biçimidir; oradaki kapsam öğeleri kararların çıktılarıdır.",
+              "d": "Doğru. Komut kapsama yüzdesi tam olarak böyle hesaplanır: denenen çalıştırılabilir komut sayısı, toplam çalıştırılabilir komut sayısına bölünür."
+            }
+          }
+        },
+        "en": {
+          "stem": "How is the statement coverage a test suite achieves on a component calculated?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The number of test cases executed divided by the total number of test cases designed"
+            },
+            {
+              "id": "b",
+              "text": "The number of source code lines executed divided by the total number of lines in the file"
+            },
+            {
+              "id": "c",
+              "text": "The number of decision outcomes exercised divided by the total number of decision outcomes"
+            },
+            {
+              "id": "d",
+              "text": "The number of executable statements exercised divided by the total number of executable statements"
+            }
+          ],
+          "rationale": {
+            "summary": "In statement testing the coverage items are the executable statements. Statement coverage is the number of executable statements exercised divided by the total number of executable statements in the test object, expressed as a percentage.",
+            "byOption": {
+              "a": "Wrong. That ratio is a test progress measure showing how much of the planned testing has been run; it says nothing about how much of the test object has been exercised.",
+              "b": "Wrong. This confuses executable statements with the physical lines of a source file; comment lines, blank lines and declarations are not coverage items.",
+              "c": "Wrong. This is how branch coverage is calculated; there the coverage items are the outcomes of decisions.",
+              "d": "Correct. Statement coverage is calculated exactly this way: the number of executable statements exercised divided by the total number of executable statements."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0199",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.2",
+      "objectives": [
+        "FL-4.3.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "white-box",
+        "branch-testing",
+        "switch-case"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir bileşen, aralarında her olası değeri kapsayan dört case dalına sahip tek bir switch/case ifadesi içermektedir ve başka hiçbir karar yapısına sahip değildir. Dal testi açısından bu ifade hakkında hangisi doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Switch/case ifadesinin her bir case dalı kontrol akış grafiğinde ayrı bir dal oluşturur; %100 dal kapsamı için dördünün de en az bir kez denenmesi gerekir"
+            },
+            {
+              "id": "b",
+              "text": "Switch/case ifadeleri koşulsuz kod akışı sayıldığından dal testinin kapsam öğesi değildir"
+            },
+            {
+              "id": "c",
+              "text": "Yalnızca ilk case dalının denenmesi %100 dal kapsamı için yeterlidir"
+            },
+            {
+              "id": "d",
+              "text": "Switch/case ifadeleri yalnızca komut testinde değerlendirilir, dal testinde değil"
+            }
+          ],
+          "rationale": {
+            "summary": "Koşullu bir dal bir switch/case ifadesinin herhangi bir çıktısına karşılık gelebilir; bu nedenle dört case dalının her biri ayrı bir kapsam öğesidir ve %100 dal kapsamı için tümünün denenmesi gerekir.",
+            "byOption": {
+              "a": "Doğru. Switch/case çıktıları koşullu dal örnekleri arasında sayılır; dört case dalının tümü ayrı kapsam öğeleridir.",
+              "b": "Yanlış. Switch/case ifadesinin çıktıları koşullu daldır, koşulsuz değil; bu nedenle dal testinin kapsam öğesidir.",
+              "c": "Yanlış. %100 dal kapsamı tüm case dallarının denenmesini gerektirir; yalnızca birini denemek kısmi kapsam sağlar.",
+              "d": "Yanlış. Switch/case ifadeleri hem komut testinde, içerdikleri komutlar üzerinden, hem de dal testinde, çıktıları üzerinden, değerlendirilir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A component contains a single switch/case statement with four case branches that between them cover every possible value, and no other decision structure. Regarding branch testing, which of the following is correct about this statement?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Each case branch of the switch/case statement forms a separate branch in the control flow graph; all four must be exercised at least once for 100% branch coverage"
+            },
+            {
+              "id": "b",
+              "text": "Switch/case statements are not a coverage item for branch testing because they represent unconditional code flow"
+            },
+            {
+              "id": "c",
+              "text": "Exercising only the first case branch is sufficient for 100% branch coverage"
+            },
+            {
+              "id": "d",
+              "text": "Switch/case statements are only evaluated in statement testing, not in branch testing"
+            }
+          ],
+          "rationale": {
+            "summary": "A conditional branch can correspond to any outcome of a switch/case statement, so each of the four case branches is a separate coverage item and all of them must be exercised for 100% branch coverage.",
+            "byOption": {
+              "a": "Correct. Switch/case outcomes are counted among examples of conditional branches; all four case branches are separate coverage items.",
+              "b": "Wrong. The outcomes of a switch/case statement are conditional branches, not unconditional; they are therefore a coverage item for branch testing.",
+              "c": "Wrong. 100% branch coverage requires exercising all case branches; exercising only one gives partial coverage.",
+              "d": "Wrong. Switch/case statements are evaluated both in statement testing, through the statements they contain, and in branch testing, through their outcomes."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0200",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.2",
+      "objectives": [
+        "FL-4.3.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "white-box",
+        "branch-testing",
+        "defect-detection"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Dal testinin komut testinden daha güçlü olmasının nedeni göz önüne alındığında, aşağıdaki hatalardan hangisini dal testi komut testinden DAHA GÜVENİLİR şekilde tespit eder?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yalnızca belirli bir girdi değerinde ortaya çıkan, veriye bağımlı bir hata, ör. sıfıra bölme"
+            },
+            {
+              "id": "b",
+              "text": "Bir kararın false çıktısının hiç ele alınmaması sonucu ortaya çıkan bir hata, ör. eksik bir 'else' işleyicisi"
+            },
+            {
+              "id": "c",
+              "text": "İki farklı kararın belirli bir kombinasyonda birlikte yürütülmesini gerektiren bir hata"
+            },
+            {
+              "id": "d",
+              "text": "Yazılımda hiç kodlanmamış bir gereksinimden kaynaklanan bir hata"
+            }
+          ],
+          "rationale": {
+            "summary": "Dal testi, komut testinin aksine bir kararın her iki çıktısının da denenmesini ister; bu nedenle yalnızca kararın bir çıktısı hiç işlenmediğinde ortaya çıkan hataları komut testinden daha güvenilir yakalar.",
+            "byOption": {
+              "a": "Yanlış. Veriye bağımlı hatalar hangi dalların denendiğinden çok kullanılan test verisine bağlıdır; ne komut ne de dal kapsamı bunu garanti eder.",
+              "b": "Doğru. Komut testi kararın gövdesindeki komutları çalıştırmayı yeterli sayar; dal testi ise kararın false çıktısının da ayrı bir kapsam öğesi olarak denenmesini ister, dolayısıyla eksik bir else işleyicisi gibi hataları daha güvenilir yakalar.",
+              "c": "Yanlış. Bu, birden fazla kararın belirli bir kombinasyonunu, yani bir yolu, gerektirir; dal testi dalları tek tek hedefler, yol kombinasyonlarını değil.",
+              "d": "Yanlış. Bu, bir eksiklik hatasını tarif eder: gereken bir davranış uygulamada hiç yer almamaktadır. Böyle bir eksikliği bulmak yazılımı spesifikasyonuyla karşılaştırmayı gerektirir, bu da kara kutu tekniklerinin işidir; dal testini komut testinden ayıran tek şey olan, bir kararın ikinci çıktısının denenip denenmediğiyle ilgisi yoktur."
+            }
+          }
+        },
+        "en": {
+          "stem": "Given the reason branch testing is stronger than statement testing, which of the following defects does branch testing detect MORE RELIABLY than statement testing?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A data-dependent defect that only occurs for a specific input value, e.g. division by zero"
+            },
+            {
+              "id": "b",
+              "text": "A defect caused by a decision's false outcome never being handled, e.g. a missing 'else' handler"
+            },
+            {
+              "id": "c",
+              "text": "A defect that requires a specific combination of two different decisions to be executed together"
+            },
+            {
+              "id": "d",
+              "text": "A defect caused by a requirement that was never coded into the software"
+            }
+          ],
+          "rationale": {
+            "summary": "Unlike statement testing, branch testing requires both outcomes of a decision to be exercised; this makes it more reliable at catching defects that only surface when one outcome of a decision is never handled.",
+            "byOption": {
+              "a": "Wrong. Data-dependent defects depend on the test data used rather than which branches are exercised; neither statement nor branch coverage guarantees catching them.",
+              "b": "Correct. Statement testing is satisfied once the statements inside a decision's body are executed; branch testing also requires the decision's false outcome to be exercised as a separate coverage item, so it more reliably catches defects like a missing else handler.",
+              "c": "Wrong. This requires a specific combination of multiple decisions, i.e. a path; branch testing targets individual branches, not path combinations.",
+              "d": "Wrong. This describes a defect of omission: a required behavior that is absent from the implementation altogether. Finding it means comparing the software against its specification, which is the job of black-box techniques; it has nothing to do with whether a decision's second outcome was exercised, which is the only thing that separates branch testing from statement testing."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0201",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.3",
+      "objectives": [
+        "FL-4.3.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "white-box",
+        "value",
+        "omission-defects"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir yazılım, müşteri gereksinimlerinden birini, çok dilli arayüz desteğini, hiç kodlamamıştır. Ekip bu bileşende yalnızca beyaz kutu test teknikleri kullanmaktadır. Bu durumda ne beklenir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Beyaz kutu testi bu eksikliği güvenilir şekilde tespit eder, çünkü kodun tamamını dikkate alır"
+            },
+            {
+              "id": "b",
+              "text": "Bu durum komut kapsama yüzdesinin hesaplanmasını imkânsız hale getirir"
+            },
+            {
+              "id": "c",
+              "text": "Beyaz kutu testi bu eksikliği tespit edemeyebilir, çünkü karşılık gelen kod hiç yoktur"
+            },
+            {
+              "id": "d",
+              "text": "Bu durum yalnızca kara kutu testiyle de tespit edilemez"
+            }
+          ],
+          "rationale": {
+            "summary": "Beyaz kutu tekniklerinin zafiyeti, yazılımın hiç uygulamadığı bir gereksinimden kaynaklanan eksiklik hatalarını yakalayamamasıdır; test edilecek karşılık gelen kod bulunmadığından bu hata gözden kaçabilir.",
+            "byOption": {
+              "a": "Yanlış. Beyaz kutu testi kodun tamamını dikkate alsa da, hiç var olmayan bir kodu inceleyemez; bu yüzden bu tür eksiklik hatalarını güvenilir şekilde tespit edemez.",
+              "b": "Yanlış. Komut kapsama yüzdesi bileşende var olan komutlar üzerinden hesaplanmaya devam eder; eksik bir gereksinim bu hesaplamayı imkânsız kılmaz.",
+              "c": "Doğru. Beyaz kutu testinin bu zafiyeti müfredatta açıkça belirtilir: hiç kodlanmamış bir gereksinimden kaynaklanan hatalar, test edilecek kod bulunmadığından tespit edilemeyebilir.",
+              "d": "Yanlış. Tam tersine, kara kutu testi spesifikasyondan yola çıktığı için çok dilli destek gereksinimini test etmeye çalışır ve bu eksikliği ortaya çıkarabilir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A piece of software never implements one of the customer requirements, multilingual interface support. The team uses only white-box test techniques on this component. What is expected in this situation?",
+          "options": [
+            {
+              "id": "a",
+              "text": "White-box testing reliably detects this omission because it considers the entire code"
+            },
+            {
+              "id": "b",
+              "text": "This makes it impossible to calculate statement coverage percentage"
+            },
+            {
+              "id": "c",
+              "text": "White-box testing may fail to detect this omission because no corresponding code exists"
+            },
+            {
+              "id": "d",
+              "text": "This omission also cannot be detected by black-box testing"
+            }
+          ],
+          "rationale": {
+            "summary": "The corresponding weakness of white-box techniques is that they cannot catch omission defects caused by a requirement the software never implements, because there is no corresponding code to test.",
+            "byOption": {
+              "a": "Wrong. Even though white-box testing considers the entire code, it cannot examine code that does not exist, so it cannot reliably detect this kind of omission defect.",
+              "b": "Wrong. Statement coverage percentage continues to be calculated from the statements that do exist in the component; a missing requirement does not make this calculation impossible.",
+              "c": "Correct. The syllabus explicitly states this weakness of white-box testing: defects caused by a requirement that was never coded may go undetected because no corresponding code exists to test.",
+              "d": "Wrong. On the contrary, black-box testing starts from the specification, so it would attempt to test the multilingual support requirement and could reveal this omission."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0202",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.3",
+      "objectives": [
+        "FL-4.3.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "white-box",
+        "value",
+        "static-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, henüz derlenip çalıştırılamayan bir sözde kod parçasının mantığını, ondan çıkarılan bir kontrol akış grafiği üzerinden inceleyerek olası hataları arıyor. Bu uygulama, beyaz kutu tekniklerinin hangi özelliğini göstermektedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yalnızca dinamik testte, yani kod koşulduktan sonra, kullanılabildiklerini"
+            },
+            {
+              "id": "b",
+              "text": "Statik testte de kullanılabildiklerini; kod koşuma hazır olmasa bile modellenip incelenebildiklerini"
+            },
+            {
+              "id": "c",
+              "text": "Test senaryolarının spesifikasyondan bağımsız olarak tasarlanabileceğini"
+            },
+            {
+              "id": "d",
+              "text": "Yalnızca kara kutu testini tamamlayan bir teknik olduklarını"
+            }
+          ],
+          "rationale": {
+            "summary": "Beyaz kutu teknikleri dinamik testle sınırlı değildir; statik testte de kullanılabilirler, örneğin henüz koşuma hazır olmayan kod veya sözde kodun bir kontrol akış grafiğiyle modellenip gözden geçirilmesinde.",
+            "byOption": {
+              "a": "Yanlış. Tam tersi doğrudur: burada kod hiç koşulmamıştır, sadece statik olarak incelenmiştir.",
+              "b": "Doğru. Müfredat, beyaz kutu tekniklerinin statik testte de, örneğin henüz koşuma hazır olmayan kod veya sözde kod üzerinde, kullanılabileceğini açıkça belirtir.",
+              "c": "Yanlış. Beyaz kutu test senaryoları gerçekten de spesifikasyondan değil, test nesnesinin iç yapısından türetilir; ancak bu senaryonun gösterdiği özellik bu değildir. Kara kutu test senaryoları ise spesifikasyondan değil, yazılımın nasıl uygulandığından bağımsızdır; spesifikasyon tam da onların türetildiği kaynaktır. Burada gösterilen, tekniğin kod koşulamadan önce statik olarak uygulanabilmesidir.",
+              "d": "Yanlış. Beyaz kutu teknikleri gerçekten de kara kutu testini tamamlar; müfredat ikisini birbirinin alternatifi olarak değil, birlikte kullanılan teknikler olarak sunar. Bu ifadeyi yanlış kılan 'yalnızca' sözcüğüdür: beyaz kutu, kendi kapsam öğeleri ve kendi test tasarımı olan başlı başına bir test tekniği ailesidir ve bu senaryoda tek başına uygulanmaktadır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team examines the logic of a piece of pseudocode that cannot yet be compiled or run, using a control flow graph derived from it to look for possible defects. Which characteristic of white-box techniques does this practice demonstrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "That they can only be used in dynamic testing, i.e. after the code has been run"
+            },
+            {
+              "id": "b",
+              "text": "That they can also be used in static testing; the test object can be modeled and examined even when it is not ready to run"
+            },
+            {
+              "id": "c",
+              "text": "That test cases can be designed independently of the specification"
+            },
+            {
+              "id": "d",
+              "text": "That they are only a technique that complements black-box testing"
+            }
+          ],
+          "rationale": {
+            "summary": "White-box techniques are not limited to dynamic testing; they can also be used in static testing, for example by modeling and reviewing code or pseudocode that is not yet ready to run through a control flow graph.",
+            "byOption": {
+              "a": "Wrong. The opposite is true here: the code was never run, it was only examined statically.",
+              "b": "Correct. The syllabus explicitly states that white-box techniques can also be used in static testing, for example on code or pseudocode that is not yet ready to run.",
+              "c": "Wrong. White-box test cases are indeed derived from the test object's internal structure rather than from its specification, but that is not the characteristic this scenario demonstrates. Black-box test cases are independent of how the software is implemented, never of the specification, which is exactly what they are derived from. What the scenario shows is the technique being applied statically, before the code can be run.",
+              "d": "Wrong. White-box techniques genuinely do complement black-box testing; the syllabus presents the two as being used together rather than as alternatives. What makes this statement false is the word 'only': white-box is a test technique family in its own right, with its own coverage items and its own test design, and here it is being applied on its own."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0203",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.4",
+      "syllabusRef": "§4.4.1",
+      "objectives": [
+        "FL-4.4.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "experience-based",
+        "error-guessing",
+        "knowledge-sources"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test uzmanı, ödeme bileşeninin önceki sürümlerinde yuvarlama hatalarının sıkça görüldüğünü hatırlayarak bu alana odaklanan testler tasarlıyor. Bu, hata tahminlemenin hangi bilgi kaynağını kullandığını gösterir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Uygulamanın geçmişte nasıl çalıştığı"
+            },
+            {
+              "id": "b",
+              "text": "Geliştiricilerin genel olarak yapma eğiliminde olduğu insan hataları"
+            },
+            {
+              "id": "c",
+              "text": "Benzer başka uygulamalarda görülen arıza çeşitleri"
+            },
+            {
+              "id": "d",
+              "text": "Kontrol listesinde önceden tanımlanmış test koşulları"
+            }
+          ],
+          "rationale": {
+            "summary": "Hata tahminleme üç bilgi kaynağına dayanır: uygulamanın geçmiş davranışı, geliştiricilerin genel insan hatası eğilimleri ve benzer uygulamalardaki arızalar. Burada test uzmanı aynı uygulamanın, yani ödeme bileşeninin, geçmiş sürümlerindeki davranışını hatırlamaktadır.",
+            "byOption": {
+              "a": "Doğru. Test uzmanı bu bileşenin, yani aynı uygulamanın, geçmişte nasıl davrandığını hatırlayarak testlerini yönlendirmektedir.",
+              "b": "Yanlış. Bu kaynak, geliştiricilerin genel olarak yapma eğiliminde olduğu insan hatalarına ilişkindir, belirli bir uygulamanın geçmiş davranışına değil.",
+              "c": "Yanlış. Bu kaynak, başka, benzer uygulamalarda görülen arıza çeşitleriyle ilgilidir; burada söz konusu olan aynı uygulamanın kendi geçmişidir.",
+              "d": "Yanlış. Önceden tanımlanmış test koşullarından oluşan bir liste, kontrol listesine dayalı testin kaynağıdır, hata tahminlemenin değil."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester recalls that rounding defects were frequently seen in earlier versions of the payment component, and designs tests focusing on this area. Which knowledge source of error guessing does this use?",
+          "options": [
+            {
+              "id": "a",
+              "text": "How the application has behaved in the past"
+            },
+            {
+              "id": "b",
+              "text": "Human errors that developers are generally prone to making"
+            },
+            {
+              "id": "c",
+              "text": "The kinds of failures seen in other, similar applications"
+            },
+            {
+              "id": "d",
+              "text": "Predefined test conditions listed in a checklist"
+            }
+          ],
+          "rationale": {
+            "summary": "Error guessing relies on three knowledge sources: the application's own past behavior, developers' general tendencies toward certain human errors, and failures seen in similar applications. Here the tester is recalling the past behavior of the same application, the payment component.",
+            "byOption": {
+              "a": "Correct. The tester is directing tests based on recalling how this component, i.e. the same application, has behaved in the past.",
+              "b": "Wrong. This source concerns human errors developers are generally prone to making, not the past behavior of a specific application.",
+              "c": "Wrong. This source concerns failure kinds seen in OTHER, similar applications; here the concern is the same application's own history.",
+              "d": "Wrong. A list of predefined test conditions is the source for checklist-based testing, not error guessing."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0204",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.4",
+      "syllabusRef": "§4.4.1",
+      "objectives": [
+        "FL-4.4.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "experience-based",
+        "error-guessing",
+        "defect-categories"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test uzmanı, iki farklı sistem bileşeni arasında veri formatı uyuşmazlığı olabileceğini düşünerek entegrasyon noktalarını hedefleyen testler tasarlıyor. Bu, hangi hata kategorisine karşılık gelir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Girdi"
+            },
+            {
+              "id": "b",
+              "text": "Arayüz"
+            },
+            {
+              "id": "c",
+              "text": "Hesaplama"
+            },
+            {
+              "id": "d",
+              "text": "Mantık"
+            }
+          ],
+          "rationale": {
+            "summary": "Hatalar tipik olarak girdi, çıktı, mantık, hesaplama, arayüz veya veri kategorilerinden birine girer. İki bileşen arasındaki veri formatı uyuşmazlığı, bileşenler arasındaki etkileşimle ilgili olduğundan arayüz kategorisine girer.",
+            "byOption": {
+              "a": "Yanlış. Girdi kategorisi, geçerli bir girdinin reddedilmesi gibi tek bir bileşene girilen verilerle ilgilidir; burada söz konusu olan iki bileşen arasındaki etkileşimdir.",
+              "b": "Doğru. İki bileşen arasındaki veri formatı uyuşmazlığı, bileşenlerin birbiriyle nasıl etkileştiğiyle ilgilidir; bu arayüz kategorisine girer.",
+              "c": "Yanlış. Hesaplama kategorisi yanlış bir matematiksel işlemle ilgilidir, bileşenler arası veri format uyuşmazlığıyla değil.",
+              "d": "Yanlış. Mantık kategorisi eksik bir senaryo veya yanlış bir karar akışıyla ilgilidir, iki bileşen arasındaki veri alışverişiyle değil."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester designs tests targeting integration points, suspecting a data format mismatch between two different system components. Which defect category does this correspond to?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Input"
+            },
+            {
+              "id": "b",
+              "text": "Interface"
+            },
+            {
+              "id": "c",
+              "text": "Computation"
+            },
+            {
+              "id": "d",
+              "text": "Logic"
+            }
+          ],
+          "rationale": {
+            "summary": "Defects typically fall into one of the categories input, output, logic, computation, interface, or data. A data format mismatch between two components concerns how the components interact with each other, so it falls into the interface category.",
+            "byOption": {
+              "a": "Wrong. The input category concerns data entered into a single component, such as a valid input being rejected; here the concern is interaction between two components.",
+              "b": "Correct. A data format mismatch between two components concerns how the components interact with each other, which falls into the interface category.",
+              "c": "Wrong. The computation category concerns an incorrect mathematical operation, not a data format mismatch between components.",
+              "d": "Wrong. The logic category concerns a missing scenario or an incorrect decision flow, not data exchange between two components."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0205",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.4",
+      "syllabusRef": "§4.4.2",
+      "objectives": [
+        "FL-4.4.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "experience-based",
+        "exploratory-testing",
+        "definition"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Keşif testini, önceden yazılmış ayrıntılı test senaryolarına dayalı test etmeden EN temelde ayıran özellik nedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Testin belirli bir süre sınırı olmadan, test uzmanı bulunacak bir şey kalmadığına karar edene kadar sürdürülmesi"
+            },
+            {
+              "id": "b",
+              "text": "Testlerin yalnızca deneyimsiz test uzmanları tarafından yapılması"
+            },
+            {
+              "id": "c",
+              "text": "Testlerin tasarlanmasının, koşulmasının ve değerlendirilmesinin eş zamanlı yapılması; test uzmanının öğrendikçe bir sonraki testi buna göre şekillendirmesi"
+            },
+            {
+              "id": "d",
+              "text": "Test senaryolarının bir kontrol listesinden türetilmesi"
+            }
+          ],
+          "rationale": {
+            "summary": "Keşif testinde test tasarımı, koşum ve değerlendirme birbirinden ayrı, önceden tamamlanmış adımlar değil, eş zamanlı yürütülen ve öğrenmeyle şekillenen bir süreçtir; bu, ayrıntılı senaryoların önceden yazılıp onaylandığı yaklaşımın tam tersidir.",
+            "byOption": {
+              "a": "Yanlış. Bu, keşif testini yapılandırmak için sıkça kullanılan oturum bazlı yaklaşımın tersidir; o yaklaşımda test belirli bir zaman dilimine sığdırılır ve test hedeflerini içeren bir belgeyle yönlendirilir. Süresiz çalışmak, keşif testini önceden yazılmış senaryolara dayalı testten ayıran özellik değildir.",
+              "b": "Yanlış. Tam tersine, keşif testi deneyimli, alan bilgisine sahip test uzmanlarında daha etkilidir.",
+              "c": "Doğru. Tasarım, koşum ve değerlendirmenin eş zamanlı yapılması ve öğrenmenin sonraki testleri şekillendirmesi, keşif testinin ayrıntılı senaryolara dayalı testten temel farkıdır.",
+              "d": "Yanlış. Bu, kontrol listesine dayalı testin tanımıdır; keşif testinde test koşulları önceden bir listeden gelmez."
+            }
+          }
+        },
+        "en": {
+          "stem": "What is the MOST fundamental characteristic that distinguishes exploratory testing from testing based on predefined, detailed test cases?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Testing continues without any fixed time limit, until the tester decides there is nothing left to find"
+            },
+            {
+              "id": "b",
+              "text": "Tests are only performed by inexperienced testers"
+            },
+            {
+              "id": "c",
+              "text": "Test design, execution and evaluation happen simultaneously, and the tester shapes the next test based on what was just learned"
+            },
+            {
+              "id": "d",
+              "text": "Test cases are derived from a checklist"
+            }
+          ],
+          "rationale": {
+            "summary": "In exploratory testing, test design, execution and evaluation are not separate, pre-completed steps but a simultaneous process shaped by learning; this is the opposite of an approach where detailed test cases are written and approved in advance.",
+            "byOption": {
+              "a": "Wrong. This is the opposite of the session-based approach commonly used to structure exploratory testing, in which the testing is confined to a time box and guided by a document stating the test objectives. Working without a time limit is not what separates exploratory testing from testing with predefined cases.",
+              "b": "Wrong. On the contrary, exploratory testing is more effective with experienced testers who have domain knowledge.",
+              "c": "Correct. Simultaneous design, execution and evaluation, with learning shaping subsequent tests, is the fundamental difference between exploratory testing and testing based on detailed, predefined cases.",
+              "d": "Wrong. This is the definition of checklist-based testing; in exploratory testing, test conditions do not come from a predefined list."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0206",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.4",
+      "syllabusRef": "§4.4.2",
+      "objectives": [
+        "FL-4.4.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "experience-based",
+        "exploratory-testing",
+        "technique-combination"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test uzmanı keşif testi sırasında bir girdi alanını sınayan testler tasarlarken denklik paylarına ayırma tekniğinden yararlanmaktadır. Müfredata göre bu durum hakkında hangisi doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bu geçersizdir; keşif testi sırasında yalnızca tecrübeye dayalı teknikler kullanılabilir"
+            },
+            {
+              "id": "b",
+              "text": "Bu ancak test uzmanı denklik paylarını oturum başlamadan önce bir test oturumu sayfasına yazmışsa geçerlidir"
+            },
+            {
+              "id": "c",
+              "text": "Bu, test senaryolarının artık kontrol listesine dayalı test sayılması gerektiği anlamına gelir"
+            },
+            {
+              "id": "d",
+              "text": "Bu geçerlidir; denklik paylarına ayırma gibi diğer test teknikleri keşif testi sırasında birleştirilebilir"
+            }
+          ],
+          "rationale": {
+            "summary": "Keşif testi diğer, daha resmi teknikleri dışlamaz; müfredat, denklik paylarına ayırma gibi tekniklerin keşif testi sırasında dahil edilebileceğini açıkça belirtir.",
+            "byOption": {
+              "a": "Yanlış. Bu seçenek, keşif testinin yalnızca test uzmanının kendi bilgisinden beslenen kapalı bir aile olduğu yanılgısını dile getirir. Tecrübeye dayalı teknikler, kullanılabilir bir spesifikasyon olmadığında test uzmanının başvurduğu tekniklerdir; keşif testi ise testin nasıl örgütlendiğine dair bir yaklaşımdır ve müfredat denklik paylarına ayırmayı, keşif testine dahil edilebilecek bir teknik örneği olarak anar.",
+              "b": "Yanlış. Test oturumu sayfaları, oturum sırasında ve sonrasında test uzmanının attığı adımları ve keşfettiklerini not etmek için kullanılır; önceden doldurulması gereken bir test tasarımı planı değildirler. Başka bir tekniğin oturuma dahil edilmesi için önceden bir şey yazılmış olması gerekmez.",
+              "c": "Yanlış. Kontrol listesine dayalı test, tecrübeye dayalı ailenin başka bir tekniğidir; orada test uzmanı önceden hazırlanmış bir listedeki test koşullarını kapsar. Burada test koşulları test uzmanının keşfinden doğmaktadır, dolayısıyla etkinlik hâlâ keşif testidir.",
+              "d": "Doğru. Müfredat, denklik paylarına ayırma gibi diğer tekniklerin keşif testi sırasında birleştirilebileceğini açıkça belirtir."
+            }
+          }
+        },
+        "en": {
+          "stem": "While designing tests for an input field during an exploratory testing session, a tester makes use of equivalence partitioning. According to the syllabus, which of the following is correct about this?",
+          "options": [
+            {
+              "id": "a",
+              "text": "This is invalid; only experience-based techniques may be used during exploratory testing"
+            },
+            {
+              "id": "b",
+              "text": "This is valid only if the tester wrote the equivalence partitions into a session sheet before the session started"
+            },
+            {
+              "id": "c",
+              "text": "This means the test cases should now be considered checklist-based testing"
+            },
+            {
+              "id": "d",
+              "text": "This is valid; other test techniques, such as equivalence partitioning, can be incorporated during exploratory testing"
+            }
+          ],
+          "rationale": {
+            "summary": "Exploratory testing does not exclude other, more formal techniques; the syllabus explicitly states that techniques such as equivalence partitioning can be incorporated during exploratory testing.",
+            "byOption": {
+              "a": "Wrong. This option states the misconception that exploratory testing is a closed family which may draw only on the tester's own knowledge. Experience-based techniques are what a tester falls back on when there is no usable specification; exploratory testing is a way of organizing the testing, and the syllabus names equivalence partitioning as an example of a technique that can be brought into it.",
+              "b": "Wrong. Session sheets are used during and after a session to record the steps the tester took and what was discovered; they are not a test design plan that has to be filled in beforehand. Nothing needs to be written down in advance for another technique to be incorporated into the session.",
+              "c": "Wrong. Checklist-based testing is a different experience-based technique, in which the tester covers test conditions taken from a checklist prepared in advance. Here the test conditions arise from the tester's exploration, so the activity is still exploratory testing.",
+              "d": "Correct. The syllabus explicitly states that other techniques, such as equivalence partitioning, can be incorporated during exploratory testing."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0207",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.4",
+      "syllabusRef": "§4.4.3",
+      "objectives": [
+        "FL-4.4.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "experience-based",
+        "checklist-based",
+        "sources"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, kullanıcılar için en çok önem taşıyan işlevleri belirleyip bunları maddeler hâlinde bir kontrol listesine dönüştürüyor. Bu, kontrol listesi maddelerinin hangi kaynağa dayandığını gösterir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test seviyesi için üzerinde anlaşılan giriş ve çıkış kriterleri"
+            },
+            {
+              "id": "b",
+              "text": "Yazılımın geçmişte üretim ortamında nasıl başarısız olduğuna dair deneyim"
+            },
+            {
+              "id": "c",
+              "text": "Kullanıcı için neyin önemli olduğuna dair bilgi"
+            },
+            {
+              "id": "d",
+              "text": "Yazılımın tipik olarak neden ve nasıl başarısız olduğuna dair anlayış"
+            }
+          ],
+          "rationale": {
+            "summary": "Kontrol listeleri; deneyime, kullanıcı için neyin önemli olduğuna dair bilgiye veya yazılımın neden ya da nasıl başarısız olabileceğine dair anlayışa dayanarak oluşturulabilir. Burada ekip özellikle kullanıcı önceliklerinden yola çıkmaktadır.",
+            "byOption": {
+              "a": "Yanlış. Giriş ve çıkış kriterleri, testin ne zaman başlayabileceğini ve ne zaman bitmiş sayılacağını tanımlar. Müfredat, aslında giriş veya çıkış kriteri niteliğindeki maddelerin kontrol listesine konmaması gerektiğini söyler; dolayısıyla bunlar kontrol listesi maddelerinin kaynağı değildir.",
+              "b": "Yanlış. Bu da gerçek bir kaynaktır ama farklıdır; yazılımın geçmişte nasıl başarısız olduğuna dayanır, kullanıcı önceliklerine değil. Senaryoda ekip kullanıcı önceliklerinden yola çıkmaktadır.",
+              "c": "Doğru. Ekip, kullanıcılar için önemli olan işlevleri temel almaktadır; bu, kontrol listesi için sayılan kaynaklardan biridir.",
+              "d": "Yanlış. Yazılımın neden ve nasıl başarısız olduğuna dair anlayış gerçekten de kontrol listelerinin dayanabileceği kaynaklardan biridir, ama senaryodaki kaynak bu değildir; ekip arıza mekanizmalarından değil, kullanıcı için neyin önemli olduğundan yola çıkmaktadır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team identifies the functions that matter most to users and turns them into items on a checklist. What source do these checklist items rely on?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The entry and exit criteria agreed for the test level"
+            },
+            {
+              "id": "b",
+              "text": "Experience of how the software has failed in production in the past"
+            },
+            {
+              "id": "c",
+              "text": "Knowledge of what matters to the user"
+            },
+            {
+              "id": "d",
+              "text": "An understanding of why and how software typically fails"
+            }
+          ],
+          "rationale": {
+            "summary": "Checklists can be built on experience, knowledge of what matters to the user, or an understanding of why and how software fails. Here the team is specifically starting from user priorities.",
+            "byOption": {
+              "a": "Wrong. Entry and exit criteria define when testing may begin and when it may be considered finished. The syllabus warns that items which really belong as entry or exit criteria should be kept off a checklist, so they are not a source for checklist items.",
+              "b": "Wrong. This is also a real source, but a different one; it relies on how the software has failed in the past, not on user priorities. In this scenario the team starts from user priorities.",
+              "c": "Correct. The team bases the checklist on functions that matter to users; this is one of the sources listed for checklists.",
+              "d": "Wrong. An understanding of why and how software fails genuinely is one of the sources a checklist can be built on, but it is not the source used here; the team starts from what matters to users, not from failure mechanisms."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0208",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.4",
+      "syllabusRef": "§4.4.3",
+      "objectives": [
+        "FL-4.4.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "experience-based",
+        "checklist-based",
+        "abstraction-level"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Üst seviye, yani yüksek soyutlamalı, kontrol listesi maddelerinin kullanılmasının olası bir sonucu nedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Testin otomatik olarak ve insan müdahalesi olmadan koşulabilmesi"
+            },
+            {
+              "id": "b",
+              "text": "Gerçek testte değişkenlik olması; bunun potansiyel olarak daha geniş kapsama ama daha düşük tekrarlanabilirlik sağlaması"
+            },
+            {
+              "id": "c",
+              "text": "Kontrol listesinin artık hata analizine göre güncellenmesine gerek kalmaması"
+            },
+            {
+              "id": "d",
+              "text": "Her maddenin ayrı ayrı ve doğrudan kontrol edilebilir hale gelmesi"
+            }
+          ],
+          "rationale": {
+            "summary": "Kontrol listesi maddeleri üst seviye/soyut olduğunda, gerçek testte test uzmanına bağlı bir değişkenlik ortaya çıkar; bu potansiyel olarak daha geniş kapsama sağlayabilir ama tekrarlanabilirliği düşürür.",
+            "byOption": {
+              "a": "Yanlış. Üst seviye maddeler otomasyonu değil, tam tersine test uzmanının yorumuna bağlı bir değişkenliği artırır.",
+              "b": "Doğru. Müfredat bunu açıkça belirtir: üst seviye kontrol listeleri gerçek testte değişkenliğe yol açar, potansiyel olarak daha geniş kapsama sağlarken tekrarlanabilirliği düşürür.",
+              "c": "Yanlış. Madde seviyesi ne olursa olsun, kontrol listeleri hata analizine dayanarak düzenli güncellenmelidir.",
+              "d": "Yanlış. Tam tersine, çok üst seviye maddeler ayrı ayrı ve doğrudan kontrol edilebilir olma özelliğini kaybetme eğilimindedir."
+            }
+          }
+        },
+        "en": {
+          "stem": "What is a likely consequence of using high-level, highly abstract checklist items?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The test can now be run automatically without human intervention"
+            },
+            {
+              "id": "b",
+              "text": "Variability arises in actual testing, which can potentially provide broader coverage but lower repeatability"
+            },
+            {
+              "id": "c",
+              "text": "The checklist no longer needs to be updated based on defect analysis"
+            },
+            {
+              "id": "d",
+              "text": "Each item becomes separately and directly checkable"
+            }
+          ],
+          "rationale": {
+            "summary": "When checklist items are high-level/abstract, variability arises in actual testing depending on the tester; this can potentially provide broader coverage but at the cost of lower repeatability.",
+            "byOption": {
+              "a": "Wrong. High-level items increase variability dependent on the tester's interpretation, not automation.",
+              "b": "Correct. The syllabus explicitly states this: high-level checklists lead to variability in actual testing, potentially providing broader coverage while lowering repeatability.",
+              "c": "Wrong. Regardless of item level, checklists should be regularly updated based on defect analysis.",
+              "d": "Wrong. On the contrary, very high-level items tend to lose the property of being separately and directly checkable."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0209",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.5",
+      "syllabusRef": "§4.5.1",
+      "objectives": [
+        "FL-4.5.1"
+      ],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "collaboration-based",
+        "user-story",
+        "three-cs",
+        "multi"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b",
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir kullanıcı hikayesinin '3 C' unsurları arasında HANGİ İKİSİ bulunur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Customer (Müşteri)"
+            },
+            {
+              "id": "b",
+              "text": "Card (Kart)"
+            },
+            {
+              "id": "c",
+              "text": "Commitment (Taahhüt)"
+            },
+            {
+              "id": "d",
+              "text": "Confirmation (Onay)"
+            },
+            {
+              "id": "e",
+              "text": "Consensus (Fikir birliği)"
+            }
+          ],
+          "rationale": {
+            "summary": "Bir kullanıcı hikayesinin üç kritik unsuru, yani 3 C, şunlardır: Card (hikayeyi anlatan ortam), Conversation (yazılımın nasıl kullanılacağına dair konuşma) ve Confirmation (kabul kriterleri).",
+            "byOption": {
+              "a": "Yanlış. Customer (müşteri), kullanıcı hikayesinin kendisi için yazıldığı paydaştır ve ATDD'de test senaryolarını ekiple birlikte yazan kişilerden biridir; bir rolü ifade eder, hikayenin üç kritik unsurundan birini değil.",
+              "b": "Doğru. Card, hikayeyi anlatan ortamı, genellikle bir kart veya kısa bir metni, ifade eder ve 3 C'den biridir.",
+              "c": "Yanlış. Commitment (taahhüt), kullanıcı hikayesinin 3 C'sinden biri değildir; bu seçeneklerde eksik olan unsur Conversation'dır, Commitment değil.",
+              "d": "Doğru. Confirmation, hikayenin kabul kriterlerini ifade eder ve 3 C'den biridir.",
+              "e": "Yanlış. Fikir birliği (consensus) iş birlikli yazımın bir sonucu olabilir ama 3 C'nin adlandırılmış bir unsuru değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which TWO of the following are among a user story's '3 C's'?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Customer"
+            },
+            {
+              "id": "b",
+              "text": "Card"
+            },
+            {
+              "id": "c",
+              "text": "Commitment"
+            },
+            {
+              "id": "d",
+              "text": "Confirmation"
+            },
+            {
+              "id": "e",
+              "text": "Consensus"
+            }
+          ],
+          "rationale": {
+            "summary": "A user story's three critical elements, the 3 C's, are: Card (the medium that conveys the story), Conversation (the discussion about how the software will be used) and Confirmation (the acceptance criteria).",
+            "byOption": {
+              "a": "Wrong. The customer is the stakeholder a user story is written for, and in ATDD one of the people who write the test cases together with the team; that is a role, not one of the story's three critical elements.",
+              "b": "Correct. Card refers to the medium, usually a card or short piece of text, that conveys the story, and is one of the 3 C's.",
+              "c": "Wrong. Commitment is not one of the user story's 3 C's; the element missing from these options is Conversation, not Commitment.",
+              "d": "Correct. Confirmation refers to the story's acceptance criteria, and is one of the 3 C's.",
+              "e": "Wrong. Consensus may be a result of collaborative writing, but it is not a named element of the 3 C's."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0210",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.5",
+      "syllabusRef": "§4.5.1",
+      "objectives": [
+        "FL-4.5.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "collaboration-based",
+        "user-story",
+        "invest"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir paydaş, ekibe sunulan bir kullanıcı hikayesinin nasıl test edileceğini bilmediğini belirtiyor. INVEST ölçütlerine göre bu durum EN ÇOK hangi ölçütle ilgili bir sorunu işaret eder?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bağımsız (Independent)"
+            },
+            {
+              "id": "b",
+              "text": "Tahmin Edilebilir (Estimable)"
+            },
+            {
+              "id": "c",
+              "text": "Test Edilebilir (Testable)"
+            },
+            {
+              "id": "d",
+              "text": "Küçük (Small)"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredat, bir paydaşın bir hikayenin nasıl test edileceğini bilmemesinin genellikle hikayenin yeterince net olmadığının bir işareti olduğunu belirtir; bu doğrudan INVEST'teki Test Edilebilir ölçütüyle ilgilidir.",
+            "byOption": {
+              "a": "Yanlış. Bağımsız ölçütü, hikayenin diğer hikayelerden bağımsız olarak geliştirilip test edilebilmesiyle ilgilidir, test edilme belirsizliğiyle değil.",
+              "b": "Yanlış. Tahmin Edilebilir ölçütü, ekibin hikaye için gereken eforu tahmin edebilmesiyle ilgilidir.",
+              "c": "Doğru. Müfredat, bir hikayenin nasıl test edileceğinin bilinmemesinin genellikle hikayenin yeterince net olmadığının işareti olduğunu belirtir; bu doğrudan Test Edilebilir ölçütüne işaret eder.",
+              "d": "Yanlış. Küçük ölçütü, hikayenin bir sprint içinde tamamlanabilecek kadar küçük olmasıyla ilgilidir, test edilebilirlikle değil."
+            }
+          }
+        },
+        "en": {
+          "stem": "A stakeholder states they do not know how a user story presented to the team would be tested. According to the INVEST criteria, which criterion does this MOST point to a problem with?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Independent"
+            },
+            {
+              "id": "b",
+              "text": "Estimable"
+            },
+            {
+              "id": "c",
+              "text": "Testable"
+            },
+            {
+              "id": "d",
+              "text": "Small"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus states that a stakeholder not knowing how a story would be tested is generally a sign the story is not sufficiently clear; this directly points to the Testable criterion in INVEST.",
+            "byOption": {
+              "a": "Wrong. The Independent criterion concerns whether the story can be developed and tested independently of other stories, not uncertainty about how it would be tested.",
+              "b": "Wrong. The Estimable criterion concerns whether the team can estimate the effort a story requires.",
+              "c": "Correct. The syllabus states that not knowing how a story would be tested is generally a sign the story is not sufficiently clear; this points directly to the Testable criterion.",
+              "d": "Wrong. The Small criterion concerns whether a story is small enough to be completed within a sprint, not testability."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0211",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.5",
+      "syllabusRef": "§4.5.1",
+      "objectives": [
+        "FL-4.5.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "collaboration-based",
+        "user-story",
+        "format"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir kullanıcı hikayesi şöyle yazılmıştır: 'Bir depo çalışanı olarak, stok seviyesini elle güncellemek istiyorum, çünkü tedarikçiden gelen sevkiyatı sisteme hızlıca yansıtabileyim.' Bu cümlenin 'çünkü ... yansıtabileyim' kısmı hikayenin hangi unsurunu ifade eder?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Hikayenin Card (kart) unsurunu"
+            },
+            {
+              "id": "b",
+              "text": "Hikayenin kabul kriterlerini"
+            },
+            {
+              "id": "c",
+              "text": "INVEST ölçütlerinden Değerli (Valuable) ölçütünün doğrudan kanıtını"
+            },
+            {
+              "id": "d",
+              "text": "Rolün hikayeden elde edeceği iş değerini"
+            }
+          ],
+          "rationale": {
+            "summary": "Yaygın kullanıcı hikayesi formatı '[Rol] olarak [hedef] istiyorum, çünkü [iş değeri]' şeklindedir; 'çünkü' ile başlayan kısım rolün hikayeden elde edeceği iş değerini ifade eder.",
+            "byOption": {
+              "a": "Yanlış. Card, hikayeyi anlatan ortamın, yani kartın, kendisidir; cümlenin belirli bir kısmı değildir.",
+              "b": "Yanlış. Kabul kriterleri hikayenin ardından ayrıca yazılır; 'çünkü' cümlesinin kendisi kabul kriteri değildir.",
+              "c": "Yanlış. İş değeri belirtmek, hikayenin gerçekten INVEST'in Değerli ölçütünü karşıladığının garantisi değildir; bu yalnızca formatın bir parçasıdır, ölçütün doğrudan kanıtı sayılmaz.",
+              "d": "Doğru. '[Rol] olarak [hedef] istiyorum, çünkü [iş değeri]' formatında 'çünkü' ile başlayan kısım, rolün hikayeden elde edeceği iş değerini ifade eder."
+            }
+          }
+        },
+        "en": {
+          "stem": "A user story is written as: 'As a warehouse worker, I want to manually update the stock level, so that I can quickly reflect a supplier shipment in the system.' Which element of the story does the 'so that...' clause represent?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The story's Card element"
+            },
+            {
+              "id": "b",
+              "text": "The story's acceptance criteria"
+            },
+            {
+              "id": "c",
+              "text": "Direct proof that the story satisfies the INVEST Valuable criterion"
+            },
+            {
+              "id": "d",
+              "text": "The business value the role will gain from the story"
+            }
+          ],
+          "rationale": {
+            "summary": "The common user story format is 'As a [role], I want [goal], so that [business value]'; the clause starting with 'so that' expresses the business value the role will gain from the story.",
+            "byOption": {
+              "a": "Wrong. Card is the medium that conveys the story itself, not a specific clause within it.",
+              "b": "Wrong. Acceptance criteria are written separately, after the story; the 'so that' clause itself is not an acceptance criterion.",
+              "c": "Wrong. Stating a business value does not by itself guarantee the story truly satisfies INVEST's Valuable criterion; it is only part of the format, not direct proof of the criterion.",
+              "d": "Correct. In the format 'As a [role], I want [goal], so that [business value]', the clause starting with 'so that' expresses the business value the role will gain from the story."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0212",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.5",
+      "syllabusRef": "§4.5.2",
+      "objectives": [
+        "FL-4.5.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "collaboration-based",
+        "acceptance-criteria",
+        "purposes",
+        "except"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden hangisi kabul kriterlerinin amaçlarından biri DEĞİLDİR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test adımları ve beklenen sonuçları yazmak"
+            },
+            {
+              "id": "b",
+              "text": "Hikayenin kapsamını tanımlamak"
+            },
+            {
+              "id": "c",
+              "text": "Paydaşlar arasında fikir birliği sağlamak"
+            },
+            {
+              "id": "d",
+              "text": "Doğru planlama ve tahminlemeyi mümkün kılmak"
+            }
+          ],
+          "rationale": {
+            "summary": "Kabul kriterleri; hikayenin kapsamını tanımlamak, paydaşlar arasında fikir birliği sağlamak, kabul testinin temelini oluşturmak ve doğru planlama ile tahminlemeyi mümkün kılmak amacıyla yazılır. Somut adımların ve beklenen sonuçların kayıt altına alınması ise bir test senaryosunun işidir; test senaryoları kabul kriterlerinden türetilir.",
+            "byOption": {
+              "a": "Doğru, bu amaçlardan biri DEĞİLDİR. Adım adım eylemler ve beklenen sonuçlar bir test senaryosunu ya da test prosedürünü oluşturur. Kabul kriterleri ise uygulamanın karşılaması gereken koşullardır, yani testlerin deneyeceği test koşullarıdır; test senaryoları bunlardan türetilir, kabul kriterlerinin yerine geçmez.",
+              "b": "Yanlış seçim; bu gerçekten kabul kriterlerinin amaçlarından biridir, hikayenin ne kadarının kapsandığını tanımlarlar.",
+              "c": "Yanlış seçim; bu da amaçlardan biridir, kabul kriterleri paydaşlar arasında ortak bir anlayış sağlar.",
+              "d": "Yanlış seçim; bu da amaçlardan biridir, iyi tanımlanmış kabul kriterleri doğru planlama ve tahminlemeyi mümkün kılar."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is NOT one of the purposes of acceptance criteria?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Writing test steps and expected results"
+            },
+            {
+              "id": "b",
+              "text": "Defining the scope of the story"
+            },
+            {
+              "id": "c",
+              "text": "Achieving consensus among stakeholders"
+            },
+            {
+              "id": "d",
+              "text": "Enabling accurate planning and estimation"
+            }
+          ],
+          "rationale": {
+            "summary": "Acceptance criteria are written to define the story's scope, achieve consensus among stakeholders, form the basis for acceptance testing, and enable accurate planning and estimation. Recording concrete steps and expected results is the job of a test case, which is derived from the acceptance criteria.",
+            "byOption": {
+              "a": "Correct, this is NOT one of those purposes. Step-by-step actions with their expected results make up a test case or a test procedure. Acceptance criteria are the conditions the implementation must meet, i.e. the test conditions that tests exercise; the test cases are derived from them rather than replacing them.",
+              "b": "Wrong choice; this genuinely is one of the purposes of acceptance criteria, they define how much of the story is covered.",
+              "c": "Wrong choice; this is also one of the purposes, acceptance criteria provide a shared understanding among stakeholders.",
+              "d": "Wrong choice; this is also one of the purposes, well-defined acceptance criteria enable accurate planning and estimation."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0213",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.5",
+      "syllabusRef": "§4.5.2",
+      "objectives": [
+        "FL-4.5.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "collaboration-based",
+        "acceptance-criteria",
+        "custom-format"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, bir kullanıcı hikayesinin kabul kriterlerini ne Given/When/Then formatında ne de madde işaretli bir kural listesi biçiminde yazmayı tercih ediyor; bunun yerine kendi geliştirdikleri bir akış şeması gösterimini kullanıyorlar. Müfredata göre bu yaklaşım hakkında ne söylenebilir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kabul edilemez, çünkü kabul kriterleri yalnızca senaryo odaklı veya kural odaklı formatlardan biriyle yazılabilir"
+            },
+            {
+              "id": "b",
+              "text": "Kabul edilebilir, ancak bu durumda kabul testi (ATDD) artık uygulanamaz"
+            },
+            {
+              "id": "c",
+              "text": "Kabul edilemez, çünkü ekibin kendi geliştirdiği bir gösterim paydaşlar arasında fikir birliği sağlayamaz"
+            },
+            {
+              "id": "d",
+              "text": "Kriterler yeterince net ve belirsizlikten arınmış olduğu sürece kabul edilebilir bir yaklaşımdır"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredat, ekibin senaryo odaklı veya kural odaklı formatların dışında özel bir format da kullanabileceğini, yeter ki kriterler iyi tanımlanmış ve belirsizlikten arınmış olsun, açıkça belirtir.",
+            "byOption": {
+              "a": "Yanlış. Bu iki format en yaygın olanlarıdır ama tek seçenek değildir; ekip başka bir özel format da kullanabilir.",
+              "b": "Yanlış. ATDD'de test senaryoları kabul kriterlerinden türetilir; kriterlerin formatı net ve belirsizlikten arınmış olduğu sürece bu türetme işlemini engellemez.",
+              "c": "Yanlış. Paydaşlar arasında fikir birliği sağlamak gerçekten de kabul kriterlerinin amaçlarından biridir; ancak bunun koşulu kriterlerin iyi tanımlanmış ve belirsizlikten arınmış olmasıdır, belirli bir gösterimin kullanılması değil. Ekibin tanımladığı ve paydaşlarla paylaştığı özel bir gösterim de bu amaca hizmet edebilir.",
+              "d": "Doğru. Kriterler yeterince net ve belirsizlikten arınmış olduğu sürece özel bir format kullanmak, müfredata göre kabul edilebilir bir yaklaşımdır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team chooses to write a user story's acceptance criteria neither in Given/When/Then format nor as a bulleted rule list, but instead using a custom flowchart notation they developed. According to the syllabus, what can be said about this approach?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It is unacceptable, because acceptance criteria may only be written in one of the scenario-oriented or rule-oriented formats"
+            },
+            {
+              "id": "b",
+              "text": "It is acceptable, but ATDD can no longer be applied in this case"
+            },
+            {
+              "id": "c",
+              "text": "It is unacceptable, because a notation the team invented itself cannot produce consensus among stakeholders"
+            },
+            {
+              "id": "d",
+              "text": "It is an acceptable approach as long as the criteria are sufficiently clear and free of ambiguity"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus explicitly states that a team may use a custom format outside the scenario-oriented or rule-oriented formats, as long as the criteria are well defined and free of ambiguity.",
+            "byOption": {
+              "a": "Wrong. These two formats are the most common ones but not the only option; the team may use another custom format.",
+              "b": "Wrong. In ATDD, test cases are derived from acceptance criteria; as long as the criteria's format is clear and unambiguous, this does not prevent that derivation.",
+              "c": "Wrong. Reaching consensus among stakeholders genuinely is one of the purposes of acceptance criteria, but what that requires is criteria that are well defined and free of ambiguity, not a particular notation. A custom notation the team has defined and shares with its stakeholders can serve that purpose too.",
+              "d": "Correct. Using a custom format is an acceptable approach according to the syllabus, as long as the criteria are sufficiently clear and free of ambiguity."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0214",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.5",
+      "syllabusRef": "§4.5.2",
+      "objectives": [
+        "FL-4.5.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "collaboration-based",
+        "acceptance-criteria",
+        "positive-negative"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir sadakat programı için yazılan kabul kriterleri yalnızca kullanıcının yeterli puana sahip olduğu durumda ödülün verildiğini açıklamaktadır. Müfredata göre bu kabul kriteri seti hakkında ne söylenebilir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yeterlidir; kabul kriterleri yalnızca sistemin doğru çalıştığı ana senaryoyu açıklamalıdır"
+            },
+            {
+              "id": "b",
+              "text": "Eksiktir; kabul kriterleri mutlaka Given/When/Then formatında yazılmalıdır"
+            },
+            {
+              "id": "c",
+              "text": "Eksiktir; kabul kriterleri hem pozitif hem negatif senaryoları tarif etmelidir, ör. yetersiz puan durumunda ne olacağı da tanımlanmalıdır"
+            },
+            {
+              "id": "d",
+              "text": "Yeterlidir; negatif senaryolar yalnızca kabul testi (ATDD) sırasında ayrıca ele alınır, kabul kriterlerinde yer almasına gerek yoktur"
+            }
+          ],
+          "rationale": {
+            "summary": "Kabul kriterleri hem pozitif hem negatif senaryoları tarif etmek amacını taşır; yalnızca ödülün verildiği durumu açıklamak, yetersiz puan durumunda ne olacağını, yani negatif senaryoyu, tanımsız bırakır.",
+            "byOption": {
+              "a": "Yanlış. Kabul kriterlerinin amaçlarından biri hem pozitif hem negatif senaryoları tarif etmektir; yalnızca ana senaryoyu açıklamak yeterli değildir.",
+              "b": "Yanlış. Sorun format değildir; kural odaklı formatta da hem pozitif hem negatif kurallar yazılabilir. Eksik olan format değil, negatif senaryonun kendisidir.",
+              "c": "Doğru. Kabul kriterleri hem pozitif hem negatif senaryoları tarif etmelidir; burada yetersiz puan durumunda ne olacağı hiç tanımlanmamıştır.",
+              "d": "Yanlış. ATDD'de test senaryoları kabul kriterlerinden türetilir; negatif senaryo kabul kriterlerinde tanımlanmamışsa, ondan türetilecek bir negatif test senaryosu da olmaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "The acceptance criteria written for a loyalty program only describe the case where the reward is granted when the user has enough points. According to the syllabus, what can be said about this set of acceptance criteria?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It is sufficient; acceptance criteria should only describe the main scenario where the system works correctly"
+            },
+            {
+              "id": "b",
+              "text": "It is incomplete; acceptance criteria must always be written in Given/When/Then format"
+            },
+            {
+              "id": "c",
+              "text": "It is incomplete; acceptance criteria should describe both positive and negative scenarios, e.g. what happens with an insufficient point balance must also be defined"
+            },
+            {
+              "id": "d",
+              "text": "It is sufficient; negative scenarios are only handled separately during acceptance testing (ATDD) and need not appear in the acceptance criteria"
+            }
+          ],
+          "rationale": {
+            "summary": "Acceptance criteria are meant to describe both positive and negative scenarios; describing only the case where the reward is granted leaves what happens with an insufficient point balance, the negative scenario, undefined.",
+            "byOption": {
+              "a": "Wrong. One purpose of acceptance criteria is to describe both positive and negative scenarios; describing only the main scenario is not sufficient.",
+              "b": "Wrong. Format is not the issue; both positive and negative rules can also be written in rule-oriented format. What is missing is not the format but the negative scenario itself.",
+              "c": "Correct. Acceptance criteria should describe both positive and negative scenarios; here what happens with an insufficient point balance is never defined.",
+              "d": "Wrong. In ATDD, test cases are derived from acceptance criteria; if the negative scenario is not defined in the acceptance criteria, there is no negative test case to derive from it either."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0215",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.5",
+      "syllabusRef": "§4.5.3",
+      "objectives": [
+        "FL-4.5.3"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "collaboration-based",
+        "atdd",
+        "duplicate-test-cases"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ATDD ekibi şu kullanıcı hikayesi üzerinde çalışmaktadır:\n\n'Bir mobil bankacılık kullanıcısı olarak günlük transfer limitimi belirlemek istiyorum, böylece hesabım daha güvende olsun.'\n\nKabul kriterleri şunlardır:\nKK1: Kullanıcı 100 TL ile 10.000 TL arasında bir günlük transfer limiti kaydedebilir.\nKK2: Günün toplamını yürürlükteki limitin üzerine çıkaracak bir transfer reddedilir ve 'günlük limit aşıldı' mesajı gösterilir.\nKK3: Yürürlükteki limit, hesap özeti ekranında gösterilir.\n\nEkip şu test senaryolarını daha önce yazmıştır:\nT1: 5.000 TL'lik bir limitin kaydedilebildiği kontrol edilir.\nT2: 5.000 TL'lik limitin 4.800 TL'si kullanılmışken 300 TL'lik bir transferin reddedildiği ve 'günlük limit aşıldı' mesajının gösterildiği kontrol edilir.\nT3: Hesap özetinde yürürlükteki limitin gösterildiği kontrol edilir.\n\nEkip üyelerinden biri dört test senaryosu daha öneriyor. Bunlardan hangisi, daha önce yazılmış bir test senaryosuyla aynı özelliği ele aldığı için listeye EKLENMEMELİDİR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "50 TL'lik bir limit kaydedilmeye çalışıldığında bunun reddedildiğinin kontrol edilmesi"
+            },
+            {
+              "id": "b",
+              "text": "Günün toplamını yürürlükteki limite tam olarak eşitleyen bir transferin tamamlandığının kontrol edilmesi"
+            },
+            {
+              "id": "c",
+              "text": "Limit değiştirildikten sonra hesap özetinin yeni değeri gösterdiğinin kontrol edilmesi"
+            },
+            {
+              "id": "d",
+              "text": "Limiti aşan bir transferin 'günlük limit aşıldı' mesajıyla reddedildiğinin kontrol edilmesi"
+            }
+          ],
+          "rationale": {
+            "summary": "ATDD'de test senaryoları hikayenin tüm özelliklerini kapsamalı, hikayenin dışına çıkmamalı ve iki test senaryosu aynı özelliği tekrar ele almamalıdır. Önerilen dört senaryo T1-T3 ile karşılaştırıldığında, yalnızca biri zaten yazılmış bir senaryonun ele aldığı özelliği tekrarlar.",
+            "byOption": {
+              "a": "Yanlış seçim. Bu, KK1'in alt sınırının altındaki bir değere ilişkin negatif bir senaryodur; T1 yalnızca geçerli bir limitin kaydedilebilmesini, yani pozitif tarafı ele alır. Dolayısıyla henüz kapsanmamış bir özelliği ekler.",
+              "b": "Yanlış seçim. Bu, KK2'nin pozitif tarafıdır: limiti aşmayan bir transferin tamamlanması. T2 ise limitin aşıldığı durumu ele alır; ikisi farklı özelliklerdir.",
+              "c": "Yanlış seçim. T3 yalnızca yürürlükteki limitin hesap özetinde gösterildiğini kontrol eder; limit değiştirildikten sonra ekranın güncellenmesi ayrı bir özelliktir.",
+              "d": "Doğru. Bu senaryo, T2'nin zaten ele aldığı özelliği, yani limiti aşan bir transferin reddedilmesini ve mesajın gösterilmesini, ikinci kez tarif eder. ATDD'de iki test senaryosu aynı özelliği tekrar ele almamalıdır, bu yüzden listeye eklenmemelidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "An ATDD team is working on the following user story:\n\n'As a mobile banking user, I want to set my daily transfer limit, so that my account is better protected.'\n\nThe acceptance criteria are:\nAC1: The user can save a daily transfer limit between 100 TL and 10,000 TL.\nAC2: A transfer that would take the day's total above the limit in effect is refused and the message 'daily limit exceeded' is shown.\nAC3: The limit currently in effect is shown on the account summary screen.\n\nThe team has already written these test cases:\nT1: Check that a limit of 5,000 TL can be saved.\nT2: Check that with 4,800 TL of a 5,000 TL limit already used, a 300 TL transfer is refused and 'daily limit exceeded' is shown.\nT3: Check that the account summary shows the limit currently in effect.\n\nA team member proposes four further test cases. Which of them must NOT be added to the list, because it covers the same characteristic as a test case that has already been written?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Checking that an attempt to save a limit of 50 TL is rejected"
+            },
+            {
+              "id": "b",
+              "text": "Checking that a transfer taking the day's total to exactly the limit in effect is completed"
+            },
+            {
+              "id": "c",
+              "text": "Checking that the account summary shows the new value after the limit has been changed"
+            },
+            {
+              "id": "d",
+              "text": "Checking that a transfer above the limit in effect is refused with 'daily limit exceeded'"
+            }
+          ],
+          "rationale": {
+            "summary": "In ATDD, test cases must cover all the characteristics of the story without going beyond it, and no two test cases should describe the same characteristic twice. Compared against T1-T3, only one of the four proposals repeats a characteristic an existing test case already covers.",
+            "byOption": {
+              "a": "Wrong choice. This is a negative case for a value below AC1's lower bound; T1 only covers saving a valid limit, i.e. the positive side. It therefore adds a characteristic that is not yet covered.",
+              "b": "Wrong choice. This is the positive side of AC2: a transfer that does not exceed the limit completes. T2 covers the case where the limit is exceeded; the two are different characteristics.",
+              "c": "Wrong choice. T3 only checks that the limit in effect is shown on the account summary; the screen being updated after the limit is changed is a separate characteristic.",
+              "d": "Correct. This describes for a second time the characteristic T2 already covers, namely that a transfer exceeding the limit is refused and the message is shown. In ATDD no two test cases should describe the same characteristic, so it must not be added to the list."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0216",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.5",
+      "syllabusRef": "§4.5.3",
+      "objectives": [
+        "FL-4.5.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "collaboration-based",
+        "atdd",
+        "process"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, kullanıcı hikayeleri üzerinde ATDD uyguladığını söylemektedir. Ekibin fiilî uygulamaları aşağıdaki seçeneklerde sıralanmıştır. Bunlardan hangisi ATDD'ye UYMAMAKTADIR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test senaryolarının, geliştiriciler hikayeyi tamamladıklarını bildirdikten sonra test uzmanı tarafından tek başına türetilmesi"
+            },
+            {
+              "id": "b",
+              "text": "Hikayenin ve kabul kriterlerinin, müşteri, bir geliştirici ve bir test uzmanının katıldığı bir analiz çalıştayında tartışılıp netleştirilmesi"
+            },
+            {
+              "id": "c",
+              "text": "Test senaryolarının, müşterinin de okuyabileceği doğal dilde yazılması"
+            },
+            {
+              "id": "d",
+              "text": "Test senaryolarının bir kısmının otomatikleştirilip kalanının manuel olarak koşulması"
+            }
+          ],
+          "rationale": {
+            "summary": "ATDD bir önce-test-et yaklaşımıdır: test senaryoları, kullanıcı hikayesi uygulanmadan ÖNCE, farklı bakış açılarına sahip ekip üyeleri tarafından birlikte oluşturulur. Analiz çalıştayı, doğal dilde yazım ve senaryoların manuel ya da otomatik koşulması bu yaklaşımın parçasıdır.",
+            "byOption": {
+              "a": "Doğru. Bu uygulama ATDD'nin iki temel özelliğini birden çiğner: test senaryoları uygulamadan sonra değil ÖNCE oluşturulmalı ve test uzmanı tek başına değil, müşteri ve geliştiricilerle birlikte yazmalıdır. Anlatılan sıra, testlerin kodlamadan sonra yazıldığı geleneksel yaklaşımdır.",
+              "b": "Yanlış seçim. Bu, ATDD sürecinin başlangıcıdır: analiz çalıştayında hikaye ve kabul kriterleri tartışılır, eksiklikler ve belirsizlikler burada giderilir.",
+              "c": "Yanlış seçim. ATDD'de test senaryoları paydaşların anlayabileceği doğal dilde yazılır; bu uygulama ATDD'ye uygundur.",
+              "d": "Yanlış seçim. ATDD test senaryoları manuel olarak da otomatik olarak da koşulabilir; ikisinin bir arada kullanılması ATDD'ye aykırı değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team says it applies ATDD to its user stories. The team's actual practices are listed in the options below. Which of them does NOT conform to ATDD?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The tester derives the test cases alone, after the developers report the story as finished"
+            },
+            {
+              "id": "b",
+              "text": "The story and its acceptance criteria are discussed and clarified in a specification workshop attended by the customer, a developer and a tester"
+            },
+            {
+              "id": "c",
+              "text": "The test cases are written in natural language that the customer can also read"
+            },
+            {
+              "id": "d",
+              "text": "Some of the test cases are automated and the rest are executed manually"
+            }
+          ],
+          "rationale": {
+            "summary": "ATDD is a test-first approach: the test cases are created BEFORE the user story is implemented, jointly by team members with different perspectives. The specification workshop, writing in natural language, and running the cases manually or automated are all part of that approach.",
+            "byOption": {
+              "a": "Correct. This practice breaks two core properties of ATDD at once: the test cases must be created BEFORE the implementation, not after it, and they are written jointly with the customer and the developers rather than by the tester alone. The sequence described is the traditional approach in which tests are written after coding.",
+              "b": "Wrong choice. This is how the ATDD process starts: in the specification workshop the story and its acceptance criteria are discussed, and incompleteness and ambiguity are resolved there.",
+              "c": "Wrong choice. In ATDD the test cases are written in natural language that stakeholders can understand, so this practice conforms.",
+              "d": "Wrong choice. ATDD test cases may be executed either manually or automated; using both together does not conflict with ATDD."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ctfl4-0216 relabelled K2, ctfl4-0209 unverified clause removed, keyed-letter rotation broken)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    }
+  ]
+}

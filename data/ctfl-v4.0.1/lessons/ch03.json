@@ -2,5 +2,438 @@
   "chunk": "ch03",
   "chapter": 3,
   "dataVersion": "2026.09.19",
-  "lessons": []
+  "lessons": [
+    {
+      "objective": "FL-3.1.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§3.1.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Statik testle incelenebilen iş ürünleri",
+          "paragraphs": [
+            "Statik test, yazılımı çalıştırmaz; bir iş ürününü okuyarak inceler — manuel olarak (gözden geçirme) ya da bir araçla (statik analiz). Hiçbir şey çalıştırılmadığı için okunup anlaşılabilen hemen her iş ürünü aday olur: gereksinim belgeleri, kaynak kod, test planları, test senaryoları, ürün iş listesi öğeleri, test başlatma belgeleri, proje dokümantasyonu, sözleşmeler ve modeller.",
+            "Ancak gözden geçirme ile statik analiz aynı girdiyi kabul etmez. Gözden geçirme için bir insanın okuyup anlayabileceği bir iş ürünü yeterlidir. Statik analiz daha fazlasını ister: kodun biçimsel söz dizimi, bir model ya da yapılandırılmış metin gibi mekanik olarak kontrol edilebilecek bir yapı. Serbest metinle yazılmış bir gereksinim paragrafı gözden geçirilebilir ama statik analize uygun değildir.",
+            "Bazı iş ürünleri statik testin tamamen dışında kalır: bir insanın yorumlaması aşırı zor olan malzeme, ya da bir aracın analiz edemeyeceği ürünler. 3. parti çalıştırılabilir kod, syllabus'un kendi verdiği örnektir; çünkü ne bir belge gibi okunabilir ne de yasal nedenlerle araçla analiz edilebilir."
+          ],
+          "keyPoints": [
+            "Okunup anlaşılabilen hemen her iş ürünü gözden geçirilebilir: gereksinimler, kod, test planları, test senaryoları, iş listesi öğeleri, sözleşmeler, modeller.",
+            "Statik analiz ayrıca kontrol edilebilir bir yapı ister — biçimsel söz dizimi, kod ya da model — sadece okunabilir düzyazı yetmez.",
+            "İnsanların yorumlaması zor olan ya da araçların yasal/pratik olarak analiz edemeyeceği iş ürünleri (ör. 3. parti çalıştırılabilir kod) statik test için uygun değildir."
+          ],
+          "commonMistakes": [
+            "Statik testin yalnızca kaynak kod için geçerli olduğunu sanmak — gözden geçirme, çalıştırılabilir olsun olmasın hemen her belgelenmiş iş ürününü kapsar.",
+            "\"Gözden geçirilebilir\" ile \"statik analize uygun\" olmayı aynı şey sanmak — analiz araçları, düz metin bir belgede bulunmayabilecek biçimsel, kontrol edilebilir bir yapı ister."
+          ]
+        },
+        "en": {
+          "title": "Work products static testing can examine",
+          "paragraphs": [
+            "Static testing does not run the software; it examines a work product by reading it — manually (a review) or with a tool (static analysis). Because nothing is executed, almost any work product that can be read and understood becomes a candidate: requirement specifications, source code, test plans, test cases, backlog items, test charters, project documentation, contracts, and models.",
+            "Reviews and static analysis do not accept the same input, though. A review just needs a work product a human can read and understand. Static analysis needs more: a structure it can check mechanically, such as a formal syntax in code, a model, or structured text. A free-form requirements paragraph in prose is reviewable but not statically analyzable.",
+            "Some work products fall outside static testing altogether: material that is too hard for a person to interpret, or that a tool cannot analyze. Third-party executable code is the syllabus's own example, since it can be neither read as a document nor legally analyzed by a tool."
+          ],
+          "keyPoints": [
+            "Nearly any readable work product can be reviewed: requirements, code, test plans, test cases, backlog items, contracts, models.",
+            "Static analysis additionally needs a checkable structure — formal syntax, code, or a model — not just readable prose.",
+            "Work products that are hard for people to interpret, or that tools cannot legally or practically analyze (e.g., third-party executable code), are not suitable for static testing."
+          ],
+          "commonMistakes": [
+            "Assuming static testing only applies to source code — reviews cover almost any documented work product, executable or not.",
+            "Treating \"reviewable\" and \"statically analyzable\" as the same requirement — analysis tools need a formal, checkable structure that a plain-prose document may lack."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-3.1.2",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§3.1.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Statik testin neden değerli olduğu",
+          "paragraphs": [
+            "Statik testin en büyük kazancı zamanlamadır: hataları yazılım geliştirme yaşam döngüsünün en erken aşamalarında bulur, tam da \"erken test\" prensibinin istediği şeydir. Hiçbir şeyin inşa edilmesine ya da çalıştırılmasına gerek olmadığından, tek bir kod satırı yazılmadan önce bir gereksinim belgesi ya da tasarım modeli incelenebilir.",
+            "Ayrıca dinamik testin yapısal olarak ulaşamayacağı hataları da bulur — ulaşılamayan kod, istenildiği gibi uygulanmamış bir tasarım örüntüsü, ya da bir sözleşme veya proje planı gibi hiç çalıştırılmayan bir iş ürünündeki hata gibi.",
+            "Hata avcılığının ötesinde, statik test iş ürününe güven oluşturur ve paydaşlar arasında ortak bir anlayış yaratır; çünkü belgelenmiş gereksinimleri birlikte gözden geçirmek, bunların gerçekten herkesin ihtiyacını tanımlayıp tanımlamadığını ortaya çıkarır. Bir gözden geçirme zaman alsa da, projenin toplam maliyeti genellikle daha düşük çıkar, çünkü bir hatayı geç düzeltmek erken yakalamaktan çok daha pahalıdır."
+          ],
+          "keyPoints": [
+            "Statik test, hataları yaşam döngüsünün en erken aşamalarında tespit eder ve kod çalışmadan erken test prensibini karşılar.",
+            "Dinamik testin hiç ulaşamayacağı hata türlerini bulur: ulaşılamayan kod, istenmeyen tasarım örüntüleri, çalıştırılamayan iş ürünlerindeki hatalar.",
+            "İş ürününe güven oluşturur ve paydaşlar arasında ortak anlayış yaratır.",
+            "Gözden geçirmeler önceden zaman alır, ama projenin toplam maliyeti genelde daha düşüktür; çünkü geç bulunan hatayı düzeltmek çok daha pahalıdır."
+          ],
+          "commonMistakes": [
+            "Statik testi sadece \"koddan önce yapılan test\" sanmak — değeri sadece daha erken bulmakla sınırlı değildir, dinamik testin hiç ulaşamayacağı hataları bulmayı da kapsar.",
+            "Bir gözden geçirmenin başlangıç maliyetinin onu değersiz kıldığını düşünmek — syllabus getiriyi gözden geçirme oturumunun maliyetine göre değil, projenin toplam maliyetine göre çerçeveler."
+          ]
+        },
+        "en": {
+          "title": "Why static testing pays off",
+          "paragraphs": [
+            "Static testing's biggest payoff is timing: it finds defects in the earliest phases of the software development lifecycle, which is exactly what the \"early testing\" principle asks for. Because nothing needs to be built or run, a requirements document or a design model can be examined before a single line of code exists.",
+            "It also finds defects dynamic testing structurally cannot reach — unreachable code, a design pattern that was not implemented as intended, or a defect in a work product that is never executed at all, such as a contract or a project plan.",
+            "Beyond defect-hunting, static testing builds confidence in a work product and creates shared understanding among stakeholders, because reviewing documented requirements together surfaces whether they actually describe what everyone needs. A review costs time up front, but the overall project usually comes out cheaper, since fixing a defect late costs far more than catching it early."
+          ],
+          "keyPoints": [
+            "Static testing detects defects in the earliest lifecycle phases, satisfying the early-testing principle before any code runs.",
+            "It finds defect types dynamic testing cannot reach at all: unreachable code, undesired design patterns, defects in non-executable work products.",
+            "It builds confidence in the work product and creates shared understanding among stakeholders.",
+            "Reviews cost time up front, but the project's total cost is usually lower because late-stage defect fixing is far more expensive."
+          ],
+          "commonMistakes": [
+            "Treating static testing as merely \"testing before coding\" — its value also includes finding defects dynamic testing can never reach, not just finding them earlier.",
+            "Assuming a review's upfront cost makes it not worth it — the syllabus frames the return in total project cost, not the cost of the review session itself."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-3.1.3",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§3.1.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Statik test ile dinamik testin karşılaştırılması",
+          "paragraphs": [
+            "Statik test ve dinamik test aynı hedefi paylaşır — bir iş ürünündeki hataların tespit edilmesine yardımcı olmak — ama oraya farklı yollardan ulaşırlar ve her biri diğerinin bulamayacağı hata türlerini bulur.",
+            "En keskin fark, bir hatanın nasıl ortaya çıktığıdır. Statik test, iş ürününün kendisini okuyarak ya da analiz ederek hatayı doğrudan bulur. Dinamik test hatayı hiçbir zaman doğrudan görmez: yazılımı çalıştırır, bir arıza gözlemler ve ilgili hata ancak bu arızanın sonradan analiz edilmesiyle belirlenir.",
+            "İkisi ayrıca neye uygulanabildikleri ve neyi ölçebildikleri bakımından da farklıdır. Statik test çalıştırılamayan iş ürünlerine uygulanabilir (bir gereksinim belgesi, bir model); dinamik test çalıştırılabilir bir şey gerektirir. Statik test, sürdürülebilirlik gibi çalıştırmadan bağımsız kalite karakteristiklerini ölçebilir; dinamik test, performans verimliliği gibi çalıştırmaya bağlı karakteristikleri ölçer. Statik test ayrıca nadiren çalıştırılan ya da dinamik olarak tetiklenmesi zor kod yollarındaki hatalara da ulaşabilir.",
+            "Pratikte statik test; gereksinim hataları (belirsizlik, çelişki, eksiklik), tasarım hataları, bazı kod hataları (tanımlanmamış değişkenler, ulaşılamayan kod), standartlardan sapmalar, arayüz uyumsuzlukları ve test kapsamındaki boşlukları yakalamanın genelde daha ucuz yoludur — bunların çoğu hiçbir şey çalışmadan, kağıt üzerinde görülebilir."
+          ],
+          "keyPoints": [
+            "Statik test ve dinamik test hataların tespitine birlikte yardımcı olur, ama bazı hata türleri yalnızca biriyle bulunabilir.",
+            "Statik test hatayı doğrudan bulur; dinamik test bir arızaya neden olur ve hata ancak bu arızanın sonradan analiziyle belirlenir.",
+            "Statik test çalıştırılamayan iş ürünlerine uygulanır; dinamik test çalıştırılabilir bir şey ister.",
+            "Statik test çalıştırmadan bağımsız özellikleri (ör. sürdürülebilirlik) ölçer; dinamik test çalıştırmaya bağlı özellikleri (ör. performans verimliliği) ölçer."
+          ],
+          "commonMistakes": [
+            "Statik testin \"arıza bulduğunu\" söylemek — statik test hatayı doğrudan bulur; arıza, dinamik testin ürettiği ve hatanın ancak sonradan analizle çıkarıldığı şeydir.",
+            "Dinamik testin kesinlikle daha güçlü olduğunu varsaymak — statik test, dinamik testin hiç ulaşamayacağı hatalara (ör. nadiren çalıştırılan yollarda ya da hiç çalışmayan belgelerde) ulaşabilir."
+          ]
+        },
+        "en": {
+          "title": "Static testing versus dynamic testing",
+          "paragraphs": [
+            "Static and dynamic testing share a goal — helping to detect defects in a work product — but they get there differently, and each finds defect types the other cannot.",
+            "The sharpest distinction is how a defect surfaces. Static testing finds a defect directly, by reading or analyzing the work product itself. Dynamic testing never sees the defect directly: it runs the software, observes a failure, and the defect is only identified afterwards through analysis of that failure.",
+            "The two also differ in what they can be applied to and what they can measure. Static testing works on non-executable work products (a requirements document, a model); dynamic testing needs something executable. Static testing can measure quality characteristics independent of execution, such as maintainability; dynamic testing measures characteristics that depend on execution, such as performance efficiency. Static testing can also reach code paths that are rarely executed or hard to trigger dynamically.",
+            "In practice, static testing tends to be the cheaper way to catch requirements defects (ambiguity, contradiction, omission), design defects, certain coding defects (undeclared variables, unreachable code), standards deviations, interface mismatches, and gaps in test coverage — most of these are visible on paper before anything runs."
+          ],
+          "keyPoints": [
+            "Static and dynamic testing both help detect defects, but some defect types can only be found by one or the other.",
+            "Static testing finds a defect directly; dynamic testing causes a failure, and the defect is identified only through later analysis of that failure.",
+            "Static testing applies to non-executable work products; dynamic testing requires something executable.",
+            "Static testing measures execution-independent qualities (e.g., maintainability); dynamic testing measures execution-dependent ones (e.g., performance efficiency)."
+          ],
+          "commonMistakes": [
+            "Saying static testing \"finds failures\" — it finds defects directly; a failure is what dynamic testing produces, with the defect inferred afterwards by analysis.",
+            "Assuming dynamic testing is strictly more powerful — static testing reaches defects (e.g., on rarely executed paths, or in documents that never run) that dynamic testing cannot reach at all."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-3.2.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§3.2.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Erken ve sık paydaş geri bildiriminin faydası",
+          "paragraphs": [
+            "Yazılım paydaşlar için geliştirilir; bu yüzden geliştirme sürecinde paydaşlar uzun süre sessiz kalırsa ekip, aslında baştan yazılanlara sadık kalarak bile paydaşların gerçekte ihtiyaç duyduğu şeyden uzaklaşabilir.",
+            "Düşük paydaş katılımı yanlış şeyin teslim edilmesi riskini doğurur: maliyetli yeniden çalışma, kaçırılan teslim tarihleri, ekipler arası suçlama ve en kötü durumda projenin tamamen başarısız olması — kod hatalı olduğu için değil, yanlış problemi çözdüğü için.",
+            "Yaşam döngüsü boyunca sık verilen geri bildirim bunu önler. Gereksinim yanlış anlaşılmalarının fark edilmeden kalmasını engeller, gereksinim değişikliklerinin daha erken anlaşılıp uygulanmasını sağlar ve ekibin çabasını en çok değer yaratan ve en çok riski azaltan özelliklere yoğunlaştırmasına yardımcı olur."
+          ],
+          "keyPoints": [
+            "Düşük paydaş katılımı, orijinal spesifikasyona uygun olsa bile paydaşın gerçek ihtiyacıyla artık örtüşmeyen bir ürün riski doğurur.",
+            "Geç fark edilen bir uyumsuzluk maliyetli yeniden çalışmaya, kaçırılan tarihlere ve hatta projenin başarısız olmasına yol açabilir.",
+            "Sık geri bildirim, gereksinim yanlış anlaşılmalarını erken yakalar ve değişikliklerin anlaşılmasını sağlar.",
+            "Geri bildirim, ekibin en çok değer yaratan ve en çok riski azaltan özelliklere odaklanmasına yardımcı olur."
+          ],
+          "commonMistakes": [
+            "Paydaş geri bildiriminin yalnızca başta (gereksinimler) ya da sonda (kabul testi) faydalı olduğunu düşünmek — fayda, yaşam döngüsü boyunca sıklıktan gelir, tek bir kontrol noktasından değil.",
+            "Orijinal gereksinimlere birebir uyan bir projenin bu şekilde başarısız olamayacağını varsaymak — olabilir, eğer o gereksinimler paydaşın ihtiyacından uzaklaştıysa ve kimse bunu fark etmediyse."
+          ]
+        },
+        "en": {
+          "title": "Why early, frequent stakeholder feedback matters",
+          "paragraphs": [
+            "Software is built for stakeholders, so if they stay silent for too long during development, the team can drift from what those stakeholders actually need — even while faithfully building what was originally written down.",
+            "Low stakeholder involvement risks delivering the wrong thing: costly rework, missed deadlines, blame between teams, and in the worst case complete project failure — not because the code was buggy, but because it solved the wrong problem.",
+            "Frequent feedback throughout the lifecycle heads this off. It prevents requirement misunderstandings from surviving unnoticed, gets requirement changes understood and implemented earlier, and helps the team focus its effort on the features that create the most value and reduce the most risk."
+          ],
+          "keyPoints": [
+            "Little stakeholder involvement risks a product that no longer matches the stakeholder's real needs, even if it matches the original spec.",
+            "A mismatch discovered late causes costly rework, missed deadlines, and can even fail the project.",
+            "Frequent feedback catches requirement misunderstandings early and keeps changes understood as they happen.",
+            "Feedback helps the team focus on the features with the most value and the most risk reduction."
+          ],
+          "commonMistakes": [
+            "Thinking stakeholder feedback is only useful at the start (requirements) or the end (acceptance) — the benefit comes from frequency throughout the lifecycle, not a single checkpoint.",
+            "Assuming a project that follows its original requirements exactly cannot fail this way — it can, if those requirements drifted from stakeholder needs and nobody found out."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-3.2.2",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§3.2.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Gözden geçirme sürecinin beş faaliyeti",
+          "paragraphs": [
+            "ISO/IEC 20246, genel bir gözden geçirme süreci tanımlar: yapısal ama iki dakikalık gayri resmi bir kontrolden tam belgelenmiş bir teftişe kadar ölçeklenebilecek kadar esnek. Gözden geçirme ne kadar resmi olması gerekiyorsa, her faaliyetin o kadar fazlası uygulanır.",
+            "Süreç sırasıyla beş faaliyetten geçer. Planlama, gözden geçirmenin kapsamını tanımlar — amaç, iş ürününün kendisi, kontrol edilecek kalite karakteristikleri, odaklanılacak alanlar, çıkış kriterleri, efor ve zaman dilimi. Gözden geçirme başlangıcı, her şey başlamadan önce her katılımcının iş ürününe erişebildiğinden ve rolünü anladığından emin olur.",
+            "Bireysel gözden geçirme, her gözden geçiricinin tek başına, bir veya daha fazla gözden geçirme tekniği (kontrol listesine dayalı, senaryoya dayalı) uygulayarak anomalileri, önerileri ve soruları kaydettiği aşamadır. İletişim ve analiz, bu bulguları bir araya getirir — genellikle bir gözden geçirme toplantısında — ve grup her anomalinin durumuna, sahipliğine ve iş ürününün ulaştığı kalite seviyesine burada karar verir.",
+            "Düzeltme ve raporlama döngüyü kapatır: onaylanan her hata için düzeltmenin takip edilebilmesi amacıyla bir hata raporu oluşturulur, çıkış kriterleri karşılandığında iş ürünü kabul edilir ve sonuçlar raporlanır. Tek seferde ele alınamayacak kadar büyük bir iş ürünü için gözden geçirme süreci birden fazla kez tekrarlanabilir."
+          ],
+          "keyPoints": [
+            "Beş faaliyet sırasıyla: planlama, gözden geçirme başlangıcı, bireysel gözden geçirme, iletişim ve analiz, düzeltme ve raporlama.",
+            "Planlama kapsamı belirler: amaç, iş ürünü, kalite karakteristikleri, odak alanları, çıkış kriterleri, efor ve zaman dilimi.",
+            "Bireysel gözden geçirme, her gözden geçiricinin kontrol listesi ya da senaryo tabanlı teknikler kullanarak tek başına anomali kaydettiği aşamadır.",
+            "Bir anomali otomatik olarak hata sayılmaz — durumuna iletişim ve analiz aşamasında grupça karar verilir.",
+            "Düzeltme ve raporlama ancak çıkış kriterleri karşılandığında kapanır; onaylanan her hata için bir hata raporu açılır."
+          ],
+          "commonMistakes": [
+            "Bir gözden geçirmede bulunan her anomaliyi onaylanmış bir hata saymak — anomaliler önce analiz edilip tartışılır; bazıları hata raporuna dönüşmeden reddedilir.",
+            "Bir gözden geçirmenin tek seferde bitmesi gerektiğini unutmak — büyük bir iş ürünü, tek bir toplantıyla değil, sürecin tekrarlanmasıyla gözden geçirilir."
+          ]
+        },
+        "en": {
+          "title": "The five activities of a review",
+          "paragraphs": [
+            "ISO/IEC 20246 defines a generic review process: structured, but flexible enough to scale from a two-minute informal check to a fully documented inspection. The more formal the review needs to be, the more of each activity gets carried out.",
+            "The process runs through five activities in order. Planning defines the review's scope — purpose, the work product itself, quality characteristics to check, focus areas, exit criteria, and the effort and timeframe. Review initiation makes sure every participant has access to the work product and understands their role before anything starts.",
+            "Individual review is where each reviewer works alone, applying one or more review techniques (checklist-based, scenario-based) to log anomalies, recommendations and questions. Communication and analysis brings those findings together — typically in a review meeting — where the group decides each anomaly's status and ownership, and what quality level the work product has reached.",
+            "Fixing and reporting closes the loop: a defect report is raised for every confirmed defect so the fix can be tracked, the work product is accepted once exit criteria are met, and the results are reported. A large work product may need the review process to repeat more than once."
+          ],
+          "keyPoints": [
+            "The five activities, in order: planning, review initiation, individual review, communication and analysis, fixing and reporting.",
+            "Planning sets the scope: purpose, work product, quality characteristics, focus areas, exit criteria, effort and timeframe.",
+            "Individual review is where each reviewer logs anomalies alone, using techniques such as checklist-based or scenario-based reviewing.",
+            "An anomaly is not automatically a defect — communication and analysis is where the group decides its status.",
+            "Fixing and reporting only closes once exit criteria are met; a defect report is raised for every confirmed defect."
+          ],
+          "commonMistakes": [
+            "Treating every anomaly found in a review as a confirmed defect — anomalies are analyzed and discussed first; some are dismissed, not all become defect reports.",
+            "Forgetting that a review can require more than one pass — a large work product is reviewed by repeating the process, not by rushing one meeting."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-3.2.3",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§3.2.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Gözden geçirmede kim ne yapar",
+          "paragraphs": [
+            "Bir gözden geçirme birden fazla rol içerir ve her rol işin ayrı bir dilimini üstlenir — sınavda test edilen şey, unvana bakarak tahmin etmek değil, her rolün tek cümlelik görevini ayırt edebilmektir.",
+            "Yönetici, neyin gözden geçirileceğine karar verir ve bunun için personel ile zaman gibi kaynakları sağlar. Yazar, gözden geçirilecek iş ürününü oluşturur ve sonrasında onu düzeltir. Gözden geçirme lideri, gözden geçirmenin genel organizasyonundan sorumludur: kimin dahil olacağı, ne zaman ve nerede yapılacağı.",
+            "Toplantının kendi içinde iki rol onu ayakta tutar. Moderatör — kolaylaştırıcı olarak da bilinir — toplantının etkili yürütülmesini sağlar: arabuluculuk yapar, zamanı yönetir ve herkesin özgürce konuşabileceği güvenli bir ortam kurar. Katip — kaydedici olarak da bilinir — gözden geçiricilerden gelen anomalileri derler ve toplantıda alınan kararlarla ortaya çıkan yeni anomalileri kayıt altına alır.",
+            "Gözden geçirici, gözden geçirmeyi fiilen yapan kişidir — projede çalışan biri, bir konu uzmanı ya da başka bir paydaş olabilir. Bu altı rolün ötesinde, ISO/IEC 20246'da tanımlanan daha ayrıntılı roller de vardır, ama syllabus'un adlandırdığı ana roller bunlardır."
+          ],
+          "keyPoints": [
+            "Yönetici neyin gözden geçirileceğine karar verir, personel ve zaman sağlar; yazar iş ürününü oluşturur ve gözden geçirmeden sonra düzeltir.",
+            "Gözden geçirme lideri, gözden geçirmenin genel organizasyonundan sorumludur (kim, ne zaman, nerede).",
+            "Moderatör (= kolaylaştırıcı), gözden geçirme toplantısını yürütür — arabuluculuk, zaman yönetimi, güvenli ortam.",
+            "Katip (= kaydedici), anomalileri derler ve toplantı sırasındaki kararları ve yeni bulguları kaydeder.",
+            "Gözden geçirici, gözden geçirmeyi fiilen yapan kişidir — proje ekibinden biri, konu uzmanı ya da başka bir paydaş olabilir."
+          ],
+          "commonMistakes": [
+            "Moderatörü gözden geçirme lideriyle karıştırmak — moderatör (kolaylaştırıcı) toplantının kendisini yürütür; gözden geçirme lideri gözden geçirmenin bütününü organize eder (kim dahil olacak, ne zaman ve nerede) ve bu iş için toplantıda bizzat bulunması gerekmez.",
+            "\"Kolaylaştırıcı\"yı moderatörden ayrı bir rol sanmak — syllabus bu ikisini aynı rolün iki adı olarak kullanır, iki farklı kişi değil.",
+            "Katip ile gözden geçiriciyi karıştırmak — katip, gözden geçiricilerin bulduklarını ve toplantıda alınan kararları kaydeder; gözden geçirici ise iş ürününü fiilen inceleyip anomalileri bildiren kişidir."
+          ]
+        },
+        "en": {
+          "title": "Who does what in a review",
+          "paragraphs": [
+            "A review involves several roles, and each one owns a distinct slice of the work — the exam tests whether you can tell them apart by their one-line job, not by guessing from the title.",
+            "The manager decides what gets reviewed and supplies the resources — staff, time — to do it. The author created the work product and is the one who fixes it afterwards. The review leader carries overall responsibility for organizing the review: who is involved, and when and where it happens.",
+            "Inside the review meeting itself, two roles keep it running. The moderator — also called the facilitator — ensures the meeting runs effectively: mediating, managing time, and keeping the environment safe enough that everyone can speak freely. The scribe — also called the recorder — collates the anomalies reviewers found and records what the meeting decides, plus any new anomaly raised during it.",
+            "The reviewer is whoever actually performs the review — a project team member, a subject matter expert, or any other stakeholder. More detailed roles exist beyond these six, described in ISO/IEC 20246, but these are the principal ones the syllabus names."
+          ],
+          "keyPoints": [
+            "Manager decides what is reviewed and provides staff and time; author creates the work product and fixes it after the review.",
+            "Review leader carries overall responsibility for organizing the review (who, when, where).",
+            "Moderator (= facilitator) runs the review meeting itself — mediation, time management, a safe environment.",
+            "Scribe (= recorder) collates anomalies and records decisions and new findings during the meeting.",
+            "Reviewer performs the review; can be a project team member, a subject matter expert, or another stakeholder."
+          ],
+          "commonMistakes": [
+            "Confusing the moderator with the review leader — the moderator (facilitator) runs the meeting itself; the review leader organizes the review as a whole (who's involved, when and where) and does not have to be present at the meeting to do that job.",
+            "Assuming \"facilitator\" is a separate role from \"moderator\" — the syllabus uses them as two names for the same role, not two people.",
+            "Mixing up scribe and reviewer — the scribe records what reviewers found and what the meeting decided; a reviewer is the one who actually examines the work product and reports anomalies."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-3.2.4",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§3.2.4",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Dört gözden geçirme çeşidi",
+          "paragraphs": [
+            "Gözden geçirmeler gayri resmiden tam resmiye kadar uzanır ve doğru formalite düzeyi; kullanılan YGYD'ye, geliştirme sürecinin olgunluğuna, iş ürününün kritikliği ve karmaşıklığına, yasal ya da düzenleyici gereksinimlere ve bir denetim izinin gerekip gerekmediğine bağlıdır. Aynı iş ürünü birden fazla çeşitle gözden geçirilebilir — önce gayri resmi, sonra resmi bir geçiş gibi.",
+            "Gayri resmi gözden geçirme tanımlı bir süreç izlemez ve zorunlu, belgelenmiş bir çıktı üretmez; ana hedefi sadece anomalileri tespit etmektir. Üzerinden geçme, yazar tarafından yönetilir ve aynı anda birçok hedefe hizmet edebilir — kaliteyi değerlendirmek, güven oluşturmak, gözden geçiricileri eğitmek, fikir birliği sağlamak, yeni fikirler üretmek, yazarı iyileştirmeye teşvik etmek — ve öncesinde bireysel gözden geçirme yapılması zorunlu değil, isteğe bağlıdır.",
+            "Teknik gözden geçirme, teknik açıdan nitelikli gözden geçiriciler tarafından yapılır ve bir moderatör tarafından yönetilir; hedefleri arasında, üzerinden geçmedeki kalite ve güven hedeflerine ek olarak, teknik bir problem üzerinde fikir birliğine varmak ve karar almak da vardır. Teftiş en resmi çeşittir ve tanımlı genel süreci baştan sona eksiksiz izleyen tek çeşittir. Ana hedefi maksimum sayıda anomali bulmaktır ve toplanan metrikler YGYD'yi iyileştirmek için kullanılır. Teftişte, yazar özel olarak gözden geçirme lideri ya da katip olarak görev yapamaz.",
+            "Bunlar arasında seçim yapmak yalnızca hedefe bakmaz — proje ihtiyaçları, mevcut kaynaklar, iş ürününün çeşidi ve riskleri, iş alanı ve şirket kültürü de belirleyicidir."
+          ],
+          "keyPoints": [
+            "Formalite, gayri resmi gözden geçirmeden başlayıp üzerinden geçme ve teknik gözden geçirmeden geçerek en resmi çeşit olan teftişe kadar uzanır.",
+            "Gayri resmi gözden geçirme: tanımlı süreç yok, zorunlu belgelenmiş çıktı yok, hedef anomali tespiti.",
+            "Üzerinden geçme: yazar tarafından yönetilir; öncesinde bireysel gözden geçirme isteğe bağlıdır.",
+            "Teknik gözden geçirme: gözden geçiriciler teknik açıdan nitelikli, bir moderatör yönetir, kısmen teknik bir problem üzerinde fikir birliğini hedefler.",
+            "Teftiş: tam genel süreci izler, maksimum anomali sayısını hedefler ve yazarın gözden geçirme lideri ya da katip olmasını yasaklar."
+          ],
+          "commonMistakes": [
+            "Moderatörü olan her gözden geçirmenin teftiş olduğunu varsaymak — teknik gözden geçirme de bir moderatör tarafından yönetilir; yalnızca teftiş tam genel süreci izler ve metrik toplar.",
+            "Yazarın teftişte herhangi bir rol üstlenebileceğini düşünmek — yazar orada özellikle gözden geçirme lideri ya da katip olamaz, oysa üzerinden geçmeyi bizzat yazar yönetir.",
+            "\"Gayri resmi\"yi \"değersiz\" sanmak — açık hedefi olan anomali tespiti, tanımlı bir süreç ya da zorunlu belgeleme olmasa da gerçek bir gözden geçirme sonucudur."
+          ]
+        },
+        "en": {
+          "title": "The four review types",
+          "paragraphs": [
+            "Reviews range from informal to fully formal, and the right level of formality depends on the SDLC in use, how mature the development process is, how critical and complex the work product is, any legal or regulatory demands, and whether an audit trail is needed. The same work product can go through more than one type — an informal pass first, a formal one later.",
+            "An informal review follows no defined process and produces no required documented output; its main goal is simply detecting anomalies. A walkthrough is led by the author and can serve many goals at once — evaluating quality, building confidence, educating reviewers, gaining consensus, generating ideas, motivating the author to improve — and an individual review beforehand is optional, not required.",
+            "A technical review is performed by technically qualified reviewers and led by a moderator; its goals include reaching consensus on a technical problem and making a decision, on top of the same quality and confidence goals a walkthrough has. An inspection is the most formal type and is the only one that follows the complete generic review process from start to finish. Its main goal is finding the maximum number of anomalies, and metrics are collected to improve the SDLC itself. In an inspection specifically, the author is barred from acting as review leader or scribe.",
+            "Choosing among them is not just about the objective — project needs, available resources, the type of work product and its risks, the business domain, and company culture all weigh in."
+          ],
+          "keyPoints": [
+            "Formality runs from informal review through walkthrough and technical review to inspection, the most formal.",
+            "Informal review: no defined process, no required documented output, goal is detecting anomalies.",
+            "Walkthrough: led by the author; an individual review beforehand is optional.",
+            "Technical review: reviewers are technically qualified, led by a moderator, aims partly at consensus on a technical problem.",
+            "Inspection: follows the full generic process, aims at the maximum number of anomalies, and bars the author from being review leader or scribe."
+          ],
+          "commonMistakes": [
+            "Assuming any review with a moderator is an inspection — a technical review is also led by a moderator; only an inspection follows the complete generic process and collects metrics.",
+            "Thinking the author can take any role in an inspection — the author is specifically barred from being review leader or scribe there, even though the author leads a walkthrough.",
+            "Treating \"informal\" as \"no value\" — its explicit goal, detecting anomalies, is still a real review outcome, just without a defined process or mandatory documentation."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-3.2.5",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§3.2.5",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Bir gözden geçirmeyi başarılı kılan etkenler",
+          "paragraphs": [
+            "Bir gözden geçirmenin başarısı şansa değil, nasıl kurgulanıp yürütüldüğüne bağlıdır. Önceden belirlenmiş net hedefler ve ölçülebilir çıkış kriterleriyle başlar — ve katılımcıların kendilerini değerlendirmek bu hedeflerden asla biri değildir.",
+            "Uyum da önemlidir: gözden geçirme çeşidi hedefe, iş ürününün türüne, katılımcılara ve projenin ihtiyaç ile bağlamına uymalıdır. Küçük parçalar halinde gözden geçirme yapmak, gözden geçiricilerin ister bireysel gözden geçirme sırasında ister toplantının kendisinde konsantrasyonlarını kaybetmesini önler.",
+            "Geri kalanı organizasyonel destektir: katılımcılara hazırlanmaları için yeterli zaman tanımak, paydaşlara ve yazarlara harekete geçirebilecekleri geri bildirim vermek, yönetimden destek almak, herkesin rolünü bilmesi için yeterli eğitim sağlamak ve gözden geçirmeleri arada bir yapılan bir olay değil, kurumun kültürünün doğal bir parçası haline getirmek. Toplantıları iyi kolaylaştırmak bunların hepsini bir araya getirir."
+          ],
+          "keyPoints": [
+            "Net hedefler ve ölçülebilir çıkış kriterleri önceden tanımlanmalıdır — katılımcıları değerlendirmek asla bir hedef değildir.",
+            "Gözden geçirme çeşidi; hedefe, iş ürününe, katılımcılara ve proje bağlamına uymalıdır.",
+            "Küçük parçalar halinde gözden geçirme, gözden geçiricilerin bireysel gözden geçirme ve toplantı sırasında konsantrasyonunu korur.",
+            "Başarı, organizasyonel destek gerektirir: hazırlık süresi, yazarlara geri bildirim, yönetim desteği, yeterli eğitim ve şirket kültürüne gömülü gözden geçirmeler."
+          ],
+          "commonMistakes": [
+            "Bir gözden geçirmeyi, gözden geçirilen kişinin performansını değerlendirme yolu olarak görmek — syllabus bunu hedeflerin dışında tutar, açıkça.",
+            "Anomaliler bulunduğu sürece herhangi bir gözden geçirme çeşidinin işe yarayacağını varsaymak — başarı için çeşidin yine de iş ürününe, katılımcılara ve proje bağlamına uyması gerekir."
+          ]
+        },
+        "en": {
+          "title": "What makes a review succeed",
+          "paragraphs": [
+            "A review's success depends on how it is set up and run, not on luck. It starts with clear objectives and measurable exit criteria decided in advance — and evaluating the participants themselves is never one of those objectives.",
+            "Fit matters too: the review type has to suit the objective, the kind of work product, who is participating, and the project's needs and context. Reviewing in small chunks keeps reviewers from losing concentration, whether that is during their individual review or in the meeting itself.",
+            "The rest is organizational support: giving participants enough time to prepare, giving stakeholders and authors feedback they can act on, backing from management, adequate training so everyone knows their role, and treating reviews as a normal part of the organization's culture rather than an occasional event. Facilitating the meetings well ties all of this together."
+          ],
+          "keyPoints": [
+            "Clear objectives and measurable exit criteria must be defined up front — evaluating participants is never an objective.",
+            "The review type must fit the objective, work product, participants, and project context.",
+            "Reviewing in small chunks keeps reviewers' concentration during individual review and the meeting.",
+            "Success needs organizational support: preparation time, feedback to authors, management backing, adequate training, and reviews embedded in company culture."
+          ],
+          "commonMistakes": [
+            "Treating a review as a way to evaluate the reviewed person's performance — the syllabus explicitly excludes that from the objectives.",
+            "Assuming any review type works as long as anomalies get found — the type still has to fit the work product, the participants and the project's context to succeed."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    }
+  ]
 }

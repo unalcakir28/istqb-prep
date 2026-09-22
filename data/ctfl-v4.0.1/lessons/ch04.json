@@ -2,5 +2,784 @@
   "chunk": "ch04",
   "chapter": 4,
   "dataVersion": "2026.09.19",
-  "lessons": []
+  "lessons": [
+    {
+      "objective": "FL-4.1.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§4.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Kara kutu, beyaz kutu ve tecrübeye dayalı teknikler",
+          "paragraphs": [
+            "Bir test tekniği, test uzmanına neyin test edileceğine (analiz) ve nasıl test edileceğine (tasarım) karar vermede yardımcı olan sistematik bir yöntemdir. Bu ders programı test tekniklerini üç ailede toplar: kara kutu, beyaz kutu ve tecrübeye dayalı.",
+            "Kara kutu test teknikleri, test nesnesinin iç yapısına bakmadan sadece belirtilen davranışına (girdi-çıktı ilişkisine) dayanır. Bu sayede kod değişse bile davranış aynı kaldığı sürece aynı test senaryoları geçerliliğini korur. Beyaz kutu test teknikleri ise tam tersine test nesnesinin iç yapısını ve iç işleyişini inceler; dolayısıyla ancak tasarım veya kodlama tamamlandıktan sonra uygulanabilir.",
+            "Tecrübeye dayalı test teknikleri, test uzmanının geçmiş bilgisini ve sezgisini kullanır. Etkinlikleri doğrudan test uzmanının becerisine bağlıdır. Bu üç aile birbirini dışlamaz; tecrübeye dayalı teknikler, kara kutu ve beyaz kutu tekniklerinin gözden kaçırabileceği hataları yakalayarak onları tamamlar."
+          ],
+          "keyPoints": [
+            "Kara kutu teknikleri iç yapıyı değil, belirtilen davranışı test eder; kod değişse de senaryolar geçerli kalır.",
+            "Beyaz kutu teknikleri iç yapıya ve iç işleyişe dayanır; ancak tasarım veya kodlama sonrası uygulanabilir.",
+            "Tecrübeye dayalı teknikler test uzmanının bilgi ve deneyimine dayanır ve diğer iki aileyi tamamlar.",
+            "Üç aile de birbirinin alternatifi değil, birbirini tamamlayan yaklaşımlardır."
+          ],
+          "commonMistakes": [
+            "Kara kutu testinin kodu hiç bilmeden yapılan test olduğunu düşünmek yanlıştır; ayırt edici nokta test senaryolarının iç yapıya değil belirtilen davranışa dayanmasıdır.",
+            "Beyaz kutu testinin sadece 'kod okuma' olduğunu sanmak hatalıdır; test senaryoları iç yapıdan türetilir ama yine de çalıştırılarak (dinamik test olarak) uygulanır.",
+            "Tecrübeye dayalı teknikleri 'sistemsiz, rastgele test' sanmak yanlıştır; bu teknikler de sistemli bir yaklaşımla (ör. hata listeleri, kontrol listeleri) uygulanır."
+          ]
+        },
+        "en": {
+          "title": "Black-box, white-box and experience-based techniques",
+          "paragraphs": [
+            "A test technique is a systematic way of deciding what to test (analysis) and how to test it (design). This syllabus groups test techniques into three families: black-box, white-box and experience-based.",
+            "Black-box test techniques look only at the specified behavior of the test object, without reference to its internal structure. Because of this, the same test cases stay useful even after an implementation change, as long as the required behavior does not change. White-box test techniques do the opposite: they analyze the test object's internal structure and processing, so they can only be created once the design or implementation exists.",
+            "Experience-based test techniques draw on the tester's own knowledge and intuition. Their effectiveness depends heavily on the individual tester's skill. None of the three families replaces the others; experience-based techniques complement black-box and white-box techniques by catching defects those two might miss."
+          ],
+          "keyPoints": [
+            "Black-box techniques test specified behavior, not internal structure, so test cases survive implementation changes.",
+            "White-box techniques analyze internal structure and can only be applied after design or coding is done.",
+            "Experience-based techniques rely on tester knowledge and experience and complement the other two families.",
+            "The three families are complementary, not alternatives to each other."
+          ],
+          "commonMistakes": [
+            "Assuming black-box testing means testing 'without knowing the code' is imprecise; the defining trait is that test cases come from specified behavior, not internal structure.",
+            "Assuming white-box testing is just 'reading the code' is wrong; the derived test cases are still executed dynamically against the running test object.",
+            "Assuming experience-based techniques are unsystematic guesswork is wrong; they still follow a structured approach (e.g., error lists, checklists)."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-4.2.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§4.2.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Denklik paylarına ayırma",
+          "paragraphs": [
+            "Denklik Paylarına Ayırma (DPA), bir veri kümesini test nesnesinin aynı şekilde işlemesi beklenen alt kümelere (paylara) böler. Mantık şudur: bir paydan seçilen tek bir değer bir hatayı ortaya çıkarıyorsa, aynı paydan başka herhangi bir değer de aynı hatayı ortaya çıkarmalıdır. Bu yüzden her pay için tek bir test yeterli kabul edilir.",
+            "Paylar girdiler, çıktılar, iç değerler, zaman değerleri veya arayüz parametreleri için tanımlanabilir; sürekli, ayrık, sıralı veya sırasız olabilirler ama birbiriyle çakışamaz ve boş olamazlar. Geçerli değerler içeren paya geçerli pay, geçersiz değerler içeren paya geçersiz pay denir.",
+            "Örnek: bir formda 'yaş' alanı 18-65 arasında tam sayı kabul ediyor olsun. Burada üç pay ortaya çıkar: 18'den küçük değerler (geçersiz), 18-65 arası değerler (geçerli), 65'ten büyük değerler (geçersiz). DPA ile %100 kapsama ulaşmak için her üç paydan da en az bir değer denenmelidir; bu da en az 3 test senaryosu (ör. 10, 40, 80) demektir.",
+            "Kapsam, denenen pay sayısının, geçersizler dahil tanımlanan toplam pay sayısına bölünmesiyle hesaplanır. Birden fazla girdi parametresi olduğunda en basit kapsam kriteri Each Choice kapsamıdır: her pay grubundan her payı en az bir kez denemeyi ister, pay kombinasyonlarını dikkate almaz."
+          ],
+          "keyPoints": [
+            "DPA, aynı şekilde işlenmesi beklenen değerleri paylara ayırır; her pay için bir test yeterlidir.",
+            "Paylar birbiriyle çakışamaz, boş olamaz; geçerli ve geçersiz pay olarak ikiye ayrılır.",
+            "%100 DPA kapsamı, geçersiz paylar dahil tüm tanımlanmış payların en az bir kez denenmesini gerektirir.",
+            "Yaş örneğinde 18-65 sınırlarıyla 3 pay (küçük/geçerli/büyük) çıkar ve minimum 3 test senaryosu gerekir.",
+            "Each Choice kapsamı, birden fazla pay grubu olduğunda her paydan en az bir değer denemeyi ister, kombinasyonları değil."
+          ],
+          "commonMistakes": [
+            "En sık yapılan hata: kapsamı sadece geçerli paylara göre hesaplamak. Kapsam, geçersiz paylar dahil tanımlanan TÜM paylara göre ölçülür; sadece geçerli payları test etmek %100 kapsama vermez.",
+            "Bir paydan birden fazla değer test etmenin ek bir hata bulma olasılığını artıracağını sanmak yanlıştır; teoriye göre bir paydan bir değer test etmek yeterlidir.",
+            "Payların her zaman sayısal ve sıralı olduğunu varsaymak hatalıdır; paylar ayrık ve sırasız da olabilir (ör. bir açılır listedeki renk seçenekleri)."
+          ]
+        },
+        "en": {
+          "title": "Equivalence partitioning",
+          "paragraphs": [
+            "Equivalence Partitioning (EP) divides a data set into subsets (partitions) that the test object is expected to process in the same way. The theory is: if one value from a partition reveals a defect, any other value from that same partition should reveal the same defect. So one test per partition is considered sufficient.",
+            "Partitions can be defined for inputs, outputs, internal values, time-related values or interface parameters; they may be continuous, discrete, ordered or unordered, but they must not overlap and must not be empty. A partition holding valid values is a valid partition; one holding invalid values is an invalid partition.",
+            "Example: a form's 'age' field accepts integers from 18 to 65. This gives three partitions: values below 18 (invalid), values from 18 to 65 (valid), values above 65 (invalid). To reach 100% EP coverage, at least one value from each of the three partitions must be exercised — meaning at least 3 test cases (e.g., 10, 40, 80).",
+            "Coverage is calculated as the number of partitions exercised divided by the total number of identified partitions, invalid ones included. When there is more than one input parameter, the simplest coverage criterion is Each Choice coverage: it requires exercising each partition from each set at least once, without considering combinations of partitions."
+          ],
+          "keyPoints": [
+            "EP groups values expected to be processed the same way into partitions; one test per partition is enough.",
+            "Partitions must not overlap or be empty; they split into valid and invalid partitions.",
+            "100% EP coverage requires exercising every identified partition at least once, invalid partitions included.",
+            "The age example (18-65) yields 3 partitions (below/valid/above), needing a minimum of 3 test cases.",
+            "Each Choice coverage requires one value per partition per parameter set, but ignores combinations."
+          ],
+          "commonMistakes": [
+            "The most common wrong answer: measuring coverage against valid partitions only. Coverage is measured against ALL identified partitions, invalid ones included — testing only valid values never reaches 100%.",
+            "Assuming that testing more than one value from the same partition finds more defects is wrong; the theory holds that one value per partition suffices.",
+            "Assuming partitions are always numeric and ordered is wrong; partitions can be discrete and unordered too (e.g., the color options in a dropdown)."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-4.2.2",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§4.2.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Sınır değer analizi",
+          "paragraphs": [
+            "Sınır Değer Analizi (SDA), denklik paylarının sınırlarını (minimum ve maksimum değerlerini) hedef alan bir tekniktir; bu yüzden sadece sıralı paylarda kullanılabilir. Geliştiricilerin en çok hata yaptığı yer sınırlar olduğu için SDA, sınırların yanlış konumlandırıldığı veya hiç uygulanmadığı hataları etkili biçimde bulur.",
+            "Bu ders programı iki SDA versiyonunu kapsar: 2 değerli ve 3 değerli. 2 değerli SDA'da her sınır için iki kapsam öğesi vardır: sınırın kendisi ve bitişik paydaki en yakın komşusu. 3 değerli SDA'da ise üç kapsam öğesi vardır: sınır değer ve onun her iki komşusu (bir alt, bir üst). 3 değerli SDA daha titizdir çünkü 2 değerli SDA'nın gözden kaçırdığı bazı hataları (ör. '≤' yerine '=' kullanılması) yakalayabilir.",
+            "Örnek: az önceki yaş payı (18-65 arası geçerli) tek bir sınır olan 18'i ele alalım. 2 değerli SDA'da bu sınır için 2 test değeri gerekir: 17 (geçersiz komşu) ve 18 (sınırın kendisi) — sınır başına 2 değer. 65 sınırı da eklenince toplamda 4 değer (17, 18, 65, 66) elde edilir. 3 değerli SDA'da ise 18 sınırı için 3 değer gerekir: 17, 18, 19 — sınır başına 3 değer. İki sınır (18 ve 65) için toplam 6 değer (17, 18, 19, 64, 65, 66) elde edilir.",
+            "Kapsam, denenen sınır (ve 3 değerli için komşu) değerlerinin sayısının, tanımlanan toplam sınır (ve komşu) değerine bölünmesiyle ölçülür ve yüzde olarak ifade edilir."
+          ],
+          "keyPoints": [
+            "SDA sadece sıralı paylarda kullanılabilir ve payın minimum/maksimum değerlerini (sınırlarını) hedef alır.",
+            "2 değerli SDA: sınır başına 2 kapsam öğesi (sınır + en yakın komşu).",
+            "3 değerli SDA: sınır başına 3 kapsam öğesi (sınır + her iki komşu); daha titizdir.",
+            "18-65 örneğinde 2 değerli SDA 4 test değeri (17,18,65,66), 3 değerli SDA 6 test değeri (17,18,19,64,65,66) üretir.",
+            "3 değerli SDA, '(x ≤ 10)' yerine yanlışlıkla '(x = 10)' yazılan hatayı x=9 ile yakalar; 2 değerli SDA bu hatayı kaçırabilir."
+          ],
+          "commonMistakes": [
+            "2 değerli ve 3 değerli SDA'nın aynı sayıda test ürettiğini sanmak yanlıştır: aynı sınır için 2 değerli 2 kapsam öğesi, 3 değerli ise 3 kapsam öğesi üretir — sayılar farklıdır.",
+            "SDA'nın sırasız (kategorik) paylarda da kullanılabileceğini düşünmek hatalıdır; SDA sadece sıralı paylarda uygulanabilir çünkü 'minimum/maksimum' kavramı sıralamaya dayanır.",
+            "DPA ile SDA'yı birbirinin yerine geçen tekniklermiş gibi görmek yanlıştır; SDA, DPA'nın belirlediği payların sınırlarını hedefler, ondan bağımsız bir teknik değildir."
+          ]
+        },
+        "en": {
+          "title": "Boundary value analysis",
+          "paragraphs": [
+            "Boundary Value Analysis (BVA) targets the boundaries (minimum and maximum values) of equivalence partitions, so it can only be used on ordered partitions. Because developers are most likely to make mistakes at boundaries, BVA is effective at finding defects where a boundary is misplaced or missing entirely.",
+            "This syllabus covers two versions of BVA: 2-value and 3-value. In 2-value BVA, each boundary has two coverage items: the boundary value itself and its closest neighbor in the adjacent partition. In 3-value BVA, each boundary has three coverage items: the boundary value and both its neighbors (one on each side). 3-value BVA is more rigorous because it can catch defects that 2-value BVA misses (e.g., '=' coded instead of '≤').",
+            "Example: take the age partition from before (18-65 valid), and its lower boundary, 18. In 2-value BVA, that boundary needs 2 test values: 17 (the invalid neighbor) and 18 (the boundary itself) — two values per boundary. Adding the 65 boundary gives 4 values in total (17, 18, 65, 66). In 3-value BVA, the 18 boundary needs 3 values: 17, 18, 19 — three values per boundary. Across both boundaries (18 and 65) that yields 6 values in total (17, 18, 19, 64, 65, 66).",
+            "Coverage is measured as the number of boundary values (and neighbors, for 3-value) exercised, divided by the total number identified, expressed as a percentage."
+          ],
+          "keyPoints": [
+            "BVA only applies to ordered partitions and targets their minimum/maximum (boundary) values.",
+            "2-value BVA: 2 coverage items per boundary (the boundary and its nearest neighbor).",
+            "3-value BVA: 3 coverage items per boundary (the boundary and both neighbors); more rigorous.",
+            "For the 18-65 example, 2-value BVA yields 4 test values (17,18,65,66); 3-value BVA yields 6 (17,18,19,64,65,66).",
+            "3-value BVA catches a '(x = 10)' typo for '(x ≤ 10)' via x = 9, a defect 2-value BVA can miss."
+          ],
+          "commonMistakes": [
+            "Assuming 2-value and 3-value BVA produce the same number of tests is wrong: for the same boundary, 2-value gives 2 coverage items and 3-value gives 3 — the counts differ.",
+            "Assuming BVA also works on unordered (categorical) partitions is wrong; BVA requires ordered partitions because 'minimum/maximum' only makes sense with an ordering.",
+            "Treating EP and BVA as interchangeable techniques is wrong; BVA targets the boundaries of the partitions EP identifies, it does not stand independently of EP."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-4.2.3",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§4.2.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Karar tablosu testi",
+          "paragraphs": [
+            "Karar tabloları, farklı koşul kombinasyonlarının farklı sonuçlar (aksiyonlar) ürettiği iş kurallarını test etmek için kullanılır. Tablonun satırları koşulları ve aksiyonları, sütunları ise her biri koşulların benzersiz bir kombinasyonunu temsil eden 'kural'ları gösterir.",
+            "Sınırlı girişli tablolarda koşullar ve aksiyonlar yalnızca T (doğru) / F (yanlış) değerleri alır; '–' o koşulun sonucu etkilemediğini, 'N/A' o koşulun ilgili kural için mümkün olmadığını belirtir. Aksiyon hücrelerinde 'X' aksiyonun gerçekleşeceğini, boşluk gerçekleşmeyeceğini gösterir.",
+            "Örnek: bir e-ticaret sitesinde iki koşul olsun — 'Sepet tutarı 500 TL üzerinde mi?' (T/F) ve 'Kupon kodu geçerli mi?' (T/F). İki koşul, ikişer değer alacağından tam tablo 2×2=4 kural içerir: (1) T,T → %20 indirim uygula; (2) T,F → indirim yok, hata mesajı göster; (3) F,T → kupon geçersiz sayılır (min tutar şartı sağlanmadı), indirim yok; (4) F,F → indirim yok. Karar tablosu testinde kapsam öğeleri bu uygulanabilir kurallardır (burada 4 kural), dolayısıyla %100 kapsam için en az 4 test senaryosu gerekir — her kural için bir tane.",
+            "Koşul sayısı arttıkça kural sayısı katlanarak büyür (n koşul için en fazla 2^n kural); bu durumda uygulanamaz kombinasyonlar silinerek ya da bir tablo küçültme yaklaşımıyla kural sayısı azaltılabilir."
+          ],
+          "keyPoints": [
+            "Karar tablosunda satırlar koşul/aksiyonları, sütunlar ise koşulların benzersiz bir kombinasyonunu temsil eden kuralları gösterir.",
+            "Notasyon: T=doğru, F=yanlış, '–'=sonucu etkilemez, N/A=o kural için imkânsız; X=aksiyon gerçekleşir.",
+            "Kapsam öğeleri, uygulanabilir kombinasyonları içeren sütunlardır (kurallardır); %100 kapsam her kuralın en az bir kez denenmesini ister.",
+            "İki koşullu örnekte tam tablo 4 kural (2×2) üretir, dolayısıyla en az 4 test senaryosu gerekir.",
+            "Kural sayısı koşul sayısıyla katlanarak arttığından, çok koşullu sistemlerde tablo küçültülebilir veya risk bazlı bir alt küme seçilebilir."
+          ],
+          "commonMistakes": [
+            "Karar tablosu testinde her koşulu ayrı ayrı test etmenin yeterli olduğunu sanmak yanlıştır; teknik koşulların KOMBİNASYONLARINI test etmeyi hedefler, tek tek koşulları değil.",
+            "N/A ile '–' işaretini karıştırmak hatadır: '–' koşulun sonucu etkilemediği, N/A ise o koşul kombinasyonunun hiç mümkün olmadığı anlamına gelir.",
+            "Tam tabloyu her zaman kullanmak gerektiğini düşünmek yanlıştır; imkânsız kombinasyonlar silinip veya birleştirilerek tablo küçültülebilir, bu 100% kapsamı bozmaz çünkü o kurallar zaten uygulanabilir değildir."
+          ]
+        },
+        "en": {
+          "title": "Decision table testing",
+          "paragraphs": [
+            "Decision tables test business rules where different combinations of conditions lead to different outcomes (actions). The table's rows list the conditions and actions; each column is a 'rule' representing one unique combination of conditions.",
+            "In a limited-entry table, conditions and actions take only T (true) / F (false) values; '–' means the condition does not affect the outcome, and 'N/A' means that condition combination is infeasible for that rule. In the action rows, 'X' means the action occurs, and a blank means it does not.",
+            "Example: an e-commerce site has two conditions — 'Is the cart total above 500 TL?' (T/F) and 'Is the coupon code valid?' (T/F). With two conditions each taking two values, the full table has 2×2 = 4 rules: (1) T,T → apply 20% discount; (2) T,F → no discount, show error; (3) F,T → coupon treated as invalid (minimum-total condition unmet), no discount; (4) F,F → no discount. In decision table testing, the coverage items are these feasible rules (4 here), so 100% coverage needs at least 4 test cases — one per rule.",
+            "As the number of conditions grows, the number of rules grows exponentially (up to 2^n rules for n conditions); infeasible combinations can be deleted, or the table minimized, to reduce the number of rules that must be exercised."
+          ],
+          "keyPoints": [
+            "Rows list conditions and actions; columns are rules, each a unique combination of conditions.",
+            "Notation: T=true, F=false, '–'=irrelevant to the outcome, N/A=infeasible for that rule; X=action occurs.",
+            "Coverage items are the columns holding feasible combinations (rules); 100% coverage means exercising every rule at least once.",
+            "The two-condition example yields a full table of 4 rules (2×2), so at least 4 test cases are needed.",
+            "Rule count grows exponentially with condition count, so tables can be minimized or a risk-based subset chosen for many conditions."
+          ],
+          "commonMistakes": [
+            "Assuming it is enough to test each condition individually is wrong; the technique targets COMBINATIONS of conditions, not conditions in isolation.",
+            "Confusing 'N/A' with '–' is a mistake: '–' means the condition does not affect the outcome, while N/A means that condition combination cannot occur at all.",
+            "Assuming the full table must always be used is wrong; infeasible combinations can be removed or columns merged to minimize the table without breaking 100% coverage, since those rules were never feasible."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-4.2.4",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§4.2.4",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Durum geçişi testi",
+          "paragraphs": [
+            "Bir durum diyagramı, bir sistemin olası durumlarını ve bu durumlar arasındaki geçerli geçişleri modeller. Bir geçiş bir olayla başlar, isteğe bağlı bir koruma koşuluyla sınırlanabilir ve bir aksiyonla sonuçlanabilir; yaygın gösterim 'olay [koruma koşulu] / aksiyon' şeklindedir. Durum tablosu ise aynı modelin satırları durum, sütunları olay olan; durum diyagramının aksine geçersiz geçişleri de boş hücrelerle açıkça gösteren eşdeğer bir gösterimidir.",
+            "Örnek: basit bir üyelik hesabı üç durumdan oluşsun — Aktif, Askıda, Kapalı. Geçerli geçişler: Aktif → Askıda (olay: 'ödeme gecikti'), Askıda → Aktif (olay: 'ödeme yapıldı'), Askıda → Kapalı (olay: '90 gün geçti'), Aktif → Kapalı (olay: 'kullanıcı hesabı kapattı'). Diğer tüm olay/durum kombinasyonları (ör. Kapalı → Aktif) geçersiz geçiştir.",
+            "Tüm durumlar kapsamında kapsam öğeleri durumlardır: bu örnekte 3 durum olduğu için %100 kapsam en az 3 durumu ziyaret eden test senaryoları gerektirir (ör. tek bir senaryo Aktif→Askıda→Kapalı zinciriyle üçünü de kapsayabilir). Geçerli geçişler kapsamında (0-anahtar kapsamı) kapsam öğeleri tekil geçerli geçişlerdir: burada 4 geçerli geçiş vardır, dolayısıyla %100 kapsam için bu 4 geçişin tümünün en az bir kez denenmesi gerekir. Tüm geçişler kapsamında ise geçersiz geçişler de (ör. Kapalı → Aktif denemesi) hedeflenir; hata maskelenmesini önlemek için her test senaryosunda yalnızca bir geçersiz geçiş denenmelidir."
+          ],
+          "keyPoints": [
+            "Durum diyagramı geçerli geçişleri, durum tablosu ise geçersiz geçişleri de (boş hücrelerle) açıkça gösterir.",
+            "Bir geçiş 'olay [koruma koşulu] / aksiyon' ile etiketlenir; koruma koşulu ve aksiyon isteğe bağlıdır.",
+            "Tüm durumlar kapsamı: her durumun en az bir kez ziyaret edilmesini ister (örnekte 3 durum).",
+            "Geçerli geçişler kapsamı (0-anahtar): her geçerli geçişin en az bir kez denenmesini ister (örnekte 4 geçiş) ve en yaygın kullanılan kriterdir.",
+            "Tüm geçişler kapsamı geçersiz geçişleri de hedefler; hata maskelenmesini önlemek için test başına yalnızca bir geçersiz geçiş denenir."
+          ],
+          "commonMistakes": [
+            "Tüm durumlar kapsamının, geçerli geçişler kapsamıyla aynı gücü sağladığını sanmak yanlıştır; tüm durumlar kapsamı daha zayıftır çünkü genelde tüm geçişler denenmeden de ulaşılabilir. Geçerli geçişler kapsamının tamamına ulaşmak, tüm durumlar kapsamının tamamına ulaşılmasını garanti eder — tersi doğru değildir.",
+            "Bir test senaryosunda birden fazla geçersiz geçiş denemenin daha verimli olduğunu düşünmek yanlıştır; bu, hata maskelenmesine (bir hatanın diğerinin tespitini engellemesine) yol açabileceğinden her senaryoda tek bir geçersiz geçiş denenmelidir.",
+            "Durum diyagramında görünmeyen bir geçişin 'test edilmesi gerekmeyen' bir geçiş olduğunu sanmak hatalıdır; bu tür geçişler durum tablosunda boş hücre olarak görünür ve tüm geçişler kapsamı bunları da hedef alır."
+          ]
+        },
+        "en": {
+          "title": "State transition testing",
+          "paragraphs": [
+            "A state diagram models a system's possible states and the valid transitions between them. A transition starts with an event, may be qualified by a guard condition, and may result in an action; the common notation is 'event [guard condition] / action'. A state table is an equivalent model whose rows are states and columns are events; unlike the diagram, it explicitly shows invalid transitions as empty cells.",
+            "Example: a simple membership account has three states — Active, Suspended, Closed. Valid transitions: Active → Suspended (event: 'payment overdue'), Suspended → Active (event: 'payment received'), Suspended → Closed (event: '90 days elapsed'), Active → Closed (event: 'user closed account'). Every other event/state combination (e.g., Closed → Active) is an invalid transition.",
+            "In all states coverage, the coverage items are states: with 3 states here, 100% coverage needs test cases that visit at least all 3 (e.g., one sequence Active→Suspended→Closed can cover all three). In valid transitions coverage (0-switch coverage), the coverage items are individual valid transitions: there are 4 here, so 100% coverage means exercising all 4 at least once. All transitions coverage also targets invalid transitions (e.g., attempting Closed → Active); to avoid defect masking, each test case should attempt only one invalid transition."
+          ],
+          "keyPoints": [
+            "A state diagram shows valid transitions; a state table also shows invalid transitions explicitly, as empty cells.",
+            "A transition is labeled 'event [guard condition] / action'; the guard condition and action are optional.",
+            "All states coverage requires visiting every state at least once (3 states in the example).",
+            "Valid transitions coverage (0-switch) requires exercising every valid transition at least once (4 transitions in the example) and is the most widely used criterion.",
+            "All transitions coverage also targets invalid transitions; to avoid defect masking, only one invalid transition is attempted per test case."
+          ],
+          "commonMistakes": [
+            "Assuming all states coverage is as strong as valid transitions coverage is wrong; all states coverage is weaker because it can usually be reached without exercising every transition. Achieving full valid transitions coverage guarantees full all states coverage — not the other way around.",
+            "Assuming it is more efficient to attempt several invalid transitions in one test case is wrong; this can cause defect masking (one defect hiding another), so only one invalid transition should be attempted per test case.",
+            "Assuming a transition missing from the state diagram does not need testing is wrong; such transitions show up as empty cells in the state table, and all transitions coverage targets them too."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-4.3.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§4.3.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Komut testi ve komut kapsama yüzdesi",
+          "paragraphs": [
+            "Komut testi, kod içindeki çalıştırılabilir komutları hedef alan bir beyaz kutu tekniğidir. Kapsam öğeleri komutlardır; amaç, kabul edilebilir bir seviyeye ulaşana kadar bu komutları çalıştıracak test senaryoları tasarlamaktır. Kapsam, denenen komut sayısının kod içindeki toplam çalıştırılabilir komut sayısına bölünmesiyle ölçülür.",
+            "%100 komut kapsama yüzdesine ulaşıldığında, hatalı olan da dahil her komut en az bir kez çalıştırılmış olur; bu, hatanın bir arızaya yol açma ihtimalini artırır. Ancak bir komutu çalıştırmak, o komutla ilgili her hatayı ortaya çıkarmaz — örneğin, yalnızca payda sıfır olduğunda başarısız olan bir bölme işlemi, payda sıfır değeriyle test edilmedikçe fark edilmez.",
+            "Ayrıca %100 komut kapsama yüzdesi, kodun içindeki tüm karar mantığının test edildiği anlamına gelmez; bir 'if' bloğunun içindeki komutlar çalıştırılsa bile 'if' koşulunun her iki sonucu (true/false) da mutlaka denenmiş olmayabilir — bu, dal kapsamının (bkz. §4.3.2) konusudur."
+          ],
+          "keyPoints": [
+            "Komut testinde kapsam öğeleri çalıştırılabilir komutlardır.",
+            "Kapsam = denenen komut sayısı / toplam çalıştırılabilir komut sayısı.",
+            "%100 komut kapsama yüzdesi her komutun en az bir kez çalıştırıldığını garanti eder, ama veriye bağlı hataları (ör. sıfıra bölme) yakalamayı garanti etmez.",
+            "%100 komut kapsama yüzdesi, tüm karar mantığının (ör. bir if'in her iki dalının) test edildiğini garanti etmez."
+          ],
+          "commonMistakes": [
+            "%100 komut kapsama yüzdesinin, koddaki tüm hataları bulacağını sanmak yanlıştır; veriye bağlı hatalar (ör. belirli bir girdi değerinde ortaya çıkan sıfıra bölme) yine de kaçabilir.",
+            "%100 komut kapsama yüzdesinin %100 dal kapsamıyla aynı şey olduğunu düşünmek hatalıdır; bir 'if' bloğunun gövdesi çalıştırılsa bile koşulun false sonucu hiç denenmemiş olabilir.",
+            "Komut kapsama yüzdesini yorum satırları veya bildirim (deklarasyon) satırları üzerinden hesaplamak yanlıştır; kapsam öğesi yalnızca çalıştırılabilir komutlardır."
+          ]
+        },
+        "en": {
+          "title": "Statement testing and statement coverage",
+          "paragraphs": [
+            "Statement testing is a white-box technique that targets the executable statements in the code. The coverage items are statements; the goal is to design test cases that exercise them until an acceptable level is reached. Coverage is measured as the number of statements exercised divided by the total number of executable statements.",
+            "When 100% statement coverage is achieved, every statement — including any faulty one — has been executed at least once, which increases the chance that a defect causes a visible failure. But exercising a statement does not guarantee every defect in it is revealed — for example, a division that only fails when the denominator is zero will not be caught unless it is tested with a zero denominator.",
+            "100% statement coverage also does not mean all decision logic has been tested; the statements inside an 'if' block can run while one outcome of that condition (true or false) is never exercised — that is the concern of branch coverage (see §4.3.2)."
+          ],
+          "keyPoints": [
+            "In statement testing, the coverage items are executable statements.",
+            "Coverage = number of statements exercised / total number of executable statements.",
+            "100% statement coverage guarantees every statement ran at least once, but not that data-dependent defects (e.g., division by zero) are caught.",
+            "100% statement coverage does not guarantee all decision logic (e.g., both outcomes of an if) has been tested."
+          ],
+          "commonMistakes": [
+            "Assuming 100% statement coverage finds every defect in the code is wrong; data-dependent defects (e.g., a division by zero triggered only by a specific input) can still be missed.",
+            "Assuming 100% statement coverage is the same as 100% branch coverage is wrong; the body of an 'if' block can run while the false outcome of its condition is never exercised.",
+            "Counting comments or declaration lines toward statement coverage is wrong; the coverage item is executable statements only."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-4.3.2",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§4.3.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Dal testi ve dal kapsamı",
+          "paragraphs": [
+            "Bir dal, kontrol akış grafiğinde iki düğüm arasındaki bir kontrol transferidir; bu transfer koşulsuz (düz kod akışı) ya da koşullu (bir karar çıktısı) olabilir. Dal testinde kapsam öğeleri dallardır; amaç, kabul edilebilir bir seviyeye ulaşana kadar bu dalları çalıştıracak test senaryoları tasarlamaktır.",
+            "%100 dal kapsamına ulaşıldığında koddaki koşulsuz ve koşullu tüm dallar en az bir kez denenmiş olur. Koşullu dallar tipik olarak bir 'if...then' kararının true/false çıktısına, bir switch/case ifadesinin bir dalına veya bir döngüden çıkma/devam etme kararına karşılık gelir. Ancak bir dalı çalıştırmak, o daldaki her hatayı ortaya çıkarmayı garanti etmez; örneğin belirli bir kod yolunun izlenmesini gerektiren hatalar yine de kaçabilir.",
+            "Dal kapsamı, komut kapsama yüzdesini KAPSAR: %100 dal kapsamına ulaşan bir test senaryosu grubu her zaman %100 komut kapsama yüzdesine de ulaşır (çünkü her dalı denemek, o daldaki tüm komutları da çalıştırır). Ancak tersi doğru değildir — %100 komut kapsama yüzdesine ulaşmak, %100 dal kapsamını garanti etmez."
+          ],
+          "keyPoints": [
+            "Dal testinde kapsam öğeleri, kontrol akış grafiğindeki koşulsuz ve koşullu dallardır.",
+            "Kapsam = denenen dal sayısı / toplam dal sayısı.",
+            "%100 dal kapsamı her 'if', switch/case ve döngü kararının her iki (veya tüm) çıktısının denenmesini gerektirir.",
+            "Dal kapsamı komut kapsama yüzdesini kapsar: %100 dal kapsamı otomatik olarak %100 komut kapsama yüzdesi verir, ama tersi geçerli değildir."
+          ],
+          "commonMistakes": [
+            "%100 komut kapsama yüzdesine ulaşmanın otomatik olarak %100 dal kapsamı sağladığını düşünmek yanlıştır; ilişki tek yönlüdür — dal kapsamı komut kapsamını kapsar, tersi değil.",
+            "Bir 'if' ifadesinin sadece true dalını test etmenin yeterli olduğunu sanmak hatalıdır; %100 dal kapsamı için hem true hem false çıktısının denenmesi gerekir.",
+            "Dal kapsamının, belirli bir yürütme yolundaki (birden fazla kararın belirli bir kombinasyonundaki) tüm hataları yakalayacağını varsaymak yanlıştır; dal testi dalları tek tek hedefler, yol kombinasyonlarını değil."
+          ]
+        },
+        "en": {
+          "title": "Branch testing and branch coverage",
+          "paragraphs": [
+            "A branch is a transfer of control between two nodes in the control flow graph; this transfer can be unconditional (straight-line code) or conditional (a decision outcome). In branch testing, the coverage items are branches; the goal is to design test cases that exercise them until an acceptable level is reached.",
+            "When 100% branch coverage is achieved, every unconditional and conditional branch in the code has been exercised at least once. Conditional branches typically correspond to the true/false outcome of an 'if...then' decision, a branch of a switch/case statement, or a loop's exit/continue decision. But exercising a branch does not guarantee every defect in it is revealed — for example, defects requiring a specific code path can still be missed.",
+            "Branch coverage SUBSUMES statement coverage: any set of test cases achieving 100% branch coverage also achieves 100% statement coverage (because exercising every branch also runs every statement on it). The reverse is not true — achieving 100% statement coverage does not guarantee 100% branch coverage."
+          ],
+          "keyPoints": [
+            "In branch testing, the coverage items are the unconditional and conditional branches in the control flow graph.",
+            "Coverage = number of branches exercised / total number of branches.",
+            "100% branch coverage requires exercising both (or all) outcomes of every if, switch/case and loop decision.",
+            "Branch coverage subsumes statement coverage: 100% branch coverage guarantees 100% statement coverage, but not vice versa."
+          ],
+          "commonMistakes": [
+            "Assuming 100% statement coverage automatically gives 100% branch coverage is wrong; the relationship only goes one way — branch coverage subsumes statement coverage, not the reverse.",
+            "Assuming it is enough to test only the true branch of an 'if' is wrong; 100% branch coverage requires exercising both the true and false outcomes.",
+            "Assuming branch coverage catches every defect along a specific execution path (a particular combination of decisions) is wrong; branch testing targets individual branches, not path combinations."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-4.3.3",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§4.3.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Beyaz kutu testinin önemi",
+          "paragraphs": [
+            "Beyaz kutu tekniklerinin ortak gücü, test sırasında yazılımın TÜM iç işleyişinin dikkate alınmasıdır. Bu sayede spesifikasyon belirsiz, eski veya eksik olsa bile hatalar tespit edilebilir, çünkü test kaynağını kodun kendisinden alır. Bunun karşılığı olan zayıflık ise şudur: yazılım, gereksinimlerden birini veya birkaçını hiç uygulamamışsa (eksiklik hatası), beyaz kutu testi bu tür 'olmayan koda' dair hataları yakalayamaz.",
+            "Beyaz kutu teknikleri sadece dinamik testte değil, statik testte de kullanılabilir; örneğin henüz çalıştırılmaya hazır olmayan kodun veya sözde kodun (pseudocode) bir kontrol akış grafiğiyle modellenip incelenmesinde işe yarar.",
+            "Sadece kara kutu testi yapmak, gerçek kod kapsamının ne kadar olduğuna dair bir ölçüm sağlamaz. Beyaz kutu kapsam ölçüleri (komut, dal) objektif bir kapsam verisi sunar ve bu veriler, kapsamı artırmak için hangi ek testlerin gerektiğini gösterir; bu da kodun doğruluğuna duyulan güveni artırır."
+          ],
+          "keyPoints": [
+            "Beyaz kutu tekniklerinin gücü, yazılımın tüm iç işleyişini dikkate alması; bu, belirsiz/eski/eksik spesifikasyonlarda bile hata bulmayı sağlar.",
+            "Zayıflığı ise, hiç uygulanmamış bir gereksinimden kaynaklanan eksiklik hatalarını yakalayamamasıdır.",
+            "Beyaz kutu teknikleri statik testte de (ör. henüz çalıştırılamayan kod veya sözde kod üzerinde) kullanılabilir.",
+            "Beyaz kutu kapsam ölçüleri, kara kutu testinin veremeyeceği objektif bir kod kapsamı ölçümü sunar."
+          ],
+          "commonMistakes": [
+            "Beyaz kutu testinin her türlü hatayı bulabileceğini sanmak yanlıştır; yazılımda hiç kodlanmamış bir gereksinim varsa (eksiklik hatası), beyaz kutu testi bunu yakalayamaz çünkü ortada test edilecek kod yoktur.",
+            "Beyaz kutu tekniklerinin sadece dinamik (çalıştırarak yapılan) testte kullanılabileceğini düşünmek hatalıdır; statik testte, örneğin kod incelemesinde de kullanılabilirler.",
+            "Kara kutu testinin tek başına yeterli bir kod kapsamı ölçümü sağladığını sanmak yanlıştır; gerçek kod kapsamını ölçmek için beyaz kutu kapsam ölçülerine ihtiyaç vardır."
+          ]
+        },
+        "en": {
+          "title": "The value of white-box testing",
+          "paragraphs": [
+            "The shared strength of white-box techniques is that they take the software's ENTIRE implementation into account during testing. This makes it possible to find defects even when the specification is vague, outdated or incomplete, because the test source is the code itself. The matching weakness is that if the software fails to implement one or more requirements at all (a defect of omission), white-box testing cannot detect it — there is no corresponding code to exercise.",
+            "White-box techniques are not limited to dynamic testing; they can also be used in static testing, for example to review code not yet ready to run, or pseudocode, once it is modeled with a control flow graph.",
+            "Performing black-box testing alone gives no measure of actual code coverage. White-box coverage measures (statement, branch) provide an objective coverage figure and show which additional tests are needed to increase that coverage — which in turn increases confidence in the code."
+          ],
+          "keyPoints": [
+            "White-box techniques' strength is considering the software's entire implementation, finding defects even against vague, outdated or incomplete specifications.",
+            "Their weakness is missing defects of omission caused by a requirement that was never implemented at all.",
+            "White-box techniques can be used in static testing too (e.g., on code not yet ready to run, or on pseudocode).",
+            "White-box coverage measures give an objective coverage figure that black-box testing alone cannot provide."
+          ],
+          "commonMistakes": [
+            "Assuming white-box testing can find any kind of defect is wrong; a requirement that was never coded at all (a defect of omission) cannot be caught, because there is no code to exercise.",
+            "Assuming white-box techniques only apply to dynamic (running) testing is wrong; they are also used in static testing, such as code review.",
+            "Assuming black-box testing alone gives an adequate measure of code coverage is wrong; measuring actual code coverage requires white-box coverage measures."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-4.4.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§4.4.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Hata tahminleme",
+          "paragraphs": [
+            "Hata tahminleme, test uzmanının bilgi ve deneyimine dayanarak insan hatalarının, hataların ve arızaların nerede ortaya çıkabileceğini önceden kestirmeyi amaçlayan bir tecrübeye dayalı tekniktir. Bu bilgi; uygulamanın geçmişte nasıl çalıştığından, geliştiricilerin sıkça yaptığı insan hatalarından ve benzer uygulamalarda görülen arıza türlerinden gelir.",
+            "İnsan hataları, hatalar ve arızalar genellikle girdi (ör. geçerli bir girdinin reddedilmesi), çıktı (ör. yanlış format), mantık (ör. eksik senaryo), hesaplama, arayüz veya veriyle ilgilidir. Bu tekniği uygulamanın somut bir yolu, test uzmanının olası hata listesi (fault attack listesi) oluşturup bu hatalara yönelik testler tasarlamasıdır; örneğin bir yaş alanı için 'boş bırakma', 'negatif değer girme', 'ondalıklı sayı girme' gibi olası kötüye kullanım biçimlerini içeren bir liste.",
+            "Bu listeler, deneyime, geçmiş hata/arıza verilerine veya yazılımların genel olarak neden başarısız olduğuna dair bilgiye dayanarak oluşturulabilir."
+          ],
+          "keyPoints": [
+            "Hata tahminleme, test uzmanının bilgi ve deneyimiyle olası insan hatası/hata/arızaları önceden kestirmeyi amaçlar.",
+            "Kaynaklar: uygulamanın geçmiş davranışı, geliştiricilerin sık yaptığı insan hataları, benzer uygulamalardaki arızalar.",
+            "İnsan hataları/hatalar/arızalar tipik olarak girdi, çıktı, mantık, hesaplama, arayüz veya veri kategorilerinde görülür.",
+            "Fault attack listeleri, bu tekniği somut ve tekrarlanabilir hale getiren bir araçtır."
+          ],
+          "commonMistakes": [
+            "Hata tahminlemeyi 'rastgele, plansız test' sanmak yanlıştır; teknik, test uzmanının bilgi ve deneyimine dayanan, hata listeleriyle desteklenebilen metodik bir yaklaşımdır.",
+            "Hata tahminlemenin sadece deneyimsiz test uzmanları için uygun olmadığını, tam tersine deneyimli test uzmanlarında daha etkili olduğunu unutmak yanlıştır; etkinliği doğrudan test uzmanının bilgi birikimine bağlıdır.",
+            "Hata tahminlemeyi diğer tekniklerin (ör. DPA) yerine geçen bir teknik sanmak hatalıdır; deneyime dayalı teknikler diğerlerini tamamlar, onların yerini almaz."
+          ]
+        },
+        "en": {
+          "title": "Error guessing",
+          "paragraphs": [
+            "Error guessing is an experience-based technique that uses the tester's knowledge and experience to anticipate where errors, defects and failures are likely to occur. This knowledge comes from how the application has behaved in the past, the kinds of errors developers tend to make, and the kinds of failures seen in similar applications.",
+            "Errors, defects and failures are commonly related to input (e.g., a valid input being rejected), output (e.g., wrong format), logic (e.g., a missing case), computation, interfaces, or data. A concrete way to apply this technique is for the tester to build a list of likely errors (a 'fault attack' list) and design tests targeting them — for example, for an age field: leaving it blank, entering a negative number, entering a decimal.",
+            "These lists can be built from experience, historical defect and failure data, or general knowledge about why software tends to fail."
+          ],
+          "keyPoints": [
+            "Error guessing uses the tester's knowledge and experience to anticipate likely errors, defects and failures.",
+            "Sources: the application's past behavior, common developer errors, failures seen in similar applications.",
+            "Errors/defects/failures typically fall into input, output, logic, computation, interface or data categories.",
+            "Fault attack lists make the technique concrete and repeatable."
+          ],
+          "commonMistakes": [
+            "Assuming error guessing is 'random, unplanned testing' is wrong; it is a methodical approach grounded in the tester's knowledge, often supported by structured fault lists.",
+            "Assuming error guessing is unsuitable for experienced testers is wrong; the opposite is true — its effectiveness depends directly on the tester's accumulated knowledge.",
+            "Assuming error guessing replaces other techniques (e.g., EP) is wrong; experience-based techniques complement the others, they do not substitute for them."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-4.4.2",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§4.4.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Keşif testi",
+          "paragraphs": [
+            "Keşif testinde, testler tasarlanması, çalıştırılması ve değerlendirilmesi eş zamanlı olarak yapılır; test uzmanı test nesnesi hakkında öğrendikçe bir sonraki testi buna göre şekillendirir. Amaç, test nesnesi hakkında bilgi edinmek, odaklı testlerle daha derine inmek ve daha önce test edilmemiş alanları keşfetmektir.",
+            "Keşif testi genellikle oturum bazlı test yaklaşımıyla yapılandırılır: belirli bir zaman dilimi (oturum) içinde, test uzmanı test hedeflerini içeren bir test başlatma belgesiyle yönlendirilir. Oturumun ardından genellikle test uzmanı ile paydaşlar arasında bir bilgilendirme (debriefing) yapılır. Bu yaklaşımda kapsam öğeleri, oturum sırasında tanımlanır ve denenir; test uzmanı adımları ve keşifleri not almak için test oturumu sayfaları kullanabilir.",
+            "Keşif testi, spesifikasyonların az veya yetersiz olduğu ya da zaman baskısının yüksek olduğu durumlarda özellikle faydalıdır; ayrıca diğer daha resmi teknikleri tamamlayıcı olarak da kullanılır. Test uzmanının deneyimli olması, alan bilgisine sahip olması ve analitik/meraklı/yaratıcı olması etkinliğini artırır. Keşif testi sırasında denklik paylarına ayırma gibi diğer teknikler de kullanılabilir."
+          ],
+          "keyPoints": [
+            "Keşif testinde test tasarımı, koşum ve değerlendirme eş zamanlı yapılır; öğrenme test sürecini şekillendirir.",
+            "Oturum bazlı yaklaşımda test bir zaman dilimine (oturum) sığdırılır ve bir test başlatma belgesiyle yönlendirilir.",
+            "Oturum sonrası genellikle bir bilgilendirme (debriefing) yapılır; test uzmanı test oturumu sayfalarıyla not tutabilir.",
+            "Spesifikasyon eksikliğinde veya zaman baskısı altında özellikle faydalıdır; diğer teknikleri tamamlar, onların yerine geçmez.",
+            "Etkinliği test uzmanının deneyimine, alan bilgisine ve analitik/meraklı/yaratıcı becerilerine bağlıdır."
+          ],
+          "commonMistakes": [
+            "Keşif testini 'plansız, gelişigüzel gezinme' sanmak yanlıştır; oturum bazlı yaklaşımda test hedefleri, zaman kutusu ve bilgilendirme ile yapılandırılmış bir süreçtir.",
+            "Keşif testinin sadece deneyimsiz test uzmanlarının başvurduğu bir yöntem olduğunu düşünmek hatalıdır; tam tersine deneyimli, alan bilgisine sahip test uzmanlarında daha etkilidir.",
+            "Keşif testinin diğer test tekniklerini (ör. DPA) dışladığını sanmak yanlıştır; keşif testi sırasında bu teknikler de kullanılabilir."
+          ]
+        },
+        "en": {
+          "title": "Exploratory testing",
+          "paragraphs": [
+            "In exploratory testing, tests are designed, executed and evaluated simultaneously; as the tester learns about the test object, that learning shapes the next test. The goal is to learn about the test object, dig deeper with focused tests, and explore areas not yet tested.",
+            "Exploratory testing is often structured with a session-based approach: within a defined time box (a session), the tester is guided by a test charter containing test objectives. A debriefing between the tester and interested stakeholders usually follows the session. Coverage items are identified and exercised during the session; the tester may use session sheets to document steps and discoveries.",
+            "Exploratory testing is especially useful when specifications are sparse or inadequate, or under significant time pressure; it also complements more formal techniques. It is more effective when the tester is experienced, has domain knowledge, and is analytical, curious and creative. Other techniques, such as equivalence partitioning, can be incorporated during exploratory testing."
+          ],
+          "keyPoints": [
+            "Test design, execution and evaluation happen simultaneously; learning shapes the ongoing testing.",
+            "The session-based approach confines testing to a time box, guided by a test charter.",
+            "A debriefing usually follows the session; the tester may use session sheets to record steps and discoveries.",
+            "Especially useful with sparse specifications or high time pressure; complements, rather than replaces, formal techniques.",
+            "Effectiveness depends on tester experience, domain knowledge, and analytical/curious/creative skills."
+          ],
+          "commonMistakes": [
+            "Assuming exploratory testing is 'unplanned, aimless poking around' is wrong; the session-based approach structures it with test objectives, a time box and a debriefing.",
+            "Assuming exploratory testing is only for inexperienced testers is wrong; the opposite is true — it is more effective with experienced, domain-knowledgeable testers.",
+            "Assuming exploratory testing excludes other techniques (e.g., EP) is wrong; those techniques can be incorporated during an exploratory session."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-4.4.3",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§4.4.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Kontrol listesine dayalı test etme",
+          "paragraphs": [
+            "Kontrol listesine dayalı test etmede, test uzmanı bir kontrol listesindeki test koşullarını kapsayacak testleri tasarlar, uygular ve çalıştırır. Kontrol listeleri; deneyime, kullanıcı için neyin önemli olduğuna dair bilgiye veya yazılımın neden/nasıl başarısız olabileceğine dair anlayışa dayanarak oluşturulabilir.",
+            "Kontrol listesi maddeleri genellikle bir soru biçiminde yazılır ve her madde ayrı ayrı, doğrudan kontrol edilebilir olmalıdır. Kontrol listeleri; otomatik olarak kontrol edilebilecek maddeleri, aslında bir giriş/çıkış kriteri olması gereken maddeleri veya çok genel maddeleri içermemelidir. Örnek: bir web formu için 'Zorunlu alanlar boş bırakıldığında hata mesajı gösteriliyor mu?', 'Sayfa 3 saniyeden kısa sürede yükleniyor mu?' gibi maddeler.",
+            "Kontrol listeleri zamanla bazı maddelerde etkinliğini yitirebilir çünkü geliştiriciler aynı hatalardan kaçınmayı öğrenir; bu yüzden hata analizine dayanarak düzenli olarak güncellenmeli, ama gereksiz yere uzatılmamalıdır. Ayrıntılı test senaryolarının olmadığı durumlarda bir miktar tutarlılık sağlar; ancak üst seviye maddeler gerçek testte değişkenlik bırakır — bu, daha geniş kapsama ama daha düşük tekrarlanabilirlik demektir."
+          ],
+          "keyPoints": [
+            "Kontrol listesi maddeleri genellikle soru biçimindedir ve ayrı ayrı, doğrudan kontrol edilebilir olmalıdır.",
+            "Kontrol listeleri; otomatik kontrol edilebilecek, giriş/çıkış kriteri niteliğindeki veya çok genel maddeleri içermemelidir.",
+            "Kontrol listeleri deneyime, kullanıcı önceliklerine veya bilinen arıza nedenlerine dayanarak oluşturulur ve düzenli güncellenmelidir.",
+            "Üst seviye kontrol listeleri, testte değişkenlik bırakır: daha geniş kapsama ama daha düşük tekrarlanabilirlik sağlar."
+          ],
+          "commonMistakes": [
+            "Kontrol listesine dayalı testi ayrıntılı test senaryolarının bir alternatifi olarak her zaman aynı sonucu verir sanmak yanlıştır; üst seviye maddeler yüzünden gerçek testte değişkenlik olur, bu da tekrarlanabilirliği düşürür.",
+            "Bir kontrol listesine otomatik kontrol edilebilecek maddeleri (ör. bir derleme hatası olup olmadığı) eklemenin doğru olduğunu düşünmek hatalıdır; bu tür maddeler kontrol listesinde yer almamalıdır.",
+            "Kontrol listelerinin bir kez oluşturulup hiç güncellenmemesi gerektiğini sanmak yanlıştır; geliştiriciler aynı hatalardan kaçınmayı öğrendikçe bazı maddeler etkisini yitirir ve liste hata analizine göre güncellenmelidir."
+          ]
+        },
+        "en": {
+          "title": "Checklist-based testing",
+          "paragraphs": [
+            "In checklist-based testing, the tester designs, implements and executes tests to cover the test conditions listed in a checklist. Checklists can be built on experience, knowledge of what matters to the user, or an understanding of why and how software fails.",
+            "Checklist items are usually phrased as questions, and each item must be checkable separately and directly. Checklists should not contain items that could be checked automatically, items that really belong as entry or exit criteria, or items that are too general. Example, for a web form: 'Does an error message appear when required fields are left blank?', 'Does the page load in under 3 seconds?'.",
+            "Some checklist items lose effectiveness over time as developers learn to avoid the same mistakes, so checklists should be updated regularly based on defect analysis — without letting the list become too long. In the absence of detailed test cases, a checklist provides some consistency; but because items are high-level, actual testing still varies from run to run, giving potentially wider coverage at the cost of lower repeatability."
+          ],
+          "keyPoints": [
+            "Checklist items are usually phrased as questions and must be checkable separately and directly.",
+            "Checklists should exclude items that could be checked automatically, items that are really entry/exit criteria, or overly general items.",
+            "Checklists are built from experience, user priorities or known failure causes, and must be updated regularly.",
+            "High-level checklists leave room for variation in actual testing: wider coverage, but lower repeatability."
+          ],
+          "commonMistakes": [
+            "Assuming checklist-based testing always gives the same result as detailed test cases is wrong; high-level items leave room for variation in actual testing, which lowers repeatability.",
+            "Assuming it is fine to add automatically-checkable items to a checklist (e.g., whether a build compiles) is wrong; such items should not be on the checklist.",
+            "Assuming a checklist should be written once and never updated is wrong; some items lose effectiveness as developers learn to avoid the same mistakes, so the list must be updated based on defect analysis."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-4.5.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§4.5.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "İş birliğine dayalı kullanıcı hikayesi yazımı",
+          "paragraphs": [
+            "Bir kullanıcı hikayesi, bir sistem veya yazılımın kullanıcısı ya da alıcısı için değerli olacak bir özelliği temsil eder. Üç kritik unsuru vardır, birlikte '3 C' olarak anılır: Card (Kart) — hikayeyi anlatan ortam; Conversation (Konuşma) — yazılımın nasıl kullanılacağını açıklayan, yazılı veya sözlü iletişim; Confirmation (Onay) — kabul kriterleri (bkz. §4.5.2).",
+            "En yaygın format şudur: '[Rol] olarak, [hedef] istiyorum, çünkü [rol için ortaya çıkan iş değeri]', ardından kabul kriterleri gelir. Örnek: 'Bir müşteri olarak, siparişimin kargo durumunu görmek istiyorum, çünkü paketimin ne zaman geleceğini bilmek isterim.'",
+            "Kullanıcı hikayeleri, geliştiriciler ve iş birimleriyle birlikte, beyin fırtınası ve zihin haritası gibi tekniklerle iş birliği içinde yazılır; bu, ekibin iş, geliştirme ve test perspektiflerini birleştirerek neyin teslim edileceğine dair ortak bir vizyon oluşturmasını sağlar. İyi bir kullanıcı hikayesi INVEST ilkelerini karşılamalıdır: Bağımsız, Müzakere Edilebilir, Değerli, Tahmin Edilebilir, Küçük ve Test Edilebilir. Bir paydaş bir hikayenin nasıl test edileceğini bilmiyorsa, bu genellikle hikayenin yeterince net olmadığının bir işaretidir."
+          ],
+          "keyPoints": [
+            "Kullanıcı hikayesinin üç unsuru (3 C): Card (kart/ortam), Conversation (konuşma), Confirmation (kabul kriterleri).",
+            "Yaygın format: '[Rol] olarak [hedef] istiyorum, çünkü [iş değeri]', ardından kabul kriterleri.",
+            "İş birlikli yazım; iş, geliştirme ve test perspektiflerini bir araya getirerek ortak bir vizyon oluşturur.",
+            "İyi bir kullanıcı hikayesi INVEST ilkelerini (Bağımsız, Müzakere Edilebilir, Değerli, Tahmin Edilebilir, Küçük, Test Edilebilir) karşılamalıdır.",
+            "Bir paydaşın hikayeyi nasıl test edeceğini bilmemesi, genelde hikayenin yeterince net olmadığının işaretidir."
+          ],
+          "commonMistakes": [
+            "Kullanıcı hikayesinin '3 C'sinden Confirmation'ı (Onay/kabul kriterleri) 'onaylayan kişinin adı' gibi bir şeyle karıştırmak yanlıştır; Confirmation doğrudan kabul kriterlerinin kendisidir.",
+            "Kullanıcı hikayesi yazımının sadece iş birimlerinin görevi olduğunu düşünmek hatalıdır; işbirlikçi yazım iş, geliştirme ve test perspektiflerini bir araya getirir, test uzmanı da sürece dahildir.",
+            "INVEST'teki 'Testable' (Test Edilebilir) kriterini gözden kaçırmak yaygındır; bir hikaye nasıl test edileceği belli olmadan yeterince net kabul edilmemelidir."
+          ]
+        },
+        "en": {
+          "title": "Collaborative user story writing",
+          "paragraphs": [
+            "A user story represents a feature that will be valuable to a user or purchaser of a system or software. It has three critical aspects, together called the '3 C's': Card — the medium describing the story; Conversation — the (written or verbal) discussion of how the software will be used; Confirmation — the acceptance criteria (see §4.5.2).",
+            "The most common format is: 'As a [role], I want [goal], so that I can [resulting business value]', followed by the acceptance criteria. Example: 'As a customer, I want to see my order's shipping status, so that I know when my package will arrive.'",
+            "User stories are written collaboratively with developers and business representatives, using techniques such as brainstorming and mind mapping; this lets the team form a shared vision of what to deliver by combining business, development and testing perspectives. A good user story should meet the INVEST criteria: Independent, Negotiable, Valuable, Estimable, Small and Testable. If a stakeholder does not know how a story would be tested, that is usually a sign the story is not clear enough."
+          ],
+          "keyPoints": [
+            "The user story's 3 C's: Card (the medium), Conversation (the discussion), Confirmation (the acceptance criteria).",
+            "Common format: 'As a [role], I want [goal], so that I can [business value]', followed by acceptance criteria.",
+            "Collaborative writing combines business, development and testing perspectives into a shared vision.",
+            "A good user story satisfies INVEST: Independent, Negotiable, Valuable, Estimable, Small, Testable.",
+            "A stakeholder not knowing how to test a story is usually a sign the story is not clear enough."
+          ],
+          "commonMistakes": [
+            "Confusing 'Confirmation' in the 3 C's with something like 'who signed off' is wrong; Confirmation is the acceptance criteria itself.",
+            "Assuming writing user stories is solely the business representatives' job is wrong; collaborative writing brings in business, development and testing perspectives, including the tester.",
+            "Overlooking the 'Testable' criterion in INVEST is a common mistake; a story should not be considered clear enough if nobody knows how it would be tested."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-4.5.2",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§4.5.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Kabul kriterleri",
+          "paragraphs": [
+            "Bir kullanıcı hikayesinin kabul kriterleri, o hikayenin paydaşlar tarafından kabul edilmesi için karşılaması gereken koşullardır. Bu açıdan bakıldığında, kabul kriterleri testler tarafından denenmesi gereken test koşulları olarak görülebilir. Genellikle Conversation'ın (bkz. §4.5.1) bir sonucu olarak ortaya çıkarlar.",
+            "Kabul kriterleri şu amaçlara hizmet eder: hikayenin kapsamını tanımlamak, paydaşlar arasında fikir birliği sağlamak, hem pozitif hem negatif senaryoları tarif etmek, kabul testinin (bkz. §4.5.3) temelini oluşturmak ve doğru planlama/tahminlemeyi mümkün kılmak.",
+            "Kabul kriterlerini yazmanın iki yaygın formatı vardır. Senaryo odaklı format, Given/When/Then (BDD) yapısını kullanır — örnek: 'Given sepette ürün var, When kullanıcı ödeme sayfasına gider, Then toplam tutar KDV dahil gösterilir.' Kural odaklı format ise madde işaretli bir kontrol listesi veya girdi-çıktı tablosu şeklinde olabilir — örnek: 'Kullanıcı adı en az 3 karakter olmalı', 'Şifre en az bir rakam içermeli'. Ekip, yeterince net ve belirsizlikten arınmış olduğu sürece başka bir özel format da kullanabilir."
+          ],
+          "keyPoints": [
+            "Kabul kriterleri, hikayenin kabul edilmesi için karşılanması gereken koşullardır ve test koşulu olarak görülebilir.",
+            "Amaçları: kapsamı tanımlamak, fikir birliği sağlamak, pozitif/negatif senaryoları tarif etmek, kabul testinin temelini oluşturmak, planlamayı desteklemek.",
+            "Senaryo odaklı format: Given/When/Then (BDD) yapısı.",
+            "Kural odaklı format: madde işaretli liste veya girdi-çıktı tablosu.",
+            "Ekip, yeterince net ve belirsizlikten arınmış olduğu sürece özel bir format da seçebilir."
+          ],
+          "commonMistakes": [
+            "Kabul kriterlerinin yalnızca Given/When/Then formatında yazılabileceğini sanmak yanlıştır; kural odaklı (madde listesi, tablo) format da eşit derecede geçerlidir.",
+            "Kabul kriterlerinin sadece pozitif senaryoları kapsaması gerektiğini düşünmek hatalıdır; negatif senaryoları da tarif etmelidir.",
+            "Kabul kriterlerini bir test senaryosuyla aynı ayrıntı seviyesinde zorunlu görmek yanlıştır; kabul kriterleri denenmesi gereken KOŞULLARDIR, adım adım bir test senaryosu değildir — test senaryoları bunlardan türetilir (bkz. §4.5.3)."
+          ]
+        },
+        "en": {
+          "title": "Acceptance criteria",
+          "paragraphs": [
+            "Acceptance criteria for a user story are the conditions its implementation must meet to be accepted by stakeholders. From this view, they can be seen as the test conditions that tests should exercise. They usually result from the Conversation (see §4.5.1).",
+            "Acceptance criteria serve to: define the scope of the story, reach consensus among stakeholders, describe both positive and negative scenarios, serve as the basis for acceptance testing (see §4.5.3), and allow accurate planning and estimation.",
+            "There are two common formats for writing acceptance criteria. The scenario-oriented format uses a Given/When/Then (BDD) structure — example: 'Given a product is in the cart, When the user goes to checkout, Then the total is shown including VAT.' The rule-oriented format can be a bulleted checklist or an input-output table — example: 'Username must be at least 3 characters', 'Password must contain at least one digit'. The team may use another custom format as long as it stays well-defined and unambiguous."
+          ],
+          "keyPoints": [
+            "Acceptance criteria are the conditions a story must meet to be accepted, and can be viewed as test conditions.",
+            "Purposes: defining scope, reaching stakeholder consensus, describing positive/negative scenarios, grounding acceptance testing, supporting planning.",
+            "Scenario-oriented format: Given/When/Then (BDD) structure.",
+            "Rule-oriented format: bulleted checklist or input-output table.",
+            "A custom format is fine as long as it stays well-defined and unambiguous."
+          ],
+          "commonMistakes": [
+            "Assuming acceptance criteria can only be written in Given/When/Then form is wrong; the rule-oriented format (bullet list, table) is equally valid.",
+            "Assuming acceptance criteria should only cover positive scenarios is wrong; they must also describe negative scenarios.",
+            "Treating acceptance criteria as if they had to be as detailed as a step-by-step test case is wrong; they are the CONDITIONS to be exercised, not the test case itself — test cases are derived from them (see §4.5.3)."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-4.5.3",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§4.5.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Kabul testi güdümlü yazılım geliştirme (ATDD)",
+          "paragraphs": [
+            "ATDD, bir önce-test-et yaklaşımıdır: test senaryoları, kullanıcı hikayesi uygulanmadan ÖNCE, farklı bakış açılarına sahip ekip üyeleri (müşteriler, geliştiriciler, test uzmanları) tarafından birlikte oluşturulur. Bu test senaryoları manuel veya otomatik olarak çalıştırılabilir.",
+            "Süreç bir analiz çalıştayıyla başlar: kullanıcı hikayesi ve (henüz tanımlanmamışsa) kabul kriterleri ekipçe tartışılıp yazılır; bu sırada eksiklikler ve belirsizlikler giderilir. Ardından test senaryoları kabul kriterlerinden türetilir. Örnek: 'Bir müşteri olarak indirim kuponu uygulamak istiyorum' hikayesi ve 'Kupon %10 indirim uygularsa toplam tutar buna göre düşer' kabul kriteri için ekip şu sırayla test senaryoları yazar: (1) geçerli kupon ile pozitif senaryo, (2) süresi geçmiş kupon ile negatif senaryo, (3) aynı anda iki kupon uygulanmaya çalışılması gibi ek negatif senaryolar, (4) kupon uygulama işleminin 1 saniyeden hızlı tamamlanması gibi fonksiyonel olmayan bir senaryo.",
+            "Sıralama önemlidir: önce pozitif senaryolar (her şey beklendiği gibi gittiğinde), sonra negatif senaryolar (hata koşulları), son olarak fonksiyonel olmayan nitelikler (ör. performans, kullanılabilirlik) ele alınır. Test senaryoları doğal dilde, paydaşların anlayacağı şekilde yazılır ve hikayenin tüm özelliklerini kapsamalı, ondan öteye geçmemelidir; iki test senaryosu aynı özelliği tekrar ele almamalıdır. Test tasarımı sırasında §4.2, §4.3 ve §4.4'te anlatılan teknikler (ör. denklik paylarına ayırma) uygulanabilir."
+          ],
+          "keyPoints": [
+            "ATDD'de test senaryoları, kullanıcı hikayesi uygulanmadan önce, farklı perspektiflerden ekip üyelerince birlikte yazılır.",
+            "Süreç bir analiz çalıştayıyla başlar; kullanıcı hikayesi ve kabul kriterleri burada netleştirilir.",
+            "Test senaryoları önce pozitif, sonra negatif, en son fonksiyonel olmayan senaryolar sırasıyla yazılır.",
+            "Kupon örneğinde: geçerli kupon (pozitif) → süresi geçmiş kupon (negatif) → çoklu kupon denemesi (negatif) → uygulama hızı (fonksiyonel olmayan).",
+            "Test tasarımında §4.2-4.4'teki teknikler (DPA, SDA, karar tablosu, durum geçişi) uygulanabilir; örnekler ve testler burada aynı anlama gelir."
+          ],
+          "commonMistakes": [
+            "ATDD'de test senaryolarının kullanıcı hikayesi kodlandıktan SONRA yazıldığını sanmak temelden yanlıştır; ATDD bir önce-test-et yaklaşımıdır, test senaryoları uygulamadan önce oluşturulur.",
+            "ATDD'nin sadece test uzmanının işi olduğunu düşünmek yanlıştır; test senaryoları müşteri, geliştirici ve test uzmanı gibi farklı perspektiflere sahip ekip üyelerince birlikte yazılır.",
+            "Negatif senaryoları ve fonksiyonel olmayan nitelikleri atlayıp sadece pozitif senaryolarla yetinmek yaygın bir hatadır; ATDD pozitif testlerden sonra negatif testleri, en son da fonksiyonel olmayan karakteristikleri ele almayı öngörür."
+          ]
+        },
+        "en": {
+          "title": "Acceptance test-driven development (ATDD)",
+          "paragraphs": [
+            "ATDD is a test-first approach: test cases are created BEFORE the user story is implemented, by team members with different perspectives (customers, developers, testers). These test cases may be executed manually or automated.",
+            "The process starts with a specification workshop where the team discusses and writes the user story and, if not already defined, its acceptance criteria; incompleteness and ambiguity get resolved here. Test cases are then derived from the acceptance criteria. Example: for the story 'As a customer, I want to apply a discount coupon' with the acceptance criterion 'A 10% coupon reduces the total accordingly', the team writes test cases in this order: (1) a positive case with a valid coupon, (2) a negative case with an expired coupon, (3) further negative cases such as applying two coupons at once, (4) a non-functional case, such as the coupon applying in under 1 second.",
+            "The order matters: positive test cases (everything working as expected) come first, then negative test cases (error conditions), and finally non-functional characteristics (e.g., performance, usability). Test cases are written in natural language the stakeholders can understand, must cover all of the story's characteristics without going beyond it, and no two test cases should describe the same characteristic twice. During test design, the techniques from §4.2, §4.3 and §4.4 (e.g., equivalence partitioning) may be applied."
+          ],
+          "keyPoints": [
+            "In ATDD, test cases are written together by team members with different perspectives before the story is implemented.",
+            "The process starts with a specification workshop that clarifies the user story and its acceptance criteria.",
+            "Test cases are written positive first, then negative, and finally non-functional.",
+            "Coupon example: valid coupon (positive) -> expired coupon (negative) -> multiple-coupon attempt (negative) -> application speed (non-functional).",
+            "Test design may apply the §4.2-4.4 techniques (EP, BVA, decision tables, state transitions); examples and tests are treated as the same thing here."
+          ],
+          "commonMistakes": [
+            "Assuming ATDD test cases are written AFTER the user story is coded is fundamentally wrong; ATDD is a test-first approach, so test cases are created before implementation.",
+            "Assuming ATDD is solely the tester's job is wrong; test cases are written jointly by team members with different perspectives, such as customers, developers and testers.",
+            "Skipping negative scenarios and non-functional characteristics in favor of only positive cases is a common mistake; ATDD calls for positive cases first, then negative, and finally non-functional characteristics."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    }
+  ]
 }

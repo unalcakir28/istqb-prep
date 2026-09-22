@@ -5,7 +5,7 @@
   "questions": [
     {
       "id": "ctfl4-0025",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 2,
       "section": "2.1",
@@ -34,7 +34,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Test uzmanları yalnızca sistem test seviyesinden itibaren işin içine girer, çünkü tasarım tamamlanmadan test tabanı oluşmaz"
+              "text": "Test uzmanları yalnızca sistem test seviyesinden itibaren işin içine girer, çünkü tasarım tamamlanmadan test esası oluşmaz"
             },
             {
               "id": "b",
@@ -52,7 +52,7 @@
           "rationale": {
             "summary": "Sıralı yazılım geliştirme modellerinde çalıştırılabilir kod genellikle sonraki aşamalarda oluşturulur. Bu nedenle ilk aşamalarda test uzmanları gereksinim gözden geçirmelerine, test analizine ve test tasarımına katılır; dinamik test tipik olarak YGYD'nin erken aşamalarında gerçekleştirilemez.",
             "byOption": {
-              "a": "Yanlış. Sıralı modelde gereksinimler daha en baştan test tabanıdır ve müfredat test uzmanlarının erken aşamalardaki gözden geçirmelere katılmasını ister — sola kaydırma yaklaşımının özü budur. Erken bulunan bir hata, sonradan bulunana göre çok daha ucuza giderilir.",
+              "a": "Yanlış. Sıralı modelde gereksinimler daha en baştan test esasıdır ve müfredat test uzmanlarının erken aşamalardaki gözden geçirmelere katılmasını ister — shift-left yaklaşımının özü budur. Erken bulunan bir hata, sonradan bulunana göre çok daha ucuza giderilir.",
               "b": "Yanlış. Tersi geçerlidir: sıralı YGYD modellerinde test seviyeleri genellikle bir seviyenin çıkış kriterleri bir sonraki seviyenin giriş kriterlerinin parçası olacak şekilde tanımlanır. Seviyelerin zaman içinde çakışması bazı döngüsel modellerde görülür.",
               "c": "Doğru. Sıralı modellerde çalıştırılabilir kod sonraki aşamalarda üretilir; bu yüzden erken aşamada yapılabilen iş, gereksinim gözden geçirmeleri, test analizi ve test tasarımıdır.",
               "d": "Yanlış. Bu, bazı döngüsel ve artımlı geliştirme modellerinin varsayımını tanımlar: her döngü çalışan bir prototip veya ürün özelliği teslim eder, bu da her döngüde tüm test seviyelerinde statik ve dinamik test yapılabilmesi anlamına gelir."
@@ -94,7 +94,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-22"
       }
     },
     {
@@ -862,7 +862,7 @@
     },
     {
       "id": "ctfl4-0034",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 2,
       "section": "2.1",
@@ -911,7 +911,7 @@
             "byOption": {
               "a": "Yanlış. Bu, hata yönetimi faaliyetini tanımlar. Geçmişe dönük öğelerin konusu tek tek hatalar değil, sürecin, test çalışma ürünlerinin ve test esasının kalitesidir.",
               "b": "Doğru. Üç sorunun görüşülmesi, sonuçların kaydedilmesi ve takibi, geçmişe dönük öğeleri sürekli iyileştirme mekanizması yapan şeydir.",
-              "c": "Yanlış. Toplantılara yalnızca test uzmanları değil; geliştiriciler, mimarlar, ürün sahibi ve iş analistleri de katılır. Faydalardan biri zaten geliştirme ile test arasındaki iş birliğinin iyileşmesidir.",
+              "c": "Yanlış. Bu seçenek katılımcı listesini yalnızca test uzmanlarına daraltır; oysa retrospektif, ürünü birlikte geliştiren rollerin tamamına açıktır. Faydalardan biri zaten geliştirme ile test arasındaki iş birliğinin iyileşmesidir.",
               "d": "Yanlış. Geçmişe dönük öğeler proje sonunda, bir döngü sonunda, bir sürüm kilometre taşında veya gerektiğinde ele alınabilir; zamanlama izlenen YGYD modeline bağlıdır."
             }
           }
@@ -941,7 +941,7 @@
             "byOption": {
               "a": "Incorrect. This describes defect management activity. A retrospective is about the process, the quality of the testware and the quality of the test basis, not about individual defects.",
               "b": "Correct. Discussing those three questions, recording the results and following them up is what makes retrospectives a mechanism for continuous improvement.",
-              "c": "Incorrect. Not only testers attend, but also for example developers, architects, the product owner and business analysts. One of the benefits is precisely better cooperation between development and testing.",
+              "c": "Incorrect. This option narrows the attendee list to testers alone, whereas a retrospective is open to every role that builds the product together. One of its benefits is precisely better cooperation between development and testing.",
               "d": "Incorrect. Retrospectives can be held at the end of a project or an iteration, at a release milestone, or when needed; the timing depends on the SDLC model being followed."
             }
           }
@@ -951,7 +951,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-22"
       }
     },
     {

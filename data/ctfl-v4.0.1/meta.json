@@ -15,7 +15,6 @@
     "passPoints": 26,
     "passPercent": 65,
     "durationMinutes": 60,
-    "extendedDurationMinutes": 75,
     "pointsPerQuestion": 1,
     "negativeMarking": null,
     "questionKLevelDistribution": { "K1": 8, "K2": 24, "K3": 8 }
@@ -28,5 +27,41 @@
     "glossaryApi": "https://api.glossary.istqb.org/v1/terms",
     "sampleExamsEn": "https://istqb.org/sdm_categories/certified-tester-foundation-level-ctfl-v4-0/",
     "sampleExamsTr": "https://www.turkishtestingboard.org/en/certified-tester-foundation-level-sample-exam-turkish/"
-  }
+  },
+  "officialSampleExams": [
+    {
+      "set": "A",
+      "lang": "tr",
+      "url": "https://www.turkishtestingboard.org/temel-seviye-sertifikali-test-uzmani-ornek-sinav-turkce/",
+      "publisher": "Turkish Testing Board",
+      "documentVersion": "1.5"
+    },
+    {
+      "set": "B",
+      "lang": "tr",
+      "url": "https://www.turkishtestingboard.org/sertifikali-test-uzmani-temel-seviye-ctfl-v4-0-ornek-sinavi-b-turkce/",
+      "publisher": "Turkish Testing Board",
+      "documentVersion": "1.6"
+    },
+    {
+      "set": "C",
+      "lang": "tr",
+      "url": "https://www.turkishtestingboard.org/sertifikali-test-uzmani-temel-seviye-ctfl-v4-0-ornek-sinavi-c-turkce/",
+      "publisher": "Turkish Testing Board",
+      "documentVersion": "1.6"
+    },
+    {
+      "set": "D",
+      "lang": "tr",
+      "url": "https://www.turkishtestingboard.org/sertifikali-test-uzmani-temel-seviye-ctfl-v4-0-ornek-sinavi-d-turkce/",
+      "publisher": "Turkish Testing Board",
+      "documentVersion": "1.5"
+    },
+    {
+      "set": "A-D",
+      "lang": "en",
+      "url": "https://istqb.org/sdm_categories/certified-tester-foundation-level-ctfl-v4-0/",
+      "publisher": "ISTQB"
+    }
+  ]
 }

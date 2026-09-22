@@ -1,0 +1,196 @@
+{
+  "chunk": "ch06-b",
+  "chapter": 6,
+  "dataVersion": "2026.09.19",
+  "questions": [
+    {
+      "id": "ctfl4-0254",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1",
+      "objectives": [
+        "FL-6.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-tools",
+        "test-management-tools"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir kuruluşta gereksinimler bir dosyada, test senaryoları başka bir dosyada, hatalar (defect) ise ayrı bir sistemde tutuluyor; hangi gereksinimin hangi testle sınandığı ve hangi hatanın hangi testten çıktığı kimsenin takip edemediği bir hale gelmiş. Kuruluş bu üç öğeyi tek bir yerden, birbirine bağlı olarak yönetmek istiyor. Bunu EN İYİ sağlayan test aracı kategorisi hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test tasarımı ve test uyarlama araçları"
+            },
+            {
+              "id": "b",
+              "text": "Test koşumu ve kapsam araçları"
+            },
+            {
+              "id": "c",
+              "text": "Test yönetimi araçları"
+            },
+            {
+              "id": "d",
+              "text": "DevOps araçları"
+            }
+          ],
+          "rationale": {
+            "summary": "Test yönetimi araçları, müfredatta tam olarak YGYD'nin, gereksinimlerin, testlerin ve hataların (defect) yönetimini kolaylaştıran kategori olarak tanımlanır; senaryodaki tek yerden yönetme ve izlenebilirlik ihtiyacı budur. Diğer üç kategori farklı bir işlevi kolaylaştırır.",
+            "byOption": {
+              "a": "Yanlış. Test tasarımı ve test uyarlama araçları test senaryosu, test verisi ve test prosedürü üretimini kolaylaştırır; gereksinim-test-hata bağlarının tek yerden yönetilmesi bu kategorinin işi değildir.",
+              "b": "Yanlış. Test koşumu ve kapsam araçları testlerin otomatik olarak çalıştırılmasını ve kapsamın ölçülmesini kolaylaştırır; senaryodaki ihtiyaç izlenebilirliktir, koşum değil.",
+              "c": "Doğru. Test yönetimi araçları, YGYD'nin, gereksinimlerin, testlerin ve hataların (defect) yönetimini kolaylaştıran kategoridir; senaryodaki üç öğenin tek yerden, birbirine bağlı yönetilmesi tam olarak bu kapsama girer.",
+              "d": "Yanlış. DevOps araçları teslimat hattını, iş akışı takibini, otomatik derleme süreçlerini ve CI/CD'yi destekler; senaryodaki gereksinim-hata izlenebilirliği bu araçların işlevi değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "An organization keeps its requirements in one document, its test cases in another and its defects in a separate system, and nobody can any longer tell which requirement a test exercises or which test a defect came from. The organization wants the three managed in one place, linked to one another. Which category of test tool BEST provides this?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test design and test implementation tools"
+            },
+            {
+              "id": "b",
+              "text": "Test execution and test coverage tools"
+            },
+            {
+              "id": "c",
+              "text": "Test management tools"
+            },
+            {
+              "id": "d",
+              "text": "DevOps tools"
+            }
+          ],
+          "rationale": {
+            "summary": "Test management tools are the category the syllabus defines as facilitating management of the SDLC, requirements, tests and defects, which is exactly the single-place management and traceability the scenario asks for. The other three categories facilitate a different function.",
+            "byOption": {
+              "a": "Incorrect. Test design and test implementation tools facilitate generation of test cases, test data and test procedures; managing the links between requirements, tests and defects in one place is not this category's job.",
+              "b": "Incorrect. Test execution and test coverage tools facilitate automated test execution and coverage measurement; the need in the scenario is traceability, not execution.",
+              "c": "Correct. Test management tools facilitate management of the SDLC, requirements, tests and defects; managing the three items described in one linked place falls exactly within that scope.",
+              "d": "Incorrect. DevOps tools support the delivery pipeline, workflow tracking, automated build processes and CI/CD; requirement-defect traceability is not the function of these tools."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; findings 1/3/6/7 applied)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0255",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 6,
+      "section": "6.2",
+      "syllabusRef": "§6.2",
+      "objectives": [
+        "FL-6.2.1"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-automation",
+        "benefits",
+        "risks"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden hangisi test otomasyonu kullanmanın gerçek bir faydasıdır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Aracın kullanıma alınmasının ardından test betiklerinin bakımı için ayrıca efor gerekmemesi"
+            },
+            {
+              "id": "b",
+              "text": "İnsanların elle belirlemesi zor olan test kapsamı gibi ölçütlerin daha objektif şekilde değerlendirilmesi"
+            },
+            {
+              "id": "c",
+              "text": "Otomasyon kullanmanın, test sürecinin düzenleyici gereksinimlere ve emniyet standartlarına uygunluğunu güvence altına alması"
+            },
+            {
+              "id": "d",
+              "text": "Aracın kendini kısa sürede amorti etmesi, bu yüzden mevcut elle yürütülen süreci değiştirme eforunun planlamada göz ardı edilebilmesi"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredatta sayılan faydalardan biri, insanların elle belirlemesi zor olan test kapsamı gibi ölçütlerin araç yardımıyla daha objektif değerlendirilmesidir. Diğer üç seçenek, aslında müfredatın risk olarak saydığı maddeleri, o risk hiç yokmuş gibi tersine çevirir.",
+            "byOption": {
+              "a": "Yanlış. Bu, aslında sayılan bir riskin tersidir: test betiklerinin bakımı, aracın kendisi kadar sürekli bir efor gerektirir ve bu çoğu zaman hafife alınır; bakımın gereksiz hale gelmesi bir fayda olarak müfredatta yer almaz.",
+              "b": "Doğru. İnsanların elle belirlemesi zor olan ölçütlerin (örneğin test kapsamı) daha objektif değerlendirilmesi, müfredatta sayılan faydalardan biridir.",
+              "c": "Yanlış. Bu, aslında sayılan bir riskin tersidir: seçilen aracın düzenleyici gereksinimlere ve/veya emniyet standartlarına uygun OLMAMASI müfredatta bir risk olarak sayılır; otomasyon kullanmak uyumluluğu otomatik olarak garanti etmez.",
+              "d": "Yanlış. Bu, aslında sayılan bir riskin tersidir: aracın kullanıma alınması, betik bakımı ve süreç değişikliği için gereken zaman, maliyet ve eforun YANLIŞ tahmin edilmesi müfredatta bir risk olarak sayılır; bu efor gerçektir ve aracın kendini amorti edeceği varsayımıyla planlamadan düşülemez."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is a genuine benefit of using test automation?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Once the tool is introduced, no further effort is needed to maintain test scripts"
+            },
+            {
+              "id": "b",
+              "text": "A more objective assessment of measures that are hard for people to determine manually, such as test coverage"
+            },
+            {
+              "id": "c",
+              "text": "Automation ensures that the test process complies with regulatory requirements and safety standards"
+            },
+            {
+              "id": "d",
+              "text": "The tool pays for itself quickly, so the effort of changing the existing manual process can be left out of the plan"
+            }
+          ],
+          "rationale": {
+            "summary": "One of the benefits the syllabus lists is a more objective assessment of measures, such as test coverage, that are hard for people to determine manually. The other three options each take a risk the syllabus names and invert it into a false reassurance that the risk does not exist.",
+            "byOption": {
+              "a": "Incorrect. This inverts a listed risk: maintaining test scripts is an ongoing effort as demanding as the tool itself and is routinely underestimated; scripts becoming maintenance-free is not a benefit the syllabus lists.",
+              "b": "Correct. A more objective assessment of measures that are hard for people to determine manually, such as test coverage, is one of the listed benefits.",
+              "c": "Incorrect. This inverts a listed risk: the syllabus names choosing a tool that does NOT comply with regulatory requirements and/or safety standards as a risk; using automation does not automatically guarantee compliance.",
+              "d": "Incorrect. This inverts a listed risk: the syllabus names inaccurate estimation of the time, cost and effort needed to introduce the tool and change the existing process as a risk; that effort is real and cannot be left out of the plan on the assumption that the tool pays for itself."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; findings 1/3/6/7 applied)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    }
+  ]
+}

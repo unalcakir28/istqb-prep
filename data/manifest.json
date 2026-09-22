@@ -12,11 +12,11 @@
         "tr",
         "en"
       ],
-      "questionCount": 120,
+      "questionCount": 257,
       "coverage": {
         "objectivesTotal": 64,
         "objectivesCovered": 64,
-        "minPerObjective": 1
+        "minPerObjective": 4
       }
     }
   ]

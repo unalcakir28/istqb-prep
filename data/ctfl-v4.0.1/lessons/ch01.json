@@ -2,5 +2,774 @@
   "chunk": "ch01",
   "chapter": 1,
   "dataVersion": "2026.09.19",
-  "lessons": []
+  "lessons": [
+    {
+      "objective": "FL-1.1.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§1.1.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Testin tipik hedefleri",
+          "paragraphs": [
+            "Test etme tek bir amaca hizmet etmez; bağlama göre değişen birçok hedefi olabilir. Bu hedefler, seçilecek test yaklaşımını ve hangi aktivitelere öncelik verileceğini belirler.",
+            "Yaygın hedefler arasında hata bulmak, yeterli kalite düzeyine ulaşıldığına dair güven sağlamak, gereksinimlerin, yasal düzenlemelerin veya sözleşme şartlarının karşılandığını doğrulamak, hataların oluşmasını önlemek ve karar vericilere test durumu hakkında bilgi sağlamak yer alır.",
+            "Örneğin bileşen test aşamasında amaç genellikle mümkün olduğunca çok hata bulmakken, kabul testinde amaç genellikle sistemin beklendiği gibi çalıştığına dair güven kazanmaktır. Aynı proje içinde farklı test seviyelerinde farklı hedefler öne çıkabilir."
+          ],
+          "keyPoints": [
+            "Testin hedefi bağlama göre değişir; tek bir doğru hedef yoktur.",
+            "Yaygın hedefler: hata bulma, güven sağlama, gereksinim/yasal uygunluğu doğrulama, hata oluşumunu önleme, karar vericilere bilgi sağlama.",
+            "Farklı test seviyelerinde farklı hedefler öne çıkabilir (ör. bileşen testinde hata bulma, kabul testinde güven kazanma).",
+            "Test hedefi netleşmeden seçilen teknik ve yaklaşım, yanlış önceliklere yol açabilir."
+          ],
+          "commonMistakes": [
+            "Testin tek amacının hata bulmak olduğu sanılır; güven sağlamak, uygunluğu doğrulamak ve hata oluşumunu önlemek de aynı derecede geçerli hedeflerdir.",
+            "Aynı hedefin projenin her aşamasında geçerli olduğu sanılır; hedefler test seviyesine ve bağlama göre değişir."
+          ]
+        },
+        "en": {
+          "title": "Typical objectives of testing",
+          "paragraphs": [
+            "Testing does not serve a single purpose; its objectives shift with context. These objectives shape which test approach is chosen and which activities get priority.",
+            "Common objectives include finding defects, gaining confidence in an adequate level of quality, verifying that requirements, legal regulations or contractual obligations are met, preventing defects, and providing information to decision-makers about the current test status.",
+            "For example, the objective during component testing is often to find as many defects as possible, while during acceptance testing it is usually to build confidence that the system works as expected. Different test levels within the same project can therefore emphasize different objectives."
+          ],
+          "keyPoints": [
+            "The objective of testing depends on context; there is no single correct objective.",
+            "Common objectives: finding defects, building confidence, verifying compliance with requirements/regulations, preventing defects, informing decision-makers.",
+            "Different test levels can emphasize different objectives (e.g. defect-finding in component testing, confidence-building in acceptance testing).",
+            "Choosing techniques before the objective is clear can lead to the wrong priorities."
+          ],
+          "commonMistakes": [
+            "Assuming the only purpose of testing is finding defects; building confidence, verifying compliance and preventing defects are equally valid objectives.",
+            "Assuming the same objective applies at every stage of a project; objectives shift with the test level and context."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-1.1.2",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§1.1.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test etme ile hata ayıklamanın farkı",
+          "paragraphs": [
+            "Test etme ve hata ayıklama (debugging) farklı aktivitelerdir ve genellikle farklı kişiler tarafından yürütülür. Test etme, arızaları ortaya çıkarmayı, hata raporları oluşturmayı ve bunları belgelemeyi amaçlar.",
+            "Hata ayıklama ise bu hataların kök nedenini bulma, o kök nedeni gidermek için kodda değişiklik yapma ve değişikliğin işe yaradığını doğrulamayı içeren ayrı bir geliştirme aktivitesidir; genellikle yazılımcılar tarafından yürütülür.",
+            "Test etme bir arızanın varlığını gösterirken, hata ayıklama o arızanın altında yatan hatayı bulup düzeltir. Düzeltme sonrası onaylama testi, değişikliğin sorunu gerçekten çözdüğünü teyit eder."
+          ],
+          "keyPoints": [
+            "Test etme: arızaları ortaya çıkarır, hata raporu oluşturur.",
+            "Hata ayıklama: kök nedeni bulur, kodu düzeltir, düzeltmeyi doğrular; genellikle yazılımcının işidir.",
+            "İki aktivite farklı kişiler tarafından, farklı becerilerle yürütülür.",
+            "Düzeltme sonrası onaylama testi, hata ayıklamanın başarılı olduğunu teyit eder."
+          ],
+          "commonMistakes": [
+            "Test etme ile hata ayıklamanın aynı aktivite olduğu sanılır; test etme sorunu bulur, hata ayıklama sorunu çözer.",
+            "Test uzmanının koddaki hatayı düzeltmekle sorumlu olduğu sanılır; düzeltme genellikle yazılımcının görevidir."
+          ]
+        },
+        "en": {
+          "title": "Differentiating testing from debugging",
+          "paragraphs": [
+            "Testing and debugging are distinct activities, usually carried out by different people. Testing aims to reveal failures, and to create and document the resulting defect reports.",
+            "Debugging is a separate development activity that finds the root cause of a defect, changes the code to remove that root cause, and confirms the change works; it is typically carried out by developers.",
+            "Testing shows that a failure exists, while debugging locates and fixes the underlying defect. A confirmation test afterwards verifies that the fix actually resolved the problem."
+          ],
+          "keyPoints": [
+            "Testing reveals failures and produces defect reports.",
+            "Debugging finds the root cause, fixes the code, and confirms the fix; usually a developer's task.",
+            "The two activities are carried out by different people with different skills.",
+            "A confirmation test after the fix verifies debugging succeeded."
+          ],
+          "commonMistakes": [
+            "Assuming testing and debugging are the same activity; testing finds the problem, debugging fixes it.",
+            "Assuming the tester is responsible for fixing the code defect; that responsibility usually belongs to the developer."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-1.2.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§1.2.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Testin neden gerekli olduğu",
+          "paragraphs": [
+            "Yazılım hataları maliyetli, hatta tehlikeli sonuçlara yol açabilir; test etme bu riskleri azaltmanın temel yollarından biridir.",
+            "Test etme; paydaşlara ürün kalitesi hakkında bilgi sağlar, sözleşme, yasal veya standart gereksinimlere uyumu doğrulamaya yardımcı olur ve üretime geçmeden önce hataların bulunup giderilmesini sağlayarak maliyetli arızaları önler.",
+            "Örneğin bir bankacılık uygulamasındaki hesaplama hatası müşteri kaybına yol açabilir; bir tıbbi cihazdaki arıza ise hayati risk taşıyabilir. Bu tür örnekler, testin sadece iyi bir uygulama değil, birçok bağlamda zorunlu bir aktivite olduğunu gösterir."
+          ],
+          "keyPoints": [
+            "Test etme, hataların yol açabileceği maliyetli veya tehlikeli sonuçların riskini azaltır.",
+            "Test etme, paydaşlara ürün kalitesi ve risk düzeyi hakkında bilgi sağlar.",
+            "Test etme, sözleşme, yasal ve standart gereksinimlere uyumu doğrulamaya yardımcı olur.",
+            "Test edilmeden üretime geçen bir arıza, düzeltilmesi çok daha pahalı bir soruna dönüşebilir."
+          ],
+          "commonMistakes": [
+            "Testin isteğe bağlı bir ekstra adım olduğu sanılır; birçok bağlamda yasal, sözleşmesel veya güvenlik gereksinimi olarak zorunludur.",
+            "Testin tek faydasının hata bulmak olduğu sanılır; risk azaltma ve paydaşlara bilgi sağlama da en az o kadar önemlidir."
+          ]
+        },
+        "en": {
+          "title": "Why testing is necessary",
+          "paragraphs": [
+            "Software defects can be costly, or even dangerous; testing is one of the main ways to reduce these risks.",
+            "Testing gives stakeholders information about product quality, helps verify compliance with contractual, legal or standards-based requirements, and prevents costly failures by finding and removing defects before release.",
+            "For example, a calculation error in a banking application can cause customers to leave, while a failure in a medical device can be life-threatening. Examples like these show that testing is not merely good practice but a required activity in many contexts."
+          ],
+          "keyPoints": [
+            "Testing reduces the risk of costly or dangerous consequences caused by defects.",
+            "Testing gives stakeholders information about product quality and risk level.",
+            "Testing helps verify compliance with contractual, legal and standards-based requirements.",
+            "A failure that reaches production untested can become far more expensive to fix."
+          ],
+          "commonMistakes": [
+            "Assuming testing is an optional extra step; in many contexts it is required by law, contract or safety standards.",
+            "Assuming the only benefit of testing is finding defects; reducing risk and informing stakeholders are just as important."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-1.2.2",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§1.2.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test etme ile kalite güvence arasındaki ilişki",
+          "paragraphs": [
+            "Kalite güvence (QA) ve test etme ilişkili ama farklı kavramlardır. Kalite güvence, doğru süreçlerin izlenmesine odaklanan, kaliteye yönelik hataları önleyici bir yaklaşımdır.",
+            "Test etme ise bir kalite kontrol (QC) aktivitesidir; ürünü inceleyerek hataları bulmaya odaklanır. Test etme, kalite güvence şemsiyesi altındaki aktivitelerden biridir; kalite güvencenin tamamı değildir.",
+            "İyi işleyen bir kalite güvence süreci, doğru geliştirme ve test pratiklerinin uygulanmasını sağlayarak hataların ürüne girme olasılığını azaltır; test etme ise zaten ürüne girmiş olan hataları tespit eder."
+          ],
+          "keyPoints": [
+            "Kalite güvence süreç odaklıdır ve hataları önlemeyi hedefler; test etme ürün odaklıdır ve hataları bulmayı hedefler.",
+            "Test etme, kalite kontrolün (QC) bir parçasıdır.",
+            "Test etme, kalite güvencenin bir alt kümesidir; ikisi eş anlamlı değildir."
+          ],
+          "commonMistakes": [
+            "Kalite güvence ile test etme eş anlamlı sanılır; QA süreçle, test etme üründeki hatalarla ilgilenir.",
+            "Kalite güvencenin tek görevinin test etmek olduğu sanılır; QA çok daha geniş süreç iyileştirme aktivitelerini kapsar."
+          ]
+        },
+        "en": {
+          "title": "The relationship between testing and quality assurance",
+          "paragraphs": [
+            "Quality assurance (QA) and testing are related but different concepts. Quality assurance is a defect-prevention approach focused on following the right processes.",
+            "Testing is a quality control (QC) activity: it focuses on examining the product to find defects. Testing is one of the activities under the quality assurance umbrella; it is not the whole of quality assurance.",
+            "A well-run quality assurance process reduces the likelihood of defects entering the product by ensuring good development and testing practices are followed; testing then detects the defects that have already entered the product."
+          ],
+          "keyPoints": [
+            "Quality assurance is process-focused and aims to prevent defects; testing is product-focused and aims to find defects.",
+            "Testing is part of quality control (QC).",
+            "Testing is a subset of quality assurance; the two terms are not synonyms."
+          ],
+          "commonMistakes": [
+            "Assuming quality assurance and testing are synonyms; QA concerns the process, testing concerns defects in the product.",
+            "Assuming quality assurance's only job is testing; QA also covers much broader process-improvement activities."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-1.2.3",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§1.2.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "İnsan hatası, hata, arıza ve kök neden",
+          "paragraphs": [
+            "Bir kişi (yazılımcı, iş analisti, kullanıcı) yanlış bir karar verdiğinde veya bir şeyi yanlış anladığında bir insan hatası yapar. Bu insan hatası, kaynak kodunda, bir dokümanda veya bir sistemde bir hataya yol açabilir.",
+            "Hata, yazılımın veya sistemin bir parçasındaki bozuk bir durumdur; belirli koşullar altında çalıştırıldığında sistemin gerekli veya beklenen bir işlevi yerine getirmemesine, yani bir arızaya neden olabilir. Ancak her hata mutlaka bir arızaya yol açmaz; bazı hatalar hiç tetiklenmeyebilir.",
+            "Arızalar sadece hatalardan kaynaklanmaz; ortam koşulları (ör. elektromanyetik alanlar, radyasyon) veya beklenmeyen kullanım da bir arızaya yol açabilir. Bu yüzden her arızanın altında bir yazılım hatası vardır varsayımı her zaman doğru değildir.",
+            "Kök neden, bir hataya veya arızaya yol açan ilk, temel nedendir; kök neden ortadan kaldırılırsa hatanın veya arızanın tekrarlanma olasılığı ortadan kalkar veya azalır. Kök neden analizi, sadece belirtiyi değil, asıl kaynağı hedef alır."
+          ],
+          "keyPoints": [
+            "İnsan hatası: bir kişinin yanlış kararı veya yanlış anlaması.",
+            "Hata: insan hatasının kod, dokümanda veya sistemde bıraktığı bozuk durum.",
+            "Arıza: sistemin, beklenen işlevi çalıştırma sırasında yerine getirememesi.",
+            "Her hata bir arızaya yol açmaz; her arıza da mutlaka bir yazılım hatasından kaynaklanmaz (ortam veya kullanım da neden olabilir).",
+            "Kök neden: hatanın veya arızanın gerçek kaynağı; giderilirse tekrarı önler veya azaltır."
+          ],
+          "commonMistakes": [
+            "Hata ile arıza eş anlamlı kullanılır; oysa hata sistemdeki bozuk durumdur, arıza ise bu bozukluğun çalışma sırasında ortaya çıkan sonucudur.",
+            "İnsan hatası ile hata karıştırılır; insan hatası bir kişinin yaptığı yanlış, hata ise bunun kod veya dokümanda bıraktığı iz.",
+            "Her arızanın mutlaka bir yazılım hatasından kaynaklandığı varsayılır; ortam koşulları veya beklenmeyen kullanım da arızaya yol açabilir.",
+            "Kök neden ile hatanın kendisi aynı şey sanılır; kök neden, hataya yol açan asıl kaynaktır, hatanın kendisi değildir."
+          ]
+        },
+        "en": {
+          "title": "Error, defect, failure and root cause",
+          "paragraphs": [
+            "When a person (a developer, business analyst or user) makes a wrong decision or misunderstands something, they make an error. This error can introduce a defect into source code, a document or a system.",
+            "A defect is a flawed condition in part of the software or system; when triggered under certain conditions, it can cause the system to fail to perform a required or expected function, a failure. However, not every defect leads to a failure; some defects are never triggered.",
+            "Failures are not caused only by defects; environmental conditions (e.g. electromagnetic fields, radiation) or unexpected usage can also cause a failure. So the assumption that every failure must come from a software defect does not always hold.",
+            "A root cause is the earliest, underlying cause that leads to a defect or failure; if the root cause is removed, the defect or failure is prevented from recurring or its recurrence is reduced. Root cause analysis targets the actual source, not just the symptom."
+          ],
+          "keyPoints": [
+            "Error: a person's wrong decision or misunderstanding.",
+            "Defect: the flawed condition an error leaves in code, a document or a system.",
+            "Failure: the system's inability to perform an expected function when run.",
+            "Not every defect causes a failure; not every failure comes from a software defect (environment or usage can also cause one).",
+            "Root cause: the actual source of a defect or failure; removing it prevents or reduces recurrence."
+          ],
+          "commonMistakes": [
+            "Treating defect and failure as synonyms; a defect is the flawed condition, a failure is what happens when that flaw is triggered at runtime.",
+            "Confusing error with defect; an error is the person's mistake, a defect is the trace it leaves in code or a document.",
+            "Assuming every failure must come from a software defect; environmental conditions or unexpected usage can also cause failures.",
+            "Treating the root cause as the same thing as the defect itself; the root cause is what led to the defect, not the defect itself."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-1.3.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§1.3.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Yedi test prensibi",
+          "paragraphs": [
+            "Yıllar içinde test etme alanında birkaç genel prensip ortaya çıkmıştır; bunlar kesin kurallar değil, deneyimle doğrulanmış rehber ilkelerdir ve her test seviyesi ile türüne uygulanabilir.",
+            "İlk üç prensip testin doğasıyla ilgilidir: test etme yazılımda hata bulunduğunu gösterebilir ama hata olmadığını asla ispatlayamaz; küçük sistemler dışında yazılımı eksiksiz test etmek pratikte imkansızdır, bu yüzden test etme risklere göre önceliklendirilir. Ayrıca test etme geliştirme sürecine ne kadar erken dahil edilirse, hataların bulunması o kadar ucuz ve kolay olur.",
+            "Diğer prensipler hataların davranışıyla ilgilidir: hatalar genellikle yazılımın belirli bölgelerinde yoğunlaşır (kümelenme); aynı testler defalarca tekrarlandığında yeni hata bulma etkinliğini kaybeder (antibiyotik direnci olarak adlandırılan bu etkiyi azaltmak için testler gözden geçirilip çeşitlendirilmelidir); test etme bağlama göre değişir (ör. bir e-ticaret sitesi ile bir tıbbi cihaz farklı şekilde test edilir); ve hiçbir hata bulunamaması, yazılımın başarılı veya kullanılabilir olduğu anlamına gelmez (hata bulunamama yanılgısı)."
+          ],
+          "keyPoints": [
+            "Test etme, hata bulunduğunu gösterir; hata olmadığını asla ispatlamaz.",
+            "Küçük sistemler dışında, yazılımı eksiksiz test etmek imkansızdır; risk bazlı önceliklendirme gerekir.",
+            "Erken test etme, hataları bulmayı ucuzlatır ve kolaylaştırır.",
+            "Hatalar genellikle yazılımın belirli bölgelerinde kümelenir.",
+            "Aynı testler tekrar tekrar çalıştırıldığında yeni hata bulmada etkisini kaybeder (antibiyotik direnci); testler gözden geçirilip çeşitlendirilmelidir.",
+            "Test etme, projenin bağlamına göre değişir; tek bir doğru yaklaşım yoktur.",
+            "Hata bulunamaması yazılımın başarılı olduğu anlamına gelmez (hata bulunamama yanılgısı)."
+          ],
+          "commonMistakes": [
+            "Test etme hata bulmadıysa yazılımda hata yoktur sanılır; test etme sadece hata varlığını gösterebilir, yokluğunu asla ispatlayamaz.",
+            "Yazılımın eksiksiz test edilebileceği varsayılır; küçük sistemler dışında bu pratikte imkansızdır, bu yüzden risk bazlı önceliklendirme yapılır.",
+            "Antibiyotik direnci prensibi testlerin hiç tekrarlanmaması gerektiği şeklinde yorumlanır; oysa asıl gereken, mevcut testleri düzenli olarak gözden geçirip çeşitlendirmektir.",
+            "Tüm gereksinimler doğrulandığında ve hiç hata bulunamadığında yazılımın kesin başarılı olduğu sanılır; bu hata bulunamama yanılgısıdır."
+          ]
+        },
+        "en": {
+          "title": "The seven testing principles",
+          "paragraphs": [
+            "Over the years, a small set of general principles has emerged in testing; these are not strict rules but guidelines confirmed by experience, and they apply across test levels and types.",
+            "The first few principles concern the nature of testing itself: testing can show that defects are present but can never prove they are absent; exhaustive testing of anything but the smallest systems is practically impossible, so testing must be prioritized by risk; and the earlier testing is introduced into development, the cheaper and easier it is to find defects.",
+            "Other principles concern how defects behave: defects tend to cluster in certain parts of the software (defect clustering); running the same tests repeatedly loses its power to find new defects, an effect known as the pesticide paradox and reduced by regularly reviewing and varying the tests; testing is context dependent (an e-commerce site and a medical device are tested differently); and finding no defects does not mean the software is successful or usable, known as the absence-of-defects fallacy."
+          ],
+          "keyPoints": [
+            "Testing shows defects are present; it never proves their absence.",
+            "Exhaustive testing is impossible except for the smallest systems; prioritize by risk instead.",
+            "Early testing makes defects cheaper and easier to find.",
+            "Defects tend to cluster in certain parts of the software.",
+            "Running the same tests repeatedly loses its power to find new defects (pesticide paradox); vary and review the tests.",
+            "Testing is context dependent; there is no single correct approach for every project.",
+            "Finding no defects does not mean the software is successful (absence-of-defects fallacy)."
+          ],
+          "commonMistakes": [
+            "Assuming no defects found means no defects exist; testing can only show presence, never prove absence.",
+            "Assuming software can be tested exhaustively; except for the smallest systems this is impractical, so testing is prioritized by risk instead.",
+            "Interpreting the pesticide paradox as never repeat tests; the actual lesson is to regularly review and vary the existing tests.",
+            "Assuming that verifying all requirements with zero defects found guarantees success; this is the absence-of-defects fallacy."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-1.4.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§1.4.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test aktiviteleri ve görevleri",
+          "paragraphs": [
+            "Bir test süreci genellikle şu ana aktivite gruplarından oluşur: test planlama, test gözetimi ve kontrolü, test analizi, test tasarımı, test uyarlama, test koşumu ve test tamamlama. Bu aktiviteler mantıksal bir sıra izliyor gibi görünse de genellikle tekrarlanarak veya paralel yürütülür ve sisteme ve projeye uyarlanır.",
+            "Test planlama, hedefleri belirleyip bu hedeflere bağlam kısıtları içinde en iyi ulaşacak yaklaşımı seçmektir. Test gözetimi devam eden tüm aktiviteleri planla karşılaştırırken, test kontrolü hedeflere ulaşmak için gerekli aksiyonları alır.",
+            "Test analizi ne test edilecek sorusunu, ölçülebilir kapsam kriterleriyle cevaplar; test tasarımı ise nasıl test edilecek sorusunu cevaplayıp test koşullarını test senaryolarına dönüştürür. Test uyarlama gerekli test çalışma ürünlerini oluşturur, test koşumu testleri çalıştırıp sonuçları kaydeder ve anomalileri analiz eder.",
+            "Test tamamlama, genellikle sürüm veya döngü sonu gibi proje kilometre taşlarında gerçekleşir: çözülmemiş hatalar için değişiklik talebi açılır, yararlı test çalışma ürünleri arşivlenir, test ortamı kapatılır ve bir test tamamlama raporu hazırlanır."
+          ],
+          "keyPoints": [
+            "Test planlama: hedefleri belirler ve bunlara ulaşacak yaklaşımı seçer.",
+            "Test gözetimi: aktiviteleri planla karşılaştırır; test kontrolü: hedeflere ulaşmak için aksiyon alır.",
+            "Test analizi: test esasını inceleyip test koşullarını belirler; ne test edilecek sorusunu cevaplar.",
+            "Test tasarımı: test koşullarını test senaryolarına dönüştürür; nasıl test edilecek sorusunu cevaplar.",
+            "Test uyarlama: test koşumu için gerekli test çalışma ürünlerini hazırlar.",
+            "Test koşumu: testleri çalıştırır, sonuçları kaydeder ve anomalileri analiz eder.",
+            "Test tamamlama: proje kilometre taşlarında test çalışma ürünlerini arşivler ve bir tamamlama raporu üretir."
+          ],
+          "commonMistakes": [
+            "Bu yedi aktivite grubunun kesin sıralı ve tek seferlik olduğu sanılır; oysa genellikle tekrarlanarak veya paralel yürütülür.",
+            "Test analizi ile test tasarımı karıştırılır; analiz ne test edilecek sorusunu, tasarım nasıl test edilecek sorusunu cevaplar.",
+            "Test gözetimi ile test kontrolü aynı şey sanılır; gözetim izleme ve karşılaştırmadır, kontrol ise düzeltici aksiyon almaktır."
+          ]
+        },
+        "en": {
+          "title": "Test activities and tasks",
+          "paragraphs": [
+            "A test process is typically made up of these groups of activities: test planning, test monitoring and control, test analysis, test design, test implementation, test execution, and test completion. Although they can look sequential, they are usually iterative, run in parallel, and tailored to the system and project.",
+            "Test planning defines the objectives and selects the approach that best achieves them within the constraints of the context. Test monitoring compares all ongoing activities against the plan, while test control takes the actions needed to meet the objectives.",
+            "Test analysis answers what to test by producing measurable coverage criteria; test design answers how to test by turning test conditions into test cases. Test implementation creates the necessary test work products, and test execution runs the tests, records the results and analyzes anomalies.",
+            "Test completion usually happens at project milestones such as a release or the end of a test cycle: unresolved defects get a change request, useful test work products are archived, the test environment is shut down, and a test completion report is produced."
+          ],
+          "keyPoints": [
+            "Test planning: defines objectives and selects the approach to reach them.",
+            "Test monitoring compares activities against the plan; test control takes action to meet objectives.",
+            "Test analysis: examines the test basis and derives test conditions; answers what to test.",
+            "Test design: turns test conditions into test cases; answers how to test.",
+            "Test implementation: prepares the test work products needed for execution.",
+            "Test execution: runs the tests, records results, and analyzes anomalies.",
+            "Test completion: archives test work products and produces a completion report at project milestones."
+          ],
+          "commonMistakes": [
+            "Assuming the seven activity groups run strictly in sequence, once each; in practice they are iterative and often run in parallel.",
+            "Confusing test analysis with test design; analysis answers what to test, design answers how to test.",
+            "Treating test monitoring and test control as the same thing; monitoring is observing and comparing, control is taking corrective action."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-1.4.2",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§1.4.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Bağlamın test süreci üzerindeki etkisi",
+          "paragraphs": [
+            "Test izole şekilde yapılmaz; kurumun yazılım geliştirme süreçlerinin ayrılmaz bir parçasıdır ve paydaşlar tarafından finanse edilir; nihai amacı paydaşların iş ihtiyaçlarını karşılamaktır.",
+            "Testin nasıl yürütüleceği birçok bağlamsal faktöre bağlıdır: paydaşlar, ekip üyelerinin becerileri, kurumun faaliyet alanı, teknik faktörler, proje kısıtları, organizasyonel yapı, izlenen yazılım geliştirme yaşam döngüsü ve kullanılabilir araçlar.",
+            "Bu faktörler; test stratejisini, kullanılan test tekniklerini, otomasyon derecesini, gereken kapsam seviyesini, test çalışma ürünlerinin ayrıntı düzeyini ve test raporlamasını doğrudan etkiler."
+          ],
+          "keyPoints": [
+            "Test, organizasyonun geliştirme süreçlerinin ayrılmaz bir parçasıdır ve paydaşlarca finanse edilir.",
+            "Bağlamsal faktörler arasında paydaşlar, ekip becerileri, kurumun faaliyet alanı, teknik faktörler, proje kısıtları, organizasyonel yapı, yazılım geliştirme yaşam döngüsü ve araçlar yer alır.",
+            "Aynı test süreci her projede aynı şekilde uygulanmaz; bağlama göre uyarlanır.",
+            "Bağlam; test stratejisini, teknik seçimini ve otomasyon derecesini etkiler.",
+            "Bağlam; gerekli kapsam seviyesini, test çalışma ürünlerinin ayrıntı düzeyini ve raporlamayı da şekillendirir."
+          ],
+          "commonMistakes": [
+            "Tek bir doğru test sürecinin her projede aynı şekilde uygulanabileceği sanılır; oysa test süreci bağlama göre özelleştirilir.",
+            "Bağlamın yalnızca teknik faktörlerden (teknoloji, mimari) ibaret olduğu sanılır; paydaşlar, organizasyonel yapı ve proje kısıtları da eşit derecede belirleyicidir."
+          ]
+        },
+        "en": {
+          "title": "The impact of context on the test process",
+          "paragraphs": [
+            "Testing is not done in isolation; it is an integral part of an organization's software development processes, funded by stakeholders, and ultimately aimed at meeting stakeholders' business needs.",
+            "How testing is carried out depends on many contextual factors: stakeholders, team members' skills, the organization's business domain, technical factors, project constraints, organizational structure, the software development lifecycle in use, and the tools available.",
+            "These factors directly shape the test strategy, the techniques used, the degree of automation, the required level of coverage, the level of detail in test work products, and test reporting."
+          ],
+          "keyPoints": [
+            "Testing is an integral part of an organization's development process, funded by stakeholders.",
+            "Contextual factors include stakeholders, team skills, business domain, technical factors, project constraints, organizational structure, the SDLC and tools.",
+            "The same test process is not applied identically to every project; it is tailored to context.",
+            "Context shapes the test strategy, technique selection and degree of automation.",
+            "Context also shapes the required coverage level, testware detail and reporting."
+          ],
+          "commonMistakes": [
+            "Assuming one correct test process can be applied identically on every project; the test process is tailored to context.",
+            "Assuming context consists only of technical factors like technology or architecture; stakeholders, organizational structure and project constraints matter just as much."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-1.4.3",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§1.4.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test aktivitelerini destekleyen test çalışma ürünleri",
+          "paragraphs": [
+            "Test çalışma ürünleri, test aktivitelerinin çıktısı olarak ortaya çıkan iş ürünleridir. Organizasyonlar bunları farklı şekilde üretir, adlandırır ve yönetir; uygun yapılandırma yönetimi bu ürünler arasında tutarlılık ve bütünlük sağlar.",
+            "Her test aktivitesi kendi çalışma ürünlerini üretir: test planlama test planı, zaman çizelgesi, risk kaydı, giriş ve çıkış kriterleri üretir; test gözetimi ve kontrolü ilerleme raporları ve kontrol direktifleri üretir; test analizi önceliklendirilmiş test koşulları ve test esasındaki hatalara ilişkin hata raporları üretir.",
+            "Test tasarımı test senaryoları, kapsam öğeleri, test verisi ve test ortamı gereksinimleri üretir; test uyarlama test prosedürleri, manuel veya otomatik betikler, test grupları ve test ortamı öğeleri (taklit uygulamalar, sürücüler, simülatörler) üretir; test koşumu test kayıtları ve hata raporları üretir; test tamamlama tamamlama raporu, iyileştirme aksiyonları, tecrübeler ve değişiklik talepleri üretir."
+          ],
+          "keyPoints": [
+            "Test çalışma ürünleri, test aktivitelerinin çıktısı olan iş ürünleridir; her aktivite grubu kendine özgü çalışma ürünleri üretir.",
+            "Test analizinin çalışma ürünleri: test koşulları ve test esasındaki hatalara ilişkin hata raporları.",
+            "Test tasarımının çalışma ürünleri: test senaryoları, kapsam öğeleri, test verisi ve test ortamı gereksinimleri.",
+            "Test uyarlamanın çalışma ürünleri: test prosedürleri, manuel veya otomatik betikler ve test ortamı öğeleri.",
+            "Uygun yapılandırma yönetimi, farklı organizasyonlarda üretilen test çalışma ürünleri arasında tutarlılık sağlar."
+          ],
+          "commonMistakes": [
+            "Test senaryosu ile hata raporu gibi farklı aktivitelerin çıktıları birbirine karıştırılır; her aktivite grubunun kendine özgü çalışma ürünü vardır.",
+            "Test çalışma ürünlerinin yalnızca test senaryolarından ibaret olduğu sanılır; test planı, risk kaydı ve test ortamı öğeleri de birer test çalışma ürünüdür."
+          ]
+        },
+        "en": {
+          "title": "Testware supporting the test activities",
+          "paragraphs": [
+            "Testware refers to the work products produced by test activities. Different organizations produce, name and manage them differently; proper configuration management keeps these work products consistent and intact.",
+            "Each test activity produces its own testware: test planning produces a test plan, schedule, risk register and entry and exit criteria; test monitoring and control produce progress reports and control directives; test analysis produces prioritized test conditions and defect reports against the test basis.",
+            "Test design produces test cases, coverage items, and test data and environment requirements; test implementation produces test procedures, manual or automated scripts, test suites, and test environment items such as stubs, drivers and simulators; test execution produces test logs and defect reports; test completion produces a completion report, improvement actions, lessons learned and change requests."
+          ],
+          "keyPoints": [
+            "Testware is the set of work products produced by test activities; each activity group produces its own testware.",
+            "Test analysis's testware: test conditions and defect reports against the test basis.",
+            "Test design's testware: test cases, coverage items, and test data and environment requirements.",
+            "Test implementation's testware: test procedures, manual or automated scripts, and test environment items.",
+            "Proper configuration management keeps testware from different organizations consistent."
+          ],
+          "commonMistakes": [
+            "Confusing the outputs of different activities, such as a test case with a defect report; each activity group has its own distinct testware.",
+            "Assuming testware consists only of test cases; a test plan, a risk register and test environment items are testware too."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-1.4.4",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§1.4.4",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test esası ile test çalışma ürünleri arasında izlenebilirlik",
+          "paragraphs": [
+            "Etkili test gözetimi ve kontrolü için, test esası unsurları ile bunlarla ilişkili test çalışma ürünleri (test koşulları, riskler, test senaryoları), test sonuçları ve hatalar arasında izlenebilirliğin kurulup sürdürülmesi gerekir.",
+            "Doğru izlenebilirlik kapsam değerlendirmesini destekler; test esasında ölçülebilir kapsam kriterleri tanımlıysa bunlar hedeflere ne ölçüde ulaşıldığını gösteren performans göstergeleri olarak kullanılabilir. Örneğin test senaryolarının gereksinimlere izlenebilirliği, gereksinimlerin kapsandığını doğrular; test sonuçlarının risklere izlenebilirliği ise kalan risk seviyesini değerlendirmede kullanılır.",
+            "İyi izlenebilirlik yalnızca kapsam değerlendirmesine değil; etki analizine, denetimlere, BT yönetişim gereksinimlerinin karşılanmasına da yardımcı olur. Ayrıca test ilerleme ve tamamlama raporlarının anlaşılırlığını artırır ve testin teknik yönlerinin paydaşlara aktarılmasını kolaylaştırır."
+          ],
+          "keyPoints": [
+            "İzlenebilirlik; test esası unsurları, test çalışma ürünleri, test sonuçları ve hatalar arasında kurulur ve sürdürülür.",
+            "İyi izlenebilirlik, ölçülebilir kapsam kriterleriyle birleştiğinde etkili bir performans göstergesi olur.",
+            "Test senaryolarının gereksinimlere izlenebilirliği, gereksinimlerin kapsandığını doğrulamada kullanılır.",
+            "Test sonuçlarının risklere izlenebilirliği, kalan risk seviyesini değerlendirmede kullanılır.",
+            "İzlenebilirlik; etki analizi, denetim ve paydaş iletişimi için de değer sağlar."
+          ],
+          "commonMistakes": [
+            "İzlenebilirliğin sadece raporlama kolaylığı sağladığı sanılır; asıl değeri kapsam değerlendirmesi, etki analizi ve denetim gibi birçok alanı desteklemesindedir.",
+            "İzlenebilirliğin yalnızca gereksinim ile test senaryosu eşleşmesinden ibaret olduğu sanılır; risklerin ve test sonuçlarının izlenebilirliği de aynı derecede önemlidir."
+          ]
+        },
+        "en": {
+          "title": "Traceability between the test basis and testware",
+          "paragraphs": [
+            "Effective test monitoring and control requires establishing and maintaining traceability between elements of the test basis and the associated testware (test conditions, risks, test cases), as well as test results and defects.",
+            "Good traceability supports coverage evaluation; where the test basis defines measurable coverage criteria, traceability can turn them into indicators of how well objectives have been met. For example, tracing test cases to requirements confirms requirement coverage, while tracing test results to risks helps evaluate residual risk.",
+            "Good traceability also supports impact analysis, audits, and meeting IT governance requirements, and it makes test progress and completion reports clearer and easier to communicate to stakeholders."
+          ],
+          "keyPoints": [
+            "Traceability is established and maintained between the test basis, testware, test results and defects.",
+            "Good traceability, combined with measurable coverage criteria, becomes an effective progress indicator.",
+            "Tracing test cases to requirements confirms that requirements are covered.",
+            "Tracing test results to risks helps evaluate residual risk.",
+            "Traceability also supports impact analysis, audits and stakeholder communication."
+          ],
+          "commonMistakes": [
+            "Assuming traceability only makes reporting more convenient; its real value also includes coverage evaluation, impact analysis and audits.",
+            "Assuming traceability is only about mapping requirements to test cases; tracing risks and test results matters just as much."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-1.4.5",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§1.4.5",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test etme sürecindeki roller",
+          "paragraphs": [
+            "Bu müfredatta iki temel test rolünden bahsedilir: test yönetimi rolü ve test etme rolü. Bu rollere atanan görevler; projenin veya ürünün bağlamına, kişilerin becerilerine ve kuruma göre değişir.",
+            "Test yönetimi rolü; test sürecinin, ekibin ve test aktivitelerine liderliğin genel sorumluluğunu taşır ve temelde test planlama, test gözetimi ve kontrolü ile test tamamlama aktivitelerine odaklanır. Bu rolün yürütülüşü bağlama göre değişir; örneğin Çevik geliştirmede bazı görevler ekip tarafından üstlenilirken, birden fazla ekibi ilgilendiren görevler test yöneticileri tarafından yürütülebilir.",
+            "Test etme rolü, testin mühendislik yönünün tüm sorumluluğunu taşır ve test analizi, test tasarımı, test uyarlama ve test koşumu aktivitelerine odaklanır. Aynı kişi farklı zamanlarda farklı rolleri üstlenebilir; hatta bir kişi her iki rolü de aynı anda yürütebilir."
+          ],
+          "keyPoints": [
+            "Test yönetimi rolü: test sürecine, ekibe ve liderliğe genel sorumluluk; planlama, gözetim ve kontrol ile tamamlamaya odaklanır.",
+            "Test etme rolü: testin teknik yönüne sorumluluk; analiz, tasarım, uyarlama ve koşuma odaklanır.",
+            "Rollerin yürütülüş şekli bağlama göre değişir.",
+            "Aynı kişi farklı zamanlarda farklı rolleri, hatta ikisini birden üstlenebilir."
+          ],
+          "commonMistakes": [
+            "Test yönetimi rolünün yalnızca yönetici unvanlı kişilere ait olduğu sanılır; Çevik ekiplerde bu görevler ekip üyelerince de yürütülebilir.",
+            "İki rolün ayrı kişiler tarafından yürütülmesi gerektiği sanılır; aynı kişi her iki rolü de üstlenebilir."
+          ]
+        },
+        "en": {
+          "title": "Roles in testing",
+          "paragraphs": [
+            "This syllabus describes two core testing roles: a test management role and a testing role. The tasks assigned to each role vary with the context of the project or product, people's skills, and the organization.",
+            "The test management role carries overall responsibility for the test process, the team, and leading the test activities, focusing mainly on test planning, test monitoring and control, and test completion. How this role is carried out depends on context; for example, in Agile development some of these tasks may be handled by the team itself, while tasks spanning multiple teams may be handled by test managers.",
+            "The testing role carries overall responsibility for the engineering side of testing, focusing on test analysis, test design, test implementation and test execution. The same person can hold different roles at different times, or even both roles at once."
+          ],
+          "keyPoints": [
+            "Test management role: overall responsibility for the test process, team and leadership; focuses on planning, monitoring and control, and completion.",
+            "Testing role: overall responsibility for the technical side of testing; focuses on analysis, design, implementation and execution.",
+            "How the roles are carried out depends on context.",
+            "The same person can hold different roles at different times, or both at once."
+          ],
+          "commonMistakes": [
+            "Assuming the test management role belongs only to people with a manager title; in Agile teams these tasks can be carried out by team members.",
+            "Assuming the two roles must be held by different people; the same person can perform both."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-1.5.1",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§1.5.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Test etmede gerekli genel beceriler",
+          "paragraphs": [
+            "İyi bir test uzmanı; test bilgisi, titizlik, dikkat, merak, detaycılık ve sistematik çalışma, iyi iletişim ve aktif dinleme, analitik ve eleştirel düşünce ile yaratıcılık, teknik bilgi ve alan bilgisi gibi genel becerilere sahip olmalıdır. Bu beceriler test etmenin etkinliğini ve verimliliğini artırır.",
+            "Test uzmanları genellikle kötü haberi veren taraf olur; kötü haber verenleri suçlamak yaygın bir insan davranışıdır. Bu yüzden iletişim becerisi kritiktir: test sonuçları, ürüne veya sahibine yönelik bir eleştiri olarak algılanabilir ve doğrulama yanlılığı, mevcut inançlarla çelişen bilgilerin kabulünü zorlaştırabilir.",
+            "Bazı kişiler testi yıkıcı bir faaliyet olarak görebilir; oysa proje başarısına ve ürün kalitesine büyük katkı sağlar. Bu algıyı iyileştirmek için hatalar ve arızalar hakkındaki bilgiler yapıcı bir dille iletilmelidir."
+          ],
+          "keyPoints": [
+            "Genel beceriler: test bilgisi, titizlik/dikkat/merak, iletişim ve aktif dinleme, analitik-eleştirel düşünce ve yaratıcılık, teknik bilgi, alan bilgisi.",
+            "Titizlik ve dikkat özellikle bulunması zor hataları ortaya çıkarmak için önemlidir.",
+            "Test uzmanları kötü haberi getiren konumundadır; bu iletişim becerisini kritik kılar.",
+            "Doğrulama yanlılığı, mevcut inançlarla çelişen test sonuçlarının kabulünü zorlaştırabilir.",
+            "Hata ve arıza bilgisi yapıcı bir dille iletilmelidir; aksi halde test yıkıcı bir faaliyet olarak algılanabilir."
+          ],
+          "commonMistakes": [
+            "Test etmenin yalnızca teknik bir beceri gerektirdiği sanılır; iletişim, eleştirel düşünme ve alan bilgisi de aynı derecede gereklidir.",
+            "Kötü haber verme durumunun test uzmanının hatası olduğu sanılır; bu insan doğasından kaynaklanan bir tepkidir, iletişim becerisiyle yönetilir."
+          ]
+        },
+        "en": {
+          "title": "Generic skills required for testing",
+          "paragraphs": [
+            "A good tester needs generic skills such as testing knowledge, thoroughness, carefulness, curiosity, attention to detail, a methodical approach, good communication and active listening, analytical and critical thinking with creativity, technical knowledge, and domain knowledge. These skills increase the effectiveness and efficiency of testing.",
+            "Testers are often the bearers of bad news, and blaming the messenger is a common human reaction. This makes communication skills critical: test results can be perceived as criticism of the product or its owner, and confirmation bias can make it harder for people to accept information that conflicts with their existing beliefs.",
+            "Some people view testing as a destructive activity, when in fact it contributes significantly to project success and product quality. To improve this perception, information about defects and failures should be communicated constructively."
+          ],
+          "keyPoints": [
+            "Generic skills: testing knowledge, thoroughness/care/curiosity, communication and active listening, analytical-critical thinking and creativity, technical knowledge, domain knowledge.",
+            "Thoroughness and attention to detail are especially important for surfacing hard-to-find defects.",
+            "Testers are often the bearer of bad news, which makes communication skills critical.",
+            "Confirmation bias can make it harder for people to accept test results that conflict with their existing beliefs.",
+            "Defect and failure information should be communicated constructively, or testing risks being seen as a destructive activity."
+          ],
+          "commonMistakes": [
+            "Assuming testing requires only technical skill; communication, critical thinking and domain knowledge are just as necessary.",
+            "Assuming the tester is at fault for delivering bad news; this reaction stems from human nature and is managed through communication skill."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-1.5.2",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§1.5.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Tüm ekip yaklaşımı",
+          "paragraphs": [
+            "Tüm ekip yaklaşımı, Ekstrem Programlama'dan gelen bir pratiktir: gerekli bilgi ve beceriye sahip her ekip üyesi herhangi bir görevi üstlenebilir ve kaliteden herkes sorumludur.",
+            "Ekip üyelerinin aynı çalışma alanını, fiziksel veya sanal, paylaşması iletişimi ve etkileşimi kolaylaştırır. Bu yaklaşım ekip dinamiklerini geliştirir, iş birliğini artırır ve farklı becerilerin projeye kazandırılmasıyla sinerji yaratır.",
+            "Test uzmanları bu yaklaşımda iş birimleriyle kabul testleri üzerine, yazılımcılarla test stratejisi ve otomasyon üzerine yakın çalışır; böylece test bilgisini ekibe yayarlar. Ancak bağlama göre her zaman uygun olmayabilir; örneğin emniyet hassasiyetli durumlarda yüksek düzeyde test bağımsızlığı gerekebilir."
+          ],
+          "keyPoints": [
+            "Tüm ekip yaklaşımında, gerekli bilgi ve beceriye sahip her üye herhangi bir görevi yapabilir; kalite herkesin sorumluluğudur.",
+            "Ortak çalışma alanı iletişimi kolaylaştırır ve ekip sinerjisi yaratır.",
+            "Test uzmanları bu yaklaşımda bilgilerini ekibe aktarır ve ürünün gelişimine katkı sağlar.",
+            "Emniyet hassasiyetli gibi yüksek bağımsızlık gerektiren bağlamlarda bu yaklaşım her zaman uygun olmayabilir."
+          ],
+          "commonMistakes": [
+            "Tüm ekip yaklaşımının test uzmanına ihtiyaç kalmadığı anlamına geldiği sanılır; test uzmanı hâlâ bilgisini ekibe aktaran bir roldedir.",
+            "Bu yaklaşımın her bağlamda uygun olduğu sanılır; yüksek bağımsızlık gereken durumlarda uygun olmayabilir."
+          ]
+        },
+        "en": {
+          "title": "The whole team approach",
+          "paragraphs": [
+            "The whole-team approach comes from Extreme Programming: any team member with the necessary knowledge and skill can perform any task, and quality is everyone's responsibility.",
+            "Team members sharing the same workspace, physical or virtual, makes communication and interaction easier. This approach improves team dynamics, increases collaboration, and creates synergy by bringing different skills into the project.",
+            "Under this approach, testers work closely with business representatives on acceptance tests and with developers on test strategy and automation, spreading testing knowledge across the team. However, it is not always appropriate for every context; safety-critical situations, for example, may require a high degree of test independence."
+          ],
+          "keyPoints": [
+            "In the whole-team approach, any member with the necessary knowledge and skill can do any task; quality is everyone's responsibility.",
+            "A shared workspace makes communication easier and creates team synergy.",
+            "Testers spread testing knowledge across the team and contribute to product development.",
+            "This approach may not be appropriate in contexts needing high independence, such as safety-critical systems."
+          ],
+          "commonMistakes": [
+            "Assuming the whole-team approach means testers are no longer needed; the tester still plays a role in spreading testing knowledge to the team.",
+            "Assuming this approach fits every context; situations requiring high independence may not suit it."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "objective": "FL-1.5.3",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§1.5.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Testin bağımsızlığı",
+          "paragraphs": [
+            "Belirli bir bağımsızlık düzeyi, yazarın ve test uzmanının bilişsel önyargıları farklı olduğundan test uzmanının hata bulmada daha etkili olmasını sağlar. Ancak bağımsızlık, aşinalığın yerini tutmaz; örneğin yazılımcılar kendi kodlarındaki birçok hatayı verimli bulabilir.",
+            "Bağımsızlık düzeyleri şunlardır: iş ürününü yazarın kendisinin test etmesi (bağımsızlık yok), aynı ekipten arkadaşların test etmesi (biraz bağımsız), ekip dışı ama kurum içi test uzmanlarının test etmesi (yüksek bağımsızlık) veya kurum dışı test uzmanlarının test etmesi (çok yüksek bağımsızlık). Çoğu projede en iyi seçenek, birden çok bağımsızlık seviyesini bir arada kullanmaktır.",
+            "Bağımsız testin başlıca faydası, farklı geçmiş ve bakış açıları nedeniyle yazılımcılara kıyasla farklı türde arıza ve hata bulma olasılığının yüksek olması ve paydaşların varsayımlarını sorgulayabilmesidir.",
+            "Ancak sakıncaları da vardır: geliştirme ekibinden izolasyon, iş birliği ve iletişim sorunları veya çekişmeli ilişkiler doğabilir; yazılımcılar kalite sorumluluğunu kaybedebilir; bağımsız test uzmanları bir darboğaz olarak görülebilir veya gecikmelerden sorumlu tutulabilir."
+          ],
+          "keyPoints": [
+            "Bağımsızlık düzeyleri: yazarın kendisi (yok), aynı ekipten arkadaş (biraz), ekip dışı ve kurum içi (yüksek), kurum dışı (çok yüksek).",
+            "Bağımsızlık, aşinalığın yerine geçmez; yazılımcı kendi kodundaki birçok hatayı verimli bulabilir.",
+            "Fayda: farklı geçmiş ve önyargılar sayesinde farklı arıza ve hata türlerinin bulunması, varsayımların sorgulanması.",
+            "Sakınca: geliştirme ekibinden izolasyon, iletişim sorunları, darboğaz olarak görülme veya gecikmelerden sorumlu tutulma.",
+            "Çoğu proje için en iyi yaklaşım, birden fazla bağımsızlık seviyesini bir arada kullanmaktır."
+          ],
+          "commonMistakes": [
+            "Daha bağımsız her zaman daha iyidir sanılır; oysa bağımsızlık aşinalığın yerini tutmaz ve tek başına yeterli değildir.",
+            "Bağımsız test uzmanlarının geliştirme ekibiyle çatışmasının kaçınılmaz olduğu sanılır; bu bir risktir, kural değildir, iyi iş birliğiyle azaltılabilir.",
+            "Bağımsızlığın tek bir seviyesi (var ya da yok) olduğu sanılır; aslında dört farklı düzey vardır ve çoğu projede bunlar birlikte kullanılır."
+          ]
+        },
+        "en": {
+          "title": "Independence of testing",
+          "paragraphs": [
+            "A degree of independence makes a tester more effective at finding defects, because the author and the tester have different cognitive biases. However, independence is not a substitute for familiarity; developers, for example, can efficiently find many defects in their own code.",
+            "Levels of independence include: no independence, where authors test their own work; some independence, where peers from the same team test each other's work; high independence, where testers outside the team but inside the organization test the work; and very high independence, where testers from outside the organization test it. For most projects, the best option is to combine multiple levels of independence.",
+            "The main benefit of independent testing is a higher likelihood of finding different kinds of defects and failures than developers would, due to differing backgrounds and perspectives, and the ability to challenge stakeholders' assumptions.",
+            "There are also drawbacks: isolation from the development team can create collaboration and communication problems or an adversarial relationship; developers may feel less responsible for quality; and independent testers can be seen as a bottleneck or blamed for delays."
+          ],
+          "keyPoints": [
+            "Levels of independence: the author (none), a peer on the same team (some), testers outside the team but inside the organization (high), testers outside the organization (very high).",
+            "Independence is not a substitute for familiarity; developers can efficiently find many defects in their own code.",
+            "Benefit: different backgrounds and biases find different kinds of defects and failures, and can challenge assumptions.",
+            "Drawback: isolation from the development team, communication problems, being seen as a bottleneck or blamed for delays.",
+            "For most projects, combining multiple levels of independence works best."
+          ],
+          "commonMistakes": [
+            "Assuming more independent is always better; independence does not replace familiarity and is not sufficient on its own.",
+            "Assuming conflict between independent testers and the development team is inevitable; it is a risk, not a rule, and good collaboration reduces it.",
+            "Assuming independence is a single yes or no property; there are actually four distinct levels, and most projects combine them."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    }
+  ]
 }

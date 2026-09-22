@@ -1,0 +1,3120 @@
+{
+  "chunk": "ch01-b",
+  "chapter": 1,
+  "dataVersion": "2026.09.19",
+  "questions": [
+    {
+      "id": "ctfl4-0121",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.1",
+      "objectives": [
+        "FL-1.1.1"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "test-objectives"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden hangisi tipik bir test hedefidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Arızalara neden olan hataları bulmak"
+            },
+            {
+              "id": "b",
+              "text": "Arızanın kök nedenini teşhis edip kodu düzeltmek (hata ayıklama)"
+            },
+            {
+              "id": "c",
+              "text": "Konfigürasyon yönetimi kayıtlarını güncel tutmak"
+            },
+            {
+              "id": "d",
+              "text": "Kalite güvence (QA) sürecini organizasyon genelinde tanımlamak"
+            }
+          ],
+          "rationale": {
+            "summary": "Syllabus, hataları ve bunların yol açtığı arızaları bulmayı testin tipik hedeflerinden biri olarak sayar; hata ayıklama, konfigürasyon yönetimi ve QA süreç tanımı ayrı kavramlardır.",
+            "byOption": {
+              "a": "Doğru: arızalara yol açan hataları bulmak, syllabus'ta sayılan tipik test hedeflerinden biridir.",
+              "b": "Bu, hata ayıklamayı (debugging) tarif eder: arızanın arkasındaki hatayı bulup kodu düzeltmek. Hata ayıklama, raporlanan bir arızanın ardından geliştiriciler tarafından yürütülür ve syllabus bunu test etmeden ayrı bir faaliyet olarak ele alır.",
+              "c": "Bu, konfigürasyon yönetimini tarif eder; test faaliyetlerini destekleyen ayrı bir süreçtir, bir test hedefi değildir.",
+              "d": "Bu, kalite güvencesinin (QA) kurulmasını tarif eder; organizasyonun süreçleri üzerinde yapılan bir çalışmadır, testin kendi hedeflerinden biri değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is a typical test objective?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Finding defects that cause failures"
+            },
+            {
+              "id": "b",
+              "text": "Diagnosing the root cause of a failure and fixing the code (debugging)"
+            },
+            {
+              "id": "c",
+              "text": "Keeping configuration management records up to date"
+            },
+            {
+              "id": "d",
+              "text": "Defining the organization's quality assurance (QA) process"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus lists finding the defects that cause failures as a typical test objective; debugging, configuration management, and defining a QA process are distinct concepts.",
+            "byOption": {
+              "a": "Correct: finding defects that cause failures is one of the typical test objectives listed in the syllabus.",
+              "b": "This describes debugging: locating the defect behind the failure and correcting the code. Debugging is carried out by developers after a failure is reported, and the syllabus treats it as an activity distinct from testing.",
+              "c": "This describes configuration management, a separate process that supports testing rather than being a test objective.",
+              "d": "This describes setting up quality assurance (QA), which is work carried out on the organization's processes rather than an objective of testing itself."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0122",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.1",
+      "objectives": [
+        "FL-1.1.1"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "test-objectives"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden HANGİSİ tipik bir test hedefi DEĞİLDİR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yetersiz yazılım kalitesi riskinin düzeyini azaltmak"
+            },
+            {
+              "id": "b",
+              "text": "Karar vericilere bilgi sağlayarak karar almalarına yardımcı olmak"
+            },
+            {
+              "id": "c",
+              "text": "Geliştiricilerin kod yazma hızını artırmak"
+            },
+            {
+              "id": "d",
+              "text": "Yazılıma ve ürüne olan güveni oluşturmak"
+            }
+          ],
+          "rationale": {
+            "summary": "Syllabus'taki tipik test hedefleri listesi; yetersiz yazılım kalitesi riskinin düzeyini azaltmayı, karar vericilere bilgi sağlamayı ve güven oluşturmayı içerir; kod yazma hızını artırmak bu listede yer almaz.",
+            "byOption": {
+              "a": "Bu gerçek bir test hedefidir: yetersiz yazılım kalitesi riskinin düzeyini azaltmak, syllabus'ta sayılan tipik test hedeflerinden biridir.",
+              "b": "Bu gerçek bir test hedefidir: paydaşlara/karar vericilere bilgi sağlamak syllabus'ta sayılan hedeflerden biridir.",
+              "c": "Doğru: geliştiricilerin kod yazma hızını artırmak, testin tipik hedefleri arasında sayılmaz; testin syllabus'ta atfedilen bir amacı değildir.",
+              "d": "Bu gerçek bir test hedefidir: güven oluşturmak syllabus'ta sayılan hedeflerden biridir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is NOT a typical test objective?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Reducing the level of risk of inadequate software quality"
+            },
+            {
+              "id": "b",
+              "text": "Providing information to help decision-makers"
+            },
+            {
+              "id": "c",
+              "text": "Increasing developers' speed at writing code"
+            },
+            {
+              "id": "d",
+              "text": "Building confidence in the software"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus's list of typical test objectives includes reducing the level of risk of inadequate software quality, informing decision-makers, and building confidence; increasing coding speed is not among them.",
+            "byOption": {
+              "a": "This is a genuine test objective: reducing the level of risk of inadequate software quality is one of the typical objectives the syllabus lists.",
+              "b": "This is a genuine test objective: providing information to stakeholders/decision-makers is listed in the syllabus.",
+              "c": "Correct: increasing developers' coding speed is not one of the typical test objectives; the syllabus does not attribute this purpose to testing.",
+              "d": "This is a genuine test objective: building confidence is listed in the syllabus."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0123",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.2",
+      "objectives": [
+        "FL-1.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "testing-vs-debugging"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir testçi, uygulamada bir arıza gözlemleyip bunu bir hata raporunda kaydeder. Ardından bir geliştirici kodu inceleyerek nedeni bulur ve kodu düzeltir. Testçinin ve geliştiricinin eylemleri sırasıyla hangi kavramlara karşılık gelir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test - Test"
+            },
+            {
+              "id": "b",
+              "text": "Test - Hata ayıklama"
+            },
+            {
+              "id": "c",
+              "text": "Hata ayıklama - Test"
+            },
+            {
+              "id": "d",
+              "text": "Doğrulama - Sağlama"
+            }
+          ],
+          "rationale": {
+            "summary": "Arızayı gözlemleyip raporlamak test faaliyetidir; nedeni bulup kodu düzeltmek hata ayıklamadır (debugging) — bu ikisi farklı roller tarafından yürütülen farklı faaliyetlerdir.",
+            "byOption": {
+              "a": "Yanlış: ikinci eylem (nedeni bulup kodu düzeltmek) test değil, hata ayıklamadır.",
+              "b": "Doğru: testçinin eylemi test, geliştiricinin eylemi hata ayıklamadır (debugging).",
+              "c": "Roller ters çevrilmiş: arızayı bulup raporlamak test, nedeni bulup düzeltmek hata ayıklamadır — sırası tersinedir.",
+              "d": "Bu, doğrulama/sağlama (verification/validation) ayrımını tarif eder; spesifikasyona uygunluk ile amaca uygunluğu karşılaştıran farklı bir kavram çiftidir, senaryodaki test etme/hata ayıklama ayrımı değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester observes a failure in the application and logs it in a defect report. A developer then examines the code, finds the cause, and fixes the code. What do the tester's and the developer's actions correspond to, respectively?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Testing - Testing"
+            },
+            {
+              "id": "b",
+              "text": "Testing - Debugging"
+            },
+            {
+              "id": "c",
+              "text": "Debugging - Testing"
+            },
+            {
+              "id": "d",
+              "text": "Verification - Validation"
+            }
+          ],
+          "rationale": {
+            "summary": "Observing and reporting a failure is testing; finding the cause and fixing the code is debugging — distinct activities usually done by different roles.",
+            "byOption": {
+              "a": "Wrong: the second action (finding the cause and fixing the code) is debugging, not testing.",
+              "b": "Correct: the tester's action is testing, and the developer's action is debugging.",
+              "c": "The roles are reversed: finding and reporting the failure is testing, and finding the cause and fixing it is debugging — the order given here is backwards.",
+              "d": "This describes the verification/validation distinction, a different pair of concepts about conformance to specification versus fitness for use, not the testing/debugging split shown here."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0124",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.2",
+      "objectives": [
+        "FL-1.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "testing-vs-debugging",
+        "confirmation-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir geliştirici, raporlanan bir arızanın hata ayıklamasını tamamlayıp kodu düzelttikten sonra, düzeltmenin arızayı gerçekten giderdiğini teyit etmek için hangi faaliyet gerçekleştirilir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Başarısız olan testi yeniden çalıştırmak (onaylama testi)"
+            },
+            {
+              "id": "b",
+              "text": "Kök neden analizini tekrar baştan yürütmek"
+            },
+            {
+              "id": "c",
+              "text": "Kodu çalıştırmadan statik analiz aracıyla incelemek"
+            },
+            {
+              "id": "d",
+              "text": "Değişikliğin proje riskleri üzerindeki etkisini değerlendirmek"
+            }
+          ],
+          "rationale": {
+            "summary": "Hata ayıklama (arızayı üretme, teşhis etme, düzeltme) tamamlandıktan sonra, düzeltmenin işe yaradığını teyit eden faaliyet onaylama testidir (confirmation testing).",
+            "byOption": {
+              "a": "Doğru: onaylama testi, önceden başarısız olan testi yeniden çalıştırarak düzeltmenin arızayı giderdiğini teyit eder.",
+              "b": "Bu, hata ayıklama sürecinin zaten tamamlanmış bir adımını tarif eder; düzeltmeyi teyit eden sonraki bir faaliyet değildir.",
+              "c": "Statik analiz, kodu veya belgeleri çalıştırmadan incelemektir; bir düzeltmenin çalışma zamanında işe yaradığını teyit etmek için kullanılmaz.",
+              "d": "Bu, risk değerlendirmesini tarif eder; bir düzeltmenin arızayı giderip gidermediğini kontrol etmekle ilgili değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "After a developer has finished debugging a reported failure and correcting the code, which activity confirms that the fix actually resolved the failure?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Re-running the previously failed test (confirmation testing)"
+            },
+            {
+              "id": "b",
+              "text": "Running the root cause analysis again from the start"
+            },
+            {
+              "id": "c",
+              "text": "Reviewing the code with a static analysis tool without executing it"
+            },
+            {
+              "id": "d",
+              "text": "Assessing the change's impact on project risks"
+            }
+          ],
+          "rationale": {
+            "summary": "Once debugging (reproducing, diagnosing, fixing) is done, the activity that confirms the fix worked is confirmation testing.",
+            "byOption": {
+              "a": "Correct: confirmation testing re-runs the previously failed test to confirm the fix resolved the failure.",
+              "b": "This describes a step already completed as part of debugging, not a follow-up activity that confirms the fix.",
+              "c": "Static analysis examines code or documents without executing them; it is not used to confirm that a fix works at runtime.",
+              "d": "This describes risk assessment, which is unrelated to checking whether a specific fix resolved the failure."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0125",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.2",
+      "syllabusRef": "§1.2.1",
+      "objectives": [
+        "FL-1.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "why-testing-necessary"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir bankacılık uygulamasındaki bir hesaplama hatası, uygulama canlıya alınmadan önce test sırasında bulunup giderildi; böylece müşterilere yanlış bakiye gösterilmesi önlendi. Bu durum testin hangi katkısını örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kod gözden geçirme sürecine olan ihtiyacı ortadan kaldırır"
+            },
+            {
+              "id": "b",
+              "text": "Sözleşmesel veya yasal gereksinimlere uyumu doğrudan garanti eder"
+            },
+            {
+              "id": "c",
+              "text": "Test ortamının kurulum maliyetini azaltır"
+            },
+            {
+              "id": "d",
+              "text": "Maliyetli veya tehlikeli hataları üretime çıkmadan bulup giderir"
+            }
+          ],
+          "rationale": {
+            "summary": "Testin syllabus'taki gerekçelerinden biri, maliyetli veya tehlikeli sonuçlara yol açabilecek hataların üretime çıkmadan bulunmasıdır; senaryo tam olarak bunu örnekler.",
+            "byOption": {
+              "a": "Bu, süreçten bir gözden geçirme faaliyetini tamamen kaldırmayı tarif eder; senaryoda kod gözden geçirmeyle ilgili hiçbir şey yoktur ve test, gözden geçirmenin yerini almaz.",
+              "b": "'Doğrudan garanti etmek' ifadesi, testin yaptığını abartır. Ayrıca bu senaryo sözleşmesel veya yasal bir gereksinimle değil, finansal bir hesaplama hatasıyla ilgilidir.",
+              "c": "Test ortamı kurulum maliyetini azaltmak, bu senaryoda anlatılan bir katkı değildir; senaryo hatanın erken bulunmasıyla ilgilidir.",
+              "d": "Doğru: hesaplama hatasının canlıya çıkmadan bulunup giderilmesi, testin maliyetli/tehlikeli sonuçları önleme katkısını örnekler."
+            }
+          }
+        },
+        "en": {
+          "stem": "A calculation error in a banking application was found and fixed during testing before release, preventing customers from being shown an incorrect balance. Which contribution of testing does this illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It removes the need for a code review process"
+            },
+            {
+              "id": "b",
+              "text": "Directly guaranteeing compliance with contractual or legal requirements"
+            },
+            {
+              "id": "c",
+              "text": "Reducing the cost of setting up the test environment"
+            },
+            {
+              "id": "d",
+              "text": "Finding and removing costly or dangerous defects before release"
+            }
+          ],
+          "rationale": {
+            "summary": "One reason the syllabus gives for testing is finding defects that could lead to costly or dangerous consequences before they reach production; the scenario is exactly this.",
+            "byOption": {
+              "a": "This describes eliminating a review activity from the process; nothing in the scenario relates to code reviews, and testing does not replace them.",
+              "b": "'Directly guaranteeing' overstates what testing does. The scenario is in any case about a financial calculation error, not about a contractual or legal requirement.",
+              "c": "Reducing test environment setup cost is not what this scenario illustrates; the scenario is about catching the defect early.",
+              "d": "Correct: catching the calculation error before release illustrates testing's contribution of preventing costly/dangerous consequences."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0126",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.2",
+      "syllabusRef": "§1.2.1",
+      "objectives": [
+        "FL-1.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "why-testing-necessary"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir tıbbi cihaz yazılımı, canlıya alınmadan önce ilgili sertifikasyon standardının gerektirdiği güvenlik kontrollerini karşılayıp karşılamadığını doğrulamak amacıyla test edilmektedir. Bu durum testin hangi katkısını örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Son kullanıcıların üründen genel olarak ne kadar memnun olduğunu sayısal olarak ölçer"
+            },
+            {
+              "id": "b",
+              "text": "Yazılımın üretim ortamına alınmasının maliyetini doğrudan düşürür"
+            },
+            {
+              "id": "c",
+              "text": "Düzenleyici gereksinimlere ve standartlara uygunluğu doğrulamaya yardımcı olur"
+            },
+            {
+              "id": "d",
+              "text": "Hataların koda hiç girmemesini tamamen ve kesin olarak engeller"
+            }
+          ],
+          "rationale": {
+            "summary": "Syllabus, testin gerekçeleri arasında sözleşmesel/yasal/düzenleyici gereksinimlere veya standartlara uyumun doğrulanmasına yardımcı olmayı sayar; senaryo tam olarak budur.",
+            "byOption": {
+              "a": "Bu, kullanıcı memnuniyetinin ölçülmesini tarif eder; ürünün nasıl karşılandığına dair bir geri bildirimdir, bir standardın gerektirdiği güvenlik kontrollerine karşı yapılan bir denetim değildir.",
+              "b": "Bu, canlıya alma sürecindeki bir maliyet tasarrufunu tarif eder; senaryoda maliyetten değil, bir sertifikasyon standardının karşılanmasından söz edilmektedir.",
+              "c": "Doğru: yazılımın bir sertifikasyon standardının gerektirdiği güvenlik kontrollerine karşı test edilmesi, testin düzenleyici gereksinimlere ve standartlara uygunluğu doğrulamaya yardımcı olma katkısıdır.",
+              "d": "Bu iddia abartılıdır: test, hataların yazılmasını engellemez, zaten var olan hataları bulur."
+            }
+          }
+        },
+        "en": {
+          "stem": "Medical device software is tested before release to verify it meets the safety controls required by the relevant certification standard. Which contribution of testing does this illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It measures how satisfied end users are, overall, with the delivered product"
+            },
+            {
+              "id": "b",
+              "text": "It directly reduces the cost of releasing the software into production"
+            },
+            {
+              "id": "c",
+              "text": "It helps verify compliance with regulatory requirements or standards"
+            },
+            {
+              "id": "d",
+              "text": "It completely prevents defects from ever being introduced into the code"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus lists helping verify compliance with contractual/legal/regulatory requirements or standards as a reason for testing; this scenario is exactly that.",
+            "byOption": {
+              "a": "This describes measuring user satisfaction, which is feedback on how the product is received rather than a check against the safety controls a standard requires.",
+              "b": "This describes a saving in the release process; the scenario says nothing about cost, it is about meeting a certification standard.",
+              "c": "Correct: testing the software against the safety controls a certification standard requires is testing's contribution of helping verify compliance with regulatory requirements and standards.",
+              "d": "This claim is overstated: testing does not stop defects from being written, it finds the ones that are already there."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0127",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.2",
+      "syllabusRef": "§1.2.2",
+      "objectives": [
+        "FL-1.2.2"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "testing-and-quality-control"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Test etme, kalite kontrol ve kalite güvence (QA) ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kalite güvence yalnızca yazılım geliştirme sürecine uygulanabilir, teste uygulanamaz"
+            },
+            {
+              "id": "b",
+              "text": "Test etme ve kalite güvence, projenin farklı aşamalarında yürütülen aynı faaliyettir"
+            },
+            {
+              "id": "c",
+              "text": "Kalite kontrol süreçlere, kalite güvence ise ürünlere odaklanır"
+            },
+            {
+              "id": "d",
+              "text": "Test, kalite kontrolün önemli bir biçimidir"
+            }
+          ],
+          "rationale": {
+            "summary": "Syllabus, testi kalite kontrolün önemli bir biçimi olarak tanımlar; kalite güvencenin kapsamını yalnızca geliştirmeyle sınırlamak, testi kalite güvenceyle eşitlemek veya kalite kontrol/kalite güvence odaklarını ters çevirmek yanlıştır.",
+            "byOption": {
+              "a": "Yanlış: kalite güvence hem yazılım geliştirme hem de test sürecine uygulanır; yalnızca geliştirmeyle sınırlı değildir.",
+              "b": "Yanlış: test etme ve kalite güvence farklı odaklara sahip ayrı kavramlardır; biri diğerinin yalnızca farklı bir aşamada uygulanan hali değildir.",
+              "c": "Odaklar ters çevrilmiş: kalite kontrol ürüne, kalite güvence ise sürece odaklanır — burada söylenenin tam tersi.",
+              "d": "Doğru: test, kalite kontrolün önemli bir biçimidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is true about testing, quality control, and quality assurance (QA)?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Quality assurance can only be applied to the development process, not to testing"
+            },
+            {
+              "id": "b",
+              "text": "Testing and quality assurance are the same activity carried out at different project phases"
+            },
+            {
+              "id": "c",
+              "text": "Quality control focuses on processes, while quality assurance focuses on products"
+            },
+            {
+              "id": "d",
+              "text": "Testing is an important form of quality control"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus describes testing as an important form of quality control; restricting quality assurance's scope to development alone, equating testing with QA, or reversing the quality control/quality assurance focus are all wrong.",
+            "byOption": {
+              "a": "Wrong: quality assurance applies to both the software development process and the testing process, not to development alone.",
+              "b": "Wrong: testing and quality assurance are distinct concepts with different focuses; one is not simply the other carried out at a different phase.",
+              "c": "The focuses are reversed: quality control looks at the product, quality assurance at the process — the opposite of what is stated here.",
+              "d": "Correct: testing is an important form of quality control."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0128",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.2",
+      "syllabusRef": "§1.2.2",
+      "objectives": [
+        "FL-1.2.2"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "quality-assurance-quality-control"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden hangisi kalite kontrol değil, kalite güvence örneğidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Ürünün her yeni yapısına (build) karşı regresyon test paketini çalıştırmak"
+            },
+            {
+              "id": "b",
+              "text": "Ekibin kod gözden geçirme sürecini iyileştirmek"
+            },
+            {
+              "id": "c",
+              "text": "Bir gereksinim spesifikasyonunu, içindeki belirsizlikleri bulmak için gözden geçirmek"
+            },
+            {
+              "id": "d",
+              "text": "Başarısız olan bir testi, düzeltmenin işe yaradığını görmek için yeniden çalıştırmak"
+            }
+          ],
+          "rationale": {
+            "summary": "Kalite güvence süreç odaklıdır: hataların önlenmesi için süreçlerin uygulanması ve iyileştirilmesiyle ilgilenir. Kalite kontrol ise ürün odaklıdır ve bir iş ürünündeki hataları bulmaya yönelik faaliyetleri kapsar.",
+            "byOption": {
+              "a": "Bir yapıya karşı test paketi çalıştırmak, hataları bulmak için ürünün kendisini inceler; bu, ikilinin ürün odaklı tarafıdır, süreç üzerinde yapılan bir çalışma değildir.",
+              "b": "Doğru: hataların en baştan daha az oluşması için ekibin çalışma biçimini değiştirmek süreç odaklı ve önleyicidir; kalite güvencenin yaptığı budur.",
+              "c": "Bir spesifikasyonu gözden geçirmek statik testtir: bir iş ürününü, içinde zaten bulunan hataları ortaya çıkarmak için inceler. Hedef, belgeyi üreten süreç değil, belgenin kendisidir.",
+              "d": "Bu, onaylama testidir (confirmation testing): üründeki belirli bir düzeltmeyi kontrol eder. Süreç iyileştirme değil, bir iş ürünü üzerinde hata tespitidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is an example of quality assurance rather than quality control?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Running the regression test suite against each new build of the product"
+            },
+            {
+              "id": "b",
+              "text": "Improving the team's code review process"
+            },
+            {
+              "id": "c",
+              "text": "Reviewing a requirements specification to find the ambiguities in it"
+            },
+            {
+              "id": "d",
+              "text": "Re-running a previously failed test to see that the fix works"
+            }
+          ],
+          "rationale": {
+            "summary": "Quality assurance is process-oriented: it is about implementing and improving the processes so that defects are prevented. Quality control is product-oriented and covers the activities that find defects in a work product.",
+            "byOption": {
+              "a": "Running a test suite against a build examines the product itself in order to find defects in it; that is the product-oriented side of the pair, not work on the process.",
+              "b": "Correct: changing how the team works so that fewer defects are introduced in the first place is process-oriented and preventive, which is what quality assurance does.",
+              "c": "Reviewing a specification is static testing: it examines a work product to surface the defects already in it. The target is the document, not the process that produced it.",
+              "d": "This is confirmation testing: it checks one specific fix in the product. That is defect detection on a work product, not process improvement."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0129",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.2",
+      "syllabusRef": "§1.2.3",
+      "objectives": [
+        "FL-1.2.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "root-cause-analysis"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ödeme modülünde art arda birkaç sürümde benzer hatalar rapor edilmesi üzerine ekip, bu hataların ortak kök nedenini bulmak için bir kök neden analizi yapıyor. Bu analizi yapmanın temel amacı nedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Benzer hataların gelecekte tekrarlanma olasılığını azaltmak"
+            },
+            {
+              "id": "b",
+              "text": "Mevcut arızayı test ortamında yeniden üretmek"
+            },
+            {
+              "id": "c",
+              "text": "Test ortamının kurulum süresini kısaltmak"
+            },
+            {
+              "id": "d",
+              "text": "Tekrarlayan hatalar için açılmış olan hata kayıtlarını kapatmak"
+            }
+          ],
+          "rationale": {
+            "summary": "Kök neden analizinin amacı, ortak kaynağı ortadan kaldırarak benzer hataların gelecekte tekrarlanma olasılığını azaltmaktır; senaryo tam olarak bunu tarif eder.",
+            "byOption": {
+              "a": "Doğru: kök neden analizi, benzer hataların gelecekte tekrar oluşma olasılığını azaltmayı amaçlar.",
+              "b": "Bu, hata ayıklama sürecinin bir adımı olan arızayı yeniden üretmeyi tarif eder; kök neden analizinin kendisinin amacı değildir.",
+              "c": "Test ortamı kurulum süresini kısaltmak, kök neden analiziyle ilgili bir amaç değildir.",
+              "d": "Bu, hata kayıtlarının idari olarak kapatılmasını tarif eder; kök neden analizinin amacı olan altta yatan nedeni ortadan kaldırmak değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "After similar defects are reported in a payment module across several consecutive releases, the team performs a root cause analysis to find the common cause. What is the main purpose of doing this analysis?",
+          "options": [
+            {
+              "id": "a",
+              "text": "To reduce the likelihood that similar defects will recur in the future"
+            },
+            {
+              "id": "b",
+              "text": "To reproduce the current failure in the test environment"
+            },
+            {
+              "id": "c",
+              "text": "To shorten the setup time of the test environment"
+            },
+            {
+              "id": "d",
+              "text": "To close the defect reports previously opened for the recurring defects"
+            }
+          ],
+          "rationale": {
+            "summary": "The purpose of root cause analysis is to remove the common source so similar defects are less likely to recur; the scenario describes exactly this.",
+            "byOption": {
+              "a": "Correct: root cause analysis aims to reduce the likelihood that similar defects recur in the future.",
+              "b": "This describes reproducing the failure, a step within debugging, not the purpose of the root cause analysis itself.",
+              "c": "Shortening test environment setup time is not a purpose of root cause analysis.",
+              "d": "This describes the administrative closing of defect reports, not the purpose of root cause analysis, which is to remove the underlying cause."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0130",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.1",
+      "objectives": [
+        "FL-1.4.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-monitoring-control"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Proje ortasında ilerlemenin plana göre gecikmiş olduğu fark edilir; test yöneticisi durumu takip eder, ek testçi kaynağı ayırır ve kalan çalışmanın önceliklerini yeniden düzenler. Bu, hangi temel test faaliyetleri grubunu örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test gözetimi ve kontrolü"
+            },
+            {
+              "id": "b",
+              "text": "Test planlama"
+            },
+            {
+              "id": "c",
+              "text": "Test analizi ve test tasarımı"
+            },
+            {
+              "id": "d",
+              "text": "Test tamamlama"
+            }
+          ],
+          "rationale": {
+            "summary": "İlerlemeyi plana göre takip edip sapmayı düzeltmek üzere kaynakları ve öncelikleri yeniden ayarlamak, test gözetimi ve test kontrolü faaliyetlerinin tanımıdır.",
+            "byOption": {
+              "a": "Doğru: ilerlemeyi plana göre kontrol etmek test gözetimi, sapmaya karşı kaynakları ve öncelikleri yeniden ayarlamak ise test kontrolüdür.",
+              "b": "Test planlama, testin geri kalanının izleyeceği test planını üreten faaliyettir; burada ekip yeni bir plan üretmemekte, var olan bir plana göre işi yönlendirmektedir.",
+              "c": "Test analizi ve test tasarımı, nelerin test edileceğini belirleyip bunu somut testlere dönüştüren faaliyetlerdir; test üretirler, devam eden işi yönlendirmezler.",
+              "d": "Test tamamlama, bir test seviyesi veya proje sona erdiğinde, raporlanan iş artık bittiğinde yürütülen faaliyettir; senaryoda ise iş hâlâ sürmektedir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Midway through a project, the team notices progress is behind schedule. The test manager tracks the situation, allocates extra tester resources, and re-prioritizes the remaining work. Which group of core test activities does this illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test monitoring and control"
+            },
+            {
+              "id": "b",
+              "text": "Test planning"
+            },
+            {
+              "id": "c",
+              "text": "Test analysis and test design"
+            },
+            {
+              "id": "d",
+              "text": "Test completion"
+            }
+          ],
+          "rationale": {
+            "summary": "Tracking progress against the plan and adjusting resources and priorities to correct a deviation is exactly test monitoring and test control.",
+            "byOption": {
+              "a": "Correct: checking progress against the plan is test monitoring, and adjusting resources and priorities in response to the deviation is test control.",
+              "b": "Test planning is the activity that produces the test plan the rest of the testing follows; here the team is steering work against a plan that already exists rather than producing one.",
+              "c": "Test analysis and test design are the activities that work out what should be tested and turn it into concrete tests; they produce tests rather than steering work that is already under way.",
+              "d": "Test completion is carried out once a test level or project has ended and the work being reported on is over; the scenario is in the middle of the work."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0131",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.1",
+      "objectives": [
+        "FL-1.4.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-planning"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir projenin başında, ekip test hedeflerini tanımlar ve bu hedeflere ulaşmak için izlenecek yaklaşımı seçer. Bu, hangi temel test faaliyetini örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test tamamlama"
+            },
+            {
+              "id": "b",
+              "text": "Test planlama"
+            },
+            {
+              "id": "c",
+              "text": "Test gözetimi"
+            },
+            {
+              "id": "d",
+              "text": "Test koşumu"
+            }
+          ],
+          "rationale": {
+            "summary": "Test hedeflerini tanımlamak ve bunlara ulaşmak için yaklaşımı seçmek, test planlamanın tanımıdır.",
+            "byOption": {
+              "a": "Test tamamlama, bir test seviyesi veya proje sona erdiğinde işi kapatmak için yürütülen faaliyettir; hedefleri tanımlamak ve yaklaşım seçmek ise henüz yürütülecek bir test işi yokken yapılır.",
+              "b": "Doğru: hedefleri tanımlamak ve yaklaşımı seçmek test planlamanın tanımıdır.",
+              "c": "Test gözetimi, gerçekleşen ilerlemeyi plana göre kontrol etmektir; bunun için bir planın zaten var olması gerekir.",
+              "d": "Test koşumu, hazırlanmış testlerin çalıştırılmasıdır; hedef tanımlamak ve yaklaşım seçmekle ilgili değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "At the start of a project, the team defines test objectives and selects the approach to reach them. Which core test activity does this illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test completion"
+            },
+            {
+              "id": "b",
+              "text": "Test planning"
+            },
+            {
+              "id": "c",
+              "text": "Test monitoring"
+            },
+            {
+              "id": "d",
+              "text": "Test execution"
+            }
+          ],
+          "rationale": {
+            "summary": "Defining objectives and selecting the approach to reach them is the definition of test planning.",
+            "byOption": {
+              "a": "Test completion is carried out when a test level or project has ended, to close the work down; defining objectives and choosing an approach happens while there is no testing work yet.",
+              "b": "Correct: defining objectives and selecting an approach is the definition of test planning.",
+              "c": "Test monitoring is checking actual progress against the plan; it needs a plan to already exist.",
+              "d": "Test execution is running test cases; it is unrelated to defining objectives and selecting an approach."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0132",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.2",
+      "objectives": [
+        "FL-1.4.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-effort-factors"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir projede çok sınırlı bir bütçe ve çok kısa bir teslim süresi bulunduğu için ekip, testleri yalnızca en yüksek riskli alanlara odaklamak zorunda kalıyor. Bu durum, test yaklaşımını etkileyen hangi etkeni örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test ekibinin becerileri ve deneyimi"
+            },
+            {
+              "id": "b",
+              "text": "Seçilen test tekniği"
+            },
+            {
+              "id": "c",
+              "text": "Yazılımın geliştirme yaşam döngüsü modeli"
+            },
+            {
+              "id": "d",
+              "text": "Proje kısıtlamaları"
+            }
+          ],
+          "rationale": {
+            "summary": "Sınırlı bütçe ve kısa teslim süresi, syllabus'ta test yaklaşımını şekillendiren etkenler arasında sayılan proje kısıtlamalarına örnektir.",
+            "byOption": {
+              "a": "Senaryoda anlatılan sınırlama ekip becerisiyle değil, bütçe ve süre kısıtlarıyla ilgilidir.",
+              "b": "Test tekniği, yaklaşım belirlendikten sonra test senaryolarının türetilme yöntemidir; test yaklaşımını şekillendiren bağlamsal etkenlerden biri değil, o yaklaşımın seçtiği bir araçtır. Ayrıca senaryoda herhangi bir teknik adı geçmemektedir.",
+              "c": "Senaryoda bir yaşam döngüsü modeli belirtilmemiştir; anlatılan kaynak/zaman kısıtıdır.",
+              "d": "Doğru: sınırlı bütçe ve kısa teslim süresi, proje kısıtlamalarına örnektir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A project has a very limited budget and a very tight deadline, forcing the team to focus testing only on the highest-risk areas. Which factor influencing the test approach does this illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The test team's skills and experience"
+            },
+            {
+              "id": "b",
+              "text": "The test technique that was chosen"
+            },
+            {
+              "id": "c",
+              "text": "The software development lifecycle model"
+            },
+            {
+              "id": "d",
+              "text": "Project constraints"
+            }
+          ],
+          "rationale": {
+            "summary": "A limited budget and tight deadline are an example of project constraints, one of the factors the syllabus lists as shaping the test approach.",
+            "byOption": {
+              "a": "The limitation described is about budget and time, not about the team's skill level.",
+              "b": "A test technique is a way of deriving test cases once the approach has been set; it is something the test approach chooses rather than one of the contextual factors that shape it, and no technique is named in the scenario.",
+              "c": "No lifecycle model is mentioned here; what is described is a resource/time constraint.",
+              "d": "Correct: a limited budget and tight deadline are an example of project constraints."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0133",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.2",
+      "objectives": [
+        "FL-1.4.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-effort-factors"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Regresyon testlerini otomatikleştirmekle görevlendirilen ekip, seçilen otomasyon aracını daha önce hiç kullanmamıştır ve bu nedenle işe yeni bir eğitim süreciyle başlamaktadır. Bu durum, test yaklaşımını etkileyen hangi etkeni örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yasal veya düzenleyici uyum gereksinimleri"
+            },
+            {
+              "id": "b",
+              "text": "Ürünün risk düzeyi"
+            },
+            {
+              "id": "c",
+              "text": "Ekip üyelerinin becerileri ve deneyimi"
+            },
+            {
+              "id": "d",
+              "text": "Müşterinin sözleşme şartları"
+            }
+          ],
+          "rationale": {
+            "summary": "Ekibin bir araçla ilgili deneyim eksikliği, syllabus'ta sayılan 'ekip üyelerinin becerileri' etkenine örnektir.",
+            "byOption": {
+              "a": "Senaryoda herhangi bir yasal veya düzenleyici gereksinim belirtilmemiştir; anlatılan araç deneyimi eksikliğidir.",
+              "b": "Senaryoda ürünün risk düzeyi tartışılmamaktadır; anlatılan ekibin araç deneyimidir.",
+              "c": "Doğru: ekibin aracı daha önce hiç kullanmamış olması, ekip üyelerinin becerileri ve deneyimi etkenine örnektir.",
+              "d": "Senaryoda müşteri sözleşme şartlarından söz edilmemektedir; anlatılan ekip becerisiyle ilgilidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team assigned to automate regression tests has never used the chosen automation tool before and starts with a training period. Which factor influencing the test approach does this illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Legal or regulatory compliance requirements"
+            },
+            {
+              "id": "b",
+              "text": "The product's level of risk"
+            },
+            {
+              "id": "c",
+              "text": "Team members' skills and experience"
+            },
+            {
+              "id": "d",
+              "text": "The customer's contractual terms"
+            }
+          ],
+          "rationale": {
+            "summary": "The team's lack of experience with a tool is an example of the 'team members' skills' factor listed in the syllabus.",
+            "byOption": {
+              "a": "No legal or regulatory requirement is mentioned here; what is described is lack of tool experience.",
+              "b": "The product's level of risk is not discussed here; what is described is the team's tool experience.",
+              "c": "Correct: the team never having used the tool before is an example of team members' skills and experience.",
+              "d": "No customer contractual terms are mentioned here; what is described relates to team skill."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0134",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.2",
+      "objectives": [
+        "FL-1.4.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-effort-factors"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip iki haftalık yinelemelerle teslim yapmakta ve her artırımı üretildikçe test etmektedir; sıralı (sequential) bir projede çalışan başka bir ekip ise testlerini tüm geliştirme bittikten sonra tek bir aşamada yürütmektedir. Bu fark, test sürecini etkileyen hangi bağlamsal etkeni örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bütçe ve teslim tarihi gibi proje kısıtlamaları"
+            },
+            {
+              "id": "b",
+              "text": "Test araçlarının erişilebilirliği, uygunluğu ve kullanılabilirliği"
+            },
+            {
+              "id": "c",
+              "text": "Ekibin içinde çalıştığı yazılım geliştirme yaşam döngüsü"
+            },
+            {
+              "id": "d",
+              "text": "Ekipteki kişilerin becerileri ve önceki deneyimi"
+            }
+          ],
+          "rationale": {
+            "summary": "Geliştirmenin nasıl örgütlendiği, testin ne zaman ve nasıl yapılacağını belirler; syllabus, yazılım geliştirme yaşam döngüsünü test sürecini şekillendiren bağlamsal etkenler arasında sayar.",
+            "byOption": {
+              "a": "Proje kısıtlamaları, testin içine sığmak zorunda olduğu kapsam, zaman, bütçe ve kaynak sınırlarıdır. Senaryoda iki ekibin de parası veya zamanı kısıtlı diye bir bilgi yoktur; farklı olan, geliştirmenin örgütlenme biçimidir.",
+              "b": "Bu etken, ekibin hangi test araçlarına erişebildiği ve bunların ne kadar kullanışlı olduğuyla ilgilidir. Senaryoda hiçbir araçtan söz edilmemektedir.",
+              "c": "Doğru: her artırımın üretildikçe test edilmesi ile tüm geliştirme bittikten sonra tek bir test aşaması yürütülmesi arasındaki fark, izlenen yazılım geliştirme yaşam döngüsünden kaynaklanır.",
+              "d": "Bu etken, testi yapan kişilerin ne bildiği ve daha önce ne yaptığıyla ilgilidir. Senaryoda iki ekibin becerileri hakkında bir şey söylenmemekte, işin nasıl sıralandığı anlatılmaktadır."
+            }
+          }
+        },
+        "en": {
+          "stem": "One team delivers in two-week iterations and tests each increment as it is built; another team, on a sequential project, carries out its testing in a single phase after all development is finished. Which contextual factor influencing the test process does this difference illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Project constraints, such as the budget and the delivery deadline"
+            },
+            {
+              "id": "b",
+              "text": "The availability, suitability, and usability of the test tools"
+            },
+            {
+              "id": "c",
+              "text": "The software development lifecycle the team works in"
+            },
+            {
+              "id": "d",
+              "text": "The skills and the previous experience of the team"
+            }
+          ],
+          "rationale": {
+            "summary": "How development is organized decides when and how testing fits in; the syllabus lists the software development lifecycle among the contextual factors that shape the test process.",
+            "byOption": {
+              "a": "Project constraints are the limits on scope, time, budget and resources that the testing has to fit inside. Neither team is described as short of money or time; what differs is the way development is organized.",
+              "b": "This factor is about which test tools a team can get hold of and how well they work. No tool is mentioned on either project.",
+              "c": "Correct: testing each increment as it is built, versus a single test phase after sequential development, is a difference in the software development lifecycle being followed.",
+              "d": "This factor is about what the people doing the testing know and have done before. Neither team's skills are described; what is described is how the work is sequenced."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0135",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.1",
+      "objectives": [
+        "FL-1.4.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-execution"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, hazırlanmış testleri planlanan sırayla çalıştırır, gerçekleşen her sonucu beklenen sonuçla karşılaştırır ve bulduğu sapmaları kaydeder. Bu, hangi temel test faaliyetine karşılık gelir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test uyarlama (test implementation)"
+            },
+            {
+              "id": "b",
+              "text": "Test koşumu"
+            },
+            {
+              "id": "c",
+              "text": "Test analizi"
+            },
+            {
+              "id": "d",
+              "text": "Test tasarımı"
+            }
+          ],
+          "rationale": {
+            "summary": "Hazırlanmış testleri çalıştırmak, gerçekleşen sonuçları beklenen sonuçlarla karşılaştırmak ve bulunan sapmaları kaydetmek, test koşumunun görevleridir.",
+            "byOption": {
+              "a": "Test uyarlama, testlerin çalıştırılabilmesi için gereken her şeyi önceden hazırlayıp düzenler; örneğin test verisini oluşturur ve test ortamını kurar. Testleri koşuma hazır hale getirir, onları çalıştırmaz.",
+              "b": "Doğru: testleri çalıştırmak, gerçekleşen sonuçları beklenenlerle karşılaştırmak ve bulunan sapmaları kaydetmek test koşumudur.",
+              "c": "Test analizi, nelerin test edilmesi gerektiğini belirlemek için test esasını inceler. Bu noktada test nesnesi üzerinde hiçbir şey çalıştırılmaz.",
+              "d": "Test tasarımı, test edilmesi gerekenleri somut testlere dönüştürür; herhangi bir şey çalıştırılmadan önce yapılan bir hazırlık adımıdır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team runs the prepared tests in the planned order, compares each actual result with the expected result, and logs the anomalies it finds. Which core test activity does this correspond to?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test implementation"
+            },
+            {
+              "id": "b",
+              "text": "Test execution"
+            },
+            {
+              "id": "c",
+              "text": "Test analysis"
+            },
+            {
+              "id": "d",
+              "text": "Test design"
+            }
+          ],
+          "rationale": {
+            "summary": "Running the prepared tests, comparing actual results with expected results and logging the anomalies found are the tasks of test execution.",
+            "byOption": {
+              "a": "Test implementation creates and arranges everything the tests need before they can be run, such as building the test data and setting up the test environment. It gets the tests ready; it does not run them.",
+              "b": "Correct: running the tests, comparing actual against expected results and logging the anomalies found is test execution.",
+              "c": "Test analysis examines the test basis to work out what should be tested. Nothing is exercised against the test object at that point.",
+              "d": "Test design turns what should be tested into concrete tests; it is preparation carried out before anything is run."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0136",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.3",
+      "objectives": [
+        "FL-1.4.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-design-work-products"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden hangisi test TASARIMI faaliyetinin bir çalışma ürünüdür?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test koşulları"
+            },
+            {
+              "id": "b",
+              "text": "Test esası üzerinde belirlenen hata raporları"
+            },
+            {
+              "id": "c",
+              "text": "Test verisi"
+            },
+            {
+              "id": "d",
+              "text": "Kapsam öğeleri (coverage items)"
+            }
+          ],
+          "rationale": {
+            "summary": "Kapsam öğeleri, test tasarımı faaliyetinin bir çalışma ürünüdür; test koşulları tasarımın yola çıktığı girdidir, test esasına ilişkin hata raporları o esasın incelenmesinden doğar, test verisi ise tasarlanan testleri koşulabilir kılmak için hazırlanır.",
+            "byOption": {
+              "a": "Test koşulu, test nesnesinin test edilebilir bir yönünü adlandırır. Test tasarımının yola çıktığı girdidir; dolayısıyla tasarım henüz hiçbir şey üretmeden önce zaten vardır.",
+              "b": "Bunlar, testler tasarlanırken üretilen bir şeyi değil, test esasının kendisindeki sorunları — bir gereksinimdeki belirsizliği ya da eksikliği — raporlar.",
+              "c": "Test verisi, testler çalıştırılırken onlara verilen girdidir; testler tasarlandıktan sonra, onları koşuma hazır hale getirme adımında hazırlanır.",
+              "d": "Doğru: kapsam öğeleri, test tasarımı faaliyetinin bir çalışma ürünüdür."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is a work product of the test DESIGN activity?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test conditions"
+            },
+            {
+              "id": "b",
+              "text": "Defect reports raised against the test basis"
+            },
+            {
+              "id": "c",
+              "text": "Test data"
+            },
+            {
+              "id": "d",
+              "text": "Coverage items"
+            }
+          ],
+          "rationale": {
+            "summary": "Coverage items are a work product of test design; test conditions are the input design starts from, defect reports against the test basis come out of examining that basis, and test data is prepared to make the designed tests runnable.",
+            "byOption": {
+              "a": "A test condition names a testable aspect of the test object. It is the input test design starts from, so it exists before the design activity has produced anything.",
+              "b": "These report problems in the test basis itself — an ambiguity or a gap in a requirement — rather than anything produced while tests are being designed.",
+              "c": "Test data is what the tests are fed when they run; it is prepared after the tests have been designed, as part of getting them ready to execute.",
+              "d": "Correct: coverage items are a work product of test design."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0137",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.3",
+      "objectives": [
+        "FL-1.4.3"
+      ],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "test-analysis-work-products"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a",
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden HANGİ İKİSİ test ANALİZİ faaliyetinin çalışma ürünlerindendir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test koşulları"
+            },
+            {
+              "id": "b",
+              "text": "Test senaryoları"
+            },
+            {
+              "id": "c",
+              "text": "Test esası üzerinde belirlenen hata raporları"
+            },
+            {
+              "id": "d",
+              "text": "Test verisi"
+            },
+            {
+              "id": "e",
+              "text": "Risk kaydı (risk register)"
+            }
+          ],
+          "rationale": {
+            "summary": "Test analizinin çalışma ürünleri test koşulları ve test esası üzerinde belirlenen hata raporlarıdır; test senaryoları tasarımdan, test verisi test uyarlamadan, risk kaydı ise planlamadan gelir.",
+            "byOption": {
+              "a": "Doğru: test koşulları, test analizi faaliyetinin bir çalışma ürünüdür.",
+              "b": "Test senaryoları, test tasarımı faaliyetinin bir çalışma ürünüdür, test analizinin değil.",
+              "c": "Doğru: test esası incelenirken bulunan belirsizlik veya eksiklik gibi hata raporları, test analizi faaliyetinin bir çalışma ürünüdür.",
+              "d": "Test verisi, test uyarlama (test implementation) faaliyetinin bir çalışma ürünüdür, test analizinin değil.",
+              "e": "Risk kaydı, risk temelli test yaklaşımında test planlama faaliyetiyle ilişkilendirilir, test analiziyle değil."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which TWO of the following are work products of the test ANALYSIS activity?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test conditions"
+            },
+            {
+              "id": "b",
+              "text": "Test cases"
+            },
+            {
+              "id": "c",
+              "text": "Defect reports raised against the test basis"
+            },
+            {
+              "id": "d",
+              "text": "Test data"
+            },
+            {
+              "id": "e",
+              "text": "A risk register"
+            }
+          ],
+          "rationale": {
+            "summary": "Test analysis work products are test conditions and defect reports raised against the test basis; test cases come from design, test data from implementation, and a risk register from planning.",
+            "byOption": {
+              "a": "Correct: test conditions are a work product of test analysis.",
+              "b": "Test cases are a work product of test design, not test analysis.",
+              "c": "Correct: defect reports found while examining the test basis, such as ambiguities or gaps, are a work product of test analysis.",
+              "d": "Test data is a work product of test implementation, not test analysis.",
+              "e": "A risk register is associated with test planning in a risk-based approach, not with test analysis."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0138",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.4",
+      "objectives": [
+        "FL-1.4.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "traceability"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, test senaryolarını ilgili gereksinimlere bağlayan bir izlenebilirlik matrisi tutuyor. Bu matris sayesinde ekip öncelikle neyi teyit edebilir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Testlerin toplam koşum süresini"
+            },
+            {
+              "id": "b",
+              "text": "Her gereksinimin bir test senaryosuyla kapsandığını"
+            },
+            {
+              "id": "c",
+              "text": "Kodun statik analiz sonuçlarını"
+            },
+            {
+              "id": "d",
+              "text": "Test ortamının donanım, yazılım ve ağ gereksinimlerini"
+            }
+          ],
+          "rationale": {
+            "summary": "Test senaryoları ile gereksinimler arasındaki izlenebilirlik, her gereksinimin en az bir test senaryosuyla kapsandığının teyit edilmesini sağlar.",
+            "byOption": {
+              "a": "Testlerin koşum süresi, izlenebilirlik matrisinin doğrudan sağladığı bir bilgi değildir.",
+              "b": "Doğru: izlenebilirlik, gereksinim kapsamının teyit edilmesini sağlar.",
+              "c": "Statik analiz sonuçları, izlenebilirlik matrisinden değil, ayrı bir statik test faaliyetinden elde edilir.",
+              "d": "Test ortamının donanım, yazılım ve ağ gereksinimleri, izlenebilirlik matrisiyle ilgili bir bilgi değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team maintains a traceability matrix linking test cases to the relevant requirements. What can the team primarily confirm using this matrix?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The total execution time of the tests"
+            },
+            {
+              "id": "b",
+              "text": "That each requirement is covered by a test case"
+            },
+            {
+              "id": "c",
+              "text": "The results of static analysis of the code"
+            },
+            {
+              "id": "d",
+              "text": "The hardware, software, and network requirements of the test environment"
+            }
+          ],
+          "rationale": {
+            "summary": "Traceability between test cases and requirements lets a team confirm that each requirement is covered by at least one test case.",
+            "byOption": {
+              "a": "Test execution time is not information directly provided by a traceability matrix.",
+              "b": "Correct: traceability lets the team confirm requirement coverage.",
+              "c": "Static analysis results come from a separate static testing activity, not from a traceability matrix.",
+              "d": "The test environment's hardware, software, and network requirements are not information a traceability matrix provides."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0139",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.4",
+      "objectives": [
+        "FL-1.4.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "traceability"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Kapsam ölçümünün ötesinde, iyi kurulmuş bir izlenebilirlik ek olarak neyi destekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test senaryolarının otomatik olarak yürütülmesini"
+            },
+            {
+              "id": "b",
+              "text": "Test verisinin otomatik olarak üretilmesini"
+            },
+            {
+              "id": "c",
+              "text": "Etki analizini, denetimleri ve BT yönetişimini"
+            },
+            {
+              "id": "d",
+              "text": "Test ortamı maliyetlerinin doğrudan azaltılmasını"
+            }
+          ],
+          "rationale": {
+            "summary": "İyi kurulmuş izlenebilirlik, kapsam ölçümünün ötesinde etki analizi, denetimler ve BT yönetişimi gibi ihtiyaçları da destekler.",
+            "byOption": {
+              "a": "İzlenebilirlik, test senaryolarını otomatik olarak çalıştırmaz; bu bir test otomasyon aracının işlevidir.",
+              "b": "İzlenebilirlik, test verisi üretmez; bu, test uyarlama (test implementation) faaliyetinin bir parçasıdır.",
+              "c": "Doğru: izlenebilirlik, kapsam ölçümünün ötesinde etki analizini, denetimleri ve BT yönetişimini destekler.",
+              "d": "İzlenebilirlik kurmak, test ortamı maliyetini doğrudan azaltan bir mekanizma değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Beyond measuring coverage, what does well-established traceability additionally support?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Automatically executing test cases"
+            },
+            {
+              "id": "b",
+              "text": "Automatically generating test data"
+            },
+            {
+              "id": "c",
+              "text": "Impact analysis, audits, and IT governance"
+            },
+            {
+              "id": "d",
+              "text": "Directly reducing the costs of the test environment"
+            }
+          ],
+          "rationale": {
+            "summary": "Beyond coverage measurement, well-established traceability also supports impact analysis, audits, and IT governance needs.",
+            "byOption": {
+              "a": "Traceability does not automatically execute test cases; that is the function of a test automation tool.",
+              "b": "Traceability does not generate test data; that is part of test implementation.",
+              "c": "Correct: beyond coverage measurement, traceability supports impact analysis, audits, and IT governance.",
+              "d": "Establishing traceability is not a mechanism that directly reduces test environment costs."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0140",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.4",
+      "objectives": [
+        "FL-1.4.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "traceability"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "İyi kurulmuş izlenebilirlik, ilerleme ve tamamlanma raporlarının paydaşlarla paylaşılmasını nasıl etkiler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Raporların anlaşılmasını ve paydaşlarla iletişimini kolaylaştırır"
+            },
+            {
+              "id": "b",
+              "text": "Yalnızca nihai tamamlama raporlarına yardımcı olur, süregelen ilerleme raporlarına değil"
+            },
+            {
+              "id": "c",
+              "text": "İlerleme raporlaması ihtiyacını tamamen ortadan kaldırır"
+            },
+            {
+              "id": "d",
+              "text": "Raporları yalnızca test yöneticisinin erişebileceği hale getirir"
+            }
+          ],
+          "rationale": {
+            "summary": "İyi kurulmuş izlenebilirlik, gereksinimler ile testler arasındaki bağlantıyı netleştirerek ilerleme ve tamamlanma raporlarının paydaşlarla iletişimini kolaylaştırır.",
+            "byOption": {
+              "a": "Doğru: izlenebilirlik, ilerleme ve tamamlanma raporlarının anlaşılmasını ve paydaşlarla iletişimini kolaylaştırır.",
+              "b": "Bu, iyi kurulmuş izlenebilirliğin faydasını yalnızca tamamlama raporlamasıyla sınırlar; syllabus hem ilerleme hem tamamlama raporlamasını desteklediğini belirtir.",
+              "c": "İzlenebilirlik, raporlama ihtiyacını ortadan kaldırmaz; raporların kalitesini ve anlaşılırlığını artırır.",
+              "d": "İzlenebilirlik, raporlara erişimi belirli bir role sınırlamakla ilgili bir kavram değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "How does well-established traceability affect the sharing of progress and completion reports with stakeholders?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It makes the reports easier to understand and communicate to stakeholders"
+            },
+            {
+              "id": "b",
+              "text": "It only helps with final completion reports, not with ongoing progress reports"
+            },
+            {
+              "id": "c",
+              "text": "It completely removes the need for progress reporting"
+            },
+            {
+              "id": "d",
+              "text": "It restricts report access to only the test manager"
+            }
+          ],
+          "rationale": {
+            "summary": "Well-established traceability clarifies the link between requirements and tests, making progress and completion reports easier to communicate to stakeholders.",
+            "byOption": {
+              "a": "Correct: traceability makes progress and completion reports easier to understand and communicate to stakeholders.",
+              "b": "This narrows well-established traceability's benefit to completion reporting only; the syllabus states it supports both progress and completion reporting.",
+              "c": "Traceability does not remove the need for reporting; it improves the quality and clarity of the reports.",
+              "d": "Traceability is not a concept about restricting report access to a specific role."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0141",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.5",
+      "objectives": [
+        "FL-1.4.5"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "testing-roles"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Çevik bir ekipte, bazı test yönetimi görevlerini ekibin kendisi üstlenirken, ekipler arası koordinasyon gerektiren görevleri ayrı bir test yöneticisi yürütmektedir. Bu durum hangi genel ilkeyi örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test yönetimi görevleri genellikle ayrı, sabit bir role atanır"
+            },
+            {
+              "id": "b",
+              "text": "Test rolü genellikle test yönetimi rolünü de kendi içinde barındırır"
+            },
+            {
+              "id": "c",
+              "text": "Çevik ekiplerde test yönetimi rolü genellikle ayrı bir rol olarak bulunmaz"
+            },
+            {
+              "id": "d",
+              "text": "Rollerin nasıl uygulandığı, organizasyonun bağlamına göre değişir"
+            }
+          ],
+          "rationale": {
+            "summary": "Syllabus, test yönetimi ve test rollerinin görevlerinin organizasyonun bağlamına göre farklı biçimlerde dağıtılabileceğini belirtir; senaryo tam olarak bunu örnekler.",
+            "byOption": {
+              "a": "Yanlış: syllabus, görevlerin dağılımının organizasyonun bağlamına göre değiştiğini belirtir; bunu sabit bir role atanan tek düzenleme gibi sunmak bu ilkeyle çelişir.",
+              "b": "Yanlış: test rolü ile test yönetimi rolü farklı odak noktalarına sahip ayrı rollerdir; biri diğerini otomatik olarak kapsamaz.",
+              "c": "Yanlış: senaryoda ayrı bir test yöneticisinin var olduğu açıkça belirtilmiştir; bu iddia senaryoyla çelişir.",
+              "d": "Doğru: senaryo, rollerin uygulanma biçiminin organizasyon bağlamına göre değiştiğini örnekler."
+            }
+          }
+        },
+        "en": {
+          "stem": "In an Agile team, the team itself handles some test management tasks, while a separate test manager handles tasks that require cross-team coordination. Which general principle does this illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test management tasks are typically assigned to a separate, fixed role"
+            },
+            {
+              "id": "b",
+              "text": "The testing role typically includes the test management role as well"
+            },
+            {
+              "id": "c",
+              "text": "In Agile teams, the test management role typically does not exist as a separate role"
+            },
+            {
+              "id": "d",
+              "text": "How the roles are carried out varies depending on the organization's context"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus states that test management and testing role tasks can be distributed differently depending on the organization's context; the scenario illustrates exactly this.",
+            "byOption": {
+              "a": "Wrong: the syllabus states that task distribution varies with the organization's context; presenting a fixed role assignment as the one correct arrangement contradicts that.",
+              "b": "Wrong: the testing role and the test management role have different focuses and are distinct roles; one does not automatically include the other.",
+              "c": "Wrong: the scenario explicitly states a separate test manager exists; this claim contradicts the scenario.",
+              "d": "Correct: the scenario illustrates that how the roles are carried out varies with the organization's context."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0142",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.5",
+      "objectives": [
+        "FL-1.4.5"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "testing-roles"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Test uzmanı (tester) rolünün odaklandığı faaliyetler öncelikle hangi grubu kapsar?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test analizi, tasarımı ve koşumu gibi teknik faaliyetler"
+            },
+            {
+              "id": "b",
+              "text": "Test için gerekli kaynakları organize etmek ve bütçelemek"
+            },
+            {
+              "id": "c",
+              "text": "Organizasyon çapında genel test stratejisini belirlemek"
+            },
+            {
+              "id": "d",
+              "text": "Ekipler arası test ilerleme raporlarını konsolide etmek"
+            }
+          ],
+          "rationale": {
+            "summary": "Syllabus, test uzmanı rolünün öncelikle test analizi, tasarımı ve koşumu gibi teknik test faaliyetlerine odaklandığını belirtir; kaynak organizasyonu, strateji belirleme ve ekipler arası raporlama test yönetimi rolüyle ilişkilidir.",
+            "byOption": {
+              "a": "Doğru: test uzmanı rolü, öncelikle test analizi, tasarımı ve koşumu gibi teknik faaliyetlere odaklanır.",
+              "b": "Kaynakları organize etmek ve bütçelemek, test yönetimi rolünün odaklandığı faaliyetlerdendir, test uzmanı rolünün değil.",
+              "c": "Organizasyon çapında test stratejisi belirlemek, test yönetimi rolünün odaklandığı faaliyetlerdendir, test uzmanı rolünün değil.",
+              "d": "Ekipler arası ilerleme raporlarını konsolide etmek, test yönetimi rolünün odaklandığı faaliyetlerdendir, test uzmanı rolünün değil."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which group of activities does the testing (tester) role primarily focus on?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Technical activities such as test analysis, design, and execution"
+            },
+            {
+              "id": "b",
+              "text": "Organizing and budgeting the resources needed for testing"
+            },
+            {
+              "id": "c",
+              "text": "Defining an overall test strategy that spans the whole organization"
+            },
+            {
+              "id": "d",
+              "text": "Consolidating test progress reports across teams"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus states that the testing role primarily focuses on technical test activities like analysis, design, and execution; resource organization, strategy-setting, and cross-team reporting relate to the test management role.",
+            "byOption": {
+              "a": "Correct: the testing role primarily focuses on technical activities such as analysis, design, and execution.",
+              "b": "Organizing and budgeting resources is one of the activities the test management role focuses on, not the testing role.",
+              "c": "Defining an organization-wide test strategy is one of the activities the test management role focuses on, not the testing role.",
+              "d": "Consolidating cross-team progress reports is one of the activities the test management role focuses on, not the testing role."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0143",
+      "revision": 2,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.5",
+      "objectives": [
+        "FL-1.4.5"
+      ],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "testing-roles"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a",
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Test yönetimi rolü ve test rolü ile ilgili aşağıdaki ifadelerden HANGİ İKİSİ doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Aynı kişi her iki rolü aynı anda üstlenebilir"
+            },
+            {
+              "id": "b",
+              "text": "Test yönetimi rolü test planlama, test gözetimi ve kontrolü ile test tamamlamaya odaklanır"
+            },
+            {
+              "id": "c",
+              "text": "Test yönetimi rolü yalnızca ayrı bir test ekibi olan büyük organizasyonlarda bulunur"
+            },
+            {
+              "id": "d",
+              "text": "Test planlamasının tüm yönlerinin tek başına sahibi test uzmanı rolüdür"
+            },
+            {
+              "id": "e",
+              "text": "Görevlerin iki rol arasındaki dağılımı her organizasyonda aynıdır"
+            }
+          ],
+          "rationale": {
+            "summary": "Syllabus, tek bir kişinin iki rolü aynı anda üstlenebileceğini ve test yönetimi rolünün test planlama, gözetim/kontrol ve tamamlamaya odaklandığını belirtir; rolleri organizasyon büyüklüğüne veya sabit bir dağılıma bağlamak yanlıştır.",
+            "byOption": {
+              "a": "Doğru: syllabus, test etme ve test yönetimi rollerini aynı anda tek bir kişinin üstlenmesinin de mümkün olduğunu belirtir.",
+              "b": "Doğru: syllabus, test yönetimi rolünün test planlama, test gözetimi/kontrolü ve test tamamlama faaliyetlerine odaklandığını belirtir.",
+              "c": "Yanlış: bu ifade rolü organizasyon büyüklüğüne bağlar. Syllabus böyle bir şey söylemez; küçük bir organizasyonda aynı test yönetimi görevleri, başka işler de yapan kişiler tarafından yürütülür.",
+              "d": "Yanlış: testin planlanması ağırlıklı olarak test yönetimi rolüne düşer; ayrıca herhangi bir rolün bunun tek sahibi olduğu iddiası, bağlama göre değişen görev dağılımıyla çelişir.",
+              "e": "Yanlış: her yerde birebir aynı olan bir dağılım, syllabus'un dağılımın bağlama bağlı olduğunu söylerken dışladığı durumdur."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which TWO of the following statements about the test management role and the testing role are correct?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The same person can hold both roles at the same time"
+            },
+            {
+              "id": "b",
+              "text": "The test management role focuses on test planning, monitoring and control, and test completion"
+            },
+            {
+              "id": "c",
+              "text": "The test management role only exists in large organizations with a separate test team"
+            },
+            {
+              "id": "d",
+              "text": "The testing role is the sole owner of every aspect of test planning"
+            },
+            {
+              "id": "e",
+              "text": "Tasks are distributed between the two roles the same way in every organization"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus states that one person can take on both roles at the same time, and that the test management role focuses on planning, monitoring/control and completion; tying the roles to organization size or a fixed split is wrong.",
+            "byOption": {
+              "a": "Correct: the syllabus states that it is also possible for one person to take on the roles of testing and test management at the same time.",
+              "b": "Correct: the syllabus states that the test management role focuses on test planning, monitoring and control, and test completion.",
+              "c": "Wrong: this ties the role to organization size. The syllabus makes no such claim; in a small organization the same test management tasks are carried out by people who do other work as well.",
+              "d": "Wrong: planning the testing sits mainly with the test management role, and claiming any single role owns it outright contradicts the context-dependent split of tasks.",
+              "e": "Wrong: an identical split everywhere is exactly what the syllabus rules out when it says the distribution depends on context."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0144",
+      "revision": 2,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.5",
+      "syllabusRef": "§1.5.1",
+      "objectives": [
+        "FL-1.5.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "tester-skills"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Nadiren ortaya çıkan ve yeniden üretilmesi zor bir arızayı araştıran bir testçi, arızanın tam olarak hangi koşullarda ortaya çıktığını sormayı sürdürür ve her seferinde tek bir değişkeni değiştirerek koşulları daraltır. Bu davranış, test için gerekli genel becerilerden EN İYİ hangisini örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Sistemin nasıl geliştirildiğine ilişkin teknik bilgi"
+            },
+            {
+              "id": "b",
+              "text": "Titizlik, merak, detaycılık ve sistematik çalışma"
+            },
+            {
+              "id": "c",
+              "text": "Yazılımın desteklediği iş alanına ilişkin alan bilgisi"
+            },
+            {
+              "id": "d",
+              "text": "İyi iletişim becerileri ve aktif dinleme"
+            },
+            {
+              "id": "e",
+              "text": "Test bilgisi, örneğin hangi test tekniğinin kullanılacağını bilmek"
+            }
+          ],
+          "rationale": {
+            "summary": "Koşulları her seferinde tek bir değişkenle daraltmak sistematik çalışmaktır; arızanın tam olarak hangi koşullarda ortaya çıktığını sormayı sürdürmek ise meraktır. Syllabus bu ikisini, titizlik ve detaycılıkla birlikte, test için gerekli tek bir genel beceri olarak sayar.",
+            "byOption": {
+              "a": "Teknik bilgi, test nesnesinin üzerine kurulduğu teknoloji, mimari ve araçları bilmektir. Burada anlatılan, testçinin ne bildiği değil, aramayı nasıl yürüttüğüdür.",
+              "b": "Doğru: koşulları her seferinde tek bir değişkenle daraltmak sistematik çalışmaktır ve arızanın tam olarak hangi koşullarda çıktığını sormayı sürdürmek meraktır. Syllabus titizliği, dikkati, merakı, detaycılığı ve sistematik çalışmayı tek bir genel beceri olarak birlikte sayar.",
+              "c": "Alan bilgisi, yazılımın hizmet ettiği işi ve kullanıcıların çalışma biçimini anlamaktır. Senaryoda arızanın iş anlamıyla ilgili hiçbir şey söylenmemektedir.",
+              "d": "İyi iletişim becerileri ve aktif dinleme, bulgular başkalarıyla paylaşıldığında önem kazanır. Burada testçi tek başına araştırma yapmakta; kimseyle bir alışveriş anlatılmamaktadır.",
+              "e": "Test bilgisi, test etmenin kendisini — test tekniklerini ve bunların nasıl uygulanacağını — bilmektir. Senaryoda hiçbir teknik adı geçmez; anlatılan, testçinin nasıl ısrar ettiği ve koşulları nasıl daralttığıdır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester investigating a rare, hard-to-reproduce failure keeps asking under exactly which conditions it appears, narrowing those conditions down one variable at a time. Which of the generic skills required for testing does this BEST illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Technical knowledge of how the system is built"
+            },
+            {
+              "id": "b",
+              "text": "Thoroughness, curiosity, attention to detail and a methodical approach"
+            },
+            {
+              "id": "c",
+              "text": "Domain knowledge of the business the software serves"
+            },
+            {
+              "id": "d",
+              "text": "Good communication skills and active listening"
+            },
+            {
+              "id": "e",
+              "text": "Testing knowledge, such as knowing which test technique to use"
+            }
+          ],
+          "rationale": {
+            "summary": "Narrowing the conditions down one variable at a time is working methodically, and persisting in asking under exactly which conditions the failure appears is curiosity. The syllabus lists both, with thoroughness and attention to detail, as a single generic skill required for testing.",
+            "byOption": {
+              "a": "Technical knowledge is knowing the technology, architecture and tools the test object is built on. What is described here is how the tester goes about the search, not what they know about the implementation.",
+              "b": "Correct: narrowing the conditions one variable at a time is working methodically, and continuing to ask under exactly which conditions the failure appears is curiosity. The syllabus lists thoroughness, carefulness, curiosity, attention to detail and being methodical together as one generic skill.",
+              "c": "Domain knowledge is understanding the business the software serves and how its users work. Nothing in the scenario turns on the business meaning of the failure.",
+              "d": "Good communication skills and active listening matter when findings are shared with others. Here the tester is investigating alone; no exchange with anyone is described.",
+              "e": "Testing knowledge is knowing testing itself — the test techniques and how to apply them. The scenario names no technique; it describes how the tester persists and how they narrow the conditions down."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0145",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.5",
+      "syllabusRef": "§1.5.1",
+      "objectives": [
+        "FL-1.5.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "confirmation-bias"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir testçi, bir modülün kesinlikle hatasız olduğuna güçlü biçimde inanıyor ve bu inancıyla çelişen bir test sonucunu araştırmadan göz ardı ediyor. Bu davranış hangi kavramı örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bağımsızlık ilkesi"
+            },
+            {
+              "id": "b",
+              "text": "Kök neden analizi"
+            },
+            {
+              "id": "c",
+              "text": "Doğrulama yanlılığı"
+            },
+            {
+              "id": "d",
+              "text": "Test uzmanının teknik bilgi eksikliği"
+            }
+          ],
+          "rationale": {
+            "summary": "Mevcut bir inançla çelişen kanıtı araştırmadan göz ardı etmek, doğrulama yanlılığının tipik bir örneğidir.",
+            "byOption": {
+              "a": "Bağımsızlık ilkesi, testi kimin yürüttüğüyle ilgili bir kavramdır; burada anlatılan bilişsel önyargıyla ilgili değildir.",
+              "b": "Kök neden analizi, bir hatanın kaynağını bulmaya yönelik bir faaliyettir; burada anlatılan önyargıyla ilgili değildir.",
+              "c": "Doğru: mevcut inançla çelişen kanıtı görmezden gelmek, doğrulama yanlılığının tanımıdır.",
+              "d": "Teknik bilgi eksikliği, sistemin nasıl çalıştığını yeterince bilmemekle ilgilidir; burada anlatılan davranış ise mevcut bir inançla çelişen kanıtı bilerek göz ardı etmektir, bilgi eksikliği değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester strongly believes a module is completely defect-free and dismisses a test result that contradicts this belief without investigating it. Which concept does this illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The principle of independence"
+            },
+            {
+              "id": "b",
+              "text": "Root cause analysis"
+            },
+            {
+              "id": "c",
+              "text": "Confirmation bias"
+            },
+            {
+              "id": "d",
+              "text": "The tester's lack of technical knowledge"
+            }
+          ],
+          "rationale": {
+            "summary": "Dismissing evidence that contradicts an existing belief without investigating it is a typical example of confirmation bias.",
+            "byOption": {
+              "a": "The principle of independence is about who performs the testing; it is unrelated to the cognitive bias described here.",
+              "b": "Root cause analysis is an activity aimed at finding the source of a defect; it is unrelated to the bias described here.",
+              "c": "Correct: ignoring evidence that contradicts an existing belief is the definition of confirmation bias.",
+              "d": "Lack of technical knowledge is about not knowing enough about how the system works; what is described here is deliberately dismissing evidence that conflicts with an existing belief, not a knowledge gap."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0146",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.5",
+      "syllabusRef": "§1.5.1",
+      "objectives": [
+        "FL-1.5.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "tester-skills"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Sigortacılık alanında birkaç yıl çalışmış bir testçi, spesifikasyondaki bir prim hesaplama kuralının, sigortacıların bu tür poliçeleri gerçekte nasıl değerlendirdiğiyle uyuşmadığını fark eder ve bunu kod yazılmadan önce gündeme getirir. Bu durum, test için gerekli genel becerilerden EN İYİ hangisini örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Sistemin üzerinde çalıştığı platforma ilişkin teknik bilgi"
+            },
+            {
+              "id": "b",
+              "text": "Hangi test tekniğinin uygulanacağı gibi test bilgisi"
+            },
+            {
+              "id": "c",
+              "text": "Aktif dinlemeyi de içeren iyi iletişim becerileri"
+            },
+            {
+              "id": "d",
+              "text": "Yazılımın desteklediği iş alanına ilişkin alan bilgisi"
+            }
+          ],
+          "rationale": {
+            "summary": "Spesifikasyondaki bir kuralın işin gerçekte nasıl yürüdüğüyle çeliştiğini görmek, o işi bilmeyi gerektirir; alan bilgisi, syllabus'un testçiden beklediği genel becerilerden biridir.",
+            "byOption": {
+              "a": "Teknik bilgi, test nesnesinin üzerine kurulduğu teknoloji, mimari ve araçlarla ilgilidir. Burada bulunan uyumsuzluk platformda değil, iş kuralındadır.",
+              "b": "Test bilgisi, test tekniklerini ve bunların nasıl uygulanacağını bilmektir. Kuralın nasıl test edileceğini biçimlendirir; ama testçinin kuralın yanlış olduğunu görmesini sağlayan şey bu değildir.",
+              "c": "İyi iletişim becerileri ve aktif dinleme, bulgu başkalarına aktarılırken önem kazanır. Burada işleyen beceri, testçinin bulguyu nasıl anlattığı değil, ne bildiğidir.",
+              "d": "Doğru: belirtilen kuralın sigortacıların gerçek çalışma biçimiyle çeliştiğini fark etmek, iş alanını bilmekten gelir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester with several years in insurance notices that a premium-calculation rule in the specification does not match how underwriters actually assess that kind of policy, and raises it before any code is written. Which of the generic skills required for testing does this BEST illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Technical knowledge of the platform the system runs on"
+            },
+            {
+              "id": "b",
+              "text": "Testing knowledge, such as which test technique to apply"
+            },
+            {
+              "id": "c",
+              "text": "Good communication skills, including active listening"
+            },
+            {
+              "id": "d",
+              "text": "Domain knowledge of the business the software supports"
+            }
+          ],
+          "rationale": {
+            "summary": "Spotting that a specified rule conflicts with how the business really works takes knowledge of that business; domain knowledge is one of the generic skills the syllabus expects of a tester.",
+            "byOption": {
+              "a": "Technical knowledge covers the technology, architecture and tools the test object is built on. The mismatch found here is in the business rule, not in the platform.",
+              "b": "Testing knowledge is knowing the test techniques and how to apply them. It shapes how the rule would be tested, but it is not what let the tester see that the rule was wrong.",
+              "c": "Good communication skills and active listening matter when the finding is passed on to others. The skill at work here is what the tester knew, not how they said it.",
+              "d": "Correct: recognizing that the specified rule contradicts how underwriters actually work comes from knowing the business domain."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0147",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.5",
+      "syllabusRef": "§1.5.2",
+      "objectives": [
+        "FL-1.5.2"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "whole-team-approach"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Tüm ekip (whole-team) yaklaşımı hangi pratikten gelmektedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Şelale modeli"
+            },
+            {
+              "id": "b",
+              "text": "Ekstrem Programlama"
+            },
+            {
+              "id": "c",
+              "text": "V-modeli"
+            },
+            {
+              "id": "d",
+              "text": "Kanban"
+            }
+          ],
+          "rationale": {
+            "summary": "Syllabus, tüm ekip yaklaşımının Ekstrem Programlama'dan geldiğini belirtir; şelale, V-modeli ve Kanban farklı yaşam döngüsü/akış yaklaşımlarıdır.",
+            "byOption": {
+              "a": "Şelale modeli, aşamaların sırayla ve ardışık yürütüldüğü bir geliştirme yaşam döngüsü modelidir; tüm ekip yaklaşımının kaynağı değildir.",
+              "b": "Doğru: tüm ekip yaklaşımı Ekstrem Programlama'dan gelen bir pratiktir.",
+              "c": "V-modeli, her geliştirme aşamasına karşılık gelen bir test seviyesi tanımlayan sıralı bir yaşam döngüsü modelidir; tüm ekip yaklaşımının kaynağı değildir.",
+              "d": "Kanban, iş akışını görselleştirmeye ve devam eden iş miktarını sınırlamaya dayanan bir yöntemdir; tüm ekip yaklaşımının kaynağı değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "The whole-team approach comes from which practice?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The waterfall model"
+            },
+            {
+              "id": "b",
+              "text": "Extreme Programming"
+            },
+            {
+              "id": "c",
+              "text": "The V-model"
+            },
+            {
+              "id": "d",
+              "text": "Kanban"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus states the whole-team approach comes from Extreme Programming; waterfall, the V-model, and Kanban are different lifecycle/flow approaches.",
+            "byOption": {
+              "a": "The waterfall model is a development lifecycle model where phases run sequentially; it is not the source of the whole-team approach.",
+              "b": "Correct: the whole-team approach is a practice that comes from Extreme Programming.",
+              "c": "The V-model is a sequential lifecycle model that pairs each development phase with a test level; it is not the source of the whole-team approach.",
+              "d": "Kanban is a method based on visualizing workflow and limiting work in progress; it is not the source of the whole-team approach."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0148",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.5",
+      "syllabusRef": "§1.5.2",
+      "objectives": [
+        "FL-1.5.2"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "whole-team-approach"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Tüm ekip yaklaşımında ekip üyelerinin aynı çalışma alanını (fiziksel veya sanal) paylaşmasının başlıca faydası nedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test ortamının donanım maliyetini doğrudan azaltır"
+            },
+            {
+              "id": "b",
+              "text": "Test uzmanına olan ihtiyacı ortadan kaldırır"
+            },
+            {
+              "id": "c",
+              "text": "İletişimi ve etkileşimi kolaylaştırır, ekip sinerjisi yaratır"
+            },
+            {
+              "id": "d",
+              "text": "Bağımsız test düzeyini otomatik olarak en yüksek seviyeye çıkarır"
+            }
+          ],
+          "rationale": {
+            "summary": "Syllabus, ortak çalışma alanının iletişimi ve etkileşimi kolaylaştırdığını ve ekip sinerjisi yarattığını belirtir.",
+            "byOption": {
+              "a": "Ortak çalışma alanı, donanım maliyetini doğrudan azaltan bir mekanizma olarak tarif edilmez.",
+              "b": "Bu, syllabus'ta açıkça uyarılan bir yanlış anlamadır. Ortak çalışma alanı, ekibin ne kadar kolay iletişim kurduğunu değiştirir; ekipten bir rolü silmez.",
+              "c": "Doğru: ortak çalışma alanı iletişimi ve etkileşimi kolaylaştırır, ekip sinerjisi yaratır.",
+              "d": "Ortak çalışma alanı, ekibin nasıl iletişim kurduğuyla ilgilidir; kimin kimin işini test ettiğiyle değil. Bağımsızlık düzeyi ayrı bir kavramdır ve insanların nerede oturduğundan etkilenmez."
+            }
+          }
+        },
+        "en": {
+          "stem": "In the whole-team approach, what is the main benefit of team members sharing the same workspace, physical or virtual?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It directly reduces the hardware cost of the test environment"
+            },
+            {
+              "id": "b",
+              "text": "It removes the need for a tester"
+            },
+            {
+              "id": "c",
+              "text": "It makes communication and interaction easier and creates team synergy"
+            },
+            {
+              "id": "d",
+              "text": "It automatically raises the level of test independence to the highest level"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus states that a shared workspace makes communication and interaction easier and creates team synergy.",
+            "byOption": {
+              "a": "A shared workspace is not described as a mechanism that directly reduces hardware cost.",
+              "b": "This is a misconception the syllabus explicitly warns against. A shared workspace changes how easily the team communicates; it does not delete a role from the team.",
+              "c": "Correct: a shared workspace makes communication and interaction easier and creates team synergy.",
+              "d": "A shared workspace is about how the team communicates, not about who tests whose work; the level of independence is a separate concept and is unaffected by where people sit."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0149",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.5",
+      "syllabusRef": "§1.5.2",
+      "objectives": [
+        "FL-1.5.2"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "whole-team-approach"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Tüm ekip yaklaşımında test uzmanının rolü için aşağıdakilerden hangisi doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test uzmanının test bilgisini tüm ekibe yayması"
+            },
+            {
+              "id": "b",
+              "text": "Testin, kim boş kalırsa onun üstlendiği eğitimsiz bir işe dönüşmesi"
+            },
+            {
+              "id": "c",
+              "text": "Test uzmanının test etmeyi bırakıp geliştiricilerle birlikte üretim kodu yazması"
+            },
+            {
+              "id": "d",
+              "text": "Test uzmanının işinin, ekibin geri kalanı için dokümantasyon üretmeye indirgenmesi"
+            }
+          ],
+          "rationale": {
+            "summary": "Syllabus, tüm ekip yaklaşımında test uzmanının iş temsilcileriyle kabul testleri, geliştiricilerle test stratejisi ve otomasyon üzerine yakın çalışarak test bilgisini ekibe yaydığını belirtir.",
+            "byOption": {
+              "a": "Doğru: test uzmanı, iş temsilcileriyle kabul testleri, geliştiricilerle strateji ve otomasyon üzerine çalışır ve böylece test bilgisini ekibe yayar.",
+              "b": "Bu, syllabus'un uyardığı yanlış anlamadır: test, kim boşsa ona bırakılan bir iş değildir. Bu yaklaşımda test uzmanının katkısı tesadüfi değil, bilinçli bir katkıdır.",
+              "c": "Bu, bir geliştiricinin işini tarif eder. Test uzmanı bu yaklaşımda geliştiricilerle yakın çalışabilir, ancak üretim kodunu devralmak syllabus'ta tarif edilen rol değildir.",
+              "d": "Bu, rolü dokümantasyona indirger. Test çalışma ürünleri üretmek işin bir parçasıdır, ama syllabus'ta tarif edilen katkı ekibin geri kalanıyla iş birliğidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is true about the tester's role in the whole-team approach?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The tester spreads testing knowledge across the whole team"
+            },
+            {
+              "id": "b",
+              "text": "Testing becomes an untrained task that any member picks up when there is spare time"
+            },
+            {
+              "id": "c",
+              "text": "The tester stops testing and writes production code alongside the developers"
+            },
+            {
+              "id": "d",
+              "text": "The tester's work is reduced to producing documentation for the rest of the team"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus states that in the whole-team approach the tester works closely with business representatives on acceptance tests and with developers on test strategy and automation, spreading testing knowledge across the team.",
+            "byOption": {
+              "a": "Correct: the tester works with business representatives on acceptance tests and with developers on test strategy and automation, and so spreads testing knowledge through the team.",
+              "b": "This is the misconception the syllabus warns against: testing is not left to whoever happens to be free. In this approach the tester's contribution is deliberate, not incidental.",
+              "c": "This describes a developer's job. A tester in this approach may work closely with developers, but taking over production coding is not the role the syllabus describes.",
+              "d": "This reduces the role to documentation. Producing testware is part of the work, but the contribution the syllabus describes is collaboration with the rest of the team."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0150",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.5",
+      "syllabusRef": "§1.5.3",
+      "objectives": [
+        "FL-1.5.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "independence-of-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Karmaşık bir algoritmayı yazan geliştirici, kendi kodundaki bir hatayı, konuyu hiç bilmeyen bağımsız bir testçiden çok daha hızlı buluyor. Bu durum hangi ilkeyi örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bağımsızlık, aşinalığın yerini tutmaz"
+            },
+            {
+              "id": "b",
+              "text": "Bağımsızlık her zaman aşinalıktan daha etkilidir"
+            },
+            {
+              "id": "c",
+              "text": "Testçi doğrulama yanlılığından etkilenmiştir"
+            },
+            {
+              "id": "d",
+              "text": "Bağımsız test bu tür durumlarda tamamen gereksizdir"
+            }
+          ],
+          "rationale": {
+            "summary": "Syllabus, bağımsızlığın aşinalığın yerini tutmadığını, yazılımcıların kendi kodlarındaki birçok hatayı verimli biçimde bulabileceğini belirtir; senaryo tam olarak bunu örnekler.",
+            "byOption": {
+              "a": "Doğru: senaryo, bağımsızlığın aşinalığın yerini tutmadığını, geliştiricinin kendi kodundaki hatayı verimli bulabildiğini örnekler.",
+              "b": "Yanlış: senaryo, aşinalığın bazı durumlarda bağımsızlıktan daha etkili olabileceğini gösterir; iddia tam tersini söylüyor.",
+              "c": "Senaryoda testçinin bir sonucu yanlış değerlendirdiğine dair hiçbir bilgi yoktur; iki kişi arasındaki fark, kodu ne kadar iyi tanıdıklarıdır.",
+              "d": "Aşırı bir genelleme: syllabus bağımsız testin faydasız olduğunu söylemez, yalnızca aşinalığın yerini tutmadığını belirtir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A developer who wrote a complex algorithm finds a defect in their own code much faster than an independent tester unfamiliar with it would. Which principle does this illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Independence is not a substitute for familiarity"
+            },
+            {
+              "id": "b",
+              "text": "Independence is always more effective than familiarity"
+            },
+            {
+              "id": "c",
+              "text": "The tester has been affected by confirmation bias"
+            },
+            {
+              "id": "d",
+              "text": "Independent testing is entirely unnecessary in such cases"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus states that independence is not a substitute for familiarity, and that developers can efficiently find many defects in their own code; this scenario illustrates exactly that.",
+            "byOption": {
+              "a": "Correct: the scenario illustrates that independence is not a substitute for familiarity, since the developer efficiently finds the defect in their own code.",
+              "b": "Wrong: the scenario shows familiarity can be more effective than independence in some cases; this claim says the opposite.",
+              "c": "Nothing in the scenario says the tester misjudged a result; what differs between the two people is how well each of them knows the code.",
+              "d": "This overgeneralizes: the syllabus does not say independent testing is useless, only that it is not a substitute for familiarity."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0151",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.5",
+      "syllabusRef": "§1.5.3",
+      "objectives": [
+        "FL-1.5.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "independence-of-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir iş ürünü, onu yazan kişi yerine aynı ekipten bir arkadaşı tarafından test ediliyor. Bu, hangi bağımsızlık düzeyine karşılık gelir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bağımsızlık yok"
+            },
+            {
+              "id": "b",
+              "text": "Yüksek bağımsızlık"
+            },
+            {
+              "id": "c",
+              "text": "Çok yüksek bağımsızlık"
+            },
+            {
+              "id": "d",
+              "text": "Biraz bağımsızlık"
+            }
+          ],
+          "rationale": {
+            "summary": "Syllabus, aynı ekipten bir arkadaşın test etmesini 'biraz bağımsızlık' düzeyi olarak tanımlar.",
+            "byOption": {
+              "a": "Bağımsızlık yok düzeyi, iş ürününü yazarın kendisinin test etmesi durumudur; senaryoda yazar değil bir arkadaş test etmektedir.",
+              "b": "Yüksek bağımsızlık düzeyi, ekip dışı ama kurum içi bir testçinin test etmesidir; senaryoda test eden kişi aynı ekiptendir.",
+              "c": "Çok yüksek bağımsızlık düzeyi, kurum dışı bir testçinin test etmesidir; senaryoda test eden kişi aynı kurum ve ekiptendir.",
+              "d": "Doğru: aynı ekipten bir arkadaşın test etmesi, biraz bağımsızlık düzeyine karşılık gelir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A work product is tested by a peer from the same team instead of by the person who wrote it. Which level of independence does this correspond to?",
+          "options": [
+            {
+              "id": "a",
+              "text": "No independence"
+            },
+            {
+              "id": "b",
+              "text": "High independence"
+            },
+            {
+              "id": "c",
+              "text": "Very high independence"
+            },
+            {
+              "id": "d",
+              "text": "Some independence"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus defines a peer from the same team testing the work as the 'some independence' level.",
+            "byOption": {
+              "a": "No independence is when the author tests their own work product; here a peer, not the author, does the testing.",
+              "b": "High independence is a tester outside the team but inside the organization; here the tester is from the same team.",
+              "c": "Very high independence is a tester from outside the organization; here the tester is from the same organization and team.",
+              "d": "Correct: a peer from the same team testing the work corresponds to some independence."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0152",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.5",
+      "syllabusRef": "§1.5.3",
+      "objectives": [
+        "FL-1.5.3"
+      ],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "independence-of-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b",
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden HANGİ İKİSİ, bağımsız test yapmanın faydalarındandır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Geliştirme ekibiyle iş birliğinin her zaman kolaylaşması"
+            },
+            {
+              "id": "b",
+              "text": "Geliştiricilere kıyasla farklı türde arıza ve hata bulma olasılığının yüksek olması"
+            },
+            {
+              "id": "c",
+              "text": "Ürüne olan aşinalığın tamamen gereksiz hale gelmesi"
+            },
+            {
+              "id": "d",
+              "text": "Paydaşların varsayımlarını sorgulayabilme yeteneği"
+            },
+            {
+              "id": "e",
+              "text": "Darboğaz olarak görülme riskinin tamamen ortadan kalkması"
+            }
+          ],
+          "rationale": {
+            "summary": "Syllabus, bağımsız testin başlıca faydalarını farklı arıza/hata türlerini bulma olasılığının yüksek olması ve paydaşların varsayımlarını sorgulayabilme olarak sayar; iş birliği kolaylığı, aşinalığın gereksizliği ve darboğaz riskinin ortadan kalkması bu faydalar arasında değildir.",
+            "byOption": {
+              "a": "Yanlış: syllabus, bağımsız testin geliştirme ekibiyle iş birliği ve iletişim sorunlarına yol açabileceğini, bunun bir sakınca olduğunu belirtir; her zaman kolaylaştığı iddia edilmez.",
+              "b": "Doğru: farklı geçmiş ve önyargılar nedeniyle geliştiricilere kıyasla farklı arıza/hata türlerini bulma olasılığı, bağımsız testin bir faydasıdır.",
+              "c": "Yanlış: bu, syllabus'un söylemediği bir iddiadır. Test nesnesini iyi tanımak, testi kim yaparsa yapsın değerini korur; bağımsızlığa atfedilen faydalar, ürün bilgisinin önemsizleşmesiyle değil, bağımsız testçinin getirdiği farklı bakış açısıyla ilgilidir.",
+              "d": "Doğru: paydaşların varsayımlarını sorgulayabilme, bağımsız testin bir faydasıdır.",
+              "e": "Yanlış: syllabus, bağımsız testçilerin bir darboğaz olarak görülebileceğini bir sakınca olarak sayar; bu riskin ortadan kalktığı iddia edilmez."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which TWO of the following are benefits of independent testing?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Collaboration with the development team always becoming easier"
+            },
+            {
+              "id": "b",
+              "text": "A higher likelihood of finding different kinds of defects and failures compared to developers"
+            },
+            {
+              "id": "c",
+              "text": "Familiarity with the product becoming entirely unnecessary"
+            },
+            {
+              "id": "d",
+              "text": "The ability to challenge stakeholders' assumptions"
+            },
+            {
+              "id": "e",
+              "text": "The risk of being seen as a bottleneck disappearing entirely"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus lists a higher likelihood of finding different kinds of defects/failures and the ability to challenge stakeholders' assumptions as benefits of independent testing; easier collaboration, unnecessary familiarity, and the disappearance of bottleneck risk are not among them.",
+            "byOption": {
+              "a": "Wrong: the syllabus states independent testing can create collaboration and communication problems with the development team as a drawback; it does not claim collaboration always becomes easier.",
+              "b": "Correct: due to differing backgrounds and biases, a higher likelihood of finding different kinds of defects and failures than developers is a benefit of independent testing.",
+              "c": "Wrong: this states something the syllabus does not. Knowing the test object well stays valuable whoever tests it; the benefits attributed to independence are about the different perspective an independent tester brings, not about product knowledge ceasing to matter.",
+              "d": "Correct: the ability to challenge stakeholders' assumptions is a benefit of independent testing.",
+              "e": "Wrong: the syllabus lists being seen as a bottleneck as a drawback of independent testing; it does not claim this risk disappears entirely."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (adversarial pass, 2026-09-22; ctfl4-0143 option a corrected to the syllabus 'at the same time', ctfl4-0144 options b/e demerged, a-c-b-d rotation broken, length cues cleared)",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    },
+    {
+      "id": "ctfl4-0256",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.3",
+      "objectives": [
+        "FL-1.4.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-monitoring-and-control-work-products"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden hangisi test GÖZETİMİ VE KONTROLÜ faaliyetinin bir çalışma ürünüdür?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test tamamlama raporu"
+            },
+            {
+              "id": "b",
+              "text": "Kapsam öğeleri"
+            },
+            {
+              "id": "c",
+              "text": "Kontrol direktifleri"
+            },
+            {
+              "id": "d",
+              "text": "Test prosedürleri"
+            }
+          ],
+          "rationale": {
+            "summary": "Kontrol direktifleri, ilerleme raporlarıyla birlikte test gözetimi ve kontrolü faaliyetinin çalışma ürünüdür; diğer seçenekler sırasıyla test tamamlama, test tasarımı ve test uyarlama faaliyetlerine aittir.",
+            "byOption": {
+              "a": "Yanlış: test tamamlama raporu, test tamamlama faaliyetinin bir çalışma ürünüdür; süreç kapanırken iyileştirme aksiyonları, tecrübeler ve değişiklik talepleriyle birlikte üretilir, testin ilerleyişini izlemekle değil kapatmakla ilgilidir.",
+              "b": "Yanlış: kapsam öğeleri, test tasarımı faaliyetinin bir çalışma ürünüdür; testlerin neyi kapsadığını ölçmek için tanımlanır, test durumunun izlenmesiyle değil testlerin tasarlanmasıyla ortaya çıkar.",
+              "c": "Doğru: kontrol direktifleri, ilerleme raporlarıyla birlikte test gözetimi ve kontrolü faaliyetinin bir çalışma ürünüdür; test durumunu plana göre yönlendirmek için kullanılır.",
+              "d": "Yanlış: test prosedürleri, test uyarlama faaliyetinin bir çalışma ürünüdür; test senaryolarının yürütme sırasına dizilmesiyle ortaya çıkar, testin durumunu izlemekle değil testleri koşuma hazırlamakla ilgilidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is a work product of the test MONITORING AND CONTROL activity?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The test completion report"
+            },
+            {
+              "id": "b",
+              "text": "Coverage items"
+            },
+            {
+              "id": "c",
+              "text": "Control directives"
+            },
+            {
+              "id": "d",
+              "text": "Test procedures"
+            }
+          ],
+          "rationale": {
+            "summary": "Control directives, together with progress reports, are a work product of test monitoring and control; the other options belong to test completion, test design and test implementation respectively.",
+            "byOption": {
+              "a": "Incorrect: the test completion report is a work product of test completion; it is produced as the process closes, alongside improvement actions, lessons learned and change requests, which is about closing testing rather than tracking its progress.",
+              "b": "Incorrect: coverage items are a work product of test design; they are defined to measure what the tests cover, which comes from designing tests rather than from monitoring their status.",
+              "c": "Correct: control directives, together with progress reports, are a work product of test monitoring and control, used to steer testing against the plan.",
+              "d": "Incorrect: test procedures are a work product of test implementation; they result from arranging test cases into an execution order, which is about preparing tests to run rather than tracking their status."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "checked against syllabus-en/tr §1.4.3 and §2.1.1-2.1.2, 2026-09-22; 'control directives' confirmed as a monitoring-and-control work product, the 'four practices' overclaim removed",
+        "createdAt": "2026-09-22",
+        "updatedAt": "2026-09-22"
+      }
+    }
+  ]
+}
