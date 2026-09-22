@@ -36,7 +36,7 @@ An international candidate looking for a free, trustworthy resource, searching i
 | ID | Story | Priority |
 |---|---|---|
 | A-1 | As a user, I want to start a mock exam under real exam rules (40 questions, 60 min, pass mark 26) so I can rehearse exam day. | P0 |
-| A-2 | Since my native language is Turkish, I want to be able to select the **75-minute** option. | P0 |
+| A-2 | ~~Since my native language is Turkish, I want to be able to select the **75-minute** option.~~ **Withdrawn (D-06, 22.09.2026).** ISTQB's +25% belongs to a candidate sitting in a language that is not their own; a Turkish candidate sitting the Turkish paper gets 60 minutes, and the product simulates the paper. | — |
 | A-3 | I want to be able to **flag** a question and come back to it later. | P0 |
 | A-4 | I want to see unanswered/flagged questions via a **question navigator** before time runs out. | P0 |
 | A-5 | The mock exam should be generated according to the official **LO-group distribution**, so it reflects the real exam's chapter weighting. | P0 |
@@ -99,7 +99,7 @@ An international candidate looking for a free, trustworthy resource, searching i
 |---|:--:|:--:|:--:|
 | Full mock exam (40/60/26) | ✅ | | |
 | LO-group-based exam generation | ✅ | | |
-| 75-min extension option | ✅ | | |
+| 75-min extension option | Withdrawn (D-06) | | |
 | Question flagging + navigator | ✅ | | |
 | Results screen + pass line + chapter breakdown | ✅ | | |
 | Question-by-question review tour | ✅ | | |

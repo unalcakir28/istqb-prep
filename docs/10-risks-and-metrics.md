@@ -24,7 +24,7 @@ Probability and impact: **D** (low) · **O** (medium) · **Y** (high)
 | **R-11** | **Single-person dependency (bus factor 1)** | **Y** | O | Everything documented; data in Git; setup is a single command; can continue under MIT + CC BY-SA |
 | **R-12** | **Scope creep** — "let's add this too" | **Y** | O | Phase scopes are written down; [`09-roadmap.md`](09-roadmap.md) has a "deliberately deferred" list |
 | **R-13** | **AI-generated question reproduces an official question from memory** → unintentional copyright infringement | O | **Y** | The AI is never asked for a "sample exam question," only generation from an LO; every question is manually checked against official sample exams; anything suspiciously similar is rejected |
-| **R-14** | If the Glossary license is **not** CC BY 4.0, glossary content can't be used | O | D | Until verified, definitions are written in our own words (F0-02) |
+| **R-14** | ~~If the Glossary license is **not** CC BY 4.0, glossary content can't be used~~ **Closed 22.09.2026** | — | — | Verified by eye in a browser: the footer is CC BY 4.0 (`docs/evidence/istqb-glossary-licence-2026-09-22.png`). Two caveats carried forward, both in [`08 §5`](08-legal-and-copyright.md): the live glossary is V4.8.1 rather than v4.0.1, and "except where otherwise noted" makes the notice a per-page default |
 
 ### Three risks to watch
 **R-02 (content stalling)**, **R-03 (syllabus update)**, and **R-06 (distribution)**. The others are manageable; these three could end the project.

@@ -80,6 +80,8 @@ Route paths are Turkish, like the rest of the product's user-facing surface; the
 | `/sinav/:attemptId` | Exam session | exam |
 | `/sonuc/:attemptId` | Result screen | exam + practice (study keeps its result in its own route) |
 | `/inceleme/:attemptId` | Review pass — reached from the result screen | exam + practice |
+| `/listelerim` | My lists — wrong, flagged, never right twice in a row | — |
+| `/sozluk` | Glossary — 97 bilingual terms, searched in both languages | — |
 | `/kaynaklar` | Sources, copyright, disclaimer | — |
 | `/deneme`, `/deneme/:attemptId` | **Legacy redirect** to `/sinav`. Bookmarks and in-progress attempts on the old exam path keep working. | — |
 
@@ -94,46 +96,73 @@ Route paths are Turkish, like the rest of the product's user-facing surface; the
 │  ⚑ You have an unfinished session — 12 / 40 answered          │
 │    [Continue]  [Discard]                                     │
 │                                                              │
-│  Prepare for the ISTQB Foundation Level exam                 │
-│  40 questions · 60 minutes · pass mark 26/40   (from meta)   │
-│  75 minutes for non-native English speakers                  │
+│  A free mock exam for        ┌─────────────────────────────┐ │
+│  ISTQB Foundation Level      │ What the real exam asks     │ │
+│                              │ 40 questions across 6 …     │ │
+│  120 original questions      │                             │ │
+│  written from the v4.0.1     │ 1 Fundamentals          8   │ │
+│  syllabus. Every option      │ ▪▪▪▪▪▪▪▪                    │ │
+│  carries a reason …          │ 2 Lifecycle             6   │ │
+│                              │ ▪▪▪▪▪▪                      │ │
+│                              │ 3 Static testing        4   │ │
+│                              │ ▪▪▪▪                        │ │
+│                              │ 4 Analysis and design  11   │ │
+│                              │ ▪▪▪▪▪▪▪▪▪▪▪                 │ │
+│                              │ 5 Managing              9   │ │
+│                              │ ▪▪▪▪▪▪▪▪▪                   │ │
+│                              │ 6 Tools                 2   │ │
+│                              │ ▪▪                          │ │
+│  CTFL v4.0.1                 │ 60 minutes  26 of 40 pass   │ │
+│                              └─────────────────────────────┘ │
 │                                                              │
-│   ┌────────────────────────────────────────────────────────┐ │
-│   │ Study                                       ← primary   │ │
-│   │ One learning objective at a time: read the card,        │ │
-│   │ then test it.                        [Start studying]   │ │
-│   ├────────────────────────────────────────────────────────┤ │
-│   │ Practice                                                │ │
-│   │ Pick the scope, untimed, instant feedback.  [Practice]  │ │
-│   ├────────────────────────────────────────────────────────┤ │
-│   │ Mock exam                                               │ │
-│   │ Full simulation under the real rules.    [Start exam]   │ │
-│   └────────────────────────────────────────────────────────┘ │
+│  Three ways to work                                          │
+│  ┌──────────────────────────────┬─────────────────────────┐  │
+│  │ Study                ← primary│ Time    No limit …      │  │
+│  │ One learning objective at a   │ Answers As you choose … │  │
+│  │ time: read its card, then …   │ Score   Per objective … │  │
+│  │ [Start studying]              │                         │  │
+│  ├──────────────────────────────┼─────────────────────────┤  │
+│  │ Practice                      │ Time / Answers / Score  │  │
+│  │ [Start practising]            │                         │  │
+│  ├──────────────────────────────┼─────────────────────────┤  │
+│  │ Mock exam                     │ Time / Answers / Score  │  │
+│  │ [Start a mock exam]           │                         │  │
+│  └──────────────────────────────┴─────────────────────────┘  │
 │                                                              │
-│  What is this?  …                                            │
-│                                                              │
-│  120 questions · 64/64 learning objectives covered           │
-│  [████████████████████] 64/64                                │
+│  120 original questions in the pool, covering 64 of the 64   │
+│  learning objectives.                                        │
 │                                                              │
 │  ⚑ Pool warning (only when the blueprint cannot be filled)    │
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Critical decision:** the primary action is **Study, not Mock Exam** — scoring 12/40 on the first try loses the user (Zeynep, P2). The mode cards are `<article>`s, not links: heading, body and action collapsing into one accessible name would cost a screen-reader user the only wording that tells them where the link goes.
+**The hero is the blueprint, not a headline.** The per-chapter weighting is the one fact that changes how a candidate spends their time — chapter 4 is eleven questions and chapter 6 is two — and the ragged right edge of `BlueprintFigure` states it faster than any sentence can. The forty cells are `aria-hidden`: they carry nothing the row's own text does not, and forty unlabelled squares would be forty stops for a screen reader. The cells' staggered load-in is the only page-load motion in the app, and `.blueprint-cell` drops the animation outright under `prefers-reduced-motion` — the base layer's rule collapses the duration but not the per-cell delay, so a `both` fill would otherwise hold the last cells invisible for half a second.
 
-Every number on this screen is read from `meta.json` and the question index. None of 40 / 26 / 60 / 75 is written in the code.
+**Critical decision:** the primary action is **Study, not Mock Exam** — scoring 12/40 on the first try loses the user (Zeynep, P2). The mode cards are `<article>`s, not links: heading, body and action collapsing into one accessible name would cost a screen-reader user the only wording that tells them where the link goes. Study's card carried a warning that its lesson cards were unwritten until Track C closed on 22.09.2026; all 64 are now published and the warning is gone.
 
-**Not built yet:** the "Your Status" block (last attempt, streak, weakest objectives) and the SRS due count are Phase 3 (F3-04, F3-05). The resume banner is the only personalised element today.
+**Each mode states the same three facts**, as a real `<dl>`: is there a clock, when does the answer appear, how is it scored. They are the same three questions for every mode, and comparing them is the reason they are on this page.
+
+There is no CTA in the hero. The mode cards immediately below are the page's actions, and a duplicate "Start studying" would give two links the same accessible name.
+
+Every number on this screen is read from `meta.json`, `syllabus.json` and the question index. None of 40 / 26 / 60 is written in the code.
+
+The coverage line has **no progress bar**. `objectivesTotal` is fixed at 64 by the syllabus and coverage is 64, so a bar would sit permanently full and read as decoration; the sentence carries both numbers.
+
+**Above the hero, one of two blocks, never both (F1-16).** With no finished session and nothing mastered, "Where should I start?" points at study and offers "measure me first" as the alternative — an empty dashboard of zeros is worse than a direction. Otherwise "Your status": objectives learned, sessions finished, and the last score. The last score is **omitted** rather than shown as 0% before the first finished session, because a dash reads as a score of zero.
+
+**Not built yet:** the streak, the weakest-objectives summary and the SRS due count are Phase 3 (F3-04, F3-05).
 
 ### 3.2 Exam setup `/sinav`
 
-- Duration: `60 min (standard)` · **`75 min (non-native English speaker)`** — in the Turkish interface, **75 comes pre-selected by default**. Both numbers are read from `meta.json`.
+- Duration: there is no choice. Every mock exam runs for `meta.exam.durationMinutes`, which is 60. ISTQB grants +25% to a candidate sitting in a language that is not their own, but that is a property of the sitting rather than of the paper, and this product simulates the paper (D-06). The screen states the length in its summary line; it does not offer an alternative.
 - Question language: `Turkish` / `English`. Seeded from the UI language, switchable per question during the exam without losing the answer.
 - `Try to avoid questions I have already seen` — **on by default**. It ranks seen questions last rather than excluding them: running out is worse than repeating.
 - A **live distribution preview**: how many questions per chapter, against the blueprint's own targets.
 - If the pool is insufficient, a warning **right here**, before the exam starts (rule 8).
 
-**Not built yet:** side-by-side question language (F2-06), an "ones I got wrong" source filter (F2-07), and an option-shuffle toggle — options are rendered in file order and answer-position bias is handled at authoring time by CI check #14 instead.
+Side-by-side question language (F2-06) ships as a third state of the language control in the session and review screens rather than as a setup option, and the "ones I got wrong" set (F2-07) is started from `/listelerim` rather than from here — both are decisions a candidate makes with a question in front of them, not before one.
+
+**Not built yet:** an option-shuffle toggle. Options render in file order, and answer-position bias is handled at authoring time by CI check #14 instead.
 
 ### 3.3 Exam session `/sinav/:attemptId`
 
@@ -185,7 +214,7 @@ Details:
 │  [██████████████████████│░░░░░░░░░░░]                                │
 │   0                    26 (pass)                 40                  │
 │                                                                      │
-│  Time: 48:32 / 75:00   ·   Average 1:12 / question                   │
+│  Time: 48:32 / 60:00   ·   Average 1:12 / question                   │
 ├──────────────────────────────────────────────────────────────────────┤
 │  BY CHAPTER                                                          │
 │  1 Fundamentals             ██████░░  6/8   ⌐ target 8               │
@@ -253,12 +282,26 @@ Three levels, each one a route, and the entry point for persona P2. This **absor
 - Two questions from the same LO never appear back to back
 - Forecast chart: the load for the next 7 days
 
-### 3.9 Glossary `/glossary`
+### 3.9 Glossary `/sozluk`
 
-- Search (TR and EN at once), letter filter, chapter filter
-- Term card: **EN term + TR term side by side**, definition, syllabus usage, source link
-- ⚠️ The source of the Turkish definition is stated on every card (TTB syllabus / TTB glossary v3.7 / editorial translation)
-- `Practice questions on this term →`
+All 97 keyword pairs the two official syllabi publish in their own per-chapter keyword lists, aligned positionally rather than translated (`terms.json`, `source.method`).
+
+- One search box over **both** languages at once. "regression" and "regresyon" find the same row, so a candidate who knows only one side can still get to the other.
+- Turkish-aware lowercasing: `"I".toLowerCase()` is `"i"` by default but `"ı"` in Turkish, and the terms are full of dotted and dotless i.
+- A chapter filter, as a radio group — one chapter at a time, not a set of independent toggles.
+- The result count is in a polite live region, **debounced**. A count rewritten on every keystroke makes a screen reader talk over the user's own typing; the visible number still updates immediately.
+- Where a term carries a `trForbidden` word, that word is shown in red. A candidate who learned *kusur* from an older book has to be told it is wrong — hiding it means they never find out.
+- The footer carries `trSource` and the mapping method, because a bilingual term list is only worth anything if the reader can see it was measured rather than translated.
+
+**No definitions.** Their licence is settled — the ISTQB Glossary footer was confirmed CC BY 4.0 in the browser on 22.09.2026 (F0-02, `docs/evidence/`) — but nothing has been copied yet, and the screen says so rather than looking unfinished. The term tooltip (F2-11) waits on the same content.
+
+### 3.9b My lists `/listelerim`
+
+Three lists, none of them stored: each is derived from the answers already in IndexedDB by `buildQuestionHistory`, so a list cannot drift from what actually happened.
+
+- **Questions I got wrong** and **questions I flagged** read the LATEST answer only. Wrong in March and right in April is not a current mistake, and a flag cleared last session is cleared.
+- **Never right twice in a row** reads the whole history. One hit after a run of misses is as likely to be a guess as knowledge, and an unanswered attempt breaks a run exactly as a wrong one does.
+- Each list hands its ids straight to the `questions` scope, so "practise this list" is the same machinery as "retry the ones you missed" on the result screen, not a second path.
 
 ### 3.10 Lesson card (inside `/calisma/lo/:loCode`)
 
@@ -289,7 +332,9 @@ Paragraphs are plain text, not Markdown — the project ships no Markdown render
 └─────────────────────────────────────────────────────────┘
 ```
 
-**Side-by-side mode (`sideBySide`)**: two columns (TR | EN) on wide screens, stacked on narrow screens, with a thin divider between them. Option selection is tied to a single logical option — the two columns are the same radio group. *(Planned, F2-06.)*
+**Side-by-side mode (F2-06)**: the second language sits beneath the first — the stem as a quieter aside under the heading, and each option's second text **inside that option's own `<label>`**. Not two columns of rows: two parallel radio groups would let a candidate tick a Turkish option and an English one and mean a single answer. One group, two texts per choice.
+
+The primary language is still `contentLang`: it is what the heading is announced in and what the attempt records. "Both" is a state of the control, never of the content, so the preference lives in localStorage (`src/lib/bilingual.ts`) rather than on the attempt.
 
 **After answering (practice/study/review)**: the selected option and the correct option are marked — colour, an icon **and** a word, all three (WCAG 1.4.1) — and a `RationalePanel` opens below it with a summary, a "why" line for every option, and citation chips.
 

@@ -186,7 +186,7 @@
 3. **Learning objective (LO) and K-level tagging.** ~%60 of the exam is K2/K3, and everything in the syllabus is tied to an LO code like `FL-4.2.1`. **Not a single product I found has LO/K tagging.** Result: the question "which learning objective am I falling behind on?" can't be answered.
 4. **Distractor-based rationale.** Most give the correct answer; the good ones explain why it's correct. **Almost none explain why each wrong option is wrong** — yet that discrimination skill is exactly what the exam measures.
 5. **Visible, enforced syllabus-version integrity.** A *per-question version badge* + a public "retired content removed on date X" policy is a verifiable claim nobody else can make.
-6. **Calibration to the real pass mark.** Guru99 passes at %50. The right product: real chapter weights, the 26/40 pass mark, 60 min (with the 75 min option), and a **readiness estimate** instead of a single percentage.
+6. **Calibration to the real pass mark.** Guru99 passes at %50. The right product: real chapter weights, the 26/40 pass mark, 60 min, and a **readiness estimate** instead of a single percentage. (The 75-minute extension was considered and dropped — D-06.)
 7. **Spaced repetition applied to exam questions.** Brainscape has the best SRS engine and zero vetted CTFL content. **Nobody groups a learner's own mistakes by root cause and re-serves them on a schedule.**
 8. **Proper rendering of diagram-based questions.** Decision tables, state transition diagrams, control flow graphs are all examinable and break in cheap tools ("critical diagrams missing"). Responsive table/diagram rendering inside a question card is a real moat in the low-end segment.
 

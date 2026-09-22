@@ -109,17 +109,21 @@ This cost was accepted knowingly: it forgoes an official assurance and any chanc
 
 ---
 
-## 5. ISTQB Glossary license ⚠️
+## 5. ISTQB Glossary license ✅
 
 In the Glossary site's own localization file (`https://api.glossary.istqb.org/assets/translations/en_US.json`), the following footer text was found:
 
 > *"Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license"*
 
-**If true, this is CC BY 4.0** — the definitions of all 1128 terms could be used, with attribution, even commercially. That would make it our safest content source.
+**VERIFIED 22.09.2026 (F0-02).** The page was opened in a real browser and the footer renders that sentence, with **"Creative Commons Attribution 4.0 International license" linking to `creativecommons.org/licenses`**, beside a `cc` mark and the version string "ISTQB Glossary, V4.8.1". Screenshot: [`evidence/istqb-glossary-licence-2026-09-22.png`](evidence/istqb-glossary-licence-2026-09-22.png).
 
-⚠️ **NOT FULLY VERIFIED.** This text was only found in the i18n JSON; since the Glossary is a JavaScript SPA, it couldn't be confirmed that the footer actually renders on the live page, no `creativecommons.org` link was found in the JS bundles, and the Wayback archive only preserved the SPA shell.
+So it is CC BY 4.0: the definitions may be reproduced with attribution, even commercially — and our use is non-commercial anyway. It is our safest content source.
 
-> **Action (TODO F0-02):** open `https://glossary.istqb.org/en_US/home` in a browser and **verify the footer by eye**, then save a screenshot under `docs/evidence/`. Until verified, glossary definitions are **rewritten in our own words**, never copied verbatim.
+Three things that verification did **not** settle, carried forward:
+
+1. **The version.** The live glossary is **V4.8.1**; our content is written against CTFL **v4.0.1**. A copied definition cites the glossary's own version, not the syllabus's, or the two get conflated.
+2. **"Except where otherwise noted"** makes the notice a default, not a blanket. A page carrying its own notice overrides it, so each definition is checked on the page it came from.
+3. **Nothing has been copied yet.** This unblocks copying; it does not perform it. `/sozluk` currently ships the 97 bilingual keyword pairs from the syllabi and says outright that it carries no definitions.
 
 ---
 
@@ -148,11 +152,11 @@ ISTQB's code of ethics forbids sharing real exam questions. Some competitors ope
 
 ## 7. To-do checklist
 
-- [ ] (F0-02) Verify the Glossary footer license in a browser by eye, take a screenshot
+- [x] (F0-02) Verify the Glossary footer license in a browser by eye, take a screenshot — **done 22.09.2026**, CC BY 4.0 confirmed, `evidence/istqb-glossary-licence-2026-09-22.png`
 - [x] ~~(F0-03) Send a written permission email to ISTQB~~ — cancelled by D-05
 - [x] ~~(F0-04) Send an email to TTB about Turkish content and collaboration~~ — cancelled by D-05
 - [x] ~~Make sure the product name doesn't evoke the ISTQB trademark~~ — this constraint was **knowingly dropped** by D-01 (name: `ISTQB-PREP`)
-- [ ] Make the product name readable from a single source (keep the renaming cost low) — D-01 mitigation
+- [x] Make the product name readable from a single source (keep the renaming cost low) — D-01 mitigation. Done: `src/lib/product.ts` holds `PRODUCT_NAME`, `index.html` gets it from a Vite `transformIndexHtml` plugin, and `app.name` is gone from both locales
 - [ ] `/kaynaklar` page: full copyright notice text + official links
 - [ ] Privacy policy page
 - [ ] Disclaimer footer

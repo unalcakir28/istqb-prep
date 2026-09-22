@@ -38,7 +38,7 @@ Let a CTFL candidate study in **a single place, right up to exam day**, beyond t
 
 ### In scope (v1)
 - CTFL v4.0.1 — Foundation Level (**priority**)
-- Full mock exam simulation (40 questions / 60 min / pass mark 26, +25% time extension option)
+- Full mock exam simulation (40 questions / 60 min / pass mark 26). The +25% extension ISTQB grants a candidate sitting in a foreign language is a property of the sitting, not of the paper, so the product does not offer it (D-06)
 - Practice mode by chapter and learning objective
 - Spaced repetition (SRS) flashcard / term study
 - ISTQB Glossary integration (TR–EN)
@@ -90,7 +90,7 @@ Roughly three groups:
 
 ## 9. Decisions
 
-All five open decisions were closed on **19.09.2026**. Reopening any of them requires a new justification.
+The first five open decisions were closed on **19.09.2026** and D-06 on **22.09.2026**. Reopening any of them requires a new justification.
 
 | # | Decision | Outcome |
 |---|---|---|
@@ -99,3 +99,4 @@ All five open decisions were closed on **19.09.2026**. Reopening any of them req
 | D-03 | Content license | ✅ **CC BY-SA 4.0**. Rationale: `08 §K-6`. An NC restriction would discourage contribution; SA prevents the content from being absorbed into a closed product. |
 | D-04 | Community question contributions in v1 | ✅ **No**. Editorial quality standards must be established first; question PRs open in Phase 4 (F4-05). Bug reports (F2-08) and code contributions are open from the start. |
 | D-05 | Written permission request to ISTQB | ✅ **No, will not apply**. Asking for permission implies an assumption that permission is required. The legal basis already stands independently on original content (K-1) + non-commercial use (K-2) + attribution (K-3); these hold regardless of any application. In exchange, an official assurance and the possibility of TTB cooperation were knowingly given up. |
+| D-06 | Offer the 75-minute extension? | ✅ **No, removed**. ISTQB's +25% (§6.2.1) is granted to a candidate sitting in a language that is not their own. This product's audience is Turkish candidates sitting the Turkish paper, who get 60 minutes, and what a mock exam simulates is the paper rather than one candidate's entitlement. The exam setup screen therefore has no duration choice, and `meta.json` carries only `durationMinutes`. The fact stays recorded in `docs/03-istqb-reference.md` and in `data/certifications.json`, which catalogues every ISTQB certification rather than describing the exam we run. |

@@ -96,8 +96,24 @@ Every rationale carries `syllabusRef` (`§4.2.3`), `objectives[]`, and `kLevel`,
 > ### ⚠️ This section was completely rewritten on 19.09.2026
 > Its first version was written before the official TR syllabus was available and **most of it was wrong** —
 > in some rows the official term was even listed in the "do not use" column (e.g. **hata**, the correct
-> match for *defect*, was mistakenly banned; *kusur*, which never appears in the syllabus, was imposed
-> in its place).
+> match for *defect*, was mistakenly banned; *kusur*, which is not the syllabus's word for *defect*, was
+> imposed in its place).
+>
+> **Correction, 22.09.2026.** An earlier version of this section, and of `CLAUDE.md`, said *kusur* "does
+> not appear in the syllabus". That is false. It appears in four places in the TR syllabus, none of them
+> as the translation of *defect* on its own:
+>
+> | Where | Phrase |
+> | ----- | ------ |
+> | §4.2.4 | *"...**kusur maskelenmesini**, yani bir hatanın diğerinin tespitini engellediği durumları önlemeye yardımcı olur."* |
+> | §4.4.1 | *"Geliştiricilerin yapma eğiliminde olduğu **kusurlar**..."* |
+> | §4.4.1 | *"**Kusur ortaya çıkarmaya yönelik saldırılar** hata tahminlemenin uygulanmasına yönelik metodik bir yaklaşımdır."* (fault attacks) |
+> | §1 commentary | a remark about a flaw in the superseded FL2018 syllabus — nothing to do with the triad |
+>
+> The rule does not change: standalone *defect* is **hata**, and `terms.json` keeps *kusur* in
+> `trForbidden`. Our content therefore writes *hata maskelenmesi* where the syllabus writes *kusur
+> maskelenmesi*. What changes is the justification — the word is banned because it is the wrong
+> translation of *defect*, not because the syllabus never uses it.
 >
 > The table below is now **measured, not derived** data: the ISTQB v4.0.1 (EN) and TTB v4.0.1 (TR)
 > syllabi publish their per-chapter keyword lists in the same order, and the term counts matched
@@ -324,7 +340,7 @@ Proportional to the real exam's weighting, **plus an extra allowance for K3**:
 ```
 Author → opens a PR (status: "draft")
   ↓
-CI: JSON Schema (#1) + 19 checks (#2-#20)
+CI: JSON Schema (#1) + 22 checks (#2-#23)
   ↓
 Reviewer: §6 checklist + syllabus comparison
   ↓

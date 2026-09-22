@@ -73,7 +73,7 @@ istqb-prep/
 ├── data/                        # Source data (reviewed in Git) — questions/, lessons/, terms.json …
 ├── schemas/                     # JSON Schema definitions, incl. lesson + lessons-index
 ├── scripts/
-│   ├── validate-data.ts         # CI validator — 20 numbered checks
+│   ├── validate-data.ts         # CI validator — 23 numbered checks
 │   ├── build-index.ts           # Builds questions/index.json, lessons/index.json, manifest counts
 │   ├── check-i18n.ts            # TR/EN locale key parity — its own CI gate
 │   ├── publish-questions.ts     # review -> published, the only path that records a reviewer
@@ -92,20 +92,29 @@ istqb-prep/
 │   │   ├── Review.tsx           # /inceleme/:attemptId — reached from the result screen
 │   │   ├── LegacyExamRedirect.tsx
 │   │   ├── Sources.tsx · NotFound.tsx
-│   │   └── Glossary.tsx · Progress.tsx   # planned (Phase 2-3)
+│   │   ├── MyLists.tsx          # /listelerim — wrong / flagged / never right twice
+│   │   ├── Glossary.tsx         # /sozluk — 97 bilingual terms
+│   │   └── Progress.tsx         # planned (Phase 3)
 │   ├── features/
 │   │   ├── session/             # SessionRunner (the shell), sessionStore, routeForAttempt
 │   │   ├── exam/                # selectQuestions, generateExam, scoreExam, examTimer, rng
 │   │   └── srs/                 # planned (Phase 3)
 │   ├── components/              # QuestionCard, OptionList, RationalePanel, QuestionNavigator,
 │   │   │                        # ExamTimer, SubmitConfirm, ShortcutsOverlay, LessonCard,
-│   │   │                        # ObjectiveStateBadge, ScoreBar, CitationChips, Layout …
-│   │   └── MediaRenderer/       # planned (F1-14 / F2-09)
+│   │   │                        # ObjectiveStateBadge, ScoreBar, CitationChips, Layout,
+│   │   │                        # BlueprintFigure (the home page's exam-shape figure),
+│   │   │                        # MediaRenderer (question figures — every kind is text),
+│   │   │                        # SegmentedControl (one single-select control, native
+│   │   │                        #   radios, used by the language toggle, the review
+│   │   │                        #   filter and the glossary chapter filter),
+│   │   └──                      # ReportQuestionLink (F2-08) …
 │   ├── lib/
 │   │   ├── content/             # contentClient, chunk cache (questions and lessons)
-│   │   ├── db/                  # db.ts (Dexie v3), migrations.ts, objectiveProgress.ts
+│   │   ├── db/                  # db.ts (Dexie v3), migrations.ts, objectiveProgress.ts,
+│   │   │                        # questionHistory.ts (the saved lists, derived)
 │   │   ├── i18n/                # index.ts + locales/{tr,en}.json
-│   │   ├── theme.ts · useAsyncData.ts · useDialogFocus.ts
+│   │   ├── theme.ts · useAsyncData.ts · useDialogFocus.ts · bilingual.ts
+│   │   ├── product.ts           # PRODUCT_NAME, REPO_URL — the name lives here, not in i18n
 │   │   ├── useDocumentTitle.ts · useArrivalFocus.ts
 │   ├── types/content.ts         # Data model types, hand-written against schemas/
 │   ├── test/                    # Vitest setup + shared fixtures
@@ -155,7 +164,7 @@ interface ContentClient {
 ```ts
 // features/exam/selectQuestions.ts — the one entry point, for all three modes
 export function selectQuestions(options: {
-  scope: AttemptScope;           // blueprint | chapter | objective
+  scope: AttemptScope;           // blueprint | chapter | objective | questions
   blueprint: ExamBlueprint;
   pool: QuestionIndexEntry[];    // published entries only
   seed: number;
@@ -255,14 +264,14 @@ jobs:
 
 | Level | Tool | Scope |
 |---|---|---|
-| **Data** | Ajv + custom rules | §6 [`04-data-model.md`](04-data-model.md) — 20 numbered checks |
+| **Data** | Ajv + custom rules | §6 [`04-data-model.md`](04-data-model.md) — 23 numbered checks |
 | **Unit** | Vitest | Selection (the 8/6/4/11/9/2 and 8/24/8 distributions hold across independent seeds; the scoped paths), scoring (exact match for multi-select), the timer, the Dexie v3 backfill, mastery, `routeForAttempt`, the session store |
 | **Component** | Testing Library | `QuestionCard` heading level and option shape, `RationalePanel`'s verdict naming and per-option coverage, `LessonCard`'s missing-card placeholder |
 | **E2E** | Playwright | All three modes end to end; auto-submit when time runs out; attempt recovery after a page reload; the legacy `/deneme` redirect; TR/EN switching |
 | **Accessibility** | `@axe-core/playwright` + hand-written specs | Zero violations on every main route in both themes, **plus** the failures axe cannot see: focus destinations, accessible names, live-region behaviour |
 | **Visual** | Playwright snapshot | Not set up |
 
-Counts as of 21.09.2026: **94 unit tests in 15 files**, **48 end-to-end specs in 4 files**. Unit tests live beside the code they test.
+Counts as of 22.09.2026: **124 unit tests in 17 files**, **end-to-end specs across 5 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
 
 > This is a **testing certification** project. Test discipline is part of the product itself here; the README will display a test-coverage badge.
 

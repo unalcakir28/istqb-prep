@@ -107,7 +107,6 @@ Source: [`03-istqb-reference.md §3`](03-istqb-reference.md)
     "passPoints": 26,
     "passPercent": 65,
     "durationMinutes": 60,
-    "extendedDurationMinutes": 75,
     "pointsPerQuestion": 1,
     "negativeMarking": null,
     "questionKLevelDistribution": { "K1": 8, "K2": 24, "K3": 8 }
@@ -331,27 +330,47 @@ This file enables realistic exam generation that **no competitor on the market d
 
 Critical: the single most common complaint about the cheap tools on the market is "critical diagrams are missing for questions." Diagrams are kept **as structured data, not as image files** → responsive, accessible, works in dark mode, and is translatable.
 
+**Every kind is bilingual at the leaf**, and every kind whose natural form is a diagram **requires an `alt`**. That is not politeness: a K3 question about a state machine is unanswerable without the machine, so a candidate who cannot see a picture would simply be unable to sit the question. `MediaRenderer` renders the alternative in full rather than hiding it behind an attribute or a toggle.
+
 ```json
 "media": {
   "kind": "decision-table",
   "caption": { "tr": "Karar tablosu", "en": "Decision table" },
   "headers": { "tr": ["Koşul", "K1", "K2", "K3"], "en": ["Condition", "R1", "R2", "R3"] },
-  "rows": [["Üye mi?", "E", "E", "H"], ["Tutar > 500", "E", "H", "-"]]
+  "rows": [
+    { "tr": ["Üye mi?", "E", "E", "H"], "en": ["Member?", "Y", "Y", "N"] },
+    { "tr": ["Tutar > 500", "E", "H", "-"], "en": ["Amount > 500", "Y", "N", "-"] }
+  ]
 }
 ```
 
 ```json
 "media": {
   "kind": "state-transition",
+  "caption": { "tr": "Durum modeli", "en": "State model" },
   "states": ["Taslak", "Onayda", "Yayında"],
   "transitions": [
-    { "from": "Taslak", "to": "Onayda", "event": "gönder" },
-    { "from": "Onayda", "to": "Yayında", "event": "onayla" }
-  ]
+    { "from": "Taslak", "event": "gönder", "to": "Onayda" },
+    { "from": "Onayda", "event": "onayla", "to": "Yayında" }
+  ],
+  "alt": {
+    "tr": "Taslak durumundan gönder olayıyla Onayda'ya, oradan onayla olayıyla Yayında'ya geçilir.",
+    "en": "From Taslak, gönder goes to Onayda; from Onayda, onayla goes to Yayında."
+  }
 }
 ```
 
-Supported types: `decision-table` · `state-transition` · `control-flow` · `code` · `table` · `image` (last resort; `alt` text required).
+Supported kinds, each its own branch of a `oneOf` with `additionalProperties: false`:
+
+| `kind` | Required beyond `kind` | Rendered as |
+| --- | --- | --- |
+| `decision-table`, `table` | `caption`, `headers`, `rows` | a real `<table>` with column **and** row headers |
+| `state-transition` | `caption`, `states`, `transitions`, `alt` | the transition table it already is, plus the written alternative |
+| `control-flow` | `caption`, `language`, `content`, `alt` | a `<pre>`, plus the written alternative — coverage questions turn on which paths exist, and that cannot be inferred from indentation by ear |
+| `code` | `caption`, `language`, `content` | a `<pre>` |
+| `image` | `caption`, `src`, `alt` | last resort; nothing in the pool uses it |
+
+**No question in the pool carries `media` yet.** The schema and the renderer are in place for the ones that will.
 
 ### 3.9 Lessons — `lessons/`
 
@@ -364,8 +383,8 @@ Schemas: [`../schemas/lessons-index.schema.json`](../schemas/lessons-index.schem
 {
   "dataVersion": "2026.09.19",
   // Must equal lessons.length — check #19 fails otherwise. The shipped file is
-  // still at 0, because the chunks are empty until Track C fills them.
-  "count": 1,
+  // at 64: Track C closed on 22.09.2026 and every objective has a card.
+  "count": 64,
   "chunks": ["ch01", "ch02", "ch03", "ch04", "ch05", "ch06"],
   "lessons": [
     {
@@ -433,7 +452,7 @@ Schemas: [`../schemas/lessons-index.schema.json`](../schemas/lessons-index.schem
 | `i18n.<lang>.commonMistakes` | string[] | What candidates get wrong here. Same parity rule. |
 | `meta.reviewedBy` | string | Must be non-empty before `status` can be `published` (CI check #18). |
 
-> **The chunk files ship empty.** All six exist with `"lessons": []` so the index, the schemas and the checks are live before a single card is written; `contentClient.getLesson` returns `null` for an objective with no card, and `LessonCard` renders a placeholder rather than an error. Writing the 64 cards is Track C.
+> **All 64 cards are written and published** (Track C, closed 22.09.2026). The nullable path is still real and still tested: `contentClient.getLesson` returns `null` for an objective with no **published** card, and `LessonCard` renders a placeholder rather than an error — which is what a card at `status: "review"` looks like while it is being written.
 
 ### 3.10 Glossary — `glossary/`
 
@@ -501,7 +520,7 @@ settings      // A generic key-value table, one row per setting
 - **Answers and flags are not on the attempt.** They live one row per question in `responses`, keyed `` `${attemptId}:${questionId}` `` (`responseKey`). `saveResponse` writes the whole row and never reads first — the read-then-write it replaced could lose a selection when the user answered and flagged the same question in the same tick.
 - **`points`, not `score`.** `submittedAt`, not `finishedAt`. `durationMinutes`, not `durationSec`. There is no `extended` flag: the chosen duration is frozen onto the attempt as `durationMinutes`, read from `meta.json` at setup.
 - **`deadlineAt` is nullable, and null means untimed.** Study and practice carry `null`; only exam mode sets one. A separate boolean could contradict the timestamp, so there isn't one.
-- **`mode`, `scope` and `instantFeedback` are frozen at creation.** A resumed session reads them back rather than recomputing them from whatever the setup screen currently defaults to — resuming must not change the rules mid-session. `scope` is a discriminated union: `{ kind: "blueprint" }`, `{ kind: "chapter", chapters[], count }`, or `{ kind: "objective", objectives[], count }`.
+- **`mode`, `scope` and `instantFeedback` are frozen at creation.** A resumed session reads them back rather than recomputing them from whatever the setup screen currently defaults to — resuming must not change the rules mid-session. `scope` is a discriminated union: `{ kind: "blueprint" }`, `{ kind: "chapter", chapters[], count }`, `{ kind: "objective", objectives[], count }`, or `{ kind: "questions", questionIds[], source }` — an explicit list rather than a rule, where `source` is `"wrong" | "flagged" | "shaky"`. That last one is what makes "retry the ones you missed" (F2-02) and the saved lists (F2-07) one feature instead of two: both hand `selectQuestions` a set of ids and let it report what the pool can still supply.
 - **`revealedAt` is the lock.** Once the rationale has been shown, the answer is final: `sessionStore.select` refuses a revealed question, so instant feedback cannot be gamed.
 - **Breakdowns are not stored.** `chapterBreakdown` / `objectiveBreakdown` are recomputed by `scoreExam` from the questions and the stored answers whenever a result is shown.
 
@@ -592,8 +611,26 @@ Checks that run on every PR (`yarn validate:data`). The registry in [`../scripts
 | 18 | Does a published lesson record `meta.reviewedBy`? | ❌ |
 | 19 | Is `lessons/index.json` consistent with the lesson chunk files (objective, chunk, count)? | ❌ |
 | 20 | Is there at least 1 published lesson for every LO? | ⚠️ warning |
+| 21 | Does the Turkish text use a word from a term's `trForbidden` list (questions **and** lessons)? | ⚠️ warning |
+| 22 | Are the keyed options the longest ones far more often than chance (a length cue)? Both languages, singles **and** multi-select. | ⚠️ warning |
+| 23 | Do the keyed letters run a rotation in file order (`a → b → c → d …`), per chunk? | ⚠️ warning |
 
-**14 errors (#1–#9, #15–#19) and 6 warnings (#10–#14, #20).** A warning prints and exits 0: content gaps must be visible without blocking CI.
+**14 errors (#1–#9, #15–#19) and 9 warnings (#10–#14, #20–#23).** A warning prints and exits 0: content gaps must be visible without blocking CI.
+
+#13 and #21 are the two halves of one problem and neither covers the other. #13
+catches an untranslated **English** word sitting in Turkish text; #21 catches a
+plausible-looking **Turkish** word that is not the syllabus's. #21 was added on
+22.09.2026 after five of six review chunks turned up the same class of defect by
+hand — `kusur` for *defect*, `test izleme` for *test monitoring*, `geçerleme`
+for *validation* — including in content that had already been published.
+
+#21 deliberately skips three kinds of match, because a check that cries wolf
+gets ignored: a forbidden word that is some other term's correct `tr` (`hata` is
+banned for *error* and *failure* and is the right word for *defect*), the
+accepted loanword `testware`, and words that are ordinary Turkish in another
+grammatical role — `kapsama` (the dative of `kapsam`), `test durumu` ("test
+status"), `teknik gözden geçirme` (a real review type). Those still need a human
+reader; the `question-verifier` and `lesson-verifier` agents are told to look.
 
 ---
 

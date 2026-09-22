@@ -100,6 +100,8 @@ Source: *Exam Structures and Rules* v1.2 (02.05.2025)
 | Points per question | **Every question is worth exactly 1 point** | §5.2.1 |
 | Negative marking | **Not mentioned in any official document** ⚠️ | — |
 
+The +25% row is a verified fact and stays. The product does not offer it: the extension belongs to a candidate sitting in a language that is not their own, a Turkish candidate sitting the Turkish paper does not get it, and what the mock exam simulates is the paper. `data/ctfl-v4.0.1/meta.json` therefore carries only `durationMinutes`. See D-06 in `docs/00-project-overview.md §9`.
+
 ### Correcting three common mistakes
 
 **a) There is NO multi-point K3 question in Foundation.**
@@ -244,7 +246,7 @@ Verified:
 The following items must **not be asserted** in the product:
 
 1. **Negative marking** — not mentioned in any official document; can't be said to exist, can't be said not to.
-2. **The ISTQB Glossary's CC BY 4.0 license** — the site's i18n file contains the text *"content on this site is licensed under a Creative Commons Attribution 4.0 International license"*, but since it's an SPA, it could not be visually confirmed rendered on the live page. **Verify the footer in the browser before relying on this license.** (TODO F0-02)
+2. ~~**The ISTQB Glossary's CC BY 4.0 license**~~ — **verified 22.09.2026** and removed from this list. The footer of the rendered page (`glossary.istqb.org/en_US/search`, glossary V4.8.1) reads *"Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license"*, linking to creativecommons.org. Screenshot: `docs/evidence/istqb-glossary-licence-2026-09-22.png`. Two caveats carried forward: the live glossary is **V4.8.1**, not the syllabus's v4.0.1, so a copied definition cites the glossary's own version; and *"except where otherwise noted"* makes the notice a default that a page can override, so each page is checked on its own.
 3. **Turkish term translation in the Glossary** — not found in the API.
 4. **Direct PDF addresses for TTB Turkish sample exams B/C/D.**
 5. **Expert Level exam parameters.**
