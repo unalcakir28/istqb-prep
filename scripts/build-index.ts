@@ -127,6 +127,64 @@ function buildCertificationIndex(certPath: string): {
   };
 }
 
+/** Fields that go into the lesson index — lesson body text (i18n) is deliberately left out. */
+function toLessonIndexEntry(lesson: Json, chunk: string, chapter: number): Json {
+  const languages = Object.keys(lesson.i18n ?? {}).sort();
+
+  return {
+    objective: lesson.objective,
+    chunk,
+    chapter,
+    languages,
+    syllabusVersion: lesson.syllabusVersion,
+    status: lesson.status,
+  };
+}
+
+function buildLessonIndex(certPath: string): { count: number } {
+  const certDir = path.join(DATA_DIR, certPath);
+  const lessonsDir = path.join(certDir, "lessons");
+  if (!fs.existsSync(lessonsDir)) return { count: 0 }; // no lessons/ yet for this certification
+
+  const chunkFiles = fs
+    .readdirSync(lessonsDir)
+    .filter((name) => name.endsWith(".json") && name !== "index.json")
+    .sort();
+
+  const entries: Json[] = [];
+  const chunks: string[] = [];
+  const seen = new Map<string, string>();
+
+  for (const fileName of chunkFiles) {
+    const chunkDoc = readJson(path.join(lessonsDir, fileName));
+    const chunk = chunkDoc.chunk ?? path.basename(fileName, ".json");
+    chunks.push(chunk);
+
+    for (const lesson of chunkDoc.lessons ?? []) {
+      const previous = seen.get(lesson.objective);
+      // Each learning objective has at most one lesson — a collision means
+      // the same objective was authored twice across chunks.
+      if (previous) fail(`Duplicate lesson objective: ${lesson.objective} (${previous} and ${chunk})`);
+      seen.set(lesson.objective, chunk);
+      entries.push(toLessonIndexEntry(lesson, chunk, chunkDoc.chapter));
+    }
+  }
+
+  entries.sort((a, b) => String(a.objective).localeCompare(String(b.objective)));
+
+  const dataVersion = readJson(MANIFEST).dataVersion;
+  writeJson(path.join(lessonsDir, "index.json"), {
+    dataVersion,
+    count: entries.length,
+    chunks,
+    lessons: entries,
+  });
+
+  console.log(`  data/${certPath}/lessons/index.json — ${entries.length} lesson(s), ${chunks.length} chunk(s)`);
+
+  return { count: entries.length };
+}
+
 function main(): void {
   const manifest = readJson(MANIFEST);
   const certifications = manifest.certifications ?? [];
@@ -141,6 +199,7 @@ function main(): void {
       objectivesCovered: stats.objectivesCovered,
       minPerObjective: stats.minPerObjective,
     };
+    buildLessonIndex(certification.path);
   }
 
   writeJson(MANIFEST, manifest);

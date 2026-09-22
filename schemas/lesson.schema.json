@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://istqb-prep/schemas/lesson.schema.json",
+  "title": "Lesson chunk",
+  "type": "object",
+  "required": ["chunk", "chapter", "dataVersion", "lessons"],
+  "additionalProperties": false,
+  "properties": {
+    "chunk": { "type": "string" },
+    "chapter": { "type": "integer", "minimum": 1 },
+    "dataVersion": { "type": "string" },
+    "lessons": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/lesson" }
+    }
+  },
+  "$defs": {
+    "lesson": {
+      "type": "object",
+      "required": [
+        "objective",
+        "syllabusVersion",
+        "syllabusRef",
+        "revision",
+        "status",
+        "origin",
+        "i18n",
+        "meta"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "description": "status CANNOT be 'published' while meta.reviewedBy is empty (rule from CLAUDE.md and docs/04).",
+          "if": {
+            "properties": { "status": { "const": "published" } },
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "meta": {
+                "type": "object",
+                "required": ["reviewedBy"],
+                "properties": {
+                  "reviewedBy": { "type": "string", "minLength": 1 }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "properties": {
+        "objective": { "type": "string", "pattern": "^FL-[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "syllabusVersion": { "type": "string" },
+        "syllabusRef": { "type": "string" },
+        "revision": { "type": "integer", "minimum": 1 },
+        "status": { "enum": ["draft", "review", "published", "retired"] },
+        "origin": { "const": "original" },
+        "i18n": {
+          "type": "object",
+          "required": ["tr", "en"],
+          "additionalProperties": false,
+          "properties": {
+            "tr": { "$ref": "#/$defs/content" },
+            "en": { "$ref": "#/$defs/content" }
+          }
+        },
+        "meta": {
+          "type": "object",
+          "required": ["author", "reviewedBy", "createdAt", "updatedAt"],
+          "additionalProperties": false,
+          "properties": {
+            "author": { "type": "string" },
+            "reviewedBy": {
+              "type": "string",
+              "description": "Empty string = not yet reviewed. MUST be filled in while status='published' (see the allOf/if/then above)."
+            },
+            "createdAt": { "type": "string" },
+            "updatedAt": { "type": "string" }
+          }
+        }
+      }
+    },
+    "content": {
+      "type": "object",
+      "required": ["title", "paragraphs", "keyPoints", "commonMistakes"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "paragraphs": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+        "keyPoints": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "commonMistakes": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      }
+    }
+  }
+}

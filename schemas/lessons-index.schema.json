@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://istqb-prep/schemas/lessons-index.schema.json",
+  "title": "Lesson index",
+  "type": "object",
+  "required": ["dataVersion", "count", "chunks", "lessons"],
+  "additionalProperties": false,
+  "properties": {
+    "dataVersion": { "type": "string" },
+    "count": { "type": "integer", "minimum": 0 },
+    "chunks": { "type": "array", "items": { "type": "string" } },
+    "lessons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["objective", "chunk", "chapter", "languages", "syllabusVersion", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "objective": { "type": "string", "pattern": "^FL-[0-9]+\\.[0-9]+\\.[0-9]+$" },
+          "chunk": { "type": "string" },
+          "chapter": { "type": "integer", "minimum": 1 },
+          "languages": {
+            "type": "array",
+            "items": { "enum": ["tr", "en"] },
+            "minItems": 2,
+            "uniqueItems": true
+          },
+          "syllabusVersion": { "type": "string" },
+          "status": { "enum": ["draft", "review", "published", "retired"] }
+        }
+      }
+    }
+  }
+}

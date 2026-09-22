@@ -2,9 +2,10 @@
 /**
  * scripts/validate-data.ts
  *
- * Implements the 15 CI checks from docs/04-data-model.md §6.
- * Checks #1-9 and #15 are ERRORS (exit 1). Checks #10-14 are WARNINGS (exit 0,
- * printed). The registry below is the source of truth for the severity levels.
+ * Implements the 20 CI checks from docs/04-data-model.md §6.
+ * Checks #1-9 and #15-19 are ERRORS (exit 1). Checks #10-14 and #20 are
+ * WARNINGS (exit 0, printed). The registry below is the source of truth for
+ * the severity levels.
  *
  * Design rules followed (see CLAUDE.md):
  *   - Guard clauses / early returns, no deep nesting, no hardcoded exam
@@ -64,6 +65,11 @@ const CHECKS: Record<number, CheckDef> = {
   13: { num: 13, level: "warning", name: "Untranslated English term leaking into Turkish text" },
   14: { num: 14, level: "warning", name: "Is the correct answer's option position balanced" },
   15: { num: 15, level: "error", name: "Does the text reference an option letter" },
+  16: { num: 16, level: "error", name: "Does every lesson's objective exist in objectives.json" },
+  17: { num: 17, level: "error", name: "Are i18n.tr and i18n.en lesson content parallel (keyPoints/commonMistakes counts)" },
+  18: { num: 18, level: "error", name: "Does a published lesson record meta.reviewedBy" },
+  19: { num: 19, level: "error", name: "Is lessons/index.json consistent with the lesson chunk files" },
+  20: { num: 20, level: "warning", name: "At least 1 published lesson per LO" },
 };
 
 interface Issue {
@@ -140,6 +146,8 @@ const SCHEMA_FILES = {
   question: "question.schema.json",
   glossaryIndex: "glossary-index.schema.json",
   glossary: "glossary.schema.json",
+  lessonsIndex: "lessons-index.schema.json",
+  lesson: "lesson.schema.json",
 } as const;
 
 type SchemaKey = keyof typeof SCHEMA_FILES;
@@ -521,6 +529,106 @@ function checkNoOptionLetterReferences(questions: QuestionRecord[]): void {
 }
 
 // ---------------------------------------------------------------------------
+// Lesson checks (#16 - #19), lesson coverage warning (#20)
+// ---------------------------------------------------------------------------
+
+interface LessonRecord {
+  lesson: any;
+  file: string;
+}
+
+/** #16 — every lesson's objective exists in objectives.json. */
+function checkLessonObjectivesExist(lessons: LessonRecord[], objectiveCodes: Set<string>): void {
+  for (const { lesson, file } of lessons) {
+    const objective = lesson?.objective;
+    if (objectiveCodes.has(objective)) continue;
+    report(16, file, objective, `The lesson references a learning objective that does not exist in objectives.json.`);
+  }
+}
+
+/**
+ * #17 — Are i18n.tr and i18n.en lesson content parallel?
+ *
+ * A missing tr/en block is treated as zero-length arrays, so an entirely
+ * missing translation surfaces through the same mismatch message rather
+ * than needing a second, undocumented message.
+ */
+function checkLessonI18nParallel(lessons: LessonRecord[]): void {
+  for (const { lesson, file } of lessons) {
+    const tr = lesson?.i18n?.tr;
+    const en = lesson?.i18n?.en;
+
+    for (const field of ["keyPoints", "commonMistakes"] as const) {
+      const trCount = Array.isArray(tr?.[field]) ? tr[field].length : 0;
+      const enCount = Array.isArray(en?.[field]) ? en[field].length : 0;
+      if (trCount === enCount) continue;
+      report(
+        17,
+        file,
+        lesson?.objective,
+        `The Turkish and English lesson content are not parallel. Expected equal ${field} counts; found tr=${trCount}, en=${enCount}.`,
+      );
+    }
+  }
+}
+
+/** #18 — a lesson with status: "published" has a non-empty meta.reviewedBy. */
+function checkLessonPublishedHasReviewer(lessons: LessonRecord[]): void {
+  for (const { lesson, file } of lessons) {
+    if (lesson?.status !== "published") continue;
+    if (isNonEmptyString(lesson?.meta?.reviewedBy)) continue;
+    report(18, file, lesson?.objective, `A published lesson must record its reviewer in meta.reviewedBy.`);
+  }
+}
+
+/**
+ * #19 — lessons/index.json agrees with the chunk files: every indexed
+ * objective exists in the named chunk, every chunk lesson appears in the
+ * index, and count equals the number of index entries.
+ */
+function checkLessonIndexConsistency(
+  index: any,
+  indexFile: string,
+  lessons: LessonRecord[],
+  chunkByObjective: Map<string, string>,
+): void {
+  if (!index) return; // schema check (#1) already reported the missing/invalid file
+
+  const declaredLessons: any[] = Array.isArray(index.lessons) ? index.lessons : [];
+  const declaredObjectives = new Set(declaredLessons.map((l) => l.objective));
+  const actualObjectives = new Set(lessons.map(({ lesson }) => lesson?.objective));
+
+  for (const declared of declaredLessons) {
+    const actualChunk = chunkByObjective.get(declared.objective);
+    if (actualChunk && actualChunk === declared.chunk) continue;
+    report(19, indexFile, declared.objective, `The lesson index disagrees with the chunk files.`);
+  }
+
+  for (const objective of actualObjectives) {
+    if (declaredObjectives.has(objective)) continue;
+    report(19, indexFile, objective, `The lesson index disagrees with the chunk files.`);
+  }
+
+  if (typeof index.count === "number" && index.count !== declaredLessons.length) {
+    report(19, indexFile, undefined, `The lesson index disagrees with the chunk files.`);
+  }
+}
+
+/** #20 — an objective in objectives.json has no published lesson. */
+function checkLessonCoverage(objectivesByCode: Map<string, any>, lessons: LessonRecord[], objectivesFile: string): void {
+  const publishedObjectives = new Set<string>();
+  for (const { lesson } of lessons) {
+    if (lesson?.status !== "published") continue;
+    if (isNonEmptyString(lesson?.objective)) publishedObjectives.add(lesson.objective);
+  }
+
+  for (const code of objectivesByCode.keys()) {
+    if (publishedObjectives.has(code)) continue;
+    report(20, objectivesFile, code, `This learning objective has no published lesson yet.`);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Objective coverage checks (#10, #11)
 // ---------------------------------------------------------------------------
 
@@ -786,7 +894,53 @@ function validateCertification(certEntry: any): void {
   checkAnswerPositionBalance(allQuestions, indexFile);
   checkNoOptionLetterReferences(allQuestions);
 
+  // lessons/
+  validateLessonsDir(path.join(certDir, "lessons"), objectiveCodes, objectivesByCode, objectivesFile);
+
   validateGlossaryDir(path.join(certDir, "glossary"));
+}
+
+function validateLessonsDir(
+  lessonsDir: string,
+  objectiveCodes: Set<string>,
+  objectivesByCode: Map<string, any>,
+  objectivesFile: string,
+): void {
+  if (!fs.existsSync(lessonsDir)) return; // not built yet — nothing to validate
+
+  const lessonIndexFile = path.join(lessonsDir, "index.json");
+  const lessonIndex = readJson(lessonIndexFile);
+  if (lessonIndex) validateAgainstSchema("lessonsIndex", lessonIndex, toRel(lessonIndexFile));
+
+  const lessonChunkFileNames = fs
+    .readdirSync(lessonsDir)
+    .filter((f) => f.endsWith(".json") && f !== "index.json")
+    .sort();
+
+  const allLessons: LessonRecord[] = [];
+  const chunkByObjective = new Map<string, string>();
+
+  for (const chunkFileName of lessonChunkFileNames) {
+    const chunkPath = path.join(lessonsDir, chunkFileName);
+    const chunkData = readJson(chunkPath);
+    if (!chunkData) continue;
+
+    validateAgainstSchema("lesson", chunkData, toRel(chunkPath));
+
+    const chunkName = isNonEmptyString((chunkData as any).chunk) ? (chunkData as any).chunk : path.basename(chunkFileName, ".json");
+
+    const ls: any[] = Array.isArray((chunkData as any).lessons) ? (chunkData as any).lessons : [];
+    for (const lesson of ls) {
+      allLessons.push({ lesson, file: chunkPath });
+      if (isNonEmptyString(lesson?.objective)) chunkByObjective.set(lesson.objective, chunkName);
+    }
+  }
+
+  checkLessonObjectivesExist(allLessons, objectiveCodes);
+  checkLessonI18nParallel(allLessons);
+  checkLessonPublishedHasReviewer(allLessons);
+  checkLessonIndexConsistency(lessonIndex, lessonIndexFile, allLessons, chunkByObjective);
+  checkLessonCoverage(objectivesByCode, allLessons, objectivesFile);
 }
 
 // ---------------------------------------------------------------------------

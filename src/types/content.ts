@@ -1,6 +1,6 @@
 /**
- * data/ altindaki statik JSON'un tip karsiliklari.
- * Sekil kaynagi schemas/*.json ve docs/04-data-model.md.
+ * TypeScript counterparts of the static JSON under data/.
+ * The shape comes from schemas/*.json and docs/04-data-model.md.
  */
 
 export type Lang = "tr" | "en";
@@ -45,7 +45,7 @@ export interface CertMeta {
     durationMinutes: number;
     extendedDurationMinutes: number;
     pointsPerQuestion: number;
-    /** Hicbir resmi dokumanda gecmiyor — `false` demek de bir iddia olurdu. */
+    /** Absent from every official document — writing `false` would be a claim of its own. */
     negativeMarking: boolean | null;
     questionKLevelDistribution: Record<KLevel, number>;
   };
@@ -197,4 +197,57 @@ export interface Terms {
   trSource: string;
   termCount: number;
   terms: Term[];
+}
+
+export interface LessonContent {
+  title: string;
+  paragraphs: string[];
+  keyPoints: string[];
+  commonMistakes: string[];
+}
+
+/**
+ * A short explanatory card for one learning objective, shown in study mode.
+ *
+ * Written from scratch against the syllabus, like every question: the official
+ * text is never reproduced. `paragraphs` is plain text, not Markdown — the
+ * project has no Markdown renderer and this feature does not justify adding one.
+ */
+export interface Lesson {
+  objective: string;
+  syllabusVersion: string;
+  syllabusRef: string;
+  revision: number;
+  status: QuestionStatus;
+  origin: "original";
+  i18n: Record<Lang, LessonContent>;
+  meta: {
+    author: string;
+    reviewedBy: string;
+    createdAt: string;
+    updatedAt: string;
+  };
+}
+
+export interface LessonChunk {
+  chunk: string;
+  chapter: number;
+  dataVersion: string;
+  lessons: Lesson[];
+}
+
+export interface LessonIndexEntry {
+  objective: string;
+  chunk: string;
+  chapter: number;
+  languages: Lang[];
+  syllabusVersion: string;
+  status: QuestionStatus;
+}
+
+export interface LessonIndex {
+  dataVersion: string;
+  count: number;
+  chunks: string[];
+  lessons: LessonIndexEntry[];
 }

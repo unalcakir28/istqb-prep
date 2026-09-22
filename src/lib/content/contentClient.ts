@@ -18,6 +18,9 @@ import type {
   CertificationSummary,
   CertMeta,
   ExamBlueprint,
+  Lesson,
+  LessonChunk,
+  LessonIndex,
   Manifest,
   Objective,
   Question,
@@ -184,6 +187,30 @@ export class ContentClient {
 
   getChunk(certPath: string, chunk: string): Promise<QuestionChunk> {
     return this.fetchJson<QuestionChunk>(dataUrl(certPath, "questions", `${chunk}.json`), true);
+  }
+
+  getLessonIndex(certPath: string): Promise<LessonIndex> {
+    return this.fetchJson<LessonIndex>(dataUrl(certPath, "lessons", "index.json"), true);
+  }
+
+  getLessonChunk(certPath: string, chunk: string): Promise<LessonChunk> {
+    return this.fetchJson<LessonChunk>(dataUrl(certPath, "lessons", `${chunk}.json`), true);
+  }
+
+  /**
+   * Returns null when the objective has no published lesson yet. Study mode
+   * has to stay usable while the content is still being written, so a missing
+   * lesson is an expected state, not an error.
+   */
+  async getLesson(certPath: string, objectiveCode: string): Promise<Lesson | null> {
+    const index = await this.getLessonIndex(certPath);
+    const entry = index.lessons.find(
+      (item) => item.objective === objectiveCode && item.status === "published",
+    );
+    if (!entry) return null;
+
+    const chunk = await this.getLessonChunk(certPath, entry.chunk);
+    return chunk.lessons.find((lesson) => lesson.objective === objectiveCode) ?? null;
   }
 
   /**
