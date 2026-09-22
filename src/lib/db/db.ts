@@ -17,7 +17,20 @@ import Dexie, { type Table } from "dexie";
 
 import type { Lang } from "@/types/content";
 
+import { applyAttemptV3Defaults, type LegacyAttempt } from "./migrations";
+
 export type AttemptStatus = "in-progress" | "submitted" | "abandoned";
+
+export type AttemptMode = "study" | "practice" | "exam";
+
+/**
+ * What the session was asked to cover. `blueprint` is the official 40-question
+ * distribution; the other two are scoped selections used by practice and study.
+ */
+export type AttemptScope =
+  | { kind: "blueprint" }
+  | { kind: "chapter"; chapters: number[]; count: number }
+  | { kind: "objective"; objectives: string[]; count: number };
 
 export interface Attempt {
   id: string;
@@ -25,18 +38,22 @@ export interface Attempt {
   seed: number;
   questionIds: string[];
   status: AttemptStatus;
+  mode: AttemptMode;
   /** The duration at the moment the attempt was set up — comes from meta, never hardcoded. */
   durationMinutes: number;
   contentLang: Lang;
   startedAt: number;
-  /** The countdown is based on `Date.now()`: it doesn't drift if the tab stays in the background. */
-  deadlineAt: number;
+  /** null means untimed. A separate boolean could contradict this one. */
+  deadlineAt: number | null;
   submittedAt?: number;
   /** Whether it was submitted because time ran out — shown separately on the result screen. */
   autoSubmitted?: boolean;
   points?: number;
   totalPoints?: number;
   passed?: boolean;
+  /** Frozen at setup so a resumed session keeps the rules it started with. */
+  instantFeedback: boolean;
+  scope: AttemptScope;
   syllabusVersion: string;
   dataVersion: string;
 }
@@ -48,6 +65,8 @@ export interface Response {
   questionId: string;
   selected: string[];
   flagged: boolean;
+  /** Set once the rationale has been shown; the answer locks from then on. */
+  revealedAt?: number;
   updatedAt: number;
 }
 
@@ -75,12 +94,26 @@ export interface Setting {
   value: unknown;
 }
 
+export interface ObjectiveProgress {
+  /** `${certId}:${objectiveCode}` */
+  key: string;
+  certId: string;
+  objectiveCode: string;
+  cardReadAt?: number;
+  /** Questions answered for this objective across all sessions. */
+  attemptCount: number;
+  lastScorePercent: number;
+  mastered: boolean;
+  updatedAt: number;
+}
+
 export class AppDatabase extends Dexie {
   attempts!: Table<Attempt, string>;
   responses!: Table<Response, string>;
   srsCards!: Table<SrsCard, string>;
   bookmarks!: Table<Bookmark, string>;
   settings!: Table<Setting, string>;
+  objectiveProgress!: Table<ObjectiveProgress, string>;
 
   constructor() {
     super("istqb-prep");
@@ -100,6 +133,18 @@ export class AppDatabase extends Dexie {
     this.version(2).stores({
       attempts: "id, certId, status, startedAt, [certId+status]",
     });
+
+    // v3: three modes. `mode` and the compound index let the home screen list
+    // sessions per mode; `deadlineAt` becomes nullable for the untimed modes.
+    // Pre-v3 rows are all blueprint exams — see applyAttemptV3Defaults.
+    this.version(3)
+      .stores({
+        attempts: "id, certId, status, mode, startedAt, [certId+status], [certId+mode+status]",
+        objectiveProgress: "key, certId, objectiveCode, mastered",
+      })
+      .upgrade(async (tx) => {
+        await tx.table<LegacyAttempt>("attempts").toCollection().modify(applyAttemptV3Defaults);
+      });
   }
 }
 
@@ -140,7 +185,7 @@ export async function getResponses(attemptId: string): Promise<Response[]> {
 export async function saveResponse(
   attemptId: string,
   questionId: string,
-  row: Pick<Response, "selected" | "flagged">,
+  row: Pick<Response, "selected" | "flagged"> & { revealedAt?: number },
 ): Promise<void> {
   await db.responses.put({
     key: responseKey(attemptId, questionId),
@@ -148,6 +193,7 @@ export async function saveResponse(
     questionId,
     selected: row.selected,
     flagged: row.flagged,
+    revealedAt: row.revealedAt,
     updatedAt: Date.now(),
   });
 }
