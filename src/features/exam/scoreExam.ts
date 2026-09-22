@@ -13,7 +13,27 @@
  *   subtract points.
  */
 
+import type { AttemptScope } from "@/lib/db/db";
 import type { CertMeta, Question } from "@/types/content";
+
+/**
+ * Whether an attempt is measured against the official pass mark.
+ *
+ * `scoreExam` always fills `passed` in, because the comparison it makes is the
+ * right one for the exam it was written for: a blueprint attempt is measured
+ * against `meta.exam.passPoints` (26 for CTFL v4.0.1) however many questions
+ * the pool could supply. Applied to a scoped set the same comparison is a lie —
+ * 10 questions can never reach 26, so a perfect run reports `passed: false`.
+ *
+ * The discriminator is the SCOPE, never `attempt.mode`: a practice set built
+ * from the blueprint at the official count is a mock exam in all but name. One
+ * definition, used by the result screen to decide whether to show a verdict and
+ * by the store to decide whether to persist one — so a stored `passed` and a
+ * displayed one can never disagree.
+ */
+export function isGraded(scope: AttemptScope): boolean {
+  return scope.kind === "blueprint";
+}
 
 /** The user's answer to one question: the ids of the selected options. */
 export type AnswerMap = Record<string, string[]>;

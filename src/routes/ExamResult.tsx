@@ -1,5 +1,5 @@
 /**
- * F1-12 — Result screen (docs/06 §3.4).
+ * F1-11 — Result screen (docs/06 §3.4).
  *
  * The principle: honesty over motivation. The pass line is ALWAYS drawn, the
  * score is never softened, and a failed exam is not dressed up as "almost".
@@ -8,6 +8,8 @@
  * Every constant comes from the data: the pass mark from `score.passPoints`
  * (meta.json), chapter titles from syllabus.json, target question counts from
  * the syllabus `examQuestions` field, objective texts from objectives.json.
+ *
+ * Shared by exam and practice, so the verdict is conditional — see `graded`.
  */
 
 import { useEffect, useState } from "react";
@@ -17,10 +19,31 @@ import { useTranslation } from "react-i18next";
 import { ErrorNotice } from "@/components/ErrorNotice";
 import { ScoreBar } from "@/components/ScoreBar";
 import { Spinner } from "@/components/Spinner";
-import { useExamStore } from "@/features/exam/examStore";
-import { weakestObjectives } from "@/features/exam/scoreExam";
+import { useSessionStore } from "@/features/session/sessionStore";
+import { isGraded, weakestObjectives } from "@/features/exam/scoreExam";
 import { contentClient } from "@/lib/content/contentClient";
+import type { Attempt } from "@/lib/db/db";
+import { useArrivalFocus } from "@/lib/useArrivalFocus";
+import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import type { Chapter, Objective } from "@/types/content";
+
+/**
+ * How long the attempt took, for display. `submittedAt` is the normal case.
+ * Without it (a state that should not happen for a submitted attempt), a
+ * timed session falls back to its allotted duration — but an untimed session
+ * (study/practice) has no such duration to fall back to (`durationMinutes` is
+ * a 0 placeholder there), so it reports real elapsed time since start instead
+ * of a dishonest 0:00.
+ */
+function elapsedSeconds(attempt: Attempt): number {
+  if (attempt.submittedAt !== undefined) {
+    return Math.max(0, Math.round((attempt.submittedAt - attempt.startedAt) / 1000));
+  }
+  if (attempt.deadlineAt === null) {
+    return Math.max(0, Math.round((Date.now() - attempt.startedAt) / 1000));
+  }
+  return attempt.durationMinutes * 60;
+}
 
 function PassIcon() {
   return (
@@ -56,16 +79,21 @@ export default function ExamResult() {
   const { attemptId } = useParams<{ attemptId: string }>();
   const { t } = useTranslation();
 
-  const attempt = useExamStore((state) => state.attempt);
-  const score = useExamStore((state) => state.score);
-  const contentLang = useExamStore((state) => state.contentLang);
-  const loading = useExamStore((state) => state.loading);
-  const loadSubmitted = useExamStore((state) => state.loadSubmitted);
+  const attempt = useSessionStore((state) => state.attempt);
+  const score = useSessionStore((state) => state.score);
+  const contentLang = useSessionStore((state) => state.contentLang);
+  const loading = useSessionStore((state) => state.loading);
+  const loadSubmitted = useSessionStore((state) => state.loadSubmitted);
 
   const [chapters, setChapters] = useState<Chapter[] | null>(null);
   const [objectives, setObjectives] = useState<Objective[] | null>(null);
 
   const ready = Boolean(attemptId && attempt?.id === attemptId && score);
+
+  // Both modes hand over with a `replace` navigation, so the session's own
+  // title and focus position are what this screen would otherwise inherit.
+  useDocumentTitle(t("result.title"));
+  const headingRef = useArrivalFocus<HTMLHeadingElement>(ready);
 
   useEffect(() => {
     if (!attemptId || ready) return;
@@ -102,26 +130,41 @@ export default function ExamResult() {
   if (loading && !ready) return <Spinner />;
   if (!attempt || !score) return <ErrorNotice />;
 
-  // With no submission time (a state that should not happen), the full
-  // allotted duration is shown rather than a guess — the render stays pure.
-  const elapsedSeconds =
-    attempt.submittedAt === undefined
-      ? attempt.durationMinutes * 60
-      : Math.max(0, Math.round((attempt.submittedAt - attempt.startedAt) / 1000));
-  // Even when fewer than 40 questions were asked because the pool fell short,
-  // the bar still runs to the official pass mark: the pass line stays visible
-  // ALWAYS, and the unasked region is marked with hatching (docs/06 §3.4).
-  const scale = Math.max(score.totalPoints, score.passPoints);
+  const elapsed = elapsedSeconds(attempt);
+
+  /**
+   * Whether this attempt was measured against the official pass mark — the same
+   * definition the store uses to decide whether to persist a verdict at all, so
+   * the two can never disagree (`isGraded`).
+   *
+   * A candidate who answered all ten questions of a scoped set correctly used
+   * to be told they were below the pass mark, on a bar scaled to 26. Honesty
+   * over motivation cuts both ways, so the verdict is dropped rather than
+   * softened.
+   */
+  const graded = isGraded(attempt.scope);
+
+  // Graded: even when fewer than 40 questions were asked because the pool fell
+  // short, the bar still runs to the official pass mark — the pass line stays
+  // visible ALWAYS, and the unasked region is hatched (docs/06 §3.4).
+  // Ungraded: there is no pass mark to keep in view, so the bar ends at the
+  // questions that were actually asked.
+  const scale = graded ? Math.max(score.totalPoints, score.passPoints) : score.totalPoints;
   const scoreLabel = t("result.score", { points: score.points, total: score.totalPoints });
+  const percentLabel = t("result.percent", { percent: score.percent });
   const passLabel = t("result.passLine", { pass: score.passPoints });
-  const verdict = score.passed ? t("result.passed") : t("result.failed");
+  const verdict = graded ? (score.passed ? t("result.passed") : t("result.failed")) : null;
   const objectiveText = new Map((objectives ?? []).map((item) => [item.code, item.text]));
   const chapterById = new Map((chapters ?? []).map((item) => [item.number, item]));
   const weakest = weakestObjectives(score);
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-8 px-4 py-8 sm:py-12">
-      <h1 className="text-[28px] font-semibold leading-tight">{t("result.title")}</h1>
+      {/* `tabIndex={-1}` only so `useArrivalFocus` can put focus here; it stays
+          out of the tab order. */}
+      <h1 ref={headingRef} tabIndex={-1} className="text-[28px] font-semibold leading-tight">
+        {t("result.title")}
+      </h1>
 
       {attempt.autoSubmitted ? (
         <p className="rounded-[var(--radius-card)] border border-flag/40 bg-flag/10 px-4 py-3 text-sm">
@@ -131,35 +174,40 @@ export default function ExamResult() {
 
       <section aria-labelledby="score-heading" className="flex flex-col gap-4">
         <h2 id="score-heading" className="sr-only">
-          {`${scoreLabel} — ${verdict}`}
+          {verdict ? `${scoreLabel} — ${verdict}` : scoreLabel}
         </h2>
 
         <p className="font-mono text-[44px] font-semibold leading-none tabular-nums">
           {scoreLabel}
         </p>
 
-        <p
-          className={`flex items-center gap-2 text-lg font-semibold ${
-            score.passed ? "text-correct" : "text-incorrect"
-          }`}
-        >
-          {score.passed ? <PassIcon /> : <FailIcon />}
-          {verdict}
-          <span className="font-mono text-base font-normal text-fg-muted">
-            {t("result.percent", { percent: score.percent })}
-          </span>
-        </p>
+        {/* The percentage is on the verdict's line when there is one, and on a
+            line of its own when there is not — it is a fact about the session
+            either way and must not go missing with the verdict. */}
+        {verdict ? (
+          <p
+            className={`flex items-center gap-2 text-lg font-semibold ${
+              score.passed ? "text-correct" : "text-incorrect"
+            }`}
+          >
+            {score.passed ? <PassIcon /> : <FailIcon />}
+            {verdict}
+            <span className="font-mono text-base font-normal text-fg-muted">{percentLabel}</span>
+          </p>
+        ) : (
+          <p className="font-mono text-base text-fg-muted">{percentLabel}</p>
+        )}
 
         <ScoreBar
           value={score.points}
           max={scale}
-          reach={score.totalPoints}
-          markAt={score.passPoints}
-          markLabel={passLabel}
-          tone={score.passed ? "correct" : "incorrect"}
+          reach={graded ? score.totalPoints : undefined}
+          markAt={graded ? score.passPoints : undefined}
+          markLabel={graded ? passLabel : undefined}
+          tone={graded ? (score.passed ? "correct" : "incorrect") : "accent"}
           startLabel="0"
           endLabel={String(scale)}
-          ariaLabel={`${scoreLabel} — ${passLabel} — ${verdict}`}
+          ariaLabel={verdict ? `${scoreLabel} — ${passLabel} — ${verdict}` : scoreLabel}
         />
 
         <dl className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
@@ -179,8 +227,8 @@ export default function ExamResult() {
 
         <p className="text-sm text-fg-muted">
           {t("result.duration", {
-            minutes: Math.floor(elapsedSeconds / 60),
-            seconds: elapsedSeconds % 60,
+            minutes: Math.floor(elapsed / 60),
+            seconds: elapsed % 60,
           })}
         </p>
       </section>
@@ -274,11 +322,13 @@ export default function ExamResult() {
         >
           {t("result.review")}
         </Link>
+        {/* Offering "New exam" after a scoped practice set sends the candidate
+            to a 40-question timed mock they did not ask for. */}
         <Link
-          to="/deneme"
+          to={graded ? "/sinav" : "/alistirma"}
           className="rounded-[var(--radius-btn)] border border-border px-5 py-3 font-medium hover:bg-surface-2"
         >
-          {t("result.retake")}
+          {graded ? t("result.retake") : t("result.retakePractice")}
         </Link>
         <Link
           to="/"

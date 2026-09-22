@@ -1,5 +1,5 @@
 /**
- * F1-11 — Exam setup (docs/06 §3.2).
+ * F1-17 — Exam setup (docs/06 §3.2).
  *
  * The screen's main job is to say WHAT the exam will produce before the
  * candidate starts: the per-chapter distribution is computed live, and if the
@@ -19,7 +19,7 @@ import { useTranslation } from "react-i18next";
 import { ErrorNotice } from "@/components/ErrorNotice";
 import { ScoreBar } from "@/components/ScoreBar";
 import { Spinner } from "@/components/Spinner";
-import { collectSeenQuestionIds, useExamStore } from "@/features/exam/examStore";
+import { useSessionStore } from "@/features/session/sessionStore";
 import {
   previewCoverage,
   shortfallsByChapter,
@@ -43,8 +43,6 @@ interface SetupData {
   blueprint: ExamBlueprint;
   syllabus: Syllabus;
   pool: QuestionIndexEntry[];
-  /** Questions already answered — for the "avoid what I have seen" preview. */
-  seen: Set<string>;
 }
 
 interface ChapterRow {
@@ -70,7 +68,6 @@ async function loadSetup(): Promise<SetupData> {
     blueprint,
     syllabus,
     pool: index.questions.filter((entry) => entry.status === "published"),
-    seen: await collectSeenQuestionIds(meta.id),
   };
 }
 
@@ -100,8 +97,8 @@ export default function ExamSetup() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
-  const startExam = useExamStore((state) => state.startExam);
-  const starting = useExamStore((state) => state.loading);
+  const startSession = useSessionStore((state) => state.startSession);
+  const starting = useSessionStore((state) => state.loading);
 
   const { data, failed } = useAsyncData(loadSetup);
   const [extended, setExtended] = useState(() => i18n.language === "tr");
@@ -111,15 +108,17 @@ export default function ExamSetup() {
   const [excludeSeen, setExcludeSeen] = useState(true);
   const [startFailed, setStartFailed] = useState(false);
 
-  // The preview must look at the same pool as the filter that actually
-  // generates the exam. Otherwise, with "avoid what I have seen" on, the
-  // screen says "nothing missing" and then a 37-question exam starts instead
-  // of 40 — exactly what rule 8 forbids.
+  // The seen set is deliberately NOT applied here. `generateExam`'s `exclude`
+  // is a preference, not a filter (`generateExam.ts:29-33`): `preferUnseen`
+  // returns `[...unseen, ...seen]` and drops nothing (`:65-74`), so the full
+  // pool is exactly what generation can reach whether "avoid what I have seen"
+  // is on or off. Previewing over a filtered pool can only invent shortfalls
+  // the generator never hits — the screen would announce a short exam and then
+  // start a complete one. Re-adding the filter re-opens that bug.
   const preview = useMemo(() => {
     if (!data) return null;
-    const pool = excludeSeen ? data.pool.filter((entry) => !data.seen.has(entry.id)) : data.pool;
-    return previewCoverage(data.blueprint, pool);
-  }, [data, excludeSeen]);
+    return previewCoverage(data.blueprint, data.pool);
+  }, [data]);
 
   const rows = useMemo(
     () =>
@@ -142,10 +141,13 @@ export default function ExamSetup() {
   async function onStart() {
     setStartFailed(false);
 
-    const attemptId = await startExam({
+    const attemptId = await startSession({
       certPath: cert.path,
-      durationMinutes,
+      mode: "exam",
+      scope: { kind: "blueprint" },
       contentLang,
+      instantFeedback: false,
+      durationMinutes,
       excludeSeen,
     });
 
@@ -154,7 +156,7 @@ export default function ExamSetup() {
       return;
     }
 
-    navigate(`/deneme/${attemptId}`);
+    navigate(`/sinav/${attemptId}`);
   }
 
   return (
