@@ -88,9 +88,11 @@ export function Layout() {
   const { t } = useTranslation();
   const location = useLocation();
 
-  // During the exam, nothing but the question appears on screen (docs/06
-  // §1.1): the top nav and footer are hidden.
-  const isExamSession = /^\/deneme\/[^/]+$/.test(location.pathname);
+  // During any of the three modes' sessions, nothing but the question appears
+  // on screen (docs/06 §1.1): the top nav and footer are hidden. Covers
+  // /sinav/:attemptId, /alistirma/:attemptId and /calisma/lo/:loCode/:attemptId.
+  const isSessionScreen =
+    /^\/sinav\/[^/]+$|^\/alistirma\/[^/]+$|^\/calisma\/lo\/[^/]+\/[^/]+$/.test(location.pathname);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -98,7 +100,7 @@ export function Layout() {
         {t("app.skipToContent")}
       </a>
 
-      {!isExamSession && (
+      {!isSessionScreen && (
         <header className="border-b border-border bg-surface">
           <div className="mx-auto flex max-w-5xl items-center gap-4 px-4 py-3">
             <Link to="/" className="font-semibold tracking-tight">
@@ -132,7 +134,7 @@ export function Layout() {
         </Suspense>
       </main>
 
-      {!isExamSession && (
+      {!isSessionScreen && (
         <footer className="border-t border-border bg-surface">
           <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-4 text-xs text-fg-muted">
             <span>{t("footer.disclaimerShort")}</span>

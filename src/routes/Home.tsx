@@ -1,5 +1,5 @@
 /**
- * F1-11 — Home page.
+ * F1-16 — Home page.
  *
  * It has three jobs, and their order matters:
  *  1. An unfinished exam (F1-10) is shown at the top — that is the first thing
@@ -22,6 +22,7 @@ import {
   shortfallsByChapter,
   type GroupShortfall,
 } from "@/features/exam/generateExam";
+import { routeForAttempt } from "@/features/session/routeForAttempt";
 import { contentClient } from "@/lib/content/contentClient";
 import { discardAttempt, findResumableAttempt, getResponses, type Attempt } from "@/lib/db/db";
 import { useAsyncData } from "@/lib/useAsyncData";
@@ -86,6 +87,46 @@ function achievableByChapter(
     .sort((a, b) => a.chapter - b.chapter);
 }
 
+/**
+ * One of the three modes. The card is not itself a link: its heading, body and
+ * action would collapse into one long accessible name, and the action's own
+ * wording is what a screen-reader user navigating by link needs to hear.
+ */
+function ModeCard({
+  title,
+  body,
+  action,
+  to,
+  primary = false,
+}: {
+  title: string;
+  body: string;
+  action: string;
+  to: string;
+  primary?: boolean;
+}) {
+  return (
+    <article
+      className={`flex flex-col gap-2 rounded-[var(--radius-card)] border bg-surface p-5 ${
+        primary ? "border-accent/50" : "border-border"
+      }`}
+    >
+      <h2 className="text-lg font-semibold">{title}</h2>
+      <p className="max-w-[65ch] text-[15px] leading-relaxed text-fg-muted">{body}</p>
+      <Link
+        to={to}
+        className={
+          primary
+            ? "mt-2 w-fit rounded-[var(--radius-btn)] bg-accent px-4 py-2.5 text-sm font-semibold text-accent-fg"
+            : "mt-2 w-fit rounded-[var(--radius-btn)] border border-border px-4 py-2.5 text-sm font-medium hover:bg-surface-2"
+        }
+      >
+        {action}
+      </Link>
+    </article>
+  );
+}
+
 export default function Home() {
   const { t } = useTranslation();
   const { data, failed, reload } = useAsyncData(loadHome);
@@ -127,7 +168,7 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap gap-2">
             <Link
-              to={`/deneme/${resume.attempt.id}`}
+              to={routeForAttempt(resume.attempt)}
               className="rounded-[var(--radius-btn)] bg-accent px-4 py-2 text-sm font-semibold text-accent-fg"
             >
               {t("home.resume")}
@@ -162,17 +203,34 @@ export default function Home() {
           {t("setup.durationHint")}
         </p>
 
-        <div className="flex flex-wrap items-center gap-3 pt-1">
-          <Link
-            to="/deneme"
-            className="rounded-[var(--radius-btn)] bg-accent px-5 py-3 font-semibold text-accent-fg"
-          >
-            {t("home.startExam")}
-          </Link>
-          <span className="font-mono text-xs text-fg-muted">
-            {cert.acronym} v{cert.syllabusVersion}
-          </span>
-        </div>
+        <span className="font-mono text-xs text-fg-muted">
+          {cert.acronym} v{cert.syllabusVersion}
+        </span>
+      </section>
+
+      {/* Study leads, on purpose. A first-time visitor who opens with a cold
+          mock exam scores around 12/40 and leaves; putting the lesson-first
+          path at the top is the documented mitigation for persona P2. */}
+      <section className="flex flex-col gap-3">
+        <ModeCard
+          title={t("home.studyTitle")}
+          body={t("home.studyBody")}
+          action={t("home.startStudy")}
+          to="/calisma"
+          primary
+        />
+        <ModeCard
+          title={t("home.practiceTitle")}
+          body={t("home.practiceBody")}
+          action={t("practice.start")}
+          to="/alistirma"
+        />
+        <ModeCard
+          title={t("home.examTitle")}
+          body={t("home.examBody")}
+          action={t("home.startExam")}
+          to="/sinav"
+        />
       </section>
 
       <section

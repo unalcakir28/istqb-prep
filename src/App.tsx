@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 
 import { Layout } from "@/components/Layout";
 import { RouteError } from "@/components/RouteError";
@@ -12,6 +12,13 @@ const ExamResult = lazy(() => import("@/routes/ExamResult"));
 const Review = lazy(() => import("@/routes/Review"));
 const Sources = lazy(() => import("@/routes/Sources"));
 const NotFound = lazy(() => import("@/routes/NotFound"));
+const PracticeSetup = lazy(() => import("@/routes/PracticeSetup"));
+const PracticeSession = lazy(() => import("@/routes/PracticeSession"));
+const StudyChapters = lazy(() => import("@/routes/StudyChapters"));
+const StudyChapter = lazy(() => import("@/routes/StudyChapter"));
+const StudyObjective = lazy(() => import("@/routes/StudyObjective"));
+const StudySession = lazy(() => import("@/routes/StudySession"));
+const LegacyExamRedirect = lazy(() => import("@/routes/LegacyExamRedirect"));
 
 /**
  * Runs under a GitHub Pages subpath: `base` becomes '/istqb-prep/' at build
@@ -25,8 +32,16 @@ const router = createBrowserRouter(
       errorElement: <RouteError />,
       children: [
         { path: "/", element: <Home /> },
-        { path: "/deneme", element: <ExamSetup /> },
-        { path: "/deneme/:attemptId", element: <ExamSession /> },
+        { path: "/calisma", element: <StudyChapters /> },
+        { path: "/calisma/:chapter", element: <StudyChapter /> },
+        { path: "/calisma/lo/:loCode", element: <StudyObjective /> },
+        { path: "/calisma/lo/:loCode/:attemptId", element: <StudySession /> },
+        { path: "/alistirma", element: <PracticeSetup /> },
+        { path: "/alistirma/:attemptId", element: <PracticeSession /> },
+        { path: "/sinav", element: <ExamSetup /> },
+        { path: "/sinav/:attemptId", element: <ExamSession /> },
+        { path: "/deneme", element: <Navigate to="/sinav" replace /> },
+        { path: "/deneme/:attemptId", element: <LegacyExamRedirect /> },
         { path: "/sonuc/:attemptId", element: <ExamResult /> },
         { path: "/inceleme/:attemptId", element: <Review /> },
         { path: "/kaynaklar", element: <Sources /> },
