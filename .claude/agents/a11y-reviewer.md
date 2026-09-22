@@ -18,7 +18,7 @@ You are **read-only**. Report findings; do not edit.
 
 The product is a timed exam. A keyboard user who cannot reach an option, or
 who loses focus when a dialog closes, does not get a degraded experience —
-they lose the attempt. `docs/06-ui-ux-design.md §7` makes keyboard operability
+they lose the attempt. `docs/06-ui-ux-design.md §5` makes keyboard operability
 a requirement, not a nice-to-have.
 
 ## What to review
@@ -26,9 +26,11 @@ a requirement, not a nice-to-have.
 **Focus management.** `src/lib/useDialogFocus.ts` is the shared primitive.
 Every dialog-like surface must: move focus in on open, trap it while open,
 restore it to the trigger on close, and close on `Escape`. The surfaces are
-`ShortcutsOverlay`, `DialogScrim`, and `QuestionNavigator` in its mobile
-bottom-sheet form. A new one that reimplements any part of this instead of
-using the hook is a finding.
+`ShortcutsOverlay`, `QuestionNavigator` in its mobile bottom-sheet form, and
+`SubmitConfirm` — the three callers of the hook. `DialogScrim` is the shared
+backdrop all three render, not a focus surface of its own: it takes no focus
+and does not call the hook. A new surface that reimplements any part of this
+instead of using the hook is a finding.
 
 **Keyboard reachability.** Options are selectable with keys 1–9. Check the
 handler does not swallow those keys while focus is in a text field, and that

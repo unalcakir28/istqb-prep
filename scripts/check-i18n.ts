@@ -10,7 +10,7 @@
  * falls back to English, and the E2E specs read their labels from en.json, so
  * nothing turns red. This check is that gate.
  *
- * It is deliberately NOT one of the 15 checks in validate-data.ts: those are
+ * It is deliberately NOT one of the numbered checks in validate-data.ts: those are
  * the content checks specified in docs/04-data-model.md §6, and this one is
  * about src/, not data/.
  *

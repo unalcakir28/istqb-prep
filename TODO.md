@@ -25,8 +25,8 @@ Priority: **P0** blocks the next phase from starting · **P1** required within t
 - [x] **F0-06** `P0` `objectives.json` — **64 LOs**, TR+EN text copied verbatim from the official PDFs, K1=14/K2=42/K3=8
 - [x] **F0-07** `P0` `syllabus.json` · `meta.json` · `manifest.json` — audited against the official source, zero discrepancies (titles, durations 1135 min, exam constants 40/26/60/75)
 - [x] **F0-11** `P1` `certifications.json` — the full 28-row ISTQB certification table ([`03 §5`](docs/03-istqb-reference.md) seed data)
-- [x] **F0-08** `P0` `schemas/` completed + `scripts/validate-data.ts` — **15 checks** (#1 is JSON Schema conformance, #2-#15 are consistency checks). #1-#9 and #15 are errors, #10-#14 are warnings
-- [x] **F0-12** `P1` `scripts/build-index.ts` — builds `index.json` + manifest counts from the chunks
+- [x] **F0-08** `P0` `schemas/` completed + `scripts/validate-data.ts` — **20 checks** (#1 is JSON Schema conformance, #2-#20 are consistency checks). #1-#9 and #15-#19 are errors, #10-#14 and #20 are warnings. #16-#20 arrived with the lesson files
+- [x] **F0-12** `P1` `scripts/build-index.ts` — builds `questions/index.json`, `lessons/index.json` and the manifest counts from the chunks
 - [x] **F0-13** `P1` `scripts/stats.ts` — per-LO coverage → `docs/coverage.md`
 - [ ] **F0-09** `P1` `scripts/fetch-glossary.ts` — pull 215 terms from the Glossary API with the `used_in: Foundation v4.0` filter; match TR equivalents from the TTB syllabus, flag `trSource`
 - [x] **F0-14** `P1` `data/ctfl-v4.0.1/terms.json` — **97 terms**, positionally aligned from the official EN/TR keyword lists. ⚠️ The first glossary in `docs/07 §5` was largely wrong and was replaced entirely
@@ -35,7 +35,7 @@ Priority: **P0** blocks the next phase from starting · **P1** required within t
 
 - [x] **F0-10** `P0` First questions written — the process was proven out (see F1-C1)
 
-> **Phase 0 done:** `npm run validate:data` is green · blueprint sums to 40 · 20 questions conform to the schema
+> **Phase 0 done:** `yarn validate:data` is green · blueprint sums to 40 · 20 questions conform to the schema
 
 ---
 
@@ -48,7 +48,7 @@ Priority: **P0** blocks the next phase from starting · **P1** required within t
 - [x] **F1-01c** `P0` CI: ESLint + Prettier + `tsc --noEmit` + Vitest + `validate:data`
 - [x] **F1-02** `P0` `contentClient` — index first, then only the needed chunks; memory + Cache API, invalidated via `dataVersion`
 - [x] **F1-03** `P0` Dexie schema + recovery/discard helpers
-- [x] **F1-04** `P0` i18next; UI language ≠ content language; TR/EN dictionaries match at 104 keys
+- [x] **F1-04** `P0` i18next; UI language ≠ content language; TR/EN dictionaries match at 164 keys, checked by `yarn validate:i18n` in CI
 
 ### Exam engine
 
@@ -68,13 +68,13 @@ Priority: **P0** blocks the next phase from starting · **P1** required within t
 - [x] **F1-12** `P0` Review pass + `RationalePanel` — a rationale for every option + attribution chips (`FL-4.2.1` · `§4.2.1` · `K3` · `v4.0.1`)
 - [x] **F1-13** `P0` Dark mode (token-based) + keyboard shortcuts + `?` overlay
 - [ ] **F1-14** `P1` `MediaRenderer`: `decision-table` and `table` (a real `<table>`, not an image)
-- [ ] **F1-16** `P1` Home page — a "Where should I start?" prompt for first-time visitors (primary action is **Practice**, not Mock exam)
+- [ ] **F1-16** `P1` Home page — a "Where should I start?" prompt for first-time visitors. **Half delivered:** the home page now leads with three mode cards and the primary action is **Study**, not Mock exam. What is still missing is the first-visit prompt itself and the "Your Status" block behind it
 - [x] **F1-17** `P1` Exam setup screen: 75 min is the default with a Turkish UI, live distribution preview, pool warning (including `excludeSeen`)
 
 ### Quality
 
-- [x] **F1-15** `P1` E2E (Playwright): the full 40-question mock exam flow, resuming an unfinished attempt, the answer being preserved when the question language changes — `e2e/exam.spec.ts`, `yarn e2e`
-- [x] **F1-18** `P1` `@axe-core/playwright` — 0 violations on the home, setup, resources, and exam screens in light/dark theme; also verifies that an option can be selected by keyboard — `e2e/a11y.spec.ts`
+- [x] **F1-15** `P1` E2E (Playwright): the full 40-question mock exam flow, resuming an unfinished attempt, the answer being preserved when the question language changes — `e2e/exam.spec.ts`. Practice and study have their own specs (`e2e/practice.spec.ts`, `e2e/study.spec.ts`); **47 specs across 4 files** under `yarn e2e`
+- [x] **F1-18** `P1` `@axe-core/playwright` — 0 violations in light **and** dark theme on the home, exam setup, practice setup, sources, exam, study chapter list, chapter objective list and study objective screens, plus a revealed practice answer; alongside the hand-written specs for what axe cannot see (focus destinations, accessible names, live regions) — `e2e/a11y.spec.ts`
 - [ ] **F1-19** `P2` Lighthouse CI — ≥95 in all 4 categories
 
 ### Content and pages
@@ -89,17 +89,52 @@ Priority: **P0** blocks the next phase from starting · **P1** required within t
 
 ## Phase 2 — Learning modes
 
-- [ ] **F2-01** `P0` Practice mode: section/LO selection, a **fixed 10-question session**, inline instant feedback
+### Delivered — the three-mode slice
+
+- [x] **F2-00a** `P0` **Study mode** — `/calisma` → chapter → objective → lesson card → short objective test, with its result in the same route. `ObjectiveStateBadge` states progress in words, never by colour alone
+- [x] **F2-00b** `P0` **`objectiveProgress` + Dexie v3** — per-objective mastery (≥3 answered **and** ≥80% on the last test), deliberately **losable**; the v3 backfill is extracted into `migrations.ts` so it is unit-testable
+- [x] **F2-00c** `P0` **The lesson data layer** — `data/*/lessons/` (chunked per chapter, index built by `yarn build:index`), two schemas, four new validator checks (#16-#19) plus coverage warning #20, `contentClient.getLesson`, `LessonCard` with a placeholder for a card that does not exist yet. **The chunks ship empty — Track C writes the cards**
+- [x] **F2-00d** `P0` **One shared session shell** — `SessionRunner` + `sessionStore` (was `examStore`); all three modes run on it, with `routeForAttempt` keeping an attempt at its own URL and `/deneme/:id` redirecting to `/sinav/:id` for old bookmarks
+- [x] **F2-00e** `P0` **`selectQuestions`** — one selection entry point, three scopes (blueprint / chapter / objective), seeded, with shortfalls reported rather than thrown. `PracticeSetup` previews by calling it; `ExamSetup` previews through `previewCoverage` over the full published pool, because `exclude` reorders candidates rather than removing them and a filtered preview over-reports shortfalls
+- [x] **F2-00f** `P1` **Accessibility remediation (15a/15b)** — the options are a named group; every focus-losing screen change now moves focus and names what happened (next question → the stem heading; reveal → the rationale panel, named after the verdict; study finish → the result heading); a multi-select displacement is announced; boundary buttons use `aria-disabled`; `QuestionCard` and `RationalePanel` take a `headingLevel`, so the review pass reads as 40 nested groups instead of 120 flat headings; `SubmitConfirm` is shared by all three modes
+- [x] **F2-01** `P0` Practice mode: whole-syllabus / chapter / LO scope, **configurable length (10 · 20 · 40, default 10)**, inline instant feedback that can be switched off. _Delivered wider than specified — the fixed 10-question session became a choice._
+- [x] **F2-03** `P0` ~~`/syllabus` syllabus explorer~~ — **absorbed into `/calisma`.** A filterable list of 64 objectives with a status column is the same screen as the study chapter/objective lists, one click further from the content. Per-objective accuracy is carried by `ObjectiveStateBadge`
+
+### Still open
+
 - [ ] **F2-02** `P0` **Requeuing a wrong answer at the end of the same session** (the Duolingo pattern)
-- [ ] **F2-03** `P0` `/syllabus` syllabus explorer — 64 LOs, filterable/sortable, a column for your own accuracy rate (the LeetCode pattern)
-- [ ] **F2-04** `P0` LO weakness analysis + "Study →" deep links
+- [ ] **F2-04** `P0` LO weakness analysis + "Study →" deep links from the result screen
 - [ ] **F2-05** `P1` `/glossary` — simultaneous TR/EN search, a term card (EN+TR side by side), a **source tag** (`trSource`)
 - [ ] **F2-06** `P1` TR/EN **side-by-side** view (two columns on wide screens, stacked on narrow ones, a single radio group)
 - [ ] **F2-07** `P1` Lists: my mistakes · my flagged questions · **ones I've never gotten right twice in a row**
 - [ ] **F2-08** `P1` Question error report → a pre-filled GitHub Issue (question ID, version, selected option, language)
 - [ ] **F2-09** `P1` `MediaRenderer`: `state-transition` (with a text alternative), `control-flow`, `code`
-- [ ] **F2-10** `P0` **Content: 200 questions** (≥2 per LO)
+- [ ] **F2-10** `P0` **Content: 200 questions** (≥2 per LO) — this is Track D
 - [ ] **F2-11** `P2` Definition on hover over a term (tooltip)
+- [ ] **F2-12** `P1` A publishing gate for lessons. `guard-publish.sh` matches `data/*/questions/*.json` only and `yarn publish:questions` walks only that directory, so a lesson's `status` can be set to `published` by hand with an invented `meta.reviewedBy`. Needed before Track C starts publishing. _Its sibling gap is closed: `guard-generated.sh` now also matches `*/lessons/index.json`, which `yarn build:index` generates and git tracks_
+- [ ] **F2-13** `P2` On a narrow screen, `n` opens the navigator sheet and focus lands on its Close button rather than the current question's cell — the desktop panel was fixed, the sheet was not
+- [ ] **F2-14** `P2` `/sonuc/<study-attempt-id>`, hand-typed, renders the study attempt ungraded and offers "New practice set" — a study test's result belongs in `/calisma/lo/:loCode/:id`, which shows it inline. Nothing is scored wrongly and no link in the app produces the URL, so only the label is off. `SessionRunner` already sends a misaddressed attempt home through `redirectPathFor`; `ExamResult` does not, because `routeForAttempt` maps an attempt to its **session** route and the result screen needs the result one. That is a small extension of the same function, not a `mode` branch on the screen. This is unfinished, not a deliberate limit
+
+---
+
+## Content and platform tracks
+
+Each gets its own spec and plan; nothing above anticipates them beyond the extension points already built.
+
+### Track A — official-question handling
+
+- [ ] **A-01** `P1` Decide and document what "official" material may be referenced without being reproduced (rule 1 is not up for negotiation; this is about citation and linking, not copying)
+- [ ] **A-02** `P1` Dexie **v4** + a widened `origin` union in `src/types/content.ts`, `schemas/question.schema.json` and the validator. The v3 backfill in `migrations.ts` is the pattern to follow
+
+### Track C — the 64 lesson cards
+
+- [ ] **C-01** `P0` Write the explanation cards, chapter by chapter, into `data/ctfl-v4.0.1/lessons/ch0*.json` — title, paragraphs, key points, common mistakes, TR **and** EN, all written from scratch. Check #20 counts down from 64 as they land
+- [ ] **C-02** `P1` A `lesson-writer` / `lesson-verifier` pair alongside the existing question agents, and the F2-12 publishing gate
+
+### Track D — 240 further original questions
+
+- [ ] **D-01** `P0` Grow the pool from 120 to 200 (Phase 2), then 300 (Phase 3), clearing check #11's 52 warnings. Priority order is `docs/coverage.md`: the LOs with 1 published question first
+- [ ] **D-02** `P1` Re-run the answer-position balance (#14) and the terminology leak sweep (#13) after each batch
 
 ---
 

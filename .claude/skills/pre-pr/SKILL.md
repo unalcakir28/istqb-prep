@@ -31,10 +31,12 @@ yarn e2e
 
 - **`yarn format` fails.** It is `prettier --check`. Fix with `yarn format:write`,
   then rerun. Do not edit the files by hand to satisfy it.
-- **`yarn validate:data` prints warnings but PASSES.** Expected. Every warning is
-  "this learning objective has fewer than 3 published questions" — a content
-  gap tracked in `TODO.md`, not a blocker. Only `0 error(s)` matters.
-  If the error count is not zero, the pull request is not ready.
+- **`yarn validate:data` prints warnings but PASSES.** Expected. They are content
+  gaps tracked in `TODO.md`, not blockers, and they come in two kinds: check #11
+  ("not enough to generate exams without repetition") is a question gap, check
+  #20 ("no published lesson yet") is a lesson gap waiting on Track C. Only
+  `0 error(s)` matters. If the error count is not zero, the pull request is not
+  ready.
 - **`yarn validate:data` reports a stale index.** `yarn build:index` was not run
   after the last `data/` edit. Run it and validate again.
 - **`yarn validate:i18n` fails.** A UI string exists in one language only.

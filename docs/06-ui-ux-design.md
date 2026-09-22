@@ -1,6 +1,6 @@
 # 06 — UI / UX Design
 
-**Version:** 1.0 · **Date:** 19.09.2026
+**Version:** 1.1 · **Date:** 21.09.2026
 
 > Design philosophy: **The exam is a serious thing; the interface should act like it, without scaring the user off.**
 > Reference patterns and why they were chosen: [`01-market-research.md §7`](01-market-research.md)
@@ -61,46 +61,81 @@ A 4px-based scale (4/8/12/16/24/32/48). Card radius 12px, button 8px, badge 6px.
 
 > The wireframes below mock the Turkish-language rendering of the interface — this is a bilingual app (`src/lib/i18n/locales/tr.json` / `en.json`), and Turkish is the primary market. Labels are translated into English here for readability; where a label matches a literal string from `tr.json`, the surrounding text says so.
 
+### 3.0 Three modes, one route map
+
+The product is organised around **three modes**, and the home screen names them in this order: **study** teaches, **practice** drills, **exam** measures. Study leads deliberately — a first-time visitor who opens with a cold mock exam scores around 12/40 and leaves (persona P2).
+
+Route paths are Turkish, like the rest of the product's user-facing surface; the source of truth is [`../src/App.tsx`](../src/App.tsx).
+
+| Route | Screen | Mode |
+|---|---|---|
+| `/` | Home — three mode cards, resume banner, coverage | — |
+| `/calisma` | Chapter list, with per-chapter mastery counts | study |
+| `/calisma/:chapter` | That chapter's learning objectives, each with a state badge | study |
+| `/calisma/lo/:loCode` | One objective: the lesson card, then "start test" | study |
+| `/calisma/lo/:loCode/:attemptId` | The objective test **and its result, in the same route** | study |
+| `/alistirma` | Practice setup — scope, question count, instant feedback | practice |
+| `/alistirma/:attemptId` | Practice session | practice |
+| `/sinav` | Exam setup | exam |
+| `/sinav/:attemptId` | Exam session | exam |
+| `/sonuc/:attemptId` | Result screen | exam + practice (study keeps its result in its own route) |
+| `/inceleme/:attemptId` | Review pass — reached from the result screen | exam + practice |
+| `/kaynaklar` | Sources, copyright, disclaimer | — |
+| `/deneme`, `/deneme/:attemptId` | **Legacy redirect** to `/sinav`. Bookmarks and in-progress attempts on the old exam path keep working. | — |
+
+**An attempt can only be opened at its own mode's URL.** `routeForAttempt` derives the address from the stored attempt's `mode` and `scope`, and the shared session shell redirects anything that arrives at the wrong one — a practice attempt opened at `/sinav/:id` bounces to `/alistirma/:id` rather than mounting a timer over a null deadline.
+
 ### 3.1 Home page `/`
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│  ISTQB-PREP            [CTFL v4.0.1 ▾] [TR|EN] [🌙] [≡]       │
+│  ISTQB-PREP                          [TR|EN] [🌙]             │
 ├──────────────────────────────────────────────────────────────┤
+│  ⚑ You have an unfinished session — 12 / 40 answered          │
+│    [Continue]  [Discard]                                     │
 │                                                              │
 │  Prepare for the ISTQB Foundation Level exam                 │
-│  40 questions · 60 minutes · pass mark 26/40                 │
+│  40 questions · 60 minutes · pass mark 26/40   (from meta)   │
+│  75 minutes for non-native English speakers                  │
 │                                                              │
-│   ┌──────────────────────────┐  ┌──────────────────────────┐ │
-│   │ ▶ Mock Exam              │  │ ✎ Practice               │ │
-│   │ Full simulation with     │  │ Pick a chapter, untimed, │ │
-│   │ real exam rules.         │  │ instant feedback.        │ │
-│   └──────────────────────────┘  └──────────────────────────┘ │
-│   ┌──────────────────────────┐  ┌──────────────────────────┐ │
-│   │ ↻ Review (12 due)        │  │ 📖 Glossary               │ │
-│   └──────────────────────────┘  └──────────────────────────┘ │
+│   ┌────────────────────────────────────────────────────────┐ │
+│   │ Study                                       ← primary   │ │
+│   │ One learning objective at a time: read the card,        │ │
+│   │ then test it.                        [Start studying]   │ │
+│   ├────────────────────────────────────────────────────────┤ │
+│   │ Practice                                                │ │
+│   │ Pick the scope, untimed, instant feedback.  [Practice]  │ │
+│   ├────────────────────────────────────────────────────────┤ │
+│   │ Mock exam                                               │ │
+│   │ Full simulation under the real rules.    [Start exam]   │ │
+│   └────────────────────────────────────────────────────────┘ │
 │                                                              │
-│  ── Your Status ────────────────────────────                 │
-│  Last attempt: 28/40 PASSED        🔥 4-day streak            │
-│  [████████████████░░░░] 70% · pass mark 65%                  │
-│  Weakest: FL-4.2.3 · FL-5.1.4 · FL-2.1.5  [Practice →]       │
+│  What is this?  …                                            │
 │                                                              │
-│  312 questions · 64/64 learning objectives covered · v4.0.1  │
+│  120 questions · 64/64 learning objectives covered           │
+│  [████████████████████] 64/64                                │
+│                                                              │
+│  ⚑ Pool warning (only when the blueprint cannot be filled)    │
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Critical decision:** a first-time user (Zeynep, P2) sees a **"Where should I start?"** card instead of the "Your Status" block, and the primary action is **Practice, not Mock Exam**. Scoring 12/40 on the first try loses the user.
+**Critical decision:** the primary action is **Study, not Mock Exam** — scoring 12/40 on the first try loses the user (Zeynep, P2). The mode cards are `<article>`s, not links: heading, body and action collapsing into one accessible name would cost a screen-reader user the only wording that tells them where the link goes.
 
-### 3.2 Exam setup `/exam/setup`
+Every number on this screen is read from `meta.json` and the question index. None of 40 / 26 / 60 / 75 is written in the code.
 
-- Duration: `60 min (standard)` · **`75 min (non-native English speaker)`** — in the Turkish interface, **75 comes pre-selected by default**
-- Content language: `Turkish` / `English` / `Side by side`
-- Question source: `Mixed (recommended)` · `Ones I haven't seen before` · `Ones I got wrong`
-- Shuffle options: on/off
-- A **live distribution preview** on the right: how many questions per chapter (8/6/4/11/9/2)
-- If the pool is insufficient, a warning **right here**: *"Chapter 4 has 9 questions instead of 11. The exam will be generated with 38 questions."*
+**Not built yet:** the "Your Status" block (last attempt, streak, weakest objectives) and the SRS due count are Phase 3 (F3-04, F3-05). The resume banner is the only personalised element today.
 
-### 3.3 Exam session `/exam/:id`
+### 3.2 Exam setup `/sinav`
+
+- Duration: `60 min (standard)` · **`75 min (non-native English speaker)`** — in the Turkish interface, **75 comes pre-selected by default**. Both numbers are read from `meta.json`.
+- Question language: `Turkish` / `English`. Seeded from the UI language, switchable per question during the exam without losing the answer.
+- `Try to avoid questions I have already seen` — **on by default**. It ranks seen questions last rather than excluding them: running out is worse than repeating.
+- A **live distribution preview**: how many questions per chapter, against the blueprint's own targets.
+- If the pool is insufficient, a warning **right here**, before the exam starts (rule 8).
+
+**Not built yet:** side-by-side question language (F2-06), an "ones I got wrong" source filter (F2-07), and an option-shuffle toggle — options are rendered in file order and answer-position bias is handled at authoring time by CI check #14 instead.
+
+### 3.3 Exam session `/sinav/:attemptId`
 
 The wireframe below mocks the Turkish interface verbatim: `Soru {{current}} / {{total}}` and `İşaretle` (Flag) are the literal `tr.json` strings, and the question stem is a genuine example of Turkish question content — none of it is translated.
 
@@ -136,9 +171,12 @@ Details:
 - In a `multi` question, options become checkboxes instead of radios, and the header reads **"HANGİ İKİSİ — 2 şık seçin"** ("WHICH TWO — select 2 options") — this is the real TTB booklet phrasing, kept verbatim for terminological accuracy.
 - **Language switching is per-question** — the answer is kept, the timer doesn't stop.
 - **The `⊞` question navigator** opens from the right: 40 boxes, colored blank / answered / flagged. On mobile it's a bottom sheet.
-- **Zero feedback during the exam.** Correct/incorrect is never shown.
+- **Zero feedback during the exam.** Correct/incorrect is never shown — exam mode is the one mode that starts with `instantFeedback: false`.
+- **Finishing is confirmed.** `SubmitConfirm` is an `alertdialog` naming what the unanswered remainder costs; submitting is irreversible, so there is no way back into the session afterwards.
 
-### 3.4 Result screen `/exam/:id/result`
+> The whole of this screen below the mode's own chrome is the **shared session shell** — see §4.2. Practice and study render the same shell with a different header and footer.
+
+### 3.4 Result screen `/sonuc/:attemptId`
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
@@ -166,30 +204,48 @@ Details:
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
-- The pass line is **always** drawn — whether the user passed or failed.
+- The pass line is **always** drawn — whether the user passed or failed — for an attempt whose `scope.kind` is `blueprint`. That is the one thing the 26/40 mark describes, and practice shares this screen: on a scoped set the mark, the verdict and the pass/fail tone are all dropped and the bar ends at the questions asked, because 10 and 20 can never reach 26 and a perfect run would otherwise read as a failure. The discriminator is the scope, never the mode.
 - Behind the chapter bars, **the real exam weight is shown as a ghost target** (the AWS Skill Builder pattern).
 - If the user failed, the top block isn't accusatory: *"4 points short of 26. Focus on the 3 weakest objectives."*
 - In Phase 3, a **readiness estimate**: *"2 of your last 3 timed attempts passed the bar — you can schedule the exam."*
 
-### 3.5 Review pass `/exam/:id/review`
+### 3.5 Review pass `/inceleme/:attemptId`
 
 For every question:
-1. The question text
-2. **Your answer** (red + ✕ icon if wrong) and **the correct answer** (green + ✓)
-3. **Summary rationale**
+1. A `Question N of M` heading carrying the outcome badge (✓ / ✕ + text)
+2. The question text, with **your answer** (red + ✕ if wrong) and **the correct answer** (green + ✓) marked on the option rows
+3. **Summary rationale**, under the panel's own `Why?` title
 4. **A "why" line for every option** — this is our main differentiator, never hidden, open by default
 5. Citation chips: `FL-4.2.1` · `§4.2.1` · `K3` · `v4.0.1`
-6. `[Add to review deck]` · `[Report an error in this question]`
 
-### 3.6 Practice mode `/practice`
+Each question is one **nested group of headings**, not three flat ones — see §4.3. A filter switches between all questions and the wrong ones only.
 
-- Chapter / LO / tag selection, then a **fixed 10-question session** (the Duolingo pattern — give it a visible end)
-- Instant feedback: the rationale opens inline as soon as you answer (not a modal)
-- **A missed question is re-queued to the end of the same session**
-- Progressive hints: `Show hint` → `More` → `Show solution`
-- A small summary at the end of the session + "10 more from the same topic"
+**Not built yet:** `[Add to review deck]` (F3-01) and `[Report an error in this question]` (F2-08).
 
-### 3.7 Review (SRS) `/review`
+### 3.6 Practice mode `/alistirma`
+
+The scope is **chosen, not fixed**. The setup screen offers:
+
+- **Scope:** the whole syllabus · a set of chapters · one learning objective
+- **Question count:** 10 / 20 / 40, with **10 the default** (the Duolingo pattern — give the session a visible end). Choosing the whole syllabus at the blueprint's own count produces a real blueprint-distributed set rather than a flat random draw.
+- **Instant feedback:** on by default, and switchable off. With it on, the rationale opens inline the moment the answer is complete (not a modal) and that answer locks; with it off nothing locks and the rationale waits for the review pass.
+- **A live preview of how many questions the scope can actually produce**, computed by the same `selectQuestions` the session will run — so the preview cannot drift from the result. A shortfall is stated before the session starts (rule 8).
+- Untimed. Finishing is manual and confirmed, through the same `SubmitConfirm` exam mode uses.
+
+**Not built yet:** re-queuing a missed question at the end of the same session (F2-02), progressive hints (F3-09), and the "10 more from the same topic" follow-on.
+
+### 3.7 Study mode `/calisma`
+
+Three levels, each one a route, and the entry point for persona P2. This **absorbs the syllabus explorer** that earlier versions of this document specified as a separate `/syllabus` screen: a filterable list of 64 objectives with an accuracy column was the same screen, one click further from the content.
+
+1. **`/calisma` — chapters.** The six syllabus chapters, each with its objective count and how many of them are mastered.
+2. **`/calisma/:chapter` — objectives.** Every LO in the chapter as a row: code · K-level · text · an `ObjectiveStateBadge` reading `not started` / `in progress` / `mastered`. The badge is an icon **plus words**, never a coloured dot (WCAG 1.4.1).
+3. **`/calisma/lo/:loCode` — one objective.** The lesson card (§3.10), then `Start test`. **Opening the card is itself progress** — the objective leaves "not started" on mount, even if the test is never taken. If the objective has fewer published questions than the mastery bar, the screen says so before the test starts.
+4. **`/calisma/lo/:loCode/:attemptId` — the test, and its result in the same route.** Always untimed, always instant feedback: the point is to close the loop between the explanation and the question while the explanation is still in reach. At most 10 questions — a study-mode product choice, not an exam constant, so it does not come from `meta.json`. The result does not navigate away; the way back to the card and the way on to the next objective are both on it.
+
+**Mastery is losable.** It reflects the most recent objective test, not a high-water mark: ≥3 questions answered for the objective across all sessions **and** ≥80% on the last test. A candidate who has forgotten a topic should see that. An attempt submitted with nothing answered writes nothing, so it cannot erase mastery already earned.
+
+### 3.8 Review (SRS) `/review`
 
 - **The number of cards due today** on the home screen
 - Card flow: question → answer → rationale → **Again / Hard / Good / Easy**
@@ -197,21 +253,26 @@ For every question:
 - Two questions from the same LO never appear back to back
 - Forecast chart: the load for the next 7 days
 
-### 3.8 Glossary `/glossary`
+### 3.9 Glossary `/glossary`
 
 - Search (TR and EN at once), letter filter, chapter filter
 - Term card: **EN term + TR term side by side**, definition, syllabus usage, source link
 - ⚠️ The source of the Turkish definition is stated on every card (TTB syllabus / TTB glossary v3.7 / editorial translation)
 - `Practice questions on this term →`
 
-### 3.9 Syllabus explorer `/syllabus`
+### 3.10 Lesson card (inside `/calisma/lo/:loCode`)
 
-A tree view of the 64 learning objectives. Each LO row: code · K-level · TR/EN text · **your accuracy rate** · question count · `[Study]`.
-The LeetCode problem-list pattern — filterable, sortable, with a status column.
+A short explanation of one learning objective, written from scratch: a title, a few plain-text paragraphs, **key points**, and **common mistakes**, closing with the same citation chips the rationale panel uses.
+
+Content lands objective by objective (Track C), so `lesson` is nullable throughout: an objective with no card yet still has questions, still records mastery, and still belongs in the chapter list. A missing card renders **a short honest placeholder, not an error**.
+
+Paragraphs are plain text, not Markdown — the project ships no Markdown renderer and this feature does not justify adding one.
 
 ---
 
-## 4. Component spec — `QuestionCard`
+## 4. Component spec
+
+### 4.1 `QuestionCard`
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -228,36 +289,79 @@ The LeetCode problem-list pattern — filterable, sortable, with a status column
 └─────────────────────────────────────────────────────────┘
 ```
 
-**Side-by-side mode (`sideBySide`)**: two columns (TR | EN) on wide screens, stacked on narrow screens, with a thin divider between them. Option selection is tied to a single logical option — the two columns are the same radio group.
+**Side-by-side mode (`sideBySide`)**: two columns (TR | EN) on wide screens, stacked on narrow screens, with a thin divider between them. Option selection is tied to a single logical option — the two columns are the same radio group. *(Planned, F2-06.)*
 
-**After answering (practice/review)**: the selected option and the correct option are marked; a `RationalePanel` opens below it — a summary plus a "why" line for every option, plus citation chips.
+**After answering (practice/study/review)**: the selected option and the correct option are marked — colour, an icon **and** a word, all three (WCAG 1.4.1) — and a `RationalePanel` opens below it with a summary, a "why" line for every option, and citation chips.
+
+**The options are one named group**, `role="radiogroup"` for single-select and `role="group"` for multi, named by the stem **and** the "select 2 options" instruction. Without the group a multi-select gives each checkbox its own name, so a screen-reader user gets no "1 of 4" and no way to learn that two answers are wanted.
+
+### 4.2 `SessionRunner` — the shared session shell
+
+All three modes render the same shell ([`../src/features/session/SessionRunner.tsx`](../src/features/session/SessionRunner.tsx)). It owns everything that is the same in every mode: loading and resuming the attempt, the question card, previous/next, the navigator, the live region, and the keyboard. A mode screen supplies only its own chrome through `header` and `footer`, and owns what is genuinely mode-specific — exam mode's timer and auto-submit, practice's and study's manual finish.
+
+Two rules keep the shell honest:
+
+- **The route is the single source of truth for which attempt is open.** If the store is cold — a reload, a crash, a link opened in a new tab — the attempt and every answer are read back from IndexedDB before anything renders. Nothing about a session lives only in memory.
+- **One owner of the keyboard.** A mode's own shortcut is folded into the shell's handler (exam mode's `T` is the only one) rather than registered beside it, so the shell's dialogs can silence it. A mode that opens its own dialog passes `modalOpen`, or the user could answer and navigate from behind the modal and then confirm something it never described.
+
+**What is announced, and how.** Revealing an answer and moving to the next question both replace most of the screen with no page load. Both are announced **by moving focus**, never by racing it: a focus event is given priority by NVDA and VoiceOver and flushes pending polite speech, so anything written to a live region in the same breath is dropped. What has to be heard is named onto the element that receives the focus instead.
+
+| Event | Focus goes to | Which reads |
+|---|---|---|
+| Next / previous question | The stem heading | `Question 3 of 40 <stem>` — the counter is referenced, never duplicated in the DOM |
+| The answer is revealed | The rationale panel | `Correct answer! Why?` — the verdict is part of the panel's accessible name |
+| A multi-select pick displaces an older one | nothing moves | The polite live region, which is its **only** writer: "option 1 cleared" |
+
+Prev/Next at a boundary carry `aria-disabled`, not `disabled`: a real `disabled` fires while the user is still pressing the button and throws focus to `<body>` at exactly the moment they want Submit, the very next tab stop.
+
+### 4.3 Heading outline
+
+Both `QuestionCard` and `RationalePanel` take a `headingLevel`, because the same components appear in two different outlines:
+
+| | Session (`/sinav/:id`, `/alistirma/:id`, `/calisma/lo/:lo/:id`) | Review (`/inceleme/:id`) |
+|---|---|---|
+| `h1` | `Question 3 of 40` (the counter) | `Review` |
+| `h2` | the stem · the navigator · `Why?` | `Question 3 of 40` + outcome badge |
+| `h3` | `Summary` / `Per option` | the stem · `Why?` |
+| `h4` | — | `Summary` / `Per option` |
+
+In a session `RationalePanel` is rendered without a `headingLevel` (`SessionRunner.tsx:544`) and its default is `2` (`RationalePanel.tsx:70`, `:81`), so `Why?` is a sibling of the stem, not a child of it. The review pass passes `3` explicitly (`Review.tsx:166`, `:173`).
+
+A 40-question review pass is **40 nested groups of three**, not 120 flat sibling headings. `RationalePanel`'s `Why?` title is a real heading rather than an `aria-label`, because focus lands on the panel the moment an answer is revealed, and a named region with nothing inside it announces only its own name.
+
+### 4.4 `SubmitConfirm`
+
+One `alertdialog` shared by every mode that can end a session by hand. Submitting writes `status: "submitted"`, after which the shell bounces the route to the result screen and there is no way back in — so the click is confirmed whether or not the session was timed. The copy is passed in: an exam and a practice session end differently and must say so. Only the cancel label is owned by the component, because standing down is the same act in every mode.
 
 ---
 
 ## 5. Keyboard shortcuts
 
-| Key | Action |
-|---|---|
-| `1` – `9` | Select option (toggle in multi) |
-| `Enter` / `Space` | Answer / next |
-| `→` / `←` | Next / previous question |
-| `F` | Flag |
-| `L` | Switch language (TR ↔ EN) |
-| `N` | Open the question navigator |
-| `T` | Hide/show the timer |
-| `R` | Open/close the rationale (practice/review only) |
-| `1`–`4` (SRS) | Again / Hard / Good / Easy |
-| `?` | Shortcut help |
-| `Esc` | Close panel/modal |
+Owned in one place — the shared session shell's key handler (§4.2) — and every one of them also has a visible control. The overlay opened with `?` documents the fast path; it never owns the only path.
 
-The overlay opened with `?` shows itself once automatically on the first visit, and never again after that.
+| Key | Action | Notes |
+|---|---|---|
+| `1` – `9` | Select option (toggle in multi) | |
+| `→` / `←` | Next / previous question | |
+| `F` | Flag | |
+| `L` | Switch question language (TR ↔ EN) | |
+| `N` | Question navigator | On desktop it moves focus into the panel that is already on screen, onto the **current** question's cell — from question 30, cell 1 would leave 29 tab stops between the user and where they were. On narrow screens it opens the sheet. |
+| `T` | Hide/show the timer | Exam mode only. The overlay omits the row where there is no clock, rather than advertising a key that does nothing. |
+| `?` | Shortcut help | |
+| `Esc` | Close panel/modal | |
+
+While a dialog is open — the navigator sheet, the shortcuts overlay, or a mode's own confirm — **every shortcut stands down**, including `T`. Reading the help is exactly when a candidate presses the key the help documents.
+
+Typing in a real text field is never swallowed; radios and checkboxes are the options themselves, so shortcuts stay live there.
+
+**Not built:** `Enter`/`Space` as "answer / next" (native activation only), `R` to toggle the rationale (it is never collapsed), and the SRS grading keys (Phase 3).
 
 ---
 
 ## 6. Motion and feedback
 
-- Transitions 150–200 ms, `ease-out`. Animation in the exam flow is **kept to a minimum** — perceived speed beats polish.
-- A short, quiet acknowledgment on a correct answer (scale 1.0 → 1.02). No confetti.
+- Transitions 150–200 ms, `ease-out`. Animation in the exam flow is **kept to a minimum** — perceived speed beats polish. Today that minimum is literal: colour transitions on interactive rows and nothing else.
+- No confetti on a correct answer. The planned quiet acknowledgment (scale 1.0 → 1.02) is not implemented.
 - **No shake/wobble** on a wrong answer — it feels punitive.
 - `prefers-reduced-motion: reduce` → all transitions turn off.
 - No sound (by default). Not even a library gets added for it.
@@ -268,29 +372,40 @@ The overlay opened with `?` shows itself once automatically on the first visit, 
 
 | State | What's shown |
 |---|---|
-| No attempt made yet | A "Where should I start?" card + a 3-step suggestion (Practice → Mock exam → Weak objectives) |
-| No question for an LO | In the syllabus explorer, a "No question for this objective yet — contribute one" link |
-| Exam pool insufficient | An **explicit warning** on the setup screen, plus how many questions will be generated. Silently generating a short exam is forbidden. |
+| No attempt made yet | The three mode cards, with **study** as the primary action (F1-16's "Where should I start?" card is still open) |
+| No lesson for an LO | The objective screen renders a short honest placeholder instead of the card — the questions and the test are still there |
+| No question for an LO | The objective screen says so and `Start test` is disabled |
+| Fewer questions than the mastery bar | Stated on the objective screen **before** the test starts: this test cannot mark the objective learned however well it goes |
+| Pool insufficient (exam or practice) | An **explicit warning** on the setup screen, plus how many questions will be generated. Silently generating a short session is forbidden (rule 8). |
 | Network error (chunk failed to load) | "Couldn't load questions" + retry; if offline, a suggestion to continue with the cached chunks |
+| Answers cannot be written to IndexedDB | A banner inside the session: progress is not reaching disk and a reload will lose it |
+| Attempt opened at another mode's URL | Redirected to the address `routeForAttempt` derives from the stored attempt |
 | Data version changed | Silent update; an SRS card notice only if a specific question actually changed |
-| Attempt left unfinished | A banner at the top of the home page: "You have an attempt with 47:12 remaining — [Continue] [Delete]" |
+| Attempt left unfinished | A banner at the top of the home page: "You have an unfinished session — 12/40 answered — [Continue] [Discard]" |
 
 ---
 
 ## 8. Accessibility checklist
 
-- [ ] Every interactive element is reachable with `Tab`, focus ring visible
-- [ ] Option groups use `role="radiogroup"` / `role="group"` + `aria-labelledby`
-- [ ] The timer is `aria-live="polite"`, announces **once a minute**
-- [ ] Correct/incorrect: color + icon + text (all three together)
-- [ ] Contrast ≥ 4.5:1 (text), ≥ 3:1 (UI component) — in both themes
-- [ ] Media components render as a real `<table>` (not an image)
-- [ ] A text alternative (transition list) is always available for the `state-transition` diagram
-- [ ] Modal/sheet has a focus trap and closes with `Esc`
-- [ ] Page title updates on route change
-- [ ] `lang` attribute is set by content language (`lang="tr"` / `lang="en"`) — each column separately in side-by-side mode
-- [ ] `prefers-reduced-motion` is supported
-- [ ] No horizontal scroll at 200% zoom
+`yarn e2e` runs `@axe-core/playwright` over every main route in both themes, plus the specs for the failures axe cannot see — focus destinations, accessible names, live-region behaviour. Items below that axe cannot check are the ones those specs cover.
+
+- [x] Every interactive element is reachable with `Tab`, focus ring visible
+- [x] Option groups use `role="radiogroup"` / `role="group"` + `aria-labelledby` naming the stem **and** the select-count instruction
+- [x] Correct/incorrect: color + icon + text (all three together) — on the option rows and on the objective state badge
+- [x] Contrast ≥ 4.5:1 (text), ≥ 3:1 (UI component) — in both themes
+- [x] Modal/sheet has a focus trap and closes with `Esc`; shortcuts stand down while one is open
+- [x] Every screen change that is not a page load moves focus and says where: next question → the stem heading; reveal → the rationale panel, named after the verdict; study finish → the result heading; `/sonuc` and `/inceleme` → their own `<h1>` on arrival. `useArrivalFocus` gates that on the navigation type, so a cold open, a reload and the Back button all stay silent — a page load has nothing to announce, and moving focus to the `tabIndex={-1}` heading there would leave the skip link behind a Shift+Tab. Back is the accepted cost of that: `location.key` would have told arrival from Back but not from a reload, because the browser restores `history.state`
+- [x] Boundary buttons use `aria-disabled`, so focus is never yanked out from under the user
+- [x] The question is on the heading outline, and nests correctly in both the session and the review outline (§4.3)
+- [ ] Page title updates on **every** route change — the session shell, the study result, `/sonuc` and `/inceleme` set it through `useDocumentTitle`. No other route sets one and no route clears one, so the setup, home, chapter and sources routes show the static title only until the first session and whatever was last set after that: "Back home" from `/sonuc` leaves "Result · ISTQB-PREP" on the home page. Closing this means every route declaring its own title, not a reset in `Layout` — a reset there would run after its children's effects on mount and clobber the title the route just set
+- [x] `lang` attribute is set by content language (`lang="tr"` / `lang="en"`)
+- [x] The visible timer is `aria-live="off"` (`ExamTimer.tsx:134`); a separate sr-only polite region announces the remaining minutes **once per minute inside the final ten**, plus once at zero (`announcementMinute`, `examTimer.ts:60-65`, gated on `WARNING_MS`). A region ticking every second is worse than silence
+- [x] `prefers-reduced-motion` is supported
+- [ ] Media components render as a real `<table>` (not an image) — F1-14
+- [ ] A text alternative (transition list) is always available for the `state-transition` diagram — F2-09
+- [ ] Each column separately `lang`-tagged in side-by-side mode — F2-06
+- [ ] No horizontal scroll at 200% zoom — unverified
+- [ ] `n` on a narrow screen lands on the current question's cell, not the sheet's Close button
 
 ---
 

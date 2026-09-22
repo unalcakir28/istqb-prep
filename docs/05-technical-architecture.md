@@ -1,6 +1,6 @@
 # 05 — Technical Architecture
 
-**Version:** 1.0 · **Date:** 19.09.2026
+**Version:** 1.1 · **Date:** 21.09.2026
 **Related ADRs:** [`0001-frontend-stack`](adr/0001-frontend-stack.md) · [`0002-data-layer-static-json`](adr/0002-data-layer-static-json.md) · [`0003-client-side-storage`](adr/0003-client-side-storage.md)
 
 ---
@@ -11,15 +11,17 @@
 ┌───────────────────────── Browser ──────────────────────────┐
 │                                                           │
 │  React SPA (Vite build)                                   │
-│  ├── UI layer     shadcn/ui + Tailwind v4                 │
+│  ├── UI layer     Tailwind v4 on native controls          │
 │  ├── State        Zustand (session) + Dexie (persistent)  │
 │  ├── Data access  contentClient (fetch + cache)           │
-│  ├── Exam engine  blueprint → generation → scoring        │
-│  ├── SRS engine   ts-fsrs                                 │
+│  ├── Selection    scope → selection → scoring             │
+│  ├── Session      one shell, three modes                  │
+│  ├── SRS engine   ts-fsrs (Phase 3, not installed)        │
 │  └── i18n         i18next (interface) + content language  │
 │                                                           │
-│  IndexedDB   attempts · responses · srsCards · bookmarks  │
-│  Cache API   (PWA) question chunks, manifest              │
+│  IndexedDB   attempts · responses · objectiveProgress     │
+│              · srsCards · bookmarks · settings            │
+│  Cache API   question and lesson chunks, manifest         │
 └────────────────────────────┬───────────────────────────────┘
                              │ static GET
                              ▼
@@ -33,22 +35,24 @@
 
 ## 2. Technology choices
 
-| Layer | Choice | Rationale |
-|---|---|---|
-| Build | **Vite 6** | Fastest DX, static output, `base` setting handles the GitHub Pages subpath cleanly |
-| UI | **React 19 + TypeScript 5** | Ecosystem, type safety; a contract can be generated from the data model types |
-| Styling | **Tailwind CSS v4** | Design tokens as CSS variables; dark mode comes free |
-| Components | **shadcn/ui** (Radix-based) | Copied source code → no dependency bloat; accessibility ready via Radix |
-| Routing | **React Router v7** (`createHashRouter` **or** the 404.html trick) | No server-side routing on GitHub Pages — see §6 |
-| Session state | **Zustand** | Small, boilerplate-free; ideal for an exam session |
-| Persistence | **Dexie 4 (IndexedDB)** | localStorage quota is insufficient; queryable; migration support |
-| SRS | **ts-fsrs** | FSRS-5 implementation; the algorithm Anki uses |
-| i18n | **i18next + react-i18next** | Interface language; content language is managed separately |
-| Charts | **Recharts** (or hand-rolled SVG if lightweight enough) | Result breakdown and progress trend |
-| PWA | **vite-plugin-pwa** (Workbox) | Phase 3; `StaleWhileRevalidate` for question chunks |
-| Validation | **Ajv** + JSON Schema | Data validation in CI; in dev mode at runtime |
-| Testing | **Vitest** + **Testing Library** + **Playwright** | Unit + component + end-to-end |
-| Quality | ESLint + Prettier + `tsc --noEmit` | CI gate |
+The **In tree?** column is the honest one: `package.json` is the source of truth, and a choice recorded here is not the same as a dependency installed.
+
+| Layer | Choice | In tree? | Rationale |
+|---|---|---|---|
+| Build | **Vite 6** | ✅ | Fastest DX, static output, `base` setting handles the GitHub Pages subpath cleanly |
+| UI | **React 19 + TypeScript 5** | ✅ | Ecosystem, type safety; a contract can be generated from the data model types |
+| Styling | **Tailwind CSS v4** | ✅ | Design tokens as CSS variables; dark mode comes free |
+| Components | **shadcn/ui** (Radix-based) | ⬜ | Never needed so far: every control on screen is a native `<input>`, `<button>` or `<select>`, whose behaviour is already correct. The three dialogs (`ShortcutsOverlay`, `QuestionNavigator`, `SubmitConfirm`) use a shared `useDialogFocus` hook instead of a primitive. Revisit when something genuinely needs a combobox or a popover. |
+| Routing | **React Router v7** (`createBrowserRouter` + the 404.html trick) | ✅ | No server-side routing on GitHub Pages — see §6 |
+| Session state | **Zustand** | ✅ | Small, boilerplate-free; ideal for a session |
+| Persistence | **Dexie 4 (IndexedDB)** | ✅ | localStorage quota is insufficient; queryable; migration support |
+| SRS | **ts-fsrs** | ⬜ | Phase 3. FSRS-5 implementation; the algorithm Anki uses |
+| i18n | **i18next + react-i18next** | ✅ | Interface language; content language is managed separately |
+| Charts | hand-rolled SVG (`ScoreBar`) | ✅ | The result breakdown needed bars, not a charting library. Recharts stays on the table for the Phase 3 progress trend. |
+| PWA | **vite-plugin-pwa** (Workbox) | ⬜ | Phase 3; `StaleWhileRevalidate` for question chunks |
+| Validation | **Ajv** + JSON Schema | ✅ | Data validation in CI |
+| Testing | **Vitest** + **Testing Library** + **Playwright** + **axe-core** | ✅ | Unit + component + end-to-end + accessibility |
+| Quality | ESLint + Prettier + `tsc --noEmit` | ✅ | CI gate |
 
 ### Deliberately not used
 - **Next.js** — we can't benefit from SSR/ISR (static export is already Vite's natural output); unnecessary complexity.
@@ -60,59 +64,60 @@
 
 ## 3. Folder structure
 
+As it stands. Directories marked *planned* do not exist yet.
+
 ```
 istqb-prep/
 ├── public/
-│   └── data/                    # data/ copied here, or symlinked
-├── data/                        # Source data (reviewed in Git)
-├── schemas/                     # JSON Schema definitions
+│   └── data/                    # data/ copied here by scripts/sync-data.ts (generated)
+├── data/                        # Source data (reviewed in Git) — questions/, lessons/, terms.json …
+├── schemas/                     # JSON Schema definitions, incl. lesson + lessons-index
 ├── scripts/
-│   ├── validate-data.ts         # CI validator
-│   ├── build-index.ts           # Builds index.json from chunks
-│   ├── fetch-glossary.ts        # ISTQB Glossary API → glossary/
-│   └── stats.ts                 # Coverage report (questions per LO)
+│   ├── validate-data.ts         # CI validator — 20 numbered checks
+│   ├── build-index.ts           # Builds questions/index.json, lessons/index.json, manifest counts
+│   ├── check-i18n.ts            # TR/EN locale key parity — its own CI gate
+│   ├── publish-questions.ts     # review -> published, the only path that records a reviewer
+│   ├── stats.ts                 # Coverage report (questions per LO) -> docs/coverage.md
+│   ├── sync-data.ts             # data/ -> public/data/
+│   └── fetch-glossary.ts        # planned (F0-09): ISTQB Glossary API → glossary/
 ├── src/
 │   ├── main.tsx
-│   ├── App.tsx
+│   ├── App.tsx                  # the route table — the source of truth for paths
 │   ├── routes/
 │   │   ├── Home.tsx
-│   │   ├── ExamSetup.tsx
-│   │   ├── ExamSession.tsx
-│   │   ├── ExamResult.tsx
-│   │   ├── Practice.tsx
-│   │   ├── Review.tsx           # SRS
-│   │   ├── Glossary.tsx
-│   │   ├── Progress.tsx
-│   │   └── Syllabus.tsx         # LO explorer
+│   │   ├── StudyChapters.tsx · StudyChapter.tsx · StudyObjective.tsx · StudySession.tsx
+│   │   ├── PracticeSetup.tsx · PracticeSession.tsx
+│   │   ├── ExamSetup.tsx · ExamSession.tsx
+│   │   ├── ExamResult.tsx       # /sonuc/:attemptId — exam and practice
+│   │   ├── Review.tsx           # /inceleme/:attemptId — reached from the result screen
+│   │   ├── LegacyExamRedirect.tsx
+│   │   ├── Sources.tsx · NotFound.tsx
+│   │   └── Glossary.tsx · Progress.tsx   # planned (Phase 2-3)
 │   ├── features/
-│   │   ├── exam/                # engine: generation, scoring, timer
-│   │   ├── practice/
-│   │   ├── srs/
-│   │   ├── glossary/
-│   │   └── progress/
-│   ├── components/
-│   │   ├── ui/                  # shadcn
-│   │   ├── QuestionCard.tsx
-│   │   ├── OptionList.tsx
-│   │   ├── RationalePanel.tsx
-│   │   ├── QuestionNavigator.tsx
-│   │   ├── ExamTimer.tsx
-│   │   ├── MediaRenderer/       # decision-table, state-transition, ...
-│   │   ├── ScoreBar.tsx
-│   │   └── LangToggle.tsx
+│   │   ├── session/             # SessionRunner (the shell), sessionStore, routeForAttempt
+│   │   ├── exam/                # selectQuestions, generateExam, scoreExam, examTimer, rng
+│   │   └── srs/                 # planned (Phase 3)
+│   ├── components/              # QuestionCard, OptionList, RationalePanel, QuestionNavigator,
+│   │   │                        # ExamTimer, SubmitConfirm, ShortcutsOverlay, LessonCard,
+│   │   │                        # ObjectiveStateBadge, ScoreBar, CitationChips, Layout …
+│   │   └── MediaRenderer/       # planned (F1-14 / F2-09)
 │   ├── lib/
-│   │   ├── content/             # contentClient, chunk cache
-│   │   ├── db/                  # Dexie schema + migrations
-│   │   ├── i18n/
-│   │   └── utils/
-│   ├── types/                   # Data model types (generated from schemas)
+│   │   ├── content/             # contentClient, chunk cache (questions and lessons)
+│   │   ├── db/                  # db.ts (Dexie v3), migrations.ts, objectiveProgress.ts
+│   │   ├── i18n/                # index.ts + locales/{tr,en}.json
+│   │   ├── theme.ts · useAsyncData.ts · useDialogFocus.ts
+│   │   ├── useDocumentTitle.ts · useArrivalFocus.ts
+│   ├── types/content.ts         # Data model types, hand-written against schemas/
+│   ├── test/                    # Vitest setup + shared fixtures
 │   └── styles/
-├── e2e/                         # Playwright
+├── e2e/                         # Playwright — labels.ts + exam/practice/study/a11y specs
 ├── docs/
 └── .github/workflows/
-    ├── ci.yml                   # lint + tsc + test + validate:data
+    ├── ci.yml                   # lint → format → typecheck → test → validate:data → validate:i18n → build → e2e
     └── deploy.yml               # GitHub Pages
 ```
+
+> Unit tests sit **next to the code they test** (`generateExam.test.ts`, `QuestionCard.test.tsx`), not in a mirrored tree. `src/test/` holds only the Vitest setup file and shared fixtures.
 
 ---
 
@@ -129,6 +134,9 @@ interface ContentClient {
   getBlueprint(certId: string): Promise<ExamBlueprint>
   getIndex(certId: string): Promise<QuestionIndex>      // lightweight, all questions
   getQuestions(certId: string, ids: string[]): Promise<Question[]>  // chunk-based
+  getLessonIndex(certId: string): Promise<LessonIndex>
+  getLessonChunk(certId: string, chunk: string): Promise<LessonChunk>
+  getLesson(certId: string, objectiveCode: string): Promise<Lesson | null>  // null = not written yet
 }
 ```
 
@@ -145,18 +153,31 @@ interface ContentClient {
 ## 5. Exam engine
 
 ```ts
-// features/exam/generate.ts
-export function generateExam(
-  blueprint: ExamBlueprint,
-  index: QuestionIndex,
-  history: UserHistory,
-  opts: { smartWeighting: boolean; excludeRecent: boolean }
-): GeneratedExam   // { questionIds, warnings[] }
+// features/exam/selectQuestions.ts — the one entry point, for all three modes
+export function selectQuestions(options: {
+  scope: AttemptScope;           // blueprint | chapter | objective
+  blueprint: ExamBlueprint;
+  pool: QuestionIndexEntry[];    // published entries only
+  seed: number;
+  exclude?: ReadonlySet<string>;
+}): SelectionResult              // { seed, questionIds, shortfalls }
 
-// features/exam/score.ts
-export function scoreExam(exam, answers): ExamResult
-// ExamResult: { score, passed, chapterBreakdown, objectiveBreakdown, perQuestion[] }
+// features/exam/generateExam.ts — the blueprint branch
+export function generateExam(options: {
+  blueprint: ExamBlueprint;
+  pool: QuestionIndexEntry[];
+  seed: number;
+  exclude?: ReadonlySet<string>;
+}): { seed: number; questionIds: string[]; shortfalls: GroupShortfall[] }
+
+// features/exam/scoreExam.ts
+export function scoreExam(questions: Question[], answers: AnswerMap, meta: CertMeta): ExamScore
+// ExamScore: { points, totalPoints, percent, passPoints, passed,
+//              correctCount, incorrectCount, unansweredCount,
+//              byChapter, byObjective, byKLevel, outcomes[] }
 ```
+
+There is no `warnings[]` and nothing throws: a short pool is reported as `shortfalls` and stated to the user before the session starts (rule 8). There is no `smartWeighting`; `preferUnseen` ranks seen questions last instead of excluding them.
 
 **Scoring rules (official):**
 - Every question is **1 point**, **no** partial credit
@@ -164,7 +185,7 @@ export function scoreExam(exam, answers): ExamResult
 - The pass threshold is `meta.exam.passPoints` (26) — never hardcoded
 - Negative marking is **not applied**, and the UI does **not claim** "none" either
 
-**Timer:** driven by a `Date.now()` diff, not `requestAnimationFrame` — so it doesn't drift when the tab is backgrounded. Written to IndexedDB every 5 seconds → the attempt survives even if the page is closed.
+**Timer:** the attempt stores an absolute `deadlineAt`, and the clock is a `Date.now()` diff against it — so it cannot drift while the tab is backgrounded and there is nothing periodic to persist. `deadlineAt` is `null` for study and practice, which is what "untimed" means; a separate boolean could contradict the timestamp. **Every answer is written to IndexedDB as it is made**, so a session survives a refresh or a close whether or not it is timed; if a write fails, the session says so rather than silently losing progress.
 
 ---
 
@@ -185,7 +206,7 @@ GitHub Pages does no server-side rewriting. Two options:
 
 | Option | Pro | Con |
 |---|---|---|
-| **A. HashRouter** (`/#/exam/123`) | Zero tricks, 100% reliable | Ugly URL, weak SEO |
+| **A. HashRouter** (`/#/sinav/123`) | Zero tricks, 100% reliable | Ugly URL, weak SEO |
 | **B. `404.html` → copy of `index.html` + `history.replaceState`** | Clean URL, good SEO | A routing jump on first load |
 
 > **Decision: B.** SEO matters to us — searches for "ISTQB practice exam" are our main organic traffic channel. After the build, `dist/index.html` is copied to `dist/404.html` and a small path-recovery script is added to `index.html`.
@@ -203,7 +224,7 @@ jobs:
   build:
     steps:
       - checkout
-      - setup-node (20)
+      - setup-node (22)
       - yarn install --frozen-lockfile
       - yarn validate:data     # NO deploy if data is broken
       - yarn build
@@ -221,7 +242,7 @@ jobs:
 
 | Metric | Budget | How |
 |---|---|---|
-| JS bundle (gzip) | < 200 KB | Route-based `React.lazy`; Recharts only on the result screen |
+| JS bundle (gzip) | < 200 KB | Route-based `React.lazy` (every route is lazy in `App.tsx`); no charting library |
 | First data request | < 60 KB | Only `manifest` + `meta` + `index` (split further if the index grows) |
 | Starting an exam | < 300 KB | 4–6 chunks |
 | LCP (3G Fast) | < 1,5 s | Critical CSS inlined; font `display: swap` |
@@ -234,12 +255,14 @@ jobs:
 
 | Level | Tool | Scope |
 |---|---|---|
-| **Data** | Ajv + custom rules | §6 [`04-data-model.md`](04-data-model.md) — 13 checks |
-| **Unit** | Vitest | Exam generation (the 8/6/4/11/9/2 and 8/24/8 distributions hold), scoring (exact match for multi-select), FSRS integration, timer drift |
-| **Component** | Testing Library | QuestionCard keyboard interaction, answer preserved across a language switch, the rationale panel shows every option |
-| **E2E** | Playwright | Full exam flow; auto-submit when time runs out; attempt recovery after a page reload; dark mode; TR/EN switching |
-| **Accessibility** | `@axe-core/playwright` | Zero critical violations on every main route |
-| **Visual** | Playwright snapshot | QuestionCard, result screen — light and dark theme |
+| **Data** | Ajv + custom rules | §6 [`04-data-model.md`](04-data-model.md) — 20 numbered checks |
+| **Unit** | Vitest | Selection (the 8/6/4/11/9/2 and 8/24/8 distributions hold across independent seeds; the scoped paths), scoring (exact match for multi-select), the timer, the Dexie v3 backfill, mastery, `routeForAttempt`, the session store |
+| **Component** | Testing Library | `QuestionCard` heading level and option shape, `RationalePanel`'s verdict naming and per-option coverage, `LessonCard`'s missing-card placeholder |
+| **E2E** | Playwright | All three modes end to end; auto-submit when time runs out; attempt recovery after a page reload; the legacy `/deneme` redirect; TR/EN switching |
+| **Accessibility** | `@axe-core/playwright` + hand-written specs | Zero violations on every main route in both themes, **plus** the failures axe cannot see: focus destinations, accessible names, live-region behaviour |
+| **Visual** | Playwright snapshot | Not set up |
+
+Counts as of 21.09.2026: **94 unit tests in 15 files**, **48 end-to-end specs in 4 files**. Unit tests live beside the code they test.
 
 > This is a **testing certification** project. Test discipline is part of the product itself here; the README will display a test-coverage badge.
 
@@ -256,9 +279,10 @@ jobs:
 
 ## 10. Accessibility requirements
 
-- Radix primitives → focus trapping, ARIA roles ready out of the box
-- Options use `role="radiogroup"` / `role="group"` + `aria-checked`
-- Timer is `aria-live="polite"`, announces once a minute (not once a second — too noisy)
+- Focus trapping is hand-written, in one shared `useDialogFocus` hook — no Radix in the tree (see §2)
+- Options are one NAMED group: `role="radiogroup"` (single) / `role="group"` (multi), `aria-labelledby` pointing at the stem **and** the select-count instruction
+- Every screen change that is not a page load moves focus and names what happened there — `06-ui-ux-design.md` §4.2
+- The visible timer is `aria-live="off"`; a separate sr-only polite region speaks once per remaining minute **only inside the final ten**, plus once at zero (`announcementMinute`) — not once a second, and not for the first fifty minutes either
 - Correct/incorrect is **never color alone**: icon + text (the Turkish locale string "Doğru" / "Yanlış" — "Correct" / "Incorrect")
 - Contrast ≥ 4.5:1, in dark mode too
 - `prefers-reduced-motion` is respected

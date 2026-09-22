@@ -17,11 +17,19 @@ Arguments, all optional: a learning objective code (`FL-4.2.1`), a chunk name
 
 ```bash
 yarn stats            # rewrites docs/coverage.md, per-LO counts
-yarn validate:data    # the warnings ARE the gap list
+yarn validate:data    # the question gaps are the #11 warnings only
 ```
 
-Every warning reads "this LO has fewer than 3 published questions". Phase 2
-targets 200 questions, Phase 3 targets 300, at ≥3 per objective
+The warnings are two different gaps, and only one of them is yours. Check #11
+("not enough to generate exams without repetition") is the question gap; check
+#20 ("no published lesson yet") is a **lesson** gap, which Track C fills and
+which writing questions will not move. Filter accordingly:
+
+```bash
+yarn validate:data | grep "without repetition"
+```
+
+Phase 2 targets 200 questions, Phase 3 targets 300, at ≥3 per objective
 (`docs/09-roadmap.md`). Prefer the objectives with the lowest count, and keep
 the section balance from `data/ctfl-v4.0.1/exam-blueprint.json` in mind rather
 than deepening one chapter alone.

@@ -13,6 +13,8 @@ file_path=$(printf '%s' "$payload" | jq -r '.tool_input.file_path // empty')
 case $file_path in
   */questions/index.json|questions/index.json)
     producer="yarn build:index" ;;
+  */lessons/index.json|lessons/index.json)
+    producer="yarn build:index" ;;
   */data/manifest.json|data/manifest.json)
     producer="yarn build:index" ;;
   */docs/coverage.md|docs/coverage.md)

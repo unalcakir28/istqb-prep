@@ -1,6 +1,6 @@
 # 09 — Roadmap
 
-**Version:** 1.0 · **Date:** 19.09.2026
+**Version:** 1.1 · **Date:** 21.09.2026
 
 > Effort estimates assume **a single developer, ~10 hours/week**.
 > Critical reality: **content production outweighs code.** Writing 120 questions takes about as long as writing the MVP app, and the two must run in parallel.
@@ -35,14 +35,14 @@
 ### Code (≈35 hours)
 | # | Task |
 |---|---|
-| F1-01 | Vite + React + TS + Tailwind v4 + shadcn scaffold; GitHub Pages deploy pipeline (404.html + .nojekyll + base) |
+| F1-01 | Vite + React + TS + Tailwind v4 scaffold; GitHub Pages deploy pipeline (404.html + .nojekyll + base). shadcn/ui was never installed — every control on screen is a native element (`docs/05` §2) |
 | F1-02 | `contentClient` — manifest/index/chunk loading, cache |
 | F1-03 | Dexie schema + migration infrastructure |
 | F1-04 | i18next setup; separation of interface language ≠ content language |
 | F1-05 | `generateExam` — blueprint-based generation + distribution validation (unit tested) |
 | F1-06 | `scoreExam` — exact match for multi-select, pass mark 26, chapter/LO breakdown (unit tested) |
 | F1-07 | `QuestionCard` + `OptionList` + `LangToggle` |
-| F1-08 | `ExamTimer` (Date.now-based, persists every 5 sec) |
+| F1-08 | `ExamTimer` — the attempt stores an absolute `deadlineAt`, so nothing periodic is persisted and a reload recomputes the remaining time |
 | F1-09 | `QuestionNavigator` (desktop panel / mobile bottom sheet) |
 | F1-10 | Exam session route + recovery of an unfinished attempt |
 | F1-11 | Results screen: pass line + chapter breakdown + ghost targets + 3 weakest LOs |
@@ -66,9 +66,9 @@
 
 | # | Task |
 |---|---|
-| F2-01 | Practice mode: chapter/LO selection, 10-question session, instant feedback |
+| F2-01 | ✅ Practice mode: chapter/LO selection, **configurable** 10/20/40-question session, instant feedback |
 | F2-02 | Re-queue a wrong answer at the end of the same session |
-| F2-03 | Drill by LO + syllabus explorer (`/syllabus`, LeetCode-style filterable list) |
+| F2-03 | ✅ Drill by LO — delivered as study mode (`/calisma`), which absorbs the separate `/syllabus` explorer |
 | F2-04 | LO weakness analysis and "Study →" deep links |
 | F2-05 | Glossary screen: TR/EN search, term card, source tag |
 | F2-06 | TR/EN **side-by-side** view |
@@ -145,6 +145,7 @@ F2-10 (200 questions) ──► F3-01 (pool needed for SRS to be meaningful)
 | User accounts | Server = cost + privacy burden. Export is sufficient. |
 | Leaderboard / social | Motivational mechanic with debatable learning value; requires a server. |
 | AI question generation (runtime) | Quality and copyright risk; loses editorial control. |
-| Video / long-form text lessons | Market is saturated (a course exists with 154k students). Our wedge is practice. |
+| Video / long-form text lessons | **Still deferred.** Market is saturated (a course exists with 154k students); our wedge is practice, and a video library would compete with the courses head-on. |
+| ~~Short per-objective explanation cards~~ | **In scope as of 21.09.2026** — no longer deferred. A card is a few plain-text paragraphs, key points and common mistakes, bound to one LO and to that LO's own questions. It extends the per-distractor rationale that is already the product's differentiator rather than competing with a course: the candidate reads the explanation and is tested on it in the same screen. Long-form lessons stay deferred; this is the short form only. Shipped as study mode (`/calisma`, `docs/06 §3.7`); the 64 cards themselves are Track C. |
 | Mobile app store | PWA is sufficient; store maintenance burden + fees. |
 | Payment / subscription | Non-commercial condition is our copyright basis. See [`08-legal-and-copyright.md`](08-legal-and-copyright.md) K-2. |

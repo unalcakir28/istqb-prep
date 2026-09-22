@@ -324,7 +324,7 @@ Proportional to the real exam's weighting, **plus an extra allowance for K3**:
 ```
 Author → opens a PR (status: "draft")
   ↓
-CI: JSON Schema + 13 checks
+CI: JSON Schema (#1) + 19 checks (#2-#20)
   ↓
 Reviewer: §6 checklist + syllabus comparison
   ↓

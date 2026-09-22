@@ -17,7 +17,7 @@
 Recent computer engineering graduate, wants to add the certification to her CV while job hunting. Testing terminology is completely foreign to her. Can't afford to pay.
 - **Needs:** Not just testing, but **teaching**. A term glossary, chapter-by-chapter progression, hints.
 - **Fear:** Not knowing where to start.
-- **Reason to abandon the product:** Scoring 12/40 on the first mock exam and losing her confidence → **the first experience must be practice mode, not a mock exam.**
+- **Reason to abandon the product:** Scoring 12/40 on the first mock exam and losing her confidence → **the first experience must not be a mock exam.** As built, the home page's primary action is **study mode** (`/calisma`), which is one step gentler still: read the objective's card, then take a short test on that one objective.
 
 ### P3 — Murat, 35, Senior Developer (10%)
 His team is getting ISTQB certified, so he's going along with it. Very little time, wants to get it done in 1 week.

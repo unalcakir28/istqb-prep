@@ -1,6 +1,6 @@
 # 04 — Data Model and Indexing Strategy
 
-**Version:** 1.0 · **Date:** 19.09.2026
+**Version:** 1.1 · **Date:** 21.09.2026
 **Related ADR:** [`adr/0002-data-layer-static-json.md`](adr/0002-data-layer-static-json.md)
 
 ---
@@ -37,6 +37,12 @@ data/
     │   ├── ...
     │   └── ch06-a.json
     │
+    ├── lessons/
+    │   ├── index.json               # Lightweight index: one entry per lesson
+    │   ├── ch01.json                # Chapter 1's explanation cards
+    │   ├── ...
+    │   └── ch06.json
+    │
     ├── glossary/
     │   ├── index.json               # Term list (slug, tr, en) — for search
     │   ├── terms-a.json             # Definitions, alphabetic chunks
@@ -46,6 +52,8 @@ data/
         ├── index.json               # Ready-made (curated) exam definitions
         └── mock-001.json            # Question ID list + order
 ```
+
+> `terms.json` also sits at the certification root: the Turkish terminology mapping, aligned from the official keyword lists. It is the single source of truth for CI check #13.
 
 ### Chunking rule
 - **Question chunk:** chapter-based, **at most 40 questions** per chunk (≈ 50–60 KB uncompressed).
@@ -345,7 +353,89 @@ Critical: the single most common complaint about the cheap tools on the market i
 
 Supported types: `decision-table` · `state-transition` · `control-flow` · `code` · `table` · `image` (last resort; `alt` text required).
 
-### 3.9 Glossary — `glossary/`
+### 3.9 Lessons — `lessons/`
+
+The short explanation card study mode shows above an objective's test. One card per learning objective, chunked by chapter exactly like the questions, and written from scratch against the syllabus — the official text is never reproduced (rule 1 applies to lessons too).
+
+Schemas: [`../schemas/lessons-index.schema.json`](../schemas/lessons-index.schema.json) and [`../schemas/lesson.schema.json`](../schemas/lesson.schema.json). Types: `Lesson`, `LessonContent`, `LessonChunk`, `LessonIndex` in `src/types/content.ts`.
+
+```json
+// lessons/index.json — no lesson text, only what the study screens filter on
+{
+  "dataVersion": "2026.09.19",
+  // Must equal lessons.length — check #19 fails otherwise. The shipped file is
+  // still at 0, because the chunks are empty until Track C fills them.
+  "count": 1,
+  "chunks": ["ch01", "ch02", "ch03", "ch04", "ch05", "ch06"],
+  "lessons": [
+    {
+      "objective": "FL-1.4.3",
+      "chunk": "ch01",
+      "chapter": 1,
+      "languages": ["tr", "en"],
+      "syllabusVersion": "4.0.1",
+      "status": "published"
+    }
+  ]
+}
+```
+
+```json
+// lessons/ch01.json
+{
+  "chunk": "ch01",
+  "chapter": 1,
+  "dataVersion": "2026.09.19",
+  "lessons": [
+    {
+      "objective": "FL-1.4.3",
+      "syllabusVersion": "4.0.1",
+      "syllabusRef": "§1.4.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Testlerin etkisi zamanla azalır",
+          "paragraphs": ["..."],
+          "keyPoints": ["..."],
+          "commonMistakes": ["..."]
+        },
+        "en": {
+          "title": "Tests wear out",
+          "paragraphs": ["..."],
+          "keyPoints": ["..."],
+          "commonMistakes": ["..."]
+        }
+      },
+      "meta": {
+        "author": "unal",
+        "reviewedBy": "—",
+        "createdAt": "2026-09-21",
+        "updatedAt": "2026-09-21"
+      }
+    }
+  ]
+}
+```
+
+| Field | Type | Description |
+|---|---|---|
+| `objective` | string | **The primary key.** One card per LO; the code must exist in `objectives.json` (CI check #16). |
+| `syllabusVersion` | string | **Required**, same rule as a question's. |
+| `syllabusRef` | string | The syllabus section the card explains. |
+| `revision` | int | Increments on every content change. |
+| `status` | `draft`\|`review`\|`published`\|`retired` | Only `published` cards are shown. |
+| `origin` | `original` | **The only value.** A lesson is never adapted from the official text. |
+| `i18n.<lang>.title` | string | The card's heading. |
+| `i18n.<lang>.paragraphs` | string[] | Plain text, **not Markdown** — the project has no Markdown renderer and this feature does not justify adding one. |
+| `i18n.<lang>.keyPoints` | string[] | The take-aways. TR and EN must be the same length (CI check #17). |
+| `i18n.<lang>.commonMistakes` | string[] | What candidates get wrong here. Same parity rule. |
+| `meta.reviewedBy` | string | Must be non-empty before `status` can be `published` (CI check #18). |
+
+> **The chunk files ship empty.** All six exist with `"lessons": []` so the index, the schemas and the checks are live before a single card is written; `contentClient.getLesson` returns `null` for an objective with no card, and `LessonCard` renders a placeholder rather than an error. Writing the 64 cards is Track C.
+
+### 3.10 Glossary — `glossary/`
 
 ```json
 // glossary/index.json
@@ -375,66 +465,110 @@ Supported types: `decision-table` · `state-transition` · `control-flow` · `co
 
 ## 4. Client-side (user) data — IndexedDB
 
-No server; all progress lives on the device. 5 tables via Dexie:
+No server; all progress lives on the device. The single source of truth for this section is [`../src/lib/db/db.ts`](../src/lib/db/db.ts) — six tables via Dexie, database name `istqb-prep`, schema at **version 3**.
 
 ```ts
-attempts      // Exam attempt sessions
-  { id, certId, mode, startedAt, finishedAt, durationSec, extended,
-    questionIds[], answers: Record<qid, string[]>, flagged: qid[],
-    score, passed, chapterBreakdown, objectiveBreakdown }
+attempts      // One session, in any of the three modes
+  { id, certId, seed, questionIds[], status, mode, scope,
+    instantFeedback, durationMinutes, contentLang,
+    startedAt, deadlineAt, submittedAt?, autoSubmitted?,
+    points?, totalPoints?, passed?, syllabusVersion, dataVersion }
+  // `passed` is written only for a `blueprint` scope, so absent means "no
+  // verdict", never "failed". `scoreExam` always compares against the
+  // official pass mark (26), which is the right comparison for the exam and a
+  // false one for a 10-question set — `isGraded(scope)` is the single
+  // definition the result screen and the store both read.
 
-responses     // Every answer, per question (for analysis and SRS)
-  { id, questionId, attemptId, answeredAt, given[], correct: bool,
-    timeSpentMs, selfGrade?: 'again'|'hard'|'good'|'easy' }
+responses     // One row per answered question — the answers do NOT live on the attempt
+  { key, attemptId, questionId, selected[], flagged, revealedAt?, updatedAt }
 
-srsCards      // FSRS state
-  { questionId, due, stability, difficulty, reps, lapses, state, lastReview }
+objectiveProgress  // Study mode's per-objective mastery (v3)
+  { key, certId, objectiveCode, cardReadAt?, attemptCount,
+    lastScorePercent, mastered, updatedAt }
 
-bookmarks     // Bookmarked questions and notes
-  { questionId, note, createdAt }
+srsCards      // FSRS state — declared, not yet written to (Phase 3)
+  { questionId, certId, due, stability, difficulty, reps, lapses, state, lastReviewedAt? }
 
-settings      // Preferably a single row
-  { uiLang, contentLang, sideBySide, theme, extendedTime, lastCertId, dataVersion }
+bookmarks     // Bookmarked questions and notes — declared, not yet written to (Phase 2-3)
+  { questionId, certId, createdAt, note? }
+
+settings      // A generic key-value table, one row per setting
+  { key, value }
 ```
 
+**Notes that matter, because the obvious guess is wrong:**
+
+- **Answers and flags are not on the attempt.** They live one row per question in `responses`, keyed `` `${attemptId}:${questionId}` `` (`responseKey`). `saveResponse` writes the whole row and never reads first — the read-then-write it replaced could lose a selection when the user answered and flagged the same question in the same tick.
+- **`points`, not `score`.** `submittedAt`, not `finishedAt`. `durationMinutes`, not `durationSec`. There is no `extended` flag: the chosen duration is frozen onto the attempt as `durationMinutes`, read from `meta.json` at setup.
+- **`deadlineAt` is nullable, and null means untimed.** Study and practice carry `null`; only exam mode sets one. A separate boolean could contradict the timestamp, so there isn't one.
+- **`mode`, `scope` and `instantFeedback` are frozen at creation.** A resumed session reads them back rather than recomputing them from whatever the setup screen currently defaults to — resuming must not change the rules mid-session. `scope` is a discriminated union: `{ kind: "blueprint" }`, `{ kind: "chapter", chapters[], count }`, or `{ kind: "objective", objectives[], count }`.
+- **`revealedAt` is the lock.** Once the rationale has been shown, the answer is final: `sessionStore.select` refuses a revealed question, so instant feedback cannot be gamed.
+- **Breakdowns are not stored.** `chapterBreakdown` / `objectiveBreakdown` are recomputed by `scoreExam` from the questions and the stored answers whenever a result is shown.
+
+### Schema versions
+
+| v | Change | Data migration |
+|---|---|---|
+| 1 | `attempts`, `responses`, `srsCards`, `bookmarks`, `settings` | — |
+| 2 | Compound index `[certId+status]` on `attempts` — resumable-attempt lookup ran as a table scan without it | none |
+| 3 | Three modes: `mode` index and `[certId+mode+status]` on `attempts`, new `objectiveProgress` table | `applyAttemptV3Defaults` |
+
+`applyAttemptV3Defaults` ([`../src/lib/db/migrations.ts`](../src/lib/db/migrations.ts)) backfills every pre-v3 row with `mode: "exam"`, `instantFeedback: false`, `scope: { kind: "blueprint" }` — which is what every attempt written before v3 actually was. It uses `??=`, so it is safe to run twice. It lives outside the upgrade hook so it can be unit-tested: jsdom has no IndexedDB, so the hook itself is only exercised end to end.
+
+### Mastery (`objectiveProgress`)
+
+Written by [`../src/lib/db/objectiveProgress.ts`](../src/lib/db/objectiveProgress.ts). A row appears the moment an objective's card is opened (`markLessonRead`), which is why a missing row is exactly "not started" — there is no separate empty state to store.
+
+`mastered` is `attemptCount >= MASTERY_MIN_ANSWERED (3)` **and** `lastScorePercent >= MASTERY_MIN_PERCENT (80)`. `attemptCount` accumulates across sessions; the score replaces the previous one, so **mastery is losable** — it reflects the most recent objective test, not a high-water mark. A submit with nothing answered writes nothing, so an empty attempt cannot erase mastery the candidate had already earned.
+
 ### When the data version changes
-When `manifest.dataVersion` changes: the question cache is cleared, **user progress is preserved**. If a question's `revision` value has increased, that question's SRS card is set to `state: 'relearning'` (the content changed, so the old memory record is invalid).
+When `manifest.dataVersion` changes: the question cache is cleared, **user progress is preserved**. If a question's `revision` value has increased, that question's SRS card is set to `state: 'relearning'` (the content changed, so the old memory record is invalid). This is F3-11, not yet implemented.
 
 ### Export/import
-All tables are exported as a single JSON file: `istqb-prep-yedek-2026-09-19.json`. On import, a `dataVersion` mismatch produces a warning but does not block the import.
+All tables are exported as a single JSON file. On import, a `dataVersion` mismatch produces a warning but does not block the import. This is F3-08, not yet implemented.
 
 ---
 
-## 5. Exam generation algorithm
+## 5. Question selection
+
+One entry point for all three modes: `selectQuestions` ([`../src/features/exam/selectQuestions.ts`](../src/features/exam/selectQuestions.ts)), which branches on the attempt's `scope` and returns the same shape either way — `{ seed, questionIds, shortfalls }`. The selection is **seeded and reproducible**: the same seed over the same pool yields the same exam.
 
 ```
-INPUT:  blueprint (LO groups), index.json, user history, options
-OUTPUT: 40 question IDs
+INPUT:  scope, blueprint (LO groups), index.json pool (published only), seed, exclude
+OUTPUT: question IDs + shortfalls
 
-1. For each blueprint group:
-   a. From the index, filter the questions that cover the group's LOs, with status=published and matching syllabusVersion.
-   b. If group.questions > group.objectives.length:
-        → pick AT LEAST one question from each LO, fill the rest randomly from the pool
-      else:
-        → pick group.questions DIFFERENT LOs, take one question from each
-   c. Selection weight (if the "smart mode" option is on):
-        w = 1
-        w *= 2.0  if the user has never seen this question
-        w *= 1.5  if the user is below 60% on this LO
-        w *= 0.3  if this question was asked in the last 7 days
-2. Combine into a total of 40 questions.
-3. VALIDATE: chapter distribution = 8/6/4/11/9/2 and K distribution = 8/24/8. If not, throw an error.
-4. SHUFFLE the questions (official sample exams are ordered by LO sequence; a real exam is not).
-5. Also shuffle each question's options — but positional options like "all of the above" stay fixed.
+scope.kind === "blueprint"  → delegates to generateExam (below)
+scope.kind === "chapter"    → the pool filtered to those chapters
+scope.kind === "objective"  → the pool filtered to those LO codes
+                              then: preferUnseen → take scope.count → shuffle
 ```
 
-**Insufficient question count:** if there aren't enough published questions for a group, the exam is still generated, but the user is told explicitly: *"This exam contains 34 questions instead of 40 — there aren't enough questions for chapter 4 yet."* Silently generating a shortfall is exactly the same calibration mistake we criticize.
+### `generateExam` — the blueprint path
+
+```
+For each blueprint group:
+  a. From the index, take the published questions matching the group's
+     chapter AND K-level AND at least one of its LOs.
+  b. If group.questions > group.objectives.length:
+       → at least one question from each LO, the rest filled from the pool
+     else:
+       → group.questions DIFFERENT LOs, one question from each
+  c. Questions the user has already seen are ranked last (`preferUnseen`),
+     never excluded outright — running out is worse than repeating.
+Then SHUFFLE the combined list: official sample exams run in LO order, a real exam does not.
+```
+
+`preferUnseen`'s `exclude` set is built from **submitted** attempts only (`collectSeenQuestionIds`). Only the exam setup screen's "ones I haven't seen before" option passes one — it is on by default; practice and study always pass an empty set.
+
+**Not implemented, deliberately not pretended:** there is no weighted "smart mode" (the `w *= 2.0 / 1.5 / 0.3` sketch this section used to carry), and **options are never shuffled** — `OptionList` renders them in file order. Answer-position bias is handled at authoring time instead, by CI check #14.
+
+**Insufficient question count:** the selection never throws and never silently shrinks. Every group that fell short is reported in `shortfalls`, and the caller states it before the session starts: *"This exam contains 34 questions instead of 40 — there aren't enough questions for chapter 4 yet."* Rule 8. `PracticeSetup` previews by calling `selectQuestions` itself, so its preview is generation. `ExamSetup` previews through `previewCoverage`, which counts each blueprint group's candidates instead of running the selection — and it counts them over the **whole** published pool, with the seen set deliberately not applied, because `exclude` only reorders candidates and never removes one. Applying it would make the screen warn about shortfalls generation does not produce.
 
 ---
 
 ## 6. CI validations
 
-Checks that run on every PR (`yarn validate:data`):
+Checks that run on every PR (`yarn validate:data`). The registry in [`../scripts/validate-data.ts`](../scripts/validate-data.ts) is the source of truth for the numbers and the severities; this table mirrors it.
 
 | # | Check | Result |
 |---|---|---|
@@ -453,15 +587,23 @@ Checks that run on every PR (`yarn validate:data`):
 | 13 | Is there English-term leakage in the Turkish text (glossary check)? | ⚠️ warning |
 | 14 | Is the correct answer's option position balanced (a systematic "always a" bias)? | ⚠️ warning |
 | 15 | Does the rationale/question text refer to an option by its letter (e.g. "(c) is incorrect")? | ❌ |
+| 16 | Does every lesson's `objective` exist in `objectives.json`? | ❌ |
+| 17 | Are the TR and EN lesson blocks parallel (equal `keyPoints` / `commonMistakes` counts)? | ❌ |
+| 18 | Does a published lesson record `meta.reviewedBy`? | ❌ |
+| 19 | Is `lessons/index.json` consistent with the lesson chunk files (objective, chunk, count)? | ❌ |
+| 20 | Is there at least 1 published lesson for every LO? | ⚠️ warning |
+
+**14 errors (#1–#9, #15–#19) and 6 warnings (#10–#14, #20).** A warning prints and exits 0: content gaps must be visible without blocking CI.
 
 ---
 
 ## 7. Adding a new certification
 
 1. Create the `data/<new-id>/` directory
-2. Fill in `meta.json`, `syllabus.json`, `objectives.json`, `exam-blueprint.json`
+2. Fill in `meta.json`, `syllabus.json`, `objectives.json`, `exam-blueprint.json`, `terms.json`
 3. Add an entry to `manifest.json`
-4. Add the question chunks
-5. **No code changes.** The application reads from the manifest.
+4. Add the question chunks, and the lesson chunks if there are any (they may ship empty)
+5. Run `yarn build:index` — it writes `questions/index.json`, `lessons/index.json` and the manifest counts. A certification with no `lessons/` directory is fine; the index and the lesson checks are simply skipped.
+6. **No code changes.** The application reads from the manifest.
 
 Target order: `CTFL v4.0.1` → `CTFL-AT` → `CT-AI v2.0` → `CT-PT` → `CTAL-TA v4.0`

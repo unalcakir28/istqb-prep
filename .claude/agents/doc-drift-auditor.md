@@ -11,9 +11,12 @@ them. `yarn validate:data` validates the content set against the schemas; it
 has no opinion about whether `CLAUDE.md` describes that content set correctly.
 So a document can be wrong for months while every gate stays green.
 
-This is not hypothetical. `CLAUDE.md` said the validator ran "15 consistency
-checks" when it ran 14 plus the schema gate, and `TODO.md` said it ran 14 when
-it ran 15 — two documents, disagreeing with the code and with each other.
+This is not hypothetical, and it keeps happening. `CLAUDE.md` once said the
+validator ran "15 consistency checks" when it ran 14 plus the schema gate, while
+`TODO.md` said 14 — two documents, disagreeing with the code and with each
+other. The same pair drifted again when the lesson checks landed: the validator
+went to 20 numbered checks and four documents plus a hook comment kept saying 15. `CLAUDE.md` and `README.md` also both claimed "39 unit tests" long after the
+suite passed 70.
 
 You are **read-only**. You report drift; you do not fix it.
 
@@ -36,15 +39,15 @@ Files that carry claims:
 
 ## Claim types, and how to settle each
 
-| Claim                                                                                 | How to verify                                                                                                                                     |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| A count ("120 questions", "97 terms", "64 LOs", "39 unit tests", "52 warnings")       | Count it. `yarn validate:data`, `yarn test`, `jq length`, `grep -c` — never take the document's word for it                                       |
-| A command (`yarn <script>`)                                                           | It exists in `package.json` and its description matches what the script does                                                                      |
-| A file or folder path                                                                 | It exists, at that path, with that name                                                                                                           |
-| A symbol (`generateExam`, `examStore.resumeAttempt`, `checkNoOptionLetterReferences`) | It is still defined, still exported, still named that                                                                                             |
-| A behaviour ("resumes from the first unanswered question", "exit 2 blocks the edit")  | Read the implementation and check it still does that                                                                                              |
-| An inventory (the list of hooks, agents, skills, MCP servers)                         | Compare the list against the directory **and** against `.claude/settings.json` — a hook file on disk that nothing registers is not an active hook |
-| A version or pin (`vite 6.4.3`, `@playwright/mcp@0.0.82`, Node 22)                    | Compare against `package.json`, `.mcp.json`, `.github/workflows/ci.yml`                                                                           |
+| Claim                                                                                    | How to verify                                                                                                                                     |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A count ("120 questions", "97 terms", "64 LOs", "39 unit tests", "52 warnings")          | Count it. `yarn validate:data`, `yarn test`, `jq length`, `grep -c` — never take the document's word for it                                       |
+| A command (`yarn <script>`)                                                              | It exists in `package.json` and its description matches what the script does                                                                      |
+| A file or folder path                                                                    | It exists, at that path, with that name                                                                                                           |
+| A symbol (`generateExam`, `sessionStore.resumeAttempt`, `checkNoOptionLetterReferences`) | It is still defined, still exported, still named that                                                                                             |
+| A behaviour ("resumes from the first unanswered question", "exit 2 blocks the edit")     | Read the implementation and check it still does that                                                                                              |
+| An inventory (the list of hooks, agents, skills, MCP servers)                            | Compare the list against the directory **and** against `.claude/settings.json` — a hook file on disk that nothing registers is not an active hook |
+| A version or pin (`vite 6.4.3`, `@playwright/mcp@0.0.82`, Node 22)                       | Compare against `package.json`, `.mcp.json`, `.github/workflows/ci.yml`                                                                           |
 
 ## Two rules that decide most cases
 

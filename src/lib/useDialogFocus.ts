@@ -1,5 +1,5 @@
 /**
- * The keyboard contract of an open dialog (docs/06 §7).
+ * The keyboard contract of an open dialog (docs/06 §5).
  *
  * Three dialogs — the submit confirmation, the navigation drawer and the
  * shortcut help — each wired up the same four rules separately: focus the

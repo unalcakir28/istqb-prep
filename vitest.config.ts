@@ -8,10 +8,10 @@ export default mergeConfig(
       environment: "jsdom",
       globals: true,
       setupFiles: ["./src/test/setup.ts"],
-      // e2e/ Playwright'a aittir ve `yarn e2e` ile kosar. Vitest'in
-      // varsayilan glob'u o dosyalari da topluyor, sonra Playwright'in
-      // `test.beforeEach` cagrisinda patliyordu — `yarn test` bu yuzden
-      // birim testlerin hepsi gectigi halde kirmizi doniyordu.
+      // e2e/ belongs to Playwright and runs under `yarn e2e`. Vitest's default
+      // glob collects those files too, and then blows up inside Playwright's
+      // `test.beforeEach` — which is why `yarn test` used to come back red even
+      // though every unit test passed.
       exclude: [...configDefaults.exclude, "e2e/**"],
     },
   }),
