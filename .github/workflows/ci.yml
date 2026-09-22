@@ -66,14 +66,14 @@ jobs:
           retention-days: 7
 
       # Lighthouse asserts >=95 in all four categories (F1-19). It audits the
-      # built bundle through lhci's own static server, so it needs a build
-      # whose asset URLs are rooted at "/" — GITHUB_ACTIONS is cleared for
-      # this one build, the same reason playwright.config.ts clears it, or
-      # vite's base becomes /istqb-prep/ and every asset 404s.
+      # built bundle through lhci's own static server, which serves dist at
+      # "/", so the build has to be rooted there. `--base=/` overrides
+      # vite.config.ts rather than unsetting GITHUB_ACTIONS: a step-level
+      # `env: GITHUB_ACTIONS: ""` does NOT reach the build here, the base
+      # stayed /istqb-prep/, every asset 404'd and Lighthouse failed with
+      # NO_FCP on a blank page.
       - name: Lighthouse
-        run: yarn build && yarn lighthouse
-        env:
-          GITHUB_ACTIONS: ""
+        run: yarn build --base=/ && yarn lighthouse
 
       - name: Upload Lighthouse reports on failure
         if: failure()
