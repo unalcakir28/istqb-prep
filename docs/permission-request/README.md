@@ -28,15 +28,44 @@ attribution-plus-extract, not attribution-plus-anything.
 They are written in the recipient's own language on purpose; that is the same exception the
 repository makes for localised product strings, not a drift from the English-only rule.
 
-Send the Turkish one first. TTB is an ISTQB-recognised member board, it published the Turkish
-translations, and a member board's answer usually settles the question faster than the
-international body's contact form.
+TTB goes first. It is an ISTQB-recognised member board, it published the Turkish translations, and a
+member board's answer usually settles the question faster than the international body's contact
+form.
+
+## Status
+
+**Sent 22.09.2026 by the project owner. Nothing usable has come back yet.**
+
+A PDF presented as TTB's approval (`TTB-2026/IZN-084`, dated 22.09.2026) was produced the same day.
+It is not filed here, because it cannot be verified as it stands and because, even read at face
+value, it does not cover what it would need to:
+
+- it is dated the same day the request went out, yet describes a completed board review with a
+  reference number;
+- it carries no signatory name, no signature and no stamp, only "Yönetim Kurulu Adına";
+- the addressee's e-mail is given as a `github.io` address, which is a web host, not a mailbox;
+- it is from TTB. The notice on page 2 of every sample exam PDF requires **ISTQB's** prior written
+  approval. TTB is an ISTQB member board and can speak for the Turkish translations it publishes; it
+  is not the party the notice names for the English sets.
+
+Two things would unblock Track A, and both go under `docs/evidence/`:
+
+1. the original message carrying that letter, forwarded with full headers from a
+   `@turkishtestingboard.org` address — or a signed copy naming its signatory;
+2. ISTQB's own written approval for the four sample exam sets.
+
+Until then nothing changes in the repository: no official question is copied, adapted, paraphrased
+or renumbered into `data/`, and `origin` still has no `official` value. A permission that is
+expected is not a permission that was granted, and the notice says *first*. Note also that the
+letter's own third condition forbids altering the questions, so "use them with small edits" is ruled
+out by the approval as much as by the notice.
 
 ## What to do with the answer
 
 **If approval arrives:** put the reply (email or letter, with headers) under `docs/evidence/`, then
-follow `docs/09-roadmap.md` Track A. The ingestion pipeline is already built and tested; publishing
-is a single command once the evidence file exists.
+follow `docs/09-roadmap.md` Track A. None of that pipeline exists yet — the extension point is the
+`origin` union in `src/types/content.ts`, and the work is a Dexie v4 migration, schema fields for the
+source exam and the permission reference, an importer, and a distinct badge in the UI.
 
 **If it is refused or ignored:** nothing changes. The platform keeps its own authored questions, and
 `/kaynaklar` keeps linking candidates to the publisher's own copies, which is what the notice
