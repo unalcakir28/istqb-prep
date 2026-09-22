@@ -13,9 +13,11 @@ import { useDialogFocus } from "@/lib/useDialogFocus";
 export interface ShortcutsOverlayProps {
   open: boolean;
   onClose: () => void;
+  /** The session has a clock on screen, so the "T" shortcut has something to hide. */
+  hasTimer?: boolean;
 }
 
-export function ShortcutsOverlay({ open, onClose }: ShortcutsOverlayProps) {
+export function ShortcutsOverlay({ open, onClose, hasTimer = false }: ShortcutsOverlayProps) {
   const { t } = useTranslation();
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -25,13 +27,19 @@ export function ShortcutsOverlay({ open, onClose }: ShortcutsOverlayProps) {
 
   if (!open) return null;
 
+  // The "T" row is omitted where there is no clock — study and practice would
+  // otherwise advertise a key that does nothing.
+  const timerRows: Array<[string, string]> = hasTimer
+    ? [["T", `${t("exam.hideTimer")} / ${t("exam.showTimer")}`]]
+    : [];
+
   const rows: Array<[string, string]> = [
     ["1 – 9", t("exam.selectOne")],
     ["← / →", `${t("exam.previous")} / ${t("exam.next")}`],
     ["F", t("exam.flag")],
     ["L", t("question.contentLang")],
     ["N", t("exam.navigator")],
-    ["T", `${t("exam.hideTimer")} / ${t("exam.showTimer")}`],
+    ...timerRows,
     ["?", t("exam.shortcuts")],
     ["Esc", t("common.close")],
   ];
