@@ -6,10 +6,10 @@
  * pool falls short the warning appears RIGHT HERE (F1-05c). Silently
  * generating a short exam is forbidden.
  *
- * Duration options come from meta.json. If the UI is in Turkish, the extended
- * duration comes PRE-SELECTED: a Turkish-speaking candidate takes the real
- * exam in a language that isn't their mother tongue, and is entitled to 25%
- * extra time.
+ * There is no duration choice. The exam runs for `meta.exam.durationMinutes`,
+ * which is 60. ISTQB grants +25% to a candidate sitting in a language that is
+ * not their own, but that belongs to the sitting rather than to the paper, and
+ * a mock exam simulates the paper (D-06).
  */
 
 import { useMemo, useState } from "react";
@@ -101,7 +101,6 @@ export default function ExamSetup() {
   const starting = useSessionStore((state) => state.loading);
 
   const { data, failed } = useAsyncData(loadSetup);
-  const [extended, setExtended] = useState(() => i18n.language === "tr");
   const [contentLang, setContentLang] = useState<Lang>(() =>
     i18n.language === "en" ? "en" : "tr",
   );
@@ -132,7 +131,6 @@ export default function ExamSetup() {
   const { cert, meta, blueprint } = data;
   const { total: achievable, shortfalls } = preview;
   const exam = meta.exam;
-  const durationMinutes = extended ? exam.extendedDurationMinutes : exam.durationMinutes;
   const canStart = achievable > 0;
   // The warning also shows when starting was attempted and failed: the button
   // never just sits dead, it states the reason.
@@ -147,7 +145,10 @@ export default function ExamSetup() {
       scope: { kind: "blueprint" },
       contentLang,
       instantFeedback: false,
-      durationMinutes,
+      // The one duration this exam has. ISTQB's +25% extension applies to a
+      // candidate sitting in a non-native language; the paper itself is 60
+      // minutes and that is the length this product simulates (D-06).
+      durationMinutes: exam.durationMinutes,
       excludeSeen,
     });
 
@@ -162,38 +163,6 @@ export default function ExamSetup() {
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-8 px-4 py-8 sm:py-12">
       <h1 className="text-[28px] font-semibold leading-tight">{t("setup.title")}</h1>
-
-      <fieldset className="flex flex-col gap-3">
-        <legend className="mb-2 text-base font-semibold">{t("setup.duration")}</legend>
-
-        <label className={CHOICE_ROW}>
-          <input
-            type="radio"
-            name="duration"
-            checked={!extended}
-            onChange={() => setExtended(false)}
-            className="mt-1 size-4 shrink-0 accent-[var(--accent)]"
-          />
-          <span className="text-[15px]">
-            {t("setup.duration60", { minutes: exam.durationMinutes })}
-          </span>
-        </label>
-
-        <label className={CHOICE_ROW}>
-          <input
-            type="radio"
-            name="duration"
-            checked={extended}
-            onChange={() => setExtended(true)}
-            className="mt-1 size-4 shrink-0 accent-[var(--accent)]"
-          />
-          <span className="text-[15px]">
-            {t("setup.duration75", { minutes: exam.extendedDurationMinutes })}
-          </span>
-        </label>
-
-        <p className="max-w-[65ch] text-sm text-fg-muted">{t("setup.durationHint")}</p>
-      </fieldset>
 
       <fieldset className="flex flex-col gap-3">
         <legend className="mb-2 text-base font-semibold">{t("setup.contentLanguage")}</legend>
@@ -306,9 +275,9 @@ export default function ExamSetup() {
         </button>
 
         <span className="text-sm text-fg-muted">
-          {t("home.heroSubtitle", {
+          {t("setup.summary", {
             count: achievable,
-            minutes: durationMinutes,
+            minutes: exam.durationMinutes,
             pass: exam.passPoints,
             total: exam.totalPoints,
           })}

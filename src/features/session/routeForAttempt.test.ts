@@ -2,7 +2,12 @@ import { describe, expect, it } from "vitest";
 
 import type { Attempt } from "@/lib/db/db";
 
-import { redirectPathFor, routeForAttempt } from "./routeForAttempt";
+import {
+  redirectPathFor,
+  resultRedirectPathFor,
+  resultRouteForAttempt,
+  routeForAttempt,
+} from "./routeForAttempt";
 
 describe("routeForAttempt", () => {
   it("sends an exam attempt to the exam session", () => {
@@ -72,5 +77,65 @@ describe("redirectPathFor", () => {
 
   it("ignores a stale attempt even when the modes agree", () => {
     expect(redirectPathFor(exam, "a9", "/sinav/a9")).toBeNull();
+  });
+});
+
+/**
+ * F2-14 — a study attempt's result lives under its objective, not on /sonuc.
+ *
+ * Nothing in the app links to `/sonuc/<study-attempt-id>`, but a hand-typed or
+ * bookmarked one used to render the study attempt on the shared result screen,
+ * where it was correctly left ungraded and then offered "New practice set".
+ */
+describe("resultRouteForAttempt", () => {
+  it("sends an exam attempt to the shared result screen", () => {
+    expect(resultRouteForAttempt({ id: "a1", mode: "exam", scope: { kind: "blueprint" } })).toBe(
+      "/sonuc/a1",
+    );
+  });
+
+  it("sends a practice attempt to the shared result screen", () => {
+    expect(
+      resultRouteForAttempt({
+        id: "a2",
+        mode: "practice",
+        scope: { kind: "chapter", chapters: [1], count: 10 },
+      }),
+    ).toBe("/sonuc/a2");
+  });
+
+  it("keeps a study attempt's result under its own objective", () => {
+    expect(
+      resultRouteForAttempt({
+        id: "a3",
+        mode: "study",
+        scope: { kind: "objective", objectives: ["FL-2.1.1"], count: 3 },
+      }),
+    ).toBe("/calisma/lo/FL-2.1.1/a3");
+  });
+});
+
+describe("resultRedirectPathFor", () => {
+  const study: Pick<Attempt, "id" | "mode" | "scope"> = {
+    id: "a3",
+    mode: "study",
+    scope: { kind: "objective", objectives: ["FL-2.1.1"], count: 3 },
+  };
+  const exam: Pick<Attempt, "id" | "mode" | "scope"> = {
+    id: "a1",
+    mode: "exam",
+    scope: { kind: "blueprint" },
+  };
+
+  it("redirects a study attempt off the shared result screen", () => {
+    expect(resultRedirectPathFor(study, "a3", "/sonuc/a3")).toBe("/calisma/lo/FL-2.1.1/a3");
+  });
+
+  it("leaves an exam attempt on the shared result screen", () => {
+    expect(resultRedirectPathFor(exam, "a1", "/sonuc/a1")).toBeNull();
+  });
+
+  it("ignores a stale attempt from the session the user just left", () => {
+    expect(resultRedirectPathFor(study, "a1", "/sonuc/a1")).toBeNull();
   });
 });

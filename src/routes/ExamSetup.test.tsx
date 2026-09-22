@@ -102,7 +102,6 @@ const META: CertMeta = {
     passPoints: 2,
     passPercent: 65,
     durationMinutes: 60,
-    extendedDurationMinutes: 75,
     pointsPerQuestion: 1,
     negativeMarking: null,
     questionKLevelDistribution: { K1: 0, K2: 2, K3: 0 },

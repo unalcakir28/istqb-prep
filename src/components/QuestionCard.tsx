@@ -2,6 +2,7 @@ import type { RefObject } from "react";
 import { useTranslation } from "react-i18next";
 
 import { CitationChips } from "./CitationChips";
+import { MediaRenderer } from "./MediaRenderer";
 import { OptionList } from "./OptionList";
 import type { Lang, Question } from "@/types/content";
 
@@ -46,6 +47,13 @@ export interface QuestionCardProps {
    * groups.
    */
   headingLevel?: 2 | 3;
+  /**
+   * F2-06 — the other language, shown beside this one. `lang` stays the
+   * primary: it is what the heading is announced in and what the attempt
+   * records. The second language is a quieter companion column, never a second
+   * question.
+   */
+  secondaryLang?: Lang;
 }
 
 export function QuestionCard({
@@ -57,9 +65,11 @@ export function QuestionCard({
   headingRef,
   counterId,
   headingLevel = 2,
+  secondaryLang,
 }: QuestionCardProps) {
   const { t } = useTranslation();
   const content = question.i18n[lang];
+  const secondary = secondaryLang ? question.i18n[secondaryLang] : undefined;
 
   if (!content) {
     return (
@@ -105,6 +115,25 @@ export function QuestionCard({
         {content.stem}
       </Stem>
 
+      {/* Not a heading: the stem is already on the outline, and a second one
+          would make every question read as two. It is the same question in
+          another language, so it is marked as a quieter aside beside it. */}
+      {secondary ? (
+        <p
+          lang={secondaryLang}
+          className="prose-question whitespace-pre-line border-l-2 border-border pl-4 text-fg-muted"
+        >
+          {secondary.stem}
+        </p>
+      ) : null}
+
+      {/* Between the stem and the options, where it is read in the order the
+          question is asked. A figure after the options would be a figure the
+          candidate meets only after deciding. */}
+      {question.media ? (
+        <MediaRenderer media={question.media} lang={lang} secondaryLang={secondaryLang} />
+      ) : null}
+
       <OptionList
         questionId={question.id}
         options={content.options}
@@ -115,6 +144,11 @@ export function QuestionCard({
         revealed={revealed}
         correct={revealed ? question.correct : []}
         labelledBy={`${stemId} ${instructionId}`}
+        secondary={
+          secondary && secondaryLang
+            ? { lang: secondaryLang, options: secondary.options }
+            : undefined
+        }
       />
 
       {revealed ? (

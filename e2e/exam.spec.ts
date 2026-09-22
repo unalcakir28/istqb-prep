@@ -7,6 +7,7 @@ import {
   optionInputs,
   partial,
   pattern,
+  PRODUCT_NAME,
   questionCounter,
 } from "./labels";
 
@@ -84,14 +85,14 @@ test("a full exam is set up, answered and reviewed from the home page", async ({
   await expect(page.getByText(partial(en.result.passLine, { pass: "\\d+" })).first()).toBeVisible();
   await expect(page.getByRole("link", { name: en.result.retake })).toBeVisible();
 
-  await expect(page).toHaveTitle(`${en.result.title} · ${en.app.name}`);
+  await expect(page).toHaveTitle(`${en.result.title} · ${PRODUCT_NAME}`);
   await expect(resultHeading).toBeFocused();
 
   await page.getByRole("link", { name: en.result.review }).click();
   await expect(page).toHaveURL(/\/inceleme\/[\w-]+$/);
   const reviewHeading = page.getByRole("heading", { name: en.review.title, level: 1 });
   await expect(reviewHeading).toBeVisible();
-  await expect(page).toHaveTitle(`${en.review.title} · ${en.app.name}`);
+  await expect(page).toHaveTitle(`${en.review.title} · ${PRODUCT_NAME}`);
   await expect(reviewHeading).toBeFocused();
   // The product's main differentiator: a per-option rationale on every question.
   await expect(page.getByText(en.review.perOption).first()).toBeVisible();
@@ -150,7 +151,7 @@ test("the selected answer survives a question-language switch", async ({ page })
   // switches to Turkish first, so the language it switches away from is known
   // whatever the locale is. The buttons' accessible names are their sr-only
   // text; the "TR" / "EN" badges are aria-hidden.
-  await page.getByRole("button", { name: en.question.showTurkish }).click();
+  await page.getByRole("radio", { name: en.question.showTurkish, exact: true }).click();
 
   // The switch is read from the QUESTION STEM, not from an option: on
   // questions with numeric options ("19", "67%") both languages render the
@@ -158,7 +159,7 @@ test("the selected answer survives a question-language switch", async ({ page })
   const stem = page.locator(".prose-question").first();
   const turkishStem = await stem.innerText();
 
-  await page.getByRole("button", { name: en.question.showEnglish }).click();
+  await page.getByRole("radio", { name: en.question.showEnglish, exact: true }).click();
   await expect(stem).not.toHaveText(turkishStem);
 
   await expect(optionInputs(page).first()).toBeChecked();

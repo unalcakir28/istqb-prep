@@ -13,16 +13,17 @@
  */
 
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { ErrorNotice } from "@/components/ErrorNotice";
 import { ScoreBar } from "@/components/ScoreBar";
 import { Spinner } from "@/components/Spinner";
+import { resultRedirectPathFor, routeForAttempt } from "@/features/session/routeForAttempt";
 import { useSessionStore } from "@/features/session/sessionStore";
 import { isGraded, weakestObjectives } from "@/features/exam/scoreExam";
 import { contentClient } from "@/lib/content/contentClient";
-import type { Attempt } from "@/lib/db/db";
+import type { Attempt, AttemptScope } from "@/lib/db/db";
 import { useArrivalFocus } from "@/lib/useArrivalFocus";
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import type { Chapter, Objective } from "@/types/content";
@@ -84,7 +85,11 @@ export default function ExamResult() {
   const contentLang = useSessionStore((state) => state.contentLang);
   const loading = useSessionStore((state) => state.loading);
   const loadSubmitted = useSessionStore((state) => state.loadSubmitted);
+  const startSession = useSessionStore((state) => state.startSession);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [starting, setStarting] = useState(false);
   const [chapters, setChapters] = useState<Chapter[] | null>(null);
   const [objectives, setObjectives] = useState<Objective[] | null>(null);
 
@@ -127,6 +132,13 @@ export default function ExamResult() {
     };
   }, [certId]);
 
+  // A study attempt's result lives under its objective, not here (F2-14).
+  // Checked before `loading` so a hand-typed URL is corrected on the first
+  // render that knows the attempt, and after the attempt is in hand so the
+  // identity guard inside `resultRedirectPathFor` can do its job.
+  const redirect = resultRedirectPathFor(attempt, attemptId ?? "", location.pathname);
+  if (redirect) return <Navigate to={redirect} replace />;
+
   if (loading && !ready) return <Spinner />;
   if (!attempt || !score) return <ErrorNotice />;
 
@@ -154,6 +166,47 @@ export default function ExamResult() {
   const percentLabel = t("result.percent", { percent: score.percent });
   const passLabel = t("result.passLine", { pass: score.passPoints });
   const verdict = graded ? (score.passed ? t("result.passed") : t("result.failed")) : null;
+  /**
+   * The questions that were answered wrongly. Unanswered ones are left out on
+   * purpose: "try the ones you missed" is about a wrong belief to correct, and
+   * a question nobody reached teaches nothing about one.
+   */
+  const missed = score.outcomes
+    .filter((outcome) => !outcome.isCorrect && !outcome.isUnanswered)
+    .map((outcome) => outcome.questionId);
+
+  async function onRetryMissed() {
+    if (!attempt) return;
+    if (starting) return;
+
+    const scope: AttemptScope = { kind: "questions", questionIds: missed, source: "wrong" };
+
+    setStarting(true);
+    const retryId = await startSession({
+      certPath: attempt.certId,
+      mode: "practice",
+      scope,
+      contentLang,
+      // The point of the retry is to see the reasoning, so it is on regardless
+      // of how the session that produced these answers was configured.
+      instantFeedback: true,
+      durationMinutes: null,
+      // Every one of these was seen by definition; excluding seen questions
+      // would empty the set.
+      excludeSeen: false,
+    });
+
+    // Failure leaves the store's own error set (an empty pool: every missed
+    // question has since been retired). The button comes back rather than
+    // staying dead, so the candidate can see that nothing happened.
+    if (!retryId) {
+      setStarting(false);
+      return;
+    }
+
+    navigate(routeForAttempt({ id: retryId, mode: "practice", scope }));
+  }
+
   const objectiveText = new Map((objectives ?? []).map((item) => [item.code, item.text]));
   const chapterById = new Map((chapters ?? []).map((item) => [item.number, item]));
   const weakest = weakestObjectives(score);
@@ -308,6 +361,21 @@ export default function ExamResult() {
                       total: breakdown?.total ?? 0,
                     })}
                   </span>
+
+                  {/* F2-04 — the weakest objectives are the one place on this
+                      screen where the candidate knows what to do next, so the
+                      screen says it: straight to that objective's lesson and
+                      its own test. The row is not itself a link (its code,
+                      text and score would collapse into one accessible name),
+                      and the link carries the code in its name so a screen
+                      reader moving link to link can tell the rows apart. */}
+                  <Link
+                    to={`/calisma/lo/${code}`}
+                    aria-label={t("result.studyObjectiveLabel", { code })}
+                    className="ml-auto shrink-0 rounded-[var(--radius-btn)] border border-border px-3 py-1.5 text-sm font-medium hover:bg-surface-2"
+                  >
+                    {t("result.studyObjective")}
+                  </Link>
                 </li>
               );
             })}
@@ -322,6 +390,25 @@ export default function ExamResult() {
         >
           {t("result.review")}
         </Link>
+
+        {/* F2-02 — the single most useful thing to do next is the set you just
+            failed, so it is offered here rather than left for the candidate to
+            reconstruct. It starts a new attempt: re-queuing inside the scored
+            one would make a question count twice and quietly change the score
+            that was just reported. */}
+        {missed.length > 0 ? (
+          <button
+            type="button"
+            onClick={() => void onRetryMissed()}
+            // `aria-disabled` rather than `disabled`: a native disabled button
+            // cannot hold focus, so clicking it drops the keyboard user to
+            // <body> while the session is being built.
+            aria-disabled={starting}
+            className="rounded-[var(--radius-btn)] border border-accent/50 px-5 py-3 font-medium hover:bg-surface-2 aria-disabled:cursor-not-allowed aria-disabled:opacity-50"
+          >
+            {starting ? t("common.loading") : t("result.retryMissed", { count: missed.length })}
+          </button>
+        ) : null}
         {/* Offering "New exam" after a scoped practice set sends the candidate
             to a 40-question timed mock they did not ask for. */}
         <Link

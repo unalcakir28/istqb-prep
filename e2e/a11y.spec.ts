@@ -11,6 +11,7 @@ import {
   fill,
   isMultiSelect,
   optionInputs,
+  PRODUCT_NAME,
   questionCounter,
   sessionLiveRegion,
   totalQuestions,
@@ -115,6 +116,25 @@ for (const theme of THEMES) {
     await scan(page);
   });
 
+  test(`the saved lists are accessible (${theme})`, async ({ page }) => {
+    await setTheme(page, theme);
+    // Empty lists, which is the state most likely to render a bare heading
+    // with nothing named under it.
+    await page.goto("/listelerim");
+    await expect(page.getByRole("heading", { name: en.lists.title, level: 1 })).toBeVisible();
+    await scan(page);
+  });
+
+  test(`the glossary is accessible (${theme})`, async ({ page }) => {
+    await setTheme(page, theme);
+    await page.goto("/sozluk");
+    await expect(page.getByRole("heading", { name: en.glossary.title, level: 1 })).toBeVisible();
+    // The chapter filter is a radio group of visually-hidden inputs with
+    // styled labels; the scan is here to prove the labels still name them.
+    await expect(page.getByRole("radio", { name: en.glossary.allChapters })).toBeVisible();
+    await scan(page);
+  });
+
   test(`the sources page is accessible (${theme})`, async ({ page }) => {
     await setTheme(page, theme);
     await page.goto("/kaynaklar");
@@ -190,10 +210,11 @@ test("the options are one group named after the stem and the instruction", async
   const multi = (await page.getByRole("checkbox").count()) > 0;
   const expected = `${await stemText(page)} ${multi ? en.exam.selectTwo : en.exam.selectOne}`;
 
-  // Single-select is a radiogroup, multi-select a plain group; the header's
-  // question-language toggle is the other group on this screen, and its name
-  // is nothing like this one.
-  const group = page.getByRole("radiogroup").or(page.getByRole("group", { name: expected }));
+  // Single-select is a radiogroup, multi-select a plain group. The
+  // question-language toggle is a radiogroup too, so the role alone no longer
+  // picks one out; `aria-labelledby` does, because only the option list names
+  // itself from elements already on the page.
+  const group = page.locator("[role=radiogroup][aria-labelledby], [role=group][aria-labelledby]");
   await expect(group).toHaveAccessibleName(expected);
 });
 
@@ -472,6 +493,33 @@ test('"n" lands on the current question, not on the first', async ({ page }) => 
 });
 
 /**
+ * F2-13 — the same contract on a narrow screen, where the navigator is a modal
+ * sheet rather than an always-visible panel.
+ *
+ * `useDialogFocus` focused the panel's first button, which in the sheet is
+ * Close. A keyboard user pressing "n" to jump to a question landed on the
+ * control that throws the sheet away, with the whole grid behind them.
+ */
+test('on a narrow screen, "n" lands on the current question inside the sheet', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 780 });
+  await startExam(page);
+
+  await page.getByRole("button", { name: en.exam.next }).click();
+  await expect(page.getByText(questionCounter(2))).toBeVisible();
+
+  await page.keyboard.press("n");
+
+  const sheet = page.getByRole("dialog", { name: en.exam.navigator });
+  await expect(sheet).toBeVisible();
+  await expect(sheet.locator('[aria-current="true"]')).toBeFocused();
+
+  // Escape still closes it and hands focus back, which is the rest of the
+  // contract the initial-focus change must not have broken.
+  await page.keyboard.press("Escape");
+  await expect(sheet).toBeHidden();
+});
+
+/**
  * Task 15b — the study finish, which was the least-signalled state change in
  * the app: the result replaces the session inside the same route, so the URL
  * does not change, the button the candidate was standing on unmounts, and a
@@ -494,7 +542,7 @@ test("finishing an objective test moves focus to the result heading, a cold load
 
   // `SessionRunner` owns `document.title` while the session is up and nothing
   // used to take it back.
-  await expect(page).toHaveTitle(`${en.result.title} · ${en.app.name}`);
+  await expect(page).toHaveTitle(`${en.result.title} · ${PRODUCT_NAME}`);
 
   // The same screen reached cold — a bookmark, a reload — is an ordinary page
   // load with nothing to announce, and the heading is `tabIndex={-1}`, so

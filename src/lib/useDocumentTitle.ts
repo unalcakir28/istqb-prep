@@ -10,16 +10,17 @@
  * `what` is already translated by the caller. `null` leaves the title alone —
  * what a screen needs while its subject is still loading, rather than writing
  * a placeholder and then correcting it.
+ *
+ * The suffix is the product name, which is not translated (F0-17).
  */
 
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
+
+import { PRODUCT_NAME } from "./product";
 
 export function useDocumentTitle(what: string | null): void {
-  const { t } = useTranslation();
-
   useEffect(() => {
     if (what === null) return;
-    document.title = `${what} · ${t("app.name")}`;
-  }, [what, t]);
+    document.title = `${what} · ${PRODUCT_NAME}`;
+  }, [what]);
 }

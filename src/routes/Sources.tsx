@@ -41,6 +41,7 @@ export default function Sources() {
   if (!meta && !failed) return <Spinner />;
 
   const sources = meta ? Object.entries(meta.sources) : [];
+  const officialExams = meta?.officialSampleExams ?? [];
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-8 px-4 py-8 sm:py-12">
@@ -78,6 +79,49 @@ export default function Sources() {
           </ul>
         )}
       </section>
+
+      {/*
+        Links, never questions. The sample exams' own copyright notice allows
+        attributed extracts for non-commercial use and prohibits every other
+        use without ISTQB's written approval, so a candidate who wants the
+        official questions is sent to the publisher to answer them there
+        (docs/08 §2, ADR-0004, D-07). The notice itself is quoted with
+        attribution, which is exactly what its first clause permits.
+      */}
+      {officialExams.length > 0 ? (
+        <section aria-labelledby="official-exams" className="flex flex-col gap-3">
+          <h2 id="official-exams" className="text-base font-semibold">
+            {t("sources.officialExamsTitle")}
+          </h2>
+
+          <p className="max-w-[65ch] text-[15px] leading-relaxed text-fg-muted">
+            {t("sources.officialExamsBody")}
+          </p>
+
+          <ul className="flex flex-col gap-2">
+            {officialExams.map((exam) => (
+              <li
+                key={`${exam.lang}-${exam.set}`}
+                className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-[var(--radius-card)] border border-border bg-surface px-4 py-3"
+              >
+                <a
+                  href={exam.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="font-medium text-accent underline underline-offset-2"
+                >
+                  {t("sources.officialExamsSet", { set: exam.set, publisher: exam.publisher })}
+                </a>
+                <span className="font-mono text-xs uppercase text-fg-muted">{exam.lang}</span>
+              </li>
+            ))}
+          </ul>
+
+          <p className="max-w-[65ch] border-l-2 border-border pl-4 text-[13px] leading-relaxed text-fg-muted">
+            {t("sources.officialExamsNotice")}
+          </p>
+        </section>
+      ) : null}
 
       <section aria-labelledby="privacy" className="flex flex-col gap-2">
         <h2 id="privacy" className="text-base font-semibold">

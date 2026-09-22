@@ -29,6 +29,16 @@ export interface CertificationSummary {
   };
 }
 
+/** One published sample exam, linked rather than reproduced. */
+export interface OfficialSampleExam {
+  /** The publisher's own label for the set — "A", "B", … or "A-D" for a listing page. */
+  set: string;
+  lang: Lang;
+  url: string;
+  publisher: string;
+  documentVersion?: string;
+}
+
 export interface CertMeta {
   id: string;
   name: Record<Lang, string>;
@@ -42,14 +52,30 @@ export interface CertMeta {
     totalPoints: number;
     passPoints: number;
     passPercent: number;
+    /**
+     * The paper's own length. ISTQB grants +25% to a candidate sitting in a
+     * non-native language; that is a property of the sitting, not of the exam,
+     * and this product simulates the exam (D-06). `data/certifications.json`
+     * still records the extension for every certification — that file is the
+     * reference catalogue, this one is the exam we run.
+     */
     durationMinutes: number;
-    extendedDurationMinutes: number;
     pointsPerQuestion: number;
     /** Absent from every official document — writing `false` would be a claim of its own. */
     negativeMarking: boolean | null;
     questionKLevelDistribution: Record<KLevel, number>;
   };
   sources: Record<string, string>;
+  /**
+   * Where the official sample exams live on the member board's own site.
+   *
+   * Links, never content. Their copyright notice permits attributed excerpts
+   * for non-commercial use and prohibits *"any other use […] without first
+   * obtaining the approval in writing of the ISTQB®"*, so a candidate who
+   * wants the official questions is sent to the publisher to answer them
+   * there (docs/08 K-1, ADR-0004, D-07).
+   */
+  officialSampleExams?: OfficialSampleExam[];
 }
 
 export interface Chapter {
@@ -139,6 +165,47 @@ export interface QuestionOption {
   text: string;
 }
 
+/** A short bilingual string inside a figure — a caption, a text alternative. */
+export type BilingualText = Record<Lang, string>;
+
+/** One row of a table, in both languages. Both must have the same length. */
+export type BilingualRow = Record<Lang, string[]>;
+
+/**
+ * A figure a question needs in order to be answerable (F1-14, F2-09).
+ *
+ * Every kind renders as text. There is no diagram-only figure and no kind
+ * whose meaning lives in a picture: a decision table is a `<table>`, a state
+ * machine is a transition table plus a written alternative, a control-flow
+ * fragment is the code itself plus a written alternative. A candidate using a
+ * screen reader sits the same exam as everyone else, so an equivalent is not
+ * an accommodation bolted on afterwards — it is part of the content, and the
+ * schema requires it.
+ */
+export type QuestionMedia =
+  | {
+      kind: "decision-table" | "table";
+      caption: BilingualText;
+      headers: BilingualRow;
+      rows: BilingualRow[];
+    }
+  | {
+      kind: "state-transition";
+      caption: BilingualText;
+      states: string[];
+      transitions: { from: string; event: string; to: string }[];
+      alt: BilingualText;
+    }
+  | {
+      kind: "control-flow";
+      caption: BilingualText;
+      language: string;
+      content: string;
+      alt: BilingualText;
+    }
+  | { kind: "code"; caption: BilingualText; language: string; content: string }
+  | { kind: "image"; caption: BilingualText; src: string; alt: BilingualText };
+
 export interface QuestionContent {
   stem: string;
   options: QuestionOption[];
@@ -167,7 +234,7 @@ export interface Question {
   origin: "original";
   status: QuestionStatus;
   correct: string[];
-  media: unknown | null;
+  media: QuestionMedia | null;
   i18n: Record<Lang, QuestionContent>;
   meta: {
     author: string;
@@ -197,6 +264,18 @@ export interface Terms {
   trSource: string;
   termCount: number;
   terms: Term[];
+  /**
+   * Where the mapping came from, in each language, plus how it was produced.
+   * The glossary screen shows it: a bilingual term list is only worth
+   * anything if the reader can see it was measured rather than translated.
+   */
+  source: {
+    en: string;
+    tr: string;
+    method: string;
+  };
+  /** Editorial note on `trForbidden`, in Turkish. Not rendered. */
+  note?: string;
 }
 
 export interface LessonContent {

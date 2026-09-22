@@ -147,7 +147,7 @@ test("an objective answered correctly is recorded as mastered", async ({ page })
 
   // The question language is set, never inherited from the browser locale:
   // the keyed answers are matched against the ENGLISH option text.
-  await page.getByRole("button", { name: en.question.showEnglish }).click();
+  await page.getByRole("radio", { name: en.question.showEnglish, exact: true }).click();
 
   const startTest = page.getByRole("button", { name: en.study.startTest });
   await expect(startTest).toBeEnabled();

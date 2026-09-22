@@ -8,6 +8,7 @@ import { QuestionNavigator, QuestionNavigatorSheet } from "@/components/Question
 import { RationalePanel } from "@/components/RationalePanel";
 import { ShortcutsOverlay } from "@/components/ShortcutsOverlay";
 import { Spinner } from "@/components/Spinner";
+import { otherLang, readSideBySide, writeSideBySide } from "@/lib/bilingual";
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import { redirectPathFor } from "./routeForAttempt";
 import { useSessionStore } from "./sessionStore";
@@ -152,6 +153,9 @@ export function SessionRunner({
   const previous = useSessionStore((state) => state.previous);
   const setContentLang = useSessionStore((state) => state.setContentLang);
 
+  // F2-06 — read once at mount so the choice survives a reload, then owned
+  // here: it is a display preference, not part of the attempt.
+  const [sideBySide, setSideBySide] = useState(readSideBySide);
   const [navigatorOpen, setNavigatorOpen] = useState(false);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
 
@@ -474,7 +478,15 @@ export function SessionRunner({
           </h1>
 
           <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
-            <ContentLangToggle value={contentLang} onChange={setContentLang} />
+            <ContentLangToggle
+              value={contentLang}
+              sideBySide={sideBySide}
+              onChange={setContentLang}
+              onSideBySideChange={(on) => {
+                setSideBySide(on);
+                writeSideBySide(on);
+              }}
+            />
 
             <button
               type="button"
@@ -531,6 +543,7 @@ export function SessionRunner({
             revealed={isRevealed}
             headingRef={questionHeadingRef}
             counterId={COUNTER_ID}
+            secondaryLang={sideBySide ? otherLang(contentLang) : undefined}
           />
 
           {/* Rendered on every pass and always empty in the markup: `announce`

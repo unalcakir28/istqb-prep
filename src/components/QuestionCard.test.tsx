@@ -38,4 +38,35 @@ describe("QuestionCard", () => {
     // the link between the options and the question they belong to.
     expect(screen.getByRole("radiogroup")).toHaveAccessibleName(`${stem} ${en.exam.selectOne}`);
   });
+
+  describe("side by side (F2-06)", () => {
+    it("shows both languages while keeping one answer per question", () => {
+      render(<QuestionCard question={question} lang="en" selected={[]} secondaryLang="tr" />);
+
+      expect(screen.getByRole("heading", { name: stem, level: 2 })).toBeInTheDocument();
+      expect(screen.getByText(question.i18n.tr.stem)).toBeInTheDocument();
+
+      // The whole point: two texts per choice, not two choices. A second radio
+      // group would let the candidate tick a Turkish option and an English one
+      // and mean a single answer.
+      expect(screen.getAllByRole("radiogroup")).toHaveLength(1);
+      expect(screen.getAllByRole("radio")).toHaveLength(question.i18n.en.options.length);
+    });
+
+    it("puts each option's two languages inside the same control", () => {
+      render(<QuestionCard question={question} lang="en" selected={[]} secondaryLang="tr" />);
+
+      const [first] = screen.getAllByRole("radio");
+      // The label wrapping the input carries both texts, so clicking either
+      // one selects the same option.
+      expect(first.closest("label")).toHaveTextContent(question.i18n.en.options[0].text);
+      expect(first.closest("label")).toHaveTextContent(question.i18n.tr.options[0].text);
+    });
+
+    it("shows one language when no secondary is asked for", () => {
+      render(<QuestionCard question={question} lang="en" selected={[]} />);
+
+      expect(screen.queryByText(question.i18n.tr.stem)).not.toBeInTheDocument();
+    });
+  });
 });

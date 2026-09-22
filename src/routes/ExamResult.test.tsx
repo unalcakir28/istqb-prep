@@ -1,11 +1,19 @@
 import { useEffect } from "react";
-import { render, screen, waitFor } from "@testing-library/react";
-import { MemoryRouter, Route, Routes, useNavigate, type Location } from "react-router-dom";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import {
+  MemoryRouter,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+  type Location,
+} from "react-router-dom";
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 import i18n from "@/lib/i18n";
 import en from "@/lib/i18n/locales/en.json";
-import type { ExamScore } from "@/features/exam/scoreExam";
+import { PRODUCT_NAME } from "@/lib/product";
+import type { ExamScore, QuestionOutcome } from "@/features/exam/scoreExam";
 import type { Attempt, AttemptMode, AttemptScope } from "@/lib/db/db";
 import type { Chapter, Objective, Syllabus } from "@/types/content";
 
@@ -66,6 +74,9 @@ vi.mock("@/lib/content/contentClient", () => ({
 let attempt: Attempt;
 let score: ExamScore;
 
+/** Replaced by the retry tests so they can assert what the screen asked for. */
+let startSession: (options: unknown) => Promise<string | null> = () => Promise.resolve(null);
+
 vi.mock("@/features/session/sessionStore", () => ({
   useSessionStore: (selector: (state: unknown) => unknown) =>
     selector({
@@ -74,6 +85,7 @@ vi.mock("@/features/session/sessionStore", () => ({
       contentLang: "en",
       loading: false,
       loadSubmitted: () => Promise.resolve(),
+      startSession: (options: unknown) => startSession(options),
     }),
 }));
 
@@ -120,6 +132,34 @@ function makeScore(points: number, totalPoints: number): ExamScore {
   };
 }
 
+/** One outcome, defaulted to a plain wrong answer. */
+function outcome(
+  questionId: string,
+  flags: { isCorrect: boolean; isUnanswered?: boolean },
+): QuestionOutcome {
+  return {
+    questionId,
+    chapter: 1,
+    objectives: ["FL-1.1.1"],
+    kLevel: "K2",
+    selected: [],
+    correct: ["a"],
+    isCorrect: flags.isCorrect,
+    isUnanswered: flags.isUnanswered ?? false,
+    points: flags.isCorrect ? 1 : 0,
+  };
+}
+
+/**
+ * Where the router ended up. The retry button's whole job is to leave for a
+ * NEW attempt, and a test that only asserts what `startSession` was asked for
+ * would pass with the navigation deleted.
+ */
+function LocationProbe() {
+  const location = useLocation();
+  return <span data-testid="location">{location.pathname}</span>;
+}
+
 /**
  * `entry` is what the history stack starts with. A bare string is a cold load;
  * a partial location carrying a `key` is a reload, because the browser restores
@@ -129,8 +169,11 @@ function makeScore(points: number, totalPoints: number): ExamScore {
 function renderResult(entry: string | Partial<Location> = `/sonuc/${ATTEMPT_ID}`) {
   return render(
     <MemoryRouter initialEntries={[entry]}>
+      <LocationProbe />
       <Routes>
         <Route path="/sonuc/:attemptId" element={<ExamResult />} />
+        {/* Stands in for the practice session the retry button leaves for. */}
+        <Route path="/alistirma/:attemptId" element={null} />
       </Routes>
     </MemoryRouter>,
   );
@@ -235,16 +278,100 @@ describe("ExamResult verdict", () => {
   });
 });
 
+describe("ExamResult retry the ones you missed", () => {
+  /** A set where one was wrong, one was right and one was never reached. */
+  function scoreWithOutcomes(): ExamScore {
+    return {
+      ...makeScore(1, 3),
+      outcomes: [
+        outcome("q-wrong", { isCorrect: false, isUnanswered: false }),
+        outcome("q-right", { isCorrect: true, isUnanswered: false }),
+        outcome("q-skipped", { isCorrect: false, isUnanswered: true }),
+      ],
+    };
+  }
+
+  const retryLabel = en.result.retryMissed_one.replace("{{count}}", "1");
+
+  it("starts a practice attempt over the wrong answers only, leaving the unanswered out", async () => {
+    attempt = makeAttempt("exam", { kind: "blueprint" });
+    score = scoreWithOutcomes();
+
+    let asked: Record<string, unknown> | null = null;
+    startSession = (options) => {
+      asked = options as Record<string, unknown>;
+      return Promise.resolve("attempt-2");
+    };
+
+    renderResult();
+    const button = await screen.findByRole("button", { name: retryLabel });
+    fireEvent.click(button);
+
+    await waitFor(() => {
+      expect(asked).not.toBeNull();
+    });
+
+    // A question nobody reached teaches nothing about a wrong belief, and a
+    // right answer is not something to re-sit.
+    expect(asked!.scope).toEqual({
+      kind: "questions",
+      questionIds: ["q-wrong"],
+      source: "wrong",
+    });
+    expect(asked!.mode).toBe("practice");
+    // The point of the retry is the reasoning, and every question in the set
+    // was seen by definition.
+    expect(asked!.instantFeedback).toBe(true);
+    expect(asked!.excludeSeen).toBe(false);
+    expect(asked!.durationMinutes).toBeNull();
+
+    // The new attempt, not a re-queue inside the one just scored.
+    expect(screen.getByTestId("location")).toHaveTextContent("/alistirma/attempt-2");
+  });
+
+  it("is not offered when nothing was answered wrongly", async () => {
+    attempt = makeAttempt("exam", { kind: "blueprint" });
+    score = { ...makeScore(3, 3), outcomes: [outcome("q1", { isCorrect: true })] };
+
+    renderResult();
+    await screen.findByRole("heading", { name: en.result.title, level: 1 });
+
+    expect(screen.queryByRole("button", { name: retryLabel })).not.toBeInTheDocument();
+  });
+
+  it("brings the button back when the pool can no longer supply the set", async () => {
+    attempt = makeAttempt("exam", { kind: "blueprint" });
+    score = scoreWithOutcomes();
+    startSession = () => Promise.resolve(null);
+
+    renderResult();
+    const button = await screen.findByRole("button", { name: retryLabel });
+    fireEvent.click(button);
+
+    // A dead button would leave the candidate with no way to learn that
+    // nothing happened. It uses `aria-disabled` rather than `disabled` so it
+    // keeps focus while the session is being built, so that is what is
+    // asserted here.
+    await waitFor(() => {
+      expect(screen.getByRole("button", { name: retryLabel })).toHaveAttribute(
+        "aria-disabled",
+        "false",
+      );
+    });
+    expect(screen.getByTestId("location")).toHaveTextContent(`/sonuc/${ATTEMPT_ID}`);
+  });
+});
+
 describe("ExamResult title and focus", () => {
   it("replaces the title the session left behind", async () => {
     attempt = makeAttempt("exam", { kind: "blueprint" });
     score = makeScore(26, 40);
 
-    document.title = "Question 40 of 40 · ISTQB-PREP";
+    document.title = `Question 40 of 40 · ${PRODUCT_NAME}`;
     renderResult();
     await screen.findByRole("heading", { name: en.result.title, level: 1 });
 
-    expect(document.title).toBe(`${en.result.title} · ${en.app.name}`);
+    expect(document.title).toBe(`${en.result.title} · ${PRODUCT_NAME}`);
   });
 
   it("leaves focus alone when the URL is opened cold", async () => {

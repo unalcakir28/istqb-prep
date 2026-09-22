@@ -72,8 +72,15 @@ export interface ExamScore {
   outcomes: QuestionOutcome[];
 }
 
-/** Order-independent exact set equality. */
-function isExactMatch(selected: readonly string[], correct: readonly string[]): boolean {
+/**
+ * Order-independent exact set equality.
+ *
+ * Exported because the saved lists (F2-07) replay old answers outside a
+ * session and must decide "was this right?" by exactly the rule that scored
+ * it at the time — a second implementation would eventually disagree with
+ * this one and the lists would contradict the result screens.
+ */
+export function isExactMatch(selected: readonly string[], correct: readonly string[]): boolean {
   if (selected.length !== correct.length) return false;
 
   const expected = new Set(correct);

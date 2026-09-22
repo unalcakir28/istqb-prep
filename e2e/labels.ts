@@ -3,6 +3,13 @@ import type { Locator, Page } from "@playwright/test";
 import en from "../src/lib/i18n/locales/en.json" with { type: "json" };
 
 /**
+ * The product name is not an i18n string — it is one constant the app and the
+ * HTML shell both read (F0-17), so a spec asserting a document title reads it
+ * from there rather than from a locale that no longer carries it.
+ */
+export { PRODUCT_NAME } from "../src/lib/product";
+
+/**
  * UI strings for the selectors, read from the shipped English locale instead
  * of being retyped here. The specs select by accessible name, so a copy change
  * in `en.json` must fail the test rather than silently leave a selector

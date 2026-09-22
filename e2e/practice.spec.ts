@@ -9,6 +9,7 @@ import {
   optionInputs,
   partial,
   pattern,
+  PRODUCT_NAME,
   questionCounter,
 } from "./labels";
 
@@ -180,7 +181,7 @@ test("finishing a practice session is confirmed before it scores", async ({ page
 
   // The result replaces the session with no page load: without these it
   // inherits "Question 10 of 10" as its title and says nothing on arrival.
-  await expect(page).toHaveTitle(`${en.result.title} · ${en.app.name}`);
+  await expect(page).toHaveTitle(`${en.result.title} · ${PRODUCT_NAME}`);
   await expect(heading).toBeFocused();
 });
 

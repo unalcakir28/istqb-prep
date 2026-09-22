@@ -146,7 +146,11 @@ export function QuestionNavigatorSheet({ open, onClose, ...grid }: QuestionNavig
   const { t } = useTranslation();
   const panelRef = useRef<HTMLDivElement>(null);
 
-  useDialogFocus(open, panelRef, onClose);
+  // Land on the question the user is on, not on Close. The desktop panel was
+  // fixed for this and the sheet was not (F2-13); `aria-current="true"` is the
+  // grid's own marker for the current cell, so the selector cannot drift from
+  // what the cell renders.
+  useDialogFocus(open, panelRef, onClose, { initialFocus: '[aria-current="true"]' });
 
   if (!open) return null;
 

@@ -34,7 +34,7 @@ export function remainingSeconds(ms: number): number {
   return Math.ceil(ms / 1000);
 }
 
-/** `mm:ss`; the exam never exceeds 75 minutes, so hours are not needed. */
+/** `mm:ss`; the exam is 60 minutes, so an hours field would never fill. */
 export function formatRemaining(ms: number): string {
   const total = remainingSeconds(ms);
   const minutes = Math.floor(total / 60);

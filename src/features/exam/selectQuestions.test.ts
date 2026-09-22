@@ -92,6 +92,43 @@ describe("selectQuestions", () => {
     expect(result.questionIds).toEqual(["q5"]);
   });
 
+  it("takes exactly the named questions, whatever chapter they belong to", () => {
+    const result = selectQuestions({
+      scope: { kind: "questions", questionIds: ["q1", "q4"], source: "wrong" },
+      blueprint: EMPTY_BLUEPRINT,
+      pool: POOL,
+      seed: 7,
+    });
+
+    expect(result.questionIds.sort()).toEqual(["q1", "q4"]);
+    expect(result.shortfalls).toEqual([]);
+  });
+
+  it("reports a named question the pool no longer publishes rather than dropping it", () => {
+    const result = selectQuestions({
+      scope: { kind: "questions", questionIds: ["q1", "retired-1"], source: "wrong" },
+      blueprint: EMPTY_BLUEPRINT,
+      pool: POOL,
+      seed: 7,
+    });
+
+    expect(result.questionIds).toEqual(["q1"]);
+    expect(result.shortfalls).toEqual([{ kind: "scope", required: 2, available: 1 }]);
+  });
+
+  it("ignores `exclude` for a named set — every question in it was seen by definition", () => {
+    const result = selectQuestions({
+      scope: { kind: "questions", questionIds: ["q1", "q2"], source: "wrong" },
+      blueprint: EMPTY_BLUEPRINT,
+      pool: POOL,
+      seed: 7,
+      exclude: new Set(["q1", "q2"]),
+    });
+
+    expect(result.questionIds.sort()).toEqual(["q1", "q2"]);
+    expect(result.shortfalls).toEqual([]);
+  });
+
   it("delegates the blueprint scope to generateExam and tags its shortfalls", () => {
     const blueprint: ExamBlueprint = {
       ...EMPTY_BLUEPRINT,

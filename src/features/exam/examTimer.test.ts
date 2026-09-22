@@ -41,8 +41,10 @@ describe("formatRemaining", () => {
     expect(formatRemaining(0)).toBe("00:00");
   });
 
-  it("covers the full 75 minute duration without overflowing", () => {
-    expect(formatRemaining(75 * 60_000)).toBe("75:00");
+  // The exam's full 60 minutes is the boundary where an hours-aware formatter
+  // would roll over to "01:00:00" or, worse, to "00:00".
+  it("covers the full 60 minute duration without overflowing", () => {
+    expect(formatRemaining(60 * 60_000)).toBe("60:00");
   });
 });
 

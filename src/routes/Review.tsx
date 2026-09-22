@@ -13,22 +13,18 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import { ContentLangToggle } from "@/components/ContentLangToggle";
 import { ErrorNotice } from "@/components/ErrorNotice";
+import { SegmentedControl } from "@/components/SegmentedControl";
 import { QuestionCard } from "@/components/QuestionCard";
 import { RationalePanel } from "@/components/RationalePanel";
 import { Spinner } from "@/components/Spinner";
 import { useSessionStore } from "@/features/session/sessionStore";
-import { CONTENT_LANGUAGES } from "@/lib/i18n";
+import { otherLang, readSideBySide, writeSideBySide } from "@/lib/bilingual";
 import { useArrivalFocus } from "@/lib/useArrivalFocus";
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
 
 type Filter = "all" | "wrong";
-
-/** A two-segment button group — the filter and the question language share one look. */
-function segmentClasses(active: boolean): string {
-  if (active) return "rounded-[6px] bg-accent px-3 py-1.5 text-xs font-semibold text-accent-fg";
-  return "rounded-[6px] px-3 py-1.5 text-xs font-medium text-fg-muted hover:text-fg";
-}
 
 /** An unanswered question is stated separately from a wrong one; colour alone is not enough (WCAG 1.4.1). */
 function OutcomeBadge({ isCorrect, answered }: { isCorrect: boolean; answered: boolean }) {
@@ -67,6 +63,9 @@ export default function Review() {
   const loadSubmitted = useSessionStore((state) => state.loadSubmitted);
 
   const [filter, setFilter] = useState<Filter>("all");
+  // Read once at mount, so the choice made during the session is still in
+  // force on the review that follows it.
+  const [sideBySide, setSideBySide] = useState(readSideBySide);
 
   const ready = Boolean(attemptId && attempt?.id === attemptId && score);
 
@@ -101,42 +100,29 @@ export default function Review() {
         </h1>
 
         <div className="flex flex-wrap items-center gap-3">
-          <div
-            role="group"
-            aria-label={t("review.title")}
-            className="flex rounded-[var(--radius-btn)] border border-border p-0.5"
-          >
-            {(["all", "wrong"] as const).map((value) => (
-              <button
-                key={value}
-                type="button"
-                onClick={() => setFilter(value)}
-                aria-pressed={filter === value}
-                className={segmentClasses(filter === value)}
-              >
-                {value === "all" ? t("review.all") : `${t("review.onlyWrong")} (${wrongIds.size})`}
-              </button>
-            ))}
-          </div>
+          <SegmentedControl<Filter>
+            label={t("review.title")}
+            name="review-filter"
+            value={filter}
+            onChange={setFilter}
+            size="md"
+            options={[
+              { value: "all", label: t("review.all") },
+              { value: "wrong", label: `${t("review.onlyWrong")} (${wrongIds.size})` },
+            ]}
+          />
 
-          <div
-            role="group"
-            aria-label={t("question.contentLang")}
-            className="flex rounded-[var(--radius-btn)] border border-border p-0.5"
-          >
-            {CONTENT_LANGUAGES.map((option) => (
-              <button
-                key={option.value}
-                type="button"
-                onClick={() => setContentLang(option.value)}
-                aria-pressed={contentLang === option.value}
-                lang={option.value}
-                className={segmentClasses(contentLang === option.value)}
-              >
-                {option.label}
-              </button>
-            ))}
-          </div>
+          <ContentLangToggle
+            value={contentLang}
+            sideBySide={sideBySide}
+            onChange={setContentLang}
+            onSideBySideChange={(on) => {
+              setSideBySide(on);
+              writeSideBySide(on);
+            }}
+            name="review-content-lang"
+            size="md"
+          />
 
           <Link
             to={`/sonuc/${attempt.id}`}
@@ -176,6 +162,7 @@ export default function Review() {
                   selected={selected}
                   revealed
                   headingLevel={3}
+                  secondaryLang={sideBySide ? otherLang(contentLang) : undefined}
                 />
 
                 <RationalePanel

@@ -2,6 +2,7 @@ import type { RefObject } from "react";
 import { useTranslation } from "react-i18next";
 
 import { CitationChips } from "./CitationChips";
+import { ReportQuestionLink } from "./ReportQuestionLink";
 import type { Lang, Question } from "@/types/content";
 
 /**
@@ -145,13 +146,20 @@ export function RationalePanel({
         </dl>
       </div>
 
-      <CitationChips
-        objectives={question.objectives}
-        syllabusRef={question.syllabusRef}
-        kLevel={question.kLevel}
-        syllabusVersion={question.syllabusVersion}
-        className="pt-1"
-      />
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-1">
+        <CitationChips
+          objectives={question.objectives}
+          syllabusRef={question.syllabusRef}
+          kLevel={question.kLevel}
+          syllabusVersion={question.syllabusVersion}
+        />
+
+        {/* F2-08 — the report link lives here rather than on the question card
+            because this is the only place a candidate can see the keyed answer
+            and its reasoning, which is what they need in order to know that
+            something is actually wrong. */}
+        <ReportQuestionLink question={question} lang={lang} selected={selected} />
+      </div>
     </section>
   );
 }

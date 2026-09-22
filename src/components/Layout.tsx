@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { Spinner } from "./Spinner";
 import { setUiLanguage, UI_LANGUAGES, type UiLanguage } from "@/lib/i18n";
+import { PRODUCT_NAME } from "@/lib/product";
 import {
   applyTheme,
   readThemePreference,
@@ -104,10 +105,30 @@ export function Layout() {
         <header className="border-b border-border bg-surface">
           <div className="mx-auto flex max-w-5xl items-center gap-4 px-4 py-3">
             <Link to="/" className="font-semibold tracking-tight">
-              {t("app.name")}
+              {PRODUCT_NAME}
             </Link>
 
             <nav className="ml-auto hidden items-center gap-1 sm:flex">
+              <NavLink
+                to="/listelerim"
+                className={({ isActive }) =>
+                  isActive
+                    ? "rounded-[var(--radius-btn)] px-3 py-1.5 text-sm font-medium text-fg"
+                    : "rounded-[var(--radius-btn)] px-3 py-1.5 text-sm text-fg-muted hover:text-fg"
+                }
+              >
+                {t("nav.lists")}
+              </NavLink>
+              <NavLink
+                to="/sozluk"
+                className={({ isActive }) =>
+                  isActive
+                    ? "rounded-[var(--radius-btn)] px-3 py-1.5 text-sm font-medium text-fg"
+                    : "rounded-[var(--radius-btn)] px-3 py-1.5 text-sm text-fg-muted hover:text-fg"
+                }
+              >
+                {t("nav.glossary")}
+              </NavLink>
               <NavLink
                 to="/kaynaklar"
                 className={({ isActive }) =>
@@ -140,6 +161,14 @@ export function Layout() {
             <span>{t("footer.disclaimerShort")}</span>
             <Link to="/kaynaklar" className="underline underline-offset-2 hover:text-fg">
               {t("footer.sources")}
+            </Link>
+            {/* The top nav is hidden below `sm`, so without this the saved
+                lists have no entry point at all on a phone. */}
+            <Link to="/listelerim" className="underline underline-offset-2 hover:text-fg sm:hidden">
+              {t("nav.lists")}
+            </Link>
+            <Link to="/sozluk" className="underline underline-offset-2 hover:text-fg sm:hidden">
+              {t("nav.glossary")}
             </Link>
           </div>
         </footer>

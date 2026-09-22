@@ -32,6 +32,15 @@ export interface OptionListProps {
   correct?: string[];
   /** Space-separated ids naming the group — the stem and the instruction. */
   labelledBy?: string;
+  /**
+   * F2-06 — the same options in the other language, matched by option id.
+   *
+   * They go INSIDE each row's own `<label>` rather than into a second column
+   * of rows, because two parallel radio groups would be two answers to one
+   * question: the candidate could tick a Turkish option and an English one and
+   * mean a single choice. One group, two texts per choice.
+   */
+  secondary?: { lang: Lang; options: QuestionOption[] };
 }
 
 const ROW =
@@ -74,9 +83,13 @@ export function OptionList({
   revealed = false,
   correct = [],
   labelledBy,
+  secondary,
 }: OptionListProps) {
   const { t } = useTranslation();
   const multi = selectCount > 1;
+  const secondaryText = new Map(
+    (secondary?.options ?? []).map((option) => [option.id, option.text]),
+  );
 
   return (
     /* The group replaces the former `<ul>`: "list, 4 items" on top of
@@ -112,8 +125,19 @@ export function OptionList({
               {position + 1}
             </span>
 
-            <span lang={lang} className="flex-1 text-[16px] leading-relaxed">
-              {option.text}
+            <span className="flex flex-1 flex-col gap-1">
+              <span lang={lang} className="text-[16px] leading-relaxed">
+                {option.text}
+              </span>
+
+              {secondary && secondaryText.has(option.id) ? (
+                <span
+                  lang={secondary.lang}
+                  className="border-l-2 border-border pl-3 text-[15px] leading-relaxed text-fg-muted"
+                >
+                  {secondaryText.get(option.id)}
+                </span>
+              ) : null}
             </span>
 
             {showAsCorrect ? (

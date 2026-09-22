@@ -24,13 +24,28 @@ export type AttemptStatus = "in-progress" | "submitted" | "abandoned";
 export type AttemptMode = "study" | "practice" | "exam";
 
 /**
+ * Why a set of explicit question ids was assembled.
+ *
+ * Stored on the attempt rather than inferred, so the result screen can name
+ * what the candidate just worked through without a lookup keyed by mode.
+ */
+export type QuestionSetSource = "wrong" | "flagged" | "shaky";
+
+/**
  * What the session was asked to cover. `blueprint` is the official 40-question
- * distribution; the other two are scoped selections used by practice and study.
+ * distribution; the rest are scoped selections used by practice and study.
+ *
+ * `questions` is a named list rather than a rule — the questions a candidate
+ * got wrong, or the ones they flagged. It is what makes "try the ones you
+ * missed" (F2-02) and the saved lists (F2-07) one feature instead of two:
+ * both hand `selectQuestions` a set of ids and let it report what the pool can
+ * still supply.
  */
 export type AttemptScope =
   | { kind: "blueprint" }
   | { kind: "chapter"; chapters: number[]; count: number }
-  | { kind: "objective"; objectives: string[]; count: number };
+  | { kind: "objective"; objectives: string[]; count: number }
+  | { kind: "questions"; questionIds: string[]; source: QuestionSetSource };
 
 export interface Attempt {
   id: string;
