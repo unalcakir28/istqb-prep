@@ -1,6 +1,14 @@
 import { test, expect, type Page } from "@playwright/test";
 
-import { en, fill, pattern } from "./labels";
+import {
+  answerCurrentQuestion,
+  en,
+  fill,
+  optionInputs,
+  partial,
+  pattern,
+  questionCounter,
+} from "./labels";
 
 /**
  * F1-15 — full exam flow: home -> setup -> session -> result -> review.
@@ -8,7 +16,10 @@ import { en, fill, pattern } from "./labels";
  * a screen reader sees. Adding `data-testid` would break that link.
  *
  * The names themselves come from `en.json` via `./labels`, so UI copy has a
- * single owner.
+ * single owner — and so do the session helpers. This file used to keep its own
+ * copies of them; the shared ones scope every option locator to the question
+ * card's `<article>`, which no setup screen renders, so they cannot resolve
+ * against a setup screen's own radios and checkboxes mid-navigation.
  */
 
 /** Every test starts from a clean browser state: no half-finished exam leaks in. */
@@ -31,31 +42,6 @@ async function clearStorage(page: Page): Promise<void> {
   await page.reload();
 }
 
-/** Option controls: radio for a single-answer question, checkbox for a multi. */
-function options(page: Page) {
-  return page.getByRole("radio").or(page.getByRole("checkbox"));
-}
-
-/** Ticks as many options as the visible question requires. */
-async function answerCurrentQuestion(page: Page): Promise<void> {
-  const checkboxes = page.getByRole("checkbox");
-  const isMulti = (await checkboxes.count()) > 0;
-
-  if (!isMulti) {
-    await page.getByRole("radio").first().check();
-    return;
-  }
-
-  // A "WHICH TWO" question — exactly two options get ticked.
-  await checkboxes.nth(0).check();
-  await checkboxes.nth(1).check();
-}
-
-/** The question counter, with the total left open as a capture group. */
-function counterPattern(current: number) {
-  return pattern(en.exam.question, { current: String(current), total: "(\\d+)" });
-}
-
 test.beforeEach(async ({ page }) => {
   await clearStorage(page);
 });
@@ -64,15 +50,15 @@ test("a full exam is set up, answered and reviewed from the home page", async ({
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 
   await page.getByRole("link", { name: en.home.startExam }).click();
-  await expect(page).toHaveURL(/\/deneme$/);
+  await expect(page).toHaveURL(/\/sinav$/);
 
   await page.getByRole("button", { name: en.setup.start }).click();
-  await expect(page).toHaveURL(/\/deneme\/[\w-]+$/);
+  await expect(page).toHaveURL(/\/sinav\/[\w-]+$/);
 
   // The total question count comes from meta.json; it is not hard-coded here.
-  const counter = page.getByText(counterPattern(1));
+  const counter = page.getByText(questionCounter(1));
   await expect(counter).toBeVisible();
-  const total = Number((await counter.innerText()).match(counterPattern(1))![1]);
+  const total = Number((await counter.innerText()).match(questionCounter(1))![1]);
   expect(total).toBeGreaterThan(0);
 
   for (let index = 1; index <= total; index += 1) {
@@ -86,14 +72,27 @@ test("a full exam is set up, answered and reviewed from the home page", async ({
   await page.getByRole("button", { name: en.exam.confirmSubmit }).click();
 
   await expect(page).toHaveURL(/\/sonuc\/[\w-]+$/);
-  await expect(page.getByRole("heading", { name: en.result.title, level: 1 })).toBeVisible();
+  const resultHeading = page.getByRole("heading", { name: en.result.title, level: 1 });
+  await expect(resultHeading).toBeVisible();
   // Everything was answered: the score cannot exceed the total and nothing is left empty.
   const score = pattern(en.result.score, { points: "\\d+", total: String(total) });
   await expect(page.getByText(score).first()).toBeVisible();
 
+  // The other side of C1's branch. A blueprint attempt is measured against the
+  // official pass mark, and that verdict must survive the fix that drops it
+  // for a scoped practice set.
+  await expect(page.getByText(partial(en.result.passLine, { pass: "\\d+" })).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: en.result.retake })).toBeVisible();
+
+  await expect(page).toHaveTitle(`${en.result.title} · ${en.app.name}`);
+  await expect(resultHeading).toBeFocused();
+
   await page.getByRole("link", { name: en.result.review }).click();
   await expect(page).toHaveURL(/\/inceleme\/[\w-]+$/);
-  await expect(page.getByRole("heading", { name: en.review.title, level: 1 })).toBeVisible();
+  const reviewHeading = page.getByRole("heading", { name: en.review.title, level: 1 });
+  await expect(reviewHeading).toBeVisible();
+  await expect(page).toHaveTitle(`${en.review.title} · ${en.app.name}`);
+  await expect(reviewHeading).toBeFocused();
   // The product's main differentiator: a per-option rationale on every question.
   await expect(page.getByText(en.review.perOption).first()).toBeVisible();
 });
@@ -101,11 +100,17 @@ test("a full exam is set up, answered and reviewed from the home page", async ({
 test("an unfinished exam resumes from the home page", async ({ page }) => {
   await page.getByRole("link", { name: en.home.startExam }).click();
   await page.getByRole("button", { name: en.setup.start }).click();
-  await expect(page).toHaveURL(/\/deneme\/[\w-]+$/);
+  await expect(page).toHaveURL(/\/sinav\/[\w-]+$/);
+  // The counter is the one thing only a mounted session screen renders, which
+  // makes it the guard to wait on after navigating in. Belt-and-braces, not
+  // load-bearing: every option locator below goes through the question-card
+  // scope, which cannot resolve on the setup screen either. It stays because
+  // the navigation itself is worth asserting.
+  await expect(page.getByText(questionCounter(1))).toBeVisible();
 
   await answerCurrentQuestion(page);
   await page.getByRole("button", { name: en.exam.next }).click();
-  await expect(page.getByText(counterPattern(2))).toBeVisible();
+  await expect(page.getByText(questionCounter(2))).toBeVisible();
   const sessionUrl = page.url();
 
   await page.goto("/");
@@ -120,23 +125,24 @@ test("an unfinished exam resumes from the home page", async ({ page }) => {
 
   // An unfinished exam resumes at the FIRST UNANSWERED question
   // (resumeAttempt); question 1 is answered, so it must open on question 2.
-  await expect(page.getByText(counterPattern(2))).toBeVisible();
+  await expect(page.getByText(questionCounter(2))).toBeVisible();
 
   await page.getByRole("button", { name: en.exam.previous }).click();
-  await expect(page.getByText(counterPattern(1))).toBeVisible();
-  await expect(options(page).first()).toBeChecked();
+  await expect(page.getByText(questionCounter(1))).toBeVisible();
+  await expect(optionInputs(page).first()).toBeChecked();
 });
 
 test("the selected answer survives a question-language switch", async ({ page }) => {
   await page.getByRole("link", { name: en.home.startExam }).click();
   await page.getByRole("button", { name: en.setup.start }).click();
-  // The setup screen also has radios (duration and language) and React Router
-  // keeps it on screen until the next one loads. Without first asserting that
-  // the session is up, `.check()` can hit a duration radio by mistake.
-  await expect(page).toHaveURL(/\/deneme\/[\w-]+$/);
-  await expect(page.getByText(counterPattern(1))).toBeVisible();
+  // The setup screen has radios of its own (duration, language) and React
+  // Router keeps it on screen until the session's chunk paints. `optionInputs`
+  // is scoped to the question card and cannot match them, but the stem read
+  // below is unscoped, so the session is asserted up before anything is read.
+  await expect(page).toHaveURL(/\/sinav\/[\w-]+$/);
+  await expect(page.getByText(questionCounter(1))).toBeVisible();
 
-  const first = options(page).first();
+  const first = optionInputs(page).first();
   await first.check();
 
   // The starting question language depends on the interface language, which
@@ -155,5 +161,5 @@ test("the selected answer survives a question-language switch", async ({ page })
   await page.getByRole("button", { name: en.question.showEnglish }).click();
   await expect(stem).not.toHaveText(turkishStem);
 
-  await expect(options(page).first()).toBeChecked();
+  await expect(optionInputs(page).first()).toBeChecked();
 });
