@@ -33,3 +33,6 @@ public/data/
 # Never redistributed: their copyright notice forbids any use beyond
 # attributed excerpts without ISTQB written approval (docs/08, D-07).
 .sources/
+
+# Lighthouse CI report output
+.lighthouseci/

@@ -75,7 +75,7 @@ Priority: **P0** blocks the next phase from starting · **P1** required within t
 
 - [x] **F1-15** `P1` E2E (Playwright): the full 40-question mock exam flow, resuming an unfinished attempt, the answer being preserved when the question language changes — `e2e/exam.spec.ts`. Practice and study have their own specs (`e2e/practice.spec.ts`, `e2e/study.spec.ts`), and my lists plus the glossary have `e2e/lists-and-glossary.spec.ts`; **57 specs across 5 files** under `yarn e2e`
 - [x] **F1-18** `P1` `@axe-core/playwright` — 0 violations in light **and** dark theme on the home, exam setup, practice setup, sources, exam, study chapter list, chapter objective list and study objective screens, plus a revealed practice answer; alongside the hand-written specs for what axe cannot see (focus destinations, accessible names, live regions) — `e2e/a11y.spec.ts`
-- [ ] **F1-19** `P2` Lighthouse CI — ≥95 in all 4 categories. **Blocked on a decision, not on work:** it needs `@lhci/cli` as a dev dependency, and adding a package is the user's call (CLAUDE.md). Ask before installing
+- [x] **F1-19** `P2` **Done 22.09.2026.** Lighthouse CI asserts ≥95 in all 4 categories. `@lhci/cli@0.15.1` was approved and added as a dev dependency; `lighthouserc.json` holds the thresholds, `yarn lighthouse` runs it, and the CI job runs it after the e2e step. First local run: performance 99, accessibility 100, best practices 100, SEO 100. The step clears `GITHUB_ACTIONS` for its build, because lhci serves the bundle from its own static server at `/` and vite's base would otherwise be `/istqb-prep/`
 
 ### Content and pages
 

@@ -69,13 +69,14 @@ yarn test               # Vitest (unit)
 yarn e2e                # Playwright: 57 specs across 5 files — flow + axe accessibility (its own dev server, 5183)
 yarn e2e:ui             # the same specs in Playwright's UI mode
 yarn build              # tsc -b && vite build (CI gate)
+yarn lighthouse         # lhci autorun — asserts >=95 in all 4 categories; needs `yarn build` first
 yarn lint && yarn typecheck && yarn format
 yarn format:write       # prettier --write (yarn format is check-only, it fails CI)
 ```
 
 **After editing data, in order:** `yarn build:index && yarn validate:data`.
 
-**CI gate, in order:** `lint → format → typecheck → test → validate:data → validate:i18n → build → e2e`. All eight must be green.
+**CI gate, in order:** `lint → format → typecheck → test → validate:data → validate:i18n → build → e2e → lighthouse`. All nine must be green.
 
 ## Folder structure
 

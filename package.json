@@ -22,6 +22,7 @@
     "publish:questions": "tsx scripts/publish-questions.ts --kind questions",
     "e2e": "playwright test",
     "e2e:ui": "playwright test --ui",
+    "lighthouse": "lhci autorun",
     "publish:lessons": "tsx scripts/publish-questions.ts --kind lessons"
   },
   "dependencies": {
@@ -37,6 +38,7 @@
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",
     "@eslint/js": "9.39.5",
+    "@lhci/cli": "0.15.1",
     "@playwright/test": "1.63.0",
     "@tailwindcss/vite": "4.3.3",
     "@testing-library/dom": "10.4.2",

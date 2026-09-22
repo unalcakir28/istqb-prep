@@ -19,6 +19,7 @@ yarn dev              # the app
 yarn validate:data    # 23 data checks — must be green on every PR
 yarn test             # unit tests
 yarn e2e              # Playwright: flow + axe accessibility
+yarn lighthouse       # Lighthouse CI: >=95 in all 4 categories (run yarn build first)
 ```
 
 ---

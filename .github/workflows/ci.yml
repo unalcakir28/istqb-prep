@@ -64,3 +64,21 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 7
+
+      # Lighthouse asserts >=95 in all four categories (F1-19). It audits the
+      # built bundle through lhci's own static server, so it needs a build
+      # whose asset URLs are rooted at "/" — GITHUB_ACTIONS is cleared for
+      # this one build, the same reason playwright.config.ts clears it, or
+      # vite's base becomes /istqb-prep/ and every asset 404s.
+      - name: Lighthouse
+        run: yarn build && yarn lighthouse
+        env:
+          GITHUB_ACTIONS: ""
+
+      - name: Upload Lighthouse reports on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: .lighthouseci/
+          retention-days: 7
