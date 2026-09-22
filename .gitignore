@@ -25,3 +25,6 @@ public/data/
 *.tsbuildinfo
 *.png
 !docs/**/*.png
+
+# SDD scratch workspace (subagent-driven-development ledger, briefs, reports)
+.superpowers/
