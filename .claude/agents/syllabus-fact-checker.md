@@ -2,6 +2,7 @@
 name: syllabus-fact-checker
 description: Checks whether a claim about ISTQB CTFL v4.0.1 is actually supported by this repository's verified sources, and answers with supported / contradicted / unverified. Use before writing any exam fact into data/, docs/ or code, and whenever a number, term or rule about the exam is asserted and nobody has cited a source for it. Read-only.
 tools: Read, Grep, Glob, Bash
+model: sonnet
 ---
 
 # Syllabus fact checker

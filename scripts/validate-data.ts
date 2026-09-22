@@ -70,6 +70,9 @@ const CHECKS: Record<number, CheckDef> = {
   18: { num: 18, level: "error", name: "Does a published lesson record meta.reviewedBy" },
   19: { num: 19, level: "error", name: "Is lessons/index.json consistent with the lesson chunk files" },
   20: { num: 20, level: "warning", name: "At least 1 published lesson per LO" },
+  21: { num: 21, level: "warning", name: "A term.trForbidden word used in Turkish text" },
+  22: { num: 22, level: "warning", name: "Is the keyed option the longest one too often" },
+  23: { num: 23, level: "warning", name: "Do the keyed letters run a rotation in file order" },
 };
 
 interface Issue {
@@ -266,6 +269,165 @@ function findTerminologyLeaks(text: string, patterns: LeakPattern[]): Array<{ en
   }
 
   return [...found.values()];
+}
+
+// ---------------------------------------------------------------------------
+// #21 — a banned Turkish word used as if it were the term
+//
+// `terms.json` carries a `trForbidden` list per term: the plausible-looking
+// Turkish words that are NOT the syllabus's. #13 never reads that list — it
+// only catches an untranslated ENGLISH word sitting in Turkish text — so until
+// this check existed, `kusur` for defect and `test izleme` for test monitoring
+// shipped into published content and were found by hand, chunk by chunk.
+//
+// Three exclusions, each for a different reason:
+//
+//  1. A forbidden word that is some OTHER term's correct `tr`. `hata` is banned
+//     for `error` and for `failure`, and is the right word for `defect`. Scanning
+//     for it flags every correct sentence in the pool.
+//  2. `testware`, which the guide marks as an accepted loanword rather than a
+//     mistranslation — the same exclusion #13's table already makes.
+//  3. Words that are also ordinary Turkish in a different grammatical role.
+//     `kapsama` is banned as a noun for `coverage` but is the dative of
+//     `kapsam` ("makul bir kapsama ulaşmak"); `test durumu` is banned for
+//     `test case` but is the natural phrase for "test status"; and
+//     `teknik gözden geçirme` is banned as a rendering of `walkthrough` while
+//     being the name of a real review type in its own right. A check that
+//     cannot tell those apart teaches authors to ignore it.
+//
+// A warning, not an error, for the same reason #13 is: the remaining matches
+// still need a human to read the sentence.
+// ---------------------------------------------------------------------------
+
+const FORBIDDEN_AMBIGUOUS = new Set(["kapsama", "test durumu", "teknik gözden geçirme", "testware"]);
+
+interface ForbiddenPattern {
+  word: string;
+  en: string;
+  tr: string;
+  regex: RegExp;
+}
+
+/**
+ * Turkish-aware lowercasing that preserves length, so match offsets stay valid.
+ *
+ * `"I".toLowerCase()` is `"i"` in the default locale but `"ı"` in Turkish, and
+ * the terms are full of dotted and dotless i. Without this, "Test İzleme" does
+ * not match the pattern built from "test izleme".
+ */
+function foldTr(text: string): string {
+  return text.replace(/İ/g, "i").replace(/I/g, "ı").toLowerCase();
+}
+
+function buildForbiddenPatterns(termsDoc: any): ForbiddenPattern[] {
+  const terms: any[] = Array.isArray(termsDoc?.terms) ? termsDoc.terms : [];
+  const correctTr = new Set(terms.map((term) => foldTr(String(term?.tr ?? "").trim())).filter((tr) => tr.length > 0));
+  const patterns = new Map<string, ForbiddenPattern>();
+
+  for (const term of terms) {
+    const en = String(term?.en ?? "").trim();
+    const tr = String(term?.tr ?? "").trim();
+    const forbidden: string[] = Array.isArray(term?.trForbidden) ? term.trForbidden : [];
+
+    for (const raw of forbidden) {
+      const word = String(raw ?? "").trim();
+      if (word.length === 0) continue;
+
+      const folded = foldTr(word);
+      if (correctTr.has(folded)) continue;
+      if (FORBIDDEN_AMBIGUOUS.has(folded)) continue;
+      if (patterns.has(folded)) continue;
+
+      // `\b` is ASCII-only, so it treats ç/ğ/ı/ö/ş/ü as boundaries and would
+      // match "hata" inside "hatalar". The explicit character class keeps a
+      // suffixed Turkish word from matching its own stem.
+      patterns.set(folded, {
+        word,
+        en,
+        tr,
+        regex: new RegExp(`(?<![0-9a-zçğıöşü])${escapeRegExp(folded)}(?![0-9a-zçğıöşü])`, "g"),
+      });
+    }
+  }
+
+  return [...patterns.values()];
+}
+
+function findForbiddenTerms(text: string, patterns: ForbiddenPattern[]): ForbiddenPattern[] {
+  const folded = foldTr(text);
+  const spans = parenSpans(folded);
+  const found: ForbiddenPattern[] = [];
+
+  for (const pattern of patterns) {
+    pattern.regex.lastIndex = 0;
+    let match: RegExpExecArray | null;
+
+    while ((match = pattern.regex.exec(folded)) !== null) {
+      // A gloss is allowed to name the wrong word in order to reject it:
+      // "hata (defect, not 'kusur')" is teaching, not a violation.
+      const from = match.index;
+      const to = from + match[0].length;
+      if (spans.some(([open, close]) => from > open && to <= close)) continue;
+
+      found.push(pattern);
+      break;
+    }
+  }
+
+  return found;
+}
+
+/** Every Turkish string a reader will see, labelled by where it sits. */
+function trFieldsOfQuestion(tr: any): Array<{ label: string; text: string }> {
+  const fields: Array<{ label: string; text: string }> = [];
+  if (isNonEmptyString(tr?.stem)) fields.push({ label: "stem", text: tr.stem });
+  for (const opt of Array.isArray(tr?.options) ? tr.options : []) {
+    if (isNonEmptyString(opt?.text)) fields.push({ label: `options[${opt.id}]`, text: opt.text });
+  }
+  if (isNonEmptyString(tr?.rationale?.summary)) fields.push({ label: "rationale.summary", text: tr.rationale.summary });
+  for (const [optId, text] of Object.entries(tr?.rationale?.byOption ?? {})) {
+    if (isNonEmptyString(text)) fields.push({ label: `rationale.byOption.${optId}`, text: text as string });
+  }
+  for (const hint of Array.isArray(tr?.hints) ? tr.hints : []) {
+    if (isNonEmptyString(hint)) fields.push({ label: "hints[]", text: hint });
+  }
+  return fields;
+}
+
+function trFieldsOfLesson(tr: any): Array<{ label: string; text: string }> {
+  const fields: Array<{ label: string; text: string }> = [];
+  if (isNonEmptyString(tr?.title)) fields.push({ label: "title", text: tr.title });
+  for (const [key, label] of [["paragraphs", "paragraphs"], ["keyPoints", "keyPoints"], ["commonMistakes", "commonMistakes"]] as const) {
+    const list = Array.isArray(tr?.[key]) ? tr[key] : [];
+    list.forEach((text: unknown, index: number) => {
+      if (isNonEmptyString(text)) fields.push({ label: `${label}[${index}]`, text: text as string });
+    });
+  }
+  return fields;
+}
+
+function checkForbiddenTurkishTerms(
+  questions: QuestionRecord[],
+  lessons: LessonRecord[],
+  patterns: ForbiddenPattern[],
+): void {
+  if (patterns.length === 0) return;
+
+  const scan = (refId: string, file: string, fields: Array<{ label: string; text: string }>): void => {
+    for (const field of fields) {
+      for (const hit of findForbiddenTerms(field.text, patterns)) {
+        report(
+          21,
+          file,
+          refId,
+          `Banned Turkish term in the TR text (${field.label}): '${hit.word}'. terms.json lists it under trForbidden for '${hit.en}'; the syllabus term is '${hit.tr}'. terms.json is the authority even where the official TR syllabus writes otherwise — see docs/07-content-authoring-guide.md §5.`,
+        );
+      }
+    }
+  };
+
+  for (const { question, file } of questions) scan(question.id, file, trFieldsOfQuestion(question.i18n?.tr));
+  for (const { lesson, file } of lessons) scan(lesson.objective, file, trFieldsOfLesson(lesson.i18n?.tr));
 }
 
 // ---------------------------------------------------------------------------
@@ -473,6 +635,211 @@ function checkAnswerPositionBalance(questions: QuestionRecord[], file: string): 
       file,
       undefined,
       `Correct answer disproportionately falls on option '${optionId}'. Expected: ~${expected.toFixed(1)} (${total} single-choice questions / ${positions} options); Found: ${count}. Rotate and relabel the options.`,
+    );
+  }
+}
+
+/**
+ * #22 — Is the keyed option the longest one too often?
+ *
+ * The sibling of #14, and it exists for the same reason: a cue that lets a
+ * candidate score without reading the question. #14 watches WHICH LETTER the
+ * key falls on; this one watches HOW LONG the key is. A writer who states the
+ * right answer completely and the wrong ones in a clause produces a pool where
+ * "pick the longest option" beats studying, and #14 sees nothing wrong with it.
+ *
+ * Both languages are measured, and a question counts as cued if EITHER cues.
+ * The first version of this check read English only, on the assumption that the
+ * two track each other. They do not: one chunk came back 8/19 in English and
+ * 3/19 in Turkish, another the other way round. A candidate reads one language,
+ * and it only has to leak in the one they read.
+ *
+ * Multi-select counts too, against the N longest options where N is the number
+ * of keys. The first version skipped it — `type !== "single"` — and a review
+ * found a five-option question whose two keys were ranks 1 and 2 by length in
+ * both languages, so "pick the two longest" scored it perfectly and CI saw
+ * nothing.
+ *
+ * Aggregate over the whole pool rather than per chunk, exactly as #14 does: in
+ * a 20-question chunk the ratio swings on chance, across 250 it does not. With
+ * four options and one key the expected rate is 25%; the gate is 40%, loose
+ * enough that an honest pool clears it and a systematic habit does not. When it
+ * fires it names the worst chunks, because the fix is per chunk.
+ */
+/**
+ * Do the N longest options in this language happen to be exactly the N keys?
+ *
+ * A tie between a key and one distractor still counts: it narrows a four-way
+ * choice to a coin flip, which is most of the advantage. A tie across ALL the
+ * options does not, and must not — four options of identical length carry no
+ * information at all, so "pick the longest" returns the whole set. The first
+ * version of this check missed that distinction and flagged a decision-table
+ * question whose four options were four equal-length lists of records; the fix
+ * for the phantom finding made the options inconsistent with each other, which
+ * was a real defect introduced to satisfy a false one.
+ */
+function keysAreLongest(options: any[], keys: Set<string>): boolean {
+  const lengths: Array<{ id: string; length: number }> = [];
+  for (const option of options) {
+    if (isNonEmptyString(option?.id) && isNonEmptyString(option?.text)) {
+      lengths.push({ id: option.id, length: option.text.length });
+    }
+  }
+
+  if (lengths.length <= keys.size) return false;
+  for (const key of keys) {
+    if (!lengths.some((entry) => entry.id === key)) return false;
+  }
+
+  // The shortest key has to beat every non-key for the cue to work.
+  const shortestKey = Math.min(...lengths.filter((entry) => keys.has(entry.id)).map((entry) => entry.length));
+  const longestOther = Math.max(...lengths.filter((entry) => !keys.has(entry.id)).map((entry) => entry.length));
+  if (shortestKey < longestOther) return false;
+
+  // ...and something has to be shorter, or "the longest" names every option.
+  return lengths.some((entry) => entry.length < shortestKey);
+}
+
+function checkAnswerLengthCue(questions: QuestionRecord[], file: string): void {
+  const byChunk = new Map<string, { total: number; cued: number }>();
+  let total = 0;
+  let cued = 0;
+
+  for (const { question, file: chunkFile } of questions) {
+    const keys: string[] = Array.isArray(question?.correct) ? question.correct.filter(isNonEmptyString) : [];
+    if (keys.length === 0) continue;
+
+    const keySet = new Set(keys);
+    const languages = ["tr", "en"] as const;
+    let measured = false;
+    let isCued = false;
+
+    for (const lang of languages) {
+      const options: any[] = question.i18n?.[lang]?.options;
+      if (!Array.isArray(options) || options.length < 2) continue;
+
+      measured = true;
+      if (keysAreLongest(options, keySet)) isCued = true;
+    }
+
+    if (!measured) continue;
+
+    total += 1;
+    if (isCued) cued += 1;
+
+    const name = path.basename(chunkFile, ".json");
+    const bucket = byChunk.get(name) ?? { total: 0, cued: 0 };
+    bucket.total += 1;
+    if (isCued) bucket.cued += 1;
+    byChunk.set(name, bucket);
+  }
+
+  if (total < 40) return;
+
+  const rate = cued / total;
+  if (rate <= 0.4) return;
+
+  const worst = [...byChunk]
+    .filter(([, bucket]) => bucket.total >= 10 && bucket.cued / bucket.total > 0.4)
+    .sort((a, b) => b[1].cued / b[1].total - a[1].cued / a[1].total)
+    .map(([name, bucket]) => `${name} ${bucket.cued}/${bucket.total}`)
+    .join(", ");
+
+  report(
+    22,
+    file,
+    undefined,
+    `The keyed options are the longest ones in ${cued} of ${total} questions (${(rate * 100).toFixed(0)}%), counting a question as cued if it cues in Turkish or in English. Expected: ~25% by chance on a four-option single, gate 40%. A candidate who always picks the longest option — or, on a multi-select, the N longest — scores at that rate without reading the stem. Worst chunks: ${worst}. Trim the key: its trailing clause is usually the rationale leaking into the option.`,
+  );
+}
+
+/**
+ * #23 — Do the keyed letters run a rotation in file order?
+ *
+ * The third sibling of #14. #14 counts how often each letter is the key and
+ * #22 measures how long the key is; neither looks at the ORDER. A writer
+ * spreading answers "evenly" by hand produces a b c d a b c d …, which passes
+ * #14 with perfect counts and lets a candidate predict the next answer from
+ * the last one.
+ *
+ * Two real cases forced this check: one chunk ran a → c → b → d for twelve of
+ * its twenty-nine questions in three separate cycles, and another ran
+ * a → b → c → d unbroken across thirteen consecutive questions. Both were
+ * found by a human reading the file, after #14 had passed them.
+ *
+ * It matters because nothing shuffles options at runtime and study mode walks
+ * an objective's questions in id order, so the candidate sees exactly the
+ * sequence written here.
+ *
+ * Measured per chunk, not pooled: a rotation is a local writing habit, and
+ * pooling would average it away against the chunks that do not have one. The
+ * statistic is the longest run of a constant step between consecutive keys
+ * (a → b → c → d is a constant step of 1; a → a → a is a constant step of 0,
+ * which #14 also catches, but only once it dominates the whole pool). With
+ * four options a run of five happens by chance often enough to be noise, so
+ * the gate is seven.
+ *
+ * A pass is a floor, not a clean bill: this finds the longest run and says
+ * nothing about three short cycles scattered through a chunk. A human reading
+ * the keyed letters in order still catches more.
+ */
+function checkAnswerPositionSequence(questions: QuestionRecord[]): void {
+  const byChunk = new Map<string, { keys: string[]; file: string }>();
+
+  for (const { question, file } of questions) {
+    if (question?.type !== "single") continue;
+
+    const key = Array.isArray(question.correct) ? question.correct[0] : undefined;
+    if (!isNonEmptyString(key)) continue;
+
+    const name = path.basename(file, ".json");
+    const bucket = byChunk.get(name) ?? { keys: [], file };
+    bucket.keys.push(key);
+    byChunk.set(name, bucket);
+  }
+
+  const RUN_GATE = 7;
+
+  for (const [, { keys, file }] of byChunk) {
+    if (keys.length < RUN_GATE) continue;
+
+    const positions = keys.map((key) => key.charCodeAt(0) - "a".charCodeAt(0));
+    const modulus = Math.max(...positions) + 1;
+    if (modulus < 2) continue;
+
+    let bestLength = 1;
+    let bestStart = 0;
+    let bestStep = 0;
+    let runLength = 1;
+    let runStart = 0;
+    let previousStep: number | null = null;
+
+    for (let i = 1; i < positions.length; i += 1) {
+      const step = (positions[i] - positions[i - 1] + modulus) % modulus;
+
+      if (step === previousStep) {
+        runLength += 1;
+      } else {
+        runLength = 2;
+        runStart = i - 1;
+        previousStep = step;
+      }
+
+      if (runLength > bestLength) {
+        bestLength = runLength;
+        bestStart = runStart;
+        bestStep = step;
+      }
+    }
+
+    if (bestLength < RUN_GATE) continue;
+
+    const run = keys.slice(bestStart, bestStart + bestLength).join(" → ");
+    report(
+      23,
+      file,
+      undefined,
+      `The keyed letters run a rotation of step ${bestStep} across ${bestLength} consecutive single-choice questions: ${run}. Check #14 passes this, because the letter COUNTS are even — it is the order that gives the answer away, and nothing shuffles options at runtime. Re-order the options (moving each rationale with its option) on enough of the run to break it, then confirm the counts are still balanced.`,
     );
   }
 }
@@ -892,10 +1259,16 @@ function validateCertification(certEntry: any): void {
   const termsDoc = fs.existsSync(termsFile) ? readJson(termsFile) : null;
   checkTerminologyLeakage(allQuestions, buildLeakPatterns(termsDoc));
   checkAnswerPositionBalance(allQuestions, indexFile);
+  checkAnswerLengthCue(allQuestions, indexFile);
+  checkAnswerPositionSequence(allQuestions);
   checkNoOptionLetterReferences(allQuestions);
 
   // lessons/
-  validateLessonsDir(path.join(certDir, "lessons"), objectiveCodes, objectivesByCode, objectivesFile);
+  const allLessons = validateLessonsDir(path.join(certDir, "lessons"), objectiveCodes, objectivesByCode, objectivesFile);
+
+  // #21 runs over questions AND lessons together: one banned word is one
+  // finding wherever a candidate reads it.
+  checkForbiddenTurkishTerms(allQuestions, allLessons, buildForbiddenPatterns(termsDoc));
 
   validateGlossaryDir(path.join(certDir, "glossary"));
 }
@@ -905,8 +1278,8 @@ function validateLessonsDir(
   objectiveCodes: Set<string>,
   objectivesByCode: Map<string, any>,
   objectivesFile: string,
-): void {
-  if (!fs.existsSync(lessonsDir)) return; // not built yet — nothing to validate
+): LessonRecord[] {
+  if (!fs.existsSync(lessonsDir)) return []; // not built yet — nothing to validate
 
   const lessonIndexFile = path.join(lessonsDir, "index.json");
   const lessonIndex = readJson(lessonIndexFile);
@@ -941,6 +1314,8 @@ function validateLessonsDir(
   checkLessonPublishedHasReviewer(allLessons);
   checkLessonIndexConsistency(lessonIndex, lessonIndexFile, allLessons, chunkByObjective);
   checkLessonCoverage(objectivesByCode, allLessons, objectivesFile);
+
+  return allLessons;
 }
 
 // ---------------------------------------------------------------------------

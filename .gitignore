@@ -28,3 +28,8 @@ public/data/
 
 # SDD scratch workspace (subagent-driven-development ledger, briefs, reports)
 .superpowers/
+
+# Official ISTQB/TTB source PDFs, downloaded for reading only.
+# Never redistributed: their copyright notice forbids any use beyond
+# attributed excerpts without ISTQB written approval (docs/08, D-07).
+.sources/

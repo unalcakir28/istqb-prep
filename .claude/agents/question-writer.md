@@ -2,6 +2,7 @@
 name: question-writer
 description: Writes new bilingual CTFL exam questions into data/*/questions/ from a given learning objective, with a rationale for every option, at status "review". Use when the pool needs more questions for an objective, when `yarn stats` shows objectives below the target, or when the user asks for new questions. Writes files; it does not publish them.
 tools: Read, Grep, Glob, Bash, Edit, Write
+model: sonnet
 ---
 
 # Question writer

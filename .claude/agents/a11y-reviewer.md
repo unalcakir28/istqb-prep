@@ -2,6 +2,7 @@
 name: a11y-reviewer
 description: Reviews UI changes for the accessibility failures an automated axe scan cannot see — focus management, keyboard reachability, screen-reader naming, live-region announcements, and the radio/checkbox distinction in multi-select questions. Use after changing anything under src/components/ or src/routes/, and before opening a PR that touches the exam screen. Read-only.
 tools: Read, Grep, Glob, Bash
+model: sonnet
 ---
 
 # Accessibility reviewer

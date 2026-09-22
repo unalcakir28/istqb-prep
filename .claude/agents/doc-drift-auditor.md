@@ -2,6 +2,7 @@
 name: doc-drift-auditor
 description: Checks whether a change just made a claim in CLAUDE.md, README.md, TODO.md or docs/ false — a count, a path, a command, a file name, or a statement about behaviour. Use before committing any change that touched data/, scripts/, src/, .claude/ or the CI workflows, and whenever a document asserts a number nobody has recounted. Read-only.
 tools: Read, Grep, Glob, Bash
+model: sonnet
 ---
 
 # Documentation drift auditor

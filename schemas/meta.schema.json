@@ -28,7 +28,6 @@
         "passPoints": { "type": "integer" },
         "passPercent": { "type": "number" },
         "durationMinutes": { "type": "integer" },
-        "extendedDurationMinutes": { "type": "integer" },
         "pointsPerQuestion": { "type": "integer" },
         "negativeMarking": {
           "type": ["boolean", "null"],
@@ -37,6 +36,22 @@
         "questionKLevelDistribution": { "type": "object" }
       }
     },
-    "sources": { "type": "object" }
+    "sources": { "type": "object" },
+    "officialSampleExams": {
+      "type": "array",
+      "description": "Where the official sample exams live on the member board's own site. Links only — their copyright notice permits attributed excerpts for non-commercial use and prohibits every other use without ISTQB's written approval, so their questions are never reproduced here (docs/08 K-1, ADR-0004).",
+      "items": {
+        "type": "object",
+        "required": ["set", "lang", "url", "publisher"],
+        "additionalProperties": false,
+        "properties": {
+          "set": { "type": "string" },
+          "lang": { "enum": ["tr", "en"] },
+          "url": { "type": "string", "format": "uri" },
+          "publisher": { "type": "string" },
+          "documentVersion": { "type": "string" }
+        }
+      }
+    }
   }
 }

@@ -3,91 +3,390 @@
   "$id": "https://istqb-prep/schemas/question.schema.json",
   "title": "Question chunk",
   "type": "object",
-  "required": ["chunk", "chapter", "dataVersion", "questions"],
+  "required": [
+    "chunk",
+    "chapter",
+    "dataVersion",
+    "questions"
+  ],
   "additionalProperties": false,
   "properties": {
-    "chunk": { "type": "string", "pattern": "^ch[0-9]{2}-[a-z]$" },
-    "chapter": { "type": "integer", "minimum": 1, "maximum": 6 },
-    "dataVersion": { "type": "string" },
-    "questions": { "type": "array", "items": { "$ref": "#/$defs/question" } }
+    "chunk": {
+      "type": "string",
+      "pattern": "^ch[0-9]{2}-[a-z]$"
+    },
+    "chapter": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 6
+    },
+    "dataVersion": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/question"
+      }
+    }
   },
   "$defs": {
     "localized": {
       "type": "object",
-      "required": ["stem", "options", "rationale"],
+      "required": [
+        "stem",
+        "options",
+        "rationale"
+      ],
       "additionalProperties": false,
       "properties": {
-        "stem": { "type": "string", "minLength": 10 },
+        "stem": {
+          "type": "string",
+          "minLength": 10
+        },
         "options": {
           "type": "array",
           "minItems": 2,
           "maxItems": 6,
           "items": {
             "type": "object",
-            "required": ["id", "text"],
+            "required": [
+              "id",
+              "text"
+            ],
             "additionalProperties": false,
             "properties": {
-              "id": { "type": "string", "pattern": "^[a-f]$" },
-              "text": { "type": "string", "minLength": 1 }
+              "id": {
+                "type": "string",
+                "pattern": "^[a-f]$"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              }
             }
           }
         },
         "rationale": {
           "type": "object",
-          "required": ["summary", "byOption"],
+          "required": [
+            "summary",
+            "byOption"
+          ],
           "additionalProperties": false,
           "properties": {
-            "summary": { "type": "string", "minLength": 20 },
+            "summary": {
+              "type": "string",
+              "minLength": 20
+            },
             "byOption": {
               "type": "object",
               "description": "Must be filled in for EVERY option. CI also checks this.",
               "minProperties": 2,
-              "patternProperties": { "^[a-f]$": { "type": "string", "minLength": 15 } },
+              "patternProperties": {
+                "^[a-f]$": {
+                  "type": "string",
+                  "minLength": 15
+                }
+              },
               "additionalProperties": false
             }
           }
         },
-        "hints": { "type": "array", "items": { "type": "string" } }
+        "hints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "bilingualText": {
+      "type": "object",
+      "required": [
+        "tr",
+        "en"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "tr": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "bilingualRow": {
+      "type": "object",
+      "required": [
+        "tr",
+        "en"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "tr": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "en": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
       }
     },
     "media": {
-      "type": "object",
-      "required": ["kind"],
-      "properties": {
-        "kind": { "enum": ["decision-table", "state-transition", "control-flow", "code", "table", "image"] },
-        "caption": { "type": "object" },
-        "headers": { "type": "object" },
-        "rows": { "type": "array" },
-        "states": { "type": "array", "items": { "type": "string" } },
-        "transitions": { "type": "array" },
-        "language": { "type": "string" },
-        "content": { "type": "string" },
-        "src": { "type": "string" },
-        "alt": { "type": "object" }
-      }
+      "description": "Figures a question needs. Every kind is renderable as text: there is no image-only figure, because a candidate using a screen reader sits the same exam.",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "caption",
+            "headers",
+            "rows"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "decision-table"
+            },
+            "caption": {
+              "$ref": "#/$defs/bilingualText"
+            },
+            "headers": {
+              "$ref": "#/$defs/bilingualRow"
+            },
+            "rows": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/bilingualRow"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "caption",
+            "headers",
+            "rows"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "table"
+            },
+            "caption": {
+              "$ref": "#/$defs/bilingualText"
+            },
+            "headers": {
+              "$ref": "#/$defs/bilingualRow"
+            },
+            "rows": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/bilingualRow"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "caption",
+            "states",
+            "transitions",
+            "alt"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "state-transition"
+            },
+            "caption": {
+              "$ref": "#/$defs/bilingualText"
+            },
+            "states": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "transitions": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "from",
+                  "event",
+                  "to"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "event": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "to": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            },
+            "alt": {
+              "$ref": "#/$defs/bilingualText"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "caption",
+            "language",
+            "content",
+            "alt"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "control-flow"
+            },
+            "caption": {
+              "$ref": "#/$defs/bilingualText"
+            },
+            "language": {
+              "type": "string",
+              "minLength": 1
+            },
+            "content": {
+              "type": "string",
+              "minLength": 1
+            },
+            "alt": {
+              "$ref": "#/$defs/bilingualText"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "caption",
+            "language",
+            "content"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "code"
+            },
+            "caption": {
+              "$ref": "#/$defs/bilingualText"
+            },
+            "language": {
+              "type": "string",
+              "minLength": 1
+            },
+            "content": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "caption",
+            "src",
+            "alt"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "image"
+            },
+            "caption": {
+              "$ref": "#/$defs/bilingualText"
+            },
+            "src": {
+              "type": "string",
+              "minLength": 1
+            },
+            "alt": {
+              "$ref": "#/$defs/bilingualText"
+            }
+          }
+        }
+      ]
     },
     "question": {
       "type": "object",
       "required": [
-        "id", "revision", "syllabusVersion", "chapter", "syllabusRef",
-        "objectives", "kLevel", "type", "selectCount", "points",
-        "origin", "status", "correct", "i18n", "meta"
+        "id",
+        "revision",
+        "syllabusVersion",
+        "chapter",
+        "syllabusRef",
+        "objectives",
+        "kLevel",
+        "type",
+        "selectCount",
+        "points",
+        "origin",
+        "status",
+        "correct",
+        "i18n",
+        "meta"
       ],
       "additionalProperties": false,
       "allOf": [
         {
           "description": "status CANNOT be 'published' while meta.reviewedBy is empty (rule from CLAUDE.md and docs/04).",
           "if": {
-            "properties": { "status": { "const": "published" } },
-            "required": ["status"]
+            "properties": {
+              "status": {
+                "const": "published"
+              }
+            },
+            "required": [
+              "status"
+            ]
           },
           "then": {
             "properties": {
               "meta": {
                 "type": "object",
-                "required": ["reviewedBy"],
+                "required": [
+                  "reviewedBy"
+                ],
                 "properties": {
-                  "reviewedBy": { "type": "string", "minLength": 1 }
+                  "reviewedBy": {
+                    "type": "string",
+                    "minLength": 1
+                  }
                 }
               }
             }
@@ -95,50 +394,143 @@
         }
       ],
       "properties": {
-        "id": { "type": "string", "pattern": "^[a-z0-9]+-[0-9]{4}$" },
-        "revision": { "type": "integer", "minimum": 1 },
-        "syllabusVersion": { "type": "string" },
-        "chapter": { "type": "integer", "minimum": 1, "maximum": 6 },
-        "section": { "type": "string" },
-        "syllabusRef": { "type": "string", "pattern": "^§[0-9]+(\\.[0-9]+)*$" },
-        "objectives": {
-          "type": "array", "minItems": 1,
-          "items": { "type": "string", "pattern": "^FL-[0-9]+\\.[0-9]+\\.[0-9]+$" }
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+-[0-9]{4}$"
         },
-        "kLevel": { "enum": ["K1", "K2", "K3"] },
-        "type": { "enum": ["single", "multi"] },
-        "selectCount": { "type": "integer", "minimum": 1, "maximum": 3 },
-        "points": { "type": "integer", "minimum": 1 },
-        "difficulty": { "type": "integer", "minimum": 1, "maximum": 3 },
-        "tags": { "type": "array", "items": { "type": "string" } },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "syllabusVersion": {
+          "type": "string"
+        },
+        "chapter": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6
+        },
+        "section": {
+          "type": "string"
+        },
+        "syllabusRef": {
+          "type": "string",
+          "pattern": "^§[0-9]+(\\.[0-9]+)*$"
+        },
+        "objectives": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^FL-[0-9]+\\.[0-9]+\\.[0-9]+$"
+          }
+        },
+        "kLevel": {
+          "enum": [
+            "K1",
+            "K2",
+            "K3"
+          ]
+        },
+        "type": {
+          "enum": [
+            "single",
+            "multi"
+          ]
+        },
+        "selectCount": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "points": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "difficulty": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "origin": {
-          "enum": ["original", "adapted", "community"],
+          "enum": [
+            "original",
+            "adapted",
+            "community"
+          ],
           "description": "There is no 'official' value — official questions are never copied. See docs/08-legal-and-copyright.md"
         },
-        "status": { "enum": ["draft", "review", "published", "retired"] },
-        "correct": { "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^[a-f]$" } },
-        "media": { "oneOf": [{ "$ref": "#/$defs/media" }, { "type": "null" }] },
+        "status": {
+          "enum": [
+            "draft",
+            "review",
+            "published",
+            "retired"
+          ]
+        },
+        "correct": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f]$"
+          }
+        },
+        "media": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/media"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
         "i18n": {
           "type": "object",
-          "required": ["tr", "en"],
+          "required": [
+            "tr",
+            "en"
+          ],
           "additionalProperties": false,
           "properties": {
-            "tr": { "$ref": "#/$defs/localized" },
-            "en": { "$ref": "#/$defs/localized" }
+            "tr": {
+              "$ref": "#/$defs/localized"
+            },
+            "en": {
+              "$ref": "#/$defs/localized"
+            }
           }
         },
         "meta": {
           "type": "object",
-          "required": ["author", "reviewedBy", "createdAt", "updatedAt"],
+          "required": [
+            "author",
+            "reviewedBy",
+            "createdAt",
+            "updatedAt"
+          ],
           "additionalProperties": false,
           "properties": {
-            "author": { "type": "string" },
+            "author": {
+              "type": "string"
+            },
             "reviewedBy": {
               "type": "string",
               "description": "Empty string = not yet reviewed. MUST be filled in while status='published' (see the allOf/if/then above)."
             },
-            "createdAt": { "type": "string" },
-            "updatedAt": { "type": "string" }
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            }
           }
         }
       }

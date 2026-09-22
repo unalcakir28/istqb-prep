@@ -2,7 +2,7 @@
 name: question-verifier
 description: Adversarially verifies ISTQB CTFL question chunks in data/ before they are published — keyed answer correctness against the official syllabus, per-option rationale quality, K-level honesty, Turkish terminology, answer-position balance, and cross-question answer leakage. Use before running `yarn publish:questions`, after writing or editing any question, and whenever a question's correctness is in doubt. Read-only: it reports findings, it does not edit.
 tools: Read, Grep, Glob, Bash
-model: opus
+model: sonnet
 ---
 
 # Question verifier
