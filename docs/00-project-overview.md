@@ -90,7 +90,7 @@ Roughly three groups:
 
 ## 9. Decisions
 
-The first five open decisions were closed on **19.09.2026** and D-06 on **22.09.2026**. Reopening any of them requires a new justification.
+The first five open decisions were closed on **19.09.2026** and D-06 on **22.09.2026**. D-07 (**22.09.2026**) reopened D-05. Reopening any of them requires a new justification.
 
 | # | Decision | Outcome |
 |---|---|---|
@@ -98,5 +98,6 @@ The first five open decisions were closed on **19.09.2026** and D-06 on **22.09.
 | D-02 | Register a domain? | ✅ **No** — `*.github.io` is enough. This preserves the "0 ₺ monthly infrastructure cost" goal; a domain can be added later via CNAME if the need arises. |
 | D-03 | Content license | ✅ **CC BY-SA 4.0**. Rationale: `08 §K-6`. An NC restriction would discourage contribution; SA prevents the content from being absorbed into a closed product. |
 | D-04 | Community question contributions in v1 | ✅ **No**. Editorial quality standards must be established first; question PRs open in Phase 4 (F4-05). Bug reports (F2-08) and code contributions are open from the start. |
-| D-05 | Written permission request to ISTQB | ✅ **No, will not apply**. Asking for permission implies an assumption that permission is required. The legal basis already stands independently on original content (K-1) + non-commercial use (K-2) + attribution (K-3); these hold regardless of any application. In exchange, an official assurance and the possibility of TTB cooperation were knowingly given up. |
+| D-05 | Written permission request to ISTQB | ↩️ **Reopened by D-07.** Original outcome: **No, will not apply**. Asking for permission implies an assumption that permission is required. The legal basis already stands independently on original content (K-1) + non-commercial use (K-2) + attribution (K-3); these hold regardless of any application. In exchange, an official assurance and the possibility of TTB cooperation were knowingly given up. |
 | D-06 | Offer the 75-minute extension? | ✅ **No, removed**. ISTQB's +25% (§6.2.1) is granted to a candidate sitting in a language that is not their own. This product's audience is Turkish candidates sitting the Turkish paper, who get 60 minutes, and what a mock exam simulates is the paper rather than one candidate's entitlement. The exam setup screen therefore has no duration choice, and `meta.json` carries only `durationMinutes`. The fact stays recorded in `docs/03-istqb-reference.md` and in `data/certifications.json`, which catalogues every ISTQB certification rather than describing the exam we run. |
+| D-07 | Reopen D-05: ask for permission to reproduce the official sample exams? | ✅ **Yes, letters sent on 22.09.2026** to TTB and ISTQB (`docs/permission-request/`). The owner chose to ask for written approval to reproduce the four CTFL v4.0.1 sample exams inside the platform; the notice on every sample exam PDF requires **ISTQB's** approval *first*. Nothing usable has come back. Until an approval is filed under `docs/evidence/`, nothing changes: no official question enters `data/`, and `origin` has no `official` value. D-05's legal basis for the authored content (K-1, K-2, K-3) is unaffected. |
