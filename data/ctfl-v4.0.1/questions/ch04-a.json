@@ -100,7 +100,7 @@
     },
     {
       "id": "ctfl4-0056",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 4,
       "section": "4.1",
@@ -147,7 +147,7 @@
             },
             {
               "id": "e",
-              "text": "Gerçek kod kapsamının objektif olarak ölçülmesini sağlar"
+              "text": "Kara kutu ve beyaz kutu test teknikleri de uygulanabilir olduğunda, onların yerine kullanılmalıdır"
             }
           ],
           "rationale": {
@@ -157,7 +157,7 @@
               "b": "Doğru. Tecrübeye dayalı teknikler kara kutu ve beyaz kutu tekniklerinde gözden kaçırılabilecek hataları tespit edebildiği için bu tekniklerin yerine değil, tamamlayıcısı olarak kullanılır.",
               "c": "Yanlış. İç yapının ve işlemlerin analizine dayanan teknikler beyaz kutu (yapı bazlı) tekniklerdir; tecrübeye dayalı teknikler böyle bir analiz gerektirmez.",
               "d": "Yanlış. Bu kısıt beyaz kutu teknikleri için geçerlidir: test senaryoları yazılımın nasıl tasarlandığına bağlı olduğundan ancak tasarım veya kodlamadan sonra oluşturulabilir.",
-              "e": "Yanlış. Objektif kod kapsamı ölçümü beyaz kutu testinin sağladığı bir değerdir; yalnızca kara kutu veya tecrübeye dayalı test yapmak gerçek kod kapsamının ölçülmesini sağlamaz."
+              "e": "Yanlış. Tecrübeye dayalı teknikler kara kutu ve beyaz kutu tekniklerinin yerini almaz, onları tamamlar."
             }
           }
         },
@@ -182,7 +182,7 @@
             },
             {
               "id": "e",
-              "text": "They provide an objective measurement of actual code coverage"
+              "text": "They should be used instead of black-box and white-box test techniques whenever those techniques are also available"
             }
           ],
           "rationale": {
@@ -192,7 +192,7 @@
               "b": "Correct. Experience-based techniques can detect defects that may be missed using black-box and white-box techniques, so they complement rather than replace them.",
               "c": "Incorrect. Techniques based on an analysis of internal structure and processing are the white-box (structure-based) techniques; experience-based techniques require no such analysis.",
               "d": "Incorrect. That constraint applies to white-box techniques: because their test cases depend on how the software is designed, they can only be created after design or implementation.",
-              "e": "Incorrect. Objective measurement of code coverage is a value of white-box testing; performing only black-box or experience-based testing does not provide a measure of actual code coverage."
+              "e": "Incorrect. Experience-based techniques complement black-box and white-box techniques; they are not a replacement for them."
             }
           }
         }
@@ -201,7 +201,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -810,7 +810,7 @@
     },
     {
       "id": "ctfl4-0063",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 4,
       "section": "4.2",
@@ -836,7 +836,7 @@
       "media": null,
       "i18n": {
         "tr": {
-          "stem": "Ücretsiz kargonun, sipariş tutarı 500 ve üzeri olduğunda verilmesi gerekmektedir, yani karar \"tutar >= 500\" olmalıdır. Karar yanlışlıkla \"tutar = 500\" olarak kodlanmıştır. 3 DEĞERLİ sınır değer analizinin gerektirdiği ancak 2 değerli sınır değer analizinin gerektirmediği hangi test değeri bu hatayı ortaya çıkarır?",
+          "stem": "Ücretsiz kargonun, sipariş tutarı 500 ve üzeri olduğunda verilmesi gerekmektedir, yani karar \"tutar >= 500\" olmalıdır. Karar yanlışlıkla \"tutar = 500\" olarak kodlanmıştır. 3 DEĞERLİ sınır değer analizinin gerektirdiği ancak 2 değerli sınır değer analizinin GEREKTİRMEDİĞİ hangi test değeri bu hatayı ortaya çıkarır?",
           "options": [
             {
               "id": "a",
@@ -906,7 +906,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -2096,7 +2096,7 @@
     },
     {
       "id": "ctfl4-0076",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 4,
       "section": "4.3",
@@ -2147,7 +2147,7 @@
               "a": "Yanlış. Bu, kara kutu tekniklerinin bir özelliğidir; onların test senaryoları yazılımın nasıl kodlandığından bağımsızdır. Beyaz kutu test senaryoları tasarıma bağlıdır ve tasarım değişince değişmeleri gerekebilir.",
               "b": "Yanlış. Beyaz kutu teknikleri statik testte de kullanılabilir (ör. kodun deneme koşumları sırasında) ve henüz koşuma hazır olmayan kodun, kaba kodun ve kontrol akış grafiğiyle modellenebilen üst seviye mantığın gözden geçirilmesine uygundur.",
               "c": "Doğru. Beyaz kutu teknikleri kodun tamamını dikkate aldığı için spesifikasyonun zayıf olduğu durumlarda bile hata bulmayı kolaylaştırır.",
-              "d": "Yanlış. Bu, kuvvetli yan değil karşılık gelen zafiyettir: yazılım bir veya daha fazla gereksinimi hiç kodlamadıysa, beyaz kutu testi bu eksiklikten kaynaklanan hataları tespit edemeyebilir."
+              "d": "Yanlış. Hiç uygulanmamış bir gereksinimi tespit edebilmek, spesifikasyondan yola çıktığı için kara kutu testinin sağladığı bir değerdir; beyaz kutu testinin bunun için uygun bir teknik olduğu söylenemez."
             }
           }
         },
@@ -2177,7 +2177,7 @@
               "a": "Incorrect. That is a property of black-box techniques, whose test cases are independent of how the software is implemented. White-box test cases depend on the design and may have to change with it.",
               "b": "Incorrect. White-box test techniques can also be used in static testing (e.g. during dry runs of code) and suit reviewing code not yet ready for execution, pseudocode and other high-level logic that can be modeled with a control flow graph.",
               "c": "Correct. Because white-box techniques take the whole implementation into account, they help find defects even where the specification is weak.",
-              "d": "Incorrect. This is the corresponding weakness, not a strength: if the software does not implement one or more requirements, white-box testing may not detect the resulting defects of omission."
+              "d": "Incorrect. Detecting a requirement that was never implemented at all is a value black-box testing provides, because it works from the specification rather than the code; it is not something white-box testing is well positioned to do."
             }
           }
         }
@@ -2186,7 +2186,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -2381,7 +2381,7 @@
     },
     {
       "id": "ctfl4-0079",
-      "revision": 2,
+      "revision": 3,
       "syllabusVersion": "4.0.1",
       "chapter": 4,
       "section": "4.4",
@@ -2419,7 +2419,7 @@
             },
             {
               "id": "c",
-              "text": "Test uzmanı olası insan hatalarının, hataların ve arızaların bir listesini oluşturur veya elde eder ve bu insan hatalarıyla ilişkili hataları ortaya çıkaracak ya da arızalara yol açacak testler tasarlar"
+              "text": "Test uzmanı olası insan hatalarını, hataları ve arızaları listeler; bunları hedefleyen testler tasarlar"
             },
             {
               "id": "d",
@@ -2449,7 +2449,7 @@
             },
             {
               "id": "c",
-              "text": "The tester creates or acquires a list of possible errors, defects and failures and designs tests that expose those defects or cause those failures"
+              "text": "The tester lists likely errors, defects and failures, then designs tests targeting them"
             },
             {
               "id": "d",
@@ -2471,12 +2471,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-22"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0080",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 4,
       "section": "4.4",
@@ -2506,7 +2506,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Testler belirli bir zaman dilimi içinde, test hedeflerini içeren bir test başlatma belgesi rehberliğinde yapılır ve genelde paydaşlarla bir bilgilendirme toplantısıyla sonuçlanır"
+              "text": "Testler zaman diliminde test başlatma belgesiyle yürütülür ve paydaş bilgilendirmesiyle biter"
             },
             {
               "id": "b",
@@ -2536,7 +2536,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Testing is performed within a defined time box, guided by a test charter containing test objectives, and is usually followed by a debriefing with stakeholders"
+              "text": "Testing runs in a time box guided by a test charter and ends with a stakeholder debriefing"
             },
             {
               "id": "b",
@@ -2566,7 +2566,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -2772,7 +2772,7 @@
     },
     {
       "id": "ctfl4-0083",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 4,
       "section": "4.4",
@@ -2806,7 +2806,7 @@
             },
             {
               "id": "b",
-              "text": "Güncellenmiş bir kontrol listesi ayrıntılı test senaryolarına olan ihtiyacı tamamen ortadan kaldırdığı için"
+              "text": "Çünkü güncellenmiş bir kontrol listesi ayrıntılı test senaryolarına duyulan ihtiyacı tamamen ortadan kaldırır; ekip bundan sonra yalnızca kontrol listesine dayanarak test yürütebilir"
             },
             {
               "id": "c",
@@ -2814,14 +2814,14 @@
             },
             {
               "id": "d",
-              "text": "Geliştiriciler aynı insan hatalarını yapmaktan kaçınmayı öğrendikçe bazı öğeler etkinliğini yitirir ve yeni bulunan yüksek şiddetli hataları yansıtacak yeni öğeler gerekir"
+              "text": "Geliştiriciler aynı insan hatalarını yapmaktan kaçındıkça bazı öğeler zamanla etkisini yitirir; yeni bulunan yüksek şiddetli hatalar için yeni öğeler eklenmelidir"
             }
           ],
           "rationale": {
             "summary": "Bazı kontrol listesi öğeleri zaman içinde etkinliğini yitirir, çünkü geliştiriciler aynı insan hatalarını yapmaktan kaçınmayı öğrenir. Yeni bulunan yüksek şiddetli hataları yansıtmak için yeni öğeler eklenmesi gerekebilir. Bu nedenle listeler hata analizine dayalı olarak düzenli güncellenmeli, ancak çok uzamamasına dikkat edilmelidir.",
             "byOption": {
               "a": "Yanlış. Tersine, kontrol listesinin çok uzun olmamasına dikkat edilmelidir; uzunluk etkinlik ölçüsü değildir.",
-              "b": "Yanlış. Ayrıntılı test senaryolarının olmadığı durumlarda kontrol listesi yol gösterici olabilir ve bir ölçüde tutarlılık sağlar, ama onların yerini almaz.",
+              "b": "Yanlış. Ayrıntılı test senaryolarının olmadığı durumlarda kontrol listesi yol gösterici olabilir ve bir ölçüde tutarlılık sağlar, ama onların yerini tamamen almaz; ekibin senaryo dokümantasyonunu tümüyle bırakabileceği iddiası doğru değildir.",
               "c": "Yanlış. Kontrol listeleri üst seviye olduğunda gerçek testlerde değişkenlik ortaya çıkması muhtemeldir; bu da potansiyel olarak daha büyük kapsam ama daha düşük tekrarlanabilirlik demektir. Güncelleme bu değişkenliği ortadan kaldırmaz.",
               "d": "Doğru. Müfredat hem etkinliğin zamanla azalmasını hem de yeni yüksek şiddetli hatalar için yeni öğe eklenmesi gereğini güncellemenin gerekçesi olarak sayar."
             }
@@ -2836,7 +2836,7 @@
             },
             {
               "id": "b",
-              "text": "Because an updated checklist completely removes the need for detailed test cases"
+              "text": "Because an updated checklist completely removes the need for detailed test cases, so the team can retire its test case documentation and rely on the checklist alone from that point on"
             },
             {
               "id": "c",
@@ -2844,14 +2844,14 @@
             },
             {
               "id": "d",
-              "text": "Some entries gradually become less effective as developers learn to avoid making the same errors, and new entries are needed to reflect newly found high severity defects"
+              "text": "Because developers learn to avoid the same errors, some entries lose effectiveness over time, and new ones are needed for newly found high-severity defects"
             }
           ],
           "rationale": {
             "summary": "Some checklist entries gradually become less effective over time because developers learn to avoid making the same errors, and new entries may need to be added to reflect newly found high severity defects. Checklists should therefore be updated regularly based on defect analysis, while taking care that they do not become too long.",
             "byOption": {
               "a": "Incorrect. On the contrary, care should be taken to avoid letting the checklist become too long; length is not a measure of effectiveness.",
-              "b": "Incorrect. In the absence of detailed test cases a checklist can provide guidelines and some degree of consistency, but it does not replace them.",
+              "b": "Incorrect. In the absence of detailed test cases a checklist can provide guidelines and some degree of consistency, but it does not fully replace them; a team cannot retire its test case documentation on the strength of a checklist alone.",
               "c": "Incorrect. If the checklists are high-level, some variability in the actual testing is likely, resulting in potentially greater coverage but less repeatability. Updating does not remove that variability.",
               "d": "Correct. The syllabus names both the decay in effectiveness and the need for new entries covering newly found high severity defects as the reason for updating."
             }
@@ -2862,12 +2862,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0084",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 4,
       "section": "4.5",
@@ -2901,11 +2901,11 @@
             },
             {
               "id": "b",
-              "text": "Kullanıcı hikayesi kodlandıktan sonra hataların daha hızlı düzeltilmesini sağlamak"
+              "text": "Kodlamadan sonra hataların daha hızlı düzeltilmesini sağlar, çünkü ekip hikayeyi yazımda birlikte tartışmıştır"
             },
             {
               "id": "c",
-              "text": "Üç perspektifi (analiz, yazılım geliştirme ve test etme) dikkate alarak neyin teslim edilmesi gerektiğine yönelik ortak bir vizyon oluşturmak"
+              "text": "Üç perspektifi (iş, geliştirme ve test) dikkate alarak neyin teslim edilmesi gerektiğine yönelik ortak bir vizyon oluşturmak"
             },
             {
               "id": "d",
@@ -2916,7 +2916,7 @@
             "summary": "İş birlikçi kullanıcı hikayesi yazımında beyin fırtınası ve zihin haritası gibi teknikler kullanılabilir. İş birliği, ekibin üç perspektifi dikkate alarak neyin teslim edilmesi gerektiğine yönelik ortak bir vizyon edinmesini sağlar. İyi kullanıcı hikayeleri INVEST ölçütlerini karşılamalıdır.",
             "byOption": {
               "a": "Yanlış. Bu, kara kutu test tekniklerinin bir özelliğidir; iç yapıya atıfta bulunmadan tanımlanmış davranışı analiz ederler. İş birlikçi hikaye yazımının amacı bu değildir.",
-              "b": "Yanlış. İş birliğine dayalı yaklaşımlar hataların iş birliği ve iletişim yoluyla önlenmesine odaklanır; yani hataları kodlamadan sonra hızlı düzeltmeye değil, baştan oluşmasını engellemeye yöneliktir.",
+              "b": "Yanlış. İş birliğine dayalı yaklaşımlar hataların iş birliği ve iletişim yoluyla önlenmesine odaklanır; yani hataları kodlamadan sonra hızlı düzeltmeye değil, baştan oluşmasını engellemeye yöneliktir. Yazım sırasında yapılan tartışma, sonradan yapılacak hata düzeltmeyi kendiliğinden hızlandırmaz.",
               "c": "Doğru. Müfredat iş birliğinin faydasını tam olarak böyle tanımlar: üç perspektifi bir araya getirerek neyin teslim edileceğine dair ortak bir vizyon.",
               "d": "Yanlış. Kabul kriterleri kullanıcı hikayesinin Onay (Confirmation) unsurudur ve genelde bir konuşmanın sonunda ortaya çıkar; otomatik üretilmez, ekipçe yazılır."
             }
@@ -2931,11 +2931,11 @@
             },
             {
               "id": "b",
-              "text": "It makes defects faster to fix once the user story has been implemented"
+              "text": "It makes defects faster to fix after implementation, since the team already discussed the story together"
             },
             {
               "id": "c",
-              "text": "It creates a shared vision of what should be delivered, by taking three perspectives into account: business, development and testing"
+              "text": "It creates a shared vision, across business, development and testing perspectives, of what should be delivered"
             },
             {
               "id": "d",
@@ -2946,7 +2946,7 @@
             "summary": "Collaborative authorship of a user story can use techniques such as brainstorming and mind mapping. The collaboration allows the team to obtain a shared vision of what should be delivered by taking three perspectives into account: business, development and testing. Good user stories should meet the INVEST criteria.",
             "byOption": {
               "a": "Incorrect. That is a property of black-box test techniques, which analyze the specified behavior without reference to internal structure. It is not the purpose of collaborative story writing.",
-              "b": "Incorrect. Collaboration-based approaches focus on defect avoidance through collaboration and communication, i.e. on preventing defects rather than on fixing them faster after implementation.",
+              "b": "Incorrect. Collaboration-based approaches focus on defect avoidance through collaboration and communication, i.e. on preventing defects rather than on fixing them faster after implementation. Having discussed the story together beforehand does not, by itself, speed up later bug-fixing.",
               "c": "Correct. This is exactly how the syllabus describes the benefit of the collaboration: a shared vision of what should be delivered, formed by bringing three perspectives together.",
               "d": "Incorrect. Acceptance criteria are the Confirmation of a user story and are usually a result of the Conversation; they are written by the team, not generated automatically."
             }
@@ -2957,12 +2957,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0085",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 4,
       "section": "4.5",
@@ -2998,7 +2998,7 @@
             },
             {
               "id": "b",
-              "text": "Sepet boşken ödeme düğmesi devre dışıdır."
+              "text": "Sepet boşken ödeme düğmesi devre dışı bırakılır ve kullanıcı ödeme adımına hiçbir şekilde geçemez."
             },
             {
               "id": "c",
@@ -3006,11 +3006,11 @@
             },
             {
               "id": "d",
-              "text": "Girdi-çıktı tablosu: 0 ürün ise uyarı; 1-10 ürün ise ödeme ekranı."
+              "text": "Girdi-çıktı tablosu: sepette 0 ürün varsa uyarı gösterilir; 1 ile 10 arasında ürün varsa ödeme ekranı açılır."
             },
             {
               "id": "e",
-              "text": "Ödeme ekranı 2 saniyeden kısa sürede açılır."
+              "text": "Ödeme ekranı, kullanıcı tıkladıktan sonra 2 saniyeden daha kısa bir sürede açılmalıdır."
             }
           ],
           "rationale": {
@@ -3033,7 +3033,7 @@
             },
             {
               "id": "b",
-              "text": "The checkout button is disabled while the cart is empty."
+              "text": "The checkout button is disabled while the cart is empty, and the user cannot proceed to checkout in any way."
             },
             {
               "id": "c",
@@ -3041,11 +3041,11 @@
             },
             {
               "id": "d",
-              "text": "Input-output table: 0 items produces a warning; 1-10 items opens the checkout screen."
+              "text": "Input-output table: 0 items in the cart produces a warning; between 1 and 10 items opens the checkout screen."
             },
             {
               "id": "e",
-              "text": "The checkout screen opens in under 2 seconds."
+              "text": "The checkout screen must open in under 2 seconds after the user clicks the button."
             }
           ],
           "rationale": {
@@ -3064,7 +3064,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {

@@ -6222,11 +6222,11 @@
       "kLevel": "K1",
       "type": "single",
       "selectCount": 1,
-      "difficulty": 2,
+      "difficulty": 1,
       "hasMedia": false,
       "tags": [
-        "good-testing-practices",
-        "sdlc-independence"
+        "good-practices",
+        "quality-control"
       ],
       "languages": [
         "en",

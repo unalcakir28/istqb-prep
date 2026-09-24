@@ -5,7 +5,7 @@
   "questions": [
     {
       "id": "ctfl4-0088",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 5,
       "section": "5.1",
@@ -42,7 +42,7 @@
             },
             {
               "id": "c",
-              "text": "Her bir testin adım adım aksiyonlarını ve beklenen sonuçlarını listeleyerek testlerin koşturulmasını sağlar"
+              "text": "Her bir testin ön koşullarını, adım adım aksiyonlarını, kullanılacak test verilerini ve beklenen sonuçlarını listeleyerek testlerin koşturulmasını sağlar"
             },
             {
               "id": "d",
@@ -72,7 +72,7 @@
             },
             {
               "id": "c",
-              "text": "It lists the step-by-step actions and expected results of each individual test so that the tests can be executed"
+              "text": "It lists the preconditions, step-by-step actions, test data to be used and the expected results of each individual test case so that the tests can be executed"
             },
             {
               "id": "d",
@@ -94,7 +94,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -193,7 +193,7 @@
     },
     {
       "id": "ctfl4-0090",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 5,
       "section": "5.1",
@@ -222,7 +222,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Test edilebilir kullanıcı hikayelerinin ve kabul kriterlerinin yazım sürecine katılmak"
+              "text": "Proje ve ürün riski analizlerinde yer alarak risklerin belirlenmesine katkı sağlamak"
             },
             {
               "id": "b",
@@ -240,7 +240,7 @@
           "rationale": {
             "summary": "Döngü planlamasında yer alan test uzmanları; kullanıcı hikayelerine ilişkin detaylı risk analizine katılır, kullanıcı hikayelerinin test edilebilirliğini belirler, kullanıcı hikayelerini görevlere (özellikle test görevlerine) ayırır, tüm test görevleri için test eforunu tahmin eder ve test nesnesinin fonksiyonel ve fonksiyonel olmayan unsurlarını belirleyip iyileştirir.",
             "byOption": {
-              "a": "Yanlış. Test edilebilir kullanıcı hikayelerinin ve kabul kriterlerinin yazımına katılmak sürüm planlamasında gerçekleşir.",
+              "a": "Yanlış. Proje ve ürün riski analizlerinde yer almak sürüm planlamasında gerçekleşir; döngü planlamasında ise kullanıcı hikayelerine özgü, daha detaylı bir risk analizi yapılır.",
               "b": "Yanlış. Ürün iş listesinin tanımlanması ve yeniden tanımlanması sürüm planlamasının işidir; döngü planlaması döngüye ait iş listesiyle ilgilenir.",
               "c": "Doğru. Kullanıcı hikayelerinin görevlere, özellikle test görevlerine ayrılması müfredatta döngü planlamasındaki test uzmanı aktiviteleri arasında sayılır.",
               "d": "Yanlış. Test yaklaşımının belirlenmesi ve sürüm için testin planlanması, sürüm planlamasındaki test uzmanı aktivitelerindendir; sürüm planlaması tüm döngülerde test yaklaşımının ve test planının esasını oluşturur."
@@ -252,7 +252,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Participating in writing testable user stories and acceptance criteria"
+              "text": "Taking part in project and product risk analyses"
             },
             {
               "id": "b",
@@ -270,7 +270,7 @@
           "rationale": {
             "summary": "Testers involved in iteration planning participate in the detailed risk analysis of user stories, determine the testability of user stories, break down user stories into tasks (particularly testing tasks), estimate test effort for all testing tasks, and identify and refine functional and non-functional aspects of the test object.",
             "byOption": {
-              "a": "Incorrect. Participating in writing testable user stories and acceptance criteria happens during release planning.",
+              "a": "Incorrect. Taking part in project and product risk analyses happens during release planning; iteration planning instead involves a more detailed, user-story-specific risk analysis.",
               "b": "Incorrect. Defining and re-defining the product backlog belongs to release planning; iteration planning is concerned with the iteration backlog.",
               "c": "Correct. Breaking user stories down into tasks, particularly testing tasks, is listed among the tester activities in iteration planning.",
               "d": "Incorrect. Determining the test approach and planning the testing for the release are release planning activities; release planning serves as the basis for the test approach and test plan across all iterations."
@@ -282,7 +282,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -1040,7 +1040,7 @@
     },
     {
       "id": "ctfl4-0099",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 5,
       "section": "5.1",
@@ -1076,11 +1076,11 @@
             },
             {
               "id": "c",
-              "text": "Karmaşık, üst seviye ve uçtan uca testlerdir; genelde daha yavaştırlar ve makul bir kapsam için genellikle birkaç tanesi yeterlidir"
+              "text": "Karmaşık, üst seviye ve uçtan uca testlerdir; yavaş çalışırlar ve kapsam için birkaç tanesi yeterlidir"
             },
             {
               "id": "d",
-              "text": "Küçük, izole ve hızlıdırlar; makul bir kapsama ulaşmak için genellikle çok sayıda test gerekir"
+              "text": "Küçük, izole ve hızlıdırlar; her biri yalnızca küçük bir işlevsellik parçasını kontrol eder, bu yüzden makul bir kapsama ulaşmak için genellikle çok sayıda test gerekir"
             }
           ],
           "rationale": {
@@ -1106,11 +1106,11 @@
             },
             {
               "id": "c",
-              "text": "They are complex, high-level, end-to-end tests; they are generally slower, and usually just a few of them are needed for a reasonable level of coverage"
+              "text": "They are complex, high-level, end-to-end tests, generally slower, and only a few are needed for reasonable coverage"
             },
             {
               "id": "d",
-              "text": "They are small, isolated and fast, so usually a lot of them are needed to achieve a reasonable coverage"
+              "text": "They are small, isolated and fast, each checking only a small piece of functionality, so usually a lot of them are needed to achieve a reasonable level of coverage"
             }
           ],
           "rationale": {
@@ -1128,7 +1128,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -1511,7 +1511,7 @@
     },
     {
       "id": "ctfl4-0104",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 5,
       "section": "5.2",
@@ -1549,11 +1549,11 @@
             },
             {
               "id": "c",
-              "text": "Proje riskleri ortaya çıktığında projenin zaman çizelgesini, bütçesini veya kapsamını etkileyebilir; ürün riskleri ise kullanıcı memnuniyetsizliği, itibar kaybı veya yüksek bakım maliyetleri gibi sonuçlar doğurabilir"
+              "text": "Proje riskleri ortaya çıkarsa zaman çizelgesini, bütçeyi veya kapsamı etkiler; ürün riskleri ise kullanıcı memnuniyetsizliği veya itibar kaybı gibi sonuçlar doğurabilir"
             },
             {
               "id": "d",
-              "text": "Proje riskleri ortaya çıktığında para cezaları ve diğer paydaşlara zarar doğurur; ürün riskleri yalnızca test ekibinin kendi işini etkiler"
+              "text": "Proje riskleri ortaya çıktığında para cezaları ve diğer paydaşlara zarar doğurur; ürün riskleri ise yalnızca test ekibinin kendi iç işleyişini etkiler, dış paydaşlara hiçbir etkisi yoktur"
             }
           ],
           "rationale": {
@@ -1579,11 +1579,11 @@
             },
             {
               "id": "c",
-              "text": "Project risks, when they occur, may impact the project schedule, budget or scope, while product risks may result in consequences such as user dissatisfaction, loss of reputation or high maintenance costs"
+              "text": "Project risks may impact the schedule, budget or scope, while product risks may cause user dissatisfaction or loss of reputation"
             },
             {
               "id": "d",
-              "text": "Project risks, when they occur, result in criminal penalties and damage to third parties, while product risks only affect the internal work of the test team"
+              "text": "Project risks, when they occur, result in criminal penalties and damage to third parties, while product risks only affect the internal work of the test team, with no effect on external stakeholders"
             }
           ],
           "rationale": {
@@ -1601,7 +1601,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -1701,7 +1701,7 @@
     },
     {
       "id": "ctfl4-0106",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 5,
       "section": "5.2",
@@ -1731,7 +1731,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Belirlenen riskleri kategorilere ayırmak ve risk olasılıklarını, risk etkilerini ve risk seviyelerini belirlemek"
+              "text": "Belirlenen riskleri kategorilere ayırmak, risk olasılıklarını, risk etkilerini ve risk seviyelerini belirlemek ve sonuçları risk kaydına işleyerek belgelemek"
             },
             {
               "id": "b",
@@ -1749,7 +1749,7 @@
           "rationale": {
             "summary": "Ürün risk kontrolü risk azaltma ve risk gözetiminden oluşur. Risk gözetiminin amacı risk azaltma aksiyonlarının etkili olmasını sağlamak, risk değerlendirmesini iyileştirmek için daha fazla bilgi elde etmek ve ortaya çıkan riskleri tanımlamaktır.",
             "byOption": {
-              "a": "Yanlış. Bu, risk değerlendirmesidir; risk belirlemeyle birlikte risk analizini oluşturur ve risk kontrolünden önce gelir.",
+              "a": "Yanlış. Bu, risk değerlendirmesidir; risk belirlemeyle birlikte risk analizini oluşturur, sonuçları risk kaydına işlense de risk kontrolünden önce gelir.",
               "b": "Doğru. Müfredat risk gözetiminin amacını tam olarak bu üç madde ile tanımlar.",
               "c": "Yanlış. Bu, risk azaltmanın tanımıdır. Risk azaltma ve risk gözetimi birlikte risk kontrolünü oluşturur ancak farklı işlerdir.",
               "d": "Yanlış. Bu, risk belirlemedir ve risk kontrolünün değil risk analizinin parçasıdır."
@@ -1761,7 +1761,7 @@
           "options": [
             {
               "id": "a",
-              "text": "To categorize the identified risks and determine their risk likelihood, risk impact and risk level"
+              "text": "To categorize the identified risks, and determine their risk likelihood, risk impact and risk level, documenting the results in the risk register"
             },
             {
               "id": "b",
@@ -1779,7 +1779,7 @@
           "rationale": {
             "summary": "Product risk control consists of risk mitigation and risk monitoring. The aim of risk monitoring is to ensure that the mitigation actions are effective, to obtain further information to improve risk assessment, and to identify emerging risks.",
             "byOption": {
-              "a": "Incorrect. This is risk assessment, which together with risk identification forms risk analysis and precedes risk control.",
+              "a": "Incorrect. This is risk assessment, which together with risk identification forms risk analysis and precedes risk control, even though its results are documented in the risk register.",
               "b": "Correct. The syllabus defines the aim of risk monitoring with exactly these three points.",
               "c": "Incorrect. This defines risk mitigation. Mitigation and monitoring together make up risk control, but they are distinct activities.",
               "d": "Incorrect. This is risk identification, which is part of risk analysis rather than risk control."
@@ -1791,12 +1791,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0107",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 5,
       "section": "5.2",
@@ -1833,11 +1833,11 @@
             },
             {
               "id": "c",
-              "text": "Risk gerçekleşirse devreye alınacak bir acil durum planı hazırlamak"
+              "text": "Risk gerçekleşirse devreye alınacak, ne yapılacağını ve kimin sorumlu olacağını tanımlayan bir acil durum planı hazırlamak"
             },
             {
               "id": "d",
-              "text": "Söz konusu risk çeşidine uygun deneyim ve beceri seviyesine sahip test uzmanlarını seçmek ve uygun bir test bağımsızlığı seviyesi uygulamak"
+              "text": "Risk çeşidine uygun deneyim ve beceriye sahip test uzmanlarını seçmek ve uygun bir test bağımsızlığı seviyesi uygulamak"
             }
           ],
           "rationale": {
@@ -1845,7 +1845,7 @@
             "byOption": {
               "a": "Yanlış. Bu risk transferidir; geçerli bir risk yanıt seçeneğidir ama test yoluyla azaltma değildir, riskin sahipliğini başka tarafa taşır.",
               "b": "Yanlış. Bu risk kabulüdür; riskin bilinçli olarak üstlenilmesidir ve risk seviyesini düşürmeye yönelik bir test aksiyonu içermez.",
-              "c": "Yanlış. Bu bir acil durum planıdır; risk gerçekleştiğinde ne yapılacağını belirler, riskin gerçekleşme olasılığını veya etkisini test yoluyla azaltmaz.",
+              "c": "Yanlış. Bu bir acil durum planıdır; risk gerçekleştiğinde ne yapılacağını ve kimin sorumlu olacağını belirler, riskin gerçekleşme olasılığını veya etkisini test yoluyla azaltmaz.",
               "d": "Doğru. Uygun test uzmanlarının seçilmesi ve uygun test bağımsızlığı seviyesinin uygulanması, müfredatta test yoluyla risk azaltma aksiyonları listesinin ilk iki maddesidir."
             }
           }
@@ -1863,11 +1863,11 @@
             },
             {
               "id": "c",
-              "text": "Preparing a contingency plan to be executed if the risk occurs"
+              "text": "Preparing a contingency plan that defines what actions to take and who is responsible for executing it if the risk occurs"
             },
             {
               "id": "d",
-              "text": "Selecting testers with the level of experience and skills suitable for the given risk type and applying an appropriate level of independence of testing"
+              "text": "Selecting testers with suitable experience and skills, and applying an appropriate level of test independence"
             }
           ],
           "rationale": {
@@ -1875,7 +1875,7 @@
             "byOption": {
               "a": "Incorrect. This is risk transfer; a valid risk response option, but it moves ownership of the risk elsewhere rather than mitigating it by testing.",
               "b": "Incorrect. This is risk acceptance; the risk is knowingly taken on and no testing action is performed to reduce its risk level.",
-              "c": "Incorrect. This is a contingency plan; it defines what to do if the risk occurs rather than reducing its likelihood or impact by testing.",
+              "c": "Incorrect. This is a contingency plan; it defines what to do and who is responsible if the risk occurs, rather than reducing its likelihood or impact by testing.",
               "d": "Correct. Selecting suitable testers and applying an appropriate level of independence of testing are the first two actions the syllabus lists for mitigating product risks by testing."
             }
           }
@@ -1885,12 +1885,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0108",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 5,
       "section": "5.3",
@@ -1939,7 +1939,7 @@
             "byOption": {
               "a": "Yanlış. Risk metrikleri, kalan risk seviyesi gibi risklerin durumunu gösteren ölçümlerdir.",
               "b": "Doğru. Hata yoğunluğu ve hata tespit yüzdesi, müfredatta hata metriklerine verilen örneklerdir.",
-              "c": "Yanlış. Ürün kalite metrikleri elverişlilik, yanıt süresi ve arızalar arası ortalama süre gibi test nesnesinin mevcut kalitesini gösteren ölçümlerdir.",
+              "c": "Yanlış. Ürün kalite metrikleri elverişlilik, yanıt süresi ve arızaya kadar geçen ortalama süre gibi test nesnesinin mevcut kalitesini gösteren ölçümlerdir.",
               "d": "Yanlış. Test ilerleme metrikleri test senaryosu uyarlama ilerlemesi, test ortamı hazırlık ilerlemesi, çalıştırılan/çalıştırılmayan ve geçen/geçmeyen test senaryosu sayısı ile test koşum süresini kapsar."
             }
           }
@@ -1979,12 +1979,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0109",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 5,
       "section": "5.3",
@@ -2017,7 +2017,7 @@
             },
             {
               "id": "b",
-              "text": "Orijinal test planına dayalı test ve ürün kalitesi değerlendirmesi"
+              "text": "Planlanan zaman çizelgesinden sapmalar"
             },
             {
               "id": "c",
@@ -2032,7 +2032,7 @@
             "summary": "Test ilerleme raporu testin devam eden kontrolünü destekler ve düzenli olarak hazırlanır; test periyodunu, ilerleme durumunu, engelleri, metrikleri, periyot içinde ortaya çıkan yeni ve değişen riskleri ve sıradaki periyot için planlanan testleri içerir. Test tamamlama raporu ise bir aktivite tamamlandığında hazırlanır ve geriye dönük bir değerlendirme sunar.",
             "byOption": {
               "a": "Yanlış. Alınan dersler test tamamlama raporunun tipik içeriğindedir; deneyimin konsolide edildiği test tamamlama sırasında derlenir.",
-              "b": "Yanlış. Orijinal test planına (test hedefleri ve çıkış kriterleri) dayalı değerlendirme test tamamlama raporunun maddelerindendir.",
+              "b": "Yanlış. Planlanan zaman çizelgesinden sapmalar test tamamlama raporunun maddelerindendir.",
               "c": "Yanlış. Etkisi azaltılmamış riskler ve düzeltilmemiş hatalar test tamamlama raporunda listelenir.",
               "d": "Doğru. Sıradaki periyot için planlanan testler ileriye dönük bir bilgidir ve yalnızca test ilerleme raporunda yer alır; tamamlanmış bir aktiviteyi özetleyen tamamlama raporunda böyle bir madde yoktur."
             }
@@ -2047,7 +2047,7 @@
             },
             {
               "id": "b",
-              "text": "Testing and product quality evaluation based on the original test plan"
+              "text": "Deviations from the planned schedule"
             },
             {
               "id": "c",
@@ -2062,7 +2062,7 @@
             "summary": "A test progress report supports ongoing test control and is generated on a regular basis; it includes the testing period, test progress, impediments, test metrics, new and changed risks within the period, and the testing planned for the next period. A test completion report is prepared when an activity is complete and looks back over it.",
             "byOption": {
               "a": "Incorrect. Lessons learned are typical content of a test completion report, gathered during test completion when experience is consolidated.",
-              "b": "Incorrect. Evaluation against the original test plan (test objectives and exit criteria) is an item of the test completion report.",
+              "b": "Incorrect. Deviations from the planned schedule are an item of the test completion report.",
               "c": "Incorrect. Unmitigated risks and defects not fixed are listed in the test completion report.",
               "d": "Correct. The testing planned for the next period is forward-looking and belongs only to the test progress report; a completion report summarizes an activity that has finished."
             }
@@ -2073,12 +2073,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0110",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 5,
       "section": "5.3",
@@ -2116,11 +2116,11 @@
             },
             {
               "id": "c",
-              "text": "Aynı ekipteki kişilere yapılan test ilerleme raporlaması genellikle sık ve gayri resmiyken, test tamamlama raporlaması belirli bir şablonu izler ve yalnızca bir kez gerçekleşir"
+              "text": "Aynı ekipteki kişilere yapılan test ilerleme raporlaması genellikle sık ve gayri resmiyken, tamamlama raporlaması belirli bir şablonu izler ve yalnızca bir kez gerçekleşir"
             },
             {
               "id": "d",
-              "text": "Test ilerleme raporu da test tamamlama raporu da belirli bir şablonu izler ve her paydaşa aynı sıklıkta iletilir"
+              "text": "Test ilerleme raporu da test tamamlama raporu da belirli bir şablonu izler, aynı sıklıkta hazırlanır ve hedef kitleden bağımsız olarak hiç değişmez, çünkü aynı amaca hizmet ederler"
             }
           ],
           "rationale": {
@@ -2129,7 +2129,7 @@
               "a": "Yanlış. Yalnızca bir kez hazırlanan, belirli bir şablonu izleyen rapor test tamamlama raporudur. Test ilerleme raporu düzenli aralıklarla (ör. günlük, haftalık) hazırlanır.",
               "b": "Yanlış. Müfredat, resmiyet derecesini ve sıklığı etkileyen unsurun hedef kitle olduğunu açıkça belirtir.",
               "c": "Doğru. Müfredat bu iki raporlama biçimini tam olarak bu şekilde karşılaştırır.",
-              "d": "Yanlış. Şablona bağlı olan test tamamlama raporudur; test ilerleme raporlaması ekip içinde genellikle gayri resmidir ve sıklığı hedef kitleye göre değişir."
+              "d": "Yanlış. Şablona bağlı olan test tamamlama raporudur; test ilerleme raporlaması ekip içinde genellikle gayri resmidir, sıklığı hedef kitleye göre değişir ve iki rapor türü farklı amaçlara hizmet eder (devam eden kontrol ile geriye dönük değerlendirme)."
             }
           }
         },
@@ -2146,20 +2146,20 @@
             },
             {
               "id": "c",
-              "text": "Test progress reporting to others in the same team is often frequent and informal, while test completion reporting follows a set template and occurs only once"
+              "text": "Test progress reporting within the same team is often frequent and informal, while test completion reporting follows a set template and occurs only once"
             },
             {
               "id": "d",
-              "text": "Both test progress reports and test completion reports follow a set template and are issued to every stakeholder at the same frequency"
+              "text": "Both test progress reports and test completion reports follow a set template, are produced at the same frequency and never vary with the audience, because they serve the same purpose"
             }
           ],
           "rationale": {
-            "summary": "Different audiences require different information in the reports and influence the degree of formality and the frequency of test reporting. Test progress reporting to others in the same team is often frequent and informal, while test completion reporting follows a set template and occurs only once.",
+            "summary": "Different audiences require different information in the reports and influence the degree of formality and the frequency of test reporting. Test progress reporting within the same team is often frequent and informal, while test completion reporting follows a set template and occurs only once.",
             "byOption": {
               "a": "Incorrect. The report produced only once and following a set template is the test completion report. Test progress reports are generated on a regular basis (e.g. daily, weekly).",
               "b": "Incorrect. The syllabus states explicitly that the audience influences the degree of formality and the frequency of reporting.",
               "c": "Correct. This is exactly how the syllabus contrasts the two forms of reporting.",
-              "d": "Incorrect. It is the test completion report that follows a set template; progress reporting within a team is often informal and its frequency varies with the audience."
+              "d": "Incorrect. It is the test completion report that follows a set template; progress reporting within a team is often informal, its frequency varies with the audience, and the two report types serve different purposes (ongoing control versus a retrospective evaluation)."
             }
           }
         }
@@ -2168,7 +2168,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -2267,7 +2267,7 @@
     },
     {
       "id": "ctfl4-0112",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 5,
       "section": "5.4",
@@ -2309,7 +2309,7 @@
             },
             {
               "id": "d",
-              "text": "Anomalilerin keşfedilmesinden kapatılmasına kadar ele alınmasına yönelik iş akışını ve sınıflandırma kurallarını belirler"
+              "text": "Anomalilerin keşfedilmesinden kapatılmasına kadar kaydedilmesi, analiz edilip sınıflandırılması, düzeltme ya da olduğu gibi bırakma kararının verilmesi ve son olarak kapatılmasına yönelik iş akışını ve önem derecesi ile önceliğe göre sınıflandırma kurallarını belirler"
             }
           ],
           "rationale": {
@@ -2318,7 +2318,7 @@
               "a": "Doğru. Müfredat, yapılandırma yönetiminin testi desteklemek için sağladığı iki koşuldan ilkini tam olarak böyle ifade eder.",
               "b": "Yanlış. Giriş ve çıkış kriterlerinin tanımlanması test planlamanın, karşılanıp karşılanmadığının ölçülmesi ise test gözetiminin işidir (bkz. 5.1.3 ve 5.3).",
               "c": "Yanlış. Bu, test gözetimi ve test kontrolüdür. Test gözetimi bilgi toplar, test kontrolü bu bilgiyi kullanarak kontrol yönergeleri üretir.",
-              "d": "Yanlış. Bu, hata yönetimi sürecinin tanımıdır (bkz. 5.5); anomalilerin kaydedilmesi, analiz edilmesi, sınıflandırılması ve kapatılmasıyla ilgilenir."
+              "d": "Yanlış. Bu, hata yönetimi sürecinin tanımıdır (bkz. 5.5); anomalilerin kaydedilmesi, analiz edilmesi, sınıflandırılması, bir yanıta karar verilmesi ve kapatılmasıyla ilgilenir."
             }
           }
         },
@@ -2339,7 +2339,7 @@
             },
             {
               "id": "d",
-              "text": "It defines the workflow for handling anomalies from discovery to closure and the rules for their classification"
+              "text": "It defines the workflow for handling anomalies from logging and analysis through deciding on a response such as fixing or leaving as is, and finally closure or reopening, along with the rules for classifying them by severity and priority"
             }
           ],
           "rationale": {
@@ -2348,7 +2348,7 @@
               "a": "Correct. This is exactly the first of the two things the syllabus says configuration management ensures in order to properly support testing.",
               "b": "Incorrect. Defining entry and exit criteria is part of test planning, and measuring whether they are satisfied is part of test monitoring (see 5.1.3 and 5.3).",
               "c": "Incorrect. This describes test monitoring and test control. Test monitoring gathers the information and test control turns it into control directives.",
-              "d": "Incorrect. This describes the defect management process (see 5.5), which handles logging, analyzing, classifying and closing anomalies."
+              "d": "Incorrect. This describes the defect management process (see 5.5), which handles logging, analyzing, classifying, deciding on a response and closing anomalies."
             }
           }
         }
@@ -2357,7 +2357,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {

@@ -99,7 +99,7 @@
     },
     {
       "id": "ctfl4-0026",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 2,
       "section": "2.1",
@@ -136,7 +136,7 @@
             },
             {
               "id": "c",
-              "text": "İş ürünü belgelerinin hafifletilmesi ve regresyon testlerini kolaylaştırmak için kapsamlı test otomasyonu tercih edilir"
+              "text": "İş ürünü belgeleri hafifletilir ve kapsamlı test otomasyonu tercih edilir"
             },
             {
               "id": "d",
@@ -166,7 +166,7 @@
             },
             {
               "id": "c",
-              "text": "Lightweight work product documentation and extensive test automation are favored to make regression testing easier"
+              "text": "Work product documentation is kept lightweight and extensive test automation is favored"
             },
             {
               "id": "d",
@@ -188,7 +188,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -486,7 +486,7 @@
     },
     {
       "id": "ctfl4-0030",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 2,
       "section": "2.1",
@@ -515,7 +515,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Sürekli entegrasyon (CI), geliştiricileri bileşen testleri ve statik analiz eşliğinde yüksek kaliteli kod sunmaya teşvik ederek shift-left yaklaşımını destekler"
+              "text": "CI, geliştiricileri kodu bileşen testi ve statik analizle sunmaya teşvik eder"
             },
             {
               "id": "b",
@@ -545,7 +545,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Continuous integration (CI) promotes shift left by encouraging developers to submit high quality code accompanied by component tests and static analysis"
+              "text": "CI encourages developers to submit code with component tests and static analysis"
             },
             {
               "id": "b",
@@ -575,12 +575,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0031",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 2,
       "section": "2.1",
@@ -609,15 +609,15 @@
           "options": [
             {
               "id": "a",
-              "text": "Sistem entegrasyon testinden sonra gerçekleştirilen bir test seviyesidir"
+              "text": "Sistem entegrasyon testinden sonra, ayrı bir ekip tarafından gerçekleştirilen bir test seviyesidir"
             },
             {
               "id": "b",
-              "text": "Regresyon riskini tamamen ortadan kaldırır, bu nedenle teslimat hattından regresyon testleri çıkarılabilir"
+              "text": "Regresyon riskini tamamen ortadan kaldırır, bu nedenle teslimat hattından tüm regresyon testleri güvenle çıkarılabilir"
             },
             {
               "id": "c",
-              "text": "Test otomasyonu sayesinde ayrı bir teslimat hattı tanımlanmasını gereksiz kılar"
+              "text": "Test otomasyonu sayesinde ayrı bir teslimat hattının tanımlanması ve kurulması gereksiz hale gelir"
             },
             {
               "id": "d",
@@ -627,8 +627,8 @@
           "rationale": {
             "summary": "DevOps, ortak hedeflere ulaşmak için yazılım geliştirme (test dahil) ile operasyonun birlikte çalışmasını sağlayan organizasyonel bir yaklaşımdır; ekip özerkliğini, hızlı geri bildirimi, entegre araç zincirlerini ve CI/CD gibi teknik uygulamaları destekler.",
             "byOption": {
-              "a": "Yanlış. DevOps bir test seviyesi değildir. Ders programındaki beş test seviyesi bileşen testi, bileşen entegrasyon testi, sistem testi, sistem entegrasyon testi ve kabul testidir.",
-              "b": "Yanlış. Otomatik regresyon testlerinin ölçeği ve kapsamı sayesinde regresyon riski en aza indirilir; ortadan kalkmaz. CI kullanılan durumlarda otomatik regresyon testlerini dahil etmek iyi bir uygulamadır.",
+              "a": "Yanlış. DevOps bir test seviyesi değildir; ayrı bir ekip tarafından yürütülmesi de DevOps'un fikrine terstir, çünkü DevOps geliştirme ile operasyon arasındaki silaları kaldırmayı hedefler. Ders programındaki beş test seviyesi bileşen testi, bileşen entegrasyon testi, sistem testi, sistem entegrasyon testi ve kabul testidir.",
+              "b": "Yanlış. Regresyon riski, otomatik regresyon testlerinin ölçeği ve kapsamı sayesinde en aza indirilir; ortadan kalkmaz. Bu yüzden regresyon testlerini teslimat hattından çıkarmak güvenli olmaz — CI kullanılan durumlarda otomatik regresyon testlerini dahil etmek tam tersine iyi bir uygulamadır.",
               "c": "Yanlış. Tersine, DevOps teslimat hattının tanımlanması ve kurulması DevOps'un bilinen zorluklarından biridir.",
               "d": "Doğru. DevOps organizasyonel bir yaklaşımdır ve iki işleve eşit değer veren kültürel bir değişim gerektirir."
             }
@@ -639,15 +639,15 @@
           "options": [
             {
               "id": "a",
-              "text": "It is a test level performed after system integration testing"
+              "text": "It is a test level performed after system integration testing, run by a separate team"
             },
             {
               "id": "b",
-              "text": "It removes the risk of regression entirely, so regression tests can be dropped from the delivery pipeline"
+              "text": "It removes the risk of regression entirely, so all regression tests can safely be dropped from the delivery pipeline"
             },
             {
               "id": "c",
-              "text": "Thanks to its test automation, it makes defining a separate delivery pipeline unnecessary"
+              "text": "Thanks to its test automation, it makes defining and setting up a separate delivery pipeline unnecessary"
             },
             {
               "id": "d",
@@ -657,8 +657,8 @@
           "rationale": {
             "summary": "DevOps is an organizational approach that gets development (including testing) and operations to work together towards common goals; it promotes team autonomy, fast feedback, integrated toolchains and technical practices such as CI and CD.",
             "byOption": {
-              "a": "Incorrect. DevOps is not a test level. The five test levels in the syllabus are component testing, component integration testing, system testing, system integration testing and acceptance testing.",
-              "b": "Incorrect. The risk of regression is minimized due to the scale and range of automated regression tests; it is not removed. Where CI is used it is good practice to include automated regression tests.",
+              "a": "Incorrect. DevOps is not a test level; being run by a separate team also runs against the idea of DevOps, which aims to remove silos between development and operations. The five test levels in the syllabus are component testing, component integration testing, system testing, system integration testing and acceptance testing.",
+              "b": "Incorrect. The risk of regression is minimized due to the scale and range of automated regression tests; it is not removed. Dropping regression tests from the pipeline would therefore not be safe — where CI is used, including automated regression tests is good practice, not something to remove.",
               "c": "Incorrect. On the contrary, defining and establishing the DevOps delivery pipeline is one of the known challenges of DevOps.",
               "d": "Correct. DevOps is an organizational approach and requires a cultural shift that treats both functions with equal value."
             }
@@ -669,7 +669,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -862,7 +862,7 @@
     },
     {
       "id": "ctfl4-0034",
-      "revision": 2,
+      "revision": 3,
       "syllabusVersion": "4.0.1",
       "chapter": 2,
       "section": "2.1",
@@ -895,7 +895,7 @@
             },
             {
               "id": "b",
-              "text": "Katılımcılar neyin başarılı olup sürdürülmesi, neyin başarısız olup iyileştirilmesi gerektiğini ve iyileştirmelerin nasıl uygulanacağını görüşür; sonuçlar kaydedilir ve takip edilir"
+              "text": "Katılımcılar neyin işe yaradığını, neyin iyileştirileceğini ve nasıl uygulanacağını görüşür; sonuçlar kaydedilip takip edilir"
             },
             {
               "id": "c",
@@ -925,7 +925,7 @@
             },
             {
               "id": "b",
-              "text": "Participants discuss what was successful and should be retained, what was not successful and could be improved, and how to incorporate the improvements; the results are recorded and followed up"
+              "text": "Participants discuss what worked, what could improve, and how to apply it; results are recorded and followed up"
             },
             {
               "id": "c",
@@ -951,7 +951,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-22"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -1252,7 +1252,7 @@
     },
     {
       "id": "ctfl4-0038",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 2,
       "section": "2.2",
@@ -1293,7 +1293,7 @@
             },
             {
               "id": "d",
-              "text": "Birçoğu fonksiyonel testlerden türetilir: aynı fonksiyonel testler kullanılır, ancak fonksiyon yerine getirilirken fonksiyonel olmayan bir kısıtlamanın karşılanıp karşılanmadığı kontrol edilir"
+              "text": "Birçoğu fonksiyonel testlerden türetilir; aynı testler kullanılır, ama fonksiyonel olmayan bir kısıtlama da kontrol edilir"
             }
           ],
           "rationale": {
@@ -1323,7 +1323,7 @@
             },
             {
               "id": "d",
-              "text": "Many of them are derived from functional tests: they use the same functional tests but check that a non-functional constraint is satisfied while the function is performed"
+              "text": "Many are derived from functional tests, reusing them to also check a non-functional constraint"
             }
           ],
           "rationale": {
@@ -1341,7 +1341,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -1535,7 +1535,7 @@
     },
     {
       "id": "ctfl4-0041",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 2,
       "section": "2.2",
@@ -1573,7 +1573,7 @@
             },
             {
               "id": "c",
-              "text": "Regresyon testi bir değişikliğin olumsuz sonuca yol açmadığını teyit eder; bu sonuçlar değişikliğin yapıldığı bileşeni, aynı sistemdeki diğer bileşenleri veya bağlı diğer sistemleri etkileyebilir"
+              "text": "Regresyon testi, bir değişikliğin değişen bileşenin ötesine de olumsuz sonuç doğurmadığını teyit eder"
             },
             {
               "id": "d",
@@ -1603,7 +1603,7 @@
             },
             {
               "id": "c",
-              "text": "Regression testing confirms that a change has caused no adverse consequences, which could affect the changed component, other components in the same system, or even other connected systems"
+              "text": "Regression testing confirms a change caused no adverse effects beyond the changed component"
             },
             {
               "id": "d",
@@ -1625,7 +1625,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {

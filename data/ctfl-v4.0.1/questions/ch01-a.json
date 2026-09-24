@@ -105,7 +105,7 @@
     },
     {
       "id": "ctfl4-0002",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.1",
@@ -145,7 +145,7 @@
             },
             {
               "id": "d",
-              "text": "Bulunan hataların (defect) kaynak koddaki nedenlerini bulup gidermek"
+              "text": "Bulunan hataların (defect) kaynak koddaki nedenlerini gidermek"
             }
           ],
           "rationale": {
@@ -175,7 +175,7 @@
             },
             {
               "id": "d",
-              "text": "Finding and eliminating the causes of defects in the source code"
+              "text": "Eliminating the causes of defects in the source code"
             }
           ],
           "rationale": {
@@ -193,12 +193,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0003",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.1",
@@ -231,7 +231,7 @@
             },
             {
               "id": "b",
-              "text": "Sağlıklı kararlar almalarını sağlamak için paydaşlara yeterli bilgiyi sunmak"
+              "text": "Paydaşlara sağlıklı karar için yeterli bilgi sunmak"
             },
             {
               "id": "c",
@@ -261,7 +261,7 @@
             },
             {
               "id": "b",
-              "text": "Providing information to stakeholders to allow them to make informed decisions"
+              "text": "Providing stakeholders enough information for sound decisions"
             },
             {
               "id": "c",
@@ -287,7 +287,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -385,7 +385,7 @@
     },
     {
       "id": "ctfl4-0005",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.1",
@@ -414,7 +414,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Statik testte bulunan hatalar kök neden (root cause) analizi gerektirmez"
+              "text": "Statik testte bulunan hatalar, hatanın karmaşıklığından bağımsız olarak kök neden (root cause) analizi gerektirmez"
             },
             {
               "id": "b",
@@ -422,7 +422,7 @@
             },
             {
               "id": "c",
-              "text": "Hata ayıklama yalnızca hatanın giderilmesiyle ilgilenir; yeniden oluşturmaya ve teşhise gerek yoktur"
+              "text": "Hata ayıklama yalnızca giderme ile ilgilenir; yeniden oluşturma ve teşhis gerekmez"
             },
             {
               "id": "d",
@@ -447,7 +447,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Defects found by static testing do not require root cause analysis"
+              "text": "Defects found by static testing do not require root cause analysis, regardless of complexity"
             },
             {
               "id": "b",
@@ -455,7 +455,7 @@
             },
             {
               "id": "c",
-              "text": "Debugging is only concerned with removing the defect; no reproduction or diagnosis is needed"
+              "text": "Debugging only removes the defect; no reproduction or diagnosis needed"
             },
             {
               "id": "d",
@@ -480,12 +480,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0006",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.2",
@@ -556,7 +556,7 @@
             },
             {
               "id": "d",
-              "text": "Testing provides users with indirect representation on the development project"
+              "text": "Testing gives users indirect representation on the project"
             }
           ],
           "rationale": {
@@ -574,12 +574,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0007",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.2",
@@ -608,11 +608,11 @@
           "options": [
             {
               "id": "a",
-              "text": "Testin, yaşam döngüsünün çeşitli aşamalarında test nesnesinin kalitesini doğrudan değerlendirme imkânı sunması"
+              "text": "Testin, test nesnesinin kalitesini her yaşam döngüsü aşamasında doğrudan ölçmesi"
             },
             {
               "id": "b",
-              "text": "Testin, kalite maliyetini tamamen ortadan kaldırması"
+              "text": "Testin, kalite maliyetini tamamen ortadan kaldırması ve tamamen gereksiz hale getirmesi"
             },
             {
               "id": "c",
@@ -638,11 +638,11 @@
           "options": [
             {
               "id": "a",
-              "text": "Testing provides a means of directly evaluating the quality of a test object at various phases of the lifecycle"
+              "text": "Testing directly evaluates the quality of a test object at each lifecycle phase"
             },
             {
               "id": "b",
-              "text": "Testing eliminates the cost of quality entirely"
+              "text": "Testing eliminates the cost of quality entirely and makes it unnecessary altogether"
             },
             {
               "id": "c",
@@ -668,7 +668,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -767,7 +767,7 @@
     },
     {
       "id": "ctfl4-0009",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.2",
@@ -799,15 +799,15 @@
             },
             {
               "id": "b",
-              "text": "Resmî yöntemler (model denetimi ve doğruluk kanıtı), simülasyon ve prototipleme"
+              "text": "Resmî yöntemler (model denetimi, doğruluk kanıtı), simülasyon ve prototipleme"
             },
             {
               "id": "c",
-              "text": "Süreç iyileştirme, süreç denetimleri ve süreç olgunluk modelleri"
+              "text": "Süreç iyileştirme, süreç denetimleri ve süreç olgunluk modelleri; bunlar kalite güvencenin konusudur"
             },
             {
               "id": "d",
-              "text": "Yapılandırma yönetimi ve sürüm yönetimi"
+              "text": "Yapılandırma yönetimi ve sürüm yönetimi gibi destekleyici aktiviteler"
             }
           ],
           "rationale": {
@@ -829,15 +829,15 @@
             },
             {
               "id": "b",
-              "text": "Formal methods (model checking and proof of correctness), simulation and prototyping"
+              "text": "Formal methods (model checking, proof of correctness), simulation and prototyping"
             },
             {
               "id": "c",
-              "text": "Process improvement, process audits and process maturity models"
+              "text": "Process improvement, process audits and process maturity models, which are QA activities"
             },
             {
               "id": "d",
-              "text": "Configuration management and release management"
+              "text": "Configuration management and release management as supporting activities"
             }
           ],
           "rationale": {
@@ -855,7 +855,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -954,7 +954,7 @@
     },
     {
       "id": "ctfl4-0011",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.2",
@@ -987,11 +987,11 @@
             },
             {
               "id": "b",
-              "text": "Bazı hatalar çalıştırıldığında her zaman arızaya yol açar, bazıları yalnızca belirli koşullarda yol açar, bazıları ise hiç yol açmaz"
+              "text": "Bazı hatalar her zaman arızaya yol açar, bazıları yalnızca bazen, bazıları hiç yol açmaz"
             },
             {
               "id": "c",
-              "text": "Koddaki her hata, çalıştırıldığında mutlaka bir arızaya yol açar"
+              "text": "Koddaki her hata, ne kadar küçük olursa olsun, çalıştırıldığında mutlaka bir arızaya yol açar"
             },
             {
               "id": "d",
@@ -1020,11 +1020,11 @@
             },
             {
               "id": "b",
-              "text": "Some defects always result in a failure when executed, some only in specific circumstances, and some never do"
+              "text": "Some defects always cause a failure, some only sometimes, and some never do"
             },
             {
               "id": "c",
-              "text": "Every defect in code inevitably results in a failure when executed"
+              "text": "Every defect in code, however small, inevitably results in a failure when executed"
             },
             {
               "id": "d",
@@ -1049,12 +1049,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0012",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.2",
@@ -1089,11 +1089,11 @@
             },
             {
               "id": "b",
-              "text": "Kök neden analizi yalnızca proje kapanışında yapılan bir belgeleme aktivitesidir"
+              "text": "Kök neden analizi yalnızca proje kapanışında yapılan bir belgeleme ve arşivleme aktivitesidir"
             },
             {
               "id": "c",
-              "text": "İnsanlar zaman baskısı, iş ürünlerinin karmaşıklığı veya yetersiz eğitim gibi sebeplerle insan hatası yapar"
+              "text": "İnsanlar zaman baskısı, karmaşıklık veya yetersiz eğitim gibi sebeplerle insan hatası yapar"
             },
             {
               "id": "d",
@@ -1127,11 +1127,11 @@
             },
             {
               "id": "b",
-              "text": "Root cause analysis is a documentation activity performed only at project closure"
+              "text": "Root cause analysis is only a documentation and archiving activity performed at project closure"
             },
             {
               "id": "c",
-              "text": "People make errors for reasons such as time pressure, complexity of work products, or inadequate training"
+              "text": "People make errors for reasons such as time pressure, complexity, or inadequate training"
             },
             {
               "id": "d",
@@ -1161,7 +1161,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -1260,7 +1260,7 @@
     },
     {
       "id": "ctfl4-0014",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.3",
@@ -1294,7 +1294,7 @@
             },
             {
               "id": "b",
-              "text": "Yeni hata bulamıyoruz başarılı bir yazılım elde ettik yanılgısı; doğrulamanın yanında sağlama da yapılmalıdır"
+              "text": "Hata bulunamama yanılgısı; doğrulamanın yanında sağlama da yapılmalıdır"
             },
             {
               "id": "c",
@@ -1319,7 +1319,7 @@
           ]
         },
         "en": {
-          "stem": "A team thoroughly tested all specified requirements and fixed every defect found. The product still failed to meet users' expectations and compared poorly with competing systems. Which principle explains this, and what does the syllabus recommend?",
+          "stem": "A team thoroughly tested all specified requirements and fixed every defect found. The product still failed to meet users' expectations and compared poorly with competing systems. Which principle BEST explains this, and what does the syllabus recommend?",
           "options": [
             {
               "id": "a",
@@ -1327,7 +1327,7 @@
             },
             {
               "id": "b",
-              "text": "Absence-of-defects fallacy; validation should be carried out in addition to verification"
+              "text": "Absence-of-defects fallacy; validation should complement verification"
             },
             {
               "id": "c",
@@ -1356,12 +1356,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0015",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.3",
@@ -1390,11 +1390,11 @@
           "options": [
             {
               "id": "a",
-              "text": "Erken yapılan testler, yazılımdaki her unsurun test edilmesini mümkün kılar"
+              "text": "Erken yapılan testler, yazılımdaki her unsurun eksiksiz test edilmesini mümkün kılar"
             },
             {
               "id": "b",
-              "text": "Erken giderilen hatalar (defect), türetilen iş ürünlerinde yeni hatalara yol açmaz ve kalite maliyetini düşürür"
+              "text": "Erken giderilen hatalar (defect), sonraki iş ürünlerinde yeni hataya yol açmaz, kalite maliyetini düşürür"
             },
             {
               "id": "c",
@@ -1402,7 +1402,7 @@
             },
             {
               "id": "d",
-              "text": "Erken yapılan testler, test senaryolarının zamanla etkisizleşmesini önler"
+              "text": "Erken yapılan testler, test senaryolarının zamanla tekrar tekrar kullanılınca giderek etkisizleşmesini önler"
             }
           ],
           "rationale": {
@@ -1420,11 +1420,11 @@
           "options": [
             {
               "id": "a",
-              "text": "Testing performed early makes it possible to test everything in the software"
+              "text": "Testing performed early makes it possible to test everything in the software thoroughly"
             },
             {
               "id": "b",
-              "text": "Defects removed early do not cause subsequent defects in derived work products, which reduces the cost of quality"
+              "text": "Defects removed early do not cause new defects in later work products, lowering the cost of quality"
             },
             {
               "id": "c",
@@ -1432,7 +1432,7 @@
             },
             {
               "id": "d",
-              "text": "Testing performed early prevents test cases from becoming ineffective over time"
+              "text": "Testing performed early prevents test cases from becoming ineffective through repeated reuse over time"
             }
           ],
           "rationale": {
@@ -1450,7 +1450,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -1550,7 +1550,7 @@
     },
     {
       "id": "ctfl4-0017",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.4",
@@ -1587,7 +1587,7 @@
             },
             {
               "id": "c",
-              "text": "Test koşumu"
+              "text": "Test koşumu, sonuçların karşılaştırılması"
             },
             {
               "id": "d",
@@ -1617,7 +1617,7 @@
             },
             {
               "id": "c",
-              "text": "Test execution"
+              "text": "Test execution, comparing results"
             },
             {
               "id": "d",
@@ -1639,12 +1639,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0018",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.4",
@@ -1672,7 +1672,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Kurumun faaliyet alanı (test nesnesinin kritiklik düzeyi, tanımlanan riskler, yasal düzenlemeler)"
+              "text": "Kurumun faaliyet alanı (kritiklik, riskler, yasal düzenlemeler)"
             },
             {
               "id": "b",
@@ -1702,7 +1702,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Business domain (criticality of the test object, identified risks, specific legal regulations)"
+              "text": "Business domain (criticality, risks, legal regulations)"
             },
             {
               "id": "b",
@@ -1732,7 +1732,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -1943,7 +1943,7 @@
     },
     {
       "id": "ctfl4-0021",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.4",
@@ -1976,7 +1976,7 @@
             },
             {
               "id": "b",
-              "text": "Test koşumu"
+              "text": "Test koşumu, sonuçların karşılaştırılması"
             },
             {
               "id": "c",
@@ -2006,7 +2006,7 @@
             },
             {
               "id": "b",
-              "text": "Test execution"
+              "text": "Test execution, comparing results"
             },
             {
               "id": "c",
@@ -2032,12 +2032,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0022",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.5",
@@ -2066,15 +2066,15 @@
           "options": [
             {
               "id": "a",
-              "text": "İyi iletişim becerileri, aktif dinleme ve ekip oyuncusu olmak"
+              "text": "İyi iletişim, aktif dinleme, ekip oyuncusu olmak"
             },
             {
               "id": "b",
-              "text": "Teknik bilgi"
+              "text": "Teknik bilgi, uygun test araçlarını kullanabilmek"
             },
             {
               "id": "c",
-              "text": "Alan bilgisi"
+              "text": "Alan bilgisi, son kullanıcılar ve iş hakkında"
             },
             {
               "id": "d",
@@ -2096,15 +2096,15 @@
           "options": [
             {
               "id": "a",
-              "text": "Good communication skills, active listening and being a team player"
+              "text": "Good communication, active listening, teamwork"
             },
             {
               "id": "b",
-              "text": "Technical knowledge"
+              "text": "Technical knowledge, using appropriate test tools"
             },
             {
               "id": "c",
-              "text": "Domain knowledge"
+              "text": "Domain knowledge of end users and the business"
             },
             {
               "id": "d",
@@ -2126,12 +2126,12 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
       "id": "ctfl4-0023",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.5",
@@ -2167,7 +2167,7 @@
             },
             {
               "id": "c",
-              "text": "Gerekli bilgi ve beceriye sahip tüm ekip üyeleri her türlü görevi yapabilir ve kaliteden herkes sorumludur"
+              "text": "Gerekli bilgi ve beceriye sahip üyeler her görevi yapabilir; kaliteden herkes sorumludur"
             },
             {
               "id": "d",
@@ -2197,7 +2197,7 @@
             },
             {
               "id": "c",
-              "text": "Any team member with the necessary knowledge and skills can perform any task, and everyone is responsible for quality"
+              "text": "Any member with knowledge and skills can do any task; everyone is responsible for quality"
             },
             {
               "id": "d",
@@ -2219,7 +2219,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {

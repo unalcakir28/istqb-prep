@@ -193,7 +193,7 @@
     },
     {
       "id": "ctfl4-0219",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 5,
       "section": "5.1",
@@ -226,7 +226,7 @@
             },
             {
               "id": "b",
-              "text": "Kullanıcı hikayelerini görevlere, özellikle test görevlerine ayırmak"
+              "text": "Kullanıcı hikayelerinin test edilebilirliğini değerlendirmek"
             },
             {
               "id": "c",
@@ -241,7 +241,7 @@
             "summary": "Müfredatta test edilebilir kullanıcı hikayelerinin ve kabul kriterlerinin yazımına katılmak, sürüm planlaması sırasındaki tipik tester aktivitesi olarak listelenir; diğer üçü döngü planlaması aktiviteleridir.",
             "byOption": {
               "a": "Doğru. Test edilebilir kullanıcı hikayelerinin ve kabul kriterlerinin yazımına katılmak, müfredatta sürüm planlaması sırasındaki bir test aktivitesi olarak sayılır.",
-              "b": "Yanlış. Kullanıcı hikayelerini görevlere ayırmak, her döngünün başında yapılan bir döngü planlaması aktivitesidir, sürüm planlaması değil.",
+              "b": "Yanlış. Kullanıcı hikayelerinin test edilebilirliğinin değerlendirilmesi, döngü planlaması sırasında yapılan bir aktivitedir, sürüm planlaması değil.",
               "c": "Yanlış. Kullanıcı hikayeleri için detaylı risk analizi, döngü planlaması sırasında yapılan bir aktivitedir; sürüm seviyesinde daha genel bir risk değerlendirmesi yapılır.",
               "d": "Yanlış. Döngü iş listesindeki tek tek test görevleri için efor tahmini yapmak, her döngünün başında yapılan bir döngü planlaması aktivitesidir; sürüm planlamasında efor tahmini kullanıcı hikayeleri düzeyinde ve daha kabaca yapılır."
             }
@@ -256,7 +256,7 @@
             },
             {
               "id": "b",
-              "text": "Breaking down user stories into tasks, particularly test tasks"
+              "text": "Assessing the testability of user stories"
             },
             {
               "id": "c",
@@ -271,7 +271,7 @@
             "summary": "The syllabus lists participating in writing testable user stories and acceptance criteria as a typical tester activity during release planning; the other three are iteration planning activities.",
             "byOption": {
               "a": "Correct. Participating in writing testable user stories and acceptance criteria is listed as a test activity performed during release planning.",
-              "b": "Incorrect. Breaking down user stories into tasks is an iteration planning activity performed at the start of each iteration, not release planning.",
+              "b": "Incorrect. Assessing the testability of user stories is an activity performed during iteration planning, not release planning.",
               "c": "Incorrect. Detailed risk analysis for user stories is performed during iteration planning; a more general risk assessment is done at the release level.",
               "d": "Incorrect. Estimating effort for the individual testing tasks in the iteration backlog is an iteration planning activity; at release planning, test effort is estimated more coarsely, at the level of user stories."
             }
@@ -282,7 +282,7 @@
         "author": "claude",
         "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ch05-b findings B1-B6, M7-M10 applied)",
         "createdAt": "2026-09-22",
-        "updatedAt": "2026-09-22"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -1134,7 +1134,7 @@
     },
     {
       "id": "ctfl4-0229",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 5,
       "section": "5.1",
@@ -1179,7 +1179,7 @@
             }
           ],
           "rationale": {
-            "summary": "Q1, teknoloji odaklı ve ekibi destekleyen testleri (bileşen ve bileşen entegrasyon testleri) içerir; bunlar genellikle otomatikleştirilip CI'ya dahil edilir. Diğer seçenekler sırasıyla Q2, Q3 ve Q4'ün özellikleridir.",
+            "summary": "Q1, teknoloji odaklı ve ekibi destekleyen testleri (bileşen ve bileşen entegrasyon testleri) içerir; bunlar genellikle otomatikleştirilip CI'ya dahil edilir. Diğer seçenekler ise Q2'nin (kullanıcı hikayesi ve API testi), Q3'ün (keşif ve kullanılabilirlik testi) ve Q4'ün (duman testi ve kullanılabilirlik dışı doğrulama olmayan testler) özellikleridir.",
             "byOption": {
               "a": "Doğru. Q1, bileşen ve bileşen entegrasyon testlerini içerir; bu testler genellikle otomatikleştirilip CI sürecine dahil edilmelidir.",
               "b": "Yanlış. Kullanıcı hikayesi testleri ve API testi, iş odaklı ve ekibi destekleyen Q2 çeyreğinin özelliğidir, Q1'in değil.",
@@ -1209,7 +1209,7 @@
             }
           ],
           "rationale": {
-            "summary": "Q1 includes technology-facing tests that support the team (component and component integration tests), typically automated and included in CI. The other options describe Q2, Q3 and Q4 respectively.",
+            "summary": "Q1 includes technology-facing tests that support the team (component and component integration tests), typically automated and included in CI. The other options describe Q2 (user story and API testing), Q3 (exploratory and usability testing), and Q4 (smoke tests and non-usability non-functional testing).",
             "byOption": {
               "a": "Correct. Q1 includes component and component integration tests, which should typically be automated and included in the CI process.",
               "b": "Incorrect. User story tests and API testing describe the business-facing, team-supporting Q2 quadrant, not Q1.",
@@ -1223,7 +1223,7 @@
         "author": "claude",
         "reviewedBy": "question-verifier (two adversarial passes, 2026-09-22; ch05-b findings B1-B6, M7-M10 applied)",
         "createdAt": "2026-09-22",
-        "updatedAt": "2026-09-22"
+        "updatedAt": "2026-09-24"
       }
     },
     {

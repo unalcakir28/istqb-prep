@@ -2009,7 +2009,7 @@
     },
     {
       "id": "ctfl4-0257",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 2,
       "section": "2.1",
@@ -2021,75 +2021,75 @@
       "type": "single",
       "selectCount": 1,
       "points": 1,
-      "difficulty": 2,
+      "difficulty": 1,
       "tags": [
-        "good-testing-practices",
-        "sdlc-independence"
+        "good-practices",
+        "quality-control"
       ],
       "origin": "original",
       "status": "published",
       "correct": [
-        "d"
+        "c"
       ],
       "media": null,
       "i18n": {
         "tr": {
-          "stem": "Kullanılan yazılım geliştirme yaşam döngüsü (YGYD) modelinden bağımsız olarak geçerli olan iyi test uygulamalarından biri aşağıdakilerden hangisidir?",
+          "stem": "Her YGYD modelinde geçerli iyi test uygulamalarına göre, ders programı neden her yazılım geliştirme faaliyetine karşılık gelen bir test faaliyeti bulunmasını ister?",
           "options": [
             {
               "id": "a",
-              "text": "Kullanılan test teknikleri, proje hangi YGYD modeliyle yürütülürse yürütülsün birebir aynı olmalıdır."
+              "text": "Testin gereksiz tekrara düşmeden kapsamlı kalmasını sağlamak için"
             },
             {
               "id": "b",
-              "text": "Test analizi ve tasarımı, karşılık gelen geliştirme aktivitesi tamamen bitmeden başlamamalıdır."
+              "text": "Test analizi ve tasarımının geliştirmenin gerisinde kalmadan onunla eş zamanlı ilerlemesini sağlamak için"
             },
             {
               "id": "c",
-              "text": "Bu iyi uygulamalar yalnızca çevik (agile) projeler için geçerlidir, çünkü sürekli test yalnızca çevikte yerleşiktir."
+              "text": "Hangi YGYD olursa olsun, her yazılım geliştirme faaliyetinin kalite kontrolden geçmesini sağlamak için"
             },
             {
               "id": "d",
-              "text": "Her yazılım geliştirme aktivitesine karşılık gelen bir test aktivitesi bulunmalıdır."
+              "text": "Hataların, iş ürünü henüz taslak aşamasındayken ve resmi onay almadan önce yakalanmasını sağlamak için"
             }
           ],
           "rationale": {
-            "summary": "Syllabus, seçilen YGYD modelinden bağımsız olarak geçerli iyi test uygulamalarından birini, her geliştirme aktivitesine karşılık gelen bir test aktivitesi bulunması olarak tanımlar; diğer seçenekler ya başka bir uygulamayı tersine çevirir ya da bu model bağımsızlığını yanlış bir alana uygular.",
+            "summary": "Ders programı, her geliştirme faaliyetine karşılık gelen bir test faaliyeti bulunmasının, geliştirmenin tamamını kalite kontrolden geçirdiğini belirtir. Diğer seçenekler aynı hedefe (LO) ait farklı bir iyi test uygulamasının -test seviyelerinin farklı hedefleri, test analizi ve tasarımının zamanında başlaması ya da taslakların resmi onaydan önce gözden geçirilmesi- gerçek gerekçesini verir, bu uygulamanınkini değil.",
             "byOption": {
-              "a": "Yanlış: hangi test tekniklerinin uygun olduğu, syllabus'a göre tam olarak YGYD modeline bağlı olarak değişen şeylerden biridir; sabit kalan, modelden bağımsız uygulamalar arasında test tekniklerinin seçimi yer almaz.",
-              "b": "Yanlış: bu, erken test ilkesinin (shift left) tam tersidir; iyi uygulama, bir seviyenin test analizi ve tasarımının o seviyenin geliştirme aşamasında BAŞLAMASIdır, aşama bitene kadar beklenmesi değil.",
-              "c": "Yanlış: syllabus bu uygulamaları seçilen YGYD modelinden bağımsız olarak tanımlar; yalnızca çevik projelere özgü olduğu iddiası, LO'nun kendisiyle çelişen yaygın bir yanılgıdır.",
-              "d": "Doğru: her geliştirme aktivitesine karşılık gelen bir test aktivitesi bulunması, geliştirmenin her parçasının kalite kontrolden geçmesini sağlayan ve seçilen YGYD modelinden bağımsız olan iyi test uygulamalarından biridir."
+              "a": "Yanlış: bu, ders programının farklı bir iyi uygulamaya -her test seviyesinin kendine özgü, farklı hedefleri olmasına- verdiği gerekçedir; her geliştirme faaliyetine karşılık gelen bir test faaliyeti bulunmasının gerekçesi değildir.",
+              "b": "Yanlış: bu, ders programının farklı bir iyi uygulamaya -bir seviye için test analizi ve tasarımının o seviyenin kendi geliştirme aşamasında başlamasına- verdiği gerekçedir; her geliştirme faaliyetine karşılık gelen bir test faaliyeti bulunmasının gerekçesi değildir.",
+              "c": "Doğru: ders programı, her geliştirme faaliyetine karşılık gelen bir test faaliyeti bulunmasının, geliştirmenin tamamını kalite kontrolden geçirdiğini belirtir.",
+              "d": "Yanlış: bu, ders programının farklı bir iyi uygulamaya -test uzmanlarının bir iş ürününü resmi onayı beklemeden, taslak hazır olur olmaz gözden geçirmesine- verdiği gerekçedir; her geliştirme faaliyetine karşılık gelen bir test faaliyeti bulunmasının gerekçesi değildir."
             }
           }
         },
         "en": {
-          "stem": "Which of the following is one of the good testing practices that apply regardless of the software development lifecycle (SDLC) model a project follows?",
+          "stem": "According to the good testing practices that apply across every SDLC model, why does the syllabus call for a corresponding test activity for every software development activity?",
           "options": [
             {
               "id": "a",
-              "text": "The specific test techniques used should be identical, whichever SDLC model the project follows."
+              "text": "So that testing stays appropriately comprehensive without wastefully repeating the same checks"
             },
             {
               "id": "b",
-              "text": "Test analysis and design should not begin until the corresponding development activity is fully finished."
+              "text": "So that test analysis and design keeps pace with development instead of trailing behind it"
             },
             {
               "id": "c",
-              "text": "These good practices apply only to agile projects, since continuous testing is unique to agile."
+              "text": "So that every software development activity, whatever the SDLC, is subject to quality control"
             },
             {
               "id": "d",
-              "text": "For every software development activity, there is a corresponding test activity."
+              "text": "So that defects are caught while a work product is still a draft, before it receives formal sign-off"
             }
           ],
           "rationale": {
-            "summary": "The syllabus names having a corresponding test activity for every development activity as one of the good testing practices that hold regardless of the SDLC model; the other options either reverse a different practice or misapply this model-independence to something that does vary with the model.",
+            "summary": "The syllabus states that having a corresponding test activity for every development activity is what subjects all of development to quality control. The other options each give the real reason behind a different good testing practice for this same objective — distinct test level objectives, test analysis and design starting on time, or reviewing drafts before sign-off — not the reason behind this one.",
             "byOption": {
-              "a": "Incorrect: which test techniques fit is exactly one of the things the syllabus says DOES vary with the SDLC model; the choice of test techniques is not among the practices that stay constant.",
-              "b": "Incorrect: this is the reverse of the early-testing (shift-left) principle; the good practice is that test analysis and design for a level BEGIN during that level's development phase, not that they wait until it is finished.",
-              "c": "Incorrect: the syllabus states these practices independently of the chosen SDLC model, sequential models included; treating them as agile-specific contradicts the LO itself.",
-              "d": "Correct: having a corresponding test activity for every development activity is what subjects all of development to quality control, and it holds regardless of the SDLC model."
+              "a": "Incorrect: this is the reason the syllabus gives for a different good practice, that each test level has its own distinct objectives, not for having a test activity for every development activity.",
+              "b": "Incorrect: this is the reason the syllabus gives for a different good practice, that test analysis and design for a level begins during that level's own development phase, not for having a test activity for every development activity.",
+              "c": "Correct: the syllabus states that having a corresponding test activity for every development activity is what subjects all of development to quality control.",
+              "d": "Incorrect: this is the reason the syllabus gives for a different good practice, that testers review a work product as soon as a draft exists rather than waiting for formal sign-off, not for having a test activity for every development activity."
             }
           }
         }
@@ -2098,7 +2098,7 @@
         "author": "claude",
         "reviewedBy": "checked against syllabus-en/tr §1.4.3 and §2.1.1-2.1.2, 2026-09-22; 'control directives' confirmed as a monitoring-and-control work product, the 'four practices' overclaim removed",
         "createdAt": "2026-09-22",
-        "updatedAt": "2026-09-22"
+        "updatedAt": "2026-09-24"
       }
     }
   ]

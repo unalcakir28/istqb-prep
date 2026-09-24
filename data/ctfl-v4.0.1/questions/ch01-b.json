@@ -3025,7 +3025,7 @@
     },
     {
       "id": "ctfl4-0256",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 1,
       "section": "1.4",
@@ -3069,7 +3069,7 @@
             }
           ],
           "rationale": {
-            "summary": "Kontrol direktifleri, ilerleme raporlarıyla birlikte test gözetimi ve kontrolü faaliyetinin çalışma ürünüdür; diğer seçenekler sırasıyla test tamamlama, test tasarımı ve test uyarlama faaliyetlerine aittir.",
+            "summary": "Kontrol direktifleri, ilerleme raporlarıyla birlikte test gözetimi ve kontrolü faaliyetinin çalışma ürünüdür; test tamamlama raporu test tamamlamaya, kapsam öğeleri test tasarımına, test prosedürleri ise test uyarlamaya aittir.",
             "byOption": {
               "a": "Yanlış: test tamamlama raporu, test tamamlama faaliyetinin bir çalışma ürünüdür; süreç kapanırken iyileştirme aksiyonları, tecrübeler ve değişiklik talepleriyle birlikte üretilir, testin ilerleyişini izlemekle değil kapatmakla ilgilidir.",
               "b": "Yanlış: kapsam öğeleri, test tasarımı faaliyetinin bir çalışma ürünüdür; testlerin neyi kapsadığını ölçmek için tanımlanır, test durumunun izlenmesiyle değil testlerin tasarlanmasıyla ortaya çıkar.",
@@ -3099,7 +3099,7 @@
             }
           ],
           "rationale": {
-            "summary": "Control directives, together with progress reports, are a work product of test monitoring and control; the other options belong to test completion, test design and test implementation respectively.",
+            "summary": "Control directives, together with progress reports, are a work product of test monitoring and control; the test completion report belongs to test completion, coverage items to test design, and test procedures to test implementation.",
             "byOption": {
               "a": "Incorrect: the test completion report is a work product of test completion; it is produced as the process closes, alongside improvement actions, lessons learned and change requests, which is about closing testing rather than tracking its progress.",
               "b": "Incorrect: coverage items are a work product of test design; they are defined to measure what the tests cover, which comes from designing tests rather than from monitoring their status.",
@@ -3113,7 +3113,7 @@
         "author": "claude",
         "reviewedBy": "checked against syllabus-en/tr §1.4.3 and §2.1.1-2.1.2, 2026-09-22; 'control directives' confirmed as a monitoring-and-control work product, the 'four practices' overclaim removed",
         "createdAt": "2026-09-22",
-        "updatedAt": "2026-09-22"
+        "updatedAt": "2026-09-24"
       }
     }
   ]

@@ -100,7 +100,7 @@
     },
     {
       "id": "ctfl4-0116",
-      "revision": 2,
+      "revision": 3,
       "syllabusVersion": "4.0.1",
       "chapter": 6,
       "section": "6.1",
@@ -129,7 +129,7 @@
           "options": [
             {
               "id": "a",
-              "text": "Test koşumu ve kapsam araçları"
+              "text": "Test koşumu ve kapsam ölçüm araçları"
             },
             {
               "id": "b",
@@ -137,11 +137,11 @@
             },
             {
               "id": "c",
-              "text": "Test yönetimi araçları"
+              "text": "Test yönetimi ve yapılandırma araçları"
             },
             {
               "id": "d",
-              "text": "Statik test araçları"
+              "text": "Statik test ve gözden geçirme araçları"
             }
           ],
           "rationale": {
@@ -167,11 +167,11 @@
             },
             {
               "id": "c",
-              "text": "Test management tools"
+              "text": "Test management and configuration tools"
             },
             {
               "id": "d",
-              "text": "Static testing tools"
+              "text": "Static testing and review tools"
             }
           ],
           "rationale": {
@@ -189,7 +189,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-22"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -289,7 +289,7 @@
     },
     {
       "id": "ctfl4-0118",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 6,
       "section": "6.2",
@@ -318,25 +318,25 @@
           "options": [
             {
               "id": "a",
-              "text": "Daha fazla tutarlılık ve tekrarlanabilirlik sayesinde basit insan hatalarının (error) önlenmesi"
+              "text": "Tutarlılık ve tekrarlanabilirlik sayesinde basit insan hatalarının (error) önlenmesi"
             },
             {
               "id": "b",
-              "text": "Bir aracın edinilmiş olmasının gerçek ve kalıcı faydaları garanti etmesi"
+              "text": "Bir aracın tek başına edinilmiş olmasının gerçek ve kalıcı faydaları garanti etmesi"
             },
             {
               "id": "c",
-              "text": "Testlerin gereksinimlerden türetilmesi ihtiyacının ortadan kalkması"
+              "text": "Testlerin gereksinimlerden türetilmesi ihtiyacının tamamen ortadan kalkması"
             },
             {
               "id": "d",
-              "text": "Manuel testin daha uygun olduğu durumlarda da test aracı kullanılması"
+              "text": "Manuel testin daha uygun olduğu durumlarda bile test aracı kullanılması"
             }
           ],
           "rationale": {
-            "summary": "Müfredatta sayılan faydalardan biri, daha fazla tutarlılık ve tekrarlanabilirlik sayesinde basit insan hatalarının (error) önlenmesidir: testler gereksinimlerden tutarlı biçimde türetilir, test verisi sistematik olarak oluşturulur ve testler araç tarafından aynı sırada ve aynı sıklıkta koşulur.",
+            "summary": "Müfredatta sayılan faydalardan biri, tutarlılık ve tekrarlanabilirlik sayesinde basit insan hatalarının (error) önlenmesidir: testler gereksinimlerden tutarlı biçimde türetilir, test verisi sistematik olarak oluşturulur ve testler araç tarafından aynı sırada ve aynı sıklıkta koşulur.",
             "byOption": {
-              "a": "Doğru. Tutarlılık ve tekrarlanabilirlik artışı sayesinde basit insan hatalarının (error) önlenmesi, müfredatta sayılan faydalardandır.",
+              "a": "Doğru. Tutarlılık ve tekrarlanabilirlik sayesinde basit insan hatalarının (error) önlenmesi, müfredatta sayılan faydalardandır.",
               "b": "Yanlış. Müfredat bunun tersini söyler: sadece bir araç edinmek başarıyı garanti etmez; her yeni araç gerçek ve kalıcı fayda için kullanıma alma, bakım ve eğitim eforu gerektirir.",
               "c": "Yanlış. Otomasyonun faydası bu ihtiyacı ortadan kaldırmak değil, tam tersine testlerin gereksinimlerden tutarlı bir şekilde türetilmesini sağlamaktır.",
               "d": "Yanlış. Bu bir fayda değil, müfredatta açıkça sayılan bir risktir: manuel testin daha uygun olduğu durumlarda test aracı kullanmak."
@@ -348,25 +348,25 @@
           "options": [
             {
               "id": "a",
-              "text": "Prevention of simple human errors through greater consistency and repeatability"
+              "text": "Prevention of simple human errors through consistency and repeatability"
             },
             {
               "id": "b",
-              "text": "Acquiring a tool guarantees real and lasting benefits"
+              "text": "Acquiring a tool on its own guarantees real and lasting benefits"
             },
             {
               "id": "c",
-              "text": "The need to derive tests from requirements is removed"
+              "text": "The need to derive tests from requirements is removed entirely"
             },
             {
               "id": "d",
-              "text": "A test tool is used also where manual testing is more appropriate"
+              "text": "A test tool is used even where manual testing is more appropriate"
             }
           ],
           "rationale": {
-            "summary": "One of the benefits the syllabus lists is prevention of simple human errors through greater consistency and repeatability: tests are consistently derived from requirements, test data is created systematically, and tests are executed by a tool in the same order with the same frequency.",
+            "summary": "One of the benefits the syllabus lists is prevention of simple human errors through consistency and repeatability: tests are consistently derived from requirements, test data is created systematically, and tests are executed by a tool in the same order with the same frequency.",
             "byOption": {
-              "a": "Correct. Prevention of simple human errors through greater consistency and repeatability is one of the listed potential benefits.",
+              "a": "Correct. Prevention of simple human errors through consistency and repeatability is one of the listed potential benefits.",
               "b": "Incorrect. The syllabus states the opposite: simply acquiring a tool does not guarantee success, and each new tool requires effort for introduction, maintenance and training to achieve real and lasting benefits.",
               "c": "Incorrect. The benefit is not that this need disappears but the reverse: tests are consistently derived from requirements.",
               "d": "Incorrect. This is not a benefit but one of the risks the syllabus lists explicitly: using a test tool when manual testing is more appropriate."
@@ -378,7 +378,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -477,7 +477,7 @@
     },
     {
       "id": "ctfl4-0120",
-      "revision": 1,
+      "revision": 2,
       "syllabusVersion": "4.0.1",
       "chapter": 6,
       "section": "6.2",
@@ -515,7 +515,7 @@
             },
             {
               "id": "c",
-              "text": "Yazılımın artık kullanılmaması nedeniyle yeni güncelleme gelmemesi veya dahili bileşenlerinin çok sık güncelleme gerektirmesi"
+              "text": "Yazılımın terk edilmesi nedeniyle güncelleme gelmemesi veya bileşenlerinin sık güncelleme gerektirmesi"
             },
             {
               "id": "d",
@@ -545,7 +545,7 @@
             },
             {
               "id": "c",
-              "text": "The software is abandoned, so no further updates are available, or its internal components require quite frequent updates"
+              "text": "The software is abandoned, so updates stop, or its components need frequent updates"
             },
             {
               "id": "d",
@@ -567,7 +567,7 @@
         "author": "claude",
         "reviewedBy": "claude-review",
         "createdAt": "2026-09-19",
-        "updatedAt": "2026-09-19"
+        "updatedAt": "2026-09-24"
       }
     }
   ]
