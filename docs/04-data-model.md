@@ -579,7 +579,9 @@ Then SHUFFLE the combined list: official sample exams run in LO order, a real ex
 
 `preferUnseen`'s `exclude` set is built from **submitted** attempts only (`collectSeenQuestionIds`). Only the exam setup screen's "ones I haven't seen before" option passes one — it is on by default; practice and study always pass an empty set.
 
-**Not implemented, deliberately not pretended:** there is no weighted "smart mode" (the `w *= 2.0 / 1.5 / 0.3` sketch this section used to carry), and **options are never shuffled** — `OptionList` renders them in file order. Answer-position bias is handled at authoring time instead, by CI checks #14 (which letter is the key), #22 (whether the key is the longest option) and #23 (whether the keyed letters run a rotation). Shuffling options per attempt would retire all three — that is TODO D-03.
+**Not implemented, deliberately not pretended:** there is no weighted "smart mode" (the `w *= 2.0 / 1.5 / 0.3` sketch this section used to carry), nor is there a toggle for option order.
+
+**Options are shuffled per attempt (D-03), in every mode.** `withOptionOrder` (`src/features/exam/optionOrder.ts`) seeds `createRng` with an FNV-1a hash of the attempt's `seed` and the question id, shuffles the option ids once, and applies that one permutation to every language. The order is derived, not stored: `sessionStore` applies it wherever questions enter the store (`startSession`, `resumeAttempt`, and through it `loadSubmitted`), so a resumed session, the result screen and `/inceleme/:attemptId` show the order the candidate saw, and attempts written before D-03 get a stable order from their own seed with no schema change. Answers, `correct`, `rationale.byOption` and scoring are keyed by option id and never see a position. What the candidate sees follows position: the row number, the 1-9 shortcut and the rationale panel's label are all the displayed position. The pre-filled GitHub issue names options by their authored id and writes out the order they were shown in. Checks #14 (which letter is the key) and #23 (a rotation in the keyed letters) measured the authored letter, which no longer reaches a candidate, so both were retired; #22 (whether the key is the longest option) stays, because length survives the shuffle.
 
 **Insufficient question count:** the selection never throws and never silently shrinks. Every group that fell short is reported in `shortfalls`, and the caller states it before the session starts: *"This exam contains 34 questions instead of 40 — there aren't enough questions for chapter 4 yet."* Rule 8. `PracticeSetup` previews by calling `selectQuestions` itself, so its preview is generation. `ExamSetup` previews through `previewCoverage`, which counts each blueprint group's candidates instead of running the selection — and it counts them over the **whole** published pool, with the seen set deliberately not applied, because `exclude` only reorders candidates and never removes one. Applying it would make the screen warn about shortfalls generation does not produce.
 
@@ -604,7 +606,7 @@ Checks that run on every PR (`yarn validate:data`). The registry in [`../scripts
 | 11 | Is there at least 3 published questions for every LO? | ⚠️ warning |
 | 12 | Does `kLevel` match the highest K-level among the question's LOs? | ⚠️ warning |
 | 13 | Is there English-term leakage in the Turkish text (glossary check)? | ⚠️ warning |
-| 14 | Is the correct answer's option position balanced (a systematic "always a" bias)? | ⚠️ warning |
+| 14 | ~~Is the correct answer's option position balanced (a systematic "always a" bias)?~~ **Retired by D-03** — options are shuffled per attempt, so the authored letter never reaches a candidate. | — |
 | 15 | Does the rationale/question text refer to an option by its letter (e.g. "(c) is incorrect")? | ❌ |
 | 16 | Does every lesson's `objective` exist in `objectives.json`? | ❌ |
 | 17 | Are the TR and EN lesson blocks parallel (equal `keyPoints` / `commonMistakes` counts)? | ❌ |
@@ -613,9 +615,9 @@ Checks that run on every PR (`yarn validate:data`). The registry in [`../scripts
 | 20 | Is there at least 1 published lesson for every LO? | ⚠️ warning |
 | 21 | Does the Turkish text use a word from a term's `trForbidden` list (questions **and** lessons)? | ⚠️ warning |
 | 22 | Are the keyed options the longest ones far more often than chance (a length cue)? Both languages, singles **and** multi-select. | ⚠️ warning |
-| 23 | Do the keyed letters run a rotation in file order (`a → b → c → d …`), per chunk? | ⚠️ warning |
+| 23 | ~~Do the keyed letters run a rotation in file order (`a → b → c → d …`), per chunk?~~ **Retired by D-03**, for the same reason as #14. | — |
 
-**14 errors (#1–#9, #15–#19) and 9 warnings (#10–#14, #20–#23).** A warning prints and exits 0: content gaps must be visible without blocking CI.
+**21 live checks: 14 errors (#1–#9, #15–#19) and 7 warnings (#10–#13, #20–#22).** #14 and #23 are retired; their numbers are not reused, so every other check keeps its number. A warning prints and exits 0: content gaps must be visible without blocking CI.
 
 #13 and #21 are the two halves of one problem and neither covers the other. #13
 catches an untranslated **English** word sitting in Turkish text; #21 catches a

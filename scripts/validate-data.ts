@@ -2,10 +2,20 @@
 /**
  * scripts/validate-data.ts
  *
- * Implements the 20 CI checks from docs/04-data-model.md §6.
- * Checks #1-9 and #15-19 are ERRORS (exit 1). Checks #10-14 and #20 are
- * WARNINGS (exit 0, printed). The registry below is the source of truth for
- * the severity levels.
+ * Implements the CI checks from docs/04-data-model.md §6. Check numbers run
+ * #1-#23 and are never reused or renumbered; #14 and #23 are RETIRED (D-03)
+ * and no longer run, which leaves 21 live checks. Checks #1-9 and #15-19 are
+ * ERRORS (exit 1); #10-13 and #20-22 are WARNINGS (exit 0, printed). The
+ * registry below is the source of truth for the severity levels.
+ *
+ * Retired, kept here so the numbers stay stable:
+ *   #14 — was "Is the correct answer's option position balanced".
+ *   #23 — was "Do the keyed letters run a rotation in file order".
+ * Both measured the AUTHORED letter of the key. Since D-03 the app shuffles
+ * every question's options per attempt (src/features/exam/optionOrder.ts), so
+ * the letter in the file never reaches a candidate: a balanced count would
+ * pass vacuously and a rotation would describe nothing anyone sees. #22 (the
+ * key being the longest option) stays — length survives any shuffle.
  *
  * Design rules followed (see CLAUDE.md):
  *   - Guard clauses / early returns, no deep nesting, no hardcoded exam
@@ -63,7 +73,7 @@ const CHECKS: Record<number, CheckDef> = {
   11: { num: 11, level: "warning", name: "At least 3 published questions per LO" },
   12: { num: 12, level: "warning", name: "Is kLevel consistent with the highest LO K-level" },
   13: { num: 13, level: "warning", name: "Untranslated English term leaking into Turkish text" },
-  14: { num: 14, level: "warning", name: "Is the correct answer's option position balanced" },
+  // 14: retired by D-03 (option order is shuffled per attempt) — see the header.
   15: { num: 15, level: "error", name: "Does the text reference an option letter" },
   16: { num: 16, level: "error", name: "Does every lesson's objective exist in objectives.json" },
   17: { num: 17, level: "error", name: "Are i18n.tr and i18n.en lesson content parallel (keyPoints/commonMistakes counts)" },
@@ -72,7 +82,7 @@ const CHECKS: Record<number, CheckDef> = {
   20: { num: 20, level: "warning", name: "At least 1 published lesson per LO" },
   21: { num: 21, level: "warning", name: "A term.trForbidden word used in Turkish text" },
   22: { num: 22, level: "warning", name: "Is the keyed option the longest one too often" },
-  23: { num: 23, level: "warning", name: "Do the keyed letters run a rotation in file order" },
+  // 23: retired by D-03 (option order is shuffled per attempt) — see the header.
 };
 
 interface Issue {
@@ -598,55 +608,17 @@ function checkTerminologyLeakage(questions: QuestionRecord[], patterns: LeakPatt
   }
 }
 
-/**
- * #14 — Is the correct answer's option position balanced?
- *
- * This check was added after the fact: in the first batch of 87 questions,
- * 51 of the 78 single-choice questions had the correct answer on option
- * "a" (65%). A candidate who always marked "a" would have passed. Because
- * the generated content had a systematic bias, a one-off fix isn't enough;
- * the gate stays here.
- *
- * The threshold is deliberately loose: deviation is natural in small pools,
- * the goal is to catch a SYSTEMATIC bias, not chance.
- */
-function checkAnswerPositionBalance(questions: QuestionRecord[], file: string): void {
-  const singles = questions.filter(({ question }) => question?.type === "single");
-  if (singles.length < 20) return;
-
-  const counts = new Map<string, number>();
-  for (const { question } of singles) {
-    const first = Array.isArray(question.correct) ? question.correct[0] : undefined;
-    if (!isNonEmptyString(first)) continue;
-    counts.set(first, (counts.get(first) ?? 0) + 1);
-  }
-
-  const total = [...counts.values()].reduce((sum, n) => sum + n, 0);
-  if (total === 0) return;
-
-  const positions = Math.max(counts.size, 4);
-  const expected = total / positions;
-  const limit = expected * 1.6;
-
-  for (const [optionId, count] of [...counts].sort()) {
-    if (count <= limit) continue;
-    report(
-      14,
-      file,
-      undefined,
-      `Correct answer disproportionately falls on option '${optionId}'. Expected: ~${expected.toFixed(1)} (${total} single-choice questions / ${positions} options); Found: ${count}. Rotate and relabel the options.`,
-    );
-  }
-}
+// #14 (answer-letter balance) was retired by D-03 — see the header.
 
 /**
  * #22 — Is the keyed option the longest one too often?
  *
- * The sibling of #14, and it exists for the same reason: a cue that lets a
- * candidate score without reading the question. #14 watches WHICH LETTER the
- * key falls on; this one watches HOW LONG the key is. A writer who states the
- * right answer completely and the wrong ones in a clause produces a pool where
- * "pick the longest option" beats studying, and #14 sees nothing wrong with it.
+ * A cue that lets a candidate score without reading the question: a writer who
+ * states the right answer completely and the wrong ones in a clause produces a
+ * pool where "pick the longest option" beats studying. It was written beside
+ * #14, which watched WHICH LETTER the key fell on; that one was retired when
+ * options started being shuffled per attempt (D-03), and this one was not,
+ * because an option's length travels with it to whatever row it lands on.
  *
  * Both languages are measured, and a question counts as cued if EITHER cues.
  * The first version of this check read English only, on the assumption that the
@@ -660,9 +632,9 @@ function checkAnswerPositionBalance(questions: QuestionRecord[], file: string): 
  * both languages, so "pick the two longest" scored it perfectly and CI saw
  * nothing.
  *
- * Aggregate over the whole pool rather than per chunk, exactly as #14 does: in
- * a 20-question chunk the ratio swings on chance, across 250 it does not. With
- * four options and one key the expected rate is 25%; the gate is 40%, loose
+ * Aggregate over the whole pool rather than per chunk: in a 20-question chunk
+ * the ratio swings on chance, across 250 it does not. With four options and
+ * one key the expected rate is 25%; the gate is 40%, loose
  * enough that an honest pool clears it and a systematic habit does not. When it
  * fires it names the worst chunks, because the fix is per chunk.
  */
@@ -753,102 +725,15 @@ function checkAnswerLengthCue(questions: QuestionRecord[], file: string): void {
   );
 }
 
-/**
- * #23 — Do the keyed letters run a rotation in file order?
- *
- * The third sibling of #14. #14 counts how often each letter is the key and
- * #22 measures how long the key is; neither looks at the ORDER. A writer
- * spreading answers "evenly" by hand produces a b c d a b c d …, which passes
- * #14 with perfect counts and lets a candidate predict the next answer from
- * the last one.
- *
- * Two real cases forced this check: one chunk ran a → c → b → d for twelve of
- * its twenty-nine questions in three separate cycles, and another ran
- * a → b → c → d unbroken across thirteen consecutive questions. Both were
- * found by a human reading the file, after #14 had passed them.
- *
- * It matters because nothing shuffles options at runtime and study mode walks
- * an objective's questions in id order, so the candidate sees exactly the
- * sequence written here.
- *
- * Measured per chunk, not pooled: a rotation is a local writing habit, and
- * pooling would average it away against the chunks that do not have one. The
- * statistic is the longest run of a constant step between consecutive keys
- * (a → b → c → d is a constant step of 1; a → a → a is a constant step of 0,
- * which #14 also catches, but only once it dominates the whole pool). With
- * four options a run of five happens by chance often enough to be noise, so
- * the gate is seven.
- *
- * A pass is a floor, not a clean bill: this finds the longest run and says
- * nothing about three short cycles scattered through a chunk. A human reading
- * the keyed letters in order still catches more.
- */
-function checkAnswerPositionSequence(questions: QuestionRecord[]): void {
-  const byChunk = new Map<string, { keys: string[]; file: string }>();
-
-  for (const { question, file } of questions) {
-    if (question?.type !== "single") continue;
-
-    const key = Array.isArray(question.correct) ? question.correct[0] : undefined;
-    if (!isNonEmptyString(key)) continue;
-
-    const name = path.basename(file, ".json");
-    const bucket = byChunk.get(name) ?? { keys: [], file };
-    bucket.keys.push(key);
-    byChunk.set(name, bucket);
-  }
-
-  const RUN_GATE = 7;
-
-  for (const [, { keys, file }] of byChunk) {
-    if (keys.length < RUN_GATE) continue;
-
-    const positions = keys.map((key) => key.charCodeAt(0) - "a".charCodeAt(0));
-    const modulus = Math.max(...positions) + 1;
-    if (modulus < 2) continue;
-
-    let bestLength = 1;
-    let bestStart = 0;
-    let bestStep = 0;
-    let runLength = 1;
-    let runStart = 0;
-    let previousStep: number | null = null;
-
-    for (let i = 1; i < positions.length; i += 1) {
-      const step = (positions[i] - positions[i - 1] + modulus) % modulus;
-
-      if (step === previousStep) {
-        runLength += 1;
-      } else {
-        runLength = 2;
-        runStart = i - 1;
-        previousStep = step;
-      }
-
-      if (runLength > bestLength) {
-        bestLength = runLength;
-        bestStart = runStart;
-        bestStep = step;
-      }
-    }
-
-    if (bestLength < RUN_GATE) continue;
-
-    const run = keys.slice(bestStart, bestStart + bestLength).join(" → ");
-    report(
-      23,
-      file,
-      undefined,
-      `The keyed letters run a rotation of step ${bestStep} across ${bestLength} consecutive single-choice questions: ${run}. Check #14 passes this, because the letter COUNTS are even — it is the order that gives the answer away, and nothing shuffles options at runtime. Re-order the options (moving each rationale with its option) on enough of the run to break it, then confirm the counts are still balanced.`,
-    );
-  }
-}
+// #23 (keyed-letter rotation in file order) was retired by D-03 — see the header.
 
 /**
  * #15 — Does the question text reference an option letter?
  *
  * A sentence like "Bu nedenle (c) yanlis esleştirmedir" ("So (c) is the
- * wrong pairing") becomes FALSE the instant the options are reordered.
+ * wrong pairing") becomes FALSE the instant the options are reordered — and
+ * since D-03 they are reordered on every attempt, so the letter the sentence
+ * names is almost never the row the candidate sees.
  * When options are reshuffled, the `byOption` keys move programmatically,
  * but the letter inside the plain-text sentence stays behind — and that
  * exact kind of defect is what destroys trust in the answer key.
@@ -1258,9 +1143,7 @@ function validateCertification(certEntry: any): void {
   const termsFile = path.join(certDir, "terms.json");
   const termsDoc = fs.existsSync(termsFile) ? readJson(termsFile) : null;
   checkTerminologyLeakage(allQuestions, buildLeakPatterns(termsDoc));
-  checkAnswerPositionBalance(allQuestions, indexFile);
   checkAnswerLengthCue(allQuestions, indexFile);
-  checkAnswerPositionSequence(allQuestions);
   checkNoOptionLetterReferences(allQuestions);
 
   // lessons/

@@ -2,8 +2,9 @@
 # PostToolUse hook: revalidate the content set whenever data/ is touched.
 #
 # The product here is the question bank, not the code, so a broken data set is
-# a broken product. `yarn validate:data` runs 23 numbered checks, but it is
-# easy to forget after an edit and the failure then stays silent for a while.
+# a broken product. `yarn validate:data` runs 21 live checks (#14 and #23 are
+# retired), but it is easy to forget after an edit and the failure then stays
+# silent for a while.
 #
 # Contract (verified against the Claude Code hooks reference):
 #   - the hook payload arrives as JSON on stdin; the edited path is at

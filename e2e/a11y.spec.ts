@@ -4,8 +4,8 @@ import AxeBuilder from "@axe-core/playwright";
 import {
   answerCurrentQuestion,
   checkedStates,
-  checkOptionsAt,
-  correctOptionPositions,
+  checkOptionIds,
+  correctOptionIds,
   en,
   escapeRegExp,
   fill,
@@ -14,6 +14,7 @@ import {
   PRODUCT_NAME,
   questionCounter,
   sessionLiveRegion,
+  shownOptionIds,
   totalQuestions,
 } from "./labels";
 
@@ -174,9 +175,9 @@ test("an option can be selected with the keyboard on the exam screen", async ({ 
   await page.getByRole("button", { name: en.setup.start }).click();
   await expect(page).toHaveURL(/\/sinav\/[\w-]+$/);
 
-  // The first question may be a "WHICH TWO" one, and then the options render
-  // as checkboxes rather than radios. The test must not depend on the type.
-  const firstOption = page.getByRole("radio").or(page.getByRole("checkbox")).first();
+  // Scoped to the question card: the question-language toggle is a radio group
+  // too, and a page-wide locator can land on it instead of an option.
+  const firstOption = optionInputs(page).first();
   await firstOption.focus();
   await page.keyboard.press("Space");
   await expect(firstOption).toBeChecked();
@@ -377,10 +378,8 @@ async function walkToStem(page: Page, stem: string): Promise<void> {
  * Completeness matters — a multi-select reveals nothing until the full number
  * of options is picked, so "wrong" cannot mean "fewer".
  */
-function wrongSelection(correct: number[], optionCount: number): number[] {
-  const others = Array.from({ length: optionCount }, (_, index) => index + 1).filter(
-    (position) => !correct.includes(position),
-  );
+function wrongSelection(correct: string[], optionIds: string[]): string[] {
+  const others = optionIds.filter((id) => !correct.includes(id));
 
   expect(others.length).toBeGreaterThan(0);
   return [...correct.slice(0, -1), others[0]];
@@ -411,22 +410,23 @@ function verdictName(verdict: string): RegExp {
  */
 test("the announced verdict follows whether the answer was actually right", async ({ page }) => {
   // Probe: answer question 1 however, then read the keyed answer off the
-  // revealed rows. The question is locked afterwards, so the two assertions
+  // revealed rows — as option ids, because every session shuffles the options
+  // again (D-03). The question is locked afterwards, so the two assertions
   // below each need a session of their own.
   await startObjectivePractice(page, true);
   const stem = await stemText(page);
-  const optionCount = await optionInputs(page).count();
+  const optionIds = await shownOptionIds(page);
 
   await answerCurrentQuestion(page);
   await expect(page.getByRole("region", { name: en.review.whyTitle })).toBeVisible();
 
-  const correct = await correctOptionPositions(page);
+  const correct = await correctOptionIds(page);
   expect(correct.length).toBeGreaterThan(0);
 
   // Right answer -> "Correct answer! Why?".
   await startObjectivePractice(page, true);
   await walkToStem(page, stem);
-  await checkOptionsAt(page, correct);
+  await checkOptionIds(page, correct);
 
   const rightPanel = page.getByRole("region", { name: en.review.whyTitle });
   await expect(rightPanel).toBeVisible();
@@ -435,7 +435,7 @@ test("the announced verdict follows whether the answer was actually right", asyn
   // Wrong answer, same question -> "Incorrect answer. Why?".
   await startObjectivePractice(page, true);
   await walkToStem(page, stem);
-  await checkOptionsAt(page, wrongSelection(correct, optionCount));
+  await checkOptionIds(page, wrongSelection(correct, optionIds));
 
   const wrongPanel = page.getByRole("region", { name: en.review.whyTitle });
   await expect(wrongPanel).toBeVisible();

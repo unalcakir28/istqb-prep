@@ -8,6 +8,9 @@ import type { Lang, QuestionOption } from "@/types/content";
  * - The whole row is the touch target (docs/06 §1.7 — one-handed use on
  *   mobile).
  * - Selection can be made with keys 1-9; the shortcut is shown on the row.
+ * - Rows render in the order given, which is the attempt's shuffled order
+ *   (D-03, `withOptionOrder`). The number on a row is its displayed position,
+ *   never its option id.
  * - Single-select uses radio semantics, multi-select uses checkbox; a native
  *   input was chosen over Radix because the native behavior is already
  *   correct.

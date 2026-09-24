@@ -55,6 +55,24 @@ describe("RationalePanel", () => {
     expect(screen.getByText(en.session.feedbackCorrect)).toHaveClass("sr-only");
   });
 
+  it("labels each rationale with its displayed position, never its option id", () => {
+    // D-03: options arrive in the attempt's shuffled order, so the authored
+    // id "b" may be the first row the candidate saw.
+    const content = question.i18n.en;
+    const shuffled = {
+      ...question,
+      i18n: { ...question.i18n, en: { ...content, options: [...content.options].reverse() } },
+    };
+    const { container } = render(<RationalePanel question={shuffled} lang="en" selected={[]} />);
+
+    const rows = [...container.querySelectorAll("dl > div")];
+    expect(rows.map((row) => row.querySelector("dt")?.textContent?.trim())).toEqual(["1", "2"]);
+    expect(rows.map((row) => row.querySelector("dd")?.textContent)).toEqual([
+      content.rationale.byOption.b,
+      content.rationale.byOption.a,
+    ]);
+  });
+
   it("titles itself h2 in a session and h3 on the review screen", () => {
     const { unmount } = render(<RationalePanel question={question} lang="en" selected={["a"]} />);
 

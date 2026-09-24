@@ -47,8 +47,9 @@ the concept the candidate confused it with. This is the product, not a
 formality. If you cannot name the misconception behind a distractor, the
 distractor is weak; replace it.
 
-Spread the keyed answer across positions as you write. Do not let a batch drift
-towards one letter, and never refer to an option by its letter in prose.
+Options are shuffled per attempt, so the key's letter does not matter, but its
+length does: do not let the key be the longest option. Never refer to an option
+by its letter or position in prose, including "respectively" / "sırasıyla".
 
 ## Mechanics
 
@@ -74,6 +75,6 @@ you hand back. A PostToolUse hook runs this too, but the chain has to be green
 by the time you are done, not later.
 
 In your report, list the ids you added, the objective and K-level of each, and
-the keyed answer positions of the batch. Say explicitly which questions you were
+whether any key is the longest option in its question. Say explicitly which questions you were
 least confident about and why — the `question-verifier` agent runs next and that
 list tells it where to look hardest.

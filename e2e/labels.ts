@@ -182,35 +182,59 @@ export async function answerCurrentQuestion(page: Page): Promise<void> {
 }
 
 /**
- * The 1-based positions of the options a REVEALED question marks correct.
+ * The option ids a REVEALED question marks correct.
  *
  * `OptionList` computes these markers from `question.correct` on its own, with
  * no input from the session shell — which is what makes them usable as a
  * cross-check on the verdict the shell announces. Reading them is the only way
  * a spec can learn the keyed answer without retyping it out of `data/`.
  *
+ * Ids, not positions: options are shuffled per attempt (D-03), so the keyed
+ * answer learnt in one session sits on a different row in the next.
+ *
  * Matched on the marker's exact text: "Incorrect" would otherwise contain
  * "correct" and every wrong row would read as a right one.
  */
-export async function correctOptionPositions(page: Page): Promise<number[]> {
+export async function correctOptionIds(page: Page): Promise<string[]> {
   const rows = questionCard(page).locator("label");
   const count = await rows.count();
-  const positions: number[] = [];
+  const ids: string[] = [];
 
   for (let index = 0; index < count; index += 1) {
-    const marked = await rows.nth(index).getByText(en.result.correct, { exact: true }).count();
-    if (marked > 0) positions.push(index + 1);
+    const row = rows.nth(index);
+    const marked = await row.getByText(en.result.correct, { exact: true }).count();
+    if (marked > 0) ids.push(await row.locator("input").inputValue());
   }
 
-  return positions;
+  return ids;
 }
 
-/** Ticks the options at the given 1-based positions, in order. */
-export async function checkOptionsAt(page: Page, positions: number[]): Promise<void> {
-  const inputs = optionInputs(page);
-  for (const position of positions) {
-    await inputs.nth(position - 1).check();
+/** Ticks the options with the given ids, in order, wherever this attempt put them. */
+export async function checkOptionIds(page: Page, ids: string[]): Promise<void> {
+  const card = questionCard(page);
+  for (const id of ids) {
+    await card.locator(`input[value="${id}"]`).check();
   }
+}
+
+/**
+ * The option ids of one question card, in the order it renders them — read
+ * from each input's `value`, which is the option id (D-03: the order is the
+ * attempt's shuffle, not the file's). Language-independent, and unaffected by
+ * the "Correct" / "Incorrect" markers a revealed row carries.
+ *
+ * Defaults to the session's single card; the review screen stacks one per
+ * question, so it passes the card it means.
+ */
+export async function shownOptionIds(
+  page: Page,
+  card: Locator = questionCard(page),
+): Promise<string[]> {
+  await card.locator("input").first().waitFor();
+
+  return card
+    .locator("input")
+    .evaluateAll((inputs) => inputs.map((input) => (input as HTMLInputElement).value));
 }
 
 /** The checked state of every option, in render order. */

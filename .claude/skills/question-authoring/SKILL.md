@@ -54,13 +54,14 @@ is ambiguous; name which one is meant.
 
 ## Traps that have already cost us
 
-Do not refer to an option by its letter in prose ("(c) şıkkı"). Answer positions
-get rebalanced and the letters move, leaving the reference wrong. Check #15
-treats this as an error.
+Do not refer to an option by its letter or position in prose ("(c) şıkkı",
+"the other options describe X, Y and Z respectively", "sırasıyla"). Options are
+shuffled per attempt, so any positional reference is wrong on most attempts.
+Check #15 catches the letter form as an error; it does not catch "respectively".
 
-Keep the keyed answer spread across positions. This bank once had 51 of 78
-single-answer keys on "a", which means a candidate could pass by always picking
-"a". Check #14 watches the ratio.
+Do not let the key be the longest option. Shuffling hides the key's position,
+not its length: the D-04 sweep found the key strictly longest in 16 of 24
+questions in one chunk. Check #22 watches the pool-wide ratio.
 
 Do not let two questions on the same objective answer each other. Seen before:
 an option that is the exact inverse of another question's key, and a distractor

@@ -89,7 +89,7 @@ Detailed rationale and sources: [`docs/01-market-research.md`](docs/01-market-re
 | Question pool       | ✅ 256 questions published, 64/64 learning objectives covered, at least 4 each · Phase 3 target: 300             |
 | Lesson cards        | ✅ All 64 written and published — one per learning objective, TR+EN, key points and common mistakes              |
 | SRS, glossary       | ⬜ Phase 2-3                                                                                                     |
-| Tests               | ✅ 124 unit tests (Vitest) · 57 end-to-end specs (Playwright, including axe scans of every route in both themes) |
+| Tests               | ✅ 135 unit tests (Vitest) · 57 end-to-end specs (Playwright, including axe scans of every route in both themes) |
 
 **Data accuracy.** The exam constants, learning objectives, and Turkish terms
 were extracted from the official ISTQB and TTB PDFs; none of it was hand-guessed.

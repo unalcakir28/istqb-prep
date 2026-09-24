@@ -27,6 +27,7 @@ vi.mock("@/lib/content/contentClient", () => ({
 }));
 
 const { useSessionStore } = await import("./sessionStore");
+const { optionOrder } = await import("../exam/optionOrder");
 const { contentClient } = await import("@/lib/content/contentClient");
 
 function baseAttempt(overrides: Partial<Attempt> = {}): Attempt {
@@ -277,6 +278,48 @@ describe("useSessionStore", () => {
       expect(ok).toBe(true);
       expect(useSessionStore.getState().revealed).toEqual({ "ctfl4-0001": revealedAt });
       expect(useSessionStore.getState().revealed["ctfl4-0002"]).toBeUndefined();
+    });
+
+    /**
+     * D-03. The order is not stored, so the only thing that keeps a resume, the
+     * result and the review on the order the candidate saw is that every load
+     * derives it from the attempt's own seed.
+     */
+    it("orders options from the stored seed, identically on every load", async () => {
+      const ids = ["a", "b", "c", "d"];
+      const base = singleSelectQuestion("ctfl4-0001");
+      const fourOptions: Question = {
+        ...base,
+        i18n: {
+          tr: { ...base.i18n.tr, options: ids.map((id) => ({ id, text: `tr ${id}` })) },
+          en: { ...base.i18n.en, options: ids.map((id) => ({ id, text: `en ${id}` })) },
+        },
+      };
+
+      getResponsesMock.mockResolvedValue([]);
+      vi.mocked(contentClient.getMeta).mockResolvedValue({ id: "ctfl-v4.0.1" } as never);
+      vi.mocked(contentClient.getQuestions).mockResolvedValue([fourOptions]);
+
+      const shownFor = async (seed: number) => {
+        dbMock.attempts.get.mockResolvedValue(baseAttempt({ seed }));
+        await useSessionStore.getState().resumeAttempt("attempt-1");
+        const [question] = useSessionStore.getState().questions;
+        return {
+          tr: question.i18n.tr.options.map((option) => option.id),
+          en: question.i18n.en.options.map((option) => option.id),
+        };
+      };
+
+      for (const seed of [1, 2, 3, 4, 5]) {
+        const first = await shownFor(seed);
+        const again = await shownFor(seed);
+
+        expect(first.en).toEqual(optionOrder(fourOptions, seed));
+        expect(first.tr).toEqual(first.en);
+        expect(again).toEqual(first);
+      }
+      // The content client's copy is never reordered in place.
+      expect(fourOptions.i18n.en.options.map((option) => option.id)).toEqual(ids);
     });
   });
 });

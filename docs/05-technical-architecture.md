@@ -73,7 +73,7 @@ istqb-prep/
 ├── data/                        # Source data (reviewed in Git) — questions/, lessons/, terms.json …
 ├── schemas/                     # JSON Schema definitions, incl. lesson + lessons-index
 ├── scripts/
-│   ├── validate-data.ts         # CI validator — 23 numbered checks
+│   ├── validate-data.ts         # CI validator — 21 live checks (#1–#23; #14, #23 retired)
 │   ├── build-index.ts           # Builds questions/index.json, lessons/index.json, manifest counts
 │   ├── check-i18n.ts            # TR/EN locale key parity — its own CI gate
 │   ├── publish-questions.ts     # review -> published, the only path that records a reviewer
@@ -97,7 +97,7 @@ istqb-prep/
 │   │   └── Progress.tsx         # planned (Phase 3)
 │   ├── features/
 │   │   ├── session/             # SessionRunner (the shell), sessionStore, routeForAttempt
-│   │   ├── exam/                # selectQuestions, generateExam, scoreExam, examTimer, rng
+│   │   ├── exam/                # selectQuestions, generateExam, scoreExam, examTimer, rng, optionOrder
 │   │   └── srs/                 # planned (Phase 3)
 │   ├── components/              # QuestionCard, OptionList, RationalePanel, QuestionNavigator,
 │   │   │                        # ExamTimer, SubmitConfirm, ShortcutsOverlay, LessonCard,
@@ -264,14 +264,14 @@ jobs:
 
 | Level | Tool | Scope |
 |---|---|---|
-| **Data** | Ajv + custom rules | §6 [`04-data-model.md`](04-data-model.md) — 23 numbered checks |
+| **Data** | Ajv + custom rules | §6 [`04-data-model.md`](04-data-model.md) — 21 live checks (#1–#23; #14, #23 retired) |
 | **Unit** | Vitest | Selection (the 8/6/4/11/9/2 and 8/24/8 distributions hold across independent seeds; the scoped paths), scoring (exact match for multi-select), the timer, the Dexie v3 backfill, mastery, `routeForAttempt`, the session store |
 | **Component** | Testing Library | `QuestionCard` heading level and option shape, `RationalePanel`'s verdict naming and per-option coverage, `LessonCard`'s missing-card placeholder |
 | **E2E** | Playwright | All three modes end to end; auto-submit when time runs out; attempt recovery after a page reload; the legacy `/deneme` redirect; TR/EN switching |
 | **Accessibility** | `@axe-core/playwright` + hand-written specs | Zero violations on every main route in both themes, **plus** the failures axe cannot see: focus destinations, accessible names, live-region behaviour |
 | **Visual** | Playwright snapshot | Not set up |
 
-Counts as of 22.09.2026: **124 unit tests in 17 files**, **end-to-end specs across 5 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
+Counts as of 24.09.2026: **135 unit tests in 19 files**, **end-to-end specs across 5 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
 
 > This is a **testing certification** project. Test discipline is part of the product itself here; the README will display a test-coverage badge.
 

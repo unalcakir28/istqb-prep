@@ -17,7 +17,7 @@ features/exam/     Selection and scoring — selectQuestions (one entry point,
                    the last being an explicit id list), generateExam
                    (blueprint-driven, seeded, reproducible), scoreExam (exact
                    match, NO partial credit), examTimer (absolute Date.now()
-                   deadline), rng
+                   deadline), rng, optionOrder (per-attempt option shuffle)
 lib/content/       Static JSON access + a two-tier cache (Map + Cache API),
                    invalidated via dataVersion. Questions AND lessons.
 lib/db/            Dexie/IndexedDB — the single place for persistence. db.ts
@@ -65,6 +65,10 @@ user-facing surface:
   anywhere else.
 - **Instant feedback locks the answer.** Once `revealedAt` is set,
   `sessionStore.select` refuses that question. Study mode always has it on.
-- **`shuffle` is applied to the question order and to nothing else.** Options
-  render in authored order (`generateExam`, `selectQuestions`). Shuffling options
-  per attempt is D-03 in `TODO.md`.
+- **Options are shuffled per attempt, and the order is derived, never stored.**
+  `features/exam/optionOrder.ts` seeds the shuffle from `attempt.seed` + the
+  question id; `sessionStore` applies it wherever questions enter the store, so
+  resume, result and review show the order the candidate saw. Answers, `correct`,
+  `rationale.byOption` and scoring use option ids; only the row number, the 1-9
+  shortcut and the rationale panel label follow displayed position. The GitHub
+  issue from `ReportQuestionLink` names authored ids.

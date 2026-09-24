@@ -11,6 +11,10 @@
  *   refresh or an accidental close (F1-10).
  * - The content language may change mid-session and does NOT affect the
  *   answer: a selection is held by question id + option id, never by text.
+ * - Option order is shuffled per attempt (D-03) and derived from the stored
+ *   seed on every load, never persisted: `withOptionOrder` is applied at the
+ *   two places questions enter the store, so the session, the result and the
+ *   review all render the same order, and a resume cannot reorder anything.
  * - `mode`, `instantFeedback` and `scope` are frozen onto the attempt at
  *   creation. A resumed session reads them back from the stored attempt —
  *   never recomputes them from whatever the setup screen currently defaults
@@ -23,6 +27,7 @@ import type { AttemptMode, AttemptScope } from "@/lib/db/db";
 import type { CertMeta, Lang, Question, QuestionIndexEntry } from "@/types/content";
 import { contentClient } from "@/lib/content/contentClient";
 import { db, getResponses, saveResponse, type Attempt } from "@/lib/db/db";
+import { withOptionOrder } from "../exam/optionOrder";
 import { randomSeed } from "../exam/rng";
 import { isGraded, scoreExam, type AnswerMap, type ExamScore } from "../exam/scoreExam";
 import { selectQuestions, type Shortfall } from "../exam/selectQuestions";
@@ -146,7 +151,8 @@ export const useSessionStore = create<SessionState>((set, get) => ({
         return null;
       }
 
-      const questions = await contentClient.getQuestions(certPath, selection.questionIds);
+      const loaded = await contentClient.getQuestions(certPath, selection.questionIds);
+      const questions = loaded.map((question) => withOptionOrder(question, seed));
       const now = Date.now();
       const attempt: Attempt = {
         id: `attempt-${now}-${seed}`,
@@ -200,11 +206,13 @@ export const useSessionStore = create<SessionState>((set, get) => ({
       }
 
       const certPath = attempt.certId;
-      const [meta, questions, responses] = await Promise.all([
+      const [meta, loaded, responses] = await Promise.all([
         contentClient.getMeta(certPath),
         contentClient.getQuestions(certPath, attempt.questionIds),
         getResponses(attemptId),
       ]);
+      // The same seed, so the same order the candidate saw when it started.
+      const questions = loaded.map((question) => withOptionOrder(question, attempt.seed));
 
       const answers: AnswerMap = {};
       const flagged: Record<string, boolean> = {};

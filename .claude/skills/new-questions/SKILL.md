@@ -55,7 +55,7 @@ more writing on top of a broken data set.
 Dispatch the **question-verifier** agent on the chunks that changed. It is
 read-only and adversarial: keyed answer against the syllabus, one rationale per
 option that says what the wrong option actually describes, honest K-level,
-Turkish terminology from `terms.json`, answer-position balance, and answers
+Turkish terminology from `terms.json`, the key-length cue, and answers
 leaking between questions.
 
 Every finding is either fixed or explicitly waived, with the reason, before

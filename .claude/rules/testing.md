@@ -13,7 +13,7 @@ paths:
   proposing a new dependency, which needs asking first.
 - **`yarn test` (Vitest) must not collect files from `e2e/`.** The exclude in
   `vitest.config.ts` prevents this; remove it and Playwright's `test.beforeEach`
-  blows up, and the command comes back red even if all 124 unit tests pass.
+  blows up, and the command comes back red even if all 135 unit tests pass.
 - **The E2E browser launches with the `en-US` locale**, set explicitly in
   `playwright.config.ts`. UI language is picked from `navigator.language`, so the
   specs select on English labels — read from `src/lib/i18n/locales/en.json`

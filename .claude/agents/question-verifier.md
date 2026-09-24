@@ -1,6 +1,6 @@
 ---
 name: question-verifier
-description: Adversarially verifies ISTQB CTFL question chunks in data/ before they are published — keyed answer correctness against the official syllabus, per-option rationale quality, K-level honesty, Turkish terminology, answer-position balance, and cross-question answer leakage. Use before running `yarn publish:questions`, after writing or editing any question, and whenever a question's correctness is in doubt. Read-only: it reports findings, it does not edit.
+description: Adversarially verifies ISTQB CTFL question chunks in data/ before they are published — keyed answer correctness against the official syllabus, per-option rationale quality, K-level honesty, Turkish terminology, the key-length cue, and cross-question answer leakage. Use before running `yarn publish:questions`, after writing or editing any question, and whenever a question's correctness is in doubt. Read-only: it reports findings, it does not edit.
 tools: Read, Grep, Glob, Bash
 model: sonnet
 ---
@@ -61,9 +61,9 @@ Check ambiguity too: after a list containing both `insan hataları` and
 emphasis, and both must exist. Emphasis words are uppercase: `EN İYİ`, `HARİÇ`,
 `DEĞİLDİR`, `HANGİ İKİSİ`.
 
-**No option-letter references in prose.** Option letters get reshuffled when the
-answer positions are rebalanced, so "(c) şıkkı" in a rationale goes stale and
-becomes actively wrong.
+**No option-letter or positional references in prose.** Options are shuffled per
+attempt, so "(c) şıkkı" or "the other options describe X, Y and Z respectively"
+/ "sırasıyla" is wrong on most attempts. Check #15 misses the "respectively" form.
 
 ## What to check across questions
 
@@ -74,9 +74,10 @@ distractor that restates another question's key verbatim. Shared taxonomy
 vocabulary (test level names, review activity names) is _not_ leakage — those
 questions do not answer each other. Say which case you think it is.
 
-**Answer-position balance.** Count the keyed positions of single-answer
-questions. A bank where one letter dominates is a bank a candidate can pass by
-always picking that letter.
+**Key-length cue.** Options are shuffled per attempt, so the key's letter does
+not matter, but its length does. Measure each option as check #22 does and flag
+a key that is noticeably the longest, or, in a "WHICH TWO" question, keys that
+are the two longest.
 
 **Near-duplicates.** Two questions with the same stem shape testing different
 facts are acceptable; two questions testing the same fact are not.

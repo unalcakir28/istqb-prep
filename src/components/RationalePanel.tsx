@@ -14,6 +14,12 @@ import type { Lang, Question } from "@/types/content";
  * — a summary plus a per-option rationale — and the per-option part is never
  * collapsed: that's where the real value is.
  *
+ * Each option's rationale is labelled with its DISPLAYED position — the same
+ * number the option row shows and the key that selects it — never with its
+ * option id. Options are shuffled per attempt (D-03), so the authored id "c"
+ * may well be the first row on screen; printing it would send the candidate to
+ * the wrong option.
+ *
  * The panel is also a focus target. Revealing the answer disables the option
  * the user just activated, which drops focus to `<body>`; the shell moves it
  * here instead, so the heading is read and Tab carries on into Prev/Next
@@ -115,7 +121,7 @@ export function RationalePanel({
       <div className="flex flex-col gap-2">
         <Subtitle className="text-sm font-semibold">{t("review.perOption")}</Subtitle>
         <dl className="flex flex-col gap-2">
-          {options.map((option) => {
+          {options.map((option, position) => {
             const isCorrect = question.correct.includes(option.id);
             const wasSelected = selected.includes(option.id);
             const text = rationale.byOption[option.id];
@@ -130,7 +136,7 @@ export function RationalePanel({
                 )}`}
               >
                 <dt className="flex items-center gap-2 text-xs font-semibold uppercase text-fg-muted">
-                  <span className="font-mono">{option.id}</span>
+                  <span className="font-mono">{position + 1}</span>
                   {wasSelected ? (
                     <span className="font-sans normal-case text-fg-muted">
                       — {t("review.yourAnswer")}

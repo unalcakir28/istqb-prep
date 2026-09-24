@@ -40,14 +40,14 @@ see the correction box in `docs/07-content-authoring-guide.md §5`.
   is ordinary Turkish in another role. A term with no `trForbidden` list is
   invisible to both — `test uygulama` for _test implementation_ and
   `test yürütme` for _test execution_ shipped into published content that way.
-- **Options render in authored order, for every candidate.** `shuffle` applies to
-  the question order only. Three checks guard the cues this creates, each added
-  after a human found what the previous ones missed: #14 counts how often each
-  letter is the key, #22 measures whether the key is the longest option, #23
-  looks for a rotation in the keyed letters. `ch01-b` ran `a → c → b → d` and
-  `ch04-b` ran `a → b → c → d` across thirteen consecutive questions, both with
-  perfectly even counts. When writing a batch, vary the sequence, not only the
-  totals. D-03 in `TODO.md` is the real fix.
+- **Options are shuffled per attempt (D-03), so the authored letter never reaches
+  a candidate.** Checks #14 (letter balance) and #23 (letter rotation) were
+  retired with it. **Length survives the shuffle:** #22 (key is the longest
+  option) still matters, and the D-04 sweep found the key strictly longest in
+  over half of some chunks. Trim the key or give a distractor a concrete detail.
+- **No positional mapping in a rationale.** #15 catches "(c) şıkkı" but not
+  "the other options describe X, Y and Z respectively" / "sırasıyla", which is
+  wrong on most attempts once options are shuffled. Map by content instead.
 
 ## Parallel writers
 

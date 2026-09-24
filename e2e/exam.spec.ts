@@ -9,6 +9,7 @@ import {
   pattern,
   PRODUCT_NAME,
   questionCounter,
+  shownOptionIds,
 } from "./labels";
 
 /**
@@ -62,8 +63,13 @@ test("a full exam is set up, answered and reviewed from the home page", async ({
   const total = Number((await counter.innerText()).match(questionCounter(1))![1]);
   expect(total).toBeGreaterThan(0);
 
+  // D-03: the order each question's options were shown in, to hold the
+  // review screen to below.
+  const shown: string[][] = [];
+
   for (let index = 1; index <= total; index += 1) {
     await expect(page.getByText(fill(en.exam.question, { current: index, total }))).toBeVisible();
+    shown.push(await shownOptionIds(page));
     await answerCurrentQuestion(page);
     if (index < total) await page.getByRole("button", { name: en.exam.next }).click();
   }
@@ -96,6 +102,19 @@ test("a full exam is set up, answered and reviewed from the home page", async ({
   await expect(reviewHeading).toBeFocused();
   // The product's main differentiator: a per-option rationale on every question.
   await expect(page.getByText(en.review.perOption).first()).toBeVisible();
+
+  // D-03. Every chunk authors its option ids in order (a, b, c, d), so an
+  // exam in which every question still reads that way was not shuffled — the
+  // chance of that by accident is 1 in 24 per question.
+  expect(shown.some((ids) => ids.join() !== [...ids].sort().join())).toBe(true);
+
+  // ...and the review shows each question's options in the order the
+  // candidate saw them, although the order is derived rather than stored.
+  const cards = page.getByRole("article");
+  await expect(cards).toHaveCount(total);
+  for (let index = 0; index < total; index += 1) {
+    expect(await shownOptionIds(page, cards.nth(index))).toEqual(shown[index]);
+  }
 });
 
 test("an unfinished exam resumes from the home page", async ({ page }) => {
@@ -109,6 +128,7 @@ test("an unfinished exam resumes from the home page", async ({ page }) => {
   // the navigation itself is worth asserting.
   await expect(page.getByText(questionCounter(1))).toBeVisible();
 
+  const firstOrder = await shownOptionIds(page);
   await answerCurrentQuestion(page);
   await page.getByRole("button", { name: en.exam.next }).click();
   await expect(page.getByText(questionCounter(2))).toBeVisible();
@@ -130,6 +150,9 @@ test("an unfinished exam resumes from the home page", async ({ page }) => {
 
   await page.getByRole("button", { name: en.exam.previous }).click();
   await expect(page.getByText(questionCounter(1))).toBeVisible();
+  // D-03: the reload rebuilt the option order from the stored seed, so the
+  // first row is still the one that was ticked.
+  expect(await shownOptionIds(page)).toEqual(firstOrder);
   await expect(optionInputs(page).first()).toBeChecked();
 });
 

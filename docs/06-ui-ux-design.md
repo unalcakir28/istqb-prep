@@ -162,7 +162,7 @@ The coverage line has **no progress bar**. `objectivesTotal` is fixed at 64 by t
 
 Side-by-side question language (F2-06) ships as a third state of the language control in the session and review screens rather than as a setup option, and the "ones I got wrong" set (F2-07) is started from `/listelerim` rather than from here — both are decisions a candidate makes with a question in front of them, not before one.
 
-**Not built yet:** an option-shuffle toggle. Options render in file order, and answer-position bias is handled at authoring time by CI check #14 instead.
+**Option order is not a setting.** Every attempt shuffles each question's options (D-03), seeded off the attempt so a resume and the review show the same order; there is no toggle to turn it off.
 
 ### 3.3 Exam session `/sinav/:attemptId`
 

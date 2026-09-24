@@ -29,8 +29,16 @@ interface Props {
  *
  * `selected` is included because a wrong keyed answer and a misleading option
  * look identical in a report that omits what the reporter actually picked.
+ *
+ * Every option is named by its AUTHORED id — the one in the chunk file, which
+ * is what the maintainer opens. The reporter saw the options shuffled (D-03),
+ * so "the second one" or "the first one" in their own words means nothing
+ * without the order they were shown in; that order is written out too, top to
+ * bottom, in authored ids.
  */
 function issueBody(question: Question, lang: Lang, selected: string[]): string {
+  const shown = (question.i18n[lang]?.options ?? []).map((option) => option.id);
+
   return [
     "<!-- Describe the problem below. Everything under the line is filled in automatically. -->",
     "",
@@ -40,8 +48,9 @@ function issueBody(question: Question, lang: Lang, selected: string[]): string {
     `- Objectives: ${question.objectives.join(", ")}`,
     `- Syllabus: ${question.syllabusRef} (v${question.syllabusVersion})`,
     `- Reading in: ${lang}`,
-    `- Selected: ${selected.length > 0 ? selected.join(", ") : "nothing"}`,
-    `- Keyed answer: ${question.correct.join(", ")}`,
+    `- Options shown, top to bottom (authored ids): ${shown.join(", ")}`,
+    `- Selected (authored ids): ${selected.length > 0 ? selected.join(", ") : "nothing"}`,
+    `- Keyed answer (authored ids): ${question.correct.join(", ")}`,
   ].join("\n");
 }
 
