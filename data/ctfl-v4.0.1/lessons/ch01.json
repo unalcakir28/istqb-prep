@@ -163,7 +163,7 @@
       "objective": "FL-1.2.2",
       "syllabusVersion": "4.0.1",
       "syllabusRef": "§1.2.2",
-      "revision": 1,
+      "revision": 2,
       "status": "published",
       "origin": "original",
       "i18n": {
@@ -171,13 +171,13 @@
           "title": "Test etme ile kalite güvence arasındaki ilişki",
           "paragraphs": [
             "Kalite güvence (QA) ve test etme ilişkili ama farklı kavramlardır. Kalite güvence, doğru süreçlerin izlenmesine odaklanan, kaliteye yönelik hataları önleyici bir yaklaşımdır.",
-            "Test etme ise bir kalite kontrol (QC) aktivitesidir; ürünü inceleyerek hataları bulmaya odaklanır. Test etme, kalite güvence şemsiyesi altındaki aktivitelerden biridir; kalite güvencenin tamamı değildir.",
+            "Test etme ise bir kalite kontrol (QC) aktivitesidir; ürünü inceleyerek hataları bulmaya odaklanır. Test etme, kalite kontrolün önemli bir biçimidir; diğer biçimler arasında resmî yöntemler (model denetimi ve doğruluk kanıtı), simülasyon ve prototipleme yer alır.",
             "İyi işleyen bir kalite güvence süreci, doğru geliştirme ve test pratiklerinin uygulanmasını sağlayarak hataların ürüne girme olasılığını azaltır; test etme ise zaten ürüne girmiş olan hataları tespit eder."
           ],
           "keyPoints": [
-            "Kalite güvence süreç odaklıdır ve hataları önlemeyi hedefler; test etme ürün odaklıdır ve hataları bulmayı hedefler.",
-            "Test etme, kalite kontrolün (QC) bir parçasıdır.",
-            "Test etme, kalite güvencenin bir alt kümesidir; ikisi eş anlamlı değildir."
+            "Kalite güvence süreç odaklı ve önleyici bir yaklaşımdır; test etme ürün odaklı ve düzeltici bir yaklaşımdır.",
+            "Test etme, kalite kontrolün (QC) önemli bir biçimidir; diğer biçimler arasında resmî yöntemler, simülasyon ve prototipleme yer alır.",
+            "Kalite güvence ve test etme ilişkili ama farklı kavramlardır, eş anlamlı değildir."
           ],
           "commonMistakes": [
             "Kalite güvence ile test etme eş anlamlı sanılır; QA süreçle, test etme üründeki hatalarla ilgilenir.",
@@ -188,13 +188,13 @@
           "title": "The relationship between testing and quality assurance",
           "paragraphs": [
             "Quality assurance (QA) and testing are related but different concepts. Quality assurance is a defect-prevention approach focused on following the right processes.",
-            "Testing is a quality control (QC) activity: it focuses on examining the product to find defects. Testing is one of the activities under the quality assurance umbrella; it is not the whole of quality assurance.",
+            "Testing is a quality control (QC) activity: it focuses on examining the product to find defects. Testing is an important form of quality control; other forms include formal methods (model checking and proof of correctness), simulation and prototyping.",
             "A well-run quality assurance process reduces the likelihood of defects entering the product by ensuring good development and testing practices are followed; testing then detects the defects that have already entered the product."
           ],
           "keyPoints": [
-            "Quality assurance is process-focused and aims to prevent defects; testing is product-focused and aims to find defects.",
-            "Testing is part of quality control (QC).",
-            "Testing is a subset of quality assurance; the two terms are not synonyms."
+            "Quality assurance is a process-oriented, preventive approach; testing is a product-oriented, corrective approach.",
+            "Testing is an important form of quality control (QC); other forms include formal methods, simulation and prototyping.",
+            "Quality assurance and testing are related but distinct concepts, not synonyms."
           ],
           "commonMistakes": [
             "Assuming quality assurance and testing are synonyms; QA concerns the process, testing concerns defects in the product.",
@@ -206,7 +206,7 @@
         "author": "lesson-writer",
         "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
         "createdAt": "2026-09-22",
-        "updatedAt": "2026-09-22"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -451,7 +451,7 @@
       "objective": "FL-1.4.3",
       "syllabusVersion": "4.0.1",
       "syllabusRef": "§1.4.3",
-      "revision": 1,
+      "revision": 2,
       "status": "published",
       "origin": "original",
       "i18n": {
@@ -460,13 +460,13 @@
           "paragraphs": [
             "Test çalışma ürünleri, test aktivitelerinin çıktısı olarak ortaya çıkan iş ürünleridir. Organizasyonlar bunları farklı şekilde üretir, adlandırır ve yönetir; uygun yapılandırma yönetimi bu ürünler arasında tutarlılık ve bütünlük sağlar.",
             "Her test aktivitesi kendi çalışma ürünlerini üretir: test planlama test planı, zaman çizelgesi, risk kaydı, giriş ve çıkış kriterleri üretir; test gözetimi ve kontrolü ilerleme raporları ve kontrol direktifleri üretir; test analizi önceliklendirilmiş test koşulları ve test esasındaki hatalara ilişkin hata raporları üretir.",
-            "Test tasarımı test senaryoları, kapsam öğeleri, test verisi ve test ortamı gereksinimleri üretir; test uyarlama test prosedürleri, manuel veya otomatik betikler, test grupları ve test ortamı öğeleri (taklit uygulamalar, sürücüler, simülatörler) üretir; test koşumu test kayıtları ve hata raporları üretir; test tamamlama tamamlama raporu, iyileştirme aksiyonları, tecrübeler ve değişiklik talepleri üretir."
+            "Test tasarımı test senaryoları, kapsam öğeleri, test verisi gereksinimleri ve test ortamı gereksinimleri üretir; test uyarlama test prosedürleri, manuel veya otomatik betikler, test grupları, test verisi ve test ortamı öğeleri (taklit uygulamalar, sürücüler, simülatörler) üretir; test koşumu test kayıtları ve hata raporları üretir; test tamamlama tamamlama raporu, iyileştirme aksiyonları, tecrübeler ve değişiklik talepleri üretir."
           ],
           "keyPoints": [
             "Test çalışma ürünleri, test aktivitelerinin çıktısı olan iş ürünleridir; her aktivite grubu kendine özgü çalışma ürünleri üretir.",
             "Test analizinin çalışma ürünleri: test koşulları ve test esasındaki hatalara ilişkin hata raporları.",
-            "Test tasarımının çalışma ürünleri: test senaryoları, kapsam öğeleri, test verisi ve test ortamı gereksinimleri.",
-            "Test uyarlamanın çalışma ürünleri: test prosedürleri, manuel veya otomatik betikler ve test ortamı öğeleri.",
+            "Test tasarımının çalışma ürünleri: test senaryoları, kapsam öğeleri, test verisi gereksinimleri ve test ortamı gereksinimleri.",
+            "Test uyarlamanın çalışma ürünleri: test prosedürleri, manuel veya otomatik betikler, test verisi ve test ortamı öğeleri.",
             "Uygun yapılandırma yönetimi, farklı organizasyonlarda üretilen test çalışma ürünleri arasında tutarlılık sağlar."
           ],
           "commonMistakes": [
@@ -479,13 +479,13 @@
           "paragraphs": [
             "Testware refers to the work products produced by test activities. Different organizations produce, name and manage them differently; proper configuration management keeps these work products consistent and intact.",
             "Each test activity produces its own testware: test planning produces a test plan, schedule, risk register and entry and exit criteria; test monitoring and control produce progress reports and control directives; test analysis produces prioritized test conditions and defect reports against the test basis.",
-            "Test design produces test cases, coverage items, and test data and environment requirements; test implementation produces test procedures, manual or automated scripts, test suites, and test environment items such as stubs, drivers and simulators; test execution produces test logs and defect reports; test completion produces a completion report, improvement actions, lessons learned and change requests."
+            "Test design produces test cases, coverage items, and test data requirements and test environment requirements; test implementation produces test procedures, manual or automated scripts, test suites, test data, and test environment items such as stubs, drivers and simulators; test execution produces test logs and defect reports; test completion produces a completion report, improvement actions, lessons learned and change requests."
           ],
           "keyPoints": [
             "Testware is the set of work products produced by test activities; each activity group produces its own testware.",
             "Test analysis's testware: test conditions and defect reports against the test basis.",
-            "Test design's testware: test cases, coverage items, and test data and environment requirements.",
-            "Test implementation's testware: test procedures, manual or automated scripts, and test environment items.",
+            "Test design's testware: test cases, coverage items, and test data requirements and test environment requirements.",
+            "Test implementation's testware: test procedures, manual or automated scripts, test data, and test environment items.",
             "Proper configuration management keeps testware from different organizations consistent."
           ],
           "commonMistakes": [
@@ -498,7 +498,7 @@
         "author": "lesson-writer",
         "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
         "createdAt": "2026-09-22",
-        "updatedAt": "2026-09-22"
+        "updatedAt": "2026-09-24"
       }
     },
     {

@@ -267,7 +267,7 @@
       "objective": "FL-5.1.6",
       "syllabusVersion": "4.0.1",
       "syllabusRef": "§5.1.6",
-      "revision": 1,
+      "revision": 2,
       "status": "published",
       "origin": "original",
       "i18n": {
@@ -275,7 +275,7 @@
           "title": "Test piramidi",
           "paragraphs": [
             "Test piramidi, farklı testlerin farklı ayrıntı düzeylerine sahip olabileceğini gösteren bir modeldir. Ekibi test otomasyonu ve test eforu tahsisi konusunda destekler; çünkü farklı test hedeflerinin farklı otomasyon seviyeleriyle desteklendiğini görselleştirir. Piramidin her katmanı bir test grubunu temsil eder.",
-            "Katman yükseldikçe test ayrıntısı ve test izolasyonu (sistemin diğer unsurlarına bağımlılık derecesinin tersi) azalır, koşum süresi ise artar. Alt katmandaki testler küçük, izole ve hızlıdır; küçük bir fonksiyonalite parçasını kontrol ettikleri için makul bir kapsama ulaşmak üzere genellikle çok sayıda gerekir. Üst katman ise karmaşık, uçtan uca testleri temsil eder; büyük bir fonksiyonalite parçasını kontrol ettikleri ve daha yavaş oldukları için makul bir kapsama ulaşmak üzere yalnızca birkaç tanesi yeterlidir.",
+            "Katman yükseldikçe test ayrıntısı ve test izolasyonu azalır, koşum süresi ise artar. Alt katmandaki testler küçük, izole ve hızlıdır; küçük bir fonksiyonalite parçasını kontrol ettikleri için makul bir kapsama ulaşmak üzere genellikle çok sayıda gerekir. Üst katman ise karmaşık, uçtan uca testleri temsil eder; büyük bir fonksiyonalite parçasını kontrol ettikleri ve daha yavaş oldukları için makul bir kapsama ulaşmak üzere yalnızca birkaç tanesi yeterlidir.",
             "Katmanların sayısı ve adlandırması modelden modele değişebilir. Orijinal test piramidi modeli (Cohn, 2009) üç katman tanımlar: 'birim testleri', 'servis testleri' ve 'UI testleri'. Başka bir popüler model ise birim (bileşen) testleri, entegrasyon (bileşen entegrasyonu) testleri ve uçtan uca testleri tanımlar; farklı test seviyeleri de kullanılabilir."
           ],
           "keyPoints": [
@@ -293,7 +293,7 @@
           "title": "Test pyramid",
           "paragraphs": [
             "The test pyramid is a model showing that different tests can have different levels of granularity. It supports the team in test automation and test effort allocation by visualizing how different test objectives are supported by different levels of test automation. Each layer of the pyramid represents a group of tests.",
-            "The higher the layer, the lower the test granularity and test isolation (the inverse of dependency on other parts of the system), and the higher the execution time. Tests in the bottom layer are small, isolated and fast, checking a small piece of functionality, so usually many are needed for reasonable coverage. The top layer represents complex, end-to-end tests; being slower and checking a larger piece of functionality, only a few are usually needed for reasonable coverage.",
+            "The higher the layer, the lower the test granularity and test isolation, and the higher the execution time. Tests in the bottom layer are small, isolated and fast, checking a small piece of functionality, so usually many are needed for reasonable coverage. The top layer represents complex, end-to-end tests; being slower and checking a larger piece of functionality, only a few are usually needed for reasonable coverage.",
             "The number and naming of layers can vary across models. The original test pyramid (Cohn, 2009) defines three layers: 'unit tests', 'service tests' and 'UI tests'. Another popular model defines unit (component) tests, integration (component integration) tests, and end-to-end tests; other test levels can also be used."
           ],
           "keyPoints": [
@@ -312,7 +312,7 @@
         "author": "lesson-writer",
         "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
         "createdAt": "2026-09-22",
-        "updatedAt": "2026-09-22"
+        "updatedAt": "2026-09-24"
       }
     },
     {
@@ -581,7 +581,7 @@
       "objective": "FL-5.3.1",
       "syllabusVersion": "4.0.1",
       "syllabusRef": "§5.3.1",
-      "revision": 1,
+      "revision": 2,
       "status": "published",
       "origin": "original",
       "i18n": {
@@ -589,7 +589,7 @@
           "title": "Testte kullanılan metrikler",
           "paragraphs": [
             "Test metrikleri; planlanan zaman çizelgesi ve bütçeye göre ilerlemeyi, test nesnesinin mevcut kalitesini ve test aktivitelerinin hedeflere ya da döngü amacına göre etkinliğini göstermek için toplanır. Test gözetimi bu metrikleri toplar; test kontrolü ve test tamamlama süreçleri bunları kullanır.",
-            "Yaygın metrik kategorileri şunlardır: proje ilerleme metrikleri (görev tamamlama, kaynak kullanımı, test eforu), test ilerleme metrikleri (koşulan/koşulmayan, geçen/geçmeyen test senaryosu sayısı, test koşum süresi), ürün kalite metrikleri (elverişlilik, yanıt süresi, arızalar arası ortalama süre), hata metrikleri (bulunan/düzeltilen hata sayısı ve öncelikleri, hata yoğunluğu), risk metrikleri (kalan risk seviyesi), kapsam metrikleri (gereksinim kapsamı, kod kapsamı) ve maliyet metrikleri (test maliyeti, kalite maliyeti)."
+            "Yaygın metrik kategorileri şunlardır: proje ilerleme metrikleri (görev tamamlama, kaynak kullanımı, test eforu), test ilerleme metrikleri (koşulan/koşulmayan, geçen/geçmeyen test senaryosu sayısı, test koşum süresi), ürün kalite metrikleri (elverişlilik, yanıt süresi, arızaya kadar geçen ortalama süre), hata metrikleri (bulunan/düzeltilen hata sayısı ve öncelikleri, hata yoğunluğu), risk metrikleri (kalan risk seviyesi), kapsam metrikleri (gereksinim kapsamı, kod kapsamı) ve maliyet metrikleri (test maliyeti, kalite maliyeti)."
           ],
           "keyPoints": [
             "Metrikler; ilerleme, mevcut kalite ve test aktivitelerinin etkinliğini göstermek için toplanır.",
@@ -622,7 +622,7 @@
         "author": "lesson-writer",
         "reviewedBy": "lesson-review (2 adversarial passes, 2026-09-22)",
         "createdAt": "2026-09-22",
-        "updatedAt": "2026-09-22"
+        "updatedAt": "2026-09-24"
       }
     },
     {
