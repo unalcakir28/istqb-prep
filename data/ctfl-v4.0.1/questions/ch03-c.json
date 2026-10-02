@@ -1,0 +1,519 @@
+{
+  "chunk": "ch03-c",
+  "chapter": 3,
+  "dataVersion": "2026.09.19",
+  "questions": [
+    {
+      "id": "ctfl4-0280",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 3,
+      "section": "3.1",
+      "syllabusRef": "§3.1.2",
+      "objectives": [
+        "FL-3.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "static-testing",
+        "value-of-static-testing",
+        "productivity"
+      ],
+      "origin": "original",
+      "status": "retired",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, testten önce tasarımları ve kodu gözden geçirmeye başladıktan sonra geliştiricilerin daha az yeniden işe harcadığını ve kod tabanının bakımının daha kolay olduğunu fark ediyor. Bu durum statik testin (static testing) hangi değerini EN İYİ yansıtır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Tüm gözden geçirmeler bittikten sonra yazılımın işletimde hiç arıza vermeyeceğini kanıtlar"
+            },
+            {
+              "id": "b",
+              "text": "Yazılım test ortamında çalışırken ancak o sırada ortaya çıkan arızaları görünür kılar"
+            },
+            {
+              "id": "c",
+              "text": "Daha iyi tasarım ve daha sürdürülebilir kod sayesinde geliştirme verimliliğini artırır"
+            },
+            {
+              "id": "d",
+              "text": "Çalıştırılan test senaryolarının kodun ne kadarını sınadığını gösteren ölçüm üretir"
+            }
+          ],
+          "rationale": {
+            "summary": "Statik testin müfredatta sayılan değerlerinden biri, daha iyi tasarım ve daha sürdürülebilir kod yoluyla geliştirme verimliliğini artırmasıdır. Daha az yeniden iş ve daha kolay bakım tam olarak bu etkiyi anlatır.",
+            "byOption": {
+              "a": "Yanlış. Statik test hiçbir şeyin işletimde arıza vermeyeceğini garanti etmez; hataları erken bulup maliyeti düşürür. Tam güvence iddiası hiçbir test yaklaşımı için geçerli değildir.",
+              "b": "Yanlış. Yazılım çalışırken ortaya çıkan arızalar dinamik testin (dynamic testing) alanıdır; statik test yazılımı çalıştırmaz.",
+              "c": "Doğru. Gözden geçirmelerle tasarım ve kod kalitesi arttığında yeniden iş azalır ve kod daha sürdürülebilir olur; müfredat bunu geliştirme verimliliğinin artması olarak sayar.",
+              "d": "Yanlış. Çalıştırılan test senaryolarının kapsamını ölçmek dinamik test ve kapsam araçlarının işidir; statik testin değeri değildir."
+            }
+          },
+          "hints": [
+            "Azalan yeniden iş ve bakımı kolay kod hangi çıktıyı işaret ediyor: kapsam, arıza mı, yoksa çalışma verimi mi?"
+          ]
+        },
+        "en": {
+          "stem": "After a team starts reviewing designs and code before testing, developers report less rework and the code base proves easier to maintain. Which value of static testing does this BEST illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It proves that the software will never fail in operation once all the reviews are finished"
+            },
+            {
+              "id": "b",
+              "text": "It makes visible the failures that only appear while the software runs in the test environment"
+            },
+            {
+              "id": "c",
+              "text": "It increases development productivity through better design and more maintainable code"
+            },
+            {
+              "id": "d",
+              "text": "It produces a measurement of how much of the code the executed test cases exercised"
+            }
+          ],
+          "rationale": {
+            "summary": "One of the values of static testing listed in the syllabus is increased development productivity, through improved design and more maintainable code. Less rework and easier maintenance describe exactly that effect.",
+            "byOption": {
+              "a": "Incorrect. Static testing guarantees nothing about operation; it detects defects early and lowers cost. No testing approach can prove that software will never fail.",
+              "b": "Incorrect. Failures that appear while the software runs belong to dynamic testing; static testing does not execute the software.",
+              "c": "Correct. When reviews improve design and code quality, rework drops and the code is more maintainable; the syllabus counts this as increased development productivity.",
+              "d": "Incorrect. Measuring how much code the executed test cases exercised is coverage measurement, a dynamic testing activity, not a value of static testing."
+            }
+          },
+          "hints": [
+            "Less rework and easier maintenance point to which outcome: coverage, failures, or working efficiency?"
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0281",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 3,
+      "section": "3.1",
+      "syllabusRef": "§3.1.3",
+      "objectives": [
+        "FL-3.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "static-vs-dynamic",
+        "classification"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdaki etkinliklerden hangisi statik test (static testing) değil, dinamik test (dynamic testing) örneği olarak sınıflandırılır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bir aracın kaynak kodu çalıştırmadan tanımlanmamış değişkenler için çözümlemesi"
+            },
+            {
+              "id": "b",
+              "text": "Çalışanların çelişki ve eksikleri bulmak için bir gereksinim belgesini okuması"
+            },
+            {
+              "id": "c",
+              "text": "Bir mimarın tasarım modelini bağlı bileşenlerin arayüz tanımlarıyla karşılaştırması"
+            },
+            {
+              "id": "d",
+              "text": "Çalışan uygulamaya geçersiz bir parola girip tepkisini beklenenle karşılaştırmak"
+            }
+          ],
+          "rationale": {
+            "summary": "Dinamik test yazılımı çalıştırmayı gerektirir; çalışan uygulamaya girdi verip tepkisini gözlemek buna girer. Diğer üç etkinlik, iş ürününü çalıştırmadan okuyarak ya da araçla çözümleyerek hata arar; bunlar statik testtir.",
+            "byOption": {
+              "a": "Yanlış. Kaynak kodu çalıştırmadan araçla çözümlemek statik analizdir (static analysis) ve statik testin bir biçimidir.",
+              "b": "Yanlış. Gereksinim belgesini okuyarak çelişki ve eksik aramak, bir gözden geçirmedir; yani statik test.",
+              "c": "Yanlış. Tasarım modelini arayüz tanımlarıyla karşılaştırmak, hiçbir şeyi çalıştırmadan arayüz uyumsuzluklarını bulan statik bir faaliyettir.",
+              "d": "Doğru. Çalışan uygulamaya girdi verip tepkisini beklenen sonuçla karşılaştırmak yazılımın çalıştırılmasını gerektirir; bu dinamik testtir."
+            }
+          },
+          "hints": [
+            "Ayırt edici soru: bu etkinlik için yazılımın çalıştırılması gerekiyor mu?"
+          ]
+        },
+        "en": {
+          "stem": "Which of the following activities is an example of dynamic testing rather than static testing?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A tool analyzing the source code for undeclared variables without running the program"
+            },
+            {
+              "id": "b",
+              "text": "Colleagues reading a requirements document to look for contradictions and omissions"
+            },
+            {
+              "id": "c",
+              "text": "An architect comparing a design model against the interface definitions of connected components"
+            },
+            {
+              "id": "d",
+              "text": "Submitting an invalid password to the running application and checking the response"
+            }
+          ],
+          "rationale": {
+            "summary": "Dynamic testing requires running the software; feeding input to the running application and observing its response qualifies. The other three activities look for defects by reading the work product or analyzing it with a tool, without executing anything, which is static testing.",
+            "byOption": {
+              "a": "Incorrect. Analyzing source code with a tool without running it is static analysis, a form of static testing.",
+              "b": "Incorrect. Reading a requirements document to find contradictions and omissions is a review, which is static testing.",
+              "c": "Incorrect. Comparing a design model with interface definitions finds interface mismatches without executing anything; it is a static activity.",
+              "d": "Correct. Entering input into the running application and comparing the response with the expectation requires executing the software, so it is dynamic testing."
+            }
+          },
+          "hints": [
+            "The dividing question: does the activity need the software to be running?"
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0282",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 3,
+      "section": "3.2",
+      "syllabusRef": "§3.2.2",
+      "objectives": [
+        "FL-3.2.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "review-process",
+        "individual-review"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir gözden geçirmede (review) her gözden geçiren, iş ürününü tek başına bir kontrol listesiyle inceliyor ve anomalileri, önerileri ve soruları kaydediyor. Bu, gözden geçirme sürecinin hangi faaliyetidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Başlatma (review initiation)"
+            },
+            {
+              "id": "b",
+              "text": "Bireysel gözden geçirme (individual review)"
+            },
+            {
+              "id": "c",
+              "text": "İletişim ve analiz (communication and analysis)"
+            },
+            {
+              "id": "d",
+              "text": "Düzeltme ve raporlama (fixing and reporting)"
+            }
+          ],
+          "rationale": {
+            "summary": "Bireysel gözden geçirmede her gözden geçiren iş ürününü tek başına, kontrol listesi gibi bir teknikle inceler ve bulgularını kaydeder. Bu bulguların durumuna grup sonradan karar verir.",
+            "byOption": {
+              "a": "Yanlış. Başlatma, katılımcıların iş ürününe erişimini ve rollerini anlamalarını sağlar; bulgu kaydetme bu aşamada başlamaz.",
+              "b": "Doğru. Her gözden geçirenin tek başına çalışıp teknik uygulayarak anomali, öneri ve soru kaydetmesi bireysel gözden geçirmenin tanımıdır.",
+              "c": "Yanlış. İletişim ve analiz, bulguların grup olarak tartışıldığı ve durumlarına karar verildiği faaliyettir; tek başına çalışma değildir.",
+              "d": "Yanlış. Düzeltme ve raporlama, onaylanmış hatalar için hata raporu açılan ve çıkış kriterleri karşılanınca iş ürününün kabul edildiği son faaliyettir."
+            }
+          },
+          "hints": [
+            "Bu faaliyette işi kimin yaptığını ve tek başına mı yoksa grup olarak mı yapıldığını düşünün; sonra gözden geçirme sürecinin beş faaliyetiyle eşleştirin."
+          ]
+        },
+        "en": {
+          "stem": "In a review, each reviewer works through the work product alone with a checklist and logs anomalies, recommendations and questions. Which activity of the review process is this?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Review initiation"
+            },
+            {
+              "id": "b",
+              "text": "Individual review"
+            },
+            {
+              "id": "c",
+              "text": "Communication and analysis"
+            },
+            {
+              "id": "d",
+              "text": "Fixing and reporting"
+            }
+          ],
+          "rationale": {
+            "summary": "In individual review each reviewer examines the work product alone, applying a technique such as a checklist, and logs the findings. The group decides the status of those findings only later.",
+            "byOption": {
+              "a": "Incorrect. Review initiation makes sure participants have access to the work product and understand their roles; logging findings does not start there.",
+              "b": "Correct. Each reviewer working alone, applying a technique and logging anomalies, recommendations and questions is what individual review is.",
+              "c": "Incorrect. Communication and analysis is where the findings are discussed as a group and their status is decided; it is not solitary work.",
+              "d": "Incorrect. Fixing and reporting is the final activity, where defect reports are created for confirmed defects and the work product is accepted once exit criteria are met."
+            }
+          },
+          "hints": [
+            "Think about who does the work in this activity and whether they do it alone or as a group, then match it to the five review process activities."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0283",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 3,
+      "section": "3.2",
+      "syllabusRef": "§3.2.4",
+      "objectives": [
+        "FL-3.2.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "review-types",
+        "formality"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test yöneticisi, bir ödeme modülünün tasarımına yapılacak gözden geçirmenin (review) ne kadar resmi olması gerektiğine karar verecek. Bu karar için aşağıdakilerden hangisi geçerli bir değerlendirme ölçütüdür?",
+          "options": [
+            {
+              "id": "a",
+              "text": "İş ürününün kritikliği ve karmaşıklığı ile yasal gereksinimler"
+            },
+            {
+              "id": "b",
+              "text": "Modülün hangi programlama diliyle gerçekleştirileceği"
+            },
+            {
+              "id": "c",
+              "text": "Modüle karşı şimdiye kadar kaç test senaryosunun çalıştırıldığı"
+            },
+            {
+              "id": "d",
+              "text": "Tasarım aracının diyagramları hangi çizim gösterimiyle oluşturduğu"
+            }
+          ],
+          "rationale": {
+            "summary": "Gözden geçirmenin resmilik düzeyi, yazılım geliştirme yaşam döngüsüne, süreç olgunluğuna, iş ürününün kritikliği ve karmaşıklığına, yasal ya da düzenleyici gereksinimlere ve denetim izi ihtiyacına bağlıdır. Programlama dili, çalıştırılmış test sayısı ve tasarım aracının çizim gösterimi bu listede yoktur.",
+            "byOption": {
+              "a": "Doğru. İş ürününün kritikliği ve karmaşıklığı ile yasal ya da düzenleyici gereksinimler, gözden geçirmenin resmilik düzeyini etkileyen etkenlerdendir.",
+              "b": "Yanlış. Gerçekleştirme dili, resmilik düzeyini belirleyen ölçütler arasında sayılmaz; bu, gözden geçirme türü seçimiyle ilgisiz bir ayrıntıdır.",
+              "c": "Yanlış. Çalıştırılmış test senaryosu sayısı dinamik test ilerlemesini anlatır; gözden geçirmenin ne kadar resmi olacağını belirleyen ölçütlerden biri değildir.",
+              "d": "Yanlış. Tasarım aracının hangi çizim gösterimini kullandığı bir araç ayrıntısıdır; gözden geçirmenin ne kadar resmi olacağını belirleyen bir etken değildir. Bu düzey yaşam döngüsü, olgunluk, kritiklik, karmaşıklık, yasal gereksinimler ve denetim izi gibi etkenlere bağlıdır."
+            }
+          },
+          "hints": [
+            "Projenin ya da iş ürününün kendisindeki hangi özellik daha titiz bir gözden geçirme gerektirir?"
+          ]
+        },
+        "en": {
+          "stem": "A test manager has to decide how formal the review of a payment module's design should be. Which of the following is a relevant consideration for that decision?",
+          "options": [
+            {
+              "id": "a",
+              "text": "How critical and complex the work product is, and legal requirements"
+            },
+            {
+              "id": "b",
+              "text": "Which programming language the module will be implemented in"
+            },
+            {
+              "id": "c",
+              "text": "How many test cases have so far been executed against the module"
+            },
+            {
+              "id": "d",
+              "text": "Which diagramming notation the design tool uses to draw its diagrams"
+            }
+          ],
+          "rationale": {
+            "summary": "How formal a review should be depends on the SDLC in use, the maturity of the development process, how critical and complex the work product is, legal or regulatory requirements and the need for an audit trail. The programming language, the number of executed test cases and the diagramming notation of the design tool are not on that list.",
+            "byOption": {
+              "a": "Correct. The criticality and complexity of the work product, and legal or regulatory requirements, are among the factors that influence how formal a review should be.",
+              "b": "Incorrect. The implementation language is not among the factors that determine review formality; it is a detail unrelated to choosing a review type.",
+              "c": "Incorrect. The number of executed test cases describes dynamic testing progress; it is not a factor that determines how formal a review should be.",
+              "d": "Incorrect. The notation a design tool uses to draw diagrams is a tooling detail, not a factor in how formal a review should be. Formality depends on the lifecycle, maturity, criticality, complexity, legal requirements and audit trail needs."
+            }
+          },
+          "hints": [
+            "Think about what in the project or the work product itself would call for a more rigorous review."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0284",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 3,
+      "section": "3.2",
+      "syllabusRef": "§3.2.5",
+      "objectives": [
+        "FL-3.2.5"
+      ],
+      "kLevel": "K1",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "review-success-factors",
+        "multi-answer"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a",
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden HANGİ İKİSİ bir gözden geçirmenin (review) başarısına katkıda bulunur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Katılımcıların rolleri için yeterince eğitilmiş olması"
+            },
+            {
+              "id": "b",
+              "text": "Gözden geçirmelerin ara sıra yapılan bir olay olarak görülmesi"
+            },
+            {
+              "id": "c",
+              "text": "Gözden geçirme toplantılarının iyi kolaylaştırılması"
+            },
+            {
+              "id": "d",
+              "text": "Katılımcılara hazırlanmak için zaman tanınmaması"
+            },
+            {
+              "id": "e",
+              "text": "Gözden geçirmenin dinamik test bittikten sonra yapılması"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredata göre yeterli eğitim ve gözden geçirme toplantılarının iyi kolaylaştırılması başarı faktörleridir. Gözden geçirmelerin kurum kültürünün olağan bir parçası olması da gerekir; ara sıra yapılan bir olay olarak görülmeleri bunun tersidir.",
+            "byOption": {
+              "a": "Doğru. Katılımcıların rollerini bilecek biçimde yeterince eğitilmesi, müfredatın saydığı başarı faktörlerinden biridir.",
+              "b": "Yanlış. Başarı faktörü, gözden geçirmelerin kurum kültürünün olağan bir parçası olmasıdır; ara sıra yapılan ayrı bir olay saymak bunun tersidir.",
+              "c": "Doğru. Gözden geçirme toplantılarının iyi kolaylaştırılması, müfredatın saydığı başarı faktörlerinden biridir.",
+              "d": "Yanlış. Katılımcılar iş ürününü toplantıdan önce inceleyemezse gözden geçirme zayıflar; hazırlanma zamanını esirgemek bir başarı faktörünün tersidir.",
+              "e": "Yanlış. Gözden geçirme dinamik testi beklemek zorunda değildir; statik test yaşam döngüsünün erken aşamalarında yapılabildiği için değerlidir."
+            }
+          },
+          "hints": [
+            "Hangi maddelerin gözden geçirmeyi etkili kıldığını, hangilerinin zayıflattığını düşünün."
+          ]
+        },
+        "en": {
+          "stem": "WHICH TWO of the following contribute to the success of a review?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Participants are adequately trained in their roles"
+            },
+            {
+              "id": "b",
+              "text": "Reviews are an occasional event, not company culture"
+            },
+            {
+              "id": "c",
+              "text": "The review meetings are facilitated well"
+            },
+            {
+              "id": "d",
+              "text": "Participants get no time to prepare beforehand"
+            },
+            {
+              "id": "e",
+              "text": "The review is held after dynamic testing is done"
+            }
+          ],
+          "rationale": {
+            "summary": "According to the syllabus, adequate training and good facilitation of the review meetings are success factors. Reviews should also be part of the organization's normal culture; treating them as an occasional event is the opposite.",
+            "byOption": {
+              "a": "Correct. Participants being adequately trained for their roles in the review is one of the success factors the syllabus lists.",
+              "b": "Incorrect. The success factor is that reviews are part of the organization's normal culture; treating them as an occasional, separate event is the opposite.",
+              "c": "Correct. Good facilitation of the review meetings is one of the success factors the syllabus lists.",
+              "d": "Incorrect. If participants cannot examine the work product before the meeting, the review is weakened; withholding preparation time is the opposite of a factor that supports success.",
+              "e": "Incorrect. A review does not have to wait for dynamic testing; static testing is valuable precisely because it can be done early in the lifecycle."
+            }
+          },
+          "hints": [
+            "Ask which items support a review being effective, and which would undermine it."
+          ]
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    }
+  ]
+}

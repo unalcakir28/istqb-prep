@@ -191,6 +191,196 @@
         "createdAt": "2026-09-22",
         "updatedAt": "2026-09-22"
       }
+    },
+    {
+      "id": "ctfl4-0320",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1",
+      "objectives": [
+        "FL-6.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-tools",
+        "non-functional-testing-tools"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, web mağazasının aynı anda 5.000 kullanıcı sipariş verdiğinde de kabul edilebilir yanıt verdiğini göstermek zorunda. Bu tür testi EN İYİ hangi test aracı kategorisi destekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Fonksiyonel olmayan test araçları"
+            },
+            {
+              "id": "b",
+              "text": "Test tasarımı ve test uyarlama araçları"
+            },
+            {
+              "id": "c",
+              "text": "Statik test araçları"
+            },
+            {
+              "id": "d",
+              "text": "İş birliği araçları"
+            }
+          ],
+          "rationale": {
+            "summary": "Fonksiyonel olmayan test araçları, elle yapılması zor veya imkansız testleri (örneğin performans testi) mümkün kılar; senaryodaki eşzamanlı 5.000 kullanıcı yükü tam olarak böyle bir testtir. Diğer kategoriler yük üretmez.",
+            "byOption": {
+              "a": "Doğru. Fonksiyonel olmayan test araçları, elle gerçekleştirilmesi zor veya imkansız testlere (örneğin performans testine) olanak tanır; binlerce eşzamanlı kullanıcıyı benzetmek bu kategoriye girer.",
+              "b": "Yanlış. Test tasarımı ve test uyarlama araçları test senaryosu, test verisi ve test prosedürü üretimini kolaylaştırır; girdileri hazırlayabilir ama sisteme eşzamanlı kullanıcı yükü bindirmez.",
+              "c": "Yanlış. Statik test araçları gözden geçirme ve statik analizde testçiyi destekler; iş ürünlerini çalıştırmadan inceler. Yük altındaki yanıt davranışı ise ancak sistem çalıştırılarak gözlenebilir.",
+              "d": "Yanlış. İş birliği araçları ekip içi iletişimi kolaylaştırır; ekip üyeleri arasındaki koordinasyona yardım eder ama sisteme yük uygulayarak test yapmaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team must show that its web shop still responds acceptably when 5,000 users place orders at the same time. Which category of test tool BEST supports this kind of testing?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Non-functional testing tools"
+            },
+            {
+              "id": "b",
+              "text": "Test design and test implementation tools"
+            },
+            {
+              "id": "c",
+              "text": "Static testing tools"
+            },
+            {
+              "id": "d",
+              "text": "Collaboration tools"
+            }
+          ],
+          "rationale": {
+            "summary": "Non-functional testing tools make possible testing that is difficult or impossible to perform manually (for example performance testing); 5,000 simultaneous users is exactly such a test. The other categories do not generate load.",
+            "byOption": {
+              "a": "Correct. Non-functional testing tools allow testing that is difficult or impossible to perform manually, such as performance testing; simulating thousands of concurrent users falls in this category.",
+              "b": "Incorrect. Test design and test implementation tools facilitate generating test cases, test data and test procedures; they can prepare inputs but do not put a concurrent user load on the system.",
+              "c": "Incorrect. Static testing tools support the tester in reviews and static analysis, examining work products without executing them. Response behaviour under load can only be observed by running the system.",
+              "d": "Incorrect. Collaboration tools facilitate communication within the team; they help coordination between team members but do not test the system by applying load."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0321",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 6,
+      "section": "6.2",
+      "syllabusRef": "§6.2",
+      "objectives": [
+        "FL-6.2.1"
+      ],
+      "kLevel": "K1",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-automation",
+        "benefits",
+        "risks"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a",
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden HANGİ İKİSİ test otomasyonu kullanmanın potansiyel faydalarıdır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Regresyon testi koşumu veya aynı verinin yeniden girilmesi gibi tekrarlayan manuel işlerde zaman kazanılması"
+            },
+            {
+              "id": "b",
+              "text": "Test ilerlemesine ilişkin bilgiye daha kolay erişilmesi"
+            },
+            {
+              "id": "c",
+              "text": "Aracın sonuçların makullüğüne karar vermesi, insan değerlendirmesine ihtiyaç bırakmaması"
+            },
+            {
+              "id": "d",
+              "text": "Aracın satıcısına bağımlı olunması; satıcı desteği kesebilir ya da aracı kaldırabilir"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredattaki faydalardan ikisi, tekrarlayan manuel işlerde zaman kazanılması ve test ilerlemesi hakkındaki bilgiye daha kolay erişimdir. Diğer iki seçenek ise müfredatın fayda değil risk olarak saydığı durumları anlatır.",
+            "byOption": {
+              "a": "Doğru. Tekrarlayan manuel işlerde (örneğin regresyon testi koşumu, aynı verinin yeniden girilmesi) zaman kazandırmak, müfredatta sayılan faydalardan biridir.",
+              "b": "Doğru. Test ilerlemesi hakkındaki bilgiye daha kolay erişim, müfredatta sayılan faydalardan biridir.",
+              "c": "Yanlış. Bu bir fayda değil risktir: araca aşırı güvenmek, insanın eleştirel düşünmesine duyulan ihtiyacı görmezden gelmek müfredatta risk olarak sayılır. Araç sonucu üretir; sonucun makul olup olmadığını yargılamak insana kalır.",
+              "d": "Yanlış. Bu bir fayda değil risktir: araç satıcısına bağımlılık, yani satıcının faaliyetlerine son vermesi, aracı kullanımdan kaldırması veya farklı bir satıcıya satması müfredatta risk olarak sayılır."
+            }
+          }
+        },
+        "en": {
+          "stem": "WHICH TWO of the following are potential benefits of using test automation?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Time saved on repetitive manual work, such as running regression tests or re-entering the same data"
+            },
+            {
+              "id": "b",
+              "text": "Easier access to information about test progress"
+            },
+            {
+              "id": "c",
+              "text": "The tool decides whether results look reasonable, removing the need for human critical thinking"
+            },
+            {
+              "id": "d",
+              "text": "Dependence on the tool vendor, who may stop supporting the tool or retire it"
+            }
+          ],
+          "rationale": {
+            "summary": "Two of the benefits the syllabus lists are time saved on repetitive manual work and easier access to information about test progress. The other two options describe situations the syllabus names as risks, not benefits.",
+            "byOption": {
+              "a": "Correct. Saving time on repetitive manual work (for example running regression tests or re-entering the same data) is one of the listed benefits.",
+              "b": "Correct. Easier access to information about test progress is one of the listed benefits.",
+              "c": "Incorrect. This is a risk, not a benefit: over-relying on the tool and ignoring the need for human critical thinking is a listed risk. The tool produces results; judging whether they are reasonable remains a human task.",
+              "d": "Incorrect. This is a risk, not a benefit: dependence on the tool vendor, who may go out of business, retire the tool or sell it to a different vendor, is a listed risk."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
     }
   ]
 }

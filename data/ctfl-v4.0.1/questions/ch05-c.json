@@ -1,0 +1,1043 @@
+{
+  "chunk": "ch05-c",
+  "chapter": 5,
+  "dataVersion": "2026.10.02",
+  "questions": [
+    {
+      "id": "ctfl4-0306",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.1",
+      "objectives": [
+        "FL-5.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-plan",
+        "test-strategy"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Can güvenliği açısından kritik bir alandaki proje, kuruluşun standart test stratejisinden farklı bir test yaklaşımı gerektirmektedir. Test planı bu durumu nasıl ele almalıdır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Projenin test stratejisinden neden ayrıldığını ve farklı yaklaşımın gerekçesini plan içinde açıklamalıdır"
+            },
+            {
+              "id": "b",
+              "text": "Test stratejisini aynen kopyalamalıdır, çünkü bir test planı stratejiyle özdeş olmak zorundadır"
+            },
+            {
+              "id": "c",
+              "text": "Farkı plana yazmamalı, proje sonunda hazırlanan test tamamlama raporunda belirtmelidir"
+            },
+            {
+              "id": "d",
+              "text": "Önce kuruluşun test politikasını tüm şirket için yeniden yazmalı, test planlamasına bundan sonra başlamalıdır"
+            }
+          ],
+          "rationale": {
+            "summary": "Test planının amaçlarından biri, testin mevcut test politikasına ve test stratejisine uyacağını göstermek ya da bunlardan neden ayrıldığını açıklamaktır. Bu nedenle planlanan sapma planın içinde gerekçesiyle belirtilir.",
+            "byOption": {
+              "a": "Doğru. Test planı, testin mevcut test politikası ve test stratejisine uyacağını gösterir; uymayacaksa sapmanın nedenini açıklar. Güvenlik açısından kritik bir proje için daha sıkı bir yaklaşım bu şekilde gerekçelendirilir.",
+              "b": "Yanlış. Test stratejisi kuruluş düzeyinde genel bir yaklaşımı anlatır; test planı ise projeye özgüdür. Planın stratejiden sapabilmesi mümkündür, yeter ki sapma açıklansın.",
+              "c": "Yanlış. Test tamamlama raporu, tamamlanan testi plana göre değerlendirir ve sapmaları sonradan bildirir. Planlanan bir sapmanın gerekçesini plan aşamasında sunma görevini ortadan kaldırmaz.",
+              "d": "Yanlış. Test politikası, kuruluşun test amaçlarını ve ilkelerini tanımlayan üst düzey bir belgedir; tek bir projenin planı politikayı değiştirmez ve planlama için politikanın yeniden yazılması gerekmez."
+            }
+          }
+        },
+        "en": {
+          "stem": "A project in a safety-critical domain needs a test approach that differs from the organization's standard test strategy. How should the test plan deal with this?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It should explain in the plan why the project deviates from the test strategy and justify the different approach"
+            },
+            {
+              "id": "b",
+              "text": "It should copy the test strategy unchanged, because a test plan has to be identical to the strategy"
+            },
+            {
+              "id": "c",
+              "text": "It should leave the difference out of the plan and mention it in the test completion report written at the end of the project"
+            },
+            {
+              "id": "d",
+              "text": "It should first rewrite the organization's test policy for the whole company and begin test planning afterwards"
+            }
+          ],
+          "rationale": {
+            "summary": "One purpose of a test plan is to demonstrate that testing will adhere to the existing test policy and test strategy, or to explain why it deviates from them. A planned deviation is therefore stated, with its reason, inside the plan.",
+            "byOption": {
+              "a": "Correct. A test plan demonstrates that testing will follow the existing test policy and test strategy and, where it will not, explains why it deviates. A stricter approach for a safety-critical project is justified in exactly this way.",
+              "b": "Incorrect. A test strategy describes a generic approach at organization level, while a test plan is specific to the project. A plan may deviate from the strategy as long as the deviation is explained.",
+              "c": "Incorrect. The test completion report evaluates the completed testing against the plan and reports deviations afterwards. It does not remove the need to give the reason for a planned deviation when the plan is written.",
+              "d": "Incorrect. A test policy is a high-level document describing the organization's test objectives and principles; one project's plan does not change the policy, and planning does not wait for the policy to be rewritten."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0307",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.3",
+      "objectives": [
+        "FL-5.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "exit-criteria",
+        "time-budget"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir projenin test bütçesi, planlanan kapsam seviyesine ulaşılmadan tükenmiştir. Bütçenin bitmesi hangi koşulda geçerli bir çıkış kriteri olarak kullanılabilir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Paydaşlar kalan riski gözden geçirip daha fazla test yapılmadan canlıya çıkmayı kabul etmişse"
+            },
+            {
+              "id": "b",
+              "text": "Test yöneticisi tek başına karar verirse, çünkü bütçe sınırı tanımlanmış çıkış kriterlerinin önüne geçer"
+            },
+            {
+              "id": "c",
+              "text": "Geçerli olamaz; çıkış kriteri, ulaşılan kapsam seviyesi gibi bir bütünlük ölçüsü olmak zorundadır"
+            },
+            {
+              "id": "d",
+              "text": "Planlanan tüm testler çalıştırılmışsa, çünkü bütçe sınırı bir evet/hayır kriterinin yerini tutamaz"
+            }
+          ],
+          "rationale": {
+            "summary": "Zamanın ya da bütçenin bitmesi, paydaşlar riski gözden geçirip daha fazla test yapılmadan canlıya çıkmayı kabul ettiyse geçerli bir çıkış kriteri olabilir. Karar paydaşların bilinçli kabulüne dayanır.",
+            "byOption": {
+              "a": "Doğru. Zaman veya bütçenin tükenmesi, ancak paydaşlar riski gözden geçirip daha fazla test yapılmadan canlıya çıkmanın riskini kabul etmişse geçerli bir çıkış kriteridir.",
+              "b": "Yanlış. Bütçe sınırı kendiliğinden çıkış kriterlerini geçersiz kılmaz ve karar tek bir kişiye bırakılmaz; geçerlilik için paydaşların riski gözden geçirip kabul etmesi gerekir.",
+              "c": "Yanlış. Kapsam seviyesi gibi bütünlük ölçüleri tipik çıkış kriterlerinden yalnızca biridir. Evet/hayır kriterleri ve riski kabul edilmiş zaman ya da bütçe sınırı da çıkış kriteri olabilir.",
+              "d": "Yanlış. Planlanan tüm testlerin çalıştırılması, ayrı bir evet/hayır çıkış kriteridir. Zaman veya bütçe sınırı bunun ön koşuluna bağlı değildir; paydaşların riski kabul etmesi yeterlidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "The test budget of a project is exhausted before the planned coverage level has been reached. Under which condition can running out of budget serve as a valid exit criterion?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The stakeholders have reviewed the remaining risk and accepted going live without further testing"
+            },
+            {
+              "id": "b",
+              "text": "The test manager decides alone, because a budget limit takes precedence over the defined exit criteria"
+            },
+            {
+              "id": "c",
+              "text": "It cannot be valid; an exit criterion has to be a measure of thoroughness such as an achieved coverage level"
+            },
+            {
+              "id": "d",
+              "text": "The planned tests have all been executed, because a budget limit cannot replace a yes/no criterion"
+            }
+          ],
+          "rationale": {
+            "summary": "Running out of time or budget can be a valid exit criterion if the stakeholders have reviewed the remaining risk and accepted going live without further testing. The decision rests on their informed acceptance.",
+            "byOption": {
+              "a": "Correct. Running out of time or budget is a valid exit criterion only if the stakeholders have reviewed the risk and accepted going live without further testing.",
+              "b": "Incorrect. A budget limit does not by itself override the exit criteria, and the decision is not left to one person; stakeholders must review and accept the risk for it to be valid.",
+              "c": "Incorrect. Measures of thoroughness such as coverage are only one kind of exit criterion. Yes/no criteria and a time or budget limit with accepted risk can also be exit criteria.",
+              "d": "Incorrect. Executing all planned tests is a separate yes/no exit criterion. A time or budget limit does not depend on it; the stakeholders' acceptance of the risk is what makes it valid."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0308",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.4",
+      "objectives": [
+        "FL-5.1.4"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "estimation",
+        "three-point",
+        "decomposition"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test lideri, bir özelliğin test eforunu iki göreve ayırır ve her birine üç noktalı tahminleme uygular. A görevi: en iyimser 6, en olası 12, en kötümser 30 kişi-saat. B görevi: en iyimser 10, en olası 16, en kötümser 28 kişi-saat. Özelliğin tahmini toplam test eforu, yani iki görev tahmininin toplamı nedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "28 kişi-saat"
+            },
+            {
+              "id": "b",
+              "text": "31 kişi-saat"
+            },
+            {
+              "id": "c",
+              "text": "34 kişi-saat"
+            },
+            {
+              "id": "d",
+              "text": "37 kişi-saat"
+            }
+          ],
+          "rationale": {
+            "summary": "Üç noktalı tahminleme E = (a + 4m + b) / 6 formülünü kullanır. A için E = (6 + 48 + 30) / 6 = 14, B için E = (10 + 64 + 28) / 6 = 17; toplam 14 + 17 = 31 kişi-saattir.",
+            "byOption": {
+              "a": "Yanlış. 28, iki görevin yalnızca en olası tahminlerinin toplamıdır (12 + 16). Formül, en iyimser ve en kötümser değerleri de ağırlıklı olarak hesaba katar.",
+              "b": "Doğru. A için (6 + 4×12 + 30) / 6 = 84 / 6 = 14; B için (10 + 4×16 + 28) / 6 = 102 / 6 = 17. Toplam 14 + 17 = 31 kişi-saattir.",
+              "c": "Yanlış. 34, her görev için üç değerin düz ortalamasının alınmasından çıkar: (6 + 12 + 30) / 3 = 16 ve (10 + 16 + 28) / 3 = 18. Üç noktalı tahminleme en olası değere dört kat ağırlık verir.",
+              "d": "Yanlış. 37, her görev için en iyimser ve en kötümser değerin orta noktasının alınmasından çıkar: (6 + 30) / 2 = 18 ve (10 + 28) / 2 = 19. Bu, en olası tahmini yok sayar."
+            }
+          }
+        },
+        "en": {
+          "stem": "A test lead splits the test effort of a feature into two tasks and applies three-point estimation to each. Task A: most optimistic 6, most likely 12, most pessimistic 30 person-hours. Task B: most optimistic 10, most likely 16, most pessimistic 28 person-hours. What is the estimated total test effort of the feature, that is, the sum of the two task estimates?",
+          "options": [
+            {
+              "id": "a",
+              "text": "28 person-hours"
+            },
+            {
+              "id": "b",
+              "text": "31 person-hours"
+            },
+            {
+              "id": "c",
+              "text": "34 person-hours"
+            },
+            {
+              "id": "d",
+              "text": "37 person-hours"
+            }
+          ],
+          "rationale": {
+            "summary": "Three-point estimation uses E = (a + 4m + b) / 6. For A, E = (6 + 48 + 30) / 6 = 14; for B, E = (10 + 64 + 28) / 6 = 17; the total is 14 + 17 = 31 person-hours.",
+            "byOption": {
+              "a": "Incorrect. 28 is only the sum of the two most likely estimates (12 + 16). The formula also takes the optimistic and pessimistic values into account.",
+              "b": "Correct. For A, (6 + 4×12 + 30) / 6 = 84 / 6 = 14; for B, (10 + 4×16 + 28) / 6 = 102 / 6 = 17. The total is 14 + 17 = 31 person-hours.",
+              "c": "Incorrect. 34 comes from taking the plain average of the three values for each task: (6 + 12 + 30) / 3 = 16 and (10 + 16 + 28) / 3 = 18. Three-point estimation gives the most likely value a weight of four.",
+              "d": "Incorrect. 37 comes from taking the midpoint of the optimistic and pessimistic values for each task: (6 + 30) / 2 = 18 and (10 + 28) / 2 = 19. That ignores the most likely estimate."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0309",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.5",
+      "objectives": [
+        "FL-5.1.5"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "prioritization",
+        "risk-based",
+        "dependency"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test uzmanı risk bazlı önceliklendirme uygular. Her test senaryosu, olasılık ve etkisi aşağıda verilen bir ürün riskini kapsar: TC1 olasılık 0,9 etki 2; TC2 olasılık 0,4 etki 9; TC3 olasılık 0,7 etki 6; TC4 olasılık 0,3 etki 5. Risk seviyesi = olasılık × etki. Ayrıca TC3, ancak TC4 çalıştırıldıktan sonra çalıştırılabilir. Bağımlılık, ön koşul olan test senaryosunu bağımlı senaryonun hemen önüne taşıyarak karşılanır; sıranın geri kalanı risk bazlı sırayı korur. Hangi çalıştırma sırası bu kurala uyar?",
+          "options": [
+            {
+              "id": "a",
+              "text": "TC3, TC2, TC1, TC4"
+            },
+            {
+              "id": "b",
+              "text": "TC4, TC3, TC2, TC1"
+            },
+            {
+              "id": "c",
+              "text": "TC1, TC4, TC3, TC2"
+            },
+            {
+              "id": "d",
+              "text": "TC2, TC4, TC3, TC1"
+            }
+          ],
+          "rationale": {
+            "summary": "Risk seviyeleri TC1 = 1,8; TC2 = 3,6; TC3 = 4,2; TC4 = 1,5 olduğundan saf risk bazlı sıra TC3, TC2, TC1, TC4'tür. TC3, TC4'e bağımlıdır; TC4 bağımlı senaryo TC3'ün hemen önüne taşınır ve sıranın kalanı korunur: TC4, TC3, TC2, TC1.",
+            "byOption": {
+              "a": "Yanlış. Bu, saf risk bazlı sıradır (4,2; 3,6; 1,8; 1,5) ancak TC3'ü TC4'ten önce koyarak bağımlılığı çiğner.",
+              "b": "Doğru. Seviyeler: TC1 0,9×2 = 1,8; TC2 0,4×9 = 3,6; TC3 0,7×6 = 4,2; TC4 0,3×5 = 1,5. Saf sıra TC3, TC2, TC1, TC4'tür; TC3, TC4'ten sonra çalışabildiği için TC4, TC3'ün hemen önüne taşınır ve sıra TC4, TC3, TC2, TC1 olur.",
+              "c": "Yanlış. Bu sıra yalnızca olasılığa göre sıralar (TC1 0,9; TC3 0,7; TC2 0,4; TC4 0,3), sonra bağımlılık için TC4'ü TC3'ten önceye alır. Bağımlılığa uyar, ancak risk seviyesi olasılık ile etkinin çarpımıdır; bu yüzden TC3 (4,2) ve TC2 (3,6), TC1'den (1,8) önce gelmelidir.",
+              "d": "Yanlış. Bu sıra yalnızca etkiye göre sıralar (TC2 9, TC3 6, TC4 5, TC1 2), sonra bağımlılık için TC3 ile TC4'ün yerini değiştirir. Bağımlılığa uyar, ancak tek başına etki olasılığı yok sayar: TC3 (4,2), TC2'nin (3,6) önündedir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester uses risk-based prioritization. Each test case covers one product risk with the likelihood and impact given here: TC1 likelihood 0.9, impact 2; TC2 likelihood 0.4, impact 9; TC3 likelihood 0.7, impact 6; TC4 likelihood 0.3, impact 5. Risk level = likelihood × impact. In addition, TC3 can be executed only after TC4 has been executed. The dependency is satisfied by moving the prerequisite test case to just before the test case that depends on it; the rest of the order keeps the risk-based order. Which execution order follows this rule?",
+          "options": [
+            {
+              "id": "a",
+              "text": "TC3, TC2, TC1, TC4"
+            },
+            {
+              "id": "b",
+              "text": "TC4, TC3, TC2, TC1"
+            },
+            {
+              "id": "c",
+              "text": "TC1, TC4, TC3, TC2"
+            },
+            {
+              "id": "d",
+              "text": "TC2, TC4, TC3, TC1"
+            }
+          ],
+          "rationale": {
+            "summary": "The risk levels are TC1 = 1.8, TC2 = 3.6, TC3 = 4.2 and TC4 = 1.5, so the pure risk-based order is TC3, TC2, TC1, TC4. TC3 depends on TC4, so TC4 is moved to just before TC3 and the rest of the order is kept: TC4, TC3, TC2, TC1.",
+            "byOption": {
+              "a": "Incorrect. This is the pure risk-based order (4.2, 3.6, 1.8, 1.5), but it puts TC3 before TC4 and so breaks the dependency.",
+              "b": "Correct. Levels: TC1 0.9×2 = 1.8; TC2 0.4×9 = 3.6; TC3 0.7×6 = 4.2; TC4 0.3×5 = 1.5. The pure order is TC3, TC2, TC1, TC4; because TC3 can run only after TC4, TC4 moves to just before TC3, giving TC4, TC3, TC2, TC1.",
+              "c": "Incorrect. This order ranks by likelihood alone (TC1 0.9, TC3 0.7, TC2 0.4, TC4 0.3) and then moves TC4 ahead of TC3 for the dependency. It respects the dependency, but risk level is likelihood multiplied by impact, so TC3 (4.2) and TC2 (3.6) must come before TC1 (1.8).",
+              "d": "Incorrect. This order ranks by impact alone (TC2 9, TC3 6, TC4 5, TC1 2) and then swaps TC3 and TC4 for the dependency. It respects the dependency, but impact alone ignores likelihood: TC3 (4.2) outranks TC2 (3.6)."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0310",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.7",
+      "objectives": [
+        "FL-5.1.7"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "testing-quadrants",
+        "test-levels-and-types"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Çevik bir projedeki ekip, test portföyünü test çeyrekleri modeline göre gözden geçiriyor. Portföyde şunlar var: CI hattında çalışan bileşen testleri ve bileşen entegrasyon testleri, keşif testi oturumları ve kullanıcılarla kullanılabilirlik testi, ayrıca performans testleri ve duman testleri. Portföyde hangi tür testler EKSİKTİR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Ekibi destekleyen ve kabul kriterlerinin karşılanmasını kontrol eden, iş odaklı testler"
+            },
+            {
+              "id": "b",
+              "text": "Ekibi destekleyen, geliştirmeye rehberlik eden ve otomatikleştirilmesi gereken teknoloji odaklı testler"
+            },
+            {
+              "id": "c",
+              "text": "Ürünün davranışını eleştiren ve genellikle otomatik olan, teknoloji odaklı testler"
+            },
+            {
+              "id": "d",
+              "text": "Ürünü eleştiren, kullanıcı odaklı ve genellikle manuel olan, iş odaklı testler"
+            }
+          ],
+          "rationale": {
+            "summary": "Test çeyrekleri modeli, test seviyelerini ve test çeşitlerini çeyreklere yerleştirerek hepsinin yaşam döngüsünde yer aldığını görmeye yardım eder. Portföy Q1'i (bileşen ve bileşen entegrasyon), Q3'ü (keşif, kullanılabilirlik) ve Q4'ü (performans, duman) kapsar; iş odaklı ve ekibi destekleyen Q2 (kullanıcı hikayesi ve API testleri) eksiktir.",
+            "byOption": {
+              "a": "Doğru. Ekibi destekleyen iş odaklı testler, örneğin kullanıcı hikayesi ve API testleri, Q2'dedir ve kabul kriterlerini kontrol eder. Portföydeki testlerin hiçbiri Q2'ye girmez.",
+              "b": "Yanlış. Ekibi destekleyen teknoloji odaklı testler Q1'dedir (bileşen ve bileşen entegrasyon testleri). Portföyde bunlar zaten vardır; bu çeyrek eksik değildir.",
+              "c": "Yanlış. Ürünü eleştiren teknoloji odaklı testler Q4'tedir (duman testleri ve kullanılabilirlik hariç fonksiyonel olmayan testler). Portföyde performans ve duman testleri zaten vardır; bu çeyrek eksik değildir.",
+              "d": "Yanlış. Ürünü eleştiren iş odaklı testler Q3'tedir (keşif, kullanılabilirlik ve kullanıcı kabul testi). Portföyde keşif ve kullanılabilirlik testi zaten vardır; bu çeyrek eksik değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team in an agile project reviews its test portfolio against the testing quadrants model. The portfolio contains component tests and component integration tests run in the CI pipeline, exploratory testing sessions and usability testing with users, and performance tests and smoke tests. Which kind of tests is MISSING from the portfolio?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Business-facing tests that support the team and check whether the acceptance criteria have been met"
+            },
+            {
+              "id": "b",
+              "text": "Technology-facing tests that support the team by guiding development and that should be automated"
+            },
+            {
+              "id": "c",
+              "text": "Technology-facing tests that critique the product and are usually automated"
+            },
+            {
+              "id": "d",
+              "text": "Business-facing tests that critique the product, are user-oriented and are usually manual"
+            }
+          ],
+          "rationale": {
+            "summary": "The testing quadrants model places test levels and test types in quadrants so that stakeholders can see that all of them are included in the SDLC. The portfolio covers Q1 (component and component integration tests), Q3 (exploratory, usability) and Q4 (performance, smoke); Q2 (business-facing, supports the team: user story and API tests) is missing.",
+            "byOption": {
+              "a": "Correct. Business-facing tests that support the team, such as user story tests and API tests, belong to Q2 and check the acceptance criteria. None of the tests in the portfolio falls into Q2.",
+              "b": "Incorrect. Technology-facing tests that support the team are Q1 (component and component integration tests). The portfolio already contains them, so that quadrant is not missing.",
+              "c": "Incorrect. Technology-facing tests that critique the product are Q4 (smoke tests and non-functional tests other than usability). The portfolio already contains performance and smoke tests, so that quadrant is not missing.",
+              "d": "Incorrect. Business-facing tests that critique the product are Q3 (exploratory, usability and user acceptance testing). The portfolio already contains exploratory and usability testing, so that quadrant is not missing."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0311",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.2",
+      "syllabusRef": "§5.2.2",
+      "objectives": [
+        "FL-5.2.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "project-risk",
+        "consequences"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir risk kaydında dört risk listelenmiştir. Hangisi bir ürün riski değil, proje riskidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Fatura modülünde yanlış hesaplama yapılması"
+            },
+            {
+              "id": "b",
+              "text": "Mobil ekranlarda kötü bir kullanıcı deneyimi oluşması"
+            },
+            {
+              "id": "c",
+              "text": "1 GB'tan büyük bir dosya yüklenirken çalışma zamanında arıza oluşması"
+            },
+            {
+              "id": "d",
+              "text": "Sürüm için test eforunun yanlış tahmin edilmesi"
+            }
+          ],
+          "rationale": {
+            "summary": "Proje riskleri projenin yönetimi ve kontrolüyle ilgilidir ve gerçekleştiklerinde takvimi, bütçeyi veya kapsamı etkiler. Yanlış efor tahmini bir proje riskidir; diğer üçü ürünün kalite özelliklerini ilgilendirir.",
+            "byOption": {
+              "a": "Yanlış. Yanlış hesaplama ürünün işlevsel doğruluğuyla ilgili bir ürün riskidir; sonuçları kullanıcı memnuniyetsizliği ya da itibar kaybı gibi ürüne ait etkilerdir.",
+              "b": "Yanlış. Kötü kullanıcı deneyimi ürünün kullanılabilirlik kalite özelliğiyle ilgili bir ürün riskidir; projenin takvimini ya da bütçesini doğrudan tehdit eden bir risk değildir.",
+              "c": "Yanlış. Çalışma zamanında arıza oluşması ürünün güvenilirliğiyle ilgili bir ürün riskidir. Etkisi ürünün kalitesine yöneliktir; proje yönetimi ve kontrolüyle ilgili değildir.",
+              "d": "Doğru. Yanlış tahmin edilen efor projenin yönetimi ve kontrolüyle ilgili bir organizasyon sorunudur; gerçekleşirse takvimi, bütçeyi veya kapsamı etkiler. Bu bir proje riskidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A risk register lists four risks. Which one is a project risk rather than a product risk?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Incorrect calculations in the invoicing module"
+            },
+            {
+              "id": "b",
+              "text": "A poor user experience on the mobile screens"
+            },
+            {
+              "id": "c",
+              "text": "A failure at runtime when a file larger than 1 GB is uploaded"
+            },
+            {
+              "id": "d",
+              "text": "Inaccurate estimates of the test effort for the release"
+            }
+          ],
+          "rationale": {
+            "summary": "Project risks relate to the management and control of the project and, when they occur, affect the schedule, budget or scope. Inaccurate effort estimates are a project risk; the other three concern the quality characteristics of the product.",
+            "byOption": {
+              "a": "Incorrect. Incorrect calculations are a product risk concerning functional correctness; their consequences, such as user dissatisfaction or loss of reputation, fall on the product.",
+              "b": "Incorrect. A poor user experience is a product risk concerning the usability of the product; it does not directly threaten the project's schedule or budget.",
+              "c": "Incorrect. A failure at runtime is a product risk concerning reliability. Its effect is on the quality of the product, not on the management and control of the project.",
+              "d": "Correct. Inaccurate effort estimates are an organizational issue relating to the management and control of the project; if they occur, they affect the schedule, budget or scope. This is a project risk."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0312",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.2",
+      "syllabusRef": "§5.2.3",
+      "objectives": [
+        "FL-5.2.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "product-risk",
+        "test-scope"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ürün riski analizinin sonuçları test planlamasına girdi olarak kullanılıyor. Aşağıdakilerden hangisi bu sonuçlara dayanılarak belirlenir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test nesnesinin her bölümü için uygulanacak test seviyeleri ve test çeşitlerinin hangileri olacağı"
+            },
+            {
+              "id": "b",
+              "text": "Bildirilen her anomalinin gerçek bir hata, yanlış pozitif bir sonuç ya da bir değişiklik talebi olup olmadığı"
+            },
+            {
+              "id": "c",
+              "text": "Hangi test iş ürünlerinin temel çizgi olacağı ve bunlardaki değişiklikleri kimlerin onaylayabileceği"
+            },
+            {
+              "id": "d",
+              "text": "Test ilerleme raporlarının ne sıklıkla yayımlanacağı ve hangi paydaşların bu raporları alacağı"
+            }
+          ],
+          "rationale": {
+            "summary": "Ürün riski analizinin sonuçları test kapsamını, uygulanacak test seviyelerini ve çeşitlerini, test tekniklerini ve ulaşılacak kapsamı, görev başına test eforunu ve önceliklendirmeyi belirlemede kullanılır.",
+            "byOption": {
+              "a": "Doğru. Risk analizinin sonuçları, test nesnesinin hangi bölümlerine hangi test seviyelerinin ve test çeşitlerinin uygulanacağını belirlemede kullanılır; böylece test eforu riskin yüksek olduğu yere yönlendirilir.",
+              "b": "Yanlış. Bir anomalinin gerçek hata, yanlış pozitif ya da değişiklik talebi olduğuna hata yönetimi sürecinde, rapor ele alınırken karar verilir; bu bir risk analizi çıktısı değildir.",
+              "c": "Yanlış. Hangi öğelerin temel çizgi olacağı ve değişikliklerin nasıl onaylanacağı yapılandırma yönetiminin konusudur, ürün riski analizinin değil.",
+              "d": "Yanlış. Raporlama sıklığı ve hedef kitle, test gözetimi ve raporlamanın konusudur ve paydaşların bilgi ihtiyacına bağlıdır; ürün riski analizi sonuçlarının kullanım amacı bu değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "The results of a product risk analysis are used as input to test planning. Which of the following is determined on the basis of these results?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The test levels and test types to apply to each area of the test object"
+            },
+            {
+              "id": "b",
+              "text": "Whether each reported anomaly is a real defect, a false positive or a change request"
+            },
+            {
+              "id": "c",
+              "text": "Which test work products become baselines and who may approve changes to them"
+            },
+            {
+              "id": "d",
+              "text": "How often test progress reports are issued and which stakeholders receive them"
+            }
+          ],
+          "rationale": {
+            "summary": "The results of product risk analysis are used to determine the test scope, the test levels and test types to apply, the test techniques and coverage to achieve, the test effort per task and the prioritization.",
+            "byOption": {
+              "a": "Correct. The results of risk analysis are used to determine which test levels and test types are applied to which areas of the test object, so that test effort goes where the risk is highest.",
+              "b": "Incorrect. Whether an anomaly is a real defect, a false positive or a change request is decided in the defect management process when the report is handled; it is not an output of risk analysis.",
+              "c": "Incorrect. Which items become baselines and how changes are approved belong to configuration management, not to product risk analysis.",
+              "d": "Incorrect. The frequency and audience of reports belong to test monitoring and reporting and depend on what stakeholders need; it is not what the analysis results are used for."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0313",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.2",
+      "syllabusRef": "§5.2.4",
+      "objectives": [
+        "FL-5.2.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "risk-mitigation",
+        "testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Ürün riski analizi, ödeme sayfasının yanıt süresini yüksek riskli olarak değerlendirmiştir. Aşağıdakilerden hangisi bu riske TEST YOLUYLA risk azaltma ile karşılık veren bir eylemdir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yanıt süresini hedefleyen performans testlerini ödeme sayfasına gerçekçi yük altında uygulamak"
+            },
+            {
+              "id": "b",
+              "text": "Yanıt süresini fonksiyonel olmayan bir konu sayarak ödeme sayfası için planlanan kapsamı düşürmek"
+            },
+            {
+              "id": "c",
+              "text": "Yayından sonra sayfa yavaşlarsa kimin ne yapacağını ve hangi adımların izleneceğini yazıya dökmek"
+            },
+            {
+              "id": "d",
+              "text": "Ödeme sayfasının dinamik testi yerine mimari diyagramın gözden geçirilmesini koymak"
+            }
+          ],
+          "rationale": {
+            "summary": "Test yoluyla risk azaltma eylemlerinden biri, etkilenen kalite özelliğini hedefleyen test çeşitlerini uygulamaktır. Yanıt süresi riskine karşı performans testi bu eyleme örnektir.",
+            "byOption": {
+              "a": "Doğru. Etkilenen kalite özelliğini (yanıt süresi) hedefleyen bir test çeşidi olan performans testlerini uygulamak, riski test yoluyla azaltır.",
+              "b": "Yanlış. Fonksiyonel olmayan kalite özellikleri de test çeşitleriyle test edilir. Yüksek riskli bir alanda kapsamı düşürmek riski azaltmaz, artırır.",
+              "c": "Yanlış. Riskin gerçekleşmesi halinde hangi eylemlerin yapılacağını ve sorumluları tanımlamak bir acil durum planıdır; bu test yoluyla değil, test dışı bir risk yanıtıdır.",
+              "d": "Yanlış. İncelemeler risk azaltmaya katkıda bulunabilir ancak yanıt süresi çalışan yazılımda ölçülen bir özelliktir; dinamik testin yerine bir diyagramı koymak bu riski azaltmaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "Product risk analysis rated the response time of the checkout page as a high risk. Which of the following is an action that responds to this risk by risk mitigation BY TESTING?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Applying performance tests, which target response time, to the checkout page under realistic load"
+            },
+            {
+              "id": "b",
+              "text": "Treating response time as a non-functional matter and reducing the coverage planned for the checkout page"
+            },
+            {
+              "id": "c",
+              "text": "Writing down who does what, and which steps to follow, if the page slows down after release"
+            },
+            {
+              "id": "d",
+              "text": "Replacing the dynamic testing of the checkout page with a review of the architecture diagram"
+            }
+          ],
+          "rationale": {
+            "summary": "One way to mitigate a product risk by testing is to apply test types that address the affected quality characteristic. Performance tests against a response time risk are an example of this.",
+            "byOption": {
+              "a": "Correct. Applying performance tests, a test type that addresses the affected quality characteristic (response time), mitigates the risk by testing.",
+              "b": "Incorrect. Non-functional quality characteristics are tested with test types too. Lowering the coverage of a high-risk area increases the risk instead of reducing it.",
+              "c": "Incorrect. Defining what actions to take and who is responsible if the risk occurs is a contingency plan. That is a response that does not use testing.",
+              "d": "Incorrect. Reviews can contribute to mitigation, but response time is a behavior measured in running software; replacing dynamic testing with a diagram review does not reduce this risk."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0314",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.3",
+      "syllabusRef": "§5.3.2",
+      "objectives": [
+        "FL-5.3.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-progress-report",
+        "test-control"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test seviyesinin ortasında test yöneticisi, testlerin takvimin gerisinde kaldığını görüyor ve takvimi, kaynakları ya da test planını değiştirip değiştirmeyeceğine karar vermesi gerekiyor. Bu karara destek olması amaçlanan bilgi kaynağı hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bir test ilerleme raporu, çünkü test süresince düzenli aralıklarla yayımlanır"
+            },
+            {
+              "id": "b",
+              "text": "Son metrikleri ve öğrenilen dersleri içerdiği için bir test tamamlama raporu"
+            },
+            {
+              "id": "c",
+              "text": "Bulunan her arızanın ciddiyetini ve düzeltme önceliğini belirttiği için bir hata raporu"
+            },
+            {
+              "id": "d",
+              "text": "Test planı, çünkü takvimi ve bütçeyi zaten içerir"
+            }
+          ],
+          "rationale": {
+            "summary": "Test ilerleme raporları test kontrolünü destekler ve planın sapması durumunda takvimi, kaynakları veya test planını değiştirmek için yeterli bilgiyi sağlar; düzenli aralıklarla hazırlanır.",
+            "byOption": {
+              "a": "Doğru. Test ilerleme raporu test süresince düzenli aralıklarla yayımlanır ve test kontrolünü destekler: ilerleme durumunu (takvimin önünde/gerisinde), engelleri ve metrikleri göstererek takvim, kaynak ya da plan değişikliğine karar vermeyi sağlar.",
+              "b": "Yanlış. Test tamamlama raporu test seviyesi bittiğinde bir kez hazırlanır; bu karar için çok geçtir. Son metrikleri ve öğrenilen dersleri içerir, süren testi kontrol etmeye yönelik değildir.",
+              "c": "Yanlış. Hata raporu tek bir anomaliyi, yani bir arızayı tanımlar ve ciddiyet ile önceliği belirtir; testin genel ilerleme durumunu özetlemez.",
+              "d": "Yanlış. Test planı planlanan takvimi ve bütçeyi içerir, fakat gerçekleşen durumu göstermez. Sapmayı görmek için gerçekleşen ilerlemeyi anlatan bir rapor gerekir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Halfway through a test level, a test manager sees that testing is behind schedule and must decide whether to change the schedule, the resources or the test plan. Which source of information is intended to support this decision?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A test progress report, because it is issued at regular intervals during testing"
+            },
+            {
+              "id": "b",
+              "text": "A test completion report, because it contains the final metrics and the lessons learned"
+            },
+            {
+              "id": "c",
+              "text": "A defect report, because it states the severity and the priority to fix of each failure found"
+            },
+            {
+              "id": "d",
+              "text": "The test plan, because it already contains the schedule and the budget"
+            }
+          ],
+          "rationale": {
+            "summary": "Test progress reports support test control and give enough information to modify the schedule, resources or test plan when the plan deviates; they are produced at regular intervals.",
+            "byOption": {
+              "a": "Correct. A test progress report is issued at regular intervals during testing and supports test control: by showing the progress status (ahead or behind schedule), impediments and metrics, it lets the manager decide on changes to the schedule, resources or plan.",
+              "b": "Incorrect. A test completion report is prepared once, when the test level is complete; that is too late for this decision. It holds final metrics and lessons learned and is not meant to control ongoing testing.",
+              "c": "Incorrect. A defect report describes a single anomaly, that is, a failure, with its severity and priority; it does not summarize the overall progress of testing.",
+              "d": "Incorrect. The test plan contains the planned schedule and budget but does not show the actual status. A report on the actual progress is needed to see the deviation."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0315",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.4",
+      "syllabusRef": "§5.4.1",
+      "objectives": [
+        "FL-5.4.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "configuration-management",
+        "testware"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test uzmanı bir test raporu hazırlıyor. Yayın yöneticisi, raporlanan sonuçların hangi yazılım derlemesi ve test ortamı yapılandırması için geçerli olduğunu soruyor. Yapılandırma yönetimi buna nasıl destek olur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Tüm ilgili yazılım öğelerinin ve dokümanların test çalışma ürünlerinde açıkça referanslanmasını sağlar"
+            },
+            {
+              "id": "b",
+              "text": "Her test senaryosunun koşumunun test kayıtlarına işlenmesini sağlar"
+            },
+            {
+              "id": "c",
+              "text": "Test ortamını ve test verisini, test koşumu başlamadan önce kullanıma hazır hale getirmeyi sağlar"
+            },
+            {
+              "id": "d",
+              "text": "Raporun sıklığını ve içeriğini, raporu okuyacak paydaşların bilgi ihtiyaçlarına göre belirlemeyi sağlar"
+            }
+          ],
+          "rationale": {
+            "summary": "Yapılandırma yönetimi, tüm dokümantasyon ve yazılım öğelerinin test çalışma ürünlerinde açıkça referanslanmasını sağlar. Böylece bir test raporu, sonuçların hangi derleme ve ortam versiyonu için geçerli olduğunu belirsizliğe yer bırakmadan gösterebilir.",
+            "byOption": {
+              "a": "Doğru. Yapılandırma yönetimi, ilgili yazılım öğelerinin ve dokümanların test çalışma ürünlerinde, test raporu dahil, açıkça referanslanmasını sağlar; rapor tam derlemeyi ve ortam versiyonunu belirtebilir.",
+              "b": "Yanlış. Test kayıtları test koşumunu kaydeder; bu, koşum kaydıdır. Sonuçların hangi öğe versiyonuna ait olduğunu belirsizliksiz tanımlamak yapılandırma yönetiminin işidir.",
+              "c": "Yanlış. Test ortamını ve test verisini hazırlamak test uygulamanın bir parçasıdır. Hangi derleme ve ortam versiyonuna atıf yapıldığını belirlemek yapılandırma yönetimiyle ilgilidir.",
+              "d": "Yanlış. Raporlama sıklığı ve içeriği test gözetimi ve raporlamanın konusudur ve paydaşların bilgi ihtiyacına bağlıdır; raporun hangi öğe versiyonuna atıf yaptığını belirlemez."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester is preparing a test report. The release manager asks which software build and test environment configuration the reported results apply to. How does configuration management support this?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It ensures that the software items and documents behind the results are unambiguously referenced in testware"
+            },
+            {
+              "id": "b",
+              "text": "It ensures that the execution of each test case is recorded in the test logs"
+            },
+            {
+              "id": "c",
+              "text": "It ensures that the test environment and the test data are made ready for use before test execution starts"
+            },
+            {
+              "id": "d",
+              "text": "It ensures that the frequency and content of the report are set according to the stakeholders' information needs"
+            }
+          ],
+          "rationale": {
+            "summary": "Configuration management ensures that all documentation and software items are unambiguously referenced in testware. A test report can therefore show without ambiguity which build and environment version its results apply to.",
+            "byOption": {
+              "a": "Correct. Configuration management ensures that the relevant software items and documents are unambiguously referenced in testware, including the test report, so the report can name the exact build and environment version.",
+              "b": "Incorrect. Test logs record the execution of tests; they are a record of execution. Identifying unambiguously which item version the results belong to is the job of configuration management.",
+              "c": "Incorrect. Making the test environment and test data ready is part of test implementation. Establishing which build and environment version is referenced is what configuration management does.",
+              "d": "Incorrect. The frequency and content of reports belong to test monitoring and reporting and depend on what stakeholders need; they do not determine which item version a report refers to."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0316",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 5,
+      "section": "5.5",
+      "syllabusRef": "§5.5.1",
+      "objectives": [
+        "FL-5.5.1"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "defect-report",
+        "expected-actual"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir gereksinim şunu söyler: '100 ve üzeri siparişlere %10 indirim uygulanır.' Bir test uzmanı sistem testinde TC-52 test senaryosunu çalıştırırken 120 tutarında bir sipariş girer. Uygulama ödenecek tutar olarak 120 gösterir ve hiçbir indirim satırı yoktur. Uzman şimdi hata raporuna beklenen ve gerçekleşen sonuçları yazacaktır. Hangi giriş EN uygundur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Beklenen: %10 indirimle ödenecek tutar 108 (120 eksi %10 indirim). Gerçekleşen: ödenecek tutar 120, indirim satırı gösterilmiyor."
+            },
+            {
+              "id": "b",
+              "text": "Beklenen: indirim uygulanmadan ödenecek tutar 120. Gerçekleşen: %10 indirim uygulanmış, ödenecek tutar 108."
+            },
+            {
+              "id": "c",
+              "text": "Beklenen: indirim fonksiyonu doğru çalışır. Gerçekleşen: geliştirici indirim rutinini çağırmayı unuttuğu için indirim fonksiyonu bozuktur."
+            },
+            {
+              "id": "d",
+              "text": "Beklenen: %10 indirim uygulanır. Gerçekleşen: indirim uygulanmıyor; yüksek ciddiyetli hata, yayından önce düzeltilmeli."
+            }
+          ],
+          "rationale": {
+            "summary": "İyi bir hata raporu beklenen sonucu (gereksinimden 120 × 0,90 = 108) ve gerçekleşen sonucu (120) gözlemlenebilir, doğrulanabilir değerlerle verir. Neden tahmini ya da ciddiyet/öncelik bilgisi bu alanlara değil, kendi alanlarına yazılır.",
+            "byOption": {
+              "a": "Doğru. Beklenen sonuç gereksinimden hesaplanır (120 × 0,90 = 108); gerçekleşen sonuç gözlemlenen değerdir (120, indirim satırı yok). İkisi de somut ve doğrulanabilirdir.",
+              "b": "Yanlış. Beklenen ve gerçekleşen sonuçlar yer değiştirmiştir: 108 gereksinimin beklediği, 120 ise uygulamanın gerçekte gösterdiği değerdir.",
+              "c": "Yanlış. Rapor sırasında yalnızca arıza gözlemlenir; kök neden (hata) henüz bilinmez ve analizde ortaya çıkar. Nedeni tahmin etmek gerçekleşen sonuç alanına ait değildir; beklenen sonuç da somut bir değer içermez.",
+              "d": "Yanlış. Ciddiyet ve düzeltme önceliği hata raporunda kendi alanlarına yazılır, gerçekleşen sonuç alanına değil. Bu girişte ayrıca beklenen ve gerçekleşen tutarlar da verilmemiştir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A requirement states: 'Orders of 100 or more receive a 10% discount.' While running test case TC-52 in system testing, a tester enters an order of 120. The application shows a payable amount of 120 and no discount line. The tester now writes the expected and actual results in the defect report. Which entry is the MOST appropriate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Expected: payable amount of 108 (120 less the 10% discount). Actual: payable amount of 120, no discount line shown."
+            },
+            {
+              "id": "b",
+              "text": "Expected: payable amount of 120 with no discount applied. Actual: 10% discount applied, payable amount of 108."
+            },
+            {
+              "id": "c",
+              "text": "Expected: the discount function works correctly. Actual: the discount function is broken because the developer forgot to call the discount routine."
+            },
+            {
+              "id": "d",
+              "text": "Expected: a 10% discount is applied. Actual: no discount; high-severity defect, fix before release."
+            }
+          ],
+          "rationale": {
+            "summary": "A good defect report gives the expected result (from the requirement: 120 × 0.90 = 108) and the actual result (120) as observable, verifiable values. A guess about the cause, or the severity and priority, goes in their own fields rather than in these.",
+            "byOption": {
+              "a": "Correct. The expected result is derived from the requirement (120 × 0.90 = 108) and the actual result is the observed value (120, no discount line). Both are concrete and verifiable.",
+              "b": "Incorrect. The expected and actual results are swapped: 108 is what the requirement expects, while 120 is what the application really shows.",
+              "c": "Incorrect. At the time of reporting only the failure is observed; the root cause (the defect) is not yet known and emerges during analysis. Guessing the cause does not belong in the actual result, and the expected result contains no concrete value.",
+              "d": "Incorrect. Severity and the priority to fix are recorded in their own fields of the defect report, not in the actual result. This entry also gives no expected or actual amounts."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    }
+  ]
+}

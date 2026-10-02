@@ -1,0 +1,958 @@
+{
+  "chunk": "ch01-c",
+  "chapter": 1,
+  "dataVersion": "2026.09.19",
+  "questions": [
+    {
+      "id": "ctfl4-0258",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.1",
+      "objectives": [
+        "FL-1.1.1"
+      ],
+      "kLevel": "K1",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-objectives",
+        "test-levels"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdaki ifadelerden hangisi, aynı projedeki iki test seviyesinde tipik test hedeflerinin nasıl farklılaştığını doğru biçimde anlatır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bileşen testinde çoğunlukla sistemin beklendiği gibi çalıştığına dair güven oluşturmak, kabul testinde ise çoğunlukla mümkün olduğunca çok hata bulmak ana amaç olarak ön plandadır"
+            },
+            {
+              "id": "b",
+              "text": "Bileşen testinde çoğunlukla yasal uyumu doğrulamak, kabul testinde ise çoğunlukla arızaların kök nedenini teşhis edip kodu düzeltmek ön plandadır"
+            },
+            {
+              "id": "c",
+              "text": "Bileşen testinde çoğunlukla mümkün olduğunca çok hata bulmak, kabul testinde ise çoğunlukla sistemin beklendiği gibi çalıştığına dair güven oluşturmak ön plandadır"
+            },
+            {
+              "id": "d",
+              "text": "Tüm test seviyeleri tek ve sabit bir hedefi, yani hata bulmayı paylaşır; seviyeden seviyeye yalnızca test teknikleri ve görevli kişiler değişir"
+            }
+          ],
+          "rationale": {
+            "summary": "Test hedefleri sabit değildir: vurgu test seviyesine ve bağlama göre kayar; örneğin bileşen seviyesinde hata bulmak, kabul seviyesinde güven oluşturmak öne çıkar.",
+            "byOption": {
+              "a": "Bu, vurguyu tersine çevirir. Güven oluşturmak kabul testinin, hata bulmak ise bileşen testinin tipik vurgusudur.",
+              "b": "Uyumu doğrulamak gerçek bir test hedefidir ama bileşen testinin olağan vurgusu değildir; kök nedeni teşhis edip kodu düzeltmek ise hata ayıklamadır ve hiçbir seviyede test hedefi sayılmaz.",
+              "c": "Doğru: mümkün olduğunca çok hata bulmak bileşen seviyesinde, sistemin beklendiği gibi çalıştığına dair güven oluşturmak ise kabul seviyesinde sık görülen vurgudur.",
+              "d": "Bu, hedeflerin bağlama bağlı olduğunu göz ardı eder. Müfredat vurguyu test seviyesine bağlar; dolayısıyla tüm seviyeler için tek ve sabit bir hedef yoktur."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which statement correctly describes how typical test objectives differ between two test levels in the same project?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Component testing often emphasizes building confidence that the system works as expected, while acceptance testing often emphasizes finding as many defects as possible as the main goal"
+            },
+            {
+              "id": "b",
+              "text": "Component testing often emphasizes verifying legal compliance, while acceptance testing often emphasizes diagnosing the root causes of failures and correcting the code"
+            },
+            {
+              "id": "c",
+              "text": "Component testing often emphasizes finding as many defects as possible, while acceptance testing often emphasizes building confidence that the system works as expected"
+            },
+            {
+              "id": "d",
+              "text": "Every test level shares one fixed objective, finding defects, and only the test techniques and the people involved change from one level to the next"
+            }
+          ],
+          "rationale": {
+            "summary": "Test objectives are not fixed: the emphasis shifts with the test level and context, for example defect-finding at the component level and confidence-building at the acceptance level.",
+            "byOption": {
+              "a": "This reverses the emphasis. Confidence-building is typical of acceptance testing, and defect-finding is typical of component testing.",
+              "b": "Verifying compliance is a genuine test objective but not the usual emphasis of component testing, and diagnosing causes and correcting code is debugging, which is not a test objective at any level.",
+              "c": "Correct: finding as many defects as possible is a common emphasis at the component level, while building confidence that the system works as expected is a common emphasis at the acceptance level.",
+              "d": "This ignores that objectives depend on context. The syllabus ties the emphasis to the test level, so there is no single fixed objective for all levels."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0259",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.2",
+      "objectives": [
+        "FL-1.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "testing-vs-debugging",
+        "roles"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test uzmanı bir sipariş toplamı arızasını bildirdi. Ekip lideri, aynı uzmandan bu arızanın kök nedenini bulup kodu da değiştirmesini istiyor. Müfredattaki ayrıma göre bu talep nasıl değerlendirilmelidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Uygundur, çünkü test etme hata ayıklamayı da kapsar; arızayı bulan test uzmanı kök nedeni bulmaktan ve kodu düzeltmekten de sorumludur"
+            },
+            {
+              "id": "b",
+              "text": "Uygundur, çünkü test uzmanı arızayı zaten yeniden oluşturmuştur; bu yüzden nedeni teşhis etmek ve kodu da değiştirmek için en uygun kişidir"
+            },
+            {
+              "id": "c",
+              "text": "Uygun değildir, çünkü hata ayıklama ayrı bir geliştirme faaliyetidir ve genellikle yazılımcılar yürütür; test uzmanı arızayı ortaya çıkarır"
+            },
+            {
+              "id": "d",
+              "text": "Uygun değildir, çünkü kök neden analizi yalnızca bağımsız bir test ekibinin yapabileceği ve statik test kapsamında yürütülen bir faaliyettir"
+            }
+          ],
+          "rationale": {
+            "summary": "Test etme ve hata ayıklama genellikle farklı kişilerce yürütülür: test arızaları ortaya çıkarır ve hata raporlarını belgeler; kök nedeni bulmak ve kodu değiştirmek ise genellikle yazılımcıların yürüttüğü ayrı bir geliştirme faaliyetidir.",
+            "byOption": {
+              "a": "Bu iki faaliyeti birleştirir. Hata ayıklama testin parçası değildir; kök nedeni bulmak test uzmanının değil, genellikle yazılımcının görevidir.",
+              "b": "Arızayı yeniden oluşturmak test uzmanını hata ayıklamadan sorumlu kılmaz. Kök nedeni bulmak ve kodu değiştirmek genellikle yazılımcıların yürüttüğü bir geliştirme faaliyetidir; düzeltmenin işe yaradığını ise sonrasında onaylama testi teyit eder.",
+              "c": "Doğru: hata ayıklama ayrı bir geliştirme faaliyetidir ve genellikle yazılımcılar yürütür; test uzmanı arızayı ortaya çıkarır ve hata raporunu belgeler.",
+              "d": "Kök neden analizi statik test değil, hata ayıklamanın bir adımıdır; üstelik bağımsız bir ekibe özgü de değildir, genellikle yazılımcılar yapar."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester has reported a failure in an order total. The team lead now asks the same tester to also find the root cause and change the code. According to the syllabus's distinction, how should this request be judged?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It is appropriate, because testing includes debugging, so the tester who found the failure is also responsible for finding the root cause and fixing the code"
+            },
+            {
+              "id": "b",
+              "text": "It is appropriate, because the tester has already reproduced the failure and is therefore best placed to diagnose it and change the code as well"
+            },
+            {
+              "id": "c",
+              "text": "It is not appropriate, because debugging is a separate development activity usually done by developers; the tester reveals the failure and documents it"
+            },
+            {
+              "id": "d",
+              "text": "It is not appropriate, because root cause analysis is a static testing activity that only an independent test team is able to carry out in a project"
+            }
+          ],
+          "rationale": {
+            "summary": "Testing and debugging are usually carried out by different people: testing reveals failures and documents defect reports, while finding the root cause and changing the code is a separate development activity usually done by developers.",
+            "byOption": {
+              "a": "This merges the two activities. Debugging is not part of testing; finding the root cause is usually the developer's task, not the tester's.",
+              "b": "Reproducing a failure does not make the tester responsible for debugging. Finding the root cause and changing the code is a development activity usually done by developers; a confirmation test then checks that the fix worked.",
+              "c": "Correct: debugging is a separate development activity usually carried out by developers, while the tester reveals the failure and documents it in a defect report.",
+              "d": "Root cause analysis is a debugging step, not static testing, and it is not exclusive to an independent team; developers usually perform it."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0260",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.2",
+      "syllabusRef": "§1.2.1",
+      "objectives": [
+        "FL-1.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "why-testing-necessary",
+        "stakeholder-information"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir yönetici, \"Testin tek faydası hata bulmaktır; bulunan hata azsa test boşuna harcanmış paradır\" diyor. Aşağıdakilerden hangisi, müfredattaki gerekçeye dayanarak bu görüşe EN İYİ karşılık verir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test, bulunan hataların sayısını artırarak ürün kalitesini yükseltir; bu yüzden hata sayısı testin değerinin başlıca ölçüsüdür"
+            },
+            {
+              "id": "b",
+              "text": "Test, paydaşlara ürün kalitesi ve risk düzeyi hakkında bilgi sağlar; bu bilgi, az hata bulunduğunda bile yayın kararına dayanak olur"
+            },
+            {
+              "id": "c",
+              "text": "Test, esas olarak gereksinimlerle uyumsuzlukları bulmaya yarar; paydaşları ürünün riskleri hakkında bilgilendirmek test sürecinin işi değildir"
+            },
+            {
+              "id": "d",
+              "text": "Az hata bulunması, ürünün yasal ve sözleşmesel gereksinimlere uyduğuna işaret eder; bu yüzden testin amacı yerine gelmiştir"
+            }
+          ],
+          "rationale": {
+            "summary": "Testin yararı yalnızca hata bulmak değildir: paydaşlara ürün kalitesi ve risk düzeyi hakkında bilgi sağlamak ve riski azaltmak da en az o kadar önemlidir.",
+            "byOption": {
+              "a": "Hata sayısı kaliteyi yükseltmez; hataları gidermek ayrı bir faaliyettir. Müfredat da testin değerini yalnızca bulunan hata sayısıyla ölçmez.",
+              "b": "Doğru: test, paydaşlara kalite ve risk düzeyi hakkında bilgi sağlar; bu bilgi az hata bulunduğunda da karar vermeye yarar.",
+              "c": "Test yalnızca uyumsuzluk aramakla sınırlı değildir; paydaşlara kalite ve riskler hakkında bilgi sağlamak testin açık bir katkısıdır.",
+              "d": "Az hata bulunması uyumu göstermez; uyumu doğrulamak için ilgili gereksinimlere karşı test yapmak gerekir. Testin amacı yalnızca uyumu göstermek de değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A manager says: \"The only benefit of testing is finding defects; if few defects turn up, the testing money was wasted.\" Which response BEST counters this view, based on the syllabus's reasoning?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Testing raises product quality by increasing the number of defects found, so the defect count is the main measure of its value"
+            },
+            {
+              "id": "b",
+              "text": "Testing gives stakeholders information about product quality and risk, which supports the release decision even when few defects are found"
+            },
+            {
+              "id": "c",
+              "text": "Testing mainly serves to find mismatches with the requirements; informing stakeholders about product risks is not what the test process is for"
+            },
+            {
+              "id": "d",
+              "text": "Finding few defects indicates that the product meets legal and contractual requirements, so the purpose of testing has been achieved"
+            }
+          ],
+          "rationale": {
+            "summary": "Finding defects is not the only benefit of testing: giving stakeholders information about product quality and risk level, and reducing risk, are just as important.",
+            "byOption": {
+              "a": "A higher defect count does not raise quality; removing defects is a separate activity. The syllabus does not measure the value of testing by defects found alone.",
+              "b": "Correct: testing gives stakeholders information about quality and risk level, which supports decisions even when few defects are found.",
+              "c": "Testing is not limited to finding mismatches with requirements; informing stakeholders about quality and risks is an explicit contribution of testing.",
+              "d": "Few defects do not show compliance; verifying it means testing against the relevant requirements. Testing also has purposes beyond showing compliance."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0261",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.2",
+      "syllabusRef": "§1.2.3",
+      "objectives": [
+        "FL-1.2.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "error-defect-failure",
+        "root-cause"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir olay sonrası analizi, şirketin analistlerinin kesin gereksinim yazmak üzere hiç eğitilmediğini ve bu yüzden bir indirim kuralının belirsiz olduğunu ortaya koydu. Bir yazılımcı kuralı yanlış anladı ve indirimi iki kez uygulayan kod yazdı. Canlı ortamda müşterilerden iki kez ücret alındı. Zincirdeki en erken koşulu kök neden sayarak hangi sınıflandırma, müfredatın terimlerini doğru kullanır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Eğitim eksikliği kök neden, yanlış anlama insan hatası, koddaki çifte indirim hata, iki kez ücret alınması ise sistemin arızasıdır"
+            },
+            {
+              "id": "b",
+              "text": "Yanlış anlama kök neden, eğitim eksikliği insan hatası, koddaki çifte indirim hata, iki kez ücret alınması ise sistemin arızasıdır"
+            },
+            {
+              "id": "c",
+              "text": "Eğitim eksikliği kök neden, yanlış anlama hata, koddaki çifte indirim insan hatası, iki kez ücret alınması ise sistemin arızasıdır"
+            },
+            {
+              "id": "d",
+              "text": "Eğitim eksikliği kök neden, yanlış anlama insan hatası, koddaki çifte indirim arıza, iki kez ücret alınması ise sistemin hatasıdır"
+            }
+          ],
+          "rationale": {
+            "summary": "Kök neden en erken koşuldur, insan hatası kişinin yanlışıdır, hata çalışma ürününde kalan bozuk durumdur, arıza ise sistem çalışırken görülen yanlış davranıştır.",
+            "byOption": {
+              "a": "Doğru: en erken koşul kök nedendir; kişinin yanlış anlaması insan hatasıdır; kodda bırakılan bozuk durum hatadır; sistem çalışırken görülen yanlış davranış ise arızadır.",
+              "b": "Bu, ilk ikisini yer değiştirir. Yazılımcının yanlış anlaması kişinin yaptığı yanlıştır, yani insan hatasıdır. Kök neden, hataya yol açan daha erken koşuldur; burada eksik eğitimdir.",
+              "c": "Bu, insan hatası ile hatayı yer değiştirir. İnsan hatası kişinin yanlışı ya da yanlış anlamasıdır; hata ise bunun kod gibi bir çalışma ürününde bıraktığı bozuk durumdur.",
+              "d": "Bu, hata ile arızayı yer değiştirir. Kodda duran bozuk durum hatadır; arıza ise çalışan sistemin yanlış yaptığı şeydir, burada müşterilerden iki kez ücret almasıdır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A post-incident analysis found that the company's analysts had never been trained to write precise requirements, so a discount rule was ambiguous. A developer misread the rule and wrote code that applies the discount twice. In production, customers were charged twice. Treating the earliest condition in the chain as the root cause, which classification uses the syllabus's terms correctly?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The lack of training is the root cause, the misreading is the error, the doubled discount in the code is the defect, and the double charge is the failure of the system"
+            },
+            {
+              "id": "b",
+              "text": "The misreading is the root cause, the lack of training is the error, the doubled discount in the code is the defect, and the double charge is the failure of the system"
+            },
+            {
+              "id": "c",
+              "text": "The lack of training is the root cause, the misreading is the defect, the doubled discount in the code is the error, and the double charge is the failure of the system"
+            },
+            {
+              "id": "d",
+              "text": "The lack of training is the root cause, the misreading is the error, the doubled discount in the code is the failure, and the double charge is the defect of the system"
+            }
+          ],
+          "rationale": {
+            "summary": "Root cause is the earliest condition, an error is a person's mistake, a defect is the flaw left in a work product, and a failure is the wrong behaviour observed when the system runs.",
+            "byOption": {
+              "a": "Correct: the earliest condition is the root cause, the person's misunderstanding is the error, the flaw left in the code is the defect, and the wrong behaviour seen in operation is the failure.",
+              "b": "This swaps the first two. The developer's misreading is the person's mistake, an error. The root cause is the earlier condition that led to the defect, here the missing training.",
+              "c": "This swaps error and defect. An error is a human mistake or misunderstanding; a defect is the flaw it leaves behind in a work product such as the code.",
+              "d": "This swaps defect and failure. The flaw sitting in the code is the defect; the failure is what the running system does wrong, here charging customers twice."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0262",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.3",
+      "syllabusRef": "§1.3",
+      "objectives": [
+        "FL-1.3.1"
+      ],
+      "kLevel": "K2",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "seven-principles",
+        "multi"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b",
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir durum toplantısında yönetici şöyle diyor: \"Son koşumda 300 testimizin hepsi geçti, dolayısıyla sistemde hata yok.\" Yönetici ekliyor: \"Gelecek sprintte her ekrandaki olası tüm girdi kombinasyonlarını ve ön koşulları kapsayacağız.\" Bu ifadeler aşağıdaki test prensiplerinden HANGİ İKİSİNİ göz ardı etmektedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Hatalar yazılımın belli alanlarında yoğunlaşır; bu yüzden test çabasının çoğu az sayıdaki bazı modüllere ayrılmalıdır"
+            },
+            {
+              "id": "b",
+              "text": "Test hataların varlığını gösterir, yokluğunu göstermez; bu yüzden tüm testlerin geçmesi bile hiç hata kalmadığını kanıtlayamaz"
+            },
+            {
+              "id": "c",
+              "text": "Antibiyotik direnci: aynı testler tekrarlandıkça yeni hata bulmada etkisizleşir, bu yüzden test takımı gözden geçirilip çeşitlendirilmelidir"
+            },
+            {
+              "id": "d",
+              "text": "Her şeyi test etmek imkânsızdır; bu yüzden test çabası, her şeyi kapsamak yerine, örneğin riske göre, önceliklendirilmelidir"
+            },
+            {
+              "id": "e",
+              "text": "Erken test zaman ve para kazandırır, çünkü hatalar ucuzken bulunur; bu yüzden test, yaşam döngüsünün ilk aşamalarında başlamalıdır"
+            }
+          ],
+          "rationale": {
+            "summary": "Başarılı bir koşum hataların yokluğunu kanıtlamaz ve her kombinasyonu kapsamak mümkün değildir; göz ardı edilen iki prensip, varlığı gösterme-yokluğu göstermeme prensibi ile kapsamlı testin imkansızlığıdır.",
+            "byOption": {
+              "a": "Hata kümelenmesi, hataların birkaç alanda toplandığını söyler ve çabayı odaklamaya yarar. İfadelerin hiçbiri hataların nerede yoğunlaştığıyla ilgili değildir.",
+              "b": "Doğru: geçen testler hiçbir hata kalmadığını kanıtlayamaz; test yalnızca hataların var olduğunu gösterebilir.",
+              "c": "Bu, aynı testlerin tekrarının yeni hata bulmadaki etkisini azalttığını söyleyen prensiptir. İfadelerin hiçbiri testlerin tekrarlanmasıyla ilgili değildir.",
+              "d": "Doğru: küçük sistemler dışında her girdi kombinasyonunu ve ön koşulu test etmek mümkün değildir; bu yüzden çaba, örneğin riske göre, önceliklendirilmelidir.",
+              "e": "Bu, testin ne zaman başladığıyla ilgilidir; hatalar daha ucuzken bulunur. İfadelerin hiçbiri zamanlamadan söz etmez."
+            }
+          }
+        },
+        "en": {
+          "stem": "In a status meeting a manager says: \"All 300 of our tests passed on the last run, so the system has no defects.\" The manager adds: \"Next sprint we will cover every possible input combination and precondition on every screen.\" WHICH TWO testing principles do these statements overlook?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Defects cluster together in a few areas of the software, so most of the test effort belongs in a small number of modules"
+            },
+            {
+              "id": "b",
+              "text": "Testing shows the presence, not the absence, of defects, so even when every test passes it cannot prove that no defects remain"
+            },
+            {
+              "id": "c",
+              "text": "Tests wear out as the same tests are repeated and stop finding new defects, so a suite run repeatedly must be reviewed and varied"
+            },
+            {
+              "id": "d",
+              "text": "Exhaustive testing is impossible, so test effort must be prioritized, for example by risk, instead of trying to cover everything"
+            },
+            {
+              "id": "e",
+              "text": "Early testing saves time and money because defects are cheaper to remove, so test activities should start in the first lifecycle phases"
+            }
+          ],
+          "rationale": {
+            "summary": "A clean run does not prove the absence of defects, and covering every combination is not feasible, so the two principles overlooked are the presence-not-absence principle and the impossibility of exhaustive testing.",
+            "byOption": {
+              "a": "Defect clustering says defects concentrate in a few areas, which is useful for focusing effort. Neither statement concerns where defects are concentrated.",
+              "b": "Correct: passing tests cannot prove that no defects remain; testing can only show that defects are present.",
+              "c": "This is the pesticide paradox: repeating the same tests makes them less effective at finding new defects. Neither statement is about repeating tests.",
+              "d": "Correct: except for the smallest systems, testing every combination of inputs and preconditions is not feasible, so effort must be prioritized, for example by risk.",
+              "e": "This concerns when testing starts, to find defects while they are cheaper to remove. Neither statement says anything about timing."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0263",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.2",
+      "objectives": [
+        "FL-1.4.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "context-factors",
+        "technical-factors"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, bir mobil istemcinin arkasında çalışan, birbirinden bağımsız yayına alınan çok sayıda küçük servisten oluşan bir ürünü test ediyor. Bu mimari nedeniyle testlerinin çoğu, benzetilmiş servislere karşı arayüz seviyesinde koşuluyor. Müfredattaki bağlamsal faktörlerden hangisi bu yaklaşımı EN İYİ açıklar?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kurumun faaliyet alanı; ürünün kritikliği ve tabi olduğu düzenlemeler gibi"
+            },
+            {
+              "id": "b",
+              "text": "Proje kısıtları; bütçe, teslim tarihi ve mevcut kaynaklar gibi"
+            },
+            {
+              "id": "c",
+              "text": "Teknik faktörler; yazılımın türü, mimarisi ve teknoloji gibi"
+            },
+            {
+              "id": "d",
+              "text": "Araçlar; elverişlilik, kullanılabilirlik ve uyumluluk gibi"
+            }
+          ],
+          "rationale": {
+            "summary": "Ürünün mimarisi ve teknolojisi, test sürecini biçimlendiren bağlamsal faktörlerden biri olan teknik faktörlerdir.",
+            "byOption": {
+              "a": "Faaliyet alanı; kritiklik, riskler ve yasal düzenlemeleri kapsar. Senaryoda ürünün ne kadar kritik olduğuna ya da hangi kuralların geçerli olduğuna dair bir şey yoktur.",
+              "b": "Proje kısıtları kapsam, zaman, bütçe ve kaynakları içerir. Senaryo yaklaşımı projedeki sınırlarla değil, ürünün yapısıyla açıklar.",
+              "c": "Doğru: yazılım türü, ürün mimarisi ve kullanılan teknoloji teknik faktörlerdir ve ürünün nasıl test edileceğini biçimlendirir.",
+              "d": "Araçlar; elverişlilik, kullanılabilirlik ve uyumlulukla ilgili ayrı bir bağlamsal faktördür. Senaryo yaklaşımı araç durumuna değil, mimariye bağlar."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team tests a product built from many small, independently deployed services behind a mobile client. Because of this architecture, most of its tests run at the interface level against simulated services. Which contextual factor from the syllabus BEST accounts for this approach?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Business domain, such as the criticality of the product and the regulations that apply to it"
+            },
+            {
+              "id": "b",
+              "text": "Project constraints, such as the budget, the delivery deadline and the available resources"
+            },
+            {
+              "id": "c",
+              "text": "Technical factors, such as the type of software, its architecture and technology"
+            },
+            {
+              "id": "d",
+              "text": "Tools, such as their availability, usability and compliance"
+            }
+          ],
+          "rationale": {
+            "summary": "The architecture and technology of the product are technical factors, one of the contextual factors that shape the test process.",
+            "byOption": {
+              "a": "The business domain covers criticality, risks and legal regulations. Nothing in the scenario concerns how critical the product is or which rules apply to it.",
+              "b": "Project constraints cover scope, time, budget and resources. The scenario explains the approach through the structure of the product, not through limits on the project.",
+              "c": "Correct: the type of software, the product architecture and the technology used are technical factors, and they shape the way the product is tested.",
+              "d": "Tools are a separate contextual factor concerned with availability, usability and compliance. The scenario does not say that tool availability drove the approach; the architecture did."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0264",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.3",
+      "objectives": [
+        "FL-1.4.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "testware",
+        "test-execution-work-products"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Hazırlanmış test grubunun bir gece boyunca koşulmasının ardından bir test uzmanının elinde, hangi test senaryolarının ne zaman koşulduğunu ve geçip geçmediğini gösteren bir kayıt ile uygulamadaki sorunları ortaya çıkaran arızalar için açtığı raporlar bulunuyor. Bu ürünler, hangi test faaliyetinin hangi çalışma ürünlerini EN İYİ temsil eder?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test uyarlamanın ürettiği otomatik test betikleri ve test grupları"
+            },
+            {
+              "id": "b",
+              "text": "Test planlamanın ürettiği bir test planı ve bir risk kaydı"
+            },
+            {
+              "id": "c",
+              "text": "Test tamamlamanın ürettiği bir tamamlama raporu ve tecrübeler"
+            },
+            {
+              "id": "d",
+              "text": "Test koşumu faaliyetinin ürettiği test kayıtları ve hata raporları"
+            }
+          ],
+          "rationale": {
+            "summary": "Test kayıtları ve hata raporları test koşumunun çalışma ürünleridir; diğer seçenekler başka test faaliyetlerinin çalışma ürünleridir.",
+            "byOption": {
+              "a": "Bunlar gece koşumunun girdileridir ve test uyarlama sırasında önceden hazırlanmıştır. Koşumun sonuçlarına ilişkin kayıtlar değildir.",
+              "b": "Test planlama; planı, takvimi, risk kaydını ve giriş ile çıkış kriterlerini üretir; bunların hepsi herhangi bir test koşulmadan önce vardır.",
+              "c": "Test tamamlama test çalışmasının sonunda gelir ve bir test tamamlama raporu, tecrübeler ve değişiklik talepleri üretir; tek bir koşumun ham sonuçlarını değil.",
+              "d": "Doğru: test koşumu, nelerin koşulduğunu ve sonucunu gösteren test kayıtlarını ve test nesnesinde gözlenen arızalara ilişkin hata raporlarını üretir."
+            }
+          }
+        },
+        "en": {
+          "stem": "After an overnight run of the prepared test suite, a tester has a record of which test cases passed or failed and when they ran, and has raised defect reports for the problems the failures revealed in the application. Which work products, produced by which test activity, do these items BEST represent?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Automated test scripts and test suites, produced by test implementation"
+            },
+            {
+              "id": "b",
+              "text": "A test plan and a risk register, produced by test planning"
+            },
+            {
+              "id": "c",
+              "text": "A completion report and lessons learned, produced by test completion"
+            },
+            {
+              "id": "d",
+              "text": "Test logs and defect reports, produced by the test execution activity"
+            }
+          ],
+          "rationale": {
+            "summary": "Test execution is the activity whose work products are test logs and defect reports; the other options are work products of other test activities.",
+            "byOption": {
+              "a": "These are inputs to the overnight run, prepared beforehand during test implementation. They are not records of its results.",
+              "b": "Test planning produces the plan, the schedule, the risk register and the entry and exit criteria, all of which exist before any test is run.",
+              "c": "Test completion comes at the end of the test effort and yields a completion report, lessons learned and change requests, not the raw results of a single run.",
+              "d": "Correct: test execution produces test logs, which record what ran and with what result, and defect reports on the failures observed in the test object."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0265",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.4",
+      "syllabusRef": "§1.4.4",
+      "objectives": [
+        "FL-1.4.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "traceability",
+        "coverage-indicator"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Yeni bir sürümün gereksinimleri ölçülebilir kapsam kriterleri içeriyor. Test yöneticisi gereksinimler, test senaryoları ve test sonuçları arasında izlenebilirliği sürdürüyor. Müfredata göre bu izlenebilirlik kapsam raporlamasına ne katar?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kapsam yüzdesi, testi hâlâ yapılmamış gereksinimlerde bulunabilecek hataların sayısını da güvenilir biçimde tahmin etmeyi sağlar"
+            },
+            {
+              "id": "b",
+              "text": "Elde edilen kapsam, ölçülebilir kapsam kriterlerine göre test hedeflerinin ne kadar karşılandığının göstergesi olarak kullanılabilir"
+            },
+            {
+              "id": "c",
+              "text": "Test senaryoları, kapsam kriterlerinden ve izlenebilirlik bağlantılarından türetilir; bu yüzden test tasarımı çabası küçük bir işe iner"
+            },
+            {
+              "id": "d",
+              "text": "Gereksinimler değiştiğinde izlenebilirlik bağlantıları, hangi gereksinimlerin kapsandığını göstermek için sonradan elle yeniden kurulur"
+            }
+          ],
+          "rationale": {
+            "summary": "İzlenebilirlik, ölçülebilir kapsam kriterleriyle birleştiğinde kapsamı, test hedeflerinin ne kadar karşılandığının göstergesi haline getirir.",
+            "byOption": {
+              "a": "Kapsam, test edilmemiş öğelerdeki hata sayısı hakkında güvenilir bir tahmin vermez. Test hataların varlığını gösterir, yokluğunu veya miktarını kanıtlamaz; bir kapsam rakamı bunu değiştirmez.",
+              "b": "Doğru: test esası ölçülebilir kapsam kriterleri tanımladığında izlenebilirlik, kapsamın test hedeflerine doğru ilerlemenin göstergesi olmasını sağlar.",
+              "c": "İzlenebilirlik mevcut öğeleri birbirine bağlar; test senaryosu türetmez. Test tasarımı, izlenebilirlik bağlantıları olsa da yapılması gereken bir çalışmadır.",
+              "d": "İzlenebilirlik, hangi test senaryolarının bir değişiklikten etkilendiğini belirlemeye yardımcı olur; sonradan elle yeniden kurulmaz, değişiklikler sürdükçe baştan itibaren güncel tutulur."
+            }
+          }
+        },
+        "en": {
+          "stem": "The requirements for a new release contain measurable coverage criteria. The test manager maintains traceability between the requirements, the test cases and the test results. According to the syllabus, what does this traceability add to coverage reporting?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The coverage percentage lets the team reliably estimate how many defects may remain in the requirements not yet tested"
+            },
+            {
+              "id": "b",
+              "text": "The coverage achieved against the measurable criteria can act as an indicator of how far the test objectives have been met"
+            },
+            {
+              "id": "c",
+              "text": "The test cases are derived from the coverage criteria and the traceability links, so the test design effort shrinks to a small task"
+            },
+            {
+              "id": "d",
+              "text": "When requirements change, the traceability links are rebuilt by hand afterwards to show which requirements the test cases cover"
+            }
+          ],
+          "rationale": {
+            "summary": "Traceability combined with measurable coverage criteria turns coverage into an indicator of how well the test objectives are being achieved.",
+            "byOption": {
+              "a": "Coverage gives no reliable estimate of defects in untested items. Testing shows the presence of defects, not their absence or number, and a coverage figure does not change that.",
+              "b": "Correct: when the test basis defines measurable coverage criteria, traceability lets coverage serve as an indicator of progress towards the test objectives.",
+              "c": "Traceability links existing elements to one another; it does not derive test cases. Test design still has to be carried out even when traceability links exist.",
+              "d": "Traceability helps identify which test cases a change affects; it is not rebuilt by hand afterwards but kept up to date as changes occur."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0266",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.5",
+      "syllabusRef": "§1.5.1",
+      "objectives": [
+        "FL-1.5.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "tester-skills",
+        "critical-thinking"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test uzmanı yeni bir kullanıcı hikayesini gözden geçirirken hikayenin neyi olduğu gibi kabul ettiğini sorguluyor, kullanıcıların özelliği kötüye kullanabileceği alışılmadık yolları hayal ediyor ve bu fikirleri test fikirlerine dönüştürüyor. Bu durum, test etme sürecinde gerekli genel becerilerden hangisini EN İYİ örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Analitik düşünce, eleştirel düşünce ve yaratıcılığın bir arada kullanılması"
+            },
+            {
+              "id": "b",
+              "text": "Platform ve kullanılan test araçları hakkında teknik bilgi"
+            },
+            {
+              "id": "c",
+              "text": "Aktif dinleme ve yazılımcılarla ekip çalışması dahil iyi iletişim becerileri"
+            },
+            {
+              "id": "d",
+              "text": "Belirli bir durumda hangi test tekniğinin uygun olduğunu bilmek gibi test bilgisi"
+            }
+          ],
+          "rationale": {
+            "summary": "Varsayımları sorgulamak ve alışılmadık kötüye kullanımı hayal etmek, test için gerekli genel becerilerden analitik düşünce, eleştirel düşünce ve yaratıcılığı gösterir.",
+            "byOption": {
+              "a": "Doğru: varsayımları sorgulamak eleştirel düşünce, hikayeyi test fikirlerine dönüştürmek analitik düşünce, alışılmadık kötüye kullanımı hayal etmek ise yaratıcılıktır; üçü de genel test becerileridir.",
+              "b": "Teknik bilgi, test uzmanının araçları kullanmasına ve sistemin nasıl kurulduğunu anlamasına yardım eder. Senaryo araç kullanmayı değil, hikaye üzerinde akıl yürütmeyi anlatır.",
+              "c": "İletişim, bulguları yapıcı biçimde aktarırken önem kazanır. Burada test uzmanı tek başına test fikirleri üretiyor, kimseyle bilgi alışverişi yapmıyor.",
+              "d": "Test bilgisi; teknikleri ve yaklaşımları bilmek demektir. Senaryoda teknik seçiminden söz edilmez; varsayımları sorgulama ve kötüye kullanımı hayal etme anlatılır."
+            }
+          }
+        },
+        "en": {
+          "stem": "While reviewing a new user story, a tester questions what the story takes for granted and imagines unusual ways in which users might misuse the feature, then turns these ideas into test ideas. Which of the generic skills required for testing does this BEST illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Analytical thinking, critical thinking and creativity, used together"
+            },
+            {
+              "id": "b",
+              "text": "Technical knowledge of the platform and of the test tools in use"
+            },
+            {
+              "id": "c",
+              "text": "Good communication skills, including active listening and teamwork with developers"
+            },
+            {
+              "id": "d",
+              "text": "Testing knowledge, such as knowing which test technique suits a given situation"
+            }
+          ],
+          "rationale": {
+            "summary": "Questioning assumptions and imagining unusual misuse are analytical thinking, critical thinking and creativity, which are among the generic skills required for testing.",
+            "byOption": {
+              "a": "Correct: questioning assumptions is critical thinking, turning the story into test ideas is analytical thinking, and imagining unusual misuse is creativity; all three are generic testing skills.",
+              "b": "Technical knowledge helps testers use tools and understand the system's construction. The scenario describes reasoning about the story, not using tools or knowing the platform.",
+              "c": "Communication matters when reporting findings constructively. Here the tester is generating test ideas alone, not exchanging information with anyone.",
+              "d": "Testing knowledge means knowing techniques and approaches. The scenario does not mention choosing a technique; it shows questioning assumptions and imagining misuse."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0267",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 1,
+      "section": "1.5",
+      "syllabusRef": "§1.5.3",
+      "objectives": [
+        "FL-1.5.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "independence-of-testing",
+        "drawbacks"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir şirket testini dış bir firmaya yaptırıyor. Firmanın test uzmanları şartnameleri her fazın başında alıyor ve yazılımcılarla nadiren konuşuyor. Bu düzende testin bağımsızlığının hangi sakıncasının ortaya çıkması EN olasıdır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test uzmanlarının koda çok aşina olması, dışarıdan bakan birinin fark edeceği hataları gözden kaçırmalarına yol açar"
+            },
+            {
+              "id": "b",
+              "text": "Test uzmanları bildirdikleri hataları gidermekten de sorumlu hale gelir ve bu, projenin tamamını yavaşlatır"
+            },
+            {
+              "id": "c",
+              "text": "Geliştirme ekibinden izolasyon; iş birliği ve iletişim sorunlarına ya da çekişmeli bir ilişkiye yol açabilir"
+            },
+            {
+              "id": "d",
+              "text": "Bağımsız test diğer bağımsızlık seviyeleriyle birleştirilemez; bu yüzden testi tek başına dış firma yapmak zorundadır"
+            }
+          ],
+          "rationale": {
+            "summary": "Geliştirme ekibinden izolasyon, iş birliği ve iletişim sorunlarına yol açabilen bir bağımsızlık sakıncasıdır.",
+            "byOption": {
+              "a": "Bu, yazarın kendi işini test ettiği bağımsızlık eksikliğini tarif eder. Dış test uzmanları genellikle kodu bu kadar yakından tanımaz.",
+              "b": "Hataları gidermek, genellikle yazılımcıların yaptığı hata ayıklamadır. Bağımsız test uzmanları arıza ve hataları raporlar; kodu düzeltmekten sorumlu tutulmaz.",
+              "c": "Doğru: müfredat, geliştirme ekibinden izolasyonu bağımsızlığın bir sakıncası olarak sayar; bu durum iş birliği ve iletişim sorunlarına ya da çekişmeli bir ilişkiye yol açabilir.",
+              "d": "Müfredat bunun tersini önerir: çoğu proje için en iyi seçenek birden fazla bağımsızlık seviyesini birleştirmektir; dış firma kullanmak diğer test uzmanlarını dışlamaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "A company outsources its testing to an external firm. The firm's testers receive the specifications at the start of each phase and rarely talk to the developers. Which drawback of independent testing is MOST likely to appear in this setup?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The testers' close knowledge of the code makes them overlook defects that an outsider would notice"
+            },
+            {
+              "id": "b",
+              "text": "The testers become responsible for fixing the defects they report, which slows the whole project down"
+            },
+            {
+              "id": "c",
+              "text": "Isolation from developers can lead to collaboration and communication problems or an adversarial relationship"
+            },
+            {
+              "id": "d",
+              "text": "Independent testing cannot be combined with other levels of independence, so the external firm must test alone"
+            }
+          ],
+          "rationale": {
+            "summary": "Isolation from the development team is a drawback of independence because it can cause collaboration and communication problems.",
+            "byOption": {
+              "a": "This describes the lack of independence, where authors test their own work. External testers typically do not know the code that closely.",
+              "b": "Fixing defects is debugging, usually done by developers. Independent testers report failures and defects; they are not made responsible for correcting code.",
+              "c": "Correct: the syllabus lists isolation from the development team as a drawback of independence; it can create collaboration and communication problems or an adversarial relationship.",
+              "d": "The syllabus suggests the opposite: for most projects the best option is to combine several levels of independence, so using an external firm does not exclude other testers."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    }
+  ]
+}

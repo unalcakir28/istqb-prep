@@ -1,0 +1,686 @@
+{
+  "chunk": "ch02-c",
+  "chapter": 2,
+  "dataVersion": "2026.09.19",
+  "questions": [
+    {
+      "id": "ctfl4-0270",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.1",
+      "objectives": [
+        "FL-2.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "sdlc-impact",
+        "agile",
+        "manual-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Değişimin proje boyunca beklendiği çevik bir projede, yürütülen manuel testin hangi tanımı ders programıyla EN TUTARLI olandır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Genellikle tecrübeye dayalıdır ve önceden kapsamlı test analizi ve tasarımı gerektirmez"
+            },
+            {
+              "id": "b",
+              "text": "İlk döngü başlamadan önce, resmi tekniklerle türetilmiş eksiksiz bir senaryolu test durumu kümesi olarak planlanır"
+            },
+            {
+              "id": "c",
+              "text": "Her kontrolün otomatik testlerce üstlenilmesi beklendiğinden tamamen bırakılır"
+            },
+            {
+              "id": "d",
+              "text": "Tüm döngüler bittikten sonra, ürün elle denenecek kadar tamamlandığında tek bir son aşamada yoğunlaştırılır"
+            }
+          ],
+          "rationale": {
+            "summary": "Çevik yazılım geliştirme değişimin proje boyunca olabileceğini varsaydığından ekipler hafif iş ürünü belgelerini ve kapsamlı test otomasyonunu tercih eder; geriye kalan manuel test çoğunlukla tecrübeye dayalıdır ve kapsamlı test analizi ve tasarımı gerektirmez.",
+            "byOption": {
+              "a": "Doğru. Değişim sürekli olduğundan çevik ekipler yoğun otomasyon kullanır ve geriye kalan manuel testin çoğu tecrübeye dayalı kalır; bu nedenle önceden kapsamlı test analizi ve tasarımına dayanmaz.",
+              "b": "Yanlış. Bu, analiz ve tasarımın baştan tamamlandığı plana dayalı, sıralı bir çalışma biçimini tanımlar. Çevik çalışmada değişiklikler böyle bir kümeyi sürekli geçersiz kılar.",
+              "c": "Yanlış. Bu, test otomasyonuna verilen önemi manuel testin ortadan kalkması noktasına taşır. Otomasyon tercih edilir, ancak manuel test çoğunlukla tecrübeye dayalı olarak sürer.",
+              "d": "Yanlış. Tek bir geç test aşaması, çalıştırılabilir kodun geç ortaya çıktığı sıralı modellere özgüdür. Her çevik döngü çalışan bir artım sunduğundan manuel test döngülerin içinde yapılır."
+            }
+          }
+        },
+        "en": {
+          "stem": "In an agile project where change is expected throughout, which description of the manual testing that is carried out is MOST consistent with the syllabus?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It tends to be experience-based and does not need extensive test analysis and design beforehand"
+            },
+            {
+              "id": "b",
+              "text": "It is planned as a complete set of scripted test cases, derived with formal techniques before the first iteration starts"
+            },
+            {
+              "id": "c",
+              "text": "It is dropped altogether, because every check is expected to be handled by automated tests"
+            },
+            {
+              "id": "d",
+              "text": "It is concentrated in one final phase after all iterations are finished, when the product is complete enough to be tried by hand"
+            }
+          ],
+          "rationale": {
+            "summary": "Because agile development assumes change throughout the project, teams favor lightweight work product documentation and extensive test automation; the manual testing that remains tends to be experience-based and does not require extensive test analysis and design.",
+            "byOption": {
+              "a": "Correct. Because change is constant, agile teams automate heavily and keep most manual testing experience-based, so it does not rely on extensive upfront test analysis and design.",
+              "b": "Incorrect. This describes a plan-driven, sequential way of working, where analysis and design are completed up front. In agile work, change would keep invalidating such a set.",
+              "c": "Incorrect. This stretches the emphasis on test automation into its elimination. Automation is favored, but manual testing remains, mostly experience-based.",
+              "d": "Incorrect. A single late test phase belongs to sequential models, where executable code appears late. Each agile iteration delivers a working increment, so manual testing happens inside iterations."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0271",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.3",
+      "objectives": [
+        "FL-2.1.3"
+      ],
+      "kLevel": "K1",
+      "type": "multi",
+      "selectCount": 2,
+      "points": 1,
+      "difficulty": 1,
+      "tags": [
+        "test-first",
+        "tdd",
+        "atdd",
+        "multi-answer"
+      ],
+      "origin": "original",
+      "status": "retired",
+      "correct": [
+        "a",
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden HANGİ İKİSİ geliştirmeye yönelik önce-test-et yaklaşımlarının örnekleridir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test güdümlü yazılım geliştirme (TDD); testler kodlamayı yönlendirir"
+            },
+            {
+              "id": "b",
+              "text": "Kabul testi güdümlü yazılım geliştirme (ATDD), kabul kriterlerine dayalı"
+            },
+            {
+              "id": "c",
+              "text": "Hat içinde bileşen testleri ve statik analiz ile sürekli entegrasyon"
+            },
+            {
+              "id": "d",
+              "text": "Görev tanımıyla yönlendirilen zaman kutulu keşif testi oturumları"
+            },
+            {
+              "id": "e",
+              "text": "Her yayından önce regresyon test kümesinin risk bazlı önceliklendirilmesi"
+            }
+          ],
+          "rationale": {
+            "summary": "Ders programı üç önce-test-et yaklaşımı sayar: test güdümlü yazılım geliştirme (TDD), kabul testi güdümlü yazılım geliştirme (ATDD) ve davranış güdümlü yazılım geliştirme (BDD). Hat uygulamaları, keşif testi ve risk bazlı önceliklendirme bunlar arasında değildir.",
+            "byOption": {
+              "a": "Doğru. TDD önce bir test yazar, sonra onu karşılayacak kadar kod yazar ve ardından yeniden düzenler; ders programının önce-test-et yaklaşımı örneklerinden biridir.",
+              "b": "Doğru. ATDD, testleri kabul kriterlerinden türetir ve uygulamanın ilgili bölümü geliştirilmeden önce yazar; ders programının önce-test-et yaklaşımı örneklerinden biridir.",
+              "c": "Yanlış. Bu, shift-left'i ve hızlı geri bildirimi destekleyen bir DevOps uygulamasıdır; testlerin geliştirmeyi yönlendirmek üzere koddan önce yazıldığı anlamına gelmez.",
+              "d": "Yanlış. Bu, testlerin tester ürünü öğrendikçe tasarlanıp çalıştırıldığı tecrübeye dayalı bir test yoludur; önceden yazılmış testlerle kodlamayı yönlendirmez.",
+              "e": "Yanlış. Bu, neyin önce ve ne kadar test edileceğini belirleyen bir test yönetimi yaklaşımıdır; testlerin koddan önce yazıldığı bir geliştirme yaklaşımı değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "WHICH TWO of the following are examples of test-first approaches to development?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Test-driven development (TDD), where the tests direct the coding"
+            },
+            {
+              "id": "b",
+              "text": "Acceptance test-driven development (ATDD), from acceptance criteria"
+            },
+            {
+              "id": "c",
+              "text": "Continuous integration with component tests and static analysis"
+            },
+            {
+              "id": "d",
+              "text": "Exploratory testing in time-boxed sessions guided by a charter"
+            },
+            {
+              "id": "e",
+              "text": "Risk-based prioritization of the regression suite before each release"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus names three test-first approaches to development: test-driven development (TDD), acceptance test-driven development (ATDD) and behavior-driven development (BDD). Pipeline practices, exploratory testing and risk-based prioritization are not among them.",
+            "byOption": {
+              "a": "Correct. TDD writes a test first, then just enough code to satisfy it, then refactors; it is one of the syllabus examples of a test-first approach.",
+              "b": "Correct. ATDD derives tests from acceptance criteria before the corresponding part of the application is built; it is one of the syllabus examples of a test-first approach.",
+              "c": "Incorrect. This is a DevOps practice that supports shift left and fast feedback; it does not mean that tests are written before the code to drive development.",
+              "d": "Incorrect. This is an experience-based way of testing in which tests are designed and run as the tester learns about the product; it does not drive coding with tests written in advance.",
+              "e": "Incorrect. This is a test management approach for deciding what to test first and how much; it is not a development approach in which tests are written ahead of the code."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0272",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.4",
+      "objectives": [
+        "FL-2.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "devops",
+        "ci-cd",
+        "scenario",
+        "fast-feedback"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip DevOps'u benimsedikten sonra, her kod gönderimi otomatik olarak bir derleme ve bir dizi otomatik test başlatmakta ve geliştiriciler sonucu dakikalar içinde görmektedir. Bu durum, DevOps'un test açısından hangi faydasını EN DOĞRUDAN örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kod değişikliklerinin kalitesi ve mevcut kodu olumsuz etkileyip etkilemediği konusunda hızlı geri bildirim"
+            },
+            {
+              "id": "b",
+              "text": "Her değişiklik hattan geçtiği için hiçbir hatanın (defect) canlıya ulaşamayacağı garantisi"
+            },
+            {
+              "id": "c",
+              "text": "Hat her gönderimi hemen canlıya aldığı için test sonuçlarının ancak sürüm canlıya çıktıktan sonra elde edilmesi"
+            },
+            {
+              "id": "d",
+              "text": "Her yapıyı hiçbir iş birliği olmadan değerlendirebilen, operasyondan bağımsız çalışan bir test ekibi"
+            }
+          ],
+          "rationale": {
+            "summary": "DevOps'un test açısından faydalarından biri, kod kalitesi ve değişikliklerin mevcut kodu olumsuz etkileyip etkilemediği konusunda hızlı geri bildirimdir; her gönderimde derleyip test eden bir hat tam olarak bunu sağlar.",
+            "byOption": {
+              "a": "Doğru. Her gönderimde otomatik derleme ve testler, geliştiricilere değişikliklerinin kalitesi ve mevcut kod üzerindeki olumsuz etkisi hakkında hızlı geri bildirim sağlar.",
+              "b": "Yanlış. Test, ne kadar otomatik olursa olsun hataların varlığını gösterebilir, yokluğunu kanıtlayamaz; hat riski azaltır, hatasız yayın garantisi vermez.",
+              "c": "Yanlış. Bu, geç geri bildirimi tanımlar ve gösterilen faydanın tersidir. Hat her gönderimi yayından önce derler ve test eder; geliştiriciler sonucu dakikalar içinde alır, canlıya çıkıştan sonra değil.",
+              "d": "Yanlış. Bu, DevOps'un amacıyla çelişir; DevOps ayrışmayı değil, kültürel bir değişimle geliştirme (test dahil) ve operasyon arasında sinerjiyi hedefler."
+            }
+          }
+        },
+        "en": {
+          "stem": "After a team adopts DevOps, every code commit automatically triggers a build and a set of automated tests, and developers see the result within minutes. Which testing-related benefit of DevOps does this MOST directly illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Fast feedback on the quality of code changes and on whether they adversely affect existing code"
+            },
+            {
+              "id": "b",
+              "text": "A guarantee that no defect can reach production, because every change passes through the pipeline"
+            },
+            {
+              "id": "c",
+              "text": "Test results available only after the release is in production, because the pipeline deploys every commit straight away"
+            },
+            {
+              "id": "d",
+              "text": "A test team that can work independently of operations, evaluating each build without any cooperation"
+            }
+          ],
+          "rationale": {
+            "summary": "One of the benefits of DevOps for testing is fast feedback on code quality and on whether changes adversely affect existing code; a pipeline that builds and tests on every commit delivers exactly that.",
+            "byOption": {
+              "a": "Correct. Automatic builds and tests on every commit give developers quick feedback on the quality of their change and on any adverse effect on existing code.",
+              "b": "Incorrect. Testing, however automated, can show the presence of defects but cannot prove their absence; the pipeline reduces risk, it does not guarantee defect-free releases.",
+              "c": "Incorrect. This describes late feedback, the opposite of the benefit shown. The pipeline builds and tests each commit before release, so developers get results within minutes, not after production.",
+              "d": "Incorrect. This contradicts the idea of DevOps, which aims for synergy between development (including testing) and operations through a cultural shift, not for separation."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0273",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.5",
+      "objectives": [
+        "FL-2.1.5"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "shift-left",
+        "static-analysis",
+        "scenario"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test uzmanı, herhangi bir dinamik test başlamadan önce kaynak kod üzerinde statik analiz çalıştırmayı önermektedir. Bir meslektaşı bunun shift-left ile ilişkisini sormaktadır. Hangi yanıt EN İYİDİR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Shift-left örneğidir, çünkü hatalar (defect) SDLC'de daha erken, kaynak kod çalıştırılmadan ve dinamik testten önce aranır"
+            },
+            {
+              "id": "b",
+              "text": "Shift-left değildir, çünkü shift-left kaynak kodu değil, gereksinimlerin ve spesifikasyonların gözden geçirilmesiyle ilgilidir"
+            },
+            {
+              "id": "c",
+              "text": "Yalnızca sonraki test seviyelerindeki dinamik test, ek çabayı karşılamak için azaltılırsa shift-left sayılır"
+            },
+            {
+              "id": "d",
+              "text": "Shift-left değildir, çünkü shift-left test senaryolarının koddan önce yazılması demektir ve statik analiz bunu yapmaz"
+            }
+          ],
+          "rationale": {
+            "summary": "Shift-left, testin SDLC'de daha erken yapılması demektir. Dinamik testten önce kaynak kodun statik analizi bu ilkenin ders programındaki örneklerindendir ve sonraki aşamalarda yapılan testin yerini almaz.",
+            "byOption": {
+              "a": "Doğru. Dinamik testten önce kaynak kodun statik analizini tamamlamak, ders programındaki shift-left örneklerinden biridir: test ve onunla birlikte hata bulma daha erken yapılır.",
+              "b": "Yanlış. Gereksinimleri ve spesifikasyonları gözden geçirmek shift-left örneklerinden biridir ama kavramın tamamı değildir; ders programı, dinamik testten önce kaynak kodun statik analizini de listeler.",
+              "c": "Yanlış. Shift-left, SDLC'de daha sonraki testin ihmal edilebileceği anlamına gelmez; sonraki test hâlâ gereklidir, erken yapılan çalışma yalnızca daha erken bir noktada çaba ekler.",
+              "d": "Yanlış. Testleri koddan önce yazmak shift-left örneklerinden biridir, tanımı değildir. Shift-left testin SDLC'de daha erken yapılmasıdır ve dinamik testten önce statik analiz tam olarak bunu yapar."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester proposes running static analysis on the source code before any dynamic testing begins. A colleague asks how this relates to shift left. Which answer is BEST?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It is an example of shift left, because defects are looked for earlier in the SDLC, before any dynamic testing is done"
+            },
+            {
+              "id": "b",
+              "text": "It is not shift left, because shift left concerns the review of requirements and specifications rather than source code"
+            },
+            {
+              "id": "c",
+              "text": "It counts as shift left only if the dynamic testing at the later test levels is reduced to pay for the extra effort"
+            },
+            {
+              "id": "d",
+              "text": "It is not shift left, because shift left means writing the test cases before the code, which static analysis does not do"
+            }
+          ],
+          "rationale": {
+            "summary": "Shift left means performing testing earlier in the SDLC. Static analysis of source code before dynamic testing is a syllabus example of this principle, and it does not replace the testing that happens later.",
+            "byOption": {
+              "a": "Correct. Completing static analysis of the source code before dynamic testing is one of the syllabus examples of shift left: testing, and with it defect detection, happens earlier.",
+              "b": "Incorrect. Reviewing requirements and specifications is one example of shift left, but it is not the whole concept; the syllabus also lists static analysis of source code prior to dynamic testing.",
+              "c": "Incorrect. Shift left does not mean that testing later in the SDLC is neglected; later testing is still needed, and the earlier work simply adds effort at an earlier point.",
+              "d": "Incorrect. Writing tests before the code is one example of shift left, not its definition. Shift left means performing testing earlier in the SDLC, and static analysis before dynamic testing does exactly that."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0274",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.2",
+      "syllabusRef": "§2.2.1",
+      "objectives": [
+        "FL-2.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-levels",
+        "component-integration",
+        "scenario"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aynı uygulamanın, farklı geliştiriciler tarafından yazılmış iki bileşeni birleştirilmiştir. Bir geliştirici, uygulamanın geri kalanı henüz hazır değilken, bu ikisi arasındaki arayüzden geçen veriyi sınayan otomatik testler çalıştırmaktadır. Hangi test seviyesi uygulanmaktadır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bileşen testi (birim testi)"
+            },
+            {
+              "id": "b",
+              "text": "Bileşen entegrasyon testi"
+            },
+            {
+              "id": "c",
+              "text": "Sistem entegrasyon testi"
+            },
+            {
+              "id": "d",
+              "text": "Sistem testi"
+            }
+          ],
+          "rationale": {
+            "summary": "Aynı uygulamanın bileşenleri arasındaki arayüzleri ve etkileşimleri test etmek bileşen entegrasyon testidir; bileşen testi (izolasyon) ile sistem entegrasyon testi (diğer sistemler veya servisler) arasında yer alır.",
+            "byOption": {
+              "a": "Yanlış. Bileşen testi, bir bileşeni izole olarak, normalde bir test kuluçkası veya birim test çerçevesiyle inceler; burada odak, birleştirilmiş iki bileşen arasındaki etkileşimdir.",
+              "b": "Doğru. Odak, bileşenler arasındaki arayüzler ve etkileşimlerdir.",
+              "c": "Yanlış. Sistem entegrasyon testi, test edilen sistem ile diğer sistemler veya harici servisler arasındaki arayüzleri, işletim ortamına yakın bir ortamda hedefler.",
+              "d": "Yanlış. Sistem testi, sistemin bütününün genel davranışına ve yeteneklerine bakar; burada uygulamanın geri kalanı henüz hazır bile değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Two components of the same application, written by different developers, have just been combined. A developer runs automated tests that exercise the data passed through the interface between them, while the rest of the application is not yet available. Which test level is being performed?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Component testing (unit testing)"
+            },
+            {
+              "id": "b",
+              "text": "Component integration testing"
+            },
+            {
+              "id": "c",
+              "text": "System integration testing"
+            },
+            {
+              "id": "d",
+              "text": "System testing"
+            }
+          ],
+          "rationale": {
+            "summary": "Testing the interfaces and interactions between components of the same application is component integration testing; it sits between component testing (isolation) and system integration testing (other systems or services).",
+            "byOption": {
+              "a": "Incorrect. Component testing examines a component in isolation, normally with a harness or unit test framework; here the focus is the interaction between two combined components.",
+              "b": "Correct. The focus is the interfaces and interactions between components.",
+              "c": "Incorrect. System integration testing targets the interfaces between the system under test and other systems or external services, in an environment close to the operational one.",
+              "d": "Incorrect. System testing looks at the overall behavior and capabilities of the entire system; the rest of the application is not even available here."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0275",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.2",
+      "syllabusRef": "§2.2.2",
+      "objectives": [
+        "FL-2.2.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-types",
+        "functional",
+        "non-functional"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdaki kalite özelliklerinden hangisi, fonksiyonel olmayan test tarafından değil, FONKSİYONEL test tarafından değerlendirilir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Sistemin uzun süreli çalışması boyunca güvenilirliği"
+            },
+            {
+              "id": "b",
+              "text": "Fonksiyonların girdiye göre verdiği sonucun doğruluğu"
+            },
+            {
+              "id": "c",
+              "text": "Aynı ortamı paylaşan diğer yazılımlarla uyumluluğu"
+            },
+            {
+              "id": "d",
+              "text": "Yazılımın farklı bir işletim platformuna taşınabilirliği"
+            }
+          ],
+          "rationale": {
+            "summary": "Fonksiyonel test, test nesnesinin ne yapması gerektiğini değerlendirir (fonksiyonel bütünlük, doğruluk, uygunluk); güvenilirlik, uyumluluk ve taşınabilirlik ise bunu ne kadar iyi yaptığını anlatan fonksiyonel olmayan kalite özellikleridir (ISO/IEC 25010).",
+            "byOption": {
+              "a": "Yanlış. Güvenilirlik fonksiyonel olmayan bir kalite özelliğidir (ISO/IEC 25010): sistemin hangi fonksiyonları sunduğunu değil, ne kadar iyi davrandığını ilgilendirir.",
+              "b": "Doğru. Fonksiyonel test, bir bileşenin veya sistemin gerçekleştirmesi gereken fonksiyonları değerlendirir; fonksiyonel bütünlüğü, doğruluğu ve uygunluğu kontrol eder.",
+              "c": "Yanlış. Bu, uyumluluğu anlatır; ISO/IEC 25010 uyumluluğu fonksiyonel olmayan kalite özellikleri arasında sayar ve fonksiyonel olmayan test ile değerlendirilir.",
+              "d": "Yanlış. Bu, taşınabilirliği anlatır; ISO/IEC 25010 taşınabilirliği fonksiyonel olmayan kalite özellikleri arasında sayar ve fonksiyonel olmayan test ile değerlendirilir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following quality characteristics is evaluated by FUNCTIONAL testing, rather than by non-functional testing?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Reliability of the system over a long period of operation"
+            },
+            {
+              "id": "b",
+              "text": "Correctness of the results the functions produce for given inputs"
+            },
+            {
+              "id": "c",
+              "text": "Compatibility with other software that shares the same environment"
+            },
+            {
+              "id": "d",
+              "text": "Portability of the software to a different operating platform"
+            }
+          ],
+          "rationale": {
+            "summary": "Functional testing evaluates what the test object should do (functional completeness, correctness, appropriateness); reliability, compatibility and portability are non-functional quality characteristics that describe how well it does it (ISO/IEC 25010).",
+            "byOption": {
+              "a": "Incorrect. Reliability is a non-functional quality characteristic (ISO/IEC 25010): it concerns how well the system behaves, not which functions it provides.",
+              "b": "Correct. Functional testing evaluates the functions a component or system should perform, checking functional completeness, correctness and appropriateness.",
+              "c": "Incorrect. This describes compatibility, which ISO/IEC 25010 lists among the non-functional quality characteristics; it is evaluated by non-functional testing.",
+              "d": "Incorrect. This describes portability, which ISO/IEC 25010 lists among the non-functional quality characteristics; it is evaluated by non-functional testing."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0276",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 2,
+      "section": "2.2",
+      "syllabusRef": "§2.2.3",
+      "objectives": [
+        "FL-2.2.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "regression",
+        "confirmation",
+        "scenario",
+        "impact-analysis"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir fiyatlama bileşenindeki hata (defect) düzeltilmiş ve daha önce başarısız olan test artık geçmektedir. Ekip ardından sepet bileşeni ile fiyatları kullanan bir faturalama sistemi üzerinde ek testler çalıştırmaktadır. Bu ek test EN İYİ nasıl sınıflandırılır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Onaylama testi; hatanın orada da giderildiğini doğrulamak için düzeltilen bileşene bağımlı her sisteme yayılmış hâli"
+            },
+            {
+              "id": "b",
+              "text": "Regresyon testi, çünkü bir değişiklik diğer bileşenleri ve bağlantılı sistemleri etkileyebilir"
+            },
+            {
+              "id": "c",
+              "text": "Sistem entegrasyon testi, çünkü testlere ikinci bir sistem dahildir"
+            },
+            {
+              "id": "d",
+              "text": "Bileşen entegrasyon testi, çünkü fiyatlama bileşeni sepet bileşeniyle ilk kez birleştirilmektedir"
+            }
+          ],
+          "rationale": {
+            "summary": "Düzeltme onaylandıktan sonra, diğer bileşenlerde ve bağlantılı sistemlerde istenmeyen yan etkileri arayan testler regresyon testidir; regresyon testinin kapsamı değişen test nesnesiyle sınırlı değildir.",
+            "byOption": {
+              "a": "Yanlış. Onaylama testi, belirli hatanın düzeltilip düzeltilmediğini, başarısız olan testleri yeniden çalıştırarak ve/veya değişiklik için yeni testler ekleyerek sorgular; diğer bileşenlerde yan etki aramaz.",
+              "b": "Doğru. Regresyon testi bir değişikliğin istenmeyen etkilerini kontrol eder ve kapsamı, değişen test nesnesinin ötesinde diğer bileşenlere ve bağlantılı sistemlere uzanabilir.",
+              "c": "Yanlış. Başka bir sistemin devrede olması amacı değiştirmez: hedef bir değişikliğin yan etkilerini bulmaktır, diğer sistemlerle arayüzleri sınamak değil.",
+              "d": "Yanlış. Bileşen entegrasyon testi, bileşenler arasındaki arayüzleri ve etkileşimleri hedefler. Metin, onaylanmış bir düzeltmeden sonra değişikliğin yan etkilerini arayan testleri anlatır; bu, regresyon testinin amacıdır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A defect in a pricing component has been fixed, and the test that previously failed now passes. The team then runs further tests on the checkout component and on an invoicing system that consumes the prices. How is this additional testing BEST classified?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Confirmation testing, extended to every system that depends on the fixed component, to confirm the defect is gone there too"
+            },
+            {
+              "id": "b",
+              "text": "Regression testing, since a change can affect other components and connected systems"
+            },
+            {
+              "id": "c",
+              "text": "System integration testing, because a second system is involved in the tests"
+            },
+            {
+              "id": "d",
+              "text": "Component integration testing, because the pricing component is being combined with the checkout component for the first time"
+            }
+          ],
+          "rationale": {
+            "summary": "After a fix has been confirmed, tests that check for unintended side effects in other components and in connected systems are regression tests; the scope of regression testing is not limited to the changed test object.",
+            "byOption": {
+              "a": "Incorrect. Confirmation testing asks whether the specific defect has been fixed, by re-running the tests that failed and/or adding tests for the change; it does not check other components for side effects.",
+              "b": "Correct. Regression testing checks for adverse effects of a change, and its scope can extend beyond the changed test object to other components and connected systems.",
+              "c": "Incorrect. The involvement of another system does not change the purpose: the goal is to detect side effects of a change, not to test the interfaces to other systems.",
+              "d": "Incorrect. Component integration testing targets the interfaces and interactions between components. The stem describes tests run after a confirmed fix to look for side effects of the change, which is the purpose of regression testing."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    }
+  ]
+}

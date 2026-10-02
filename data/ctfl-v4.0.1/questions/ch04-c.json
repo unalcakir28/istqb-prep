@@ -1,0 +1,1395 @@
+{
+  "chunk": "ch04-c",
+  "chapter": 4,
+  "dataVersion": "2026.09.19",
+  "questions": [
+    {
+      "id": "ctfl4-0290",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.1",
+      "objectives": [
+        "FL-4.2.1"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "black-box",
+        "equivalence-partitioning",
+        "coverage",
+        "two-parameters"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir otel rezervasyon formunun birbirinden bağımsız iki girdi parametresi vardır. \"Misafir sayısı\" tam sayı kabul eder: 1 ile 4 arası geçerlidir; 0 ve altı ile 5 ve üstü reddedilir. \"Oda tipi\" üç seçenek sunar: tek kişilik, çift kişilik ve süit. Her iki parametre için denklik payları belirlenmiştir. (misafir sayısı, oda tipi) biçiminde şu dört test senaryosu koşulmuştur: (2, çift kişilik), (0, süit), (3, çift kişilik), (6, çift kişilik). İki parametre birlikte düşünüldüğünde denklik paylarına ayırma kapsamı yüzde kaçtır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "%100"
+            },
+            {
+              "id": "b",
+              "text": "%75"
+            },
+            {
+              "id": "c",
+              "text": "%83"
+            },
+            {
+              "id": "d",
+              "text": "%67"
+            }
+          ],
+          "rationale": {
+            "summary": "Denklik paylarına ayırmada kapsam, en az bir test senaryosuyla denenen pay sayısının belirlenen toplam pay sayısına bölünmesiyle bulunur; geçersiz paylar da hem paya hem paydaya dahildir. Misafir sayısının üç payı (0 ve altı, 1-4, 5 ve üstü) ile oda tipinin üç payı (tek kişilik, çift kişilik, süit) toplam 6 pay eder. Dört test senaryosu misafir sayısının üç payını da (2 ve 3 geçerli, 0 ve 6 iki geçersiz pay), oda tipinin ise yalnızca çift kişilik ve süit payını dener; tek kişilik payı hiç denenmemiştir. 5/6 = yaklaşık %83.",
+            "byOption": {
+              "a": "Yanlış. %100, altı payın hepsinin denendiği anlamına gelir; oysa hiçbir test senaryosu tek kişilik odayı kullanmamıştır. Bu değer, oda tipi parametresinin gözden kaçırılıp yalnızca üç misafir sayısı payına bakılmasından çıkar.",
+              "b": "Yanlış. %75, yalnızca geçerli payların sayılmasından çıkar: 1 misafir payı ve 3 oda payı olmak üzere 4 geçerli paydan 3'ü denenmiştir. Oysa geçersiz paylar da (0 ve altı, 5 ve üstü) belirlenmiş birer paydır ve hem paya hem paydaya girer.",
+              "c": "Doğru. Toplam 6 paydan 5'i denenmiştir: misafir sayısı için üç pay, oda tipi için çift kişilik ve süit. Denenmeyen tek pay tek kişilik odadır; 5/6 yaklaşık %83'tür.",
+              "d": "Yanlış. %67, 4/6 işleminden gelir; yani koşulan test senaryosu sayısı pay sayısıyla karıştırılmıştır. Kapsam test senaryolarını değil denenen payları sayar; (2, çift kişilik) ve (3, çift kişilik) aynı iki payı yeniden dener, bu yüzden dört senaryo beş farklı pay verir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A hotel booking form has two independent input parameters. \"Number of guests\" accepts whole numbers: 1 to 4 is valid, while 0 or fewer, and 5 or more, are rejected. \"Room type\" offers three choices: single, double and suite. Equivalence partitions have been identified for both parameters. Four test cases have been executed, written as (number of guests, room type): (2, double), (0, suite), (3, double), (6, double). Considering both parameters together, what equivalence partitioning coverage has been achieved?",
+          "options": [
+            {
+              "id": "a",
+              "text": "100%"
+            },
+            {
+              "id": "b",
+              "text": "75%"
+            },
+            {
+              "id": "c",
+              "text": "83%"
+            },
+            {
+              "id": "d",
+              "text": "67%"
+            }
+          ],
+          "rationale": {
+            "summary": "In equivalence partitioning, coverage is the number of partitions exercised by at least one test case divided by the total number of identified partitions; invalid partitions count in both the numerator and the denominator. \"Number of guests\" has three partitions (0 or fewer, 1-4, 5 or more) and \"room type\" has three (single, double, suite): 6 in total. The four test cases exercise all three guest partitions (2 and 3 valid, 0 and 6 the two invalid ones) but only the double and suite room partitions; the single room partition is never used. 5/6 is about 83%.",
+            "byOption": {
+              "a": "Wrong. 100% would mean all six partitions were exercised, but no test case uses a single room. It comes from overlooking the room type parameter, so that the three guest partitions alone look like complete coverage.",
+              "b": "Wrong. 75% comes from counting valid partitions only: of the 4 valid partitions (1 guest partition and 3 room partitions), 3 were exercised. The invalid partitions (0 or fewer, 5 or more) are identified partitions too and belong in both the numerator and the denominator.",
+              "c": "Correct. 5 of the 6 partitions are exercised: all three guest partitions, plus double and suite. The only partition not exercised is the single room; 5/6 is about 83%.",
+              "d": "Wrong. 67% comes from 4/6, i.e. the number of executed test cases has been mistaken for the number of exercised partitions. Coverage counts partitions, not test cases: (2, double) and (3, double) exercise the same two partitions again, so four test cases yield five distinct partitions."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0291",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.2",
+      "objectives": [
+        "FL-4.2.2"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "black-box",
+        "boundary-value-analysis",
+        "2-value",
+        "adjacent-partitions"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir mağaza, tam sayı sipariş adedine göre miktar indirimi uygulamaktadır: 1 ile 9 adet arası indirimsiz, 10 ile 49 adet arası %5 indirimli, 50 ile 100 adet arası %10 indirimlidir. 1'in altındaki ve 100'ün üstündeki adetler reddedilir. Ekip, üç geçerli payın sınır değerlerine 2 DEĞERLİ sınır değer analizi uygulamaktadır. %100 kapsam için kaç FARKLI test değeri gerekir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "12"
+            },
+            {
+              "id": "b",
+              "text": "8"
+            },
+            {
+              "id": "c",
+              "text": "14"
+            },
+            {
+              "id": "d",
+              "text": "6"
+            }
+          ],
+          "rationale": {
+            "summary": "2 değerli sınır değer analizinde her sınır değer için iki kapsam öğesi vardır: sınır değerin kendisi ve bitişik paya ait en yakın komşusu. Üç geçerli payın sınır değerleri 1, 9, 10, 49, 50 ve 100'dür. Komşuları şöyledir: 1→0, 9→10, 10→9, 49→50, 50→49, 100→101. Komşu paylar yan yana olduğundan değerler çiftler halinde çakışır: (0, 1), (9, 10), (49, 50) ve (100, 101). Farklı değerler 0, 1, 9, 10, 49, 50, 100 ve 101'dir; yani 8.",
+            "byOption": {
+              "a": "Yanlış. 12, altı sınır değerin her biri için iki değer sayılmasından çıkar (6 x 2). Oysa 9 ile 10 ve 49 ile 50 hem birbirinin komşusu hem de sınır değerdir; aynı değerler iki kez sayılmamalıdır, \"farklı\" değer sorulmuştur.",
+              "b": "Doğru. Çiftler (0, 1), (9, 10), (49, 50) ve (100, 101) dört çiftten oluşur; çakışmalar çıkarılınca 8 farklı değer kalır.",
+              "c": "Yanlış. 14, 3 değerli sınır değer analizinin farklı değer sayısıdır (0, 1, 2, 8, 9, 10, 11, 48, 49, 50, 51, 99, 100, 101). 3 değerli analizde her sınır değerin iki komşusu da eklenir; bu soru ise yalnızca en yakın bir komşuyu ister.",
+              "d": "Yanlış. 6, yalnızca sınır değerlerin kendisini sayar (1, 9, 10, 49, 50, 100). 2 değerli analiz her sınır değere bitişik paydaki en yakın komşusunu da ekler; ancak komşuların bir kısmı zaten sınır değer olduğundan toplam 12 değil 8 olur."
+            }
+          }
+        },
+        "en": {
+          "stem": "A shop applies quantity discounts to whole-number order quantities: 1 to 9 items get no discount, 10 to 49 items get 5%, and 50 to 100 items get 10%. Quantities below 1 or above 100 are rejected. The team applies 2-VALUE boundary value analysis to the boundaries of the three valid partitions. How many DISTINCT test values are needed for 100% coverage?",
+          "options": [
+            {
+              "id": "a",
+              "text": "12"
+            },
+            {
+              "id": "b",
+              "text": "8"
+            },
+            {
+              "id": "c",
+              "text": "14"
+            },
+            {
+              "id": "d",
+              "text": "6"
+            }
+          ],
+          "rationale": {
+            "summary": "In 2-value boundary value analysis every boundary value gives two coverage items: the boundary value itself and its closest neighbour belonging to the adjacent partition. The three valid partitions have the boundary values 1, 9, 10, 49, 50 and 100, whose closest neighbours in the adjacent partitions are: 1→0, 9→10, 10→9, 49→50, 50→49, 100→101. Because the partitions sit side by side, the values overlap in pairs: (0, 1), (9, 10), (49, 50) and (100, 101). The distinct values are 0, 1, 9, 10, 49, 50, 100 and 101, i.e. 8.",
+            "byOption": {
+              "a": "Wrong. 12 comes from counting two values for each of the six boundary values (6 x 2). But 9 and 10, and 49 and 50, are both neighbours and boundary values of each other, so the same values must not be counted twice; the question asks for DISTINCT values.",
+              "b": "Correct. The values form four pairs, (0, 1), (9, 10), (49, 50) and (100, 101), so after the overlaps are removed 8 distinct values remain.",
+              "c": "Wrong. 14 is the number of distinct values for 3-value boundary value analysis (0, 1, 2, 8, 9, 10, 11, 48, 49, 50, 51, 99, 100, 101), where both neighbours of every boundary value are added. This question asks for 2-value analysis, which adds only the closest neighbour.",
+              "d": "Wrong. 6 counts only the boundary values themselves (1, 9, 10, 49, 50, 100). 2-value analysis also adds the closest neighbour in the adjacent partition of each boundary value; since some neighbours are boundary values already, the total is 8 rather than 12."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0292",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.3",
+      "objectives": [
+        "FL-4.2.3"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "black-box",
+        "decision-table",
+        "coverage",
+        "dont-care"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": {
+        "kind": "decision-table",
+        "caption": {
+          "tr": "Nakit çekme karar tablosu (T = doğru, F = yanlış, - = değer önemsiz, X = aksiyon gerçekleşir, . = aksiyon gerçekleşmez)",
+          "en": "Cash withdrawal decision table (T = true, F = false, - = value irrelevant, X = action occurs, . = action does not occur)"
+        },
+        "headers": {
+          "tr": [
+            "Koşul / aksiyon",
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ],
+          "en": [
+            "Condition / action",
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ]
+        },
+        "rows": [
+          {
+            "tr": [
+              "C1 PIN doğrudur",
+              "T",
+              "T",
+              "T",
+              "F"
+            ],
+            "en": [
+              "C1 PIN is correct",
+              "T",
+              "T",
+              "T",
+              "F"
+            ]
+          },
+          {
+            "tr": [
+              "C2 Bakiye tutarı karşılar",
+              "T",
+              "T",
+              "F",
+              "-"
+            ],
+            "en": [
+              "C2 Balance covers the amount",
+              "T",
+              "T",
+              "F",
+              "-"
+            ]
+          },
+          {
+            "tr": [
+              "C3 Günlük limit aşılmaz",
+              "T",
+              "F",
+              "-",
+              "-"
+            ],
+            "en": [
+              "C3 Daily limit is not exceeded",
+              "T",
+              "F",
+              "-",
+              "-"
+            ]
+          },
+          {
+            "tr": [
+              "A1 Nakit ver",
+              "X",
+              ".",
+              ".",
+              "."
+            ],
+            "en": [
+              "A1 Dispense cash",
+              "X",
+              ".",
+              ".",
+              "."
+            ]
+          },
+          {
+            "tr": [
+              "A2 \"limit aşıldı\" mesajı göster",
+              ".",
+              "X",
+              ".",
+              "."
+            ],
+            "en": [
+              "A2 Show \"limit exceeded\"",
+              ".",
+              "X",
+              ".",
+              "."
+            ]
+          },
+          {
+            "tr": [
+              "A3 \"yetersiz bakiye\" mesajı göster",
+              ".",
+              ".",
+              "X",
+              "."
+            ],
+            "en": [
+              "A3 Show \"insufficient funds\"",
+              ".",
+              ".",
+              "X",
+              "."
+            ]
+          },
+          {
+            "tr": [
+              "A4 PIN'i reddet",
+              ".",
+              ".",
+              ".",
+              "X"
+            ],
+            "en": [
+              "A4 Reject the PIN",
+              ".",
+              ".",
+              ".",
+              "X"
+            ]
+          }
+        ]
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir banka, nakit çekme işlemi için gösterilen karar tablosunu kullanmaktadır. Tablo, \"-\" ile gösterilen önemsiz değerler sayesinde daraltılmıştır. Üç koşulun değerleri (C1, C2, C3) olarak yazılan şu dört test senaryosu koşulmuştur: (T, T, T), (T, F, F), (T, F, T) ve (F, T, T). Elde edilen karar tablosu kapsamı yüzde kaçtır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "%75"
+            },
+            {
+              "id": "b",
+              "text": "%100"
+            },
+            {
+              "id": "c",
+              "text": "%50"
+            },
+            {
+              "id": "d",
+              "text": "%38"
+            }
+          ],
+          "rationale": {
+            "summary": "Karar tablosu testinde kapsam, en az bir test senaryosuyla denenen kural (sütun) sayısının toplam kural sayısına bölünmesiyle bulunur. Önce her test senaryosu hangi kurala düştüğü belirlenir; \"-\" olan koşul değerden bağımsızdır. (T, T, T) R1'e, (T, F, F) ve (T, F, T) her ikisi de R3'e (C3 önemsizdir), (F, T, T) ise R4'e (C2 ve C3 önemsizdir) düşer. Denenen kurallar R1, R3 ve R4'tür; R2 (T, T, F) hiç denenmemiştir. 3/4 = %75.",
+            "byOption": {
+              "a": "Doğru. Dört test senaryosu üç ayrı kuralı dener: R1, R3 (iki kez) ve R4. R2 denenmemiştir; 3/4 = %75.",
+              "b": "Yanlış. %100, dört test senaryosunun dört ayrı kural denediği varsayımından çıkar. Oysa (T, F, F) ve (T, F, T) C3 önemsiz olduğu için aynı R3 kuralına düşer ve hiçbir test senaryosu R2'yi (T, T, F) denemez.",
+              "c": "Yanlış. %50, 4/8 işlemidir: koşulan test senaryosu sayısı, daraltılmamış tablonun sekiz kombinasyonuna bölünmüştür. Kapsamın ölçüsü test senaryosu sayısı değil denenen kural sayısıdır ve payda tablodaki 4 kuraldır.",
+              "d": "Yanlış. %38, 3/8 işleminden gelir: denenen üç kural, daraltılmamış tablonun sekiz kombinasyonuna bölünmüştür. Payda, tablodaki kural sayısıdır; \"-\" içeren sütunlar birden çok kombinasyonu tek kuralda toplar ve bu tabloda 4 kural vardır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A bank uses the decision table shown for cash withdrawals. The table has been collapsed by means of the \"-\" entries, which mean the value is irrelevant. The following four test cases have been executed, written as the values of the three conditions (C1, C2, C3): (T, T, T), (T, F, F), (T, F, T) and (F, T, T). What decision table coverage has been achieved?",
+          "options": [
+            {
+              "id": "a",
+              "text": "75%"
+            },
+            {
+              "id": "b",
+              "text": "100%"
+            },
+            {
+              "id": "c",
+              "text": "50%"
+            },
+            {
+              "id": "d",
+              "text": "38%"
+            }
+          ],
+          "rationale": {
+            "summary": "In decision table testing, coverage is the number of rules (columns) exercised by at least one test case divided by the total number of rules. First work out which rule each test case falls into; a \"-\" condition does not depend on the value. (T, T, T) falls into R1, (T, F, F) and (T, F, T) both fall into R3 (C3 is irrelevant), and (F, T, T) falls into R4 (C2 and C3 are irrelevant). The exercised rules are R1, R3 and R4; R2 (T, T, F) is never exercised. 3/4 = 75%.",
+            "byOption": {
+              "a": "Correct. The four test cases exercise three different rules: R1, R3 (twice) and R4. R2 is not exercised; 3/4 = 75%.",
+              "b": "Wrong. 100% comes from assuming that four test cases exercise four different rules. But (T, F, F) and (T, F, T) fall into the same rule R3, because C3 is irrelevant there, and no test case exercises R2 (T, T, F).",
+              "c": "Wrong. 50% is 4/8: the number of executed test cases has been divided by the eight combinations of the uncollapsed table. Coverage is based on the number of rules exercised, not on the number of test cases, and the denominator is the 4 rules of this table.",
+              "d": "Wrong. 38% comes from 3/8: the three exercised rules have been divided by the eight combinations of the uncollapsed table. The denominator is the number of rules in the table; a column with \"-\" entries combines several combinations in one rule, and this table has 4 rules."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0293",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.4",
+      "objectives": [
+        "FL-4.2.4"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "black-box",
+        "state-transition",
+        "valid-transitions",
+        "test-case-count"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir çevrimiçi siparişin yaşam döngüsü Yeni, Ödendi, Kargoda, TeslimEdildi ve İptalEdildi durumlarından oluşur. Geçerli geçişler şunlardır (durum --olay--> durum):\n- Yeni --öde--> Ödendi\n- Yeni --iptalEt--> İptalEdildi\n- Ödendi --adresDeğiştir--> Ödendi\n- Ödendi --iptalEt--> İptalEdildi\n- Ödendi --gönder--> Kargoda\n- Kargoda --teslimEt--> TeslimEdildi\nTeslimEdildi ve İptalEdildi durumlarından çıkan geçiş yoktur. Her test senaryosu Yeni durumunda başlar ve yalnızca geçerli geçişlerden oluşan bir olay dizisinden oluşur. Geçerli geçişler kapsamının (0-anahtar kapsamı) %100'üne ulaşmak için gereken MİNİMUM test senaryosu sayısı kaçtır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "6"
+            },
+            {
+              "id": "b",
+              "text": "5"
+            },
+            {
+              "id": "c",
+              "text": "4"
+            },
+            {
+              "id": "d",
+              "text": "3"
+            }
+          ],
+          "rationale": {
+            "summary": "Geçerli geçişler kapsamında altı geçişin her biri en az bir kez denenmelidir; bir test senaryosu birden çok geçişi art arda deneyebilir. TeslimEdildi ve İptalEdildi durumlarından çıkış olmadığı için bu durumlara varan her geçiş, o test senaryosunun son adımıdır. Yeni durumunda iptalEt, Ödendi durumunda iptalEt ve Kargoda durumunda teslimEt geçişleri birbirini dışlar: hiçbiri aynı test senaryosunda diğeriyle birlikte yer alamaz. Bu yüzden en az 3 test senaryosu gerekir ve 3 yeterlidir: (1) öde, adresDeğiştir, gönder, teslimEt; (2) iptalEt; (3) öde, iptalEt. Üçü altı geçişin hepsini kapsar.",
+            "byOption": {
+              "a": "Yanlış. 6, geçerli geçiş sayısıdır. Her kapsam öğesi için ayrı bir test senaryosu gerektiği varsayılmıştır; oysa bir test senaryosu art arda birden çok geçişi dener ve tek senaryo dört geçişi kapsayabilir.",
+              "b": "Yanlış. 5, durum sayısıdır. Geçerli geçişler kapsamının kapsam öğeleri durumlar değil geçişlerdir; test senaryosu sayısı da ne durum ne geçiş sayısına eşittir.",
+              "c": "Yanlış. 4, Ödendi durumundaki adresDeğiştir döngüsüne ayrı bir test senaryosu ayrılmasından çıkar. Döngü, Ödendi durumundan geçen herhangi bir yola eklenebilir; örneğin öde, adresDeğiştir, gönder, teslimEt dizisi onu da kapsar.",
+              "d": "Doğru. Üç son geçiş (Yeni durumundan iptalEt, Ödendi durumundan iptalEt, Kargoda durumundan teslimEt) birbirini dışladığı için en az üç test senaryosu gerekir; öde, adresDeğiştir, gönder, teslimEt / iptalEt / öde, iptalEt dizileri altı geçişin hepsini kapsar."
+            }
+          }
+        },
+        "en": {
+          "stem": "The life cycle of an online order consists of the states New, Paid, Shipped, Delivered and Cancelled. The valid transitions are (state --event--> state):\n- New --pay--> Paid\n- New --cancel--> Cancelled\n- Paid --changeAddress--> Paid\n- Paid --cancel--> Cancelled\n- Paid --ship--> Shipped\n- Shipped --deliver--> Delivered\nNo transition leaves Delivered or Cancelled. Each test case starts in New and consists of a sequence of valid transitions. What is the MINIMUM number of test cases needed to achieve 100% valid transitions coverage (0-switch coverage)?",
+          "options": [
+            {
+              "id": "a",
+              "text": "6"
+            },
+            {
+              "id": "b",
+              "text": "5"
+            },
+            {
+              "id": "c",
+              "text": "4"
+            },
+            {
+              "id": "d",
+              "text": "3"
+            }
+          ],
+          "rationale": {
+            "summary": "Valid transitions coverage requires each of the six transitions to be exercised at least once, and one test case can exercise several transitions in a row. No transition leaves Delivered or Cancelled, so any transition that reaches them is the last step of its test case. cancel from New, cancel from Paid and deliver from Shipped are mutually exclusive: no two of them can appear in the same test case. At least 3 test cases are therefore needed, and 3 suffice: (1) pay, changeAddress, ship, deliver; (2) cancel; (3) pay, cancel. Together they cover all six transitions.",
+            "byOption": {
+              "a": "Wrong. 6 is the number of valid transitions. It assumes that each coverage item needs a test case of its own, but a test case exercises several transitions in sequence, and one test case can cover four of them.",
+              "b": "Wrong. 5 is the number of states. The coverage items of valid transitions coverage are transitions, not states, and the number of test cases equals neither.",
+              "c": "Wrong. 4 comes from giving the changeAddress loop in Paid a test case of its own. The loop can be inserted into any path through Paid; the sequence pay, changeAddress, ship, deliver covers it as well.",
+              "d": "Correct. The three final transitions (cancel from New, cancel from Paid, deliver from Shipped) exclude one another, so at least three test cases are needed; pay, changeAddress, ship, deliver / cancel / pay, cancel cover all six transitions."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0294",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.1",
+      "objectives": [
+        "FL-4.3.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "white-box",
+        "statement-testing",
+        "coverage-interpretation"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Planlanan tüm test senaryoları koşulduktan sonra bir kapsam aracı, bir bileşen için %90 komut kapsama yüzdesi bildirmektedir. Koşulmayan komutların hepsi, istisna durumlarını işleyen tek bir blokta yer almaktadır. Aşağıdaki sonuçlardan hangisi HAKLI bir sonuçtur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bileşendeki hataların %90'ı bulunmuştur ve kalan %10'luk hatalar istisna durumlarını işleyen blokta yer almaktadır"
+            },
+            {
+              "id": "b",
+              "text": "Çalıştırılan komutların hatasız olduğu kanıtlanmıştır; bu nedenle yalnızca istisna durumlarını işleyen blok için ek test gerekir"
+            },
+            {
+              "id": "c",
+              "text": "Bu bloktaki komutları hiçbir test senaryosu çalıştırmamıştır; bu testler orada bulunan bir hatayı ortaya çıkaramazdı"
+            },
+            {
+              "id": "d",
+              "text": "Test senaryolarının %10'u başarısız olmuştur, çünkü bu senaryoların beklenen sonuçlarına ulaşılamamıştır"
+            }
+          ],
+          "rationale": {
+            "summary": "Komut kapsama yüzdesi, çalıştırılan icra edilebilir komutların toplam icra edilebilir komutlara oranıdır. Hiçbir test senaryosunun çalıştırmadığı bir komut, dinamik testte bir arızaya yol açamaz; dolayısıyla bu test takımı orada bulunan bir hatayı ortaya çıkaramaz. Kapsam yüzdesi bulunan hataların oranı, geçen ya da kalan test senaryolarının oranı veya çalıştırılan kodun hatasızlığı hakkında bir şey söylemez.",
+            "byOption": {
+              "a": "Yanlış. Komut kapsama yüzdesi bulunan hataların oranını ölçmez; kodun ne kadarının çalıştırıldığını gösterir. Çalıştırılmış %90'lık kısımda da hata kalmış olabilir ve bulunmayan hataların tümünün bloktan çıkacağını söyleyecek bir dayanak yoktur.",
+              "b": "Yanlış. Bir komutun çalıştırılmış olması hatasız olduğunu kanıtlamaz; %100 komut kapsama yüzdesi bile veri bağımlı hataları, örneğin sıfıra bölmeyi, garanti olarak ortaya çıkarmaz. Kapsanan komutlar hakkında hatasızlık sonucu çıkarılamaz.",
+              "c": "Doğru. Çalıştırılmayan komutlar, test sırasında hiçbir arızaya yol açamaz. Bu test takımı o bloktaki hataların hiçbirini ortaya çıkaramazdı; kapsamın düşük kalması bu alanın hâlâ denenmediğini gösterir.",
+              "d": "Yanlış. Bu, kapsam ölçüsünü test sonuçlarıyla karıştırır. Komut kapsama yüzdesi kodun ne kadarının çalıştırıldığını ölçer; bir test senaryosunun geçip geçmediği ayrı bir bilgidir. Tüm senaryolar geçmiş olsa da kapsam %90 olabilir."
+            }
+          }
+        },
+        "en": {
+          "stem": "After all planned test cases have been executed, a coverage tool reports 90% statement coverage for a component. The statements that were not executed all belong to a single exception-handling block. Which conclusion is JUSTIFIED?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Ninety percent of the defects in the component have been found, and the remaining ten percent are located in the exception-handling block"
+            },
+            {
+              "id": "b",
+              "text": "The executed statements are proven free of defects, so only the exception-handling block needs any further testing"
+            },
+            {
+              "id": "c",
+              "text": "No test case has executed the statements in that block, so these tests could not have revealed a defect located there"
+            },
+            {
+              "id": "d",
+              "text": "Ten percent of the test cases failed, because their expected results were not reached when they were executed"
+            }
+          ],
+          "rationale": {
+            "summary": "Statement coverage is the number of executable statements exercised divided by the total number of executable statements. A statement that no test case executes cannot cause a failure in dynamic testing, so this test suite cannot reveal a defect located there. The coverage figure says nothing about the proportion of defects found, about the proportion of test cases that passed or failed, or about the executed code being defect-free.",
+            "byOption": {
+              "a": "Wrong. Statement coverage does not measure the proportion of defects found; it shows how much of the code has been executed. Defects may remain in the executed 90% as well, and nothing indicates that all the undetected defects are in that block.",
+              "b": "Wrong. Executing a statement does not prove it is defect-free; even 100% statement coverage does not guarantee that data-dependent defects such as a division by zero are detected. No freedom from defects can be concluded for the covered statements.",
+              "c": "Correct. Statements that are not executed cannot cause any failure during testing. This test suite could not have revealed any defect in that block; the low coverage shows the area has still not been tried.",
+              "d": "Wrong. This confuses the coverage measure with test results. Statement coverage measures how much of the code was executed; whether a test case passed is separate information. All test cases may have passed and coverage can still be 90%."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0295",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.2",
+      "objectives": [
+        "FL-4.3.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "white-box",
+        "branch-testing",
+        "decision-outcome"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": {
+        "kind": "code",
+        "caption": {
+          "tr": "Sahte kod (pseudocode) parçası",
+          "en": "Pseudocode fragment"
+        },
+        "language": "pseudocode",
+        "content": "if balance >= amount then\n    balance = balance - amount\nend if\nprintReceipt()"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Gösterilen kod parçası, balance = 100 ve amount = 40 girdileriyle çalışan tek bir test senaryosuyla test edilmiştir. Bu senaryo kodun her komutunu çalıştırmıştır. Ekibin hedefi %100 dal kapsamıdır. Aşağıdakilerden hangisi doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Başka test senaryosu gerekmez, çünkü yanlış sonucun kendine ait komutu yoktur ve kapsanacak bir dal sayılmaz"
+            },
+            {
+              "id": "b",
+              "text": "Koşulun doğru olduğu, balance ve amount için farklı değerler kullanan bir test senaryosu daha gerekir; böylece atama iki kez çalıştırılmış olur"
+            },
+            {
+              "id": "c",
+              "text": "Tüm değer kombinasyonları için test senaryoları gerekir, çünkü dal kapsamı tüm girdilerin denenmesini ister"
+            },
+            {
+              "id": "d",
+              "text": "Koşulun yanlış olduğu bir test senaryosu daha gerekir; böylece atamayı atlayan yol, yani şu ana kadar denenmemiş dal da çalıştırılır"
+            }
+          ],
+          "rationale": {
+            "summary": "Dal testinde kapsam öğeleri, kontrol akış grafiğindeki koşullu ve koşulsuz dallardır. \"if\" kararının doğru sonucu atamaya, yanlış sonucu ise doğrudan printReceipt() çağrısına gider. Verilen test senaryosu yalnızca doğru sonucu dener; her komut çalışsa da yanlış sonucun dalı denenmemiştir. %100 dal kapsamı için koşulun yanlış olduğu (ör. balance = 10, amount = 40) en az bir test senaryosu daha gerekir. Komut kapsama yüzdesi %100 olduğu hâlde dal kapsamı %100 değildir.",
+            "byOption": {
+              "a": "Yanlış. Bir kararın yanlış sonucu, \"else\" bölümü olmasa bile kontrol akış grafiğinde ayrı bir dal oluşturur ve kapsam öğesidir. Dal testi tam da bu durumu, yani kendine ait komutu olmayan sonucu görünür kılar; yalnızca komutlara bakan komut testi bu eksikliği fark etmez.",
+              "b": "Yanlış. Koşulun yine doğru olduğu bir test senaryosu aynı dalı yeniden dener; yeni bir kapsam öğesi eklemez. Dal kapsamını artıran şey değerlerin çeşitliliği değil, daha önce denenmemiş sonucun (yanlış) çalıştırılmasıdır.",
+              "c": "Yanlış. Dal testi tüm girdi değerlerinin ya da kombinasyonlarının denenmesini istemez; kapsam öğesi bir dalın en az bir kez çalıştırılmasıdır. Tüm değer kombinasyonlarını denemek eksiksiz test (exhaustive testing) olurdu ve genellikle olanaksızdır.",
+              "d": "Doğru. Mevcut senaryo yalnızca koşulun doğru sonucunu dener. Atamayı atlayan dal, yani koşulun yanlış olduğu sonuç, ancak balance değerinin amount değerinden küçük olduğu bir test senaryosuyla çalıştırılır."
+            }
+          }
+        },
+        "en": {
+          "stem": "The code fragment shown has been tested with a single test case that uses balance = 100 and amount = 40. This test case executes every statement of the code. The team's target is 100% branch coverage. Which of the following is correct?",
+          "options": [
+            {
+              "id": "a",
+              "text": "No further test case is needed, because the false outcome of the condition has no statements of its own and is therefore not counted as a branch that has to be covered"
+            },
+            {
+              "id": "b",
+              "text": "One more test case is needed in which the condition is true, using other values of balance and amount, so that the assignment is executed twice"
+            },
+            {
+              "id": "c",
+              "text": "Test cases for every combination of values of balance and amount are needed, because branch coverage requires all input values to be exercised"
+            },
+            {
+              "id": "d",
+              "text": "One more test case is needed in which the condition is false, so that the path that skips the assignment, i.e. the branch not yet tried, is also executed"
+            }
+          ],
+          "rationale": {
+            "summary": "In branch testing the coverage items are the conditional and unconditional branches of the control flow graph. The true outcome of the \"if\" decision leads to the assignment and the false outcome leads straight to printReceipt(). The given test case exercises only the true outcome; although every statement is executed, the branch for the false outcome is not. For 100% branch coverage at least one more test case is needed in which the condition is false (e.g. balance = 10, amount = 40). Statement coverage is already 100% while branch coverage is not.",
+            "byOption": {
+              "a": "Wrong. The false outcome of a decision is a branch in the control flow graph and a coverage item even when there is no \"else\" part. Branch testing exists to make exactly this case visible: an outcome with no statements of its own, which statement testing does not notice.",
+              "b": "Wrong. Another test case in which the condition is true exercises the same branch again and adds no new coverage item. Branch coverage rises not through variety of values but through executing an outcome not yet exercised (the false one).",
+              "c": "Wrong. Branch testing does not ask for all input values or all combinations; a coverage item is a branch exercised at least once. Trying every combination of values would be exhaustive testing, which is generally impossible.",
+              "d": "Correct. The existing test case exercises only the true outcome. The branch that skips the assignment, i.e. the false outcome, needs a test case in which balance is less than amount."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0296",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.3",
+      "objectives": [
+        "FL-4.3.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "white-box",
+        "value",
+        "coverage-measure",
+        "confidence"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, bir bileşenin spesifikasyonundan türettiği tüm test senaryolarını koşmuş ve hepsi geçmiştir. Ardından bir kapsam aracı, komutların yaklaşık üçte birinin hiç çalıştırılmadığını göstermektedir. Beyaz kutu kapsam ölçülerinin bu durumda sağladığı katkıyı EN İYİ hangi ifade anlatır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Çalıştırılmayan komutların hata içerdiğini gösterir ve böylece hataların yerini spesifikasyona bakmadan doğrudan saptamayı sağlar"
+            },
+            {
+              "id": "b",
+              "text": "Hangi komutların hiç denenmediğini belirler ve bu bölümleri hedefleyen ek testlerin tasarlanmasına yol açar; bu testler eklendikçe koda duyulan güven artar"
+            },
+            {
+              "id": "c",
+              "text": "Spesifikasyona dayalı testler geçtiği için çalıştırılmayan komutların da hatasız olduğunu gösterir ve bu bölümlerde ek test ihtiyacını azaltır"
+            },
+            {
+              "id": "d",
+              "text": "Spesifikasyona dayalı testlerin yetersiz kaldığını gösterir; bu nedenle bu testlerin bırakılıp yerine beyaz kutu teknikleriyle tasarlanan yeni testlerin kullanılması gerekir"
+            }
+          ],
+          "rationale": {
+            "summary": "Yalnızca kara kutu testi uygulandığında gerçek kod kapsamının bir ölçüsü yoktur. Beyaz kutu kapsam ölçüleri hangi komutların hiç denenmediğini gösterir ve kapsamı artırmak için hangi ek testlerin tasarlanması gerektiğini ortaya koyar; bu testler eklendikçe koda duyulan güven artar. Kapsam, çalıştırılmayan kodun hatasız olduğunu göstermez ve hataların yerini de göstermez; yalnızca denenmemiş bölümleri görünür kılar.",
+            "byOption": {
+              "a": "Yanlış. Kapsam aracı hangi komutların çalıştırılmadığını gösterir, hataların yerini değil. Çalıştırılmamış bir komutun hata içerdiği ya da içermediği, o komut denenmeden bilinemez; çalıştırılan bölümlerde de hata bulunabilir. Kapsam bir hata bulma yöntemi değil, bir ölçüdür.",
+              "b": "Doğru. Beyaz kutu kapsam ölçüleri, hangi komutların hiç denenmediğini gösterir ve bu bölümleri hedefleyen ek testlerin tasarlanmasını sağlar; kara kutu testinin tek başına veremediği bu bilgi, testler eklendikçe koda duyulan güveni artırır.",
+              "c": "Yanlış. Spesifikasyona dayalı testlerin geçmesi, çalıştırılmayan kodun hatasız olduğunu göstermez; o kod hiç denenmemiştir. Kapsam aracı tam olarak bu denenmemiş bölümleri gösterir ve ek test ihtiyacını azaltmak yerine ortaya koyar.",
+              "d": "Yanlış. Spesifikasyona dayalı testler yetersiz değildir; beyaz kutu teknikleri onları tamamlar. Kapsam ölçüsü kara kutu testlerinin görünür kılamadığı gerçek kod kapsamını gösterir ve bu testlerin yerine başka testler konmasını gerektirmez."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team has executed all the test cases derived from the specification of a component, and all of them passed. A coverage tool then shows that about a third of the statements were never executed. Which statement BEST describes what white-box coverage measures add in this situation?",
+          "options": [
+            {
+              "id": "a",
+              "text": "They show that the statements that were not executed contain defects, so the location of defects can be pinpointed directly without consulting the specification"
+            },
+            {
+              "id": "b",
+              "text": "They identify which statements were never executed and lead to the design of additional tests aimed at those parts; as such tests are added, confidence in the code grows"
+            },
+            {
+              "id": "c",
+              "text": "They show that the unexecuted statements are defect-free because the specification-based tests passed, which reduces the need for further tests in those untested parts of the code"
+            },
+            {
+              "id": "d",
+              "text": "They show that the specification-based tests fall short, so those tests should be dropped and replaced by new tests designed with white-box techniques"
+            }
+          ],
+          "rationale": {
+            "summary": "Black-box testing alone gives no measure of actual code coverage. White-box coverage measures show which statements were never executed and reveal which additional tests should be designed to increase coverage; as those tests are added, confidence in the code grows. Coverage does not show that unexecuted code is defect-free, and it does not locate defects; it only makes the untried parts visible.",
+            "byOption": {
+              "a": "Wrong. A coverage tool shows which statements were not executed, not where defects are. Whether an unexecuted statement contains a defect cannot be known until it is exercised, and the executed parts may contain defects as well. Coverage is a measure, not a defect-finding method.",
+              "b": "Correct. White-box coverage measures show which statements were never tried and make it possible to design additional tests aimed at those parts; this information, which black-box testing alone cannot supply, raises confidence in the code as the tests are added.",
+              "c": "Wrong. Passing specification-based tests say nothing about code that was never executed; it has simply not been tried. The coverage tool exposes exactly those untried parts, and it points to a need for additional tests instead of reducing it.",
+              "d": "Wrong. Specification-based tests are not inadequate; white-box techniques complement them. The coverage measure shows the real code coverage that black-box tests cannot make visible, and it does not call for replacing those tests with others."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0297",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.4",
+      "syllabusRef": "§4.4.1",
+      "objectives": [
+        "FL-4.4.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "error-guessing",
+        "experience-based",
+        "complementary"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test yöneticisi, test uzmanları çok deneyimli olduğu için bir sonraki sürümde denklik paylarına ayırma ve sınır değer analizini bırakıp yalnızca hata tahminlemeye dayanmayı önermektedir. Hata tahminlemeyle ilgili aşağıdakilerden hangisi bu öneriye verilebilecek en doğru yanıttır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Denklik paylarına ayırma gibi diğer tekniklerin yerini almaz, onları tamamlar; bu nedenle onlarla birlikte kullanılmalıdır"
+            },
+            {
+              "id": "b",
+              "text": "Rastgele ve plansız bir test biçimidir; bu nedenle temel teknik olarak uygun değildir ve profesyonel bir test sürecinde kullanılmamalıdır"
+            },
+            {
+              "id": "c",
+              "text": "Test uzmanları yeterince deneyimli olduğunda diğer tekniklerin yerini alabilir, çünkü önemli hataları doğrudan hedef alır"
+            },
+            {
+              "id": "d",
+              "text": "En çok deneyimsiz test uzmanlarına uygundur; bu nedenle deneyimli test uzmanları yalnızca denklik paylarına ayırma gibi biçimsel teknikleri kullanmalıdır"
+            }
+          ],
+          "rationale": {
+            "summary": "Hata tahminleme tecrübeye dayalı bir tekniktir. Tecrübeye dayalı teknikler, denklik paylarına ayırma gibi diğer teknikleri tamamlar; onların yerini almaz. Hata tahminleme rastgele ve plansız değildir: test uzmanının bilgisine dayanan, fault attack listeleriyle desteklenebilen metodik bir yaklaşımdır. Etkinliği doğrudan test uzmanının birikimine bağlıdır; bu yüzden yalnızca deneyimsiz test uzmanlarına ayrılmış da değildir.",
+            "byOption": {
+              "a": "Doğru. Hata tahminleme, denklik paylarına ayırma gibi diğer tekniklerin yerini almaz, onları tamamlar; test uzmanının deneyimi sistematik tekniklere ek katkı sağlar, onların yerine geçmez.",
+              "b": "Yanlış. Bu seçenek hata tahminlemeyi rastgele testle karıştırır. Teknik, test uzmanının bilgisine dayanan ve fault attack listeleriyle desteklenebilen metodik bir yaklaşımdır; bu nedenle kaçınılması gerektiği sonucu temelsizdir.",
+              "c": "Yanlış. Deneyim, hata tahminlemeyi diğer tekniklerin yerine geçen bir teknik yapmaz. Tecrübeye dayalı teknikler, test uzmanları ne kadar deneyimli olursa olsun diğerlerini tamamlar, onların yerini almaz.",
+              "d": "Yanlış. Bu seçenek tekniğin test uzmanıyla ilişkisini tersine çevirir. Hata tahminleme doğrudan test uzmanının birikimine bağlıdır, dolayısıyla deneyimli test uzmanlarında daha etkilidir; biçimsel tekniklere karşı değil, onlarla birlikte kullanılır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A test manager proposes to drop equivalence partitioning and boundary value analysis for the next release and to rely on error guessing alone, because the testers are very experienced. Which statement about error guessing is the most accurate response?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It complements techniques such as equivalence partitioning and does not substitute for them, so it should be used alongside them"
+            },
+            {
+              "id": "b",
+              "text": "It is a random, unplanned way of testing, so it is unsuitable as a main technique and should be avoided in a professional test process"
+            },
+            {
+              "id": "c",
+              "text": "It can replace the other techniques once the testers are experienced enough, because it aims directly at the defects that matter"
+            },
+            {
+              "id": "d",
+              "text": "It suits inexperienced testers best, so experienced testers should rely only on equivalence partitioning and other formal techniques"
+            }
+          ],
+          "rationale": {
+            "summary": "Error guessing is an experience-based technique. Experience-based techniques complement the other techniques, such as equivalence partitioning; they do not substitute for them. Error guessing is not random or unplanned: it is a methodical approach grounded in the tester's knowledge and which can be supported by fault attack lists. Its effectiveness depends directly on the tester's accumulated knowledge, so it is not reserved for inexperienced testers either.",
+            "byOption": {
+              "a": "Correct. Error guessing complements the other techniques, such as equivalence partitioning, and does not substitute for them; the tester's experience adds to systematic techniques instead of replacing them.",
+              "b": "Wrong. This confuses error guessing with random testing. It is a methodical approach grounded in the tester's knowledge and which can be supported by fault attack lists. The conclusion that it must be avoided is therefore not justified.",
+              "c": "Wrong. Experience does not turn error guessing into a replacement for the other techniques. Experience-based techniques complement the others and do not substitute for them, however experienced the testers are.",
+              "d": "Wrong. This inverts the relationship between the technique and the tester. Error guessing depends directly on the tester's accumulated knowledge, so it is more effective with experienced testers, and it is used together with formal techniques rather than being opposed to them."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0298",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.4",
+      "syllabusRef": "§4.4.2",
+      "objectives": [
+        "FL-4.4.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "experience-based",
+        "exploratory-testing",
+        "session-based",
+        "coverage-items"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test uzmanı, test başlatma belgesi (test charter) ile yönlendirilen oturum bazlı bir keşif testi oturumuna başlamak üzeredir. Bu oturumun kapsam öğeleri ne zaman belirlenir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Oturumun kendisi sırasında; test uzmanı test nesnesini keşfederken bunları belirler ve dener"
+            },
+            {
+              "id": "b",
+              "text": "Oturumdan önce; tüm kapsam öğeleri spesifikasyondan türetilir ve paydaşlarca onaylanır"
+            },
+            {
+              "id": "c",
+              "text": "Oturumdan sonra; bilgilendirme toplantısında sunulabilmeleri için oturum sayfasındaki notlardan çıkarılır"
+            },
+            {
+              "id": "d",
+              "text": "Belirlenmez; keşif testi test uzmanının deneyimine dayandığı için kapsam öğesi kavramı bu testte yer almaz"
+            }
+          ],
+          "rationale": {
+            "summary": "Oturum bazlı keşif testinde test başlatma belgesi test hedeflerini içerir ve bu hedefler üst seviye test koşulları olarak görülebilir. Kapsam öğeleri ise oturum sırasında belirlenir ve denenir; test uzmanı test nesnesi hakkında öğrendikçe bir sonraki testi şekillendirir. Önceden onaylanmış ayrıntılı bir kapsam öğesi listesi, keşif testinin eş zamanlı tasarım, koşum ve değerlendirme yapısına aykırıdır.",
+            "byOption": {
+              "a": "Doğru. Keşif testinde test tasarımı, koşumu ve değerlendirmesi eş zamanlı yapılır; oturum bazlı yaklaşımda kapsam öğeleri oturum sırasında belirlenir ve denenir.",
+              "b": "Yanlış. Oturumdan önce belirlenip onaylanan kapsam öğeleri, keşif testindeki eş zamanlı tasarım, koşum ve değerlendirmeyle çelişir. Oturum başında yalnızca test hedefleri bellidir ve bunlar üst seviye test koşulları olarak görülebilir.",
+              "c": "Yanlış. Oturum sayfaları, test uzmanının izlediği adımları ve keşiflerini belgelemek içindir. Kapsam öğeleri oturumdan sonra bu notlardan çıkarılmaz; oturum sırasında belirlenip denenir.",
+              "d": "Yanlış. Keşif testi tecrübeye dayalı olsa da kapsam öğeleri vardır; oturum sırasında belirlenir ve denenirler. Kapsam öğesi kavramının yokluğu, tekniğin yapısız olduğu anlamına da gelmez; oturum bazlı yaklaşım zaman dilimi, test başlatma belgesi ve bilgilendirme ile yapı kazandırır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester is about to start a session-based exploratory testing session guided by a test charter. When are the coverage items for this session identified?",
+          "options": [
+            {
+              "id": "a",
+              "text": "During the session itself; the tester identifies and exercises them while exploring and learning about the test object"
+            },
+            {
+              "id": "b",
+              "text": "Before the session; all coverage items are derived from the specification and approved by the stakeholders"
+            },
+            {
+              "id": "c",
+              "text": "After the session; they are extracted from the notes on the session sheet so they can be presented at the debriefing"
+            },
+            {
+              "id": "d",
+              "text": "They are not identified; exploratory testing relies on the tester's experience, so the concept of coverage items does not apply"
+            }
+          ],
+          "rationale": {
+            "summary": "In session-based exploratory testing the test charter contains test objectives, which may be treated as high-level test conditions. The coverage items are identified and exercised during the session, as the tester learns about the test object and shapes the next test. A detailed coverage item list approved beforehand contradicts the simultaneous design, execution and evaluation of exploratory testing.",
+            "byOption": {
+              "a": "Correct. In exploratory testing test design, execution and evaluation happen simultaneously; in the session-based approach the coverage items are identified and exercised during the session.",
+              "b": "Incorrect. Coverage items fixed and approved before the session contradict the simultaneous design, execution and evaluation of exploratory testing. At the start of a session only the test objectives are known, and they may be treated as high-level test conditions.",
+              "c": "Wrong. Session sheets exist so that the tester can document the steps followed and the discoveries made. Coverage items are not extracted from those notes afterwards; they are identified and exercised during the session.",
+              "d": "Wrong. Although exploratory testing is experience-based, it does have coverage items, identified and exercised during the session. The absence of such a concept would not make the technique unstructured either: the session-based approach adds structure with a time box, a charter and a debriefing."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0299",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.4",
+      "syllabusRef": "§4.4.3",
+      "objectives": [
+        "FL-4.4.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "experience-based",
+        "checklist-based",
+        "checklist-items",
+        "entry-criteria"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, bir web kayıt formunu test etmek için hazırlanan taslak bir kontrol listesini gözden geçirmektedir. Aşağıdaki maddelerden hangisi bir test kontrol listesine ait olmadığı için listeden ÇIKARILMALIDIR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Zorunlu bir alan boş bırakıldığında, alanın yanında bir hata mesajı görünüyor mu?"
+            },
+            {
+              "id": "b",
+              "text": "Başarısız bir gönderimden sonra odak, ilk geçersiz alana taşınıyor mu?"
+            },
+            {
+              "id": "c",
+              "text": "Onay e-postasındaki tarih, kullanıcının dil ayarındaki biçimle gösteriliyor mu?"
+            },
+            {
+              "id": "d",
+              "text": "Test ortamı kurulmuş ve ilgili test seviyesi için yapılandırılmış mı?"
+            }
+          ],
+          "rationale": {
+            "summary": "Kontrol listesi maddeleri genellikle soru biçiminde yazılır ve her biri ayrı ayrı, doğrudan kontrol edilebilir olmalıdır. Listede otomatik olarak kontrol edilebilecek maddeler, aslında giriş ya da çıkış kriteri olan maddeler ve fazla genel maddeler bulunmamalıdır. Test ortamının hazır olması, testin başlayabilmesinin önkoşuludur; yani bir giriş kriteridir ve kontrol listesine değil giriş kriterlerine aittir. Diğer üç madde, testle doğrudan denetlenen uygulama davranışlarıdır.",
+            "byOption": {
+              "a": "Yanlış seçim. Bu madde soru biçimindedir, tek bir davranışı ayrı ve doğrudan kontrol ettirir ve bir test koşuludur; kontrol listesinde kalmalıdır.",
+              "b": "Yanlış seçim. Odağın nereye taşındığı, ayrı ve doğrudan kontrol edilebilen bir arayüz özelliğidir. Bu madde geçerli bir kontrol listesi maddesidir; çıkarılmaması gerekir.",
+              "c": "Yanlış seçim. Bu madde belirli bir çıktının biçimini denetler, fazla genel değildir ve ayrı olarak kontrol edilebilir. Kontrol listesinde yer almasında sakınca yoktur.",
+              "d": "Doğru. Test ortamının kurulu ve yapılandırılmış olması testin başlaması için gereken bir koşuldur; bu bir giriş kriteridir. Giriş ya da çıkış kriteri niteliğindeki maddeler kontrol listesinde yer almamalıdır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team is reviewing a draft checklist for testing a web registration form. Which of the following entries should be REMOVED, because it does not belong on a test checklist?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Does an error message appear next to a mandatory field that was left blank?"
+            },
+            {
+              "id": "b",
+              "text": "After a failed submission, is the focus moved to the first invalid field?"
+            },
+            {
+              "id": "c",
+              "text": "Does the date in the confirmation e-mail use the format of the user's language setting?"
+            },
+            {
+              "id": "d",
+              "text": "Has the test environment been installed and configured for the relevant test level?"
+            }
+          ],
+          "rationale": {
+            "summary": "Checklist items are usually phrased as questions, and each one must be checkable separately and directly. A checklist should not contain items that could be checked automatically, items that are really entry or exit criteria, or items that are too general. A ready test environment is a precondition for starting testing; that makes it an entry criterion, which belongs with the entry criteria rather than on the checklist. The other three items are application behaviours that the testing checks directly.",
+            "byOption": {
+              "a": "Wrong choice. This item is phrased as a question, checks one behaviour separately and directly, and is a test condition; it belongs on the checklist.",
+              "b": "Wrong choice. Where the focus moves is a user interface property that can be checked separately and directly. This is a valid checklist item and should stay.",
+              "c": "Wrong choice. This item checks the format of one specific output; it is not too general and can be checked on its own. There is no reason to remove it from the checklist.",
+              "d": "Correct. An installed and configured test environment is a condition that must be met before testing can start; that is an entry criterion. Items that are really entry or exit criteria do not belong on a checklist."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0300",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.5",
+      "syllabusRef": "§4.5.1",
+      "objectives": [
+        "FL-4.5.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "collaboration-based",
+        "user-story",
+        "3cs",
+        "conversation"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ürün listesi iyileştirme toplantısında bir iş birimi temsilcisi, bir geliştirici ve bir test uzmanı, bir depo çalışanının yeni özelliği nasıl kullanacağını sözlü olarak birlikte ele almaktadır. Test uzmanı, bir paletin hasarlı olması durumunda ne olması gerektiğini sormaktadır. Bu etkinlik, kullanıcı hikayesinin 3 C'sinden hangisine karşılık gelir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Card (Kart); hikayeyi anlatan ve bir indeks kartı ya da bir araçtaki kayıt olabilen ortam"
+            },
+            {
+              "id": "b",
+              "text": "Conversation (Konuşma); yazılımın nasıl kullanılacağının yazılı ya da sözlü tartışılması"
+            },
+            {
+              "id": "c",
+              "text": "Confirmation (Onay); hikayenin ne zaman tamamlanmış sayılacağını söyleyen kabul kriterleri"
+            },
+            {
+              "id": "d",
+              "text": "Hiçbiri; 3 C yazılı çıktıları tanımlar ve sözlü bir tartışma bunların kapsamına girmez"
+            }
+          ],
+          "rationale": {
+            "summary": "Kullanıcı hikayesinin üç temel yönü Card (hikayeyi anlatan ortam), Conversation (yazılımın nasıl kullanılacağının yazılı ya da sözlü tartışılması) ve Confirmation'dır (kabul kriterleri). İş, geliştirme ve test bakış açılarını bir araya getiren bu sözlü tartışma Conversation'dır; test uzmanının hasarlı palet sorusu gibi eksik durumlar da burada ortaya çıkar.",
+            "byOption": {
+              "a": "Yanlış. Card, hikayeyi anlatan ortamdır: indeks kartı ya da bir araçtaki kayıt. Tartışmanın sonucu karta not edilse bile, tartışmanın kendisi Card değildir.",
+              "b": "Doğru. Conversation, yazılımın nasıl kullanılacağının yazılı ya da sözlü tartışılmasıdır. Üç tarafın sözlü olarak hikayeyi ele alması ve eksik durumları sorması tam olarak budur.",
+              "c": "Yanlış. Confirmation, hikayenin ne zaman tamamlanmış sayılacağını belirleyen kabul kriterleridir. Toplantıda hasarlı palet durumu sonradan bir kabul kriterine dönüşebilir, ama anlatılan etkinlik tartışmanın kendisidir.",
+              "d": "Yanlış. Conversation, tanımı gereği yazılı ya da sözlü olabilir. 3 C'nin yazılı çıktılarla sınırlı olduğu doğru değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "In a backlog refinement meeting, a business representative, a developer and a tester talk through, out loud, how a warehouse clerk will use a new feature. The tester asks what should happen when a pallet is damaged. Which of the user story's 3 C's does this activity represent?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Card; the medium that describes the story, which may be an index card or a record in a tool"
+            },
+            {
+              "id": "b",
+              "text": "Conversation; the written or verbal discussion of how the software will be used"
+            },
+            {
+              "id": "c",
+              "text": "Confirmation; the acceptance criteria that say when the story is considered complete"
+            },
+            {
+              "id": "d",
+              "text": "None of them; the 3 C's describe written artifacts and a spoken discussion falls outside them"
+            }
+          ],
+          "rationale": {
+            "summary": "The three critical aspects of a user story are Card (the medium describing the story), Conversation (the written or verbal discussion of how the software will be used) and Confirmation (the acceptance criteria). A spoken discussion that brings the business, development and testing perspectives together is the Conversation; the tester's question about a damaged pallet is the kind of gap it brings to light.",
+            "byOption": {
+              "a": "Wrong. Card is the medium describing the story: an index card or a record in a tool. Even if the outcome of the discussion is noted on the card, the discussion itself is not the Card.",
+              "b": "Correct. Conversation is the written or verbal discussion of how the software will be used. Three parties talking the story through and asking about missing cases is exactly that.",
+              "c": "Wrong. Confirmation is the acceptance criteria that define when the story is complete. The damaged pallet case may later turn into an acceptance criterion, but the activity described is the discussion itself.",
+              "d": "Wrong. By definition Conversation can be written or verbal. It is not true that the 3 C's are limited to written artifacts."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0301",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.5",
+      "syllabusRef": "§4.5.2",
+      "objectives": [
+        "FL-4.5.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "collaboration-based",
+        "acceptance-criteria",
+        "test-conditions"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, bir kullanıcı hikayesinin kabul kriterlerini yazmaktadır. Kabul kriterlerinin testlerle ilişkisini EN İYİ hangi ifade anlatır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Testler koşulduktan sonra elde edilen sonuçlardır; test koşulları, kabul testi bittiğinde kabul kriterlerine dönüştürülür"
+            },
+            {
+              "id": "b",
+              "text": "Hikayenin nasıl kodlanacağını belirleyen teknik kurallardır; bu nedenle testlerin denemesi gereken koşullar arasında sayılmazlar ve test tasarımına girdi olmazlar"
+            },
+            {
+              "id": "c",
+              "text": "Hikayenin kabul edilmesi için karşılanması gereken koşullardır; bu yönüyle testlerin denemesi gereken test koşulları olarak görülebilirler"
+            },
+            {
+              "id": "d",
+              "text": "Test sürecinin ne zaman sonlandırılacağını belirleyen çıkış kriterleridir ve hikayenin kendi koşullarından ayrı bir belge olarak ele alınırlar"
+            }
+          ],
+          "rationale": {
+            "summary": "Kabul kriterleri, hikayenin paydaşlarca kabul edilmesi için karşılaması gereken koşullardır. Bu açıdan bakıldığında testler tarafından denenmesi gereken test koşulları olarak görülebilirler; test senaryoları bunlardan türetilir. Genellikle Conversation'ın bir sonucu olarak ortaya çıkarlar, yani testlerin sonucu değil girdisidir. Kabul kriterleri ne bir kodlama kuralıdır ne de test sürecinin çıkış kriteri.",
+            "byOption": {
+              "a": "Yanlış. Yön ters çevrilmiştir: kabul kriterleri testlerin sonucu değil, testlerin dayandığı koşullardır. Genellikle Conversation'ın bir sonucu olarak, testler koşulmadan önce ortaya çıkarlar.",
+              "b": "Yanlış. Kabul kriterleri hikayenin kabul edilmesi için karşılanması gereken koşullardır, kodlama kuralları değil. Testlerin denemesi gereken koşullar olarak görülebildikleri için test koşulları arasında sayılırlar.",
+              "c": "Doğru. Kabul kriterleri hikayenin kabul edilmesi için karşılanması gereken koşullardır ve testler tarafından denenmesi gereken test koşulları olarak görülebilir.",
+              "d": "Yanlış. Bu, çıkış kriterlerinin tanımıdır; kabul kriterleri testin ne zaman biteceğini değil, hikayenin ne zaman kabul edileceğini belirler. Hikayenin kapsamını tanımlayan bu koşullar, test koşulu olarak da görülebilir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team is writing the acceptance criteria of a user story. Which statement BEST describes how acceptance criteria relate to testing?",
+          "options": [
+            {
+              "id": "a",
+              "text": "They are results obtained after the tests have run; test conditions are turned into acceptance criteria once acceptance testing has finished"
+            },
+            {
+              "id": "b",
+              "text": "They are technical rules that determine how the story will be coded, so they are not counted among the conditions that tests have to exercise"
+            },
+            {
+              "id": "c",
+              "text": "They are the conditions the story must meet to be accepted, and in that respect they can be viewed as test conditions that tests should exercise"
+            },
+            {
+              "id": "d",
+              "text": "They are exit criteria that decide when the test process may be ended, and they are handled separately from the conditions of the story itself in a document of their own"
+            }
+          ],
+          "rationale": {
+            "summary": "Acceptance criteria are the conditions a story must meet to be accepted by stakeholders. From this view they can be seen as the test conditions that tests should exercise, and test cases are derived from them. They usually result from the Conversation, so they are an input to the tests, not a result of them. Acceptance criteria are neither coding rules nor the exit criteria of the test process.",
+            "byOption": {
+              "a": "Wrong. The direction is reversed: acceptance criteria are not a result of the tests but the conditions the tests rest on. They usually result from the Conversation and exist before the tests are executed.",
+              "b": "Wrong. Acceptance criteria are the conditions a story must meet to be accepted, not coding rules. Because they can be viewed as conditions the tests should exercise, they do count as test conditions.",
+              "c": "Correct. Acceptance criteria are the conditions the story must meet to be accepted, and they can be viewed as the test conditions that tests should exercise.",
+              "d": "Wrong. That describes exit criteria; acceptance criteria decide when the story is accepted, not when testing ends. These conditions, which define the scope of the story, can also be viewed as test conditions."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctfl4-0302",
+      "revision": 1,
+      "syllabusVersion": "4.0.1",
+      "chapter": 4,
+      "section": "4.5",
+      "syllabusRef": "§4.5.3",
+      "objectives": [
+        "FL-4.5.3"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "collaboration-based",
+        "atdd",
+        "test-case-derivation",
+        "coverage-of-criteria"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ATDD ekibi şu kullanıcı hikayesi üzerinde çalışmaktadır:\n\n\"Çevrimiçi alışveriş yapan bir müşteri olarak ödeme sırasında bir indirim kodu kullanmak istiyorum, böylece siparişim için daha az öderim.\"\n\nKabul kriterleri şunlardır:\nKK1 Geçerli bir indirim kodu, sipariş toplamını kodun değeri kadar düşürür.\nKK2 Bir indirim kodu yalnızca bir kez kullanılabilir; ikinci denemede \"kod zaten kullanıldı\" mesajı gösterilir.\nKK3 Süresi dolmuş bir indirim kodu reddedilir ve \"kodun süresi doldu\" mesajı gösterilir.\n\nEkip şu test senaryolarını önceden yazmıştır:\nT1: 50 TL'lik geçerli bir kodun 200 TL'lik sipariş toplamını 150 TL'ye düşürdüğünü kontrol et.\nT2: Daha önce kullanılmış bir kodun kullanılmasının \"kod zaten kullanıldı\" mesajını gösterdiğini kontrol et.\n\nBir ekip üyesi dört ek test senaryosu önermektedir. Hikayenin henüz kapsanmamış bir karakteristiğini kapsadığı için listeye eklenmesi GEREKEN senaryo hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Daha önce kullanılmış başka bir kodun ikinci kez kullanılmasının \"kod zaten kullanıldı\" mesajını gösterdiğinin kontrol edilmesi"
+            },
+            {
+              "id": "b",
+              "text": "İndirim kodunun e-postayla bir arkadaşa iletilebildiğinin kontrol edilmesi"
+            },
+            {
+              "id": "c",
+              "text": "Geçerlilik süresi bitmiş bir kodun ödemede kabul edilmediğinin ve uyarı verildiğinin kontrol edilmesi"
+            },
+            {
+              "id": "d",
+              "text": "Kodun kullanılmasının 3 saniyeden kısa sürede tamamlandığının kontrol edilmesi"
+            }
+          ],
+          "rationale": {
+            "summary": "ATDD'de test senaryoları kabul kriterlerinden türetilir; hikayenin tüm karakteristiklerini kapsamalı, hikayenin ötesine geçmemeli ve aynı karakteristiği iki kez tanımlamamalıdır. T1 KK1'i, T2 KK2'yi kapsar; KK3'ün (süresi dolmuş kod) karşılığı henüz yoktur. Süresi dolmuş bir kodun ödeme sırasında kabul edilmemesi KK3'ü kapsayan, henüz kapsanmamış bir karakteristiktir ve eklenmelidir.",
+            "byOption": {
+              "a": "Yanlış. Bu senaryo T2 ile aynı karakteristiği kapsar: kullanılmış bir kodun yeniden kullanılması. Farklı bir kod kullanılması yeni bir karakteristik eklemez; hiçbir test senaryosu aynı karakteristiği iki kez tanımlamamalıdır.",
+              "b": "Yanlış. Kodun bir arkadaşa e-postayla iletilmesi ne hikayede ne de kabul kriterlerinde geçer. Bu senaryo hikayenin ötesine geçer ve eklenmemelidir.",
+              "c": "Doğru. Bu senaryo KK3'ü, yani süresi dolmuş kodun reddedilmesini kapsar ve mevcut T1 ile T2'nin kapsamadığı yeni bir karakteristiktir; hikayenin içinde kalır.",
+              "d": "Yanlış. Hiçbir kabul kriteri bir süre sınırı belirtmez; bu senaryo yazılı hâliyle hikayenin ötesine geçer ve kriterlerin tanımladığı hiçbir karakteristiği kapsamaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "An ATDD team is working on this user story:\n\n\"As an online shopper, I want to use a voucher code at checkout, so that I pay less for my order.\"\n\nThe acceptance criteria are:\nAC1 A valid voucher code reduces the order total by the value of the code.\nAC2 A voucher code can be used only once; a second attempt shows the message \"code already used\".\nAC3 An expired voucher code is refused and the message \"code expired\" is shown.\n\nThe team has already written these test cases:\nT1: Check that a valid 50 TL code reduces a 200 TL order total to 150 TL.\nT2: Check that using a code that has already been used shows \"code already used\".\n\nA team member proposes four further test cases. Which test case MUST be added to the list, because it covers a characteristic of the story that is not yet covered?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Checking that a second use of another code that has already been used shows \"code already used\""
+            },
+            {
+              "id": "b",
+              "text": "Checking that a voucher code can be forwarded to a friend by e-mail"
+            },
+            {
+              "id": "c",
+              "text": "Checking that a code past its validity period is refused at checkout with a warning"
+            },
+            {
+              "id": "d",
+              "text": "Checking that applying a code at checkout completes in under 3 seconds"
+            }
+          ],
+          "rationale": {
+            "summary": "In ATDD the test cases are derived from the acceptance criteria; they must cover all the characteristics of the story, must not go beyond it, and no two test cases may describe the same characteristic. T1 covers AC1 and T2 covers AC2; nothing covers AC3 (an expired code) yet. Checking that an expired code is not accepted at checkout covers AC3, so it is the test case to add.",
+            "byOption": {
+              "a": "Wrong. This covers the same characteristic as T2: a code that has already been used cannot be used again. Using a different code adds no new characteristic, and no two test cases should describe the same characteristic.",
+              "b": "Wrong. Forwarding a code to a friend appears neither in the story nor in the acceptance criteria. This test case goes beyond the story and must not be added.",
+              "c": "Correct. It covers AC3, the refusal of an expired code, a characteristic neither T1 nor T2 covers, and it stays within the story.",
+              "d": "Wrong. No acceptance criterion states a time limit, so this test case would go beyond the story as written; it covers no characteristic that the criteria define."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (three adversarial passes, 2026-10-02; F3-10 batch — every key recomputed, ungrounded claims removed, length cues rebalanced both ways)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    }
+  ]
+}

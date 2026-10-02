@@ -204,8 +204,9 @@ This file enables realistic exam generation that **no competitor on the market d
 ```json
 {
   "dataVersion": "c9b1f7a44d9d",
-  "count": 312,
-  "chunks": ["ch01-a", "ch01-b", "ch02-a", "ch03-a", "ch04-a", "ch04-b", "ch05-a", "ch06-a"],
+  "count": 305,
+  "chunks": ["ch01-a", "ch01-b", "ch01-c", "ch02-a", "ch02-b", "ch02-c", "ch03-a", "ch03-b", "ch03-c",
+             "ch04-a", "ch04-b", "ch04-c", "ch05-a", "ch05-b", "ch05-c", "ch06-a", "ch06-b"],
   "questions": [
     {
       "id": "ctfl4-0001",

@@ -1,5 +1,5 @@
 {
-  "dataVersion": "2026.09.19",
+  "dataVersion": "c9b1f7a44d9d",
   "generatedAt": "2026-09-19T12:00:00Z",
   "certifications": [
     {
@@ -12,7 +12,7 @@
         "tr",
         "en"
       ],
-      "questionCount": 257,
+      "questionCount": 305,
       "coverage": {
         "objectivesTotal": 64,
         "objectivesCovered": 64,
