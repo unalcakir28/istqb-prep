@@ -78,18 +78,19 @@ Detailed rationale and sources: [`docs/01-market-research.md`](docs/01-market-re
 
 ## What works
 
-| Area                | Status                                                                                                           |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Data skeleton       | ✅ Extracted from the official syllabus — 64 learning objectives, 29 LO groups, 97 terms                         |
-| Selection + scoring | ✅ One engine, three scopes (blueprint / chapter / objective), seeded and reproducible, exact-match scoring      |
-| Mock exam           | ✅ Drift-free timer, question navigator, fully usable by keyboard                                                |
-| Practice mode       | ✅ Configurable scope and length, instant feedback, live pool preview                                            |
-| Study mode          | ✅ Chapter → objective → lesson card → short test, with losable per-objective mastery                            |
-| Results + review    | ✅ Pass-mark line, section and LO breakdown, option-by-option rationale                                          |
-| Question pool       | ✅ 256 questions published, 64/64 learning objectives covered, at least 4 each · Phase 3 target: 300             |
-| Lesson cards        | ✅ All 64 written and published — one per learning objective, TR+EN, key points and common mistakes              |
-| SRS, glossary       | ✅ Wrong answers come back on a spaced-repetition schedule (`/tekrar`) · glossary of 97 bilingual terms          |
-| Tests               | ✅ 154 unit tests (Vitest) · 64 end-to-end specs (Playwright, including axe scans of every route in both themes) |
+| Area                | Status                                                                                                                |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Data skeleton       | ✅ Extracted from the official syllabus — 64 learning objectives, 29 LO groups, 97 terms                              |
+| Selection + scoring | ✅ One engine, three scopes (blueprint / chapter / objective), seeded and reproducible, exact-match scoring           |
+| Mock exam           | ✅ Drift-free timer, question navigator, fully usable by keyboard                                                     |
+| Practice mode       | ✅ Configurable scope and length, instant feedback, live pool preview                                                 |
+| Study mode          | ✅ Chapter → objective → lesson card → short test, with losable per-objective mastery                                 |
+| Results + review    | ✅ Pass-mark line, section and LO breakdown, option-by-option rationale                                               |
+| Question pool       | ✅ 256 questions published, 64/64 learning objectives covered, at least 4 each · Phase 3 target: 300                  |
+| Lesson cards        | ✅ All 64 written and published — one per learning objective, TR+EN, key points and common mistakes                   |
+| SRS, glossary       | ✅ Wrong answers come back on a spaced-repetition schedule (`/tekrar`) · glossary of 97 bilingual terms               |
+| Your data           | ✅ Download your progress as one file and load it in another browser — still no account (`/verilerim`)                |
+| Tests               | ✅ 169 unit tests (Vitest) · 69 end-to-end specs (Playwright, including axe scans of the main screens in both themes) |
 
 **Data accuracy.** The exam constants, learning objectives, and Turkish terms
 were extracted from the official ISTQB and TTB PDFs; none of it was hand-guessed.

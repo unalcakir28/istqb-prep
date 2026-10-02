@@ -241,6 +241,28 @@
     "nextDue": "The next one is due in {{interval}}.",
     "checkAgain": "Check again"
   },
+  "myData": {
+    "title": "Your data",
+    "intro": "Your progress — sessions, answers, learned objectives and the repetition deck — is stored only in this browser, and nothing is sent anywhere. To keep it safe, or to carry it to another device, download a copy and load it there.",
+    "exportTitle": "Download a copy",
+    "exportBody": "One JSON file holding everything this browser keeps for you. It goes only where you save it.",
+    "exportAction": "Download progress file",
+    "exported": "Download started: {{file}}.",
+    "exportFailed": "The file could not be created — your browser may be blocking storage.",
+    "importTitle": "Load a copy",
+    "importBody": "Nothing on this device is deleted. Where the file and this browser hold the same record, the newer one is kept, so loading the same file twice changes nothing.",
+    "chooseFile": "Choose a progress file",
+    "preview": "Saved on {{date}}. Sessions: {{sessions}} · answers: {{answers}} · objective records: {{objectives}} · repetition cards: {{cards}}.",
+    "versionWarning": "It was saved when the questions were at version {{file}}; this site now serves version {{current}}. Your progress still loads — a question that has changed since shows its current text.",
+    "importAction": "Load into this browser",
+    "imported": "Loaded. New records: {{added}} · updated from the file: {{updated}} · kept from this browser because they were newer: {{kept}}.",
+    "importFailed": "The file could not be loaded into this browser — your browser may be blocking storage. Nothing was changed.",
+    "errorNotJson": "This file is not readable JSON. Choose the file this site downloaded for you.",
+    "errorNotBackup": "This is not a progress file from this site.",
+    "errorNewerFormat": "This file was made by a newer version of this site. Reload the page and try again.",
+    "errorNewerSchema": "This file was made by a newer version of this site. Reload the page and try again.",
+    "errorInvalidRows": "This file is damaged: some of its records are incomplete, so none of it was loaded."
+  },
   "review": {
     "title": "Review",
     "yourAnswer": "Your answer",
@@ -287,10 +309,12 @@
     "privacyTitle": "Privacy",
     "privacyBody": "No account, no server, no analytics. All your progress is stored only in your own browser's IndexedDB and is never sent anywhere. Clearing your browser data also clears your progress.",
     "licenseTitle": "Licence",
-    "licenseBody": "Code is MIT licensed; content is CC BY-SA 4.0."
+    "licenseBody": "Code is MIT licensed; content is CC BY-SA 4.0.",
+    "privacyAction": "Download or load your progress"
   },
   "footer": {
     "disclaimerShort": "Independent community project · not affiliated with ISTQB®",
-    "sources": "Sources and copyright"
+    "sources": "Sources and copyright",
+    "myData": "Your data"
   }
 }

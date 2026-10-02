@@ -29,7 +29,8 @@ lib/db/            Dexie/IndexedDB — the single place for persistence. db.ts
                    is unit-testable), objectiveProgress.ts (study mastery),
                    questionHistory.ts (the saved lists, derived from the
                    answers already stored — nothing new is persisted),
-                   srsCards.ts (the repetition deck)
+                   srsCards.ts (the repetition deck), backup.ts (the
+                   progress file: export, validate, merge-import)
 lib/i18n/          UI language; question language is a separate concept (attempt.contentLang)
 lib/bilingual.ts   TR+EN side by side — a display preference in localStorage,
                    deliberately NOT on the attempt: "both" is not a language
@@ -54,6 +55,7 @@ user-facing surface:
 /listelerim                    My lists — wrong · flagged · never right twice in a row
 /tekrar                        Repetition — the SRS deck's due cards, one at a time
 /sozluk                        Glossary — 97 bilingual terms, no definitions (see F2-11)
+/verilerim                     Your data — download / load a progress file (F3-08)
 /kaynaklar                     Sources
 /deneme  ·  /deneme/:attemptId Legacy redirect to /sinav — old bookmarks keep working
 ```

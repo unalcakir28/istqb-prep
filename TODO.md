@@ -48,7 +48,7 @@ Priority: **P0** blocks the next phase from starting · **P1** required within t
 - [x] **F1-01c** `P0` CI: ESLint + Prettier + `tsc --noEmit` + Vitest + `validate:data`
 - [x] **F1-02** `P0` `contentClient` — index first, then only the needed chunks; memory + Cache API, invalidated via `dataVersion`
 - [x] **F1-03** `P0` Dexie schema + recovery/discard helpers
-- [x] **F1-04** `P0` i18next; UI language ≠ content language; TR/EN dictionaries match at 258 keys, checked by `yarn validate:i18n` in CI
+- [x] **F1-04** `P0` i18next; UI language ≠ content language; TR/EN dictionaries match at 280 keys, checked by `yarn validate:i18n` in CI
 
 ### Exam engine
 
@@ -73,8 +73,8 @@ Priority: **P0** blocks the next phase from starting · **P1** required within t
 
 ### Quality
 
-- [x] **F1-15** `P1` E2E (Playwright): the full 40-question mock exam flow, resuming an unfinished attempt, the answer being preserved when the question language changes — `e2e/exam.spec.ts`. Practice and study have their own specs (`e2e/practice.spec.ts`, `e2e/study.spec.ts`), my lists plus the glossary have `e2e/lists-and-glossary.spec.ts`, and the repetition deck has `e2e/repetition.spec.ts`; **64 specs across 6 files** under `yarn e2e`
-- [x] **F1-18** `P1` `@axe-core/playwright` — 0 violations in light **and** dark theme on the home, exam setup, practice setup, sources, exam, study chapter list, chapter objective list and study objective screens, the empty repetition deck, plus a revealed practice answer and a revealed repetition card with its grade buttons; alongside the hand-written specs for what axe cannot see (focus destinations, accessible names, live regions) — `e2e/a11y.spec.ts`
+- [x] **F1-15** `P1` E2E (Playwright): the full 40-question mock exam flow, resuming an unfinished attempt, the answer being preserved when the question language changes — `e2e/exam.spec.ts`. Practice and study have their own specs (`e2e/practice.spec.ts`, `e2e/study.spec.ts`), my lists plus the glossary have `e2e/lists-and-glossary.spec.ts`, the repetition deck has `e2e/repetition.spec.ts`, and the progress file has `e2e/my-data.spec.ts`; **69 specs across 7 files** under `yarn e2e`
+- [x] **F1-18** `P1` `@axe-core/playwright` — 0 violations in light **and** dark theme on the home, exam setup, practice setup, sources, exam, study chapter list, chapter objective list and study objective screens, the empty repetition deck, the data page with a file waiting to load, plus a revealed practice answer and a revealed repetition card with its grade buttons; alongside the hand-written specs for what axe cannot see (focus destinations, accessible names, live regions) — `e2e/a11y.spec.ts`
 - [x] **F1-19** `P2` **Done 22.09.2026.** Lighthouse CI asserts ≥95 in all 4 categories. `@lhci/cli@0.15.1` was approved and added as a dev dependency; `lighthouserc.json` holds the thresholds, `yarn lighthouse` runs it, and the CI job runs it after the e2e step. First local run: performance 99, accessibility 100, best practices 100, SEO 100. The step builds with `--base=/`, because lhci serves the bundle from its own static server at `/` and vite's base would otherwise be `/istqb-prep/`. The first CI run failed with `NO_FCP`: a step-level `env: GITHUB_ACTIONS: ""` does not reach the build inside a GitHub Actions job, so the base stayed `/istqb-prep/` and every asset 404'd on a blank page
 
 ### Content and pages
@@ -150,7 +150,7 @@ Each gets its own spec and plan; nothing above anticipates them beyond the exten
 - [ ] **F3-05** `P1` Progress screen: score trend, per-section improvement, a **forgiving streak**
 - [ ] **F3-06** `P1` **Readiness estimate** — based on the last 3 timed attempts ("2 of them passed the mark, you can schedule the exam")
 - [ ] **F3-07** `P1` PWA: manifest, service worker, chunk caching (`StaleWhileRevalidate`), installability
-- [ ] **F3-08** `P0` Progress **export/import** (JSON) — the mitigation for the risk of losing IndexedDB
+- [x] **F3-08** `P0` **Done 02.10.2026.** `/verilerim` (`src/routes/MyData.tsx`, `src/lib/db/backup.ts`): all six tables download as one JSON file; loading one is choose → read what it holds → confirm. Import **merges, never replaces** — nothing on the device is deleted, and where both sides hold the same key the newer row wins by the timestamp each table already keeps, so loading the same file twice adds nothing. One transaction. Refused as a whole: not JSON, not this format, a newer format or Dexie schema, or any row missing a field the app trusts. A `dataVersion` mismatch warns and still loads. localStorage display preferences are not in the file. Linked from the footer on every width and from the privacy section of `/kaynaklar`. `e2e/my-data.spec.ts` round-trips a file between two browser contexts
 - [ ] **F3-09** `P2` Graduated hints (nudge → hint → solution)
 - [ ] **F3-10** `P0` **Content: 300 questions** (≥3 per LO)
 - [ ] **F3-11** `P2` Move a question's SRS card to `relearning` when its `revision` increments

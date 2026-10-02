@@ -149,6 +149,31 @@ for (const theme of THEMES) {
     await scan(page);
   });
 
+  test(`the data page with a file waiting to load is accessible (${theme})`, async ({ page }) => {
+    await setTheme(page, theme);
+    await page.goto("/verilerim");
+    await expect(page.getByRole("heading", { name: en.myData.title, level: 1 })).toBeVisible();
+
+    // A file from another question version: the preview, the version warning
+    // and both buttons are on screen at once, which is the busiest this page gets.
+    await page.getByLabel(en.myData.chooseFile).setInputFiles({
+      name: "old.json",
+      mimeType: "application/json",
+      buffer: Buffer.from(
+        JSON.stringify({
+          format: "istqb-prep-progress",
+          formatVersion: 1,
+          schemaVersion: 3,
+          exportedAt: "2026-01-15T09:00:00.000Z",
+          dataVersion: "1999.01.01",
+          tables: {},
+        }),
+      ),
+    });
+    await expect(page.getByRole("button", { name: en.myData.importAction })).toBeVisible();
+    await scan(page);
+  });
+
   test(`the glossary is accessible (${theme})`, async ({ page }) => {
     await setTheme(page, theme);
     await page.goto("/sozluk");

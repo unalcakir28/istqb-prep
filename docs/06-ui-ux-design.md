@@ -83,6 +83,7 @@ Route paths are Turkish, like the rest of the product's user-facing surface; the
 | `/listelerim` | My lists — wrong, flagged, never right twice in a row | — |
 | `/tekrar` | Repetition — the SRS deck's due cards, one at a time (§3.8) | — |
 | `/sozluk` | Glossary — 97 bilingual terms, searched in both languages | — |
+| `/verilerim` | Your data — download a copy of the progress, load one (§3.11) | — |
 | `/kaynaklar` | Sources, copyright, disclaimer | — |
 | `/deneme`, `/deneme/:attemptId` | **Legacy redirect** to `/sinav`. Bookmarks and in-progress attempts on the old exam path keep working. | — |
 
@@ -313,6 +314,16 @@ Three lists, none of them stored: each is derived from the answers already in In
 - **Questions I got wrong** and **questions I flagged** read the LATEST answer only. Wrong in March and right in April is not a current mistake, and a flag cleared last session is cleared.
 - **Never right twice in a row** reads the whole history. One hit after a run of misses is as likely to be a guess as knowledge, and an unanswered attempt breaks a run exactly as a wrong one does.
 - Each list hands its ids straight to the `questions` scope, so "practise this list" is the same machinery as "retry the ones you missed" on the result screen, not a second path.
+
+### 3.11 Your data `/verilerim`
+
+Built in F3-08. The one mitigation for R-08: progress lives only in this browser, so a file the candidate keeps is the only copy that survives a cleared browser, and the only way to another device. Linked from the footer on every width and from the privacy section of `/kaynaklar`.
+
+- **Download a copy** — one button; the file is `istqb-prep-progress-YYYY-MM-DD.json`. "Download started" and the file name are announced in a status region.
+- **Focus never falls to the page.** Every step unmounts the control just used, so focus moves on: to the file's description once it is read (the version warning is part of that description), back to the file input after Cancel, and to the result line after a load. A repeated failure re-announces, because each message is keyed to the attempt that produced it.
+- **Load a copy** — two steps on purpose, because it writes into this browser's progress: choose a file, read what it holds (when it was saved; how many sessions, answers, objective records and repetition cards), then confirm. The screen says before the button that nothing is deleted and the newer copy of a record wins.
+- A file from another question version shows a warning and still loads. A file that is not a progress file, is damaged, or comes from a newer version of the site is refused with a reason, as an alert, and no load button appears.
+- The result names what happened: new records, records updated from the file, and records kept from this browser because they were newer.
 
 ### 3.10 Lesson card (inside `/calisma/lo/:loCode`)
 

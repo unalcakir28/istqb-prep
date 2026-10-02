@@ -172,6 +172,11 @@ export function Layout() {
             <Link to="/kaynaklar" className="underline underline-offset-2 hover:text-fg">
               {t("footer.sources")}
             </Link>
+            {/* On every width: the privacy promise is what makes a backup
+                necessary, so the way to make one sits beside it. */}
+            <Link to="/verilerim" className="underline underline-offset-2 hover:text-fg">
+              {t("footer.myData")}
+            </Link>
             {/* The top nav is hidden below `sm`, so without these the
                 repetition deck and the saved lists have no entry point at all
                 on a phone. */}

@@ -5,8 +5,8 @@
  * browser and is never sent anywhere (CLAUDE.md rule 7).
  *
  * The cost of that is that progress is lost if the browser's data is
- * cleared; that's why export/import (F3-08) is planned, and it's stated
- * explicitly on the privacy page.
+ * cleared; that's why export/import exists (F3-08, `backup.ts`, `/verilerim`),
+ * and the privacy page says so and links to it.
  *
  * `bookmarks` and `settings` are declared but not written to yet; defining
  * the schema up front lets future migrations happen without skipping a

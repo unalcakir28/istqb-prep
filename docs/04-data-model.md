@@ -547,8 +547,19 @@ Written by [`../src/lib/db/objectiveProgress.ts`](../src/lib/db/objectiveProgres
 ### When the data version changes
 When `manifest.dataVersion` changes: the question cache is cleared, **user progress is preserved**. If a question's `revision` value has increased, that question's SRS card is set to `state: 'relearning'` (the content changed, so the old memory record is invalid). This is F3-11, not yet implemented.
 
-### Export/import
-All tables are exported as a single JSON file. On import, a `dataVersion` mismatch produces a warning but does not block the import. This is F3-08, not yet implemented.
+### Export/import (F3-08)
+[`../src/lib/db/backup.ts`](../src/lib/db/backup.ts), on the `/verilerim` screen. All six tables are exported as one JSON file, as stored:
+
+```ts
+{ format: "istqb-prep-progress", formatVersion: 1, schemaVersion, // Dexie verno
+  exportedAt, dataVersion,                                        // content version at export
+  tables: { attempts, responses, objectiveProgress, srsCards, bookmarks, settings } }
+```
+
+- **Import merges, it never replaces.** Nothing already on the device is deleted. Where both sides hold the same key, the newer row is kept, by the timestamp the table already carries: `submittedAt ?? startedAt` (attempts), `updatedAt` (responses, objectiveProgress), `lastReviewedAt ?? addedAt` (srsCards), `createdAt` (bookmarks); a tie, and every `settings` row, goes to the file. Importing the same file twice therefore adds nothing the second time. One transaction: a failed import changes nothing.
+- **Refused, as a whole:** text that is not JSON, JSON that is not this format, a `formatVersion` or `schemaVersion` newer than the app's (rows in a shape this code does not know), and any row missing a field the app reads without checking (`parseBackup`'s per-table validators). A table the file does not mention reads as empty.
+- **A `dataVersion` mismatch is a warning, never a refusal**: answers are keyed by question and option id, which a content update keeps.
+- **Not in the file:** the display preferences kept in localStorage (theme, interface language, side-by-side). They are settings of a browser, not progress.
 
 ---
 

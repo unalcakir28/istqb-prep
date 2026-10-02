@@ -130,6 +130,12 @@ export default function Sources() {
         <p className="max-w-[65ch] text-[15px] leading-relaxed text-fg-muted">
           {t("sources.privacyBody")}
         </p>
+        <Link
+          to="/verilerim"
+          className="w-fit text-[15px] text-accent underline underline-offset-2"
+        >
+          {t("sources.privacyAction")}
+        </Link>
       </section>
 
       <section aria-labelledby="license" className="flex flex-col gap-2">

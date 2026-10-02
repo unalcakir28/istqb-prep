@@ -241,6 +241,28 @@
     "nextDue": "Bir sonraki sorunun zamanı {{interval}} sonra gelecek.",
     "checkAgain": "Yeniden kontrol et"
   },
+  "myData": {
+    "title": "Verilerim",
+    "intro": "İlerlemen — oturumların, cevapların, öğrendiğin hedefler ve tekrar destesi — yalnızca bu tarayıcıda saklanır ve hiçbir yere gönderilmez. Güvende tutmak ya da başka bir cihaza taşımak için bir kopyasını indir ve orada yükle.",
+    "exportTitle": "Kopya indir",
+    "exportBody": "Bu tarayıcının senin için sakladığı her şeyi tutan tek bir JSON dosyası. Yalnızca senin kaydettiğin yere gider.",
+    "exportAction": "İlerleme dosyasını indir",
+    "exported": "İndirme başladı: {{file}}.",
+    "exportFailed": "Dosya oluşturulamadı — tarayıcın depolamayı engelliyor olabilir.",
+    "importTitle": "Kopya yükle",
+    "importBody": "Bu cihazdaki hiçbir şey silinmez. Dosyada ve bu tarayıcıda aynı kayıt varsa daha yeni olan tutulur; bu yüzden aynı dosyayı iki kez yüklemek hiçbir şeyi değiştirmez.",
+    "chooseFile": "Bir ilerleme dosyası seç",
+    "preview": "Kayıt tarihi: {{date}}. Oturum: {{sessions}} · cevap: {{answers}} · hedef kaydı: {{objectives}} · tekrar kartı: {{cards}}.",
+    "versionWarning": "Dosya, sorular {{file}} sürümündeyken kaydedildi; bu site artık {{current}} sürümünü sunuyor. İlerlemen yine de yüklenir — o zamandan beri değişen bir soru güncel metniyle görünür.",
+    "importAction": "Bu tarayıcıya yükle",
+    "imported": "Yüklendi. Yeni kayıt: {{added}} · dosyadan güncellenen: {{updated}} · daha yeni olduğu için bu tarayıcıda tutulan: {{kept}}.",
+    "importFailed": "Dosya bu tarayıcıya yüklenemedi — tarayıcın depolamayı engelliyor olabilir. Hiçbir şey değişmedi.",
+    "errorNotJson": "Bu dosya okunabilir bir JSON değil. Bu sitenin senin için indirdiği dosyayı seç.",
+    "errorNotBackup": "Bu, bu siteye ait bir ilerleme dosyası değil.",
+    "errorNewerFormat": "Bu dosya sitenin daha yeni bir sürümüyle oluşturulmuş. Sayfayı yenileyip yeniden dene.",
+    "errorNewerSchema": "Bu dosya sitenin daha yeni bir sürümüyle oluşturulmuş. Sayfayı yenileyip yeniden dene.",
+    "errorInvalidRows": "Bu dosya bozuk: kayıtlarından bazıları eksik, bu yüzden hiçbiri yüklenmedi."
+  },
   "review": {
     "title": "İnceleme",
     "yourAnswer": "Senin cevabın",
@@ -287,10 +309,12 @@
     "privacyTitle": "Gizlilik",
     "privacyBody": "Hesap yok, sunucu yok, analitik yok. Tüm ilerlemen yalnızca kendi tarayıcının IndexedDB deposunda tutulur ve hiçbir yere gönderilmez. Tarayıcı verisini temizlersen ilerleme de silinir.",
     "licenseTitle": "Lisans",
-    "licenseBody": "Kod MIT, içerik CC BY-SA 4.0 ile lisanslanmıştır."
+    "licenseBody": "Kod MIT, içerik CC BY-SA 4.0 ile lisanslanmıştır.",
+    "privacyAction": "İlerlemeni indir veya yükle"
   },
   "footer": {
     "disclaimerShort": "Bağımsız topluluk projesi · ISTQB® ile bağlantısı yoktur",
-    "sources": "Kaynaklar ve telif"
+    "sources": "Kaynaklar ve telif",
+    "myData": "Verilerim"
   }
 }
