@@ -1,6 +1,6 @@
 {
   "app": {
-    "tagline": "Prepare for the ISTQB Foundation Level exam",
+    "tagline": "Prepare for ISTQB certification exams",
     "skipToContent": "Skip to content"
   },
   "nav": {
@@ -18,13 +18,13 @@
     "menu": "Menu"
   },
   "home": {
-    "heroTitle": "A free mock exam for ISTQB Foundation Level",
+    "heroTitle": "A free mock exam for ISTQB {{name}}",
     "heroLead": "{{questions}} original questions written from the v{{version}} syllabus. Every option carries a reason — the right one and the wrong ones — in Turkish and in English. No account, no fee, and nothing you do here leaves your device.",
     "blueprintTitle": "What the real exam asks",
-    "blueprintCaption": "{{total}} questions spread across {{chapters}} chapters in the proportions ISTQB publishes. Each one is worth a single point.",
+    "blueprintCaption": "{{total}} questions spread across {{chapters}} chapters in the proportions ISTQB publishes.",
     "blueprintQuestions": "questions",
     "blueprintDuration": "{{minutes}} minutes",
-    "blueprintPass": "{{pass}} of {{total}} correct to pass",
+    "blueprintPass": "{{pass}} of {{total}} points to pass",
     "modesTitle": "Three ways to work",
     "modesLead": "Study builds the ground, practice drills it, the mock exam measures it. You can start anywhere.",
     "factTime": "Time",
@@ -61,13 +61,19 @@
     "examLead": "{{count}} questions drawn from all {{chapters}} chapters in the official proportions, against the clock.",
     "examTime": "{{minutes}} minutes, counting down. It submits itself when time runs out.",
     "examAnswers": "Hidden until you submit, exactly as in the real exam.",
-    "examScore": "{{pass}} of {{total}} correct passes. Then a full review, question by question.",
+    "examScore": "{{pass}} of {{total}} points passes. Then a full review, question by question.",
     "officialTitle": "Looking for the official questions?",
-    "officialBody": "ISTQB and the Turkish Testing Board publish four sample exams with answer keys, free. Their licence does not let anyone republish them, so you will not find them in this pool — but you will find where to download them.",
+    "officialBody": "The official sample exams, with their answer keys, are free from their publishers. Their licence does not let anyone republish them, so you will not find them in this pool — but you will find where to download them.",
     "officialAction": "Where to find them",
     "repetitionDue_one": "Repeat {{count}} due question",
     "repetitionDue_other": "Repeat {{count}} due questions",
-    "repetitionNone": "Repetition — nothing due"
+    "repetitionNone": "Repetition — nothing due",
+    "blueprintPointsSingle": "Each one is worth a single point.",
+    "blueprintPointsMixed": "Not every question is worth the same: {{list}}, {{total}} points in all.",
+    "blueprintLevelPoints_one": "a {{level}} question is worth {{count}} point",
+    "blueprintLevelPoints_other": "a {{level}} question is worth {{count}} points",
+    "certificationLabel": "Certification",
+    "certificationChanged": "Now showing {{name}}."
   },
   "setup": {
     "title": "Exam setup",
@@ -203,7 +209,9 @@
     "noMatch": "No term matches this search.",
     "alsoWritten": "Also written: {{terms}}",
     "notUsed": "Not used: {{terms}}",
-    "sourceTag": "Source tag: {{source}}"
+    "sourceTag": "Source tag: {{source}}",
+    "introMixed": "There is no official Turkish syllabus for this version. Each Turkish term comes from TTB's earlier Turkish syllabus or from CTFL v4.0.1 where one of them has it; the rest are this project's own translation, and are marked.",
+    "editorial": "Project translation"
   },
   "lists": {
     "title": "My lists",
@@ -303,7 +311,7 @@
     "disclaimer": "This platform is an independent community project. It is not affiliated with, nor endorsed by, ISTQB® or the Turkish Testing Board. The content is written from scratch against the official syllabus and does not reproduce exam questions. No guarantee is given regarding your exam result. For official and current information, see istqb.org and turkishtestingboard.org.",
     "officialLinks": "Official sources",
     "officialExamsTitle": "The official sample exams",
-    "officialExamsBody": "ISTQB and the Turkish Testing Board publish four sample exams with their answer keys, free to download. Their questions are not reproduced here and never will be — the links below take you to the publisher, where you can answer them at the source.",
+    "officialExamsBody": "The official sample exams, with their answer keys, are free to download from their publishers. Their questions are not reproduced here and never will be — the links below take you to the publisher, where you can answer them at the source.",
     "officialExamsNotice": "Their copyright notice permits \"extracts, for non-commercial use […] if the source is acknowledged\", and states that \"any other use of this sample exam is prohibited without first obtaining the approval in writing of the ISTQB®\". Copyright © International Software Testing Qualifications Board.",
     "officialExamsSet": "Sample exam {{set}} · {{publisher}}",
     "privacyTitle": "Privacy",

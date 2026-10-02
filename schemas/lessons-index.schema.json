@@ -16,7 +16,7 @@
         "required": ["objective", "chunk", "chapter", "languages", "syllabusVersion", "status"],
         "additionalProperties": false,
         "properties": {
-          "objective": { "type": "string", "pattern": "^FL-[0-9]+\\.[0-9]+\\.[0-9]+$" },
+          "objective": { "type": "string", "pattern": "^(FL|AI)-[0-9]+\\.[0-9]+\\.[0-9]+$" },
           "chunk": { "type": "string" },
           "chapter": { "type": "integer", "minimum": 1 },
           "languages": {

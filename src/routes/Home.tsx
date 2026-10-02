@@ -27,6 +27,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { BlueprintFigure, type BlueprintChapter } from "@/components/BlueprintFigure";
+import { CertificationPicker, type PickableCertification } from "@/components/CertificationPicker";
 import { ErrorNotice } from "@/components/ErrorNotice";
 import { Spinner } from "@/components/Spinner";
 import {
@@ -34,8 +35,10 @@ import {
   shortfallsByChapter,
   type GroupShortfall,
 } from "@/features/exam/generateExam";
+import { pointsByKLevel } from "@/features/exam/points";
 import { routeForAttempt } from "@/features/session/routeForAttempt";
 import { summarizeDeck } from "@/features/srs/queue";
+import { writeCertificationChoice } from "@/lib/certification";
 import { contentClient } from "@/lib/content/contentClient";
 import { db, discardAttempt, findResumableAttempt, getResponses, type Attempt } from "@/lib/db/db";
 import { loadDeck } from "@/lib/db/srsCards";
@@ -71,6 +74,8 @@ interface Progress {
 
 interface HomeData {
   cert: CertificationSummary;
+  /** Every certification that can be picked; the picker is shown only when there are two or more. */
+  certifications: PickableCertification[];
   meta: CertMeta;
   blueprint: ExamBlueprint;
   syllabus: Syllabus;
@@ -115,6 +120,15 @@ async function loadProgress(certId: string, objectives: number): Promise<Progres
 
 async function loadHome(): Promise<HomeData> {
   const cert = await contentClient.getActiveCertification();
+  const selectable = await contentClient.getSelectableCertifications();
+  const certifications = await Promise.all(
+    selectable.map(async (item) => ({
+      id: item.id,
+      acronym: item.acronym,
+      syllabusVersion: item.syllabusVersion,
+      name: (await contentClient.getMeta(item.path)).name,
+    })),
+  );
 
   const [meta, blueprint, syllabus, index] = await Promise.all([
     contentClient.getMeta(cert.path),
@@ -138,6 +152,7 @@ async function loadHome(): Promise<HomeData> {
 
   return {
     cert,
+    certifications,
     meta,
     blueprint,
     syllabus,
@@ -251,8 +266,16 @@ function Section({ children }: { children: ReactNode }) {
 
 export default function Home() {
   const { t, i18n } = useTranslation();
-  const { data, failed, reload } = useAsyncData(loadHome);
+  const { data, failed, refreshing, reload, refresh } = useAsyncData(loadHome);
   const [discardedId, setDiscardedId] = useState<string | null>(null);
+  /**
+   * The certification last picked on this page. A pick changes everything
+   * below the picker, so the page loads again — but with `refresh`, which
+   * keeps the current page on screen until the new one arrives: the button
+   * that was pressed never unmounts and keeps its focus, and the status line
+   * under the picker says what is now shown.
+   */
+  const [picked, setPicked] = useState<string | null>(null);
 
   if (failed) return <ErrorNotice onRetry={reload} />;
   if (!data) return <Spinner />;
@@ -278,6 +301,21 @@ export default function Home() {
     total: cert.coverage.objectivesTotal,
   });
 
+  function onPick(id: string) {
+    if (id === (picked ?? cert.id)) return;
+    writeCertificationChoice(id);
+    setPicked(id);
+    refresh();
+  }
+
+  const shown = data.certifications.find((item) => item.id === cert.id);
+  const pickAnnouncement =
+    picked !== null && !refreshing && picked === cert.id && shown
+      ? t("home.certificationChanged", {
+          name: `${shown.acronym} v${shown.syllabusVersion} — ${shown.name[lang]}`,
+        })
+      : "";
+
   async function onDiscard(attemptId: string) {
     await discardAttempt(attemptId);
     setDiscardedId(attemptId);
@@ -285,6 +323,20 @@ export default function Home() {
 
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-12 px-4 py-8 sm:py-12">
+      {data.certifications.length > 1 ? (
+        <div className="flex flex-col gap-2">
+          <CertificationPicker
+            certifications={data.certifications}
+            selectedId={picked ?? cert.id}
+            onPick={onPick}
+          />
+          {/* Always in the tree, so the change is announced when it lands. */}
+          <p role="status" className="sr-only">
+            {pickAnnouncement}
+          </p>
+        </div>
+      ) : null}
+
       {resume ? (
         <section
           aria-labelledby="resume-title"
@@ -415,7 +467,7 @@ export default function Home() {
       <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,23rem)] lg:gap-14">
         <div className="flex flex-col gap-5">
           <h1 className="max-w-[20ch] text-[34px] font-semibold leading-[1.08] tracking-[-0.02em] sm:text-[42px]">
-            {t("home.heroTitle")}
+            {t("home.heroTitle", { name: meta.name[lang] })}
           </h1>
 
           <p className="max-w-[54ch] text-[17px] leading-[1.6] text-fg-muted sm:text-[19px]">
@@ -434,6 +486,7 @@ export default function Home() {
             durationMinutes={exam.durationMinutes}
             passPoints={exam.passPoints}
             totalPoints={exam.totalPoints}
+            levelPoints={pointsByKLevel(blueprint)}
           />
         </div>
       </div>

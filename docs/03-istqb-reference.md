@@ -1,7 +1,7 @@
 # 03 — ISTQB Reference Page
 
 > This document is the **verified factual foundation** the product is built on. Every line has been confirmed by reading the official PDFs. Constants are read from here when writing code.
-> **Last verified:** 19.09.2026
+> **Last verified:** 19.09.2026 (CTFL) · 02.10.2026 (CT-AI v2.0, §8)
 
 ---
 
@@ -183,7 +183,7 @@ Page: https://www.turkishtestingboard.org/en/certified-tester-foundation-level-s
 | Agile | Foundation | CTFL-AT | Agile Tester | 40 | 40 | 26 | 90 | 113 | ✔ EN |
 | Agile | Advanced | CTAL-ATT | Agile Technical Tester | 40 | 64 | 42 | 90 | 113 | — |
 | Specialist | — | CT-AcT | Acceptance Testing | 40 | 40 | 26 | 60 | 75 | — |
-| Specialist | — | CT-AI | AI Testing v2.0 | 40 | 44 | 29 | 60 | 75 | ✔ TR |
+| Specialist | — | CT-AI | AI Testing v2.0 | 40 | 44 | 29 | 60 | 75 | ✔ EN syllabus only; TTB exams from 21.10.2027 (§8) |
 | Specialist | — | CT-AI | AI Testing v1.0 | 40 | 47 | 31 | 60 | 75 | ✔ TR |
 | Specialist | — | CT-ATLaS | Agile Test Leadership at Scale v2.0 | 40 | 71 | 47 | 120 | 150 | — |
 | Specialist | — | CT-ATLaS | ATLaS v2.0 UPGRADE | 23 | 44 | 29 | 75 | 94 | — |
@@ -252,3 +252,57 @@ The following items must **not be asserted** in the product:
 5. **Expert Level exam parameters.**
 6. The contradiction between TTB's "6 May 2024" date and ISTQB's 15.09.2024 errata date.
 7. Whether Sample Exams C and D will be updated to v4.0.1.
+8. **CTFL-AT exam length.** The *Exam Structures & Rules tables* v1.19 Overview row gives **90** minutes; ISTQB's CTFL-AT certification page (read 02.10.2026) gives **60** (+25% non-native). Not used by the product (F4-01 moved to CT-AI, §8); `data/certifications.json` keeps the tables' value.
+9. **Turkish wording of the CT-AI v2.0 learning objectives.** No Turkish v2.0 syllabus exists (§8), so the TR texts in `data/ct-ai-v2.0/objectives.json` are editorial translations, marked as such in that file's `source`.
+
+---
+
+## 8. CT-AI v2.0 (Certified Tester AI Testing) — the second certification
+
+> **Last verified:** 02.10.2026. Read from the syllabus PDF and the *Exam Structures & Rules tables* v1.19, sheet "CT-AI v2.0". Neither is redistributed; local reading copies live in the git-ignored `.sources/`.
+
+### Why CT-AI and not CTFL-AT
+
+F4-01 named CTFL-AT. ISTQB's CTFL-AT page (read 02.10.2026) says the certification is in its **sunset**: exams and training only *"until the sunset dates (6 May 2027 for English, 6 November 2027 for non-English)"*. The same page says *"it does not appear to be useful for a candidate to take the AT exam if he/she is CTFL 4 certified"*, and TTB offers it in English only. On 02.10.2026 the second certification was moved to CT-AI v2.0.
+
+### Status
+
+| Item | Value | Source |
+|---|---|---|
+| Current syllabus | **v2.0**, released by the ISTQB General Assembly **17.04.2026** | syllabus p.3 (Revision History), p.8 |
+| Release announcement | 21.04.2026 (page metadata; the post shows no date) | istqb.org news |
+| v1.0 retirement | EN: **21.04.2027** · other languages: **21.10.2027** | ISTQB CT-AI page |
+| Prerequisite | CTFL | ISTQB CT-AI page |
+| Turkish syllabus | **None for v2.0.** TTB lists the v2.0 syllabus in English only. The Turkish TTB syllabus is v1.0 (2021). | TTB pages |
+| TTB exam | v1.0 today (40 questions, 47 points, pass 31); v2.0 *"will be valid in the exams to be held as of Thursday, October 21, 2027"* | TTB AI Testing exam page |
+
+**Sources**
+- Syllabus PDF: https://istqb.org/?sdm_process_download=1&download_id=9558
+- Certification page: https://istqb.org/certifications/certified-tester-ai-testing-ct-ai/
+- Exam Structures & Rules tables: https://istqb.org/?sdm_process_download=1&download_id=3832
+- TTB v2.0 syllabus page (EN): https://www.turkishtestingboard.org/sertifikali-test-uzmani-yapay-zeka-testi-ct-ai-mufredati-v2-0-ingilizce/
+- TTB v1.0 Turkish syllabus (terminology reference only): https://www.turkishtestingboard.org/files/ISTQB-CT-AI-Syllabus-v1-TR.pdf
+- TTB exam page: https://www.turkishtestingboard.org/en/ai-testing-exam/
+- Sample exam (questions v2.2, answers v2.2): linked from the ISTQB certification page. **Rule 1 applies** — never copied, translated or adapted.
+
+### Exam
+
+40 questions · **44 points** · pass **29** (65% of 44 is 28.60) · **60 min** (75 with +25%) · K2 = 36 questions, K3 = 4 · **a K2 question is worth 1 point, a K3 question 2 points** · no K1, no K4.
+
+| Chapter | Title | Training | LOs | Questions | Points |
+|---|---|---|---|---|---|
+| 1 | Introduction to Artificial Intelligence | 120 min | 8 (K2) | 6 (K2) | 6 |
+| 2 | Quality Characteristics for AI-Based Systems | 45 min | 3 (K2) | 3 (K2) | 3 |
+| 3 | Machine Learning | 375 min | 7 K2 + 1 K3 | 6 K2 + 1 K3 | 8 |
+| 4 | Testing AI-Based Systems | 195 min | 6 K2 + 1 K3 | 6 K2 + 1 K3 | 8 |
+| 5 | Input Data Testing for Machine Learning Systems | 180 min | 5 K2 + 1 K3 | 5 K2 + 1 K3 | 7 |
+| 6 | Model Testing for Machine Learning Systems | 225 min | 8 K2 + 1 K3 | 8 K2 + 1 K3 | 10 |
+| 7 | Machine Learning Development Testing | 30 min | 2 (K2) | 2 (K2) | 2 |
+| **Total** | | **1170 min** | **43** (K2 = 39, K3 = 4) | **40** | **44** |
+
+**LO → question mapping:** chapter 1 is one group — 6 questions over its 8 LOs. In chapters 2–7 every LO is its own group of exactly 1 question; chapter 3 lists AI-3.3.1 (K3) as its own group, and its seven K2 LOs as one group of 6 questions.
+
+**LO codes** are `AI-x.y.z`, and the last part can be two digits (`AI-6.1.10`). The numbering has gaps — AI-3.1.3, 3.2.2, 3.3.2, 3.3.3, 3.4.2, 4.2.3, 5.1.7 and 6.1.6 are **hands-on objectives** (`HO-`, levels H1/H2) and are not examined. The four K3 LOs: AI-3.3.1 (confusion-matrix metrics), AI-4.2.2 (red teaming), AI-5.1.5 (dataset constraint testing), AI-6.1.5 (metamorphic testing).
+
+**Copyright:** the same notice as CTFL — *"Extracts, for non-commercial use, from this document may be copied if the source is acknowledged."* The LO texts are copied as extracts with the source named, as for CTFL.
+

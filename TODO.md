@@ -25,7 +25,7 @@ Priority: **P0** blocks the next phase from starting · **P1** required within t
 - [x] **F0-06** `P0` `objectives.json` — **64 LOs**, TR+EN text copied verbatim from the official PDFs, K1=14/K2=42/K3=8
 - [x] **F0-07** `P0` `syllabus.json` · `meta.json` · `manifest.json` — audited against the official source, zero discrepancies (titles, durations 1135 min, exam constants 40/26/60; the 75-minute extension was dropped from `meta.json` by D-06)
 - [x] **F0-11** `P1` `certifications.json` — the full 28-row ISTQB certification table ([`03 §5`](docs/03-istqb-reference.md) seed data)
-- [x] **F0-08** `P0` `schemas/` completed + `scripts/validate-data.ts` — **23 check numbers, 21 live** (#1 is JSON Schema conformance, #2-#23 are consistency checks; #14 and #23 were retired by D-03). #1-#9 and #15-#19 are errors, #10-#13 and #20-#22 are warnings. #16-#20 arrived with the lesson files. Three more were added on 22.09.2026, each after a human reader found by hand what the existing checks passed: #21 (a `trForbidden` word used in Turkish text — #13 only ever caught an untranslated ENGLISH word, never a banned Turkish one), #22 (the keyed option being the longest) and #23 (the keyed letters running a rotation in file order, which #14 passes because the letter counts are even)
+- [x] **F0-08** `P0` `schemas/` completed + `scripts/validate-data.ts` — **23 check numbers, 21 live** (#1 is JSON Schema conformance, #2-#23 are consistency checks; #14 and #23 were retired by D-03). #1-#9 and #15-#19 are errors, #10-#13 and #20-#22 are warnings. #16-#20 arrived with the lesson files. Three more were added on 22.09.2026, each after a human reader found by hand what the existing checks passed: #21 (a `trForbidden` word used in Turkish text — #13 only ever caught an untranslated ENGLISH word, never a banned Turkish one), #22 (the keyed option being the longest) and #23 (the keyed letters running a rotation in file order, which #14 passes because the letter counts are even) _(#24 and #25 were added under F4-01 on 02.10.2026: 25 numbers, 23 live.)_
 - [x] **F0-12** `P1` `scripts/build-index.ts` — builds `questions/index.json`, `lessons/index.json` and the manifest counts from the chunks
 - [x] **F0-13** `P1` `scripts/stats.ts` — per-LO coverage → `docs/coverage.md`
 - [ ] **F0-09** `P1` `scripts/fetch-glossary.ts` — pull 215 terms from the Glossary API with the `used_in: Foundation v4.0` filter; match TR equivalents from the TTB syllabus, flag `trSource`
@@ -160,8 +160,8 @@ Each gets its own spec and plan; nothing above anticipates them beyond the exten
 
 ## Phase 4 — Scaling
 
-- [ ] **F4-01** `P0` **CTFL-AT (Agile Tester)** — the second certification; the real test of the architecture (should require no code changes)
-- [ ] **F4-02** `P1` CT-AI v2.0 (TTB has a Turkish syllabus for it)
+- [ ] **F4-01** `P0` **CT-AI v2.0 (AI Testing)** — the second certification; the real test of the architecture. _Retargeted 02.10.2026 from CTFL-AT, which ISTQB is sunsetting (last exams 6 May 2027 EN, 6 Nov 2027 other languages) and whose page calls it not useful for a CTFL 4 holder — `docs/03-istqb-reference.md` §8. CT-AI v2.0 brings what CTFL never exercised: 2-point K3 questions, `AI-` LO codes, an English-only official syllabus._
+- [ ] **F4-02** `P1` ~~CT-AI v2.0~~ — merged into F4-01 on 02.10.2026. (TTB's Turkish CT-AI syllabus is v1.0; v2.0 is English-only, `docs/03` §8.)
 - [ ] **F4-03** `P2` CT-PT (Performance Testing)
 - [ ] **F4-04** `P2` CTAL-TA v4.0 — the first Advanced module → support for **multi-point questions** (the scoring engine expands)
 - [ ] **F4-05** `P1` Community question contributions: PR template + an **originality declaration** + a review flow

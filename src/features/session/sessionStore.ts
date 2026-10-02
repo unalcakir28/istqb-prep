@@ -25,6 +25,7 @@ import { create } from "zustand";
 
 import type { AttemptMode, AttemptScope } from "@/lib/db/db";
 import type { CertMeta, Lang, Question, QuestionIndexEntry } from "@/types/content";
+import { writeCertificationChoice } from "@/lib/certification";
 import { contentClient } from "@/lib/content/contentClient";
 import { db, getResponses, saveResponse, type Attempt } from "@/lib/db/db";
 import { addWrongAnswersToDeck } from "@/lib/db/srsCards";
@@ -205,6 +206,12 @@ export const useSessionStore = create<SessionState>((set, get) => ({
         set({ loading: false, error: "not-found" });
         return false;
       }
+
+      // Opening an attempt is working in its certification. Its own screens
+      // read `attempt.certId` anyway; this is for the links they lead on to —
+      // "New exam", "Back to chapter" — which go to screens that read the
+      // pick (ADR-0006), and would otherwise land in the other certification.
+      writeCertificationChoice(attempt.certId);
 
       const certPath = attempt.certId;
       const [meta, loaded, responses] = await Promise.all([

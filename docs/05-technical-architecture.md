@@ -73,8 +73,8 @@ istqb-prep/
 ├── data/                        # Source data (reviewed in Git) — questions/, lessons/, terms.json …
 ├── schemas/                     # JSON Schema definitions, incl. lesson + lessons-index
 ├── scripts/
-│   ├── validate-data.ts         # CI validator — 21 live checks (#1–#23; #14, #23 retired)
-│   ├── build-index.ts           # Builds questions/index.json, lessons/index.json, manifest counts
+│   ├── validate-data.ts         # CI validator — 23 live checks (#1–#25; #14, #23 retired)
+│   ├── build-index.ts           # Builds questions/index.json, lessons/index.json, the manifest (certification list + counts)
 │   ├── check-i18n.ts            # TR/EN locale key parity — its own CI gate
 │   ├── publish-questions.ts     # review -> published, the only path that records a reviewer
 │   ├── stats.ts                 # Coverage report (questions per LO) -> docs/coverage.md
@@ -158,6 +158,8 @@ interface ContentClient {
 3. Chunks are kept in memory (`Map`) and in the Cache API
 4. A 40-question exam typically downloads 4–6 chunks (~250 KB), not the whole pool
 
+**Which certification (F4-01).** `getActiveCertification()` returns the candidate's pick from the home screen if it is still `active` in the manifest, else the first `active` one (`src/lib/certification.ts`, kept in localStorage like the theme). Every setup, study, list and glossary screen goes through it. A session, its result and its review never do: they load the content of their own `attempt.certId`, which is why check #25 holds the manifest `id`, its `path` and `meta.id` equal. IndexedDB needed no change — every progress row already carried `certId`, and the repetition deck is keyed by a question id that is unique across certifications (#25). The decision record: [`adr/0006-second-certification.md`](adr/0006-second-certification.md).
+
 **Cache invalidation:** the Cache API cache is named after `manifest.dataVersion` (`istqb-prep-content:<version>`), and every other content cache is deleted when a new version is first seen. The version used to be compared only with the last one the current page load had seen — none, on a fresh load — so a release between two visits cleared nothing and a returning visitor kept the old pool. `dataVersion` itself is a hash of every content file, computed by `yarn build:index`, so it changes exactly when the content does; it used to be a date typed by hand, and it read `2026.09.19` through two later content releases.
 
 ---
@@ -192,9 +194,9 @@ export function scoreExam(questions: Question[], answers: AnswerMap, meta: CertM
 There is no `warnings[]` and nothing throws: a short pool is reported as `shortfalls` and stated to the user before the session starts (rule 8). There is no `smartWeighting`; `preferUnseen` ranks seen questions last instead of excluding them.
 
 **Scoring rules (official):**
-- Every question is **1 point**, **no** partial credit
+- A question is worth its K-level's points from the blueprint's groups: 1 for every CTFL question, 2 for a CT-AI K3 question (`src/features/exam/points.ts`, check #24); **no** partial credit
 - A `multi` question requires selecting all correct options and none of the wrong ones
-- The pass threshold is `meta.exam.passPoints` (26) — never hardcoded
+- The pass threshold is `meta.exam.passPoints` (CTFL: 26) — never hardcoded
 - Negative marking is **not applied**, and the UI does **not claim** "none" either
 
 **Timer:** the attempt stores an absolute `deadlineAt`, and the clock is a `Date.now()` diff against it — so it cannot drift while the tab is backgrounded and there is nothing periodic to persist. `deadlineAt` is `null` for study and practice, which is what "untimed" means; a separate boolean could contradict the timestamp. **Every answer is written to IndexedDB as it is made**, so a session survives a refresh or a close whether or not it is timed; if a write fails, the session says so rather than silently losing progress.
@@ -267,14 +269,14 @@ jobs:
 
 | Level | Tool | Scope |
 |---|---|---|
-| **Data** | Ajv + custom rules | §6 [`04-data-model.md`](04-data-model.md) — 21 live checks (#1–#23; #14, #23 retired) |
+| **Data** | Ajv + custom rules | §6 [`04-data-model.md`](04-data-model.md) — 23 live checks (#1–#25; #14, #23 retired) |
 | **Unit** | Vitest | Selection (the 8/6/4/11/9/2 and 8/24/8 distributions hold across independent seeds; the scoped paths), scoring (exact match for multi-select), the timer, the Dexie v3 backfill, mastery, `routeForAttempt`, the session store, the FSRS scheduler (a card reloaded from its row schedules exactly as the library's own), the interval preview and the due queue, the progress file's validation and merge, the content cache across visits |
 | **Component** | Testing Library | `QuestionCard` heading level and option shape, `RationalePanel`'s verdict naming and per-option coverage, `LessonCard`'s missing-card placeholder |
 | **E2E** | Playwright | All three modes end to end; auto-submit when time runs out; attempt recovery after a page reload; the legacy `/deneme` redirect; TR/EN switching; a wrong answer reaching the repetition deck, and a rating storing the schedule its button showed; a progress file downloaded in one browser and loaded in another |
 | **Accessibility** | `@axe-core/playwright` + hand-written specs | Zero violations on every main route in both themes, **plus** the failures axe cannot see: focus destinations, accessible names, live-region behaviour |
 | **Visual** | Playwright snapshot | Not set up |
 
-Counts as of 02.10.2026: **172 unit tests in 24 files**, **69 end-to-end specs across 7 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
+Counts as of 02.10.2026: **181 unit tests in 26 files**, **69 end-to-end specs across 7 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
 
 > This is a **testing certification** project. Test discipline is part of the product itself here; the README will display a test-coverage badge.
 

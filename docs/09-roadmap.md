@@ -100,8 +100,8 @@
 
 | # | Task |
 |---|---|
-| F4-01 | **CTFL-AT (Agile Tester)** content — second certification, the real test of the architecture |
-| F4-02 | CT-AI v2.0 (TTB has a Turkish syllabus for it) |
+| F4-01 | **CT-AI v2.0 (AI Testing)** content — second certification, the real test of the architecture. Retargeted from CTFL-AT on 02.10.2026: CTFL-AT is in its sunset (`docs/03` §8) |
+| F4-02 | ~~CT-AI v2.0~~ — merged into F4-01 |
 | F4-03 | CT-PT (Performance Testing) |
 | F4-04 | CTAL-TA v4.0 — first Advanced module (multi-point questions → scoring engine expands) |
 | F4-05 | Community question contributions: PR template, originality declaration, review flow |
@@ -119,7 +119,7 @@
 | +8 weeks | **M1** — MVP live, 120 questions, first real user trial |
 | +12 weeks | **M2** — Learning modes, 200 questions, glossary |
 | +16 weeks | **M3** — SRS + PWA + 300 questions — *"the full product"* |
-| +24 weeks | **M4** — Second certification (CTFL-AT) live |
+| +24 weeks | **M4** — Second certification (CT-AI v2.0) live |
 
 ---
 

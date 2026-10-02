@@ -49,7 +49,7 @@
         }
       ],
       "properties": {
-        "objective": { "type": "string", "pattern": "^FL-[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "objective": { "type": "string", "pattern": "^(FL|AI)-[0-9]+\\.[0-9]+\\.[0-9]+$" },
         "syllabusVersion": { "type": "string" },
         "syllabusRef": { "type": "string" },
         "revision": { "type": "integer", "minimum": 1 },

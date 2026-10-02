@@ -17,7 +17,9 @@ features/exam/     Selection and scoring — selectQuestions (one entry point,
                    the last being an explicit id list), generateExam
                    (blueprint-driven, seeded, reproducible), scoreExam (exact
                    match, NO partial credit), examTimer (absolute Date.now()
-                   deadline), rng, optionOrder (per-attempt option shuffle)
+                   deadline), rng, optionOrder (per-attempt option shuffle),
+                   points (what a question of each K-level is worth, read
+                   from the blueprint's groups)
 features/srs/      Spaced repetition — scheduler (the only ts-fsrs import:
                    card <-> row, grading, the interval preview, and the rule
                    for what a wrong answer does to the deck), interval,
@@ -32,6 +34,8 @@ lib/db/            Dexie/IndexedDB — the single place for persistence. db.ts
                    srsCards.ts (the repetition deck), backup.ts (the
                    progress file: export, validate, merge-import)
 lib/i18n/          UI language; question language is a separate concept (attempt.contentLang)
+lib/certification.ts  Which certification the screens show — the home
+                   screen's pick, in localStorage (ADR-0006)
 lib/bilingual.ts   TR+EN side by side — a display preference in localStorage,
                    deliberately NOT on the attempt: "both" is not a language
 routes/            Screens · components/ shared UI · types/content.ts data types
@@ -61,6 +65,17 @@ user-facing surface:
 ```
 
 ## Behaviour that surprises
+
+- **Two certifications, and the routes do not say which.** Screens not tied to
+  an attempt read `contentClient.getActiveCertification()` — the home screen's
+  pick. Screens tied to an attempt (session, result, review, study result)
+  read the attempt's own `certId`, which doubles as the content path (check
+  #25 holds them equal), and `resumeAttempt` sets the pick to the attempt's
+  certification so links onward stay in it. A new screen that loads content
+  must pick one of the two on purpose. `/calisma/lo/:loCode` switches to the objective's
+  certification when the code belongs to the other one.
+- **A question is worth its own `points`.** CT-AI K3 questions are worth 2;
+  never count questions where points are meant (pass mark, totals).
 
 - **IndexedDB has no boolean key type.** `objectiveProgress.mastered` is in the
   index string, but `db.objectiveProgress.where({ mastered: true })` matches

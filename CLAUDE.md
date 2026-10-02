@@ -71,11 +71,11 @@ These numbers live in `data/ctfl-v4.0.1/syllabus.json` and `meta.json`; they are
 ```bash
 yarn install --frozen-lockfile   # what CI runs; the lockfile is never edited by hand
 yarn dev                # Vite (predev: syncs data/ -> public/data/)
-yarn validate:data      # JSON Schema (#1) + 20 consistency checks (#2-#23; #14, #23 retired)  ← must be green on every PR
+yarn validate:data      # JSON Schema (#1) + 22 consistency checks (#2-#25; #14, #23 retired)  ← must be green on every PR
 yarn validate:i18n      # src/lib/i18n/locales/*.json key parity (TR/EN), CI gate
-yarn build:index        # builds questions/index.json, lessons/index.json + manifest counts from the chunks
+yarn build:index        # builds questions/index.json, lessons/index.json + the manifest (certification list from each meta.json, counts from the chunks)
 yarn stats              # per-LO coverage → docs/coverage.md + README badges
-yarn publish:questions  # review -> published; --reviewer is mandatory (the only path through)
+yarn publish:questions  # review -> published; --reviewer is mandatory (the only path through); --cert <id> too once the manifest lists more than one certification
 yarn publish:lessons    # the same script with --kind lessons; --reviewer is mandatory
 yarn sync:data          # data/ -> public/data/ (needed when data/ changes while the dev server runs)
 yarn test               # Vitest (unit)

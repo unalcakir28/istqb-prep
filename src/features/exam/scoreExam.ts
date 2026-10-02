@@ -2,8 +2,9 @@
  * F1-06 — Exam scoring.
  *
  * The rules come from the official exam and are not hard-coded here:
- * - Every question is worth EXACTLY 1 point; Foundation has no multi-point
- *   questions.
+ * - A question is worth its own `points`. Every CTFL v4.0.1 question is worth
+ *   exactly 1; a CT-AI v2.0 K3 question is worth 2, which the blueprint
+ *   records per group and validator check #24 holds every question to.
  * - Multiple-answer (`multi`) questions are scored on an EXACT MATCH — there
  *   is no partial credit. Ticking one of the two correct options scores 0.
  * - The pass mark is read from `meta.json` (26/40 for CTFL v4.0.1), never

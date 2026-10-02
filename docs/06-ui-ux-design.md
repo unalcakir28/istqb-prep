@@ -114,7 +114,7 @@ Route paths are Turkish, like the rest of the product's user-facing surface; the
 │                              │ ▪▪▪▪▪▪▪▪▪                   │ │
 │                              │ 6 Tools                 2   │ │
 │                              │ ▪▪                          │ │
-│  CTFL v4.0.1                 │ 60 minutes  26 of 40 pass   │ │
+│  CTFL v4.0.1                 │ 60 minutes  26 of 40 points │ │
 │                              └─────────────────────────────┘ │
 │                                                              │
 │  Three ways to work                                          │
@@ -148,9 +148,13 @@ There is no CTA in the hero. The mode cards immediately below are the page's act
 
 Every number on this screen is read from `meta.json`, `syllabus.json` and the question index. None of 40 / 26 / 60 is written in the code.
 
-The coverage line has **no progress bar**. `objectivesTotal` is fixed at 64 by the syllabus and coverage is 64, so a bar would sit permanently full and read as decoration; the sentence carries both numbers.
+The coverage line has **no progress bar**. For CTFL, `objectivesTotal` is fixed at 64 by the syllabus and coverage is 64, so a bar would sit permanently full and read as decoration; the sentence carries both numbers.
 
 **Above the hero, one of two blocks, never both (F1-16).** With no finished session and nothing mastered, "Where should I start?" points at study and offers "measure me first" as the alternative — an empty dashboard of zeros is worse than a direction. Otherwise "Your status": objectives learned, sessions finished, and the last score. The last score is **omitted** rather than shown as 0% before the first finished session, because a dash reads as a score of zero.
+
+**The certification picker (F4-01).** Once the manifest has two `active` certifications, the page opens with a "Certification" group of toggle buttons — acronym and version, with the full name under it — above everything else, the resume banner included: what the page shows depends on it. It is the interface-language control's pattern (`aria-pressed`), not a radio group, because a pick reloads the page and arrow keys that moved the selection would reload it on every press. The choice is kept in localStorage (`src/lib/certification.ts`); every screen that is not tied to an attempt reads it, and a session, its result and its review keep reading their own attempt's certification. The routes carry no certification, so every existing bookmark lands where it did. One exception follows a link: `/calisma/lo/:loCode` with another certification's objective switches to that certification rather than saying "not found". A pick loads the page again but keeps the current one on screen until the new one arrives, so the pressed button never unmounts and keeps focus; a status line under the picker then says "Now showing CT-AI v2.0 — Certified Tester AI Testing", because everything under it changed without focus moving. The pressed button carries a check mark and a heavier border, not only a colour.
+
+**Points are said, not drawn.** For CTFL the caption ends "Each one is worth a single point." For a certification whose questions differ — CT-AI v2.0, where a K3 question is worth 2 — it says so ("a K2 question is worth 1 point and a K3 question is worth 2 points, 44 points in all"), read from the blueprint's groups. A cell is still one question: the paper has 40, whatever they are worth. The pass line under the figure is in points.
 
 **The repetition link (F3-02).** "Your status" carries a link to `/tekrar` once the deck holds a card, with the due count in its own text ("Repeat 3 due questions"), accent-filled while something is due. Before the first wrong answer there is no link: it would lead to an empty screen. The count comes from the same `summarizeDeck` the review screen serves by, so the two numbers cannot disagree.
 

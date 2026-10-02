@@ -101,6 +101,9 @@ export default function Glossary() {
         <p className="max-w-[65ch] text-[15px] text-fg-muted">
           {t("glossary.intro", { count: data.termCount, version: data.syllabusVersion })}
         </p>
+        {data.trSource === "mixed" ? (
+          <p className="max-w-[65ch] text-[15px] text-fg-muted">{t("glossary.introMixed")}</p>
+        ) : null}
         {/* Rule 5: the reason a term has no definition is stated, not left as
             an apparent omission. */}
         <p className="max-w-[65ch] text-[15px] text-fg-muted">{t("glossary.noDefinitions")}</p>
@@ -162,6 +165,10 @@ export default function Glossary() {
                 <span lang="tr" className="text-[15px]">
                   {term.tr}
                 </span>
+
+                {term.trSource === "editorial" ? (
+                  <span className="text-xs text-fg-muted">{t("glossary.editorial")}</span>
+                ) : null}
 
                 {term.trVariants?.length ? (
                   <span lang="tr" className="text-xs text-fg-muted">

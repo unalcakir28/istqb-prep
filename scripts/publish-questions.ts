@@ -18,6 +18,11 @@
  *   yarn publish:questions --reviewer "name" --all --dry-run
  *   yarn publish:lessons   --reviewer "name" --chunk ch01
  *   yarn publish:lessons   --reviewer "name" --all --except FL-1.1.1
+ *   yarn publish:questions --reviewer "name" --cert ct-ai-v2.0 --chunk ch01-a
+ *
+ * Chunk names repeat across certifications (every one has a `ch01-a`), so
+ * once the manifest lists more than one, `--cert` is required: without it a
+ * `--chunk` or `--all` would publish in every certification at once.
  *
  * Items held back with `--except` stay in `review`; anything with findings
  * from validation must not be published until it is fixed.
@@ -60,6 +65,8 @@ const COLLECTIONS: Record<string, Collection> = {
 
 interface Options {
   collection: Collection;
+  /** The certification to publish in; null only while the manifest lists one. */
+  cert: string | null;
   reviewer: string;
   chunks: string[] | "all";
   except: Set<string>;
@@ -93,6 +100,7 @@ function parseArgs(argv: string[]): Options {
 
   return {
     collection,
+    cert: get("--cert") ?? null,
     reviewer,
     chunks: all ? "all" : (chunk as string).split(","),
     except: new Set((get("--except") ?? "").split(",").filter(Boolean)),
@@ -109,7 +117,17 @@ function main(): void {
   let published = 0;
   let held = 0;
 
-  for (const certification of manifest.certifications ?? []) {
+  const certifications: { id: string; path: string }[] = manifest.certifications ?? [];
+  if (certifications.length > 1 && options.cert === null) {
+    fail(`--cert <id> is required: the manifest lists ${certifications.map((item) => item.id).join(", ")}, and chunk names repeat across them.`);
+  }
+  if (options.cert !== null && !certifications.some((item) => item.id === options.cert)) {
+    fail(`--cert '${options.cert}' is not in data/manifest.json.`);
+  }
+
+  for (const certification of certifications) {
+    if (options.cert !== null && certification.id !== options.cert) continue;
+
     const contentDir = path.join(DATA_DIR, certification.path, collection.dir);
     if (!fs.existsSync(contentDir)) continue;
 

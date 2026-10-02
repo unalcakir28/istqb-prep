@@ -9,6 +9,7 @@
   "level": "foundation",
   "syllabusVersion": "4.0.1",
   "syllabusReleaseDate": "2024-09-15",
+  "status": "active",
   "exam": {
     "questionCount": 40,
     "totalPoints": 40,

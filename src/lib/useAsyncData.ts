@@ -16,14 +16,24 @@ import { useCallback, useEffect, useRef, useState } from "react";
 export interface AsyncData<T> {
   data: T | null;
   failed: boolean;
+  /** True while `refresh` is loading; `data` still holds the previous result. */
+  refreshing: boolean;
   /** Reloads from scratch. Used by the "retry" action on the error screen. */
   reload: () => void;
+  /**
+   * Loads again but keeps the current data on screen until the new data
+   * arrives. For a change made on the page itself — the home screen's
+   * certification picker — where dropping to a spinner would unmount the
+   * control that was just pressed and lose its focus.
+   */
+  refresh: () => void;
 }
 
 export function useAsyncData<T>(load: () => Promise<T>): AsyncData<T> {
-  const [state, setState] = useState<{ data: T | null; failed: boolean }>({
+  const [state, setState] = useState<{ data: T | null; failed: boolean; refreshing: boolean }>({
     data: null,
     failed: false,
+    refreshing: false,
   });
   const [attempt, setAttempt] = useState(0);
   const loadRef = useRef(load);
@@ -37,10 +47,10 @@ export function useAsyncData<T>(load: () => Promise<T>): AsyncData<T> {
 
     void loadRef.current().then(
       (data) => {
-        if (!cancelled) setState({ data, failed: false });
+        if (!cancelled) setState({ data, failed: false, refreshing: false });
       },
       () => {
-        if (!cancelled) setState({ data: null, failed: true });
+        if (!cancelled) setState({ data: null, failed: true, refreshing: false });
       },
     );
 
@@ -52,9 +62,14 @@ export function useAsyncData<T>(load: () => Promise<T>): AsyncData<T> {
   // Immediately drop back to loading state; the old error message doesn't
   // stay on screen while the response is pending.
   const reload = useCallback(() => {
-    setState({ data: null, failed: false });
+    setState({ data: null, failed: false, refreshing: false });
     setAttempt((value) => value + 1);
   }, []);
 
-  return { ...state, reload };
+  const refresh = useCallback(() => {
+    setState((current) => ({ ...current, refreshing: true }));
+    setAttempt((value) => value + 1);
+  }, []);
+
+  return { ...state, reload, refresh };
 }

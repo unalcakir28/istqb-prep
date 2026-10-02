@@ -1,6 +1,6 @@
 {
   "app": {
-    "tagline": "ISTQB Temel Seviye sınavına hazırlan",
+    "tagline": "ISTQB sertifika sınavlarına hazırlan",
     "skipToContent": "İçeriğe geç"
   },
   "nav": {
@@ -18,13 +18,13 @@
     "menu": "Menü"
   },
   "home": {
-    "heroTitle": "ISTQB Temel Seviye için ücretsiz deneme sınavı",
+    "heroTitle": "ISTQB {{name}} için ücretsiz deneme sınavı",
     "heroLead": "v{{version}} müfredatından yazılmış {{questions}} özgün soru. Her şıkkın bir gerekçesi var — doğrusunun da, yanlışlarının da — Türkçe ve İngilizce. Hesap yok, ücret yok, burada yaptığın hiçbir şey cihazından çıkmıyor.",
     "blueprintTitle": "Gerçek sınav ne soruyor",
-    "blueprintCaption": "{{chapters}} bölüme ISTQB'nin yayımladığı oranlarda dağılmış {{total}} soru. Her biri tek puan değerinde.",
+    "blueprintCaption": "{{chapters}} bölüme ISTQB'nin yayımladığı oranlarda dağılmış {{total}} soru.",
     "blueprintQuestions": "soru",
     "blueprintDuration": "{{minutes}} dakika",
-    "blueprintPass": "{{total}} soruda {{pass}} doğru geçer",
+    "blueprintPass": "{{total}} puanda {{pass}} puan geçer",
     "modesTitle": "Çalışmanın üç yolu",
     "modesLead": "Çalışma zemini kurar, alıştırma pekiştirir, deneme sınavı ölçer. İstediğinden başlayabilirsin.",
     "factTime": "Süre",
@@ -61,13 +61,19 @@
     "examLead": "{{chapters}} bölümün tamamından resmî oranlarla çekilmiş {{count}} soru, süreye karşı.",
     "examTime": "{{minutes}} dakika, geri sayar. Süre bitince kendisi teslim eder.",
     "examAnswers": "Sen teslim edene kadar gizli; gerçek sınavdaki gibi.",
-    "examScore": "{{total}} soruda {{pass}} doğru geçer. Ardından soru soru inceleme.",
+    "examScore": "{{total}} puanda {{pass}} puan geçer. Ardından soru soru inceleme.",
     "officialTitle": "Resmî soruları mı arıyorsun?",
-    "officialBody": "ISTQB ve Turkish Testing Board, cevap anahtarlarıyla birlikte dört örnek sınavı ücretsiz yayımlıyor. Lisansları kimsenin bu soruları yeniden yayımlamasına izin vermiyor; bu yüzden havuzda bulamazsın — nereden indireceğini bulursun.",
+    "officialBody": "Resmî örnek sınavlar, cevap anahtarlarıyla birlikte yayıncılarından ücretsiz indirilebiliyor. Lisansları kimsenin bu soruları yeniden yayımlamasına izin vermiyor; bu yüzden havuzda bulamazsın — nereden indireceğini bulursun.",
     "officialAction": "Nereden indirilir",
     "repetitionDue_one": "Zamanı gelen {{count}} soruyu tekrar et",
     "repetitionDue_other": "Zamanı gelen {{count}} soruyu tekrar et",
-    "repetitionNone": "Tekrar — zamanı gelen soru yok"
+    "repetitionNone": "Tekrar — zamanı gelen soru yok",
+    "blueprintPointsSingle": "Her biri tek puan değerinde.",
+    "blueprintPointsMixed": "Her soru aynı puanda değil: {{list}}; toplam {{total}} puan.",
+    "blueprintLevelPoints_one": "{{level}} sorusu {{count}} puan",
+    "blueprintLevelPoints_other": "{{level}} sorusu {{count}} puan",
+    "certificationLabel": "Sertifika",
+    "certificationChanged": "Şimdi gösterilen: {{name}}."
   },
   "setup": {
     "title": "Deneme kurulumu",
@@ -203,7 +209,9 @@
     "noMatch": "Bu aramaya uyan terim yok.",
     "alsoWritten": "Ayrıca: {{terms}}",
     "notUsed": "Kullanılmaz: {{terms}}",
-    "sourceTag": "Kaynak etiketi: {{source}}"
+    "sourceTag": "Kaynak etiketi: {{source}}",
+    "introMixed": "Bu sürümün resmî Türkçe müfredatı yok. Türkçe terimler, varsa TTB'nin önceki Türkçe müfredatından ya da CTFL v4.0.1'den alındı; kalanlar bu projenin kendi çevirisi ve işaretli.",
+    "editorial": "Proje çevirisi"
   },
   "lists": {
     "title": "Listelerim",
@@ -303,7 +311,7 @@
     "disclaimer": "Bu platform bağımsız bir topluluk projesidir; ISTQB® veya Turkish Testing Board ile hiçbir bağlantısı yoktur, onlar tarafından onaylanmamıştır. İçerik resmî müfredata dayanılarak özgün olarak hazırlanmıştır ancak sınavda çıkacak soruları yansıtmaz. Sınav sonucunuza dair hiçbir garanti verilmez. Resmî ve güncel bilgi için istqb.org ve turkishtestingboard.org adreslerine başvurunuz.",
     "officialLinks": "Resmî kaynaklar",
     "officialExamsTitle": "Resmî örnek sınavlar",
-    "officialExamsBody": "ISTQB ve Turkish Testing Board, cevap anahtarlarıyla birlikte dört örnek sınavı ücretsiz yayımlıyor. Bu sınavların soruları burada çoğaltılmıyor ve çoğaltılmayacak — aşağıdaki bağlantılar seni yayıncıya götürür, soruları kaynağında çözersin.",
+    "officialExamsBody": "Resmî örnek sınavlar, cevap anahtarlarıyla birlikte yayıncılarından ücretsiz indirilebiliyor. Bu sınavların soruları burada çoğaltılmıyor ve çoğaltılmayacak — aşağıdaki bağlantılar seni yayıncıya götürür, soruları kaynağında çözersin.",
     "officialExamsNotice": "Telif bildirimi, \"ticari olmayan kullanım için alıntılar, kaynak belirtilirse kopyalanabilir\" diyor ve ekliyor: \"Bu örnek sınavın başka herhangi bir şekilde kullanılması, önce ISTQB®'nin yazılı onayı alınmadan yasaktır.\" Telif Hakkı © International Software Testing Qualifications Board.",
     "officialExamsSet": "Örnek sınav {{set}} · {{publisher}}",
     "privacyTitle": "Gizlilik",

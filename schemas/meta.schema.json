@@ -18,6 +18,10 @@
     "level": { "enum": ["foundation", "advanced", "expert", "specialist"] },
     "syllabusVersion": { "type": "string" },
     "syllabusReleaseDate": { "type": "string", "format": "date" },
+    "status": {
+      "enum": ["active", "draft", "retired"],
+      "description": "Copied into the manifest by yarn build:index. Only 'active' can be picked in the app (src/lib/certification.ts); a 'draft' certification is validated and indexed but not offered."
+    },
     "exam": {
       "type": "object",
       "required": ["questionCount", "totalPoints", "passPoints", "durationMinutes"],

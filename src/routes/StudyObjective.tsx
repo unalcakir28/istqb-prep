@@ -22,6 +22,7 @@ import { ErrorNotice } from "@/components/ErrorNotice";
 import { LessonCard } from "@/components/LessonCard";
 import { Spinner } from "@/components/Spinner";
 import { useSessionStore } from "@/features/session/sessionStore";
+import { writeCertificationChoice } from "@/lib/certification";
 import { contentClient } from "@/lib/content/contentClient";
 import { markLessonRead, MASTERY_MIN_ANSWERED } from "@/lib/db/objectiveProgress";
 import { useAsyncData } from "@/lib/useAsyncData";
@@ -43,11 +44,36 @@ interface ObjectiveData {
   available: number;
 }
 
-async function loadObjective(loCode: string): Promise<ObjectiveData> {
-  const cert = await contentClient.getActiveCertification();
+/**
+ * The certification an objective belongs to. Normally the one picked; but a
+ * link to another one's objective — a bookmark, a URL someone shared — would
+ * otherwise say "not found" for an objective that exists, so the pick follows
+ * the link. LO codes carry their certification's prefix (`FL-`, `AI-`), so
+ * no two certifications share one.
+ */
+async function certificationFor(
+  loCode: string,
+): Promise<{ cert: CertificationSummary; objectives: Objective[] }> {
+  const active = await contentClient.getActiveCertification();
+  const objectives = await contentClient.getObjectives(active.path);
+  if (objectives.some((item) => item.code === loCode)) return { cert: active, objectives };
 
-  const [objectives, lesson, index] = await Promise.all([
-    contentClient.getObjectives(cert.path),
+  for (const other of await contentClient.getSelectableCertifications()) {
+    if (other.id === active.id) continue;
+    const theirs = await contentClient.getObjectives(other.path);
+    if (!theirs.some((item) => item.code === loCode)) continue;
+
+    writeCertificationChoice(other.id);
+    return { cert: other, objectives: theirs };
+  }
+
+  return { cert: active, objectives };
+}
+
+async function loadObjective(loCode: string): Promise<ObjectiveData> {
+  const { cert, objectives } = await certificationFor(loCode);
+
+  const [lesson, index] = await Promise.all([
     contentClient.getLesson(cert.path, loCode),
     contentClient.getIndex(cert.path),
   ]);

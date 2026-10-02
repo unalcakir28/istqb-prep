@@ -20,8 +20,8 @@
         "required": ["code", "chapter", "section", "kLevel", "text"],
         "additionalProperties": false,
         "properties": {
-          "code": { "type": "string", "pattern": "^FL-[0-9]+\\.[0-9]+\\.[0-9]+$" },
-          "chapter": { "type": "integer", "minimum": 1, "maximum": 6 },
+          "code": { "type": "string", "pattern": "^(FL|AI)-[0-9]+\\.[0-9]+\\.[0-9]+$" },
+          "chapter": { "type": "integer", "minimum": 1 },
           "section": { "type": "string" },
           "kLevel": { "enum": ["K1", "K2", "K3"] },
           "text": {

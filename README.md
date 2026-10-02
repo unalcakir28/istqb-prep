@@ -90,7 +90,7 @@ Detailed rationale and sources: [`docs/01-market-research.md`](docs/01-market-re
 | Lesson cards        | ✅ All 64 written and published — one per learning objective, TR+EN, key points and common mistakes                   |
 | SRS, glossary       | ✅ Wrong answers come back on a spaced-repetition schedule (`/tekrar`) · glossary of 97 bilingual terms               |
 | Your data           | ✅ Download your progress as one file and load it in another browser — still no account (`/verilerim`)                |
-| Tests               | ✅ 172 unit tests (Vitest) · 69 end-to-end specs (Playwright, including axe scans of the main screens in both themes) |
+| Tests               | ✅ 181 unit tests (Vitest) · 69 end-to-end specs (Playwright, including axe scans of the main screens in both themes) |
 
 **Data accuracy.** The exam constants, learning objectives, and Turkish terms
 were extracted from the official ISTQB and TTB PDFs; none of it was hand-guessed.

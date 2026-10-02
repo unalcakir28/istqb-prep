@@ -13,6 +13,13 @@
  * visitor's cache kept serving the old pool. It is now a hash of every content
  * file the app can fetch, so it changes exactly when the content does.
  *
+ * The manifest's list of certifications is generated too (F4-01): one entry
+ * per `data/<dir>/meta.json`, in the order the manifest already lists them and
+ * any new one appended. Its id, acronym, version and `status` come from that
+ * meta.json, and the counters from the content — so adding a certification is
+ * adding its directory, and making it selectable is setting its meta.json
+ * `status` to "active".
+ *
  * Usage:  yarn build:index
  */
 
@@ -72,6 +79,7 @@ function buildCertificationIndex(
   dataVersion: string,
 ): {
   count: number;
+  objectivesTotal: number;
   objectivesCovered: number;
   minPerObjective: number;
 } {
@@ -131,6 +139,7 @@ function buildCertificationIndex(
 
   return {
     count: entries.length,
+    objectivesTotal: counts.length,
     objectivesCovered: counts.filter((n) => n > 0).length,
     minPerObjective: counts.length === 0 ? 0 : Math.min(...counts),
   };
@@ -225,19 +234,53 @@ function contentVersion(): string {
   return hash.digest("hex").slice(0, 12);
 }
 
+/**
+ * One manifest entry per certification directory. An entry whose directory
+ * has gone is dropped; one whose directory is new is appended. Every content
+ * file a question needs is checked by `yarn validate:data`, not here.
+ */
+function syncCertifications(existing: Json[]): Json[] {
+  const dirs = fs
+    .readdirSync(DATA_DIR, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory() && fs.existsSync(path.join(DATA_DIR, entry.name, "meta.json")))
+    .map((entry) => entry.name)
+    .sort();
+
+  const known = existing.filter((entry) => dirs.includes(entry.path));
+  const added = dirs
+    .filter((dir) => !known.some((entry) => entry.path === dir))
+    .map((dir): Json => ({ path: dir }));
+
+  return [...known, ...added].map((entry) => {
+    const meta = readJson(path.join(DATA_DIR, entry.path, "meta.json"));
+    return {
+      id: meta.id,
+      acronym: meta.acronym,
+      syllabusVersion: meta.syllabusVersion,
+      status: meta.status ?? "draft",
+      path: entry.path,
+      // Rule 3: nothing is published without both, so every certification offers both.
+      languages: entry.languages ?? ["tr", "en"],
+      questionCount: entry.questionCount ?? 0,
+      coverage: entry.coverage,
+    };
+  });
+}
+
 function main(): void {
   const manifest = readJson(MANIFEST);
   const dataVersion = contentVersion();
   manifest.dataVersion = dataVersion;
-  const certifications = manifest.certifications ?? [];
-  if (certifications.length === 0) fail("data/manifest.json has no certifications.");
+  manifest.certifications = syncCertifications(manifest.certifications ?? []);
+  const certifications = manifest.certifications;
+  if (certifications.length === 0) fail("data/ has no certification directory with a meta.json.");
 
   console.log("Generating index...");
   for (const certification of certifications) {
     const stats = buildCertificationIndex(certification.path, dataVersion);
     certification.questionCount = stats.count;
     certification.coverage = {
-      objectivesTotal: certification.coverage?.objectivesTotal ?? 0,
+      objectivesTotal: stats.objectivesTotal,
       objectivesCovered: stats.objectivesCovered,
       minPerObjective: stats.minPerObjective,
     };

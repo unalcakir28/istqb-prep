@@ -18,8 +18,16 @@ lessons, the validator's blind spots, and running writers in parallel.
   reaches returning visitors once the index is rebuilt. Each chunk's own
   `dataVersion` field is informational and is not what the client reads.
 
-- **The LO code `FL-x.y.z` is the primary key.** It stays in English even in the
-  Turkish syllabus; it is language-independent.
+- **The LO code is the primary key** — `FL-x.y.z` for CTFL, `AI-x.y.z` for
+  CT-AI v2.0. It stays in English even in the Turkish syllabus; it is
+  language-independent, and its prefix names the certification.
+- **Two certifications.** `data/ct-ai-v2.0/` has no official Turkish syllabus:
+  its `terms.json` records a `trSource` per term, and the TR objective texts
+  are editorial (`docs/03` §8). Its question ids are `ctai-NNNN`; ids must be
+  unique across certifications (check #25). Chunk names repeat across
+  certifications, so `yarn publish:questions` needs `--cert <id>`. The
+  manifest's certification list is generated from each `meta.json`; a new
+  certification starts `"status": "draft"`.
 - **One lesson per learning objective, keyed by `objective`.** Lesson chunks are
   `chNN.json`, one per chapter. TR and EN must carry the same number of
   `keyPoints` and `commonMistakes` (check #17). Paragraphs are plain text; there

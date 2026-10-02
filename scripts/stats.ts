@@ -31,12 +31,31 @@ function readJson(absPath: string): Json {
   return JSON.parse(fs.readFileSync(absPath, "utf8"));
 }
 
-/** Phase targets — docs/09-roadmap.md */
-const TARGETS = [
+interface Target {
+  phase: string;
+  questions: number;
+  perObjective: number;
+}
+
+/**
+ * Phase targets — docs/09-roadmap.md. The roadmap's phases were set for the
+ * first certification in the manifest (CTFL v4.0.1) and are reported for it
+ * alone; a later certification is measured on per-objective depth only,
+ * which is what decides whether its exams can be generated.
+ */
+const ROADMAP_TARGETS: Target[] = [
   { phase: "Phase 1 (MVP)", questions: 120, perObjective: 1 },
   { phase: "Phase 2", questions: 200, perObjective: 2 },
   { phase: "Phase 3", questions: 300, perObjective: 3 },
 ];
+
+function depthTargets(objectives: number): Target[] {
+  return [1, 2, 3].map((perObjective) => ({
+    phase: `Depth ${perObjective}`,
+    questions: perObjective * objectives,
+    perObjective,
+  }));
+}
 
 function bar(value: number, max: number, width = 12): string {
   if (max <= 0) return "·".repeat(width);
@@ -64,6 +83,8 @@ function shield(label: string, message: string, color: string): string {
  * the rest of the file is not this script's job.
  */
 function writeBadges(badges: Badge[]): void {
+  // The README's badges describe the first certification — the one the
+  // roadmap and the README's own tables are about.
   const first = badges[0];
   if (!first) return;
 
@@ -103,7 +124,7 @@ function main(): void {
   lines.push(`Generated: ${new Date().toISOString().slice(0, 10)}`);
   lines.push("");
 
-  for (const certification of manifest.certifications ?? []) {
+  for (const [position, certification] of (manifest.certifications ?? []).entries()) {
     const certDir = path.join(DATA_DIR, certification.path);
     const objectives: Json[] = readJson(path.join(certDir, "objectives.json")).objectives ?? [];
     const syllabus = readJson(path.join(certDir, "syllabus.json"));
@@ -139,7 +160,8 @@ function main(): void {
     lines.push("");
     lines.push("| Target | Questions | LO >= threshold | Status |");
     lines.push("|---|--:|--:|---|");
-    for (const target of TARGETS) {
+    const targets = position === 0 ? ROADMAP_TARGETS : depthTargets(objectives.length);
+    for (const target of targets) {
       const reached = atLeast(target.perObjective);
       const done = published.length >= target.questions && reached === objectives.length;
       lines.push(

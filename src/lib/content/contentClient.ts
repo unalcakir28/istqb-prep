@@ -14,6 +14,11 @@
  * that version.
  */
 
+import {
+  pickCertification,
+  readCertificationChoice,
+  selectableCertifications,
+} from "@/lib/certification";
 import type {
   CertificationSummary,
   CertMeta,
@@ -154,18 +159,22 @@ export class ContentClient {
   }
 
   /**
-   * The certification the screens operate on. The manifest can carry more
-   * than one, but in Phase 1 only the one marked `active` is shown; if none
-   * is marked, the first one is used.
+   * The certification the screens operate on: the candidate's choice if it
+   * can still be picked, else the first `active` one (`src/lib/certification.ts`).
+   * A screen tied to an attempt reads the attempt's `certId` instead.
    */
   async getActiveCertification(): Promise<CertificationSummary> {
     const manifest = await this.getManifest();
-    const cert =
-      manifest.certifications.find((item) => item.status === "active") ??
-      manifest.certifications[0];
+    const cert = pickCertification(manifest.certifications, readCertificationChoice());
 
     if (!cert) throw new Error("manifest has no certification");
     return cert;
+  }
+
+  /** Every certification the candidate can pick, in manifest order. */
+  async getSelectableCertifications(): Promise<CertificationSummary[]> {
+    const manifest = await this.getManifest();
+    return selectableCertifications(manifest.certifications);
   }
 
   /** If the version has changed, everything belonging to the old version is discarded. */

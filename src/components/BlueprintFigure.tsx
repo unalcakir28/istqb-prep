@@ -6,6 +6,10 @@
  * two cells, which is the single most useful thing a candidate can learn about
  * where to spend study time.
  *
+ * What a question is worth is said in words under the caption, not drawn: a
+ * cell is a question, and a CT-AI K3 question worth 2 points is still one
+ * question on the paper.
+ *
  * Nothing here is decorative and nothing is hardcoded — the rows come from
  * `syllabus.json` and the figures under them from `meta.json`, so the picture
  * changes when the blueprint does (the CLAUDE.md "do not hardcode exam
@@ -17,6 +21,8 @@
  */
 
 import { useTranslation } from "react-i18next";
+
+import type { LevelPoints } from "@/features/exam/points";
 
 export interface BlueprintChapter {
   number: number;
@@ -30,6 +36,8 @@ interface Props {
   durationMinutes: number;
   passPoints: number;
   totalPoints: number;
+  /** From `pointsByKLevel` — one entry per K-level the exam asks. */
+  levelPoints: LevelPoints[];
 }
 
 /** Running index across every chapter, so the load-in reads left to right. */
@@ -50,16 +58,28 @@ export function BlueprintFigure({
   durationMinutes,
   passPoints,
   totalPoints,
+  levelPoints,
 }: Props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const delays = cellDelays(chapters);
+  const pointsNote = levelPoints.every((level) => level.points === 1)
+    ? t("home.blueprintPointsSingle")
+    : t("home.blueprintPointsMixed", {
+        list: new Intl.ListFormat(i18n.language, { type: "conjunction" }).format(
+          levelPoints.map((level) =>
+            t("home.blueprintLevelPoints", { level: level.kLevel, count: level.points }),
+          ),
+        ),
+        total: totalPoints,
+      });
 
   return (
     <figure className="m-0 rounded-[var(--radius-card)] border border-border bg-surface p-5 sm:p-6">
       <figcaption className="mb-4 flex flex-col gap-1.5">
         <h2 className="text-[17px] font-semibold leading-snug">{t("home.blueprintTitle")}</h2>
         <p className="max-w-[46ch] text-[13px] leading-relaxed text-fg-muted">
-          {t("home.blueprintCaption", { total: totalQuestions, chapters: chapters.length })}
+          {t("home.blueprintCaption", { total: totalQuestions, chapters: chapters.length })}{" "}
+          {pointsNote}
         </p>
       </figcaption>
 

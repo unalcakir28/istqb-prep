@@ -3,9 +3,9 @@
  * scripts/validate-data.ts
  *
  * Implements the CI checks from docs/04-data-model.md §6. Check numbers run
- * #1-#23 and are never reused or renumbered; #14 and #23 are RETIRED (D-03)
- * and no longer run, which leaves 21 live checks. Checks #1-9 and #15-19 are
- * ERRORS (exit 1); #10-13 and #20-22 are WARNINGS (exit 0, printed). The
+ * #1-#25 and are never reused or renumbered; #14 and #23 are RETIRED (D-03)
+ * and no longer run, which leaves 23 live checks. Checks #1-9, #15-19, #24 and
+ * #25 are ERRORS (exit 1); #10-13 and #20-22 are WARNINGS (exit 0, printed). The
  * registry below is the source of truth for the severity levels.
  *
  * Retired, kept here so the numbers stay stable:
@@ -83,6 +83,8 @@ const CHECKS: Record<number, CheckDef> = {
   21: { num: 21, level: "warning", name: "A term.trForbidden word used in Turkish text" },
   22: { num: 22, level: "warning", name: "Is the keyed option the longest one too often" },
   // 23: retired by D-03 (option order is shuffled per attempt) — see the header.
+  24: { num: 24, level: "error", name: "Are question points and blueprint points consistent with meta.json and syllabus.json" },
+  25: { num: 25, level: "error", name: "Do manifest id, path and meta.id agree, and are question IDs unique across certifications" },
 };
 
 interface Issue {
@@ -967,6 +969,72 @@ function checkExamBlueprintTotals(blueprint: any, blueprintFile: string, syllabu
 }
 
 // ---------------------------------------------------------------------------
+// Points (#24)
+// ---------------------------------------------------------------------------
+
+// What a question is worth comes from the blueprint: each group carries the
+// tables' "Suggested Points per Question" as `pointsPerQuestion` (absent = 1,
+// every CTFL v4.0.1 group). CT-AI v2.0 is the first certification where it
+// differs — a K3 question is worth 2. Nothing else ties `question.points`,
+// `meta.exam.totalPoints` and `syllabus.chapters[].examPoints` together, and a
+// wrong one would silently move the pass line.
+function checkPoints(
+  questions: QuestionRecord[],
+  blueprint: any,
+  blueprintFile: string,
+  meta: any,
+  metaFile: string,
+  syllabus: any,
+  syllabusFile: string,
+): void {
+  const groups: any[] = Array.isArray(blueprint?.groups) ? blueprint.groups : [];
+  if (groups.length === 0) return; // #1 / #9 already report a missing blueprint
+
+  const pointsOf = (group: any): number =>
+    typeof group.pointsPerQuestion === "number" ? group.pointsPerQuestion : 1;
+
+  // One value per K-level: the app states it per level ("a K3 question is
+  // worth 2 points"), so two groups of the same level must agree.
+  const byKLevel = new Map<string, number>();
+  for (const group of groups) {
+    const known = byKLevel.get(group.kLevel);
+    if (known === undefined) {
+      byKLevel.set(group.kLevel, pointsOf(group));
+      continue;
+    }
+    if (known === pointsOf(group)) continue;
+    report(24, blueprintFile, group.id, `Group ${group.id} (${group.kLevel}) is worth ${pointsOf(group)} point(s) per question, but another ${group.kLevel} group is worth ${known}. Every group of one K-level must carry the same pointsPerQuestion.`);
+  }
+
+  let total = 0;
+  const byChapter = new Map<number, number>();
+  for (const group of groups) {
+    const points = (typeof group.questions === "number" ? group.questions : 0) * pointsOf(group);
+    total += points;
+    byChapter.set(group.chapter, (byChapter.get(group.chapter) ?? 0) + points);
+  }
+
+  const expectedTotal = meta?.exam?.totalPoints;
+  if (typeof expectedTotal === "number" && total !== expectedTotal) {
+    report(24, blueprintFile, undefined, `The blueprint's points add up to ${total} (sum of questions × pointsPerQuestion), but ${toRel(metaFile)} exam.totalPoints is ${expectedTotal}.`);
+  }
+
+  for (const chapter of Array.isArray(syllabus?.chapters) ? syllabus.chapters : []) {
+    if (typeof chapter.examPoints !== "number") continue;
+    const actual = byChapter.get(chapter.number) ?? 0;
+    if (actual === chapter.examPoints) continue;
+    report(24, syllabusFile, `chapter-${chapter.number}`, `Chapter ${chapter.number} examPoints is ${chapter.examPoints}, but the blueprint's groups for it are worth ${actual}.`);
+  }
+
+  for (const { question, file } of questions) {
+    const expected = byKLevel.get(question?.kLevel);
+    if (expected === undefined) continue; // a level the exam never asks: no rule to hold it to
+    if (question.points === expected) continue;
+    report(24, file, question?.id, `points is ${question.points}, but the blueprint makes every ${question.kLevel} question worth ${expected}.`);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // index.json vs chunk files (#8)
 // ---------------------------------------------------------------------------
 
@@ -1045,25 +1113,35 @@ function validateGlossaryDir(glossaryDir: string): void {
 // Per-certification orchestration
 // ---------------------------------------------------------------------------
 
-function validateCertification(certEntry: any): void {
+/** Returns the certification's question records, for the cross-certification checks in `main`. */
+function validateCertification(certEntry: any): QuestionRecord[] {
   const certId = isNonEmptyString(certEntry?.id) ? certEntry.id : "(unknown certification)";
   const certPath = certEntry?.path;
 
   if (!isNonEmptyString(certPath)) {
     report(1, "data/manifest.json", certId, `certifications[].path is missing/invalid — this certification cannot be validated at all.`);
-    return;
+    return [];
   }
 
   const certDir = path.join(DATA_DIR, certPath);
   if (!fs.existsSync(certDir)) {
     report(1, "data/manifest.json", certId, `Certification directory not found: data/${certPath}/`);
-    return;
+    return [];
+  }
+
+  // #25 — an attempt stores `meta.id` as its certId and is later reopened
+  // with that value as the content path, so the three must be one string.
+  if (certPath !== certId) {
+    report(25, "data/manifest.json", certId, `certifications[].path is '${certPath}' but id is '${certId}'. They must be equal: an attempt's certId is used as its content path.`);
   }
 
   // meta.json
   const metaFile = path.join(certDir, "meta.json");
   const meta = readJson(metaFile);
   if (meta) validateAgainstSchema("meta", meta, toRel(metaFile));
+  if (meta && meta.id !== certId) {
+    report(25, metaFile, certId, `meta.id is '${meta.id}' but the manifest lists this certification as '${certId}'. They must be equal.`);
+  }
 
   // syllabus.json
   const syllabusFile = path.join(certDir, "syllabus.json");
@@ -1094,7 +1172,7 @@ function validateCertification(certEntry: any): void {
   const questionsDir = path.join(certDir, "questions");
   if (!fs.existsSync(questionsDir)) {
     report(1, path.join(questionsDir, "index.json"), certId, `questions/ directory not found.`);
-    return;
+    return [];
   }
 
   const indexFile = path.join(questionsDir, "index.json");
@@ -1137,6 +1215,7 @@ function validateCertification(certEntry: any): void {
 
   checkObjectiveCoverage(objectivesByCode, allQuestions, objectivesFile);
   checkKLevelConsistency(allQuestions, objectivesByCode);
+  checkPoints(allQuestions, blueprint, blueprintFile, meta, metaFile, syllabus, syllabusFile);
 
   // If terms.json is missing, check #13 is silently skipped — missing data
   // for a warning-level check should not break CI.
@@ -1154,6 +1233,28 @@ function validateCertification(certEntry: any): void {
   checkForbiddenTurkishTerms(allQuestions, allLessons, buildForbiddenPatterns(termsDoc));
 
   validateGlossaryDir(path.join(certDir, "glossary"));
+
+  return allQuestions;
+}
+
+// #25 — the repetition deck is keyed by question id alone (src/lib/db/db.ts),
+// so an id two certifications share would let one's card overwrite the
+// other's. #7 only looks inside one certification.
+function checkQuestionIdsUniqueAcrossCertifications(byCertification: Map<string, QuestionRecord[]>): void {
+  const owner = new Map<string, string>();
+
+  for (const [certId, questions] of byCertification) {
+    for (const { question, file } of questions) {
+      if (!isNonEmptyString(question?.id)) continue;
+      const first = owner.get(question.id);
+      if (first === undefined) {
+        owner.set(question.id, certId);
+        continue;
+      }
+      if (first === certId) continue; // #7's finding, not this one
+      report(25, file, question.id, `Question id '${question.id}' is also used by certification '${first}'. Ids must be unique across certifications.`);
+    }
+  }
 }
 
 function validateLessonsDir(
@@ -1224,9 +1325,11 @@ function main(): void {
     report(1, manifestPath, undefined, `manifest.certifications is empty — no certification to validate.`);
   }
 
+  const byCertification = new Map<string, QuestionRecord[]>();
   for (const certEntry of certList) {
-    validateCertification(certEntry);
+    byCertification.set(String(certEntry?.id), validateCertification(certEntry));
   }
+  checkQuestionIdsUniqueAcrossCertifications(byCertification);
 
   printReportAndExit();
 }

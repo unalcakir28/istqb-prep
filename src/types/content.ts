@@ -120,6 +120,8 @@ export interface BlueprintGroup {
   chapter: number;
   kLevel: KLevel;
   questions: number;
+  /** The tables' "Suggested Points per Question". Absent = 1 — every CTFL v4.0.1 group. */
+  pointsPerQuestion?: number;
   objectives: string[];
 }
 
@@ -257,6 +259,12 @@ export interface Term {
   chapters: number[];
   trVariants?: string[];
   trForbidden?: string[];
+  /**
+   * Where this term's Turkish came from, when it differs term by term (the
+   * file's own `trSource` is then `"mixed"`). `"editorial"` is this project's
+   * own translation and the glossary says so beside it (rule 5).
+   */
+  trSource?: string;
 }
 
 export interface Terms {

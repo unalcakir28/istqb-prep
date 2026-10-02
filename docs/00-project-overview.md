@@ -54,8 +54,8 @@ Let a CTFL candidate study in **a single place, right up to exam day**, beyond t
 - Mobile app store distribution (PWA is sufficient)
 
 ### Later levels (architecture ready, content later)
-CTFL-AT (Agile Tester) → CT-AI (AI Testing) → CT-PT (Performance) → CTAL-TA / CTAL-TM.
-The data model is designed multi-certification from day one; it grows only by adding content. See [`04-data-model.md`](04-data-model.md).
+CT-AI v2.0 (AI Testing) → CT-PT (Performance) → CTAL-TA / CTAL-TM. CTFL-AT was dropped from this list on 02.10.2026: ISTQB is sunsetting it (`03-istqb-reference.md` §8).
+The data model is designed multi-certification from day one. Adding CT-AI v2.0 still took three code changes — the LO-code pattern, multi-point questions and a certification picker ([`04-data-model.md`](04-data-model.md) §7); with those in place, the next certification is added as content.
 
 ## 5. Target users
 
