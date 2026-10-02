@@ -123,7 +123,7 @@ Three things that verification did **not** settle, carried forward:
 
 1. **The version.** The live glossary is **V4.8.1**; our content is written against CTFL **v4.0.1**. A copied definition cites the glossary's own version, not the syllabus's, or the two get conflated.
 2. **"Except where otherwise noted"** makes the notice a default, not a blanket. A page carrying its own notice overrides it, so each definition is checked on the page it came from.
-3. **Nothing has been copied yet.** This unblocks copying; it does not perform it. `/sozluk` currently ships the 97 bilingual keyword pairs from the syllabi and says outright that it carries no definitions.
+3. **Nothing has been copied yet.** This unblocks copying; it does not perform it. `/sozluk` currently ships each certification's keyword pairs (97 CTFL · 156 CT-AI) and says outright that it carries no definitions.
 
 ---
 

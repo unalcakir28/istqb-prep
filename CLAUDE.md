@@ -7,7 +7,7 @@ This file is for Claude Code sessions working in this repo. It holds only what e
 **ISTQB-PREP** — a **free, open-source, bilingual (TR/EN)** mock exam and study platform for ISTQB certification exam preparation. The product name matches the repo name (D-01).
 **Priority: CTFL v4.0.1 (Foundation Level).** The architecture is designed to cover all levels, but content comes Foundation-first.
 
-**Status: working MVP.** Study, practice and exam run on one shared session shell. All 64 lesson cards are published and the pool holds 302 published questions, at least 4 per objective. What is open: `TODO.md`.
+**Status: working MVP.** Study, practice and exam run on one shared session shell. All 64 lesson cards are published and the pool holds 302 published questions, at least 4 per objective. A second certification, **CT-AI v2.0**, is live beside it (ADR-0006): 43 lesson cards and 86 questions, 2 per objective, picked on the home screen. What is open: `TODO.md`.
 
 ## Read these first
 
@@ -71,7 +71,7 @@ These numbers live in `data/ctfl-v4.0.1/syllabus.json` and `meta.json`; they are
 ```bash
 yarn install --frozen-lockfile   # what CI runs; the lockfile is never edited by hand
 yarn dev                # Vite (predev: syncs data/ -> public/data/)
-yarn validate:data      # JSON Schema (#1) + 22 consistency checks (#2-#25; #14, #23 retired)  ← must be green on every PR
+yarn validate:data      # JSON Schema (#1) + 23 consistency checks (#2-#26; #14, #23 retired)  ← must be green on every PR
 yarn validate:i18n      # src/lib/i18n/locales/*.json key parity (TR/EN), CI gate
 yarn build:index        # builds questions/index.json, lessons/index.json + the manifest (certification list from each meta.json, counts from the chunks)
 yarn stats              # per-LO coverage → docs/coverage.md + README badges
@@ -79,7 +79,7 @@ yarn publish:questions  # review -> published; --reviewer is mandatory (the only
 yarn publish:lessons    # the same script with --kind lessons; --reviewer is mandatory
 yarn sync:data          # data/ -> public/data/ (needed when data/ changes while the dev server runs)
 yarn test               # Vitest (unit)
-yarn e2e                # Playwright: 69 specs across 7 files — flow + axe accessibility (its own dev server, 5183)
+yarn e2e                # Playwright: 72 specs across 8 files — flow + axe accessibility (its own dev server, 5183)
 yarn e2e:ui             # the same specs in Playwright's UI mode
 yarn build              # tsc -b && vite build (CI gate)
 yarn lighthouse         # lhci autorun — asserts >=95 in all 4 categories; needs `yarn build` first

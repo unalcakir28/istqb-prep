@@ -12,14 +12,16 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import { CertificationTag } from "@/components/CertificationTag";
 import { ErrorNotice } from "@/components/ErrorNotice";
 import { Spinner } from "@/components/Spinner";
 import { contentClient } from "@/lib/content/contentClient";
 import { getObjectiveProgress } from "@/lib/db/objectiveProgress";
 import { useAsyncData } from "@/lib/useAsyncData";
-import type { Chapter, Lang, Objective } from "@/types/content";
+import type { CertificationSummary, Chapter, Lang, Objective } from "@/types/content";
 
 interface ChaptersData {
+  cert: CertificationSummary;
   chapters: Chapter[];
   objectives: Objective[];
   /** Objective code -> whether its most recent test cleared the mastery bar. */
@@ -44,7 +46,7 @@ async function loadChapters(): Promise<ChaptersData> {
     if (row.mastered) mastered.add(code);
   }
 
-  return { chapters: syllabus.chapters, objectives, mastered };
+  return { cert, chapters: syllabus.chapters, objectives, mastered };
 }
 
 export default function StudyChapters() {
@@ -62,7 +64,10 @@ export default function StudyChapters() {
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-8 px-4 py-8 sm:py-12">
-      <h1 className="text-[28px] font-semibold leading-tight">{t("study.chaptersTitle")}</h1>
+      <div className="flex flex-col gap-1">
+        <CertificationTag cert={data.cert} />
+        <h1 className="text-[28px] font-semibold leading-tight">{t("study.chaptersTitle")}</h1>
+      </div>
 
       <ul className="flex flex-col gap-3">
         {data.chapters.map((chapter) => {

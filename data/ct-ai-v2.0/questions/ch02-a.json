@@ -1,0 +1,572 @@
+{
+  "chunk": "ch02-a",
+  "chapter": 2,
+  "dataVersion": "2.0",
+  "questions": [
+    {
+      "id": "ctai-0017",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.1",
+      "objectives": [
+        "AI-2.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "quality-characteristics",
+        "iso-25059"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir video platformunun öneri sistemi dağıtılmıştır. Yeniden dağıtılmadan, izleyicilerin izleme alışkanlıkları değiştikçe önerilerini kendiliğinden değiştirmektedir. Bu davranış, ISO/IEC 25059'daki hangi kalite özelliğini EN İYİ örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kullanıcı kontrol edilebilirliği"
+            },
+            {
+              "id": "b",
+              "text": "Fonksiyonel uyarlanabilirlik"
+            },
+            {
+              "id": "c",
+              "text": "Müdahale edilebilirlik"
+            },
+            {
+              "id": "d",
+              "text": "Toplumsal ve etik risk azaltma"
+            }
+          ],
+          "rationale": {
+            "summary": "Dağıtıldıktan sonra işletim ortamındaki değişikliklere kendiliğinden uyum, ISO/IEC 25059'un fonksiyonel uygunluğun yeni alt özelliği olarak eklediği fonksiyonel uyarlanabilirliktir. Diğer seçenekler insan müdahalesini veya etik riskleri anlatır.",
+            "byOption": {
+              "a": "Yanlış. Kullanıcı kontrol edilebilirliği, bir insanın veya başka bir dış ajanın sistemin işleyişine zamanında müdahale edebilmesidir (etkileşim yeteneğinin alt özelliği). Senaryoda müdahale eden kimse yoktur; sistem kendiliğinden uyum sağlamaktadır.",
+              "b": "Doğru. Fonksiyonel uyarlanabilirlik, yapay zekâ tabanlı sistemin dağıtıldıktan sonra işletim ortamındaki değişikliklere kendiliğinden uyum sağlama yeteneğidir; senaryodaki davranış tam olarak budur.",
+              "c": "Yanlış. Müdahale edilebilirlik, bir operatörün zarar veya tehlikeyi önlemek için sistemin işleyişine zamanında müdahale edebilme derecesidir (güvenlik özelliğinin alt özelliği). Senaryo bir müdahaleyi değil, sistemin kendi uyumunu anlatır.",
+              "d": "Yanlış. Bu, kullanım kalitesine ait bir özelliktir ve hesap verebilirlik, adillik, ayrımcılık yapmama, gizlilik gibi pek çok alanı kapsar. Senaryodaki değişen koşullara kendiliğinden uyum bu özelliğin tanımı değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A video platform's recommender has been deployed. Without being redeployed, it autonomously changes what it suggests as the viewing habits of its audience change. Which ISO/IEC 25059 quality characteristic does this behavior BEST illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "User controllability"
+            },
+            {
+              "id": "b",
+              "text": "Functional adaptability"
+            },
+            {
+              "id": "c",
+              "text": "Intervenability"
+            },
+            {
+              "id": "d",
+              "text": "Societal and ethical risk mitigation"
+            }
+          ],
+          "rationale": {
+            "summary": "Autonomous adaptation to changes in the operational environment after deployment is functional adaptability, the sub-characteristic of functional suitability that ISO/IEC 25059 adds. The other options concern human intervention or ethical risks.",
+            "byOption": {
+              "a": "Incorrect. User controllability is the property that a human or another external agent can intervene in the system's functioning in a timely manner (a sub-characteristic of interaction capability). Nobody intervenes in the scenario; the system adapts by itself.",
+              "b": "Correct. Functional adaptability is the ability of the AI-based system to autonomously adapt to changes in its operational environment after it is deployed, which is exactly the behavior described.",
+              "c": "Incorrect. Intervenability is the degree to which an operator can intervene in the system's functioning in a timely manner to prevent harm or hazard (a sub-characteristic of security). The scenario describes the system adapting itself, not an intervention.",
+              "d": "Incorrect. This is a quality-in-use characteristic covering many areas such as accountability, fairness and non-discrimination, and privacy. Autonomous adaptation to changing conditions is not what it defines."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0018",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.1",
+      "objectives": [
+        "AI-2.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "quality-characteristics",
+        "iso-25059"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir sahtecilik tespit modeli, gelen işlem kayıtlarının bir kısmı geçersiz olduğunda veya kasıtlı olarak manipüle edildiğinde bile belirtilen doğru çıktı düzeyini korumaktadır. Bu davranış, ISO/IEC 25059'daki hangi kalite özelliğini EN İYİ örnekler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yapay zekâ fonksiyonel doğruluğu"
+            },
+            {
+              "id": "b",
+              "text": "Şeffaflık"
+            },
+            {
+              "id": "c",
+              "text": "Yapay zekâ sağlamlığı"
+            },
+            {
+              "id": "d",
+              "text": "Müdahale edilebilirlik"
+            }
+          ],
+          "rationale": {
+            "summary": "Geçersiz veya karşıt girdilere rağmen yapay zekâ fonksiyonel doğruluk düzeyini koruma yeteneği, güvenilirliğin yeni alt özelliği olan yapay zekâ sağlamlığıdır. Fonksiyonel doğruluk bu düzeyin kendisini, diğerleri ise bilgi iletimini ve müdahaleyi ifade eder.",
+            "byOption": {
+              "a": "Yanlış. Bu özellik, doğru ve yanlış çıktıları birlikte ele alır ve yanlış sonuçlar için kabul edilebilir eşikler tanımlar. Senaryoda ise doğruluk düzeyinin geçersiz veya manipüle edilmiş girdilere rağmen korunması vurgulanır; bu, doğruluğun kendisi değil yapay zekâ sağlamlığıdır.",
+              "b": "Yanlış. Şeffaflık, yapay zekâ tabanlı sistem hakkında uygun bilginin paydaşlara iletilme derecesidir. Senaryo bilgi iletiminden değil, bozucu girdiler karşısındaki davranıştan söz eder.",
+              "c": "Doğru. Yapay zekâ sağlamlığı, sistemin yapay zekâ fonksiyonel doğruluk düzeyini geçersiz veya karşıt veriler gibi koşullardan bağımsız olarak koruma yeteneğidir; senaryo tam olarak bunu anlatır.",
+              "d": "Yanlış. Müdahale edilebilirlik, operatörün zarar veya tehlikeyi önlemek için sistemin işleyişine zamanında müdahale edebilmesidir. Senaryoda bir operatör müdahalesi yoktur."
+            }
+          }
+        },
+        "en": {
+          "stem": "A fraud-detection model keeps its specified level of correct outputs even when some of the incoming transaction records are invalid or have been deliberately manipulated. Which ISO/IEC 25059 quality characteristic does this behavior BEST illustrate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "AI functional correctness"
+            },
+            {
+              "id": "b",
+              "text": "Transparency"
+            },
+            {
+              "id": "c",
+              "text": "AI robustness"
+            },
+            {
+              "id": "d",
+              "text": "Intervenability"
+            }
+          ],
+          "rationale": {
+            "summary": "Maintaining the level of AI functional correctness despite invalid or adversarial inputs is AI robustness, a new sub-characteristic of reliability. Functional correctness is the level itself, while the other options concern information and intervention.",
+            "byOption": {
+              "a": "Incorrect. This characteristic considers both correct and incorrect outputs and defines acceptable thresholds for incorrect results. The scenario stresses that the correctness level is maintained despite invalid or manipulated inputs, which is robustness rather than correctness itself.",
+              "b": "Incorrect. Transparency is the degree to which appropriate information about the AI-based system is communicated to stakeholders. The scenario is about behavior under disturbing inputs, not about communicating information.",
+              "c": "Correct. AI robustness is the ability of the AI-based system to maintain its level of AI functional correctness regardless of circumstances such as invalid or adversarial data inputs; this is exactly the scenario.",
+              "d": "Incorrect. Intervenability is the degree to which an operator can intervene in the system's functioning in a timely manner to prevent harm or hazard. No operator intervention appears in the scenario."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0019",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.2",
+      "objectives": [
+        "AI-2.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "safety",
+        "ai-safety-challenges"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Emniyetle ilgili bir yapay zekâ tabanlı sistem, dağıtımdan önce titiz biçimde test edilmiş ve sahada yeni verilerden öğrenmeye devam etmektedir. Bu sürekli öğrenme, dağıtım öncesi testlere dayanarak emniyet bütünlüğünü göstermeyi EN doğrudan nasıl zayıflatır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Rastgele sayı üretimi, aynı modelin birbirine çok yakın girdilere farklı yanıt vermesine yol açabilir."
+            },
+            {
+              "id": "b",
+              "text": "Gereksinimler eğitim verisi aracılığıyla örtük verildiğinden gereksinimlerden gerçekleştirmeye izlenebilirlik yetersiz kalır."
+            },
+            {
+              "id": "c",
+              "text": "Düzenleyici çerçeve sürekli değiştiği için test edilen sürüm artık uygun olmayabilir."
+            },
+            {
+              "id": "d",
+              "text": "Sistemin davranışı, başlangıçta test edilmiş olan davranıştan zamanla kademeli olarak uzaklaşır."
+            }
+          ],
+          "rationale": {
+            "summary": "Kendi kendine öğrenen sistemin davranışı ilk test edilen davranıştan kademeli olarak uzaklaşır; bu yüzden dağıtım öncesi testler emniyet bütünlüğünü artık tam göstermez. Diğer seçenekler deterministik olmama, spesifikasyon ve düzenleme zorluklarını anlatır.",
+            "byOption": {
+              "a": "Yanlış. Bu, deterministik olmama zorluğunu anlatır; sürekli öğrenme olmayan sistemlerde de görülür. Senaryodaki sorun, sistemin dağıtımdan sonra değişmesidir.",
+              "b": "Yanlış. Bu, spesifikasyon zorluğunu anlatır. Senaryodaki sorun gereksinimlerin nasıl ifade edildiği değil, test edilen davranışın zamanla değişmesidir.",
+              "c": "Yanlış. Bu, gelişen düzenlemeler zorluğunu anlatır. Senaryodaki sorun mevzuat değil, sistemin kendi davranışının evrimidir.",
+              "d": "Doğru. Kendi kendine öğrenen sistemlerde, dağıtım öncesi titiz test emniyet bütünlüğünü göstermek için kullanılır; ancak davranış ilk test edilenden uzaklaştıkça bu zayıflar."
+            }
+          }
+        },
+        "en": {
+          "stem": "A safety-related AI-based system was rigorously tested before deployment and keeps learning from new data in the field. How does this continued learning MOST directly undermine relying on the pre-deployment testing to demonstrate safety integrity?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Random number generation can make the same model respond differently to nearly identical inputs."
+            },
+            {
+              "id": "b",
+              "text": "Requirements are given implicitly through training data, so traceability to the implementation is inadequate."
+            },
+            {
+              "id": "c",
+              "text": "The regulatory landscape keeps changing, so the tested version may no longer be compliant."
+            },
+            {
+              "id": "d",
+              "text": "Over time, the system's behavior progressively moves away from the behavior that was originally tested."
+            }
+          ],
+          "rationale": {
+            "summary": "With a self-learning system, behavior progressively moves away from the originally tested behavior, so pre-deployment testing no longer fully demonstrates safety integrity. The other options describe the non-determinism, specifications and evolving-regulations challenges.",
+            "byOption": {
+              "a": "Incorrect. This describes the non-determinism challenge, which also affects systems that do not keep learning. The scenario's problem is that the system changes after deployment.",
+              "b": "Incorrect. This describes the specifications challenge. The scenario's problem is not how requirements are expressed but that the tested behavior changes over time.",
+              "c": "Incorrect. This describes the evolving regulations challenge. The scenario's problem is the evolution of the system's own behavior, not of the law.",
+              "d": "Correct. For self-learning systems, rigorous pre-deployment testing is used to demonstrate safety integrity, and this is undermined as behavior drifts from the originally tested behavior."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0020",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.2",
+      "objectives": [
+        "AI-2.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "safety",
+        "explainability",
+        "regulation"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Emniyetle ilgili sistemlerde yapay zekâ kullanımına ilişkin özel hususlar söz konusu olduğunda aşağıdaki ifadelerden hangisi DOĞRUDUR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Olgun fonksiyonel emniyet standartları yapay zekâ kullanımını zaten ele alır; bu nedenle bir yapay zekâ bileşenine olağan biçimde uygulanabilir."
+            },
+            {
+              "id": "b",
+              "text": "LIME gibi açıklanabilir yapay zekâ teknikleri sistemin akıl yürütmesine içgörü sağlar; ancak yaygın olarak bulunmaz ve performansı bozabilir."
+            },
+            {
+              "id": "c",
+              "text": "Eğitilmiş modelin titizlikle test edilmesi, işletimdeki davranışının kesin olarak garanti edilmesi için yeterlidir."
+            },
+            {
+              "id": "d",
+              "text": "AB Yapay Zekâ Yasası, havacılık, tıbbi cihaz veya otomotivdeki emniyet bileşeni yapay zekâ sistemlerini düşük riskli sayar ve hafif gereksinimler getirir."
+            }
+          ],
+          "rationale": {
+            "summary": "Emniyetle ilgili sistemlerde kararların nasıl ve neden verildiğini anlamak gerekir. LIME gibi teknikler içgörü sağlar, fakat yaygın değildir ve performansı bozabilir. Diğer ifadeler standartların kapsamını, deterministik olmamayı ve yasanın risk sınıflandırmasını yanlış aktarır.",
+            "byOption": {
+              "a": "Yanlış. Bu, gelişen düzenlemeler zorluğunu yanlış aktarır: yapay zekâ kullanımı olgun fonksiyonel emniyet standartlarına şu an dahil değildir ve bazı standartlar yapay zekâ kullanımını yasaklar bile.",
+              "b": "Doğru. Müfredat tam olarak bunu söyler: açıklanabilirlik emniyet için gereklidir, ama bu teknikler yaygın değildir ve performansı olumsuz etkileyebilir.",
+              "c": "Yanlış. Bu, deterministik olmama zorluğunu yanlış aktarır: titizlikle test edilmiş modeller bile rastgele sayı üretimi veya girdi değerlerindeki küçük değişimler yüzünden beklenmeyen davranış gösterebilir.",
+              "d": "Yanlış. Bu, gelişen düzenlemeler zorluğunu yanlış aktarır: AB Yapay Zekâ Yasası bu sistemleri yüksek riskli olarak sınıflandırır ve geliştirme ile testlerine katı gereksinimler getirir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following statements about the special considerations of using AI in safety-related systems is TRUE?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Mature functional safety standards already address the use of AI, so they can be applied to an AI component in the usual way."
+            },
+            {
+              "id": "b",
+              "text": "Explainable AI techniques such as LIME can give insight into the reasoning, but they are not widely available and may compromise performance."
+            },
+            {
+              "id": "c",
+              "text": "Rigorous testing of the trained model is sufficient to guarantee its precise behavior in operation."
+            },
+            {
+              "id": "d",
+              "text": "The EU AI Act treats AI systems used as safety components in aviation, medical devices or automotive as low-risk and imposes light requirements."
+            }
+          ],
+          "rationale": {
+            "summary": "For safety-related systems it is essential to understand how and why decisions are made; techniques such as LIME help but are not widely available and may compromise performance. The other statements misstate the scope of standards, non-determinism and the EU AI Act risk classification.",
+            "byOption": {
+              "a": "Incorrect. This misstates the evolving-regulations challenge: the use of AI is currently not included in mature functional safety standards, and some of these standards even prohibit its use in such systems.",
+              "b": "Correct. This is what the syllabus states: understanding how and why decisions are made is essential for safety, yet these techniques are not widely available and may compromise system performance.",
+              "c": "Incorrect. This misstates the non-determinism challenge: even rigorously tested models can exhibit unexpected behavior due to random number generation or slight variations in input values.",
+              "d": "Incorrect. This misstates the evolving-regulations challenge: the Act classifies such systems as high-risk and imposes strict requirements on their development and testing."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0021",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 2,
+      "section": "2.2",
+      "syllabusRef": "§2.2.1",
+      "objectives": [
+        "AI-2.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "acceptance-criteria",
+        "iso-25059"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir yapay zekâ tabanlı sistemin yapay zekâ sağlamlığına ilişkin bir kabul kriteri örneği aşağıdakilerden hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Merkezî güvenlik açığı veritabanına erişim 30 saniye kesintiye uğradığında bile tahminlerin yanıt süresi 1 saniyenin altında kalmaya devam eder."
+            },
+            {
+              "id": "b",
+              "text": "Çalışma panosu ve API, dağıtılmış tahmin modelinin benzersiz sürüm tanımlayıcısını ve belgelerine bağlantıyı döndüren bir uç nokta sağlar."
+            },
+            {
+              "id": "c",
+              "text": "Bir gözetmen, otonom insansız hava aracı GPS konumunu kaybedip tehlike sinyali verdiğinde aracın kontrolünü 0,5 saniye içinde devralabilir."
+            },
+            {
+              "id": "d",
+              "text": "Bir kullanıcı tek oturumda üç tam uzunlukta belgesel izledikten sonra, video platformu ana sayfasını en az %40 belgesel önerecek şekilde ayarlar."
+            }
+          ],
+          "rationale": {
+            "summary": "Dış bir aksaklık altında bile belirtilen yanıt düzeyinin korunmasını isteyen kriter yapay zekâ sağlamlığına aittir. Diğer kriterler başka özellikleri, yani şeffaflığı, kullanıcı kontrol edilebilirliğini ve fonksiyonel uyarlanabilirliği sınar.",
+            "byOption": {
+              "a": "Doğru. Kriter, sistemin dış bir aksaklık altında bile belirtilen düzeyde davranmaya devam etmesini sınar; bu, yapay zekâ sağlamlığına ait bir kabul kriteri örneğidir.",
+              "b": "Yanlış. Bu, modelle ilgili bilginin paydaşlara iletilmesini hedefleyen bir şeffaflık kriteridir.",
+              "c": "Yanlış. Bu, bir insanın sistemin işleyişine zamanında müdahale edebilmesini hedefleyen bir kullanıcı kontrol edilebilirliği kriteridir.",
+              "d": "Yanlış. Bu, sistemin kullanıcı davranışındaki değişikliğe uyum sağlamasını hedefleyen bir fonksiyonel uyarlanabilirlik kriteridir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following is an example of an acceptance criterion for the AI robustness of an AI-based system?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The response time of the predictions remains below 1 second when access to the central vulnerabilities database is disrupted for 30 seconds."
+            },
+            {
+              "id": "b",
+              "text": "The operational dashboard and API provide an endpoint that returns the unique version identifier of the deployed prediction model and a link to its documentation."
+            },
+            {
+              "id": "c",
+              "text": "A supervisor can take control of an autonomous drone within 0.5 of a second when it sends a distress signal after losing its GPS location."
+            },
+            {
+              "id": "d",
+              "text": "The video platform adjusts its homepage to recommend at least 40% documentaries after a user watches three full-length documentaries in one session."
+            }
+          ],
+          "rationale": {
+            "summary": "A criterion that requires the specified response level to hold under an external disruption belongs to AI robustness. The other criteria address transparency, user controllability and functional adaptability.",
+            "byOption": {
+              "a": "Correct. The criterion checks that the system keeps behaving at a specified level even under an external disruption, which is an example of an AI robustness acceptance criterion.",
+              "b": "Incorrect. This is a transparency criterion, aimed at communicating appropriate information about the model to stakeholders.",
+              "c": "Incorrect. This is a user controllability criterion, aimed at a human being able to intervene in the system's functioning in a timely manner.",
+              "d": "Incorrect. This is a functional adaptability criterion, aimed at the system adapting to changes in user behavior."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0022",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 2,
+      "section": "2.2",
+      "syllabusRef": "§2.2.1",
+      "objectives": [
+        "AI-2.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "acceptance-criteria",
+        "thresholds"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir görüntü tanıma sisteminin yapay zekâ fonksiyonel doğruluğu için, yapay zekâ tabanlı sistemlerin kabul kriterlerinde tipik olan eşik tabanlı biçime EN uygun kabul kriteri hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Sistem hiçbir görüntüyü yanlış sınıflandırmamalıdır; tek bir yanlış çıktı bile sistemi reddettirir."
+            },
+            {
+              "id": "b",
+              "text": "Sistem, aydınlatma koşulları değiştikten sonra 20 saniye içinde davranışını ayarlamalıdır."
+            },
+            {
+              "id": "c",
+              "text": "Sistem, test veri setindeki görüntüler üzerinde ölçüldüğünde en az %95 doğruluk elde etmelidir."
+            },
+            {
+              "id": "d",
+              "text": "Regresyon test paketindeki tüm test senaryoları hiçbir arıza ortaya çıkarmadan geçmelidir."
+            }
+          ],
+          "rationale": {
+            "summary": "Yapay zekâ tabanlı sistemlerde kabul kriterleri çoğunlukla ikili değil, istatistiksel, olasılıksal veya eşik tabanlıdır; ISO/IEC 25059 de yanlış sonuçlar için kabul edilebilir eşikler tanımlar. Bu nedenle en az belirli bir doğruluk yüzdesi istemek uygundur.",
+            "byOption": {
+              "a": "Yanlış. Olasılıksal makine öğrenimi mükemmel doğruluğu garanti edemez ve belirli bir yanlış çıktı oranı beklenir; ikili (var/yok) bir kriter bu gerçeği yansıtmaz.",
+              "b": "Yanlış. Bu, değişen ortama uyumu hedefleyen bir fonksiyonel uyarlanabilirlik kriteri biçimidir; doğruluk eşiği içermez.",
+              "c": "Doğru. Doğruluk için sayısal bir eşik belirlemek, yapay zekâ fonksiyonel doğruluğunun kabul edilebilir yanlış sonuç eşikleriyle değerlendirilmesine ve kabul kriterlerinin eşik tabanlı olmasına uyar.",
+              "d": "Yanlış. Bu, ikili bir geçti/kaldı kriteridir; yapay zekâ tabanlı sistemlerin istatistiksel doğasına uygun bir eşik tanımlamaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "For the AI functional correctness of an image recognition system, which acceptance criterion BEST fits the threshold-based form that is typical of acceptance criteria for AI-based systems?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The system must not misclassify any image; a single incorrect output causes the system to be rejected."
+            },
+            {
+              "id": "b",
+              "text": "The system must adjust its behavior within 20 seconds after the lighting conditions change."
+            },
+            {
+              "id": "c",
+              "text": "The system must achieve an accuracy of at least 95%, measured on the images in the test dataset."
+            },
+            {
+              "id": "d",
+              "text": "All test cases in the regression suite must pass without revealing any failure."
+            }
+          ],
+          "rationale": {
+            "summary": "Acceptance criteria for AI-based systems are often statistical, probabilistic or threshold-based rather than binary, and ISO/IEC 25059 defines acceptable thresholds for incorrect results. Requiring a minimum accuracy percentage therefore fits.",
+            "byOption": {
+              "a": "Incorrect. Probabilistic ML cannot guarantee perfect accuracy and a certain error rate is expected; a binary criterion of this kind ignores that.",
+              "b": "Incorrect. This has the form of a functional adaptability criterion, aimed at adapting to a changed environment; it contains no correctness threshold.",
+              "c": "Correct. Setting a numerical threshold for accuracy matches the way AI functional correctness is evaluated with acceptable thresholds for incorrect results, and the threshold-based nature of acceptance criteria for AI-based systems.",
+              "d": "Incorrect. This is a binary pass/fail criterion that does not define a threshold suited to the statistical nature of AI-based systems."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    }
+  ]
+}

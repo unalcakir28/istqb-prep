@@ -1,0 +1,337 @@
+{
+  "syllabusVersion": "2.0",
+  "source": "ISTQB® Exam Structures & Rules tables v1.19 (2026-08-19), sheet 'CT-AI - Certified Tester AI Testing v2.0'",
+  "rule": "Where a group has more questions than objectives, every objective gets at least one question. Where it has more objectives than questions, every question covers a different objective. Each group's pointsPerQuestion is the table's 'Suggested Points per Question'.",
+  "totals": {
+    "questions": 40,
+    "byChapter": {
+      "1": 6,
+      "2": 3,
+      "3": 7,
+      "4": 7,
+      "5": 6,
+      "6": 9,
+      "7": 2
+    },
+    "byKLevel": {
+      "K1": 0,
+      "K2": 36,
+      "K3": 4
+    }
+  },
+  "groups": [
+    {
+      "id": "g1-01",
+      "chapter": 1,
+      "kLevel": "K2",
+      "questions": 6,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-1.1.1",
+        "AI-1.1.2",
+        "AI-1.1.3",
+        "AI-1.1.4",
+        "AI-1.1.5",
+        "AI-1.1.6",
+        "AI-1.1.7",
+        "AI-1.1.8"
+      ]
+    },
+    {
+      "id": "g2-01",
+      "chapter": 2,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-2.1.1"
+      ]
+    },
+    {
+      "id": "g2-02",
+      "chapter": 2,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-2.1.2"
+      ]
+    },
+    {
+      "id": "g2-03",
+      "chapter": 2,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-2.2.1"
+      ]
+    },
+    {
+      "id": "g3-01",
+      "chapter": 3,
+      "kLevel": "K2",
+      "questions": 6,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-3.1.1",
+        "AI-3.1.2",
+        "AI-3.1.4",
+        "AI-3.2.1",
+        "AI-3.2.3",
+        "AI-3.4.1",
+        "AI-3.4.3"
+      ]
+    },
+    {
+      "id": "g3-02",
+      "chapter": 3,
+      "kLevel": "K3",
+      "questions": 1,
+      "pointsPerQuestion": 2,
+      "objectives": [
+        "AI-3.3.1"
+      ]
+    },
+    {
+      "id": "g4-01",
+      "chapter": 4,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-4.1.1"
+      ]
+    },
+    {
+      "id": "g4-02",
+      "chapter": 4,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-4.1.2"
+      ]
+    },
+    {
+      "id": "g4-03",
+      "chapter": 4,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-4.1.3"
+      ]
+    },
+    {
+      "id": "g4-04",
+      "chapter": 4,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-4.2.1"
+      ]
+    },
+    {
+      "id": "g4-05",
+      "chapter": 4,
+      "kLevel": "K3",
+      "questions": 1,
+      "pointsPerQuestion": 2,
+      "objectives": [
+        "AI-4.2.2"
+      ]
+    },
+    {
+      "id": "g4-06",
+      "chapter": 4,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-4.3.1"
+      ]
+    },
+    {
+      "id": "g4-07",
+      "chapter": 4,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-4.3.2"
+      ]
+    },
+    {
+      "id": "g5-01",
+      "chapter": 5,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-5.1.1"
+      ]
+    },
+    {
+      "id": "g5-02",
+      "chapter": 5,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-5.1.2"
+      ]
+    },
+    {
+      "id": "g5-03",
+      "chapter": 5,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-5.1.3"
+      ]
+    },
+    {
+      "id": "g5-04",
+      "chapter": 5,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-5.1.4"
+      ]
+    },
+    {
+      "id": "g5-05",
+      "chapter": 5,
+      "kLevel": "K3",
+      "questions": 1,
+      "pointsPerQuestion": 2,
+      "objectives": [
+        "AI-5.1.5"
+      ]
+    },
+    {
+      "id": "g5-06",
+      "chapter": 5,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-5.1.6"
+      ]
+    },
+    {
+      "id": "g6-01",
+      "chapter": 6,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-6.1.1"
+      ]
+    },
+    {
+      "id": "g6-02",
+      "chapter": 6,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-6.1.2"
+      ]
+    },
+    {
+      "id": "g6-03",
+      "chapter": 6,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-6.1.3"
+      ]
+    },
+    {
+      "id": "g6-04",
+      "chapter": 6,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-6.1.4"
+      ]
+    },
+    {
+      "id": "g6-05",
+      "chapter": 6,
+      "kLevel": "K3",
+      "questions": 1,
+      "pointsPerQuestion": 2,
+      "objectives": [
+        "AI-6.1.5"
+      ]
+    },
+    {
+      "id": "g6-06",
+      "chapter": 6,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-6.1.7"
+      ]
+    },
+    {
+      "id": "g6-07",
+      "chapter": 6,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-6.1.8"
+      ]
+    },
+    {
+      "id": "g6-08",
+      "chapter": 6,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-6.1.9"
+      ]
+    },
+    {
+      "id": "g6-09",
+      "chapter": 6,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-6.1.10"
+      ]
+    },
+    {
+      "id": "g7-01",
+      "chapter": 7,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-7.1.1"
+      ]
+    },
+    {
+      "id": "g7-02",
+      "chapter": 7,
+      "kLevel": "K2",
+      "questions": 1,
+      "pointsPerQuestion": 1,
+      "objectives": [
+        "AI-7.1.2"
+      ]
+    }
+  ]
+}

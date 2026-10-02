@@ -1,5 +1,5 @@
 {
-  "dataVersion": "fe32c20c56db",
+  "dataVersion": "0870e472561c",
   "generatedAt": "2026-09-19T12:00:00Z",
   "certifications": [
     {
@@ -17,6 +17,23 @@
         "objectivesTotal": 64,
         "objectivesCovered": 64,
         "minPerObjective": 4
+      }
+    },
+    {
+      "id": "ct-ai-v2.0",
+      "acronym": "CT-AI",
+      "syllabusVersion": "2.0",
+      "status": "active",
+      "path": "ct-ai-v2.0",
+      "languages": [
+        "tr",
+        "en"
+      ],
+      "questionCount": 86,
+      "coverage": {
+        "objectivesTotal": 43,
+        "objectivesCovered": 43,
+        "minPerObjective": 2
       }
     }
   ]

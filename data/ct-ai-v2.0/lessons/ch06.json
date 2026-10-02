@@ -1,0 +1,527 @@
+{
+  "chunk": "ch06",
+  "chapter": 6,
+  "dataVersion": "2.0",
+  "lessons": [
+    {
+      "objective": "AI-6.1.1",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§6.1.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "MÖ modeli riskleri ve bunları azaltan test yaklaşımları",
+          "paragraphs": [
+            "Bu hedef bir eşleştirme becerisidir: bir MÖ modelinin taşıdığı riski görüp onu azaltmaya uygun test yaklaşımını söyleyebilmek. Müfredat bunu bir risk-yaklaşım tablosuyla verir; amaç tabloyu ezberlemek değil, her yaklaşımın hangi riske cevap verdiğini anlamaktır.",
+            "Eşleşmelerin bir kısmı doğrudandır: yanlı veya adil olmayan model için yanlılık testi, karşıt örnekler için karşıt test, aşırı uyum ve yetersiz uyum için bunlara özgü testler, kabul edilemez veri kayması veya kavram kayması için kayma testi, gerekli doğruluk veya hatırlama değerlerine ulaşılamaması için MÖ fonksiyonel performans testi. Kötü model belgeleri için model belgeleri gözden geçirmesi, yeni model sürümünün hata getirmesi için sırt sırta test, sürümün fonksiyonel performansı düşürmesi için A/B testi önerilir. Güncellenmiş modelin dağıtımı anında arızaya yol açıyorsa duman testi (smoke testing), regresyona yol açıyorsa regresyon testi, model API'sinde hata varsa API testi, yetersiz performans verimliliği için performans testi listelenir.",
+            "Tablonun ince noktası, birden çok yaklaşımın aynı riske, tek bir yaklaşımın da birden çok riske cevap verebilmesidir. Test doğrulayıcı sorununa metamorfik test, sırt sırta test ve A/B testi birlikte karşılık verir. Beklenmedik girdilerden doğan yapay zekâ sağlamlığı eksikliği için karşıt test ve fuzz testi; güvenlik açıkları ve emniyet açıkları, gizlilik ihlalleri ve zararlı çıktılar için kırmızı takım çalışması (red teaming) sayılır. Zayıf sistem gereksinimleri için ise gereksinim gözden geçirmesi, kırmızı takım çalışması ve keşif testi önerilir."
+          ],
+          "keyPoints": [
+            "Her MÖ modeli riski için müfredat bir veya birkaç risk azaltıcı test yaklaşımı önerir.",
+            "Yanlılık yanlılık testiyle, karşıt örnekler karşıt testle, aşırı veya yetersiz uyum kendi testleriyle, veri veya kavram kayması kayma testiyle azaltılır.",
+            "Doğruluk veya hatırlama gibi hedeflere ulaşılamaması riskine MÖ fonksiyonel performans testi karşılık verir.",
+            "Test doğrulayıcı sorununa metamorfik test, sırt sırta test ve A/B testi karşılık verir.",
+            "Model güncellemelerinin hata getirmesine sırt sırta test, fonksiyonel performansı düşürmesine A/B testi karşılık verir.",
+            "Güvenlik açıkları ve emniyet açıkları, gizlilik ihlalleri ve zararlı çıktılar kırmızı takım çalışmasıyla ele alınır."
+          ],
+          "commonMistakes": [
+            "Eşleştirmenin bire bir olduğu sanılır; oysa tabloda aynı risk birden çok yaklaşıma (ör. test doğrulayıcı sorunu: üç yaklaşım), aynı yaklaşım birden çok riske (ör. kırmızı takım çalışması, hem zayıf gereksinimler hem güvenlik/emniyet açıkları) bağlanır.",
+            "Model güncellemesi riskinde A/B testi ile sırt sırta test birbirinin yerine konur; müfredata göre güncellemenin hata getirmesi sırt sırta testle, fonksiyonel performansı düşürmesi A/B testiyle karşılanır.",
+            "Aşırı uyum ve yetersiz uyum tek 'model kalitesi' riski gibi okunur; müfredat bunları ayrı iki risk olarak, her biri için ayrı bir test satırıyla verir."
+          ]
+        },
+        "en": {
+          "title": "ML model risks and the test approaches that mitigate them",
+          "paragraphs": [
+            "This objective is a matching skill: see a risk that an ML model carries and name the test approach that suits it. The syllabus presents this as a risk-to-approach table; the aim is not to memorise the table but to understand which approach answers which risk.",
+            "Some pairings are direct: a biased or unfair model calls for testing for bias, adversarial examples for adversarial testing, overfitting and underfitting for their own tests, unacceptable data drift or concept drift for drift testing, and failure to reach required accuracy or recall for ML functional performance testing. Poor model documentation calls for a model documentation review, a model update that introduces defects for back-to-back testing, and an update that lowers functional performance for A/B testing. Deployment of an updated model that causes immediate failure calls for smoke testing, one that causes regression for regression testing, a model API defect for API testing, and inadequate performance efficiency for performance testing.",
+            "The subtle point of the table is that several approaches can answer one risk and one approach can answer several risks. The test oracle problem is met by metamorphic testing, back-to-back testing and A/B testing together. Lack of AI robustness caused by unexpected inputs lists adversarial testing and fuzz testing. Security and safety vulnerabilities, privacy violations and harmful outputs are addressed by red teaming, which also appears for poor system requirements next to requirements review and exploratory testing."
+          ],
+          "keyPoints": [
+            "For each ML model risk the syllabus names one or more mitigating test approaches.",
+            "Bias is mitigated by testing for bias, adversarial examples by adversarial testing, over- and underfitting by their own tests, and data or concept drift by drift testing.",
+            "Failing to reach targets such as accuracy or recall is mitigated by ML functional performance testing.",
+            "The test oracle problem is mitigated by metamorphic testing, back-to-back testing and A/B testing.",
+            "A model update that introduces defects is mitigated by back-to-back testing; one that decreases functional performance by A/B testing.",
+            "Security and safety vulnerabilities, privacy violations and harmful outputs are mitigated by red teaming."
+          ],
+          "commonMistakes": [
+            "The mapping is assumed to be one-to-one; in the table one risk can have several approaches (the test oracle problem has three) and one approach can serve several risks (red teaming covers poor requirements as well as security and safety vulnerabilities).",
+            "A/B testing and back-to-back testing are swapped for model updates; the syllabus pairs defects introduced by an update with back-to-back testing and a drop in functional performance with A/B testing.",
+            "Overfitting and underfitting are read as one 'model quality' risk; the syllabus lists them as two separate risks, each with its own testing line."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-6.1.2",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§6.1.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "MÖ modeli belgelerinin gözden geçirilmesi",
+          "paragraphs": [
+            "Kaynak kodu doğrudan incelenebilen sistemlerden farklı olarak MÖ sistemlerinde makine tarafından üretilmiş kodun anlaşılabilirliği sınırlıdır, model kara kutudur ve davranış veriye bağlıdır; modeller de sık güncellenir. Bu yüzden belgeler geliştirici, test uzmanı ve düzenleyici için modeli anlamanın, değerlendirmenin ve ona güvenmenin ana aracıdır. Yüksek riskli sistemlerde belge denetimini geçmek çoğu zaman dağıtımın önkoşuludur.",
+            "Belgelendirme için Model Cards (modelin kullanım amacı, değerlendirme sonuçları ve etik değerlendirmeler) ve Datasheets for Datasets (veri setinin gerekçesi, bileşimi, toplanma süreci ve kullanımları) gibi çerçeveler vardır. Müfredattaki içerik listesi bir kontrol listesi olarak kullanılır: genel bilgiler, tasarım, kullanım, veri setleri, test, fonksiyonel, fonksiyonel olmayan ve operasyonel bölümler.",
+            "Gözden geçirmenin odağı belgeyi bu kontrol listesine karşı sınamaktır. Amaç eksik bilgileri, yanlışlıkları ve tutarsızlıkları bulmak, netliği ve okunabilirliği iyileştirmek, bakım yapılabilirliği artırmak, test ve dağıtım için yeterli bilgi sağlamak ve ilgili düzenleyici gereksinimlerin karşılandığını doğrulamaktır."
+          ],
+          "keyPoints": [
+            "Belgeler önemlidir, çünkü MÖ sistemleri kara kutudur, veriye bağlıdır ve sık güncellenir.",
+            "Model Cards modeli, Datasheets for Datasets ise veri setini standart biçimde tanımlar.",
+            "Müfredattaki içerik listesi sekiz bölümden oluşur ve gözden geçirmede kontrol listesi işlevi görür.",
+            "Gözden geçirme eksik bilgileri, yanlışlıkları ve tutarsızlıkları belirlemeyi amaçlar.",
+            "Gözden geçirme belgenin test ve dağıtım için yeterli bilgi sağladığını ve düzenleyici gereksinimlerin karşılandığını doğrular."
+          ],
+          "commonMistakes": [
+            "Belge gözden geçirmesinin bir biçim kontrolünden ibaret olduğu sanılır; oysa belge, kara kutu bir modeli anlamanın ana aracıdır ve gözden geçirme içeriğin eksiksizliğini, doğruluğunu ve tutarlılığını da sınar.",
+            "Gözden geçirmenin yalnızca modeli anlatan bölümlere baktığı sanılır; kontrol listesi veri setlerini, test ve operasyonel bilgileri (dağıtım planı, izleme, geri alma planı) de kapsar.",
+            "Belge gözden geçirmesinin yalnızca yüksek riskli sistemler için önemli olduğu düşünülür; müfredata göre yüksek riskli sistemlerde belge denetimi çoğu zaman dağıtımın önkoşuludur, ancak tüm sistemlerde kapsamlı bir gözden geçirme kaliteyi doğrulamaya yardım eder."
+          ]
+        },
+        "en": {
+          "title": "Reviewing ML model documentation",
+          "paragraphs": [
+            "Unlike systems whose source code can be inspected directly, ML systems have limited understandability of machine-generated code, a black-box model and a dependency on data, and models are updated often. Documentation therefore becomes the main tool for developers, testers and regulators to understand, evaluate and trust the system. For high-risk systems, passing a documentation audit is often a prerequisite for deployment.",
+            "Documentation frameworks exist, such as Model Cards (intended uses, evaluation results, ethical considerations of a model) and Datasheets for Datasets (motivation, composition, collection process and uses of a dataset). The syllabus lists typical contents that work as a checklist: general, design, usage, datasets, testing, functional, non-functional and operational information.",
+            "The focus of the review is to check the documentation against that checklist. Its purposes are to identify missing information, inaccuracies and inconsistencies, to improve clarity and readability, to improve maintainability, to provide sufficient information for test and deployment activities, and to verify that relevant regulatory requirements are met."
+          ],
+          "keyPoints": [
+            "Documentation matters because ML systems are black boxes, depend on data and are updated frequently.",
+            "Model Cards describe a model and Datasheets for Datasets describe a dataset in a standard format.",
+            "The syllabus content list has eight sections and acts as a checklist for the review.",
+            "The review aims to identify missing information, inaccuracies and inconsistencies.",
+            "The review checks that the documentation gives enough information for test and deployment and that regulatory requirements are met."
+          ],
+          "commonMistakes": [
+            "Documentation review is taken to be a formatting check; documentation is the main means of understanding a black-box model, and the review tests its completeness, accuracy and consistency.",
+            "The review is assumed to cover only the sections that describe the model; the checklist also covers datasets, testing and operational information such as the deployment plan, monitoring and the rollback plan.",
+            "Documentation review is assumed to matter only for high-risk systems; the syllabus says a documentation audit is often a deployment prerequisite for high-risk systems, while for all systems a thorough review helps verify quality."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-6.1.3",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§6.1.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Olasılıksal MÖ sistemlerinde MÖ fonksiyonel performans testi",
+          "paragraphs": [
+            "MÖ fonksiyonel performans testi, doğruluk, hatırlama, hassasiyet ve F1 skoru gibi metrikleri ölçüp sonucu tanımlı kabul kriterleriyle karşılaştırır. Olasılıksal sistemlerde bu, tek bir geçti/kaldı kararı değildir: modelin davranışı büyük ve temsil edici bir veri seti üzerinde istatistiksel olarak ölçülür, çünkü sistem deterministik değildir.",
+            "Önkoşul, kabul kriterinin istatistiksel terimlerle yazılmasıdır: bir metrik, bir yanılma payı ve bir güven düzeyi. Bu üçlü gereken en az test sayısını belirler. Test sayısı arttıkça ya güven düzeyi sabit tutulur ve yanılma payı azalır (sonuç daha keskin olur, yanılma payı daralır) ya da yanılma payı sabit tutulur ve güven düzeyi artar (sonuç daha kesin olur). Müfredattaki örnekte '%95 güven düzeyinde ±%4 yanılma payıyla %98 doğruluk' için 601 test senaryosu gerekir ve en az 589'unun geçmesi beklenir. Emniyet açısından kritik sistemlerde '%95 güvenle %99 güvenilirlik' için 299 senaryo gerekir ve hepsi geçmelidir. Müfredat, adayların bu değerleri istatistiksel formüllerle türetmesinin veya hesaplamasının beklenmediğini belirtir.",
+            "Test veri seti, eğitim ve doğrulama veri setlerinden tamamen bağımsız olmalı ve işletimdeki girdi alanını temsil etmelidir. Sonuç basit bir geçen/kalan oranı olarak değil, istatistiksel güvenle raporlanır; örneğin '%95 güven düzeyinde %94 ±%4 doğruluk'. Ardışık test, kanıt yeterli olduğunda testi erken durdurmaya izin verir."
+          ],
+          "keyPoints": [
+            "MÖ fonksiyonel performans testi, doğruluk, hatırlama, hassasiyet ve F1 skoru gibi metrikleri kabul kriterleriyle karşılaştırır.",
+            "Olasılıksal sistemlerde sonuç tek bir geçti/kaldı değil, büyük ve temsil edici bir veri seti üzerinde istatistiksel ölçümdür.",
+            "Kabul kriteri bir metrik, bir yanılma payı ve bir güven düzeyi olarak yazılır; bu, gereken en az test sayısını belirler.",
+            "Güven düzeyi sabitken test sayısı arttıkça yanılma payı azalır; yanılma payı sabitken güven düzeyi artar.",
+            "Test veri seti eğitim ve doğrulama veri setlerinden bağımsız olmalı ve işletimdeki girdi alanını temsil etmelidir.",
+            "Sonuç istatistiksel güvenle raporlanır; ardışık test, yeterli kanıt toplanınca erken durmayı mümkün kılar."
+          ],
+          "commonMistakes": [
+            "Olasılıksal bir modelin bütün olarak 'geçti' veya 'kaldı' diye değerlendirilebileceği sanılır; oysa sonuç, yanılma payı ve güven düzeyiyle birlikte ölçülmüş bir metrik olarak raporlanır.",
+            "Test sayısı arttıkça sonucun 'daha doğru' olduğu söylenir; doğrusu, güven düzeyi sabitse sonucun daha keskin olduğu (yanılma payı küçülür), yanılma payı sabitse daha kesin olduğudur (güven düzeyi artar).",
+            "Gerekli test sayısının ne olursa olsun sabit olduğu, her zaman tüm senaryoların koşulması gerektiği sanılır; müfredattaki sayı en kötü durum varsayımına dayanır ve gözlenen doğruluk yüksek kaldığında ardışık testle daha erken durulabilir.",
+            "Eğitim verisinin bir kısmının test için yeniden kullanılabileceği düşünülür; test veri seti eğitim ve doğrulama veri setlerinden tamamen bağımsız olmalıdır."
+          ]
+        },
+        "en": {
+          "title": "ML functional performance testing of probabilistic ML systems",
+          "paragraphs": [
+            "ML functional performance testing measures metrics such as accuracy, recall, precision and F1-score and compares them with defined acceptance criteria. For probabilistic systems this is not a single pass/fail verdict: behaviour is measured statistically over a large, representative dataset, because the system is non-deterministic.",
+            "A precondition is an acceptance criterion written in statistical terms: a metric, a margin of error (MoE) and a confidence level (CL). Together they determine the minimum number of tests. As tests increase, either the CL is fixed and the MoE decreases (the result is more precise) or the MoE is fixed and the CL increases (the result is more certain). In the syllabus example, 98% accuracy with a MoE of ±4% at a 95% CL needs 601 test cases, of which at least 589 must pass. For a safety-critical system, 99% reliability with 95% confidence needs 299 test cases, all of which must pass. The syllabus notes that candidates are not required to derive or compute these values with statistical formulae.",
+            "The test dataset must be completely independent of the training and validation datasets and representative of the operational input domain. Results are reported with statistical confidence rather than as a pass/fail ratio, for example 94% ±4% at the 95% CL. Sequential testing allows testing to stop early once the evidence is sufficient."
+          ],
+          "keyPoints": [
+            "ML functional performance testing compares metrics such as accuracy, recall, precision and F1-score with acceptance criteria.",
+            "For probabilistic systems the result is a statistical measurement over a large, representative dataset, not a single pass/fail.",
+            "The acceptance criterion is stated as a metric, a margin of error and a confidence level, which fix the minimum number of tests.",
+            "With a fixed CL more tests reduce the MoE; with a fixed MoE more tests raise the CL.",
+            "The test dataset must be independent of the training and validation datasets and representative of the operational input domain.",
+            "Results are reported with statistical confidence, and sequential testing allows early stopping when evidence is sufficient."
+          ],
+          "commonMistakes": [
+            "A probabilistic model is assumed to pass or fail as a whole; the result is a measured metric reported with a margin of error and a confidence level.",
+            "More tests are said to make a result simply 'more accurate'; with a fixed CL the result becomes more precise (smaller MoE), with a fixed MoE it becomes more certain (higher CL).",
+            "The sample size is assumed to be fixed whatever happens; the syllabus figure rests on a conservative worst-case assumption, and sequential testing can stop earlier when the observed accuracy stays high.",
+            "Part of the training data is assumed to be reusable as test data; the test dataset must be completely independent of the training and validation datasets."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-6.1.4",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§6.1.4",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "MÖ sistemlerinin karşıt testi",
+          "paragraphs": [
+            "Karşıt test, modele kasıtlı olarak, çoğu zaman insanın fark edemeyeceği bozulmalar içeren girdiler vermektir. Bu girdiler modeli yanlış tahmine götürmek için tasarlanır; başarılı olurlarsa karşıt örnek adı verilir. Karşıt test girdileri genellikle meşru girdilerin hafifçe değiştirilmiş hâlleridir ve model onları yanlış sınıflandırır.",
+            "Amaç, açıkları bulup geliştiricilerin önlem almasını ve modeli daha sağlam yapmasını sağlamaktır. Karşılaşılan karşıt örnek kazara da olabilir, kötü niyetli bir saldırı da. Etkili test girdisi üretmek teknik olarak zordur ve gelişen saldırı tekniklerini takip etmek de süregelen bir zorluktur.",
+            "Karşıt test kara kutu ya da beyaz kutu olarak yapılabilir. Kara kutuda yalnızca girdi ve çıktı davranışına bakılır; ya iç yapısı bilinen eşdeğer bir model kurulup oradan karşıt girdiler üretilir ve eşdeğer modellerin sınıflandırma sınırlarını paylaştığı varsayımıyla (aktarılabilirlik) asıl modele uygulanır ya da kaba kuvvet (brute force) yaklaşımıyla çok sayıda rastgele test denenir. Beyaz kutuda mimari, parametreler ve eğitim süreci bilindiği için karşıt örnek üretmek genellikle kolaylaşır. Örnekler elle hazırlanabilir veya algoritmalarla otomatik üretilebilir."
+          ],
+          "keyPoints": [
+            "Karşıt test, modele kasıtlı olarak çoğu zaman insanın fark edemeyeceği bozulmalar içeren girdiler verir.",
+            "Modeli yanlış tahmine götüren girdilere karşıt örnek denir.",
+            "Karşıt örnekler kazara karşılaşılan ya da kötü niyetli saldırı için kullanılan örnekler olabilir.",
+            "Kara kutu karşıt testte eşdeğer bir model aracılığıyla üretilen girdiler, sınıflandırma sınırlarının paylaşıldığı varsayımıyla (aktarılabilirlik) asıl modele uygulanır.",
+            "Beyaz kutu karşıt testte modelin iç yapısının bilinmesi karşıt örnek üretmeyi genellikle kolaylaştırır.",
+            "Karşıt örnekler elle hazırlanabilir ya da algoritmalarla otomatik üretilebilir."
+          ],
+          "commonMistakes": [
+            "Karşıt testin yalnızca kötü niyetli saldırganları modellediği sanılır; müfredat, modelin karşılaştığı kazara karşıt örnekleri de kapsar.",
+            "Karşıt testin modelin iç yapısına erişimi gerektirdiği sanılır; kara kutu yaklaşımı eşdeğer bir model ve aktarılabilirlik varsayımıyla ya da kaba kuvvetle de çalışır, beyaz kutu yalnızca işi kolaylaştırır.",
+            "Karşıt girdilerin bariz biçimde bozuk veri olduğu düşünülür; bunlar meşru girdilerin çoğu zaman insanın fark edemeyeceği küçük değişiklikleridir."
+          ]
+        },
+        "en": {
+          "title": "Adversarial testing of ML systems",
+          "paragraphs": [
+            "Adversarial testing deliberately gives the model inputs with perturbations that are often imperceptible to humans. They are designed to make the model predict incorrectly, and when they succeed they are called adversarial examples. Such inputs are typically slightly modified versions of legitimate inputs that the model then misclassifies.",
+            "The purpose is to find vulnerabilities so that developers can add safeguards and make the model more robust. The adversarial examples a model meets may be accidental or they may be adversarial attacks, which are malicious. Generating effective test inputs is technically complex, and keeping up with evolving attack techniques is an ongoing challenge.",
+            "Adversarial testing can be black-box or white-box. In black-box testing only input and output behaviour is used: either an equivalent model with known internals is built and its adversarial inputs are applied to the original model on the assumption that equivalent models share classification boundaries (transferability), or a vast number of tests is used by brute force. In white-box testing, knowledge of architecture, parameters and training process typically makes adversarial examples easier to craft. Examples can be crafted manually or generated by automated algorithms."
+          ],
+          "keyPoints": [
+            "Adversarial testing deliberately feeds the model inputs with perturbations that are often imperceptible to humans.",
+            "Inputs that succeed in causing an incorrect prediction are called adversarial examples.",
+            "Adversarial examples can be accidental or part of a malicious adversarial attack.",
+            "Black-box adversarial testing can use an equivalent model and transferability, on the assumption that equivalent models share classification boundaries.",
+            "White-box knowledge of the model internals typically makes adversarial examples easier to craft.",
+            "Adversarial examples can be crafted manually or generated by automated algorithms."
+          ],
+          "commonMistakes": [
+            "Adversarial testing is assumed to model only malicious attackers; the syllabus also covers accidental adversarial examples that the model meets.",
+            "Access to the model internals is assumed to be required; the black-box approach works through an equivalent model and transferability or by brute force, while white-box knowledge only makes it easier.",
+            "Adversarial inputs are imagined as obviously corrupted data; they are small, often imperceptible changes to legitimate inputs."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-6.1.5",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§6.1.5",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Metamorfik test ve test senaryosu türetme",
+          "paragraphs": [
+            "Metamorfik test (MT), daha önce geçmiş bir kaynak test senaryosundan yeni takip test senaryoları türeten bir tekniktir. Türetme bir metamorfik ilişkiyle (Mİ) yapılır. Mİ, gerekli bir fonksiyonun bir özelliğine dayanır ve girdideki bir değişikliğin aynı test senaryosunun beklenen sonucunda nasıl yansıdığını söyler. MT, beklenen sonucu üretmenin zor olduğu, yani ekonomik bir test doğrulayıcının bulunmadığı durumlarda özellikle işe yarar: mutlak değerler yerine çıktılar arasındaki ilişki kontrol edilir. Kontrol edilen hedefler tutarlılık, monotonluk (çıktı, girdideki değişime bağlı olarak belirli bir yönde değişir) ve değişmezliktir (çıktı bozulmalara rağmen sabit kalır). Yön ters de olabilir: müfredattaki örnekte içilen sigara sayısı arttıkça tahmin edilen ölüm yaşı azalmalıdır. MT çoğu test nesnesine, hem fonksiyonel hem fonksiyonel olmayan testte uygulanabilir.",
+            "Nasıl uygulanır: (1) geçmiş bir kaynak test senaryosu al; (2) alan bilgisi, gereksinimler veya alan özelliklerinden bir Mİ çıkar; (3) kaynak senaryonun girdisini Mİ'ye göre değiştirip takip senaryosunu yaz; (4) beklenen sonucu mutlak değer olarak değil ilişki olarak yaz; (5) takip senaryosunu koş ve ilişkinin tutup tutmadığına bak. Örnek (bize ait): bir MÖ modeli teslimat süresini mesafe, trafik yoğunluğu ve sipariş numarasını da içeren sipariş kaydından tahmin ediyor. Kaynak senaryo: 5 km, düşük trafik, tahmin 20 dakika ve bu makul bulunarak geçti. Mİ-1 (monotonluk): yalnızca mesafe artarsa tahmin azalmamalıdır. Takip senaryosu: 10 km, düşük trafik; beklenen sonuç 'en az 20 dakika'. Mİ-2 (değişmezlik): sipariş numarası gibi ilgisiz bir girdi değişirse tahmin aynı kalmalıdır. Takip senaryosu: 5 km, düşük trafik, farklı sipariş numarası; beklenen sonuç 'tam 20 dakika'. Görüldüğü gibi Mİ'ler bazen aynı, bazen farklı beklenen sonuç öngörür.",
+            "Sınırlar: yanlış veya eksik Mİ kümeleri yanlış bir güven verir; örneğin değişkenler arasındaki karmaşık etkileşimi gözden kaçıran bir Mİ. MT ilişki hatalarını yakalar ama her mutlak hatayı yakalamaz, bu yüzden başka tekniklerle birlikte kullanılır. Mİ'ler uzman gözden geçirmesi, referans modellerde çalıştırma ve uç durum kapsamının kontrolüyle doğrulanabilir."
+          ],
+          "keyPoints": [
+            "MT, geçmiş bir kaynak test senaryosundan bir metamorfik ilişkiyle takip test senaryoları türetir.",
+            "Mİ, girdideki bir değişikliğin beklenen sonuca nasıl yansıdığını tanımlar ve gerekli bir fonksiyonun özelliğine dayanır.",
+            "MT, ekonomik bir test doğrulayıcı olmadığında ya da model kara kutu olduğunda seçilir; çıktılar arasındaki ilişki kontrol edilir.",
+            "Kontrol edilen hedeflere tutarlılık, monotonluk ve değişmezlik örnektir.",
+            "Mİ'ler alan bilgisinden, gereksinimlerden veya alan özelliklerinden türetilir.",
+            "Yanlış veya eksik Mİ kümeleri yanlış güven verir; MT diğer tekniklerle birlikte kullanılır."
+          ],
+          "commonMistakes": [
+            "Takip senaryosunun beklenen sonucunun kaynak senaryoyla her zaman aynı olduğu sanılır; Mİ aynı sonucu (değişmezlik) de, farklı ama yönü bilinen sonucu (monotonluk) da öngörebilir.",
+            "MT'nin mutlak doğru çıktıyı kanıtladığı sanılır; yalnızca çıktılar arasındaki ilişkiyi kontrol eder ve her mutlak hatayı yakalamaz.",
+            "Mİ'nin herhangi bir sezgiden çıkarılabileceği düşünülür; Mİ gerekli bir fonksiyonun gerçek bir özelliğine dayanmalıdır, aksi hâlde yanlış güven doğurur.",
+            "Takip senaryosunun yeni bir girdiyle sıfırdan yazıldığı sanılır; takip senaryosu kaynak senaryonun Mİ'ye göre değiştirilmiş hâlidir."
+          ]
+        },
+        "en": {
+          "title": "Metamorphic testing and deriving test cases from it",
+          "paragraphs": [
+            "Metamorphic testing (MT) derives new follow-up test cases from a previously passed source test case. The derivation uses a metamorphic relation (MR), which is based on a property of a required function of the test object and describes how a change in a test case's inputs is reflected in the expected results of the same test case. MT is particularly useful where expected results are hard to generate because an affordable test oracle is unavailable: instead of absolute values it checks the relationships between outputs. Typical objectives are consistency, monotonicity (outputs change directionally with input) and invariance (outputs stay stable under perturbations). The direction can also be opposite: in the syllabus example, smoking more cigarettes should decrease a predicted age at death. MT can be used for most test objects, in both functional and non-functional testing.",
+            "How to apply it: (1) take a source test case that passed; (2) derive an MR from domain knowledge, requirements or domain properties; (3) change the source input according to the MR to write the follow-up test case; (4) state the expected result as a relation, not an absolute value; (5) run the follow-up and check whether the relation holds. Example (our own): an ML model predicts delivery time from the distance, the traffic level and the order record, which also carries an order number. Source test case: 5 km, low traffic, prediction 20 minutes, judged plausible and passed. MR-1 (monotonicity): if only the distance increases, the prediction must not decrease. Follow-up: 10 km, low traffic, expected result 'at least 20 minutes'. MR-2 (invariance): changing an irrelevant input such as the order number must not change the prediction. Follow-up: 5 km, low traffic, different order number, expected result 'exactly 20 minutes'. So MRs can predict either the same or a different expected result.",
+            "Limits: incorrect or incomplete sets of MRs lead to false confidence, for example an MR that overlooks complex interactions between variables. MT detects relational flaws but not all absolute errors, so it is combined with other techniques. MRs can be validated by expert review, by running them on reference models and by checking coverage of edge cases."
+          ],
+          "keyPoints": [
+            "MT derives follow-up test cases from a previously passed source test case using a metamorphic relation.",
+            "An MR describes how a change in the inputs is reflected in the expected results and rests on a property of a required function.",
+            "MT is chosen when no affordable test oracle exists or the model is a black box; it checks relations between outputs.",
+            "Consistency, monotonicity and invariance are examples of what MT checks.",
+            "MRs come from domain knowledge, requirements or domain properties.",
+            "Incorrect or incomplete MR sets give false confidence, so MT is combined with other techniques."
+          ],
+          "commonMistakes": [
+            "The expected result of the follow-up is assumed to always equal the source result; an MR can predict the same result (invariance) or a different one with a known direction (monotonicity).",
+            "MT is believed to prove that an output is absolutely correct; it checks relationships between outputs and does not detect all absolute errors.",
+            "An MR is thought to be any plausible hunch; it must rest on a real property of a required function, otherwise it creates false confidence.",
+            "Follow-up test cases are written from scratch with new inputs; a follow-up is the source test case changed according to the MR."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-6.1.7",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§6.1.7",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Kayma testi: veri kayması ve kavram kayması",
+          "paragraphs": [
+            "Kayma testi, işletimdeki bir MÖ sisteminde iki tür kaymayı belirler. Veri kayması, işletimdeki girdi verisinin istatistiksel özelliklerinin zamanla değişmesidir; girdi artık eğitim verisinden belirgin biçimde farklıdır (ör. eğitimde bulunmayan yeni oltalama saldırılarıyla karşılaşan bir istenmeyen posta filtresi). Kavram kayması ise girdi ile doğru çıktı arasındaki ilişkinin değişmesidir; modelin öğrendiği kurallar artık gerçeği yansıtmaz (ör. yeni bir düzenleme nedeniyle 'düşük riskli' işlem türünün 'yüksek riskli' sayılması).",
+            "Ayrım şuradadır: veri kaymasında girdinin dağılımı değişir, kavram kaymasında aynı girdinin doğru cevabı değişir. İki test biçimi vardır. Dinamik kayma testi kullanıcı geri bildirimine dayanır; bu geri bildirim güncel gerçek değeri verir, modelin çıktısıyla karşılaştırılır ve fark bir eşik değerle kıyaslanır. Geri bildirim doğrudan (kullanıcının öneriye puan vermesi) ya da dolaylı (izlenen filmlerden çıkarılan) olabilir.",
+            "Statik kayma testi güncel gerçek değere ihtiyaç duymaz; girdi ve tahmin edilen çıktı dağılımlarının istatistiksel özelliklerini Kolmogorov-Smirnov gibi bir testle karşılaştırır. Bu dağılımlardan herhangi birinde anlamlı fark, kayma olduğunun göstergesidir."
+          ],
+          "keyPoints": [
+            "Kayma testi işletimdeki MÖ sistemlerinde veri kaymasını ve kavram kaymasını belirler.",
+            "Veri kayması, işletimdeki girdi verisinin istatistiksel özelliklerinin zamanla değişmesidir.",
+            "Kavram kayması, girdi ile doğru çıktı arasındaki ilişkinin zamanla değişmesidir.",
+            "Dinamik kayma testi, kullanıcı geri bildiriminden gelen güncel gerçek değeri model çıktısıyla karşılaştırır ve farkı bir eşikle kıyaslar.",
+            "Statik kayma testi güncel gerçek değere ihtiyaç duymaz; girdi ve tahmin edilen çıktı dağılımlarını Kolmogorov-Smirnov gibi bir testle karşılaştırır."
+          ],
+          "commonMistakes": [
+            "Veri kayması ile kavram kayması aynı şey sanılır; veri kaymasında girdi dağılımı değişir, kavram kaymasında girdi ile doğru çıktı arasındaki ilişki değişir.",
+            "Her kayma testinin güncel gerçek değer gerektirdiği sanılır; yalnızca dinamik kayma testi gerektirir, statik kayma testi dağılımları karşılaştırır.",
+            "Kaymanın model eğitim sürecinde bir hata olduğu düşünülür; kayma, dağıtımdan sonra işletim ortamının zamanla değişmesinden doğar."
+          ]
+        },
+        "en": {
+          "title": "Drift testing: data drift and concept drift",
+          "paragraphs": [
+            "Drift testing identifies two forms of drift in operational ML systems. Data drift occurs when the statistical properties of the operational input data change over time, so that inputs now differ significantly from the training data (for example, a spam filter meeting new kinds of phishing attacks that did not exist in training). Concept drift occurs when the relationship between the input data and the correct output changes, so the learned patterns no longer reflect reality (for example, new regulations making a previously 'low-risk' transaction type 'high-risk').",
+            "The distinction is this: with data drift the distribution of the inputs changes, with concept drift the correct answer for the same input changes. There are two forms of testing. Dynamic drift testing relies on user feedback, which provides the current ground truth; it is compared with the model's output and the difference is compared against a threshold. Feedback can be direct (the user rates a recommendation) or indirect (derived from films the user watched).",
+            "Static drift testing does not depend on the current ground truth. It compares the statistical properties of the input and predicted output distributions using a test such as Kolmogorov-Smirnov. A significant difference in either distribution indicates that drift has occurred."
+          ],
+          "keyPoints": [
+            "Drift testing identifies data drift and concept drift in operational ML systems.",
+            "Data drift is a change over time in the statistical properties of the operational input data.",
+            "Concept drift is a change over time in the relationship between the input data and the correct output.",
+            "Dynamic drift testing compares the current ground truth from user feedback with the model output against a threshold.",
+            "Static drift testing needs no current ground truth and compares input and predicted output distributions with a test such as Kolmogorov-Smirnov."
+          ],
+          "commonMistakes": [
+            "Data drift and concept drift are treated as one; in data drift the input distribution changes, in concept drift the relationship between input and correct output changes.",
+            "Every drift test is assumed to need current ground truth; only dynamic drift testing does, static drift testing compares distributions.",
+            "Drift is believed to be a flaw of the training process; it arises after deployment as the operational environment changes over time."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-6.1.8",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§6.1.8",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Aşırı uyum ve yetersiz uyumun test yoluyla tespiti",
+          "paragraphs": [
+            "Bir model aşırı uyumlu, yetersiz uyumlu ya da doğru uyumlu olabilir. Aşırı ve yetersiz uyum testi eğitim, değerlendirme ve ayarlama sırasında yapılmalıdır. Aşırı uyumda model eğitim verisini gereğinden iyi öğrenir ve temel örüntü yerine gürültüyü yakalar; sonuç, yeni ve görülmemiş verilerde zayıf genellemedir.",
+            "Aşırı uyumu bulmak için modelin MÖ fonksiyonel performansı, eğitimde kullanılmamış ayrı bir test veri setinde ölçülür; bu veri seti eğitimde kullanılmış olması beklenmeyen daha az rastlanan örnekleri de içermelidir. Model, test veri setinde doğrulama veri setine göre belirgin biçimde daha kötü çalışıyorsa aşırı uyumlu olabilir.",
+            "Yetersiz uyumda model verinin yapısını yakalayamayacak kadar basittir ya da eğitim verisi önemli bir girdi-çıktı ilişkisini yansıtan öznitelikleri içermez; hem eğitim hem doğrulama veri setinde performans düşüktür. Test sırasında doğruluk, hassasiyet, hatırlama veya F1 skoru gibi metrikler hem eğitim hem doğrulama veri setinde tutarlı biçimde düşükse bu, yetersiz uyuma işaret eder. Öğrenme eğrileri de yardımcı olur: eğitim ve doğrulama kayıpları yüksek ve birbirine yakın kalıyor, eğitim ilerledikçe belirgin iyileşme olmuyorsa bu, yetersiz uyuma işaret eder."
+          ],
+          "keyPoints": [
+            "Aşırı ve yetersiz uyum testi eğitim, değerlendirme ve ayarlama sırasında yapılır.",
+            "Aşırı uyum, modelin gürültüyü öğrenmesi ve yeni verilere zayıf genelleme yapmasıdır.",
+            "Test veri setindeki performans doğrulama veri setine göre belirgin biçimde kötüyse aşırı uyumdan şüphelenilir.",
+            "Yetersiz uyum, hem eğitim hem doğrulama veri setinde düşük performansla ortaya çıkar.",
+            "Öğrenme eğrilerinde eğitim ve doğrulama kayıplarının yüksek ve birbirine yakın kalması yetersiz uyuma işaret eder."
+          ],
+          "commonMistakes": [
+            "İki durumun aynı belirtiyi verdiği sanılır; aşırı uyumda test veri setindeki performans doğrulamadan belirgin biçimde düşüktür, yetersiz uyumda performans iki veri setinde de düşüktür.",
+            "Aşırı uyumlu modelin kötü bir model olduğu için her yerde düşük performans göstereceği sanılır; model gürültüyü ezberlediği için performans düşüşü asıl olarak görülmemiş verilerde ortaya çıkar.",
+            "Yalnızca tipik örneklerden oluşan bir test veri setinin yeterli olduğu düşünülür; müfredat, eğitimde kullanılmış olması olası olmayan daha az rastlanan örnekleri de eklemeyi söyler."
+          ]
+        },
+        "en": {
+          "title": "Detecting overfitting and underfitting by testing",
+          "paragraphs": [
+            "A model can be overfitted, underfitted or right-fitted, and testing for overfitting and underfitting should occur during training, evaluation and tuning. In overfitting the model learns the training data too well and captures noise instead of the underlying pattern, which gives poor generalisation to new, unseen data.",
+            "To test for overfitting, the model's ML functional performance is evaluated on a separate test dataset that was not used in training; it should include some less common examples unlikely to have been used in training. The model might be overfitting if it performs significantly worse on the test dataset than on the validation dataset.",
+            "In underfitting the model is too simple to capture the structure of the data, or the training data lacks features reflecting an important relationship between inputs and outputs, so performance is poor on both the training and validation datasets. In testing, metrics such as accuracy, precision, recall or F1 score that are consistently low on both sets suggest underfitting. Learning curves help too: training and validation errors that stay high and close together without significant improvement as training progresses indicate underfitting."
+          ],
+          "keyPoints": [
+            "Testing for overfitting and underfitting occurs during training, evaluation and tuning.",
+            "Overfitting means capturing noise in the training data and generalising poorly to unseen data.",
+            "Overfitting is suspected when performance on the test dataset is significantly worse than on the validation dataset.",
+            "Underfitting shows as consistently low performance on both the training and validation datasets.",
+            "Learning curves with high, close-together training and validation errors that do not improve indicate underfitting."
+          ],
+          "commonMistakes": [
+            "The two conditions are assumed to show the same symptom; overfitting is a significant drop on the test dataset compared with the validation dataset, underfitting is low performance on both training and validation.",
+            "An overfitted model is assumed to perform badly everywhere; because it captures noise from the training data, the drop in performance shows on unseen data.",
+            "A test dataset of typical examples is assumed to be enough; the syllabus asks for some less common examples unlikely to have been used in training."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-6.1.9",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§6.1.9",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "MÖ sistemlerinde A/B testi",
+          "paragraphs": [
+            "A/B testi, programın iki varyantının (A ve B) aynı girdilere verdiği yanıtları karşılaştırarak hangisinin daha iyi olduğunu belirleme yaklaşımıdır. İstatistiksel bir yaklaşımdır ve farkları görmek için genellikle birden çok test koşumunun sonuçlarını karşılaştırır. Basit örnek: bir pazarlama listesinin yarısına A teklifi, yarısına B teklifi gönderilir ve başarıya göre seçim yapılır. Birçok e-ticaret şirketi bunu üretimde, farklı müşterileri farklı işlevlere yönlendirerek kullanır.",
+            "MÖ'de A/B testi sistem güncellemelerini sınamak için kullanılır, yeter ki MÖ fonksiyonel performans metrikleri gibi üzerinde anlaşılmış kabul kriterleri olsun. Her güncellemede güncellenmiş varyantın önceki varyant kadar ya da ondan daha iyi olduğu belirlenir. Karmaşık sistemlerde de kullanılabilir, örneğin akıllı şehir ulaşım yönlendirmesinde iki varyantın ardışık haftalardaki ortalama yolculuk sürelerini karşılaştırmak gibi. Kendi kendine öğrenen sistemlerde de kullanılır: sistem bir değişiklik yaptığında otomatik testler koşulur, özellikler değişiklik öncesiyle karşılaştırılır; sistem iyileştiyse değişiklik kabul edilir, aksi hâlde önceki duruma dönülür.",
+            "A/B testi test doğrulayıcı sorununa yaklaşımlardan biridir ve genellikle mevcut sistemi kısmi test doğrulayıcı olarak kullanır. Test senaryosu üretmez ve testlerin nasıl tasarlanacağı konusunda yol göstermez. Sırt sırta testten (§6.1.10) farkı şudur: A/B testi aynı MÖ sisteminin iki varyantını MÖ fonksiyonel performans metrikleri ve istatistiksel tekniklerle karşılaştırır, sırt sırta test ise hata bulmak içindir. Sık anılan istatistiksel teknikler t-testi, z-testi, ki-kare testi ve Mann-Whitney U testidir."
+          ],
+          "keyPoints": [
+            "A/B testi, iki varyantın aynı girdilere yanıtını karşılaştırarak hangisinin daha iyi olduğunu belirler.",
+            "İstatistiksel bir yaklaşımdır ve genellikle birden çok test koşumunun sonuçlarının karşılaştırılmasını gerektirir.",
+            "Güncellemelerin sınanması için, MÖ fonksiyonel performans metrikleri gibi üzerinde anlaşılmış kabul kriterleri gerekir.",
+            "Güncellenmiş varyantın önceki varyant kadar ya da ondan daha iyi olduğunu belirlemek için kullanılır.",
+            "Kendi kendine öğrenen sistemlerde değişiklik sonrası özellikler öncekiyle karşılaştırılır; iyileşme yoksa önceki duruma dönülür.",
+            "Mevcut sistemi kısmi test doğrulayıcı olarak kullanır, test senaryosu üretmez."
+          ],
+          "commonMistakes": [
+            "A/B testinin test senaryosu tasarım tekniği olduğu sanılır; senaryo üretmez ve nasıl tasarlanacakları konusunda yol göstermez.",
+            "A/B testi ile sırt sırta test eş tutulur; A/B testi iki varyantı fonksiyonel performans metrikleri ve istatistikle karşılaştırır, sırt sırta test ise hata bulmayı amaçlar.",
+            "A/B testinin yalnızca pazarlama için olduğu düşünülür; müfredat bunu MÖ güncellemelerinin, karmaşık sistemlerin ve kendi kendine öğrenen sistemlerin testi için de gösterir."
+          ]
+        },
+        "en": {
+          "title": "A/B testing for ML systems",
+          "paragraphs": [
+            "A/B testing compares the responses of two variants of the program (A and B) to the same inputs to determine which is better. It is a statistical approach that typically compares results from multiple test runs to find differences. A simple example: half of a marketing list gets offer A and half gets offer B, and the success of each decides which to use. Many e-commerce companies use it in production by diverting different consumers to different functionality.",
+            "For ML it is used to test updates to an AI-based system, provided there are agreed acceptance criteria such as ML functional performance metrics. Whenever the system is updated, A/B testing determines that the updated variant performs as well as or better than the previous one. It also works for complex systems, for example comparing average commute times for two variants of a smart city transport routing system on consecutive weeks. For self-learning systems, when the system makes a change automated tests are run and the system characteristics are compared with those before the change; if the system improved the change is accepted, otherwise the system reverts.",
+            "A/B testing is one approach to the test oracle problem, typically using the existing system as a partial test oracle. It does not generate test cases and gives no guidance on how tests should be designed. The difference from back-to-back testing (see 6.1.10): A/B testing compares two variants of the same ML system using ML functional performance metrics and statistical techniques, while back-to-back testing is used to detect defects. Popular statistical techniques are the t-test, z-test, chi-squared test and Mann-Whitney U test."
+          ],
+          "keyPoints": [
+            "A/B testing compares the responses of two variants to the same inputs to decide which is better.",
+            "It is a statistical approach that typically compares results from multiple test runs.",
+            "Testing updates needs agreed acceptance criteria such as ML functional performance metrics.",
+            "It determines that an updated variant performs as well as or better than the previous one.",
+            "For self-learning systems the characteristics after a change are compared with those before, and the system reverts if there is no improvement.",
+            "It uses the existing system as a partial test oracle and does not generate test cases."
+          ],
+          "commonMistakes": [
+            "A/B testing is taken to be a test design technique; it generates no test cases and gives no guidance on test design.",
+            "A/B testing and back-to-back testing are treated as the same; A/B testing compares two variants using functional performance metrics and statistics, back-to-back testing aims to detect defects.",
+            "A/B testing is thought of as a marketing tool only; the syllabus applies it to ML updates, complex systems and self-learning systems."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-6.1.10",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§6.1.10",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "MÖ sistemlerinde sırt sırta test",
+          "paragraphs": [
+            "Sırt sırta test, test doğrulayıcı sorununa pratik bir çözümdür. Sistemin alternatif bir sürümü referans noktası olarak, yani sözde test doğrulayıcı (pseudo-oracle) olarak kullanılır ve aynı girdiler verildiğinde çıktıları test edilen sistemin çıktılarıyla karşılaştırılır. Sözde test doğrulayıcı mevcut bir sistem olabilir ya da test için özel geliştirilebilir; ikincisinin bir maliyeti vardır.",
+            "Sözde test doğrulayıcı ile test edilen sistem ideal olarak ortak yazılım bileşenleri paylaşmamalıdır; aksi hâlde ikisi de aynı hatayı taşıyabilir ve ikisi de yanlışken çıktıları eşleşir. MÖ geliştirmede yeniden kullanılabilir açık kaynaklı bileşenler yaygın olduğundan bu özellikle sorunludur. Bu yüzden sözde test doğrulayıcı çoğu zaman farklı ve ideal olarak bağımsız bir ekip tarafından, farklı çerçeveler, algoritmalar veya model ayarlarıyla geliştirilir. Aynı sorunu çözüyorsa geleneksel yazılım da sözde test doğrulayıcı olabilir. Fonksiyonel sırt sırta testte sözde test doğrulayıcının yalnızca fonksiyonel davranışı eşleştirmesi yeterlidir, bu da onu ucuzlatabilir.",
+            "Bu yaklaşım beklenen sonuçları değil, yalnızca test girdilerini üretmeyi gerektirir; çünkü karşılaştırma noktasını sözde test doğrulayıcı sağlar. Girdiler regresyon test paketleri gibi mevcut test senaryolarından ya da eğitim verisinden otomatik üretilebilir. Sistemi yeni bir ortama taşırken ve ortamlar arası sonuçları karşılaştırırken değerlidir; uç durumlarda ince model davranışı hatalarını da ortaya çıkarabilir. A/B testinden farkı: A/B testi aynı MÖ sisteminin iki varyantını MÖ fonksiyonel performans metrikleri ve istatistiksel tekniklerle karşılaştırır, sırt sırta test hata bulmak için kullanılır."
+          ],
+          "keyPoints": [
+            "Sırt sırta test, alternatif bir sürümü sözde test doğrulayıcı olarak kullanıp çıktıları aynı girdilerle karşılaştırır.",
+            "Sözde test doğrulayıcı ile test edilen sistem ideal olarak ortak yazılım bileşenleri paylaşmamalıdır.",
+            "Sözde test doğrulayıcı çoğu zaman farklı ve ideal olarak bağımsız bir ekip tarafından, farklı çerçeve, algoritma veya ayarlarla geliştirilir.",
+            "Fonksiyonel sırt sırta testte sözde test doğrulayıcının yalnızca fonksiyonel davranışı eşleştirmesi yeterlidir.",
+            "Yalnızca test girdileri üretilir; girdiler mevcut test senaryolarından ya da eğitim verisinden gelebilir.",
+            "Sırt sırta test, bir MÖ sistemini yeni bir ortama taşırken özellikle değerlidir."
+          ],
+          "commonMistakes": [
+            "Referans sistemin her zaman doğru olduğu varsayılır; sözde test doğrulayıcı bir karşılaştırma noktasıdır ve ortak bileşenler paylaşılıyorsa iki sistem aynı hatayla eşleşebilir.",
+            "Sırt sırta testin beklenen sonuçları önceden hazırlamayı gerektirdiği sanılır; yalnızca girdi gerekir, beklenen sonuç sözde test doğrulayıcıdan gelir.",
+            "A/B testi ile sırt sırta test karıştırılır; sırt sırta test hata bulmak içindir, A/B testi iki varyantı fonksiyonel performans metrikleri ve istatistikle karşılaştırır."
+          ]
+        },
+        "en": {
+          "title": "Back-to-back testing for ML systems",
+          "paragraphs": [
+            "Back-to-back testing is a practical answer to the test oracle problem. An alternative version of the system is used as a reference point, a pseudo-oracle, and its outputs are compared with those of the system under test for the same inputs. The pseudo-oracle may be an existing system or one developed specifically for testing, which comes at a cost.",
+            "Ideally the pseudo-oracle and the system under test do not share software components; otherwise both may contain the same defect and their outputs match even though both are wrong. This is a real problem given the widespread use of reusable open-source AI components, so the pseudo-oracle is often built by a different, ideally independent team, perhaps with different frameworks, algorithms or model settings. Conventional software can serve if it solves the same problem. In functional back-to-back testing the pseudo-oracle only has to match functional behaviour, which can make it cheaper to build.",
+            "The approach only requires generating test inputs, not expected results, because the pseudo-oracle provides the comparison point. Inputs can come from existing test cases such as regression suites or be generated automatically from training data. It is valuable when migrating an ML system to a new environment and when comparing test results across environments, and it can reveal subtle defects in behaviour with edge cases. The difference from A/B testing: A/B testing compares two variants of the same ML system using functional performance metrics and statistics, while back-to-back testing detects defects."
+          ],
+          "keyPoints": [
+            "Back-to-back testing uses an alternative version as a pseudo-oracle and compares outputs for the same inputs.",
+            "The pseudo-oracle and the system under test should ideally share no software components.",
+            "The pseudo-oracle is often developed by a different, ideally independent team using different frameworks, algorithms or model settings.",
+            "In functional back-to-back testing the pseudo-oracle needs to match only the functional behaviour.",
+            "Only test inputs have to be generated, from existing test cases or from training data.",
+            "It is particularly valuable when migrating an ML system to a new environment."
+          ],
+          "commonMistakes": [
+            "The reference system is assumed to be always correct; it is a comparison point, and if components are shared both systems can match while both are wrong.",
+            "Expected results are assumed to be prepared in advance; only inputs are needed, since the pseudo-oracle supplies the comparison.",
+            "Back-to-back testing and A/B testing are mixed up; back-to-back testing detects defects, A/B testing compares two variants using functional performance metrics and statistics."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "chunk": "ch02",
+  "chapter": 2,
+  "dataVersion": "2.0",
+  "lessons": [
+    {
+      "objective": "AI-2.1.1",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§2.1.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Yapay zekâya özgü kalite özellikleri (ISO/IEC 25059)",
+          "paragraphs": [
+            "ISO/IEC 25059, ISO/IEC 25010 kalite modelini yapay zekâya özgü hususlar için genişletir ve yapay zekâ tabanlı sistemleri iki bakış açısından değerlendirir: ürün kalitesi ve kullanımda kalite. Test açısından bu özellikler test hedeflerinin nasıl tanımlandığını, kabul kriterlerinin nasıl biçimlendirildiğini ve test sonuçlarının nasıl yorumlandığını doğrudan etkiler. Hedef, her özelliği hem adıyla hem de ait olduğu üst özellikle birlikte ayırt etmektir.",
+            "Yapay zekâ fonksiyonel doğruluğu (ürün kalitesi): olasılıksal MÖ mükemmel doğruluğu garanti edemez; bu yüzden hem doğru hem yanlış çıktılar dikkate alınır ve yanlış sonuçlar için kabul edilebilir eşikler tanımlanır. Fonksiyonel uyarlanabilirlik (fonksiyonel uygunluğun yeni alt özelliği): sistemin dağıtıldıktan sonra işletim ortamındaki değişikliklere kendiliğinden uyum sağlama yeteneği. Kullanıcı kontrol edilebilirliği (etkileşim yeteneğinin yeni alt özelliği): bir insanın ya da başka bir dış ajanın sistemin işleyişine zamanında müdahale edebilmesi. Şeffaflık (hem ürün kalitesi hem kullanımda kalite; etkileşim yeteneğinin ve memnuniyetin alt özelliği): sistem hakkında uygun bilginin paydaşlara iletilme derecesi.",
+            "Yapay zekâ sağlamlığı (güvenilirliğin alt özelliği): yanlı, karşıt ya da geçersiz girdi, dış müdahale, olumsuz çevre koşulları ve operatör kötüye kullanımı gibi durumlarda bile yapay zekâ fonksiyonel doğruluğu düzeyini koruma yeteneği. Müdahale edilebilirlik (güvenliğin alt özelliği): bir operatörün zarar ya da tehlikeyi önlemek için sistemin işleyişine zamanında müdahale edebilme derecesi. Toplumsal ve etik risk azaltma (kullanımda kalite; risklerden bağımsızlığın alt özelliği): hesap verebilirlik, adillik ve ayrımcılık yapmama, gizlilik, emniyet ve güvenlik, insan kontrolü, çevresel sürdürülebilirlik gibi alanlarda riskin azaltılması."
+          ],
+          "keyPoints": [
+            "ISO/IEC 25059, ISO/IEC 25010'u yapay zekâya özgü özelliklerle genişletir; ürün kalitesi ve kullanımda kalite olmak üzere iki bakış açısı vardır.",
+            "Yapay zekâ fonksiyonel doğruluğu doğru ve yanlış çıktıları birlikte ele alır ve yanlış sonuçlar için kabul edilebilir eşikler tanımlar.",
+            "Fonksiyonel uyarlanabilirlik, sistemin dağıtıldıktan sonra işletim ortamındaki değişikliklere kendiliğinden uyum sağlama yeteneğidir.",
+            "Kullanıcı kontrol edilebilirliği etkileşim yeteneğinin, müdahale edilebilirlik güvenliğin alt özelliğidir; ikisi de zamanında müdahaleyle ilgilidir.",
+            "Yapay zekâ sağlamlığı güvenilirliğin alt özelliğidir ve zorlu koşullarda fonksiyonel doğruluğun korunmasını ifade eder.",
+            "Şeffaflık hem ürün kalitesinde hem kullanımda kalitede yer alır; toplumsal ve etik risk azaltma kullanımda kalite özelliğidir."
+          ],
+          "commonMistakes": [
+            "Yapay zekâ fonksiyonel doğruluğunun yüzde yüz doğruluk demek olduğu sanılır; oysa olasılıksal MÖ'de belirli bir yanlış çıktı oranı beklenir ve özellik, kabul edilebilir yanlış sonuç eşiklerini tanımlamayı içerir.",
+            "Yapay zekâ sağlamlığının normal koşullardaki doğrulukla aynı şey olduğu sanılır; oysa sağlamlık, geçersiz ya da karşıt girdi, dış müdahale gibi koşullarda bu doğruluğun korunmasıdır.",
+            "Kullanıcı kontrol edilebilirliği ile müdahale edilebilirliğin aynı olduğu sanılır; oysa ikisi de zamanında müdahaleyi anlatır, ama biri etkileşim yeteneğinin (insan ya da dış ajan), diğeri güvenliğin (zarar ya da tehlikeyi önlemek isteyen operatör) alt özelliğidir."
+          ]
+        },
+        "en": {
+          "title": "AI-specific quality characteristics (ISO/IEC 25059)",
+          "paragraphs": [
+            "ISO/IEC 25059 extends the ISO/IEC 25010 quality model for AI-specific considerations and evaluates AI-based systems from two perspectives: product quality and quality in use. For testing, these characteristics directly influence how test objectives are defined, how acceptance criteria are formulated and how results are interpreted. The goal is to tell each characteristic apart by name and by the parent characteristic it belongs to.",
+            "AI functional correctness (product quality): probabilistic ML cannot guarantee perfect accuracy, so both correct and incorrect outputs are considered and acceptable thresholds are defined for incorrect results. Functional adaptability (new sub-characteristic of functional suitability): the ability to adapt autonomously to changes in the operational environment after deployment. User controllability (new sub-characteristic of interaction capability): a human or another external agent can intervene in the system's functioning in a timely manner. Transparency (product quality and quality in use; sub-characteristic of interaction capability and of satisfaction): the degree to which appropriate information about the system is communicated to stakeholders.",
+            "AI robustness (sub-characteristic of reliability): the ability to maintain the level of AI functional correctness regardless of circumstances such as biased, adversarial or invalid inputs, external interference, adverse environmental conditions and operator misuse. Intervenability (sub-characteristic of security): the degree to which an operator can intervene in the system's functioning in a timely manner to prevent harm or hazard. Societal and ethical risk mitigation (quality in use; sub-characteristic of freedom from risk): mitigating risk in areas such as accountability, fairness and non-discrimination, privacy, safety and security, human control of technology and environmental sustainability."
+          ],
+          "keyPoints": [
+            "ISO/IEC 25059 extends ISO/IEC 25010 with AI-specific characteristics, viewed as product quality and quality in use.",
+            "AI functional correctness considers correct and incorrect outputs and defines acceptable thresholds for incorrect results.",
+            "Functional adaptability is the ability to adapt autonomously to changes in the operational environment after deployment.",
+            "User controllability belongs to interaction capability and intervenability to security; both concern timely intervention.",
+            "AI robustness is a sub-characteristic of reliability: keeping AI functional correctness under adverse circumstances.",
+            "Transparency appears in both product quality and quality in use; societal and ethical risk mitigation is a quality-in-use characteristic."
+          ],
+          "commonMistakes": [
+            "AI functional correctness is often read as 100% accuracy; in fact probabilistic ML is expected to produce some errors, and the characteristic is about defining acceptable thresholds for incorrect results.",
+            "AI robustness is often confused with ordinary accuracy; in fact it is the ability to keep that accuracy under conditions such as invalid or adversarial inputs, external interference or operator misuse.",
+            "User controllability and intervenability are often treated as the same; in fact both describe timely intervention, but one is a sub-characteristic of interaction capability (a human or other external agent) and the other of security (an operator preventing harm or hazard)."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-2.1.2",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§2.1.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Yapay zekâ ve emniyet",
+          "paragraphs": [
+            "Emniyetle ilgili sistemler insanlara, mal varlığına ya da çevreye zarar verme potansiyeli taşır. Yapay zekâ olmayan bu tür sistemleri geliştirmek ve test etmek çok emek ister ama mümkündür; yapay zekâ tabanlı sistemlerde birkaç ek zorluk vardır.",
+            "Spesifikasyonlar: geleneksel sistemlerde gereksinimler tüm sistem için tanımlanıp koda dönüştürülebilecek düzeye kadar inceltilir; birçok yapay zekâ tabanlı sistemde ise belirsiz hedeflerle başlanır ve gereksinimler örtük olarak eğitim verisinin içindeki örüntülerle verilir, bu da gereksinimden gerçekleştirmeye izlenebilirliği yetersiz bırakabilir. Deterministik olmama: rastgele sayı üretimi ya da girdi değerlerindeki küçük değişiklikler nedeniyle titizlikle test edilmiş modeller bile beklenmedik davranış gösterebilir. Kendi kendine öğrenme: dağıtım öncesi titiz test, emniyet bütünlüğünü göstermek için kullanılır; ancak sistemin davranışı ilk test edilen davranıştan kademeli olarak uzaklaştıkça bu zayıflar. Modelin nasıl ve hangi veriyle öğrendiğini yönetmek bazen yardımcı olabilir; alternatif olarak emniyet koruyucuları (ör. istemleri filtreleyen içerik denetim bileşeni) uygulanabilir.",
+            "Açıklanabilirlik ve şeffaflık: emniyetle ilgili sistemlerde kararın nasıl ve neden verildiğini anlamak şarttır, oysa karar süreçleri çoğunlukla şeffaf değildir; LIME gibi açıklanabilir yapay zekâ teknikleri içgörü sağlayabilir ama yaygın olarak bulunmaz ve sistem performansını düşürebilir. Gelişen düzenlemeler: yapay zekâ olgun fonksiyonel emniyet standartlarının kapsamında değildir, bazı standartlar kullanımını yasaklar bile; AB Yapay Zekâ Yasası emniyet bileşeni olarak kullanılan sistemleri (havacılık, tıbbi cihaz, otomotiv) yüksek riskli sayar."
+          ],
+          "keyPoints": [
+            "Emniyetle ilgili sistemler insanlara, mal varlığına ya da çevreye zarar verme potansiyeli taşır.",
+            "Yapay zekâ tabanlı sistemlerde gereksinimler çoğunlukla eğitim verisi aracılığıyla örtük verilir; bu, gereksinimden gerçekleştirmeye izlenebilirliği zayıflatabilir.",
+            "Deterministik olmama, titizlikle test edilmiş modellerde bile beklenmedik davranış olasılığı doğurur.",
+            "Kendi kendine öğrenen sistemde davranış, dağıtım öncesi test edilen davranıştan uzaklaşabilir; emniyet koruyucuları bunu sınırlamaya yardım edebilir.",
+            "Açıklanabilir yapay zekâ teknikleri (ör. LIME) yaygın olarak bulunmaz ve performansı düşürebilir.",
+            "Yapay zekâ olgun fonksiyonel emniyet standartlarında yer almaz, bazıları kullanımını yasaklar; AB Yapay Zekâ Yasası emniyet bileşenlerini yüksek riskli sayar."
+          ],
+          "commonMistakes": [
+            "Dağıtım öncesi titiz testin kendi kendine öğrenen sistemin emniyetini kalıcı biçimde kanıtladığı sanılır; oysa öğrenme sürdükçe davranış test edilen davranıştan uzaklaşır ve kanıt zayıflar.",
+            "Yapay zekâ tabanlı sistemlerin mevcut fonksiyonel emniyet standartlarıyla zaten kapsandığı sanılır; oysa olgun standartlar yapay zekâyı kapsamaz, bazıları kullanımını yasaklar bile.",
+            "Açıklanabilirlik tekniklerinin emniyet sorununu bedelsiz çözdüğü sanılır; oysa bu teknikler yaygın değildir ve sistem performansını düşürebilir."
+          ]
+        },
+        "en": {
+          "title": "AI and safety",
+          "paragraphs": [
+            "Safety-related systems have the potential to cause injury or harm to people, property or the environment. Developing and testing non-AI safety-related systems takes a lot of effort but is feasible; AI-based systems add several challenges.",
+            "Specifications: in traditional systems, requirements are defined for the complete system and refined until they can be turned into code; for many AI-based systems they begin as vague goals and are provided implicitly through patterns in the training data, so traceability from requirements to implementation can be inadequate. Non-determinism: even rigorously tested models can show unexpected behavior because of random number generation or slight variations in input values. Self-learning: rigorous pre-deployment testing demonstrates safety integrity, but this is undermined when the behavior moves away from the originally tested behavior. Managing how the model learns and which data it uses can sometimes help; alternatively, safety guards such as a content moderation component filtering prompts can be implemented.",
+            "Explainability and transparency: understanding how and why a safety-related system decides is essential, yet AI decision-making is often not transparent; explainable AI techniques such as LIME can give insight but are not widely available and may compromise system performance. Evolving regulations: AI is not included in mature functional safety standards and some even prohibit it; the EU AI Act classifies AI used as a safety component (aviation, medical devices, automotive) as high-risk."
+          ],
+          "keyPoints": [
+            "Safety-related systems can cause injury or harm to people, property or the environment.",
+            "AI-based system requirements are often given implicitly through training data, which can leave traceability inadequate.",
+            "Non-determinism means even rigorously tested models can behave unexpectedly.",
+            "In self-learning systems, behavior can move away from the behavior tested before deployment; safety guards can help limit this.",
+            "Explainable AI techniques such as LIME are not widely available and may compromise performance.",
+            "AI is not covered by mature functional safety standards, some prohibit it, and the EU AI Act treats AI safety components as high-risk."
+          ],
+          "commonMistakes": [
+            "It is often assumed that rigorous pre-deployment testing settles the safety of a self-learning system; in fact its evidence is undermined as the system's behavior drifts from the tested behavior.",
+            "It is often assumed that AI-based systems are already covered by functional safety standards; in fact mature standards do not include AI and some prohibit its use.",
+            "It is often assumed that explainability techniques solve the safety problem at no cost; in fact they are not widely available and may compromise system performance."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-2.2.1",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§2.2.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Yapay zekâ tabanlı sistemler için kabul kriterleri",
+          "paragraphs": [
+            "Yapay zekâ tabanlı sistemlerde kabul kriterleri çoğunlukla ikili (geçti/kaldı) değil istatistiksel, olasılıksal ya da eşik tabanlıdır. Kriterler hem fonksiyonel hem fonksiyonel olmayan kalite özelliklerini kapsamalıdır. Bu kartın odağı, ISO/IEC 25059'daki yapay zekâya özgü özelliklere ve emniyete bağlı kriterlerdir (bkz. AI-2.1.1 ve AI-2.1.2).",
+            "Müfredattaki örneklerin çoğu ölçülebilir bir eşik içerir ve her biri tek bir özelliğe bağlıdır. Yapay zekâ fonksiyonel doğruluğu için bir görüntü tanıma sisteminde yüzde 95 doğruluk ya da bir hata tahmin sisteminde yüzde 90 hatırlama gibi bir metrik eşiği. Fonksiyonel uyarlanabilirlik için sistemin belirli bir değişikliğe ya sınırlı sürede ya da kullanıcı davranışındaki belirli bir değişiklikten sonra çıktısını ayarlayarak uyum sağlaması. Kullanıcı kontrol edilebilirliği için bir gözetmenin sistemin kontrolünü belirli bir sürede devralabilmesi ya da performans düştüğünde elle müdahale olanağı sunulması. Şeffaflık için model sürümünü ve belgelerini gösteren bir uç nokta gibi yeterli bilginin sağlanması. Yapay zekâ sağlamlığı için bir bağımlılık kesilse bile yanıt süresinin sınırda kalması ya da çökmek yerine düşük işlevli çalışma moduna geçilmesi.",
+            "Müdahale edilebilirlik için tehlikeli bir olayda operatörün sistemi belirli bir sürede durdurabilmesi ya da kritik bir eylemi veto edebilmesi. Toplumsal ve etik risk azaltma için seçilen bir adillik metriğine göre gruplar arasında ayrımcılık yapılmaması ya da zararlı içerik üretmeyi reddetmeyi gösteren bir kırmızı takım çalışması değerlendirmesinden belirli bir skorun alınması. Emniyet için yapay zekâ dışı bileşenlerin ilgili emniyet standardına uyması, sınır aşımlarının belirli sürede ele alınması ve bir açıklanabilirlik aracıyla girdi-çıktı ilişkilerinin belirli bir doğrulukla eşlenebilmesi."
+          ],
+          "keyPoints": [
+            "Yapay zekâ tabanlı sistemlerde kabul kriterleri çoğunlukla istatistiksel, olasılıksal ya da eşik tabanlıdır, ikili değildir.",
+            "Yapay zekâ fonksiyonel doğruluğu için kriter, doğruluk ya da hatırlama gibi bir metrik eşiğidir.",
+            "Fonksiyonel uyarlanabilirlik, kullanıcı kontrol edilebilirliği ve müdahale edilebilirlik kriterleri çoğu örnekte bir süre sınırı içerir.",
+            "Şeffaflık kriteri, model ve verisi hakkında yeterli bilginin sağlanmasını ister.",
+            "Yapay zekâ sağlamlığı kriteri, bozulan koşullarda davranışın (yanıt süresi, düşük işlevli bir moda geçiş) korunmasını ister.",
+            "Toplumsal ve etik risk azaltma ile emniyet için de ölçülebilir kriterler tanımlanır."
+          ],
+          "commonMistakes": [
+            "Yapay zekâ için kabul kriterinin 'hiç yanlış çıktı vermez' gibi mutlak olabileceği sanılır; oysa olasılıksal sistemler için kriter, kabul edilebilir bir eşik ya da istatistiksel hedef olarak yazılır.",
+            "Kriterlerin yalnızca doğruluk metriklerinden oluştuğu sanılır; oysa her ISO/IEC 25059 özelliği ve emniyet için ayrı kriter tanımlanır, örneğin süre sınırı, bilgi sağlama ya da standarda uyum.",
+            "Fonksiyonel uyarlanabilirlik ile kullanıcı kontrol edilebilirliği kriterlerinin aynı olduğu sanılır; oysa ilki sistemin kendi uyum sağlamasını, ikincisi bir insanın sistemi devralabilmesini ölçer."
+          ]
+        },
+        "en": {
+          "title": "Acceptance criteria for AI-based systems",
+          "paragraphs": [
+            "For AI-based systems, acceptance criteria are often statistical, probabilistic or threshold-based rather than binary. They must cover both functional and non-functional quality characteristics. This card focuses on criteria for the AI-specific characteristics of ISO/IEC 25059 and for safety (see AI-2.1.1 and AI-2.1.2).",
+            "Most of the syllabus examples contain a measurable threshold, and each is tied to one characteristic. AI functional correctness: a metric threshold such as 95% accuracy for an image recognition system or 90% recall for a defect prediction system. Functional adaptability: the system adapts to a defined change, either within a limited time or by adjusting its output after a defined change in user behavior. User controllability: a supervisor can take control within a specified time, or manual override is offered when performance degrades. Transparency: sufficient information is provided, for example an endpoint returning the model version and its documentation. AI robustness: response time stays within a limit when a dependency is disrupted, or the system switches to a reduced mode instead of crashing.",
+            "Intervenability: an operator can stop the system within a specified time in a hazardous event, or veto a critical action before it executes. Societal and ethical risk mitigation: no discrimination between groups according to a chosen fairness metric, or a minimum score in a red teaming assessment showing refusal to produce harmful content. Safety: non-AI components comply with the relevant safety standard, limit breaches are handled within a specified time, and an explainability tool can map input-output relationships with a specified accuracy."
+          ],
+          "keyPoints": [
+            "Acceptance criteria for AI-based systems are often statistical, probabilistic or threshold-based, not binary.",
+            "For AI functional correctness the criterion is a metric threshold such as accuracy or recall.",
+            "Functional adaptability, user controllability and intervenability criteria carry a time limit in most examples.",
+            "A transparency criterion requires sufficient information about the model and its data to be provided.",
+            "An AI robustness criterion requires behavior (response time, switching to a reduced mode) to hold under disrupted conditions.",
+            "Measurable criteria are also defined for societal and ethical risk mitigation and for safety."
+          ],
+          "commonMistakes": [
+            "It is often assumed that an AI acceptance criterion can be absolute, such as never making an error; in fact for probabilistic systems it is written as an acceptable threshold or statistical target.",
+            "It is often assumed that criteria consist only of accuracy metrics; in fact each ISO/IEC 25059 characteristic and safety has its own kind of criterion, such as a time limit, provision of information or compliance with a standard.",
+            "It is often assumed that functional adaptability and user controllability criteria are the same; in fact the first measures the system adapting by itself, the second a human being able to take control."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    }
+  ]
+}

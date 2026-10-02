@@ -58,6 +58,16 @@ see the correction box in `docs/07-content-authoring-guide.md §5`.
   retired with it. **Length survives the shuffle:** #22 (key is the longest
   option) still matters, and the D-04 sweep found the key strictly longest in
   over half of some chunks. Trim the key or give a distractor a concrete detail.
+  #22 does not look the other way: CT-AI writers trimmed keys until they were
+  the strictly shortest option in half of some chunks, which is the same cue.
+  Measure both directions before handing a chunk to review.
+- **#21 matches whole words only.** A banned word with a Turkish suffix
+  (`kusurlu`, `zafiyetleri`, `belirlenimsizlik`) passes it; grep the Turkish
+  text yourself after a terminology sweep. Consonant softening hides more
+  (`özellik` -> `özelliği`).
+- **#26 reads only the rationale's first word.** It catches a key that its own
+  rationales call wrong ("Correct." / "Doğru." on an unkeyed option); a
+  rationale that opens any other way is not judged.
 - **No positional mapping in a rationale.** #15 catches "(c) şıkkı" but not
   "the other options describe X, Y and Z respectively" / "sırasıyla", which is
   wrong on most attempts once options are shuffled. Map by content instead.

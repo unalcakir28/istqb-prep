@@ -1,0 +1,436 @@
+{
+  "syllabusVersion": "2.0",
+  "source": "EN texts are copied verbatim from the 'Learning Objectives for Chapter N' lists of the ISTQB® Certified Tester AI Testing (CT-AI) Syllabus v2.0 (GA 2026-04-17), with wrapped lines joined. TR texts are editorial translations, because no Turkish v2.0 syllabus exists; their terminology is taken from data/ct-ai-v2.0/terms.json, which uses the TTB CT-AI v1.0 Turkish syllabus wherever the term exists there, and they reuse the wording of a v1.0 Turkish learning objective where it says the same thing. Only the 43 examinable K2/K3 objectives are listed; the hands-on objectives (HO-, H1/H2) are not examined and are excluded.",
+  "objectives": [
+    {
+      "code": "AI-1.1.1",
+      "chapter": 1,
+      "section": "1.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Differentiate between AI-based systems and conventional systems",
+        "tr": "Yapay zekâ tabanlı sistemler ile geleneksel sistemler arasındaki farkları belirtmek"
+      }
+    },
+    {
+      "code": "AI-1.1.2",
+      "chapter": 1,
+      "section": "1.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Distinguish between narrow AI, general AI, and super AI",
+        "tr": "Dar yapay zekâ, genel yapay zekâ ve süper yapay zekâ arasındaki farkları belirtmek"
+      }
+    },
+    {
+      "code": "AI-1.1.3",
+      "chapter": 1,
+      "section": "1.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain the different types of AI technologies",
+        "tr": "Farklı yapay zekâ teknolojisi türlerini açıklamak"
+      }
+    },
+    {
+      "code": "AI-1.1.4",
+      "chapter": 1,
+      "section": "1.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain generative AI",
+        "tr": "Üretken yapay zekâyı açıklamak"
+      }
+    },
+    {
+      "code": "AI-1.1.5",
+      "chapter": 1,
+      "section": "1.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Compare the choices available for hardware to implement machine learning systems",
+        "tr": "Makine öğrenimi sistemlerini uygulamak için mevcut donanım seçeneklerini karşılaştırmak"
+      }
+    },
+    {
+      "code": "AI-1.1.6",
+      "chapter": 1,
+      "section": "1.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Compare the options for the development and hosting of AI models",
+        "tr": "Yapay zekâ modellerinin geliştirilmesi ve barındırılmasına yönelik seçenekleri karşılaştırmak"
+      }
+    },
+    {
+      "code": "AI-1.1.7",
+      "chapter": 1,
+      "section": "1.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Summarize the functionality provided by ML development frameworks",
+        "tr": "MÖ geliştirme çerçevelerinin sağladığı işlevselliği özetlemek"
+      }
+    },
+    {
+      "code": "AI-1.1.8",
+      "chapter": 1,
+      "section": "1.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain how regulations and standards affect the development and testing of AI-based systems",
+        "tr": "Düzenlemelerin ve standartların yapay zekâ tabanlı sistemlerin geliştirilmesini ve test edilmesini nasıl etkilediğini açıklamak"
+      }
+    },
+    {
+      "code": "AI-2.1.1",
+      "chapter": 2,
+      "section": "2.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Classify behaviors of AI-based systems according to the quality characteristics defined in ISO/IEC 25059",
+        "tr": "Yapay zekâ tabanlı sistemlerin davranışlarını ISO/IEC 25059'da tanımlanan kalite özelliklerine göre sınıflandırmak"
+      }
+    },
+    {
+      "code": "AI-2.1.2",
+      "chapter": 2,
+      "section": "2.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain the special considerations that arise when AI is used in safety-related systems",
+        "tr": "Yapay zekâ emniyetle ilgili sistemlerde kullanıldığında ortaya çıkan özel hususları açıklamak"
+      }
+    },
+    {
+      "code": "AI-2.2.1",
+      "chapter": 2,
+      "section": "2.2",
+      "kLevel": "K2",
+      "text": {
+        "en": "Give examples of acceptance criteria for AI-based systems",
+        "tr": "Yapay zekâ tabanlı sistemler için kabul kriterlerine örnekler vermek"
+      }
+    },
+    {
+      "code": "AI-3.1.1",
+      "chapter": 3,
+      "section": "3.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Distinguish between the different forms of ML",
+        "tr": "Farklı MÖ biçimlerini ayırt etmek"
+      }
+    },
+    {
+      "code": "AI-3.1.2",
+      "chapter": 3,
+      "section": "3.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Summarize the workflow used to create an ML system",
+        "tr": "Bir MÖ sistemini oluşturmak için kullanılan iş akışını özetlemek"
+      }
+    },
+    {
+      "code": "AI-3.1.4",
+      "chapter": 3,
+      "section": "3.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Summarize the use of pretrained models, fine-tuning, and retrieval-augmented generation",
+        "tr": "Önceden eğitilmiş modellerin, ince ayarın ve erişimle artırılmış üretimin kullanımını özetlemek"
+      }
+    },
+    {
+      "code": "AI-3.2.1",
+      "chapter": 3,
+      "section": "3.2",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain the activities related to data preparation",
+        "tr": "Veri hazırlığı ile ilgili etkinlikleri açıklamak"
+      }
+    },
+    {
+      "code": "AI-3.2.3",
+      "chapter": 3,
+      "section": "3.2",
+      "kLevel": "K2",
+      "text": {
+        "en": "Contrast the use of training, validation, and test datasets in the development of an ML model",
+        "tr": "Bir MÖ modelinin geliştirilmesinde eğitim, doğrulama ve test veri setlerinin kullanımını karşılaştırmak"
+      }
+    },
+    {
+      "code": "AI-3.3.1",
+      "chapter": 3,
+      "section": "3.3",
+      "kLevel": "K3",
+      "text": {
+        "en": "Calculate common ML functional performance metrics from a given set of confusion matrix data",
+        "tr": "Verilen bir karışıklık matrisi verisinden yaygın MÖ fonksiyonel performans metriklerini hesaplamak"
+      }
+    },
+    {
+      "code": "AI-3.4.1",
+      "chapter": 3,
+      "section": "3.4",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain the structure and working of a deep neural network",
+        "tr": "Bir derin sinir ağının yapısını ve çalışmasını açıklamak"
+      }
+    },
+    {
+      "code": "AI-3.4.3",
+      "chapter": 3,
+      "section": "3.4",
+      "kLevel": "K2",
+      "text": {
+        "en": "Describe the different coverage measures for neural networks",
+        "tr": "Sinir ağları için farklı kapsam ölçümlerini tarif etmek"
+      }
+    },
+    {
+      "code": "AI-4.1.1",
+      "chapter": 4,
+      "section": "4.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Compare the testability of locked and adaptive AI-based systems",
+        "tr": "Kilitli ve uyarlanabilir yapay zekâ tabanlı sistemlerin test edilebilirliğini karşılaştırmak"
+      }
+    },
+    {
+      "code": "AI-4.1.2",
+      "chapter": 4,
+      "section": "4.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain why a statistical approach is often needed when testing AI-based systems",
+        "tr": "Yapay zekâ tabanlı sistemler test edilirken neden çoğu zaman istatistiksel bir yaklaşıma ihtiyaç duyulduğunu açıklamak"
+      }
+    },
+    {
+      "code": "AI-4.1.3",
+      "chapter": 4,
+      "section": "4.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain the challenges and solutions relating to test oracles for AI-based systems",
+        "tr": "Yapay zekâ tabanlı sistemler için test doğrulayıcılarına ilişkin zorlukları ve çözümleri açıklamak"
+      }
+    },
+    {
+      "code": "AI-4.2.1",
+      "chapter": 4,
+      "section": "4.2",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain how generative AI can be tested",
+        "tr": "Üretken yapay zekânın nasıl test edilebileceğini açıklamak"
+      }
+    },
+    {
+      "code": "AI-4.2.2",
+      "chapter": 4,
+      "section": "4.2",
+      "kLevel": "K3",
+      "text": {
+        "en": "Implement red teaming for GenAI systems",
+        "tr": "Üretken yapay zekâ sistemleri için kırmızı takım çalışması uygulamak"
+      }
+    },
+    {
+      "code": "AI-4.3.1",
+      "chapter": 4,
+      "section": "4.3",
+      "kLevel": "K2",
+      "text": {
+        "en": "Summarize the test levels used to develop machine learning systems",
+        "tr": "Makine öğrenimi sistemlerinin geliştirilmesinde kullanılan test seviyelerini özetlemek"
+      }
+    },
+    {
+      "code": "AI-4.3.2",
+      "chapter": 4,
+      "section": "4.3",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain how risk-based testing is applied to machine learning systems",
+        "tr": "Risk bazlı testin makine öğrenimi sistemlerine nasıl uygulandığını açıklamak"
+      }
+    },
+    {
+      "code": "AI-5.1.1",
+      "chapter": 5,
+      "section": "5.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Give examples of test approaches used for the risk mitigation of input data for a machine learning system",
+        "tr": "Bir makine öğrenimi sisteminin girdi verilerine ilişkin risk azaltma için kullanılan test yaklaşımlarına örnekler vermek"
+      }
+    },
+    {
+      "code": "AI-5.1.2",
+      "chapter": 5,
+      "section": "5.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain how to test for bias",
+        "tr": "Yanlılığın nasıl test edileceğini açıklamak"
+      }
+    },
+    {
+      "code": "AI-5.1.3",
+      "chapter": 5,
+      "section": "5.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Summarize the various forms of data pipeline testing",
+        "tr": "Veri hattı testinin çeşitli biçimlerini özetlemek"
+      }
+    },
+    {
+      "code": "AI-5.1.4",
+      "chapter": 5,
+      "section": "5.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain how to test for data representativeness",
+        "tr": "Veri temsil ediciliğinin nasıl test edileceğini açıklamak"
+      }
+    },
+    {
+      "code": "AI-5.1.5",
+      "chapter": 5,
+      "section": "5.1",
+      "kLevel": "K3",
+      "text": {
+        "en": "Apply dataset constraint testing",
+        "tr": "Veri seti kısıt testini uygulamak"
+      }
+    },
+    {
+      "code": "AI-5.1.6",
+      "chapter": 5,
+      "section": "5.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain label correctness testing",
+        "tr": "Etiket doğruluğu testini açıklamak"
+      }
+    },
+    {
+      "code": "AI-6.1.1",
+      "chapter": 6,
+      "section": "6.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Give examples of test approaches used for risk mitigation of ML models",
+        "tr": "MÖ modellerine ilişkin risk azaltma için kullanılan test yaklaşımlarına örnekler vermek"
+      }
+    },
+    {
+      "code": "AI-6.1.2",
+      "chapter": 6,
+      "section": "6.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain the purpose and focus of reviewing ML model documentation",
+        "tr": "MÖ modeli belgelerinin gözden geçirilmesinin amacını ve odağını açıklamak"
+      }
+    },
+    {
+      "code": "AI-6.1.3",
+      "chapter": 6,
+      "section": "6.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain how ML functional performance testing is carried out for probabilistic machine learning systems",
+        "tr": "Olasılıksal makine öğrenimi sistemleri için MÖ fonksiyonel performans testinin nasıl yapıldığını açıklamak"
+      }
+    },
+    {
+      "code": "AI-6.1.4",
+      "chapter": 6,
+      "section": "6.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Summarize adversarial testing of machine learning systems",
+        "tr": "Makine öğrenimi sistemlerinin karşıt testini özetlemek"
+      }
+    },
+    {
+      "code": "AI-6.1.5",
+      "chapter": 6,
+      "section": "6.1",
+      "kLevel": "K3",
+      "text": {
+        "en": "Use metamorphic testing to derive test cases for a given scenario",
+        "tr": "Belirli bir senaryo için test senaryoları elde etmek amacıyla metamorfik testi kullanmak"
+      }
+    },
+    {
+      "code": "AI-6.1.7",
+      "chapter": 6,
+      "section": "6.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain how drift testing is used on operational machine learning systems",
+        "tr": "Kayma testinin operasyonel makine öğrenimi sistemlerinde nasıl kullanıldığını açıklamak"
+      }
+    },
+    {
+      "code": "AI-6.1.8",
+      "chapter": 6,
+      "section": "6.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain how overfitting and underfitting are detected by testing",
+        "tr": "Aşırı uyum ve yetersiz uyumun test yoluyla nasıl tespit edildiğini açıklamak"
+      }
+    },
+    {
+      "code": "AI-6.1.9",
+      "chapter": 6,
+      "section": "6.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain how A/B testing is used in the context of machine learning systems",
+        "tr": "A/B testinin makine öğrenimi sistemleri bağlamında nasıl kullanıldığını açıklamak"
+      }
+    },
+    {
+      "code": "AI-6.1.10",
+      "chapter": 6,
+      "section": "6.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain how back-to-back testing is used in the context of machine learning systems",
+        "tr": "Sırt sırta testin makine öğrenimi sistemleri bağlamında nasıl kullanıldığını açıklamak"
+      }
+    },
+    {
+      "code": "AI-7.1.1",
+      "chapter": 7,
+      "section": "7.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Give examples of test approaches used for risk mitigation of ML development",
+        "tr": "MÖ geliştirmeye ilişkin risk azaltma için kullanılan test yaklaşımlarına örnekler vermek"
+      }
+    },
+    {
+      "code": "AI-7.1.2",
+      "chapter": 7,
+      "section": "7.1",
+      "kLevel": "K2",
+      "text": {
+        "en": "Explain the various forms of ML system deployment testing",
+        "tr": "MÖ sistemi dağıtım testinin çeşitli biçimlerini açıklamak"
+      }
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "syllabusVersion": "2.0",
+  "source": "ISTQB® Certified Tester AI Testing Syllabus v2.0 (GA 2026-04-17) for chapters, sections, training minutes and objectives + Exam Structures & Rules tables v1.19 (2026-08-19), sheet 'CT-AI v2.0', for questions and points. Turkish titles are editorial translations (no Turkish v2.0 syllabus exists), using the terms in terms.json.",
+  "chapters": [
+    {
+      "number": 1,
+      "title": {
+        "en": "Introduction to Artificial Intelligence",
+        "tr": "Yapay Zekâya Giriş"
+      },
+      "trainingMinutes": 120,
+      "objectiveCount": 8,
+      "objectiveKDistribution": {
+        "K1": 0,
+        "K2": 8,
+        "K3": 0
+      },
+      "examQuestions": 6,
+      "examPoints": 6,
+      "examKDistribution": {
+        "K1": 0,
+        "K2": 6,
+        "K3": 0
+      },
+      "sections": [
+        {
+          "id": "1.1",
+          "title": {
+            "en": "Introduction to AI",
+            "tr": "Yapay Zekâya Giriş"
+          }
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": {
+        "en": "Quality Characteristics for AI-Based Systems",
+        "tr": "Yapay Zekâ Tabanlı Sistemler için Kalite Özellikleri"
+      },
+      "trainingMinutes": 45,
+      "objectiveCount": 3,
+      "objectiveKDistribution": {
+        "K1": 0,
+        "K2": 3,
+        "K3": 0
+      },
+      "examQuestions": 3,
+      "examPoints": 3,
+      "examKDistribution": {
+        "K1": 0,
+        "K2": 3,
+        "K3": 0
+      },
+      "sections": [
+        {
+          "id": "2.1",
+          "title": {
+            "en": "Quality Characteristics for AI-Based Systems",
+            "tr": "Yapay Zekâ Tabanlı Sistemler için Kalite Özellikleri"
+          }
+        },
+        {
+          "id": "2.2",
+          "title": {
+            "en": "Acceptance Criteria for AI-Based Systems",
+            "tr": "Yapay Zekâ Tabanlı Sistemler için Kabul Kriterleri"
+          }
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": {
+        "en": "Machine Learning",
+        "tr": "Makine Öğrenimi"
+      },
+      "trainingMinutes": 375,
+      "objectiveCount": 8,
+      "objectiveKDistribution": {
+        "K1": 0,
+        "K2": 7,
+        "K3": 1
+      },
+      "examQuestions": 7,
+      "examPoints": 8,
+      "examKDistribution": {
+        "K1": 0,
+        "K2": 6,
+        "K3": 1
+      },
+      "sections": [
+        {
+          "id": "3.1",
+          "title": {
+            "en": "Introduction to Machine Learning",
+            "tr": "Makine Öğrenimine Giriş"
+          }
+        },
+        {
+          "id": "3.2",
+          "title": {
+            "en": "Data for Machine Learning",
+            "tr": "Makine Öğrenimi için Veri"
+          }
+        },
+        {
+          "id": "3.3",
+          "title": {
+            "en": "ML Functional Performance Metrics for Classification",
+            "tr": "Sınıflandırma için MÖ Fonksiyonel Performans Metrikleri"
+          }
+        },
+        {
+          "id": "3.4",
+          "title": {
+            "en": "Neural Networks",
+            "tr": "Sinir Ağları"
+          }
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": {
+        "en": "Testing AI-Based Systems",
+        "tr": "Yapay Zekâ Tabanlı Sistemlerin Test Edilmesi"
+      },
+      "trainingMinutes": 195,
+      "objectiveCount": 7,
+      "objectiveKDistribution": {
+        "K1": 0,
+        "K2": 6,
+        "K3": 1
+      },
+      "examQuestions": 7,
+      "examPoints": 8,
+      "examKDistribution": {
+        "K1": 0,
+        "K2": 6,
+        "K3": 1
+      },
+      "sections": [
+        {
+          "id": "4.1",
+          "title": {
+            "en": "Introduction to Testing AI-Based Systems",
+            "tr": "Yapay Zekâ Tabanlı Sistemlerin Testine Giriş"
+          }
+        },
+        {
+          "id": "4.2",
+          "title": {
+            "en": "Testing Generative AI and Large Language Models",
+            "tr": "Üretken Yapay Zekânın ve Büyük Dil Modellerinin Test Edilmesi"
+          }
+        },
+        {
+          "id": "4.3",
+          "title": {
+            "en": "Test Levels and Machine Learning Systems",
+            "tr": "Test Seviyeleri ve Makine Öğrenimi Sistemleri"
+          }
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": {
+        "en": "Input Data Testing for Machine Learning Systems",
+        "tr": "Makine Öğrenimi Sistemleri için Girdi Verisi Testi"
+      },
+      "trainingMinutes": 180,
+      "objectiveCount": 6,
+      "objectiveKDistribution": {
+        "K1": 0,
+        "K2": 5,
+        "K3": 1
+      },
+      "examQuestions": 6,
+      "examPoints": 7,
+      "examKDistribution": {
+        "K1": 0,
+        "K2": 5,
+        "K3": 1
+      },
+      "sections": [
+        {
+          "id": "5.1",
+          "title": {
+            "en": "Input Data Testing for Machine Learning Systems",
+            "tr": "Makine Öğrenimi Sistemleri için Girdi Verisi Testi"
+          }
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": {
+        "en": "Model Testing for Machine Learning Systems",
+        "tr": "Makine Öğrenimi Sistemleri için Model Testi"
+      },
+      "trainingMinutes": 225,
+      "objectiveCount": 9,
+      "objectiveKDistribution": {
+        "K1": 0,
+        "K2": 8,
+        "K3": 1
+      },
+      "examQuestions": 9,
+      "examPoints": 10,
+      "examKDistribution": {
+        "K1": 0,
+        "K2": 8,
+        "K3": 1
+      },
+      "sections": [
+        {
+          "id": "6.1",
+          "title": {
+            "en": "Model Testing for Machine Learning Systems",
+            "tr": "Makine Öğrenimi Sistemleri için Model Testi"
+          }
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": {
+        "en": "Machine Learning Development Testing",
+        "tr": "Makine Öğrenimi Geliştirme Testi"
+      },
+      "trainingMinutes": 30,
+      "objectiveCount": 2,
+      "objectiveKDistribution": {
+        "K1": 0,
+        "K2": 2,
+        "K3": 0
+      },
+      "examQuestions": 2,
+      "examPoints": 2,
+      "examKDistribution": {
+        "K1": 0,
+        "K2": 2,
+        "K3": 0
+      },
+      "sections": [
+        {
+          "id": "7.1",
+          "title": {
+            "en": "Machine Learning Development Testing",
+            "tr": "Makine Öğrenimi Geliştirme Testi"
+          }
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "trainingMinutes": 1170,
+    "objectives": 43,
+    "objectiveKDistribution": {
+      "K1": 0,
+      "K2": 39,
+      "K3": 4
+    },
+    "examQuestions": 40,
+    "examPoints": 44,
+    "examKDistribution": {
+      "K1": 0,
+      "K2": 36,
+      "K3": 4
+    }
+  }
+}

@@ -1,0 +1,443 @@
+{
+  "chunk": "ch01",
+  "chapter": 1,
+  "dataVersion": "2.0",
+  "lessons": [
+    {
+      "objective": "AI-1.1.1",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§1.1.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Yapay zekâ tabanlı ve geleneksel sistemler",
+          "paragraphs": [
+            "Geleneksel sistemlerde geliştirici, if-then-else ve döngüler gibi yapılarla adım adım talimatları açıkça yazar. Bu deterministik yaklaşım davranışı öngörülebilir ve şeffaf kılar: girdinin çıktıyı nasıl ürettiği anlaşılabilir. Çoğu yapay zekâ tabanlı sistem, özellikle makine öğrenimi (MÖ) kullananlar, önceden tanımlı kurallara göre çalışmaz; veriden örüntüler çıkarır ve yeni girdiye bu örüntülerle yanıt verir.",
+            "Bu nedenle ayrım üç noktada ortaya çıkar. Problem çözme: birçok yapay zekâ tabanlı sistem olasılıksal akıl yürütme, istatistiksel çıkarım ve örüntü tanımaya dayanır; çıktı her zaman öngörülebilir değildir. Açıklanabilirlik: derin öğrenme modelleri milyarlarca parametre taşıyabilir ve kara kutu gibi davranır; sağlık, finans, savunma, ulaşım gibi alanlarda kararın nedenini bilmek kritiktir. Uyarlanabilirlik: geleneksel sistem statiktir ve güncelleme genellikle elle yapılır, yapay zekâ tabanlı sistem ise yeni veriyle kendi kendine öğrenebilir.",
+            "Uyarlanabilirliğin bir bedeli vardır: sistemin temel gereksinimlerle uyumunu korumak için sürekli izleme gerekir."
+          ],
+          "keyPoints": [
+            "Geleneksel sistemler açıkça kodlanmış, deterministik kurallarla çalışır; MÖ tabanlı sistemler kuralları verideki örüntülerden çıkarır.",
+            "Birçok yapay zekâ tabanlı sistem olasılıksal akıl yürütmeye dayandığından çıktıları her zaman öngörülebilir değildir.",
+            "Derin öğrenme modellerinin kara kutu doğası açıklanabilirliği güçleştirir; bu, yapay zekâ düzenlemelerinde kritik bir odaktır.",
+            "Geleneksel sistemler statiktir ve genellikle elle güncellenir; yapay zekâ tabanlı sistemler kendi kendine öğrenebilir.",
+            "Uyarlanabilirlik, temel gereksinimlerle uyumu korumak için sürekli izleme gerektirir."
+          ],
+          "commonMistakes": [
+            "Her yapay zekâ tabanlı sistemin kendi kendine öğrendiği sanılır; oysa bazı MÖ sistemleri sürekli gelişirken diğerleri ilk öğrendiği bilgiyle çalışır ve güncellemek için açıkça yeniden eğitilmesi gerekir.",
+            "Kural kullanan her sistemin yapay zekâ dışı olduğu sanılır; oysa kural tabanlı akıl yürütme sistemleri (uzman sistemler) yapay zekâ teknolojileri arasında sayılır. Çoğu MÖ sisteminde ise kuralları bir insan yazmaz; bunları verideki örüntüler belirler."
+          ]
+        },
+        "en": {
+          "title": "AI-based and conventional systems",
+          "paragraphs": [
+            "In a conventional system the developer writes step-by-step instructions explicitly, using constructs such as if-then-else and loops. This deterministic approach makes behavior predictable and transparent: it is possible to see how an input produces an output. Most AI-based systems, particularly those using machine learning (ML), do not follow predefined rules; they extract patterns from data and use them to respond to new inputs.",
+            "The difference shows up in three places. Problem solving: many AI-based systems rely on probabilistic reasoning, statistical inference and pattern recognition, so outputs are not always predictable. Explainability: deep learning models can have billions of parameters and behave like a black box, which matters in healthcare, finance, defence and transportation, where the reason for a decision is crucial. Adaptability: a conventional system is static and typically updated by hand, while an AI-based system can learn on its own from new data.",
+            "Adaptability has a price: continuous monitoring is needed to keep the system aligned with its core requirements."
+          ],
+          "keyPoints": [
+            "Conventional systems run on explicitly coded, deterministic rules; ML-based systems derive their rules from patterns in data.",
+            "Many AI-based systems rely on probabilistic reasoning, so their outputs are not always predictable.",
+            "The black-box nature of deep learning models makes explainability hard, and it is a key focus of AI regulation.",
+            "Conventional systems are static and typically updated manually; AI-based systems can be self-learning.",
+            "Adaptability requires continuous monitoring to maintain alignment with core requirements."
+          ],
+          "commonMistakes": [
+            "It is often assumed that every AI-based system learns by itself; in fact some ML systems keep improving, while others work on the knowledge they first learned and need explicit retraining to be updated.",
+            "It is often assumed that any system using rules is not AI; in fact rule-based reasoning systems (expert systems) are counted among AI technologies. In most ML systems, however, no human writes the rules; they come from patterns in the data."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-1.1.2",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§1.1.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Dar, genel ve süper yapay zekâ",
+          "paragraphs": [
+            "Üç düzey, sistemin yeteneğinin ne kadar genellenebildiğine göre ayrılır. Dar yapay zekâ (zayıf yapay zekâ) belirli görevler için tasarlanır ve bugün kullanımda olan tüm yapay zekâ sistemlerini kapsar. Sınırlı bir alanda çok verimli olabilir, ancak öğrendiği işlevlerin ötesine genelleme yapamaz: yüz tanımada başarılı bir sistem, açıkça yeniden eğitilmedikçe dil çevirisi yapamaz.",
+            "Genel yapay zekâ (güçlü yapay zekâ), insanın yapabildiği zihinsel görevlerin çoğunu yapabilen, her yeni görev için yeniden eğitilmeye gerek duymadan geniş bir görev yelpazesinde öğrenip bilgi uygulayabilen sistemdir. Bugün hiçbir sistem genel zekâya sahip değildir. Süper yapay zekâ ise insan müdahalesi ya da kontrolü olmadan kendini sürekli geliştiren sistemdir; insan zekâsını ve genel yapay zekâyı aşacağı varsayılır. Genel yapay zekâdan süper yapay zekâya geçiş noktasına teknolojik tekillik denir.",
+            "Hatırlanacak sınır şudur: en gelişmiş sistemler bile dar yapay zekâdır. Öncü yapay zekâ (frontier AI), üretken yapay zekâ modelleriyle mevcut yeteneklerin sınırını zorlayan ve yüksek özerkliğe sahip büyük ölçekli sistemleri kapsar, ama dar yapay zekânın bir alt kümesidir ve genel yapay zekânın çok yönlülüğüne ulaşmamıştır."
+          ],
+          "keyPoints": [
+            "Dar yapay zekâ belirli görevler için tasarlanmıştır ve bugün dağıtılmış tüm yapay zekâ sistemlerini temsil eder.",
+            "Dar yapay zekâ, öğrendiği işlevlerin ötesine genelleme yapamaz.",
+            "Genel yapay zekâ, yeniden eğitim gerektirmeden insanın yapabildiği zihinsel görevlerin çoğunu yapabilir; bugün böyle bir sistem yoktur.",
+            "Süper yapay zekâ, insan müdahalesi olmadan kendini sürekli geliştirir ve insan zekâsını aşacaktır.",
+            "Öncü yapay zekâ dar yapay zekânın bir alt kümesidir."
+          ],
+          "commonMistakes": [
+            "Büyük dil modelleri gibi çok yetenekli üretken sistemlerin genel yapay zekâ olduğu sanılır; oysa öncü yapay zekâ en gelişmiş biçimiyle bile görev odaklıdır ve dar yapay zekâ sayılır.",
+            "Süper yapay zekânın İnternet erişimi olmadan mümkün olmadığı sanılır; oysa İnternet erişimi kesin olarak gerekli değildir, yalnızca yeteneklerini ve etkisini önemli ölçüde genişletebilir."
+          ]
+        },
+        "en": {
+          "title": "Narrow AI, general AI and super AI",
+          "paragraphs": [
+            "The three levels are separated by how far a system's ability generalizes. Narrow AI (weak AI) is designed for specific tasks and describes all AI systems deployed today. It can be very efficient in a limited domain but cannot generalize beyond the functions it has learned: a system that excels at recognizing faces cannot translate languages unless it is explicitly retrained.",
+            "General AI (strong AI) would be able to perform most intellectual tasks a human can, learning and applying knowledge across a broad range of tasks without retraining for each one. No AI-based system today has general intelligence. Super AI is a form of AI that continuously improves itself without human intervention or control, and is expected to surpass human intelligence and general AI. The point where general AI would turn into super AI is the technological singularity.",
+            "The boundary to remember: even the most advanced systems are narrow AI. Frontier AI covers large-scale, highly autonomous systems built on GenAI models that push current capabilities, but it is a subset of narrow AI and has not reached the versatility of general AI."
+          ],
+          "keyPoints": [
+            "Narrow AI is designed for specific tasks and represents all deployed AI systems today.",
+            "Narrow AI cannot generalize beyond the functions it has learned.",
+            "General AI could perform most human intellectual tasks without retraining; no such system exists today.",
+            "Super AI improves itself continuously without human intervention and would surpass human intelligence.",
+            "Frontier AI is a subset of narrow AI."
+          ],
+          "commonMistakes": [
+            "Very capable generative systems such as large language models are often taken for general AI; in fact frontier AI, even in its most advanced form, remains task-specific and counts as narrow AI.",
+            "It is often assumed that super AI cannot exist without Internet access; in fact Internet access is not strictly required, it would only significantly expand its capabilities and influence."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-1.1.3",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§1.1.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Yapay zekâ teknolojisi türleri",
+          "paragraphs": [
+            "Yapay zekâ tek bir teknoloji değil, her biri belirli görevlere uygun bir teknoloji ailesidir. Ana dallardan biri makine öğrenimidir (MÖ): sistemler açıkça programlanmadan veriden öğrenir ve model kurar. Başlıca üç yaklaşım vardır. Denetimli öğrenme etiketli veri kullanır (ör. doğrusal regresyon, karar ağaçları; tahmin ve sınıflandırma). Denetimsiz öğrenme etiketsiz veride örüntü bulur (ör. kümeleme). Takviyeli öğrenmede akıllı bir ajan, ortamla deneme-yanılma etkileşimiyle en iyi davranışı öğrenir. Başlıca MÖ teknolojileri arasında sinir ağları, Bayes modelleri, destek vektör makineleri (SVM) ve rastgele ormanlar (random forest) bulunur.",
+            "Derin öğrenme, MÖ yöntemlerinin bir alt kümesidir ve derin sinir ağları kullanır. Evrişimli sinir ağları (CNN) görüntü tanıma ve nesne tespitinde, tekrarlayan sinir ağları (RNN) metin ya da zaman serisi gibi ardışık veride, dönüştürücüler (transformers) ise dizilerdeki uzun menzilli bağımlılıkların işlenmesinde güçlüdür. Üretken yapay zekâ bu teknolojilerin üzerine kurulur; büyük dil modelleri derin sinir ağlarını doğal dil işleme ile birleştirir.",
+            "Diğer özel teknolojiler: doğal dil işleme (duygu analizi, makine çevirisi), bilgisayarlı görü, belirsizlik altında akıl yürütme için bulanık mantık, optimizasyon problemleri için arama algoritmaları ve yapılandırılmış karar desteği için kural tabanlı akıl yürütme sistemleri. Ajan tabanlı yapay zekâ (agentic AI) bunları, hedefe ulaşmak için bağımsız planlayan, akıl yürüten ve eylemde bulunan özerk ajanlarla genişletir."
+          ],
+          "keyPoints": [
+            "Denetimli öğrenme etiketli veri kullanır; denetimsiz öğrenme etiketsiz veride örüntü bulur; takviyeli öğrenme deneme-yanılmayla öğrenir.",
+            "Derin öğrenme, derin sinir ağları kullanan ve MÖ'nün bir alt kümesi olan yöntemlerdir.",
+            "CNN görüntü tanımada, RNN ardışık veride, dönüştürücüler uzun menzilli bağımlılıklarda kullanılır.",
+            "Büyük dil modelleri derin sinir ağlarını doğal dil işleme ile birleştirir.",
+            "Bulanık mantık, arama algoritmaları ve kural tabanlı sistemler de yapay zekâ teknolojileridir."
+          ],
+          "commonMistakes": [
+            "Derin öğrenmenin MÖ'den ayrı bir alan olduğu sanılır; oysa derin öğrenme MÖ'nün bir alt kümesidir.",
+            "Kümelemenin etiketli veri gerektirdiği sanılır; oysa kümeleme denetimsiz öğrenmenin tekniğidir ve etiketsiz veri kullanır. Etiketli veri denetimli öğrenmeye aittir.",
+            "Her MÖ sisteminin kullanım sırasında öğrenmeyi sürdürdüğü sanılır; oysa bazıları ilk öğrendiği bilgiyle çalışır ve güncellemek için açıkça yeniden eğitilir."
+          ]
+        },
+        "en": {
+          "title": "Types of AI technologies",
+          "paragraphs": [
+            "AI is not one technology but a family of technologies, each suited to particular tasks. One of the core branches is machine learning (ML): systems learn from data and build models without explicit programming. There are three main approaches. Supervised learning uses labeled data (e.g., linear regression, decision trees) for prediction and classification. Unsupervised learning finds patterns in unlabeled data (e.g., clustering). In reinforcement learning an intelligent agent learns optimal behavior through trial-and-error interaction with its environment. Key ML technologies include neural networks, Bayesian models, support vector machines (SVM) and random forests.",
+            "Deep learning is a subset of ML methods that uses deep neural networks. Convolutional neural networks (CNN) are effective for image recognition and object detection, recurrent neural networks (RNN) for sequential data such as text or time series, and transformers for long-range dependencies in sequences. GenAI builds on these technologies, and large language models combine deep neural networks with natural language processing.",
+            "Other specialized technologies include natural language processing (sentiment analysis, machine translation), computer vision, fuzzy logic for reasoning under uncertainty, search algorithms for optimization problems, and rule-based reasoning systems for structured decision support. Agentic AI extends these through autonomous agents that plan, reason and act independently to achieve goals."
+          ],
+          "keyPoints": [
+            "Supervised learning uses labeled data, unsupervised learning finds patterns in unlabeled data, and reinforcement learning learns by trial and error.",
+            "Deep learning is a subset of ML methods that uses deep neural networks.",
+            "CNN suit image recognition, RNN suit sequential data, and transformers handle long-range dependencies.",
+            "Large language models combine deep neural networks with natural language processing.",
+            "Fuzzy logic, search algorithms and rule-based reasoning systems are also AI technologies."
+          ],
+          "commonMistakes": [
+            "Deep learning is often seen as a field separate from ML; in fact it is a subset of ML.",
+            "Clustering is often assumed to need labeled data; in fact clustering is an unsupervised technique working on unlabeled data, while labeled data belongs to supervised learning.",
+            "It is often assumed that every ML system keeps learning in use; in fact some operate on the knowledge they first learned and are explicitly retrained to be updated."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-1.1.4",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§1.1.4",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Üretken yapay zekâ",
+          "paragraphs": [
+            "Üretken yapay zekâ (GenAI), metin, görüntü, video, müzik ya da karmaşık veri gibi yeni içerik üretmeye uzmanlaşmış sistemlerdir; birçoğu sınıflandırma ve tahmini de destekler. Büyük miktarda veriden öğrenir ve eğitim verisine benzeyen çıktılar üretir.",
+            "Arkasındaki ana teknolojiler üçtür. Üretken karşıt ağlar (GAN), gerçekçi sentetik veri üretmek için birbiriyle yarışan iki sinir ağı kullanır. Difüzyon modelleri, veriye önce kademeli olarak gürültü ekleyip sonra bu gürültüyü kaldırarak içerik üretir. Büyük dil modellerinin temelindeki dönüştürücü modeller, tutarlı ve bağlama uygun metin için öz-dikkat mekanizmasını kullanır ve giderek çok kipli görevlere uyarlanır. Pratik araçların çoğu, belirli uygulamalar için ince ayar yapılan temel modellere dayanır.",
+            "Müfredat bu teknolojinin toplumsal ve etik boyutunu da kapsar: sahte medya (deepfake), dezenformasyon ve dolandırıcılık gibi kötüye kullanım; özellikle beyaz yakalı meslekleri etkileyen iş gücü dönüşümü; büyük modellerin eğitiminin ve çalıştırılmasının yüksek enerji tüketimi ve karbon ayak izi. Aynı teknoloji eğlence, pazarlama, eğitim ve araştırmada fırsat da yaratır; AB Yapay Zekâ Yasası gibi düzenlemeler sorumlu kullanımı yönlendirmeye çalışır."
+          ],
+          "keyPoints": [
+            "Üretken yapay zekâ yeni içerik üretir; birçok sistem sınıflandırma ve tahmini de destekler.",
+            "GAN, gerçekçi sentetik veri için birbiriyle yarışan iki sinir ağı kullanır.",
+            "Difüzyon modelleri veriye kademeli gürültü ekleyip sonra kaldırarak içerik üretir.",
+            "Dönüştürücü modeller büyük dil modellerinin temelidir ve öz-dikkat mekanizması kullanır.",
+            "Başlıca endişeler kötüye kullanım, iş gücüne etki ve sürdürülebilirliktir (enerji tüketimi, karbon ayak izi)."
+          ],
+          "commonMistakes": [
+            "Üretken yapay zekânın yalnızca içerik ürettiği, sınıflandırma ya da tahmin yapmadığı sanılır; oysa birçok üretken sistem bunları da destekler.",
+            "Üretken yapay zekânın riskinin yalnızca sahte içerik olduğu sanılır; oysa iş gücü üzerindeki etki ve eğitim ile çalıştırmanın enerji maliyeti de müfredatın ele aldığı endişelerdir."
+          ]
+        },
+        "en": {
+          "title": "Generative AI",
+          "paragraphs": [
+            "Generative AI (GenAI) refers to AI-based systems specialized in creating new content such as text, images, video, music or complex data, while many also support classification and prediction. They learn from vast amounts of data to produce outputs that resemble their training data.",
+            "Three main technologies stand behind GenAI. Generative adversarial networks (GANs) use two neural networks in competition to create highly realistic synthetic data. Diffusion models generate content by gradually adding noise to data and then removing it. Transformer models, which underpin large language models, use self-attention to generate coherent, contextually relevant text and are increasingly adapted for multimodal tasks. Most practical tools rest on foundation models that are then fine-tuned for specific applications.",
+            "The syllabus also covers the societal and ethical side: misuse such as deepfakes, misinformation and fraud; workforce disruption, particularly among white-collar professions; and the high energy consumption and carbon footprint of training and running large models. The same technology also opens opportunities in entertainment, marketing, education and research, and regulations such as the EU AI Act are emerging to guide responsible use."
+          ],
+          "keyPoints": [
+            "GenAI creates new content; many GenAI systems also support classification and prediction.",
+            "GANs use two neural networks in competition to create realistic synthetic data.",
+            "Diffusion models generate content by gradually adding and then removing noise.",
+            "Transformer models underpin large language models and use self-attention.",
+            "Main concerns are misuse, impact on employment and sustainability (energy consumption, carbon footprint)."
+          ],
+          "commonMistakes": [
+            "It is often assumed that GenAI only generates content and never classifies or predicts; in fact many GenAI systems also support classification and prediction.",
+            "It is often assumed that the only GenAI risk is fake content; in fact the impact on employment and the energy cost of training and running models are also concerns the syllabus covers."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-1.1.5",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§1.1.5",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Makine öğrenimi sistemleri için donanım",
+          "paragraphs": [
+            "Makine öğrenimi sistemleri (MÖS) için farklı donanımlar kullanılır ve eğitim ile çıkarım (inference) farklı donanımlarda yapılabilir. Örneğin bir konuşma tanıma modeli düşük seviyeli bir akıllı telefonda çalışabilir, ama eğitilmesi için bulut bilişimin gücü gerekebilir.",
+            "MÖ şunları destekleyen donanımdan yarar sağlar: büyük veri yapılarıyla çalışma, matris çarpımı gibi işlemler için büyük ölçüde paralel işlem ve düşük duyarlıklı aritmetik (nicemleme; ör. 32 yerine 4 bit). Nicemleme daha hızlı işlem, daha düşük güç tüketimi, daha küçük ve daha uygun maliyetli çipler ve azalmış bant genişliği gereksinimi sağlar. Genel amaçlı CPU yüksek duyarlıklı karmaşık işlemleri destekler, ama MÖ bunu genellikle gerektirmez ve CPU'da yalnızca birkaç çekirdek bulunur. GPU ise binlerce çekirdeğe sahiptir ve büyük ölçüde paralel, görece basit işlemler için tasarlanmıştır; CPU'lar daha yüksek saat hızında çalışsa da GPU'lar MÖ'de genellikle daha iyidir. Küçük ölçekli MÖ işleri için genellikle en iyi seçenek GPU'dur.",
+            "Yapay zekâya özel donanım (ASIC, tümleşik sistem çipleri / SoC) birden çok çekirdek, özel veri yönetimi ve bellek içi işlem sunar; uç bilişim (edge computing) için en uygundur, model eğitimi ise bulutta özel donanımla yapılır. Nöromorfik işlemciler geleneksel von Neumann mimarisini kullanmaz, beynin yapısını taklit eder."
+          ],
+          "keyPoints": [
+            "Eğitim ve çıkarım farklı donanımlarda yapılabilir.",
+            "MÖ büyük veri yapılarını, büyük ölçüde paralel işlemi ve düşük duyarlıklı aritmetiği (nicemleme) destekleyen donanımdan yarar sağlar.",
+            "GPU'lar, saat hızları daha düşük olsa da binlerce çekirdekleri sayesinde MÖ'de genellikle CPU'lardan üstündür.",
+            "ASIC ve tümleşik sistem çipleri (SoC) gibi yapay zekâya özel donanım uç bilişim için en uygundur.",
+            "Nöromorfik işlemciler von Neumann mimarisini kullanmaz."
+          ],
+          "commonMistakes": [
+            "Saat hızı yüksek olduğu için CPU'nun MÖ'de GPU'dan hızlı olduğu sanılır; oysa MÖ yüksek duyarlıklı karmaşık işlemlerden çok büyük ölçüde paralel basit işlem gerektirir ve GPU'lar bunda üstündür.",
+            "Bir modelin çalıştığı donanımın onu eğiten donanımla aynı olması gerektiği sanılır; oysa model uçta özel bir çipte çalışırken bulutta eğitilebilir."
+          ]
+        },
+        "en": {
+          "title": "Hardware for machine learning systems",
+          "paragraphs": [
+            "A variety of hardware is used for ML systems (MLS), and training and inference may run on different hardware. For example, a speech recognition model may run on a low-end smartphone although the power of cloud computing may be needed to train it.",
+            "ML benefits from hardware that supports large data structures, massively parallel processing (for example matrix multiplication) and low-precision arithmetic (quantization, e.g., 4 bits instead of 32), which brings faster processing, lower power consumption, smaller and more cost-effective chips, and reduced bandwidth requirements. General-purpose CPUs support complex high-precision operations that ML does not typically need, and they have only a few cores. GPUs have thousands of cores and are designed for massively parallel, relatively simple processing, so they typically outperform CPUs in ML even though CPUs usually run at higher clock speeds. For small-scale ML work, GPUs generally offer the best option.",
+            "AI-specific hardware such as ASICs and System-on-a-Chip (SoC) devices has multiple cores, specialized data management and in-memory processing; it is best suited to edge computing, while training is done in the cloud on specialized hardware. Neuromorphic processors do not use the von Neumann architecture but brain-inspired designs."
+          ],
+          "keyPoints": [
+            "Training and inference may use different hardware.",
+            "ML benefits from large data structures, massively parallel processing and low-precision arithmetic (quantization).",
+            "GPUs typically outperform CPUs in ML thanks to thousands of cores, despite lower clock speeds.",
+            "AI-specific hardware such as ASICs and SoC devices is best suited to edge computing.",
+            "Neuromorphic processors do not use the von Neumann architecture."
+          ],
+          "commonMistakes": [
+            "It is often assumed that a CPU is faster for ML because of its higher clock speed; in fact ML needs massive parallelism of simple operations rather than complex high-precision ones, and GPUs excel at that.",
+            "It is often assumed that a model must run on the same hardware that trained it; in fact a model can be trained in the cloud and run on a specialized chip at the edge."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-1.1.6",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§1.1.6",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Yapay zekâ modellerinin geliştirilmesi ve barındırılması",
+          "paragraphs": [
+            "Yapay zekâ tabanlı sistemler üçüncü taraf bir satıcıdan edinilebilir ya da kurum içinde özel olarak geliştirilebilir. Üçüncü taraf çözümler genellikle önceden eğitilmiş model ya da hizmet olarak yapay zekâ (AIaaS) biçiminde gelir; daha hızlı dağıtım ve daha kısa pazara çıkış süresi sağlar. Özel sistemler (şirket içi ya da özelleştirilmiş bulut) gereksinimlere daha iyi uyarlanabilir, ama genellikle uzmanlık gerektirir.",
+            "Geliştirme ve barındırma tipik olarak iki ayrı karardır. Geliştirme: yerel geliştirme doğrudan kontrol ve gizlilik sağlar (küçük modeller kişisel bilgisayarda, orta boy modeller özel GPU'larla, büyük modeller şirket içi sunucu kümeleriyle ve enerji, soğutma, donanım maliyetleriyle). Bulut geliştirme esnektir; genel bulut önceden yapılandırılmış ortam ve kullandıkça öde fiyatlandırması sunarak ilk donanım yatırımını sınırlar, özel bulut daha yüksek güvenlik ve gizlilik sağlar ama daha büyük başlangıç altyapı yatırımı ister. Barındırma: yerel, ayrılmış sunucu, genel bulut, özel bulut ya da bunların birleşimi (hibrit) olabilir.",
+            "Seçim; model boyutu ve karmaşıklığı, performans gereksinimleri, bütçe, güvenlik ve veri gizliliği, dağıtım ihtiyaçları ve düzenleme gereksinimleri gibi etkenlere bağlıdır. Tipik bir hibrit örnek: prototipi yerelde geliştirmek, özel verinin hazırlanmasını şirket içinde tutmak ve yoğun hesaplamayı buluta vermektir."
+          ],
+          "keyPoints": [
+            "Yapay zekâ tabanlı sistemler üçüncü taraftan edinilebilir ya da özel olarak geliştirilebilir.",
+            "Üçüncü taraf çözümler daha hızlı dağıtım sağlar; özel sistemler gereksinimlere daha iyi uyarlanır ama uzmanlık gerektirir.",
+            "Genel bulut ilk yatırımı sınırlar ve kolay ölçeklenir; özel bulut daha fazla güvenlik ve gizlilik sunar ama daha yüksek başlangıç yatırımı ister.",
+            "Geliştirme ve barındırma çözümleri genellikle ayrı ayrı belirlenir.",
+            "Hibrit yaklaşımlar yerel ve bulut kaynaklarını birleştirir."
+          ],
+          "commonMistakes": [
+            "Modelin geliştirildiği yerde barındırılması gerektiği sanılır; oysa geliştirme ve barındırma tipik olarak ayrı kararlardır.",
+            "Özel bulutun genel buluttan hem güvenli hem ucuz olduğu sanılır; oysa özel bulut daha yüksek güvenlik ve gizlilik sağlar, ama daha büyük başlangıç altyapı yatırımı ve daha yüksek maliyet getirir."
+          ]
+        },
+        "en": {
+          "title": "Development and hosting of AI models",
+          "paragraphs": [
+            "AI-based systems can be acquired from third-party vendors or developed privately within an organization. Third-party systems typically come as pretrained models or AI as a Service (AIaaS), enabling faster deployment and time-to-market. Private systems (on-premises or customized cloud) can be better tailored to specific requirements, but their development will likely require specialized skills.",
+            "Development and hosting are typically two separate decisions. Development: local development gives direct control and privacy (small models on personal computers, mid-sized models with dedicated GPUs, large models on on-premises server clusters with energy, cooling and hardware costs). Cloud development is flexible: public clouds offer pre-configured environments and pay-as-you-go pricing that limits initial hardware investment, while private clouds provide enhanced security and privacy but need a greater upfront infrastructure investment. Hosting: local, dedicated servers, public cloud, private cloud, or a hybrid.",
+            "The choice depends on model size and complexity, performance requirements, budget, security and data privacy, deployment needs and regulatory requirements. A typical hybrid pattern is to prototype locally, keep the preparation of private data on-premises and use the cloud for compute-intensive tasks."
+          ],
+          "keyPoints": [
+            "AI-based systems can be acquired from third parties or developed privately.",
+            "Third-party solutions allow faster deployment; private systems fit requirements better but need specialized skills.",
+            "Public cloud limits upfront investment and scales easily; private cloud offers more security and privacy but needs higher upfront investment.",
+            "Development and hosting solutions are typically decided separately.",
+            "Hybrid approaches combine local and cloud resources."
+          ],
+          "commonMistakes": [
+            "It is often assumed that a model must be hosted where it was developed; in fact development and hosting are typically decided separately.",
+            "It is often assumed that a private cloud is both safer and cheaper than a public one; in fact it gives enhanced security and privacy, but at the price of a greater upfront infrastructure investment and higher cost."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-1.1.7",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§1.1.7",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Makine öğrenimi geliştirme çerçeveleri",
+          "paragraphs": [
+            "MÖ geliştirme çerçevesi, MÖ modellerini kurmak ve eğitmek için bir araç takımıdır. Tipik işlevleri şunlardır: veri işleme (yükleme, ön işleme, temizleme, biçimlendirme), model kurma (algoritma kitaplıkları, katman sayısı ve bağlantılar gibi mimari tasarımı), eğitim ve optimizasyon (modelin iç parametrelerini eğitim verisine göre yinelemeli ayarlayan algoritmalar), değerlendirme (modelin görmediği veride doğruluk, hassasiyet, hatırlama ya da regresyon için hata oranı ölçümü) ve dağıtım (modeli web, mobil, uç ya da gömülü sistemlere uygun biçime dönüştürme).",
+            "Çerçeveler soyutlama düzeyi bakımından ayrışır. Alt düzey API modeli kurmada daha çok kontrol verir ama daha fazla kodlama uzmanlığı ister; üst düzey API model oluşturmayı basitleştirir ama daha az özelleştirme sunar. Bazıları genel amaçlıdır, bazıları görüntü tanıma, konuşma tanıma ya da dil çevirisi gibi alanlara özeldir.",
+            "Çerçeve seçimi uygulama alanına, hızlı prototipleme için kullanıcı dostu arayüz ihtiyacına, karmaşık modeller için yapılandırılabilirliğe, kullanıcıların uzmanlığına, kaynak kısıtlı ortamlara uygunluğa, topluluk desteğine ve ekosistem olgunluğuna bağlıdır. Dağıtım ve ince ayar gibi bazı işlevleri yalnızca bazı çerçeveler sağlar."
+          ],
+          "keyPoints": [
+            "MÖ çerçeveleri veri işleme, model kurma, eğitim ve optimizasyon, değerlendirme ve dağıtım işlevleri sunar.",
+            "Eğitim ve optimizasyon, modelin iç parametrelerini eğitim verisine göre yinelemeli olarak ayarlar.",
+            "Değerlendirme, modelin görmediği veri üzerindeki başarısını ölçer.",
+            "Alt düzey API daha fazla kontrol ama daha fazla uzmanlık, üst düzey API daha kolay model oluşturma ama daha az özelleştirme sunar.",
+            "Seçim; uygulama alanı, kullanıcı uzmanlığı, kaynak kısıtları, topluluk desteği ve ekosistem olgunluğu gibi etkenlere bağlıdır."
+          ],
+          "commonMistakes": [
+            "Çerçevelerin yalnızca model kurmak için olduğu sanılır; oysa veri işleme, değerlendirme ve (bazı çerçevelerde) dağıtım da işlevleri arasındadır.",
+            "Her çerçevenin tüm işlevleri ve her alanı kapsadığı sanılır; oysa bazıları genel amaçlı, bazıları belirli alanlara özeldir ve dağıtım gibi işlevleri yalnızca bazıları sağlar."
+          ]
+        },
+        "en": {
+          "title": "Machine learning development frameworks",
+          "paragraphs": [
+            "An ML development framework is a toolkit for building and training ML models. Its typical functionality is data handling (loading, preprocessing, cleaning, formatting), model building (algorithm libraries and design of the architecture, such as the number of layers and connections), training and optimization (algorithms that iteratively adjust the model's internal parameters from the training data), evaluation (measuring accuracy, precision and recall, or error rates for regression, on unseen data) and deployment (converting the model for web, mobile, edge or embedded systems).",
+            "Frameworks differ in level of abstraction. A lower-level API gives more control over model building but demands more coding expertise; a higher-level API simplifies model creation but offers fewer customization options. Some frameworks are general purpose, others specialized for areas such as image recognition, speech recognition or language translation.",
+            "Selecting a framework can depend on the application area, the need for a user-friendly interface for rapid prototyping, configurability for complex models, user expertise, suitability for resource-constrained environments, community support and ecosystem maturity. Some functionality, such as deployment and fine-tuning of pretrained models, is only supported by some frameworks."
+          ],
+          "keyPoints": [
+            "ML frameworks provide data handling, model building, training and optimization, evaluation and deployment.",
+            "Training and optimization iteratively adjust the model's internal parameters based on the training data.",
+            "Evaluation measures how well the trained model performs on unseen data.",
+            "A lower-level API gives more control but needs more expertise; a higher-level API simplifies model creation but offers fewer customization options.",
+            "Framework selection depends on factors such as application area, user expertise, resource constraints, community support and ecosystem maturity."
+          ],
+          "commonMistakes": [
+            "Frameworks are often thought to be only for building models; in fact they also cover data handling, evaluation and, in some frameworks, deployment.",
+            "It is often assumed that every framework covers every function and domain; in fact some are general purpose and others specialized, and only some provide functions such as deployment."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-1.1.8",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§1.1.8",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Yapay zekâ düzenlemeleri ve standartları",
+          "paragraphs": [
+            "Düzenlemeler ve standartlar, yapay zekânın sorumlu geliştirilmesi, dağıtılması ve kullanılması içindir; amaç güveni artırmak, yararlarını gerçekleştirmek ve zararları azaltmaktır. İdeal olarak uyum, sistemlerin emniyetli, adil, şeffaf, sürdürülebilir, hesap verebilir ve etik olmasını ve sorumlu kullanılmasını güvence altına almalıdır.",
+            "Uluslararası düzeyde OECD Yapay Zekâ İlkeleri ve BM'nin Yapay Zekânın İnsanlık İçin Yönetimi raporu, bağlayıcı olmayan (soft law) araçlardır; ülkelere ve kurumlara pusula işlevi görür. AB Yapay Zekâ Yasası ise yasal düzenlemedir ve risk bazlı bir yaklaşım izler: sistemleri minimum riskten kabul edilemez riske kadar sınıflandırır. Özellikle temel hakları ya da emniyeti etkileyen yüksek riskli sistemler sıkı gereksinimlerle (titiz test, veri yönetişimi, insan gözetimi) karşılaşır; uyumsuzluk için küresel cironun yüzdesine bağlı ağır para cezaları vardır. AB dışındaki birçok ülke ise daha esnek, hafif düzenlemeleri tercih eder.",
+            "ISO ve IEEE gibi kuruluşların teknik standartları, üst düzey hedefleri uygulamaya çevirir. ISO/IEC TR 29119-11 yapay zekâ tabanlı sistemlerin testi için ayrıntılı rehberlik sunar; bu, mevzuata uyumu göstermek için önemlidir. ISO/IEC 42119 serisi geliştirilmektedir. Sağlık ve finans gibi alanlarda sektöre özgü düzenlemeler de ortaya çıkmaktadır. Yapay zekâ hızla değiştiği için düzenlemelerin ve standartların düzenli gözden geçirilmesi gerekir."
+          ],
+          "keyPoints": [
+            "Düzenlemelerin ve standartların amacı yapay zekâya güveni artırmak ve zararları azaltmaktır.",
+            "OECD Yapay Zekâ İlkeleri ve BM raporu, bağlayıcı olmayan (soft law) uluslararası araçlardır.",
+            "AB Yapay Zekâ Yasası sistemleri minimum riskten kabul edilemez riske kadar sınıflandıran risk bazlı bir yaklaşımdır.",
+            "Yüksek riskli sistemler titiz test, veri yönetişimi ve insan gözetimi gerektirir.",
+            "ISO/IEC TR 29119-11 yapay zekâ tabanlı sistemlerin testi için rehberlik sağlar; ISO/IEC 42119 serisi geliştirilmektedir."
+          ],
+          "commonMistakes": [
+            "OECD ilkelerinin ve BM raporunun yasal bağlayıcılığı olduğu sanılır; oysa bunlar bağlayıcı olmayan etkili araçlardır, AB Yapay Zekâ Yasası ise bu araçların aksine yaptırımı ve para cezaları olan bir düzenlemedir.",
+            "Tüm ülkelerin yapay zekâyı AB gibi sıkı düzenlediği sanılır; oysa AB dışındaki birçok ülke inovasyonu teşvik etmek için daha hafif düzenlemeleri benimser.",
+            "Teknik standartların hukuki düzenlemenin yerini aldığı sanılır; oysa standartlar üst düzey hedefleri pratiğe çevirir ve uyumu göstermeye yardım eder, ama düzenlemenin kendisi değildir."
+          ]
+        },
+        "en": {
+          "title": "Regulations and standards for AI",
+          "paragraphs": [
+            "Regulations and standards exist for the responsible development, deployment and use of AI; the aim is to foster trust, realize AI's benefits and mitigate harm. Ideally, compliance should ensure that AI-based systems are safe, fair, transparent, sustainable, accountable, ethical and used responsibly.",
+            "Internationally, the OECD AI Principles and the UN report on Governing AI for Humanity are influential soft law instruments that act as a compass for governments and organizations. The EU AI Act is a regulation taking a risk-based approach: it categorizes AI-based systems from minimal to unacceptable risk. High-risk systems, particularly those affecting fundamental rights or safety, face stringent requirements covering rigorous testing, data governance and human oversight, with substantial fines based on a percentage of global turnover. Many nations outside the EU favor lighter-touch regulation.",
+            "Technical standards from organizations such as ISO and IEEE translate high-level aspirations into practice. ISO/IEC TR 29119-11 gives detailed guidance on testing AI-based systems, a critical element in demonstrating regulatory compliance, and the ISO/IEC 42119 series is being developed. Sector-specific regulations are also emerging, for example in healthcare and finance. Because AI changes quickly, regulations and standards must be reviewed regularly."
+          ],
+          "keyPoints": [
+            "Regulations and standards aim to foster trust in AI and mitigate its potential harms.",
+            "The OECD AI Principles and the UN report are non-binding soft law instruments.",
+            "The EU AI Act is risk-based, categorizing systems from minimal to unacceptable risk.",
+            "High-risk systems require rigorous testing, data governance and human oversight.",
+            "ISO/IEC TR 29119-11 provides guidance on testing AI-based systems; the ISO/IEC 42119 series is being developed."
+          ],
+          "commonMistakes": [
+            "The OECD principles and the UN report are often taken to be legally binding; in fact they are influential non-binding instruments, whereas the EU AI Act, unlike these soft law instruments, is a regulation with enforcement and penalties.",
+            "It is often assumed that all countries regulate AI as strictly as the EU; in fact many nations outside the EU favor lighter-touch regulation to encourage innovation.",
+            "Technical standards are often mistaken for legal regulation; in fact they translate high-level aspirations into practice and help demonstrate compliance, but they are not the regulation itself."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    }
+  ]
+}

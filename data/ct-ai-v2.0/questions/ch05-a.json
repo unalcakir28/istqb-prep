@@ -1,0 +1,1141 @@
+{
+  "chunk": "ch05-a",
+  "chapter": 5,
+  "dataVersion": "2.0",
+  "questions": [
+    {
+      "id": "ctai-0053",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.1",
+      "objectives": [
+        "AI-5.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "input-data",
+        "risk-mitigation",
+        "data-provenance"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, toplama yöntemleri belgelenmemiş bir üçüncü taraf veri aracısından satın aldığı veri setiyle bir makine öğrenimi (MÖ) modeli eğitmeyi planlıyor. Ekip verinin güvenilmez bir kaynaktan geldiğinden endişeleniyor. Müfredata göre bu riski azaltmak için hangi test yaklaşımı kullanılabilir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Veri kaynağı izlenebilirliği testi (data provenance testing)"
+            },
+            {
+              "id": "b",
+              "text": "Veri seti kısıt testi (dataset constraint testing)"
+            },
+            {
+              "id": "c",
+              "text": "Veri temsil ediciliği testi (data representativeness testing)"
+            },
+            {
+              "id": "d",
+              "text": "Öznitelik testi (feature testing)"
+            }
+          ],
+          "rationale": {
+            "summary": "Güvenilmez kaynaklardan edinilen eğitim verisi, kötü yönetilen veri ve zehirlenmiş eğitim verisi riskleri için müfredat veri kaynağı izlenebilirliği testini (data provenance testing) olası risk azaltma olarak listeler. Diğer üç yaklaşım başka risklere karşılık gelir.",
+            "byOption": {
+              "a": "Doğru. Veri kaynağı izlenebilirliği testi, verinin nereden geldiğini ve nasıl yönetildiğini sınar; güvenilmez kaynak riskine karşılık gelen azaltmadır.",
+              "b": "Yanlış. Veri seti kısıt testi, kendi içinde tutarsız veri setlerini, aralık dışı değerleri ve yanlış veri türlerini hedefler; verinin kaynağının güvenilirliğini sınamaz.",
+              "c": "Yanlış. Veri temsil ediciliği testi dengesiz, çarpık veya eksik veri ve kullanım durumlarının yalnızca bir alt kümesine odaklanan veri gibi risklere karşılık gelir; verinin işletim verisini ne kadar yansıttığını sınar, kaynağın güvenilirliğini sınamaz.",
+              "d": "Yanlış. Öznitelik testi, en uygun olmayan öznitelik seçimi riskine karşılık gelir; verinin kaynağıyla değil, modelin hangi öznitelikleri kullandığıyla ilgilidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team plans to train a machine learning (ML) model on a dataset bought from a third-party data broker whose collection methods are undocumented. The team worries that the data comes from an untrustworthy source. According to the syllabus, which test approach could be used to mitigate this risk?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Data provenance testing"
+            },
+            {
+              "id": "b",
+              "text": "Dataset constraint testing"
+            },
+            {
+              "id": "c",
+              "text": "Data representativeness testing"
+            },
+            {
+              "id": "d",
+              "text": "Feature testing"
+            }
+          ],
+          "rationale": {
+            "summary": "For training data acquired from untrustworthy sources, poorly managed data and poisoned training data, the syllabus lists data provenance testing as a possible risk mitigation. The other three approaches map to different risks.",
+            "byOption": {
+              "a": "Correct. Data provenance testing examines where the data came from and how it was managed, which is the mitigation paired with the untrustworthy-source risk.",
+              "b": "Incorrect. Dataset constraint testing targets internally inconsistent datasets, out-of-range data and wrong data types; it does not assess how trustworthy the source of the data is.",
+              "c": "Incorrect. Data representativeness testing maps to risks such as imbalanced, skewed or missing data and data focused on a subset of use cases; it checks how closely the data reflects operational data, not how trustworthy its source is.",
+              "d": "Incorrect. Feature testing maps to sub-optimal feature selection; it concerns which features the model uses, not where the data came from."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0054",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.1",
+      "objectives": [
+        "AI-5.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "input-data",
+        "risk-mitigation"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden hangisi, bir girdi verisi riskini müfredatın girdi verisi riskleri tablosunda onunla eşleştirilen test yaklaşımıyla doğru biçimde eşleştirir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kendi içinde tutarsız veri seti: veri temsil ediciliği testi"
+            },
+            {
+              "id": "b",
+              "text": "Veri hattının güvenlik ihlalleri veya kontrolsüz değişikliklerden etkilenmesi: veri seti kısıt testi"
+            },
+            {
+              "id": "c",
+              "text": "Yanlış veya tutarsız etiketlere yol açan zayıf etiketleme: etiket doğruluğu testi"
+            },
+            {
+              "id": "d",
+              "text": "Eğitim verisindeki hatalardan kaynaklanan yanlılık: veri kaynağı izlenebilirliği testi"
+            }
+          ],
+          "rationale": {
+            "summary": "Tabloda zayıf etiketleme yönergeleri ve zayıf etiketleme etiket doğruluğu testiyle eşleşir. Diğer üç seçenekte risk, başka bir risk için listelenen yaklaşımla eşleştirilmiştir.",
+            "byOption": {
+              "a": "Yanlış. Kendi içinde tutarsız veri seti için tablodaki karşılık veri seti kısıt testidir; veri temsil ediciliği testi eksik, dengesiz veya çarpık veri gibi temsil sorunlarına karşılık gelir.",
+              "b": "Yanlış. Veri hattını etkileyen güvenlik ihlalleri ve kontrolsüz değişiklikler veri hattı testiyle eşleşir; veri seti kısıt testi veri setinin kurallara uygunluğunu sınar.",
+              "c": "Doğru. Zayıf etiketleme yönergeleri, belirsiz veri ve zayıf etiketleme kaynaklı yanlış veya tutarsız etiketler, tabloda etiket doğruluğu testiyle eşleştirilir.",
+              "d": "Yanlış. Eğitim verisindeki hatalardan doğan yanlılığın karşılığı yanlılık testidir; veri kaynağı izlenebilirliği testi güvenilmez kaynaktan edinilen veriyle eşleşir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which of the following pairs an input data risk with the test approach that the syllabus table of input data risks lists for it?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Internally inconsistent dataset: data representativeness testing"
+            },
+            {
+              "id": "b",
+              "text": "Security breaches or uncontrolled changes affecting the data pipeline: dataset constraint testing"
+            },
+            {
+              "id": "c",
+              "text": "Poor annotation leading to inaccurate or inconsistent labels: label correctness testing"
+            },
+            {
+              "id": "d",
+              "text": "Bias caused by defects in the training data: data provenance testing"
+            }
+          ],
+          "rationale": {
+            "summary": "In the table, poor labelling guidelines and poor annotation map to label correctness testing. In each other option the risk is paired with an approach listed for a different risk.",
+            "byOption": {
+              "a": "Incorrect. For an internally inconsistent dataset the table lists dataset constraint testing; data representativeness testing maps to representation problems such as imbalanced, skewed or missing data.",
+              "b": "Incorrect. Security breaches and uncontrolled changes affecting the pipeline map to data pipeline testing; dataset constraint testing checks whether the data satisfies predefined rules.",
+              "c": "Correct. Poor labelling guidelines, ambiguous data and poor annotation leading to inaccurate or inconsistent labels are paired with label correctness testing in the table.",
+              "d": "Incorrect. Bias from defects in the training data maps to testing for bias; data provenance testing is listed for data from untrustworthy sources."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0055",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.2",
+      "objectives": [
+        "AI-5.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "bias",
+        "disparate-impact-analysis"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir kredi onay sisteminin MÖ modeli için ekip, başvuranın cinsiyeti dışında hiçbir şeyi değiştirmeden aynı başvuruyu iki cinsiyetle sunup modelin kararının değişip değişmediğini çok sayıda başvuruyla ölçmek istiyor. Müfredata göre yanlılık testi yaklaşımlarından hangisi bu çalışmayı doğru biçimde tanımlar?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Eğitim verisinde görselleştirme ve kümeleme yöntemleriyle, hassas nitelikler bakımından dengesiz dağılımları ve olağan dışı gruplamaları aramak"
+            },
+            {
+              "id": "b",
+              "text": "Hassas nitelikleri belirlemek, onlar için karşı olgusal örnekler üretmek, bunları modele sunmak ve çok sayıda testin sonucunu istatistiksel çözümlemek"
+            },
+            {
+              "id": "c",
+              "text": "Aynı başvuruları birbirinden bağımsız çalışan birden fazla kişiye etiketletip aralarındaki uyum oranını yüzde olarak ölçmek ve çoğunluğun seçtiği etiketi tutmak"
+            },
+            {
+              "id": "d",
+              "text": "Eğitim verisinden hassas nitelikleri tamamen çıkarıp modeli yeniden eğitmek ve genel doğruluğunun düşüp düşmediğine bakmak"
+            }
+          ],
+          "rationale": {
+            "summary": "Orantısız etki analizi; hassas nitelikleri belirleme, karşı olgusal örnekler üretme, modelin çıktısını üretme ve çok sayıda testin sonucunu istatistiksel olarak anlamlı bir sonuç için çözümleme adımlarından oluşur. Senaryodaki çalışma budur.",
+            "byOption": {
+              "a": "Yanlış. Bu, eğitim verisinin keşifsel veri analizidir (EDA); veride dengesizlik arar ama modele karşı olgusal örnekler sunmaz.",
+              "b": "Doğru. Bu, orantısız etki analizinin dört adımıdır: hassas nitelikleri belirle, karşı olgusal örnekler üret, modelin çıktısını üret ve çok sayıda testi istatistiksel olarak çözümle.",
+              "c": "Yanlış. Birden fazla kişiye bağımsız etiketletme çoklu etiketleme yaklaşımıdır ve etiket doğruluğu testine aittir; modelin kararlarındaki farkı ölçmez.",
+              "d": "Yanlış. Müfredat yanlılık testi için böyle bir yöntem tanımlamaz; ayrıca hassas niteliği çıkarmak, değiştirilen niteliğin model çıktısını etkileyip etkilemediğini ölçmez."
+            }
+          }
+        },
+        "en": {
+          "stem": "For the ML model of a loan approval system, a team wants to present the same application with only the applicant's gender changed and measure, over many applications, whether the model's decision changes. According to the syllabus, which bias testing approach describes this work correctly?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Examine the training data with visualization and clustering methods to look for imbalanced distributions and anomalous groupings across sensitive attributes"
+            },
+            {
+              "id": "b",
+              "text": "Identify the sensitive attributes, generate counterfactuals for them, present these to the model, and analyze the results of many tests statistically"
+            },
+            {
+              "id": "c",
+              "text": "Have several people label the same applications independently, measure the percentage agreement between them, and keep the label chosen by the majority"
+            },
+            {
+              "id": "d",
+              "text": "Remove the sensitive attributes from the training data completely, retrain the model, and check whether its overall accuracy drops afterwards"
+            }
+          ],
+          "rationale": {
+            "summary": "Disparate impact analysis consists of identifying sensitive attributes, generating counterfactuals, generating model output from them and analyzing many tests for a statistically significant result. That is the work in the scenario.",
+            "byOption": {
+              "a": "Incorrect. This describes EDA of the training data, which looks for imbalance in the data but does not present counterfactuals to the model.",
+              "b": "Correct. These are the four steps of disparate impact analysis: identify sensitive attributes, generate counterfactuals, generate model output and analyze multiple tests statistically.",
+              "c": "Incorrect. Independent labelling by several people is multiple annotation, part of label correctness testing; it does not measure differences in the model's decisions.",
+              "d": "Incorrect. The syllabus defines no such method for bias testing, and removing the attribute would not measure whether changing it alters the model's output."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0056",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.2",
+      "objectives": [
+        "AI-5.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "bias",
+        "dynamic-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, bilinen yanlılıksız ve temsil edici bir veri setini eğitilmiş bir MÖ modelinden geçirip tahminleri hassas gruplar arasında istatistiksel olarak anlamlı sonuç farkları açısından çözümlüyor. Müfredata göre bu dinamik test yanlılığın hangi yönünü yakalar?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kasıtlı eğitim verisi zehirlemesinden doğan yanlılığı; test bu yanlılığı verinin geldiği güvenilmez kaynağa kadar izler"
+            },
+            {
+              "id": "b",
+              "text": "Veri hazırlama programlarında hassas niteliklerin yanlış işlenmesini; test bunu kodda satır satır bulur"
+            },
+            {
+              "id": "c",
+              "text": "Verinin nasıl toplandığını ve hangi popülasyonların temsil edildiğini; test bunu veri seti belgelerinden okur"
+            },
+            {
+              "id": "d",
+              "text": "Model çıktılarındaki yanlılığı; test bunu, veri eğitiminde mi model geliştirmede mi ortaya çıktığına bakmaksızın görür"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredata göre bilinen yanlılıksız ve temsil edici bir veri setini sistemden geçirmek, yanlılığın veri eğitimi sırasında mı yoksa model geliştirme sırasında mı ortaya çıktığından bağımsız olarak model çıktılarındaki yanlılığı belirler.",
+            "byOption": {
+              "a": "Yanlış. Dinamik test yanlılığı bir veri kaynağına kadar izlemez; eğitim verisi hatalarından ya da model geliştirmeden gelen her tür yanlılığı model çıktısında görür.",
+              "b": "Yanlış. Veri hazırlama programlarındaki ve model kodundaki kötü kalıpları bulmak statik analizin işidir; dinamik test kodu değil model tahminlerini çözümler.",
+              "c": "Yanlış. Verinin nasıl toplandığını ve hangi popülasyonların temsil edildiğini inceleyen yaklaşım veri belgelerinin gözden geçirilmesidir; dinamik test model tahminlerine bakar.",
+              "d": "Doğru. Test model çıktılarına baktığı için yanlılık, ister veri eğitiminde ister model geliştirmede ortaya çıkmış olsun, saptanır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team runs a known unbiased and representative dataset through a trained ML model and analyzes the predictions for statistically significant differences in outcomes across sensitive groups. According to the syllabus, what aspect of bias does this dynamic test capture?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bias from deliberate poisoning of the training data, which the test traces back to the source the data came from"
+            },
+            {
+              "id": "b",
+              "text": "Mishandling of sensitive attributes in the data preparation programs, which the test locates in the code line by line"
+            },
+            {
+              "id": "c",
+              "text": "How the data was collected and which populations are represented, which the test reads from the dataset documentation"
+            },
+            {
+              "id": "d",
+              "text": "Bias in the model outputs, which the test finds whether it arose during data training or during model development"
+            }
+          ],
+          "rationale": {
+            "summary": "According to the syllabus, feeding a known unbiased and representative dataset through the system identifies bias in model outputs, regardless of whether it was introduced during data training or model development.",
+            "byOption": {
+              "a": "Incorrect. The dynamic test does not trace bias back to a data source; it reveals in the model output any bias, whether from training data defects or from model development.",
+              "b": "Incorrect. Finding anti-patterns and mishandled sensitive attributes in preparation and model code is the job of static analysis; the dynamic test analyzes predictions, not code.",
+              "c": "Incorrect. Examining how data was collected and which populations are represented is a review of dataset documentation; the dynamic test looks at model predictions.",
+              "d": "Correct. Because the test looks at model outputs, it detects bias whether it entered during data training or during model development."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0057",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.3",
+      "objectives": [
+        "AI-5.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "data-pipeline",
+        "fault-injection"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir veri hattının tümü kurulduktan sonra ekip, veri hattına bilinçli olarak bozuk ve beklenmedik veri girdileri verip hattın veri bütünlüğünü koruyup koruyamadığını ölçüyor. Müfredata göre bu faaliyet aşağıdakilerden hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Duman testi"
+            },
+            {
+              "id": "b",
+              "text": "Sırt sırta test"
+            },
+            {
+              "id": "c",
+              "text": "Hata enjeksiyonu testi"
+            },
+            {
+              "id": "d",
+              "text": "Yapılandırma yönetimi gözden geçirmesi"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredata göre hata enjeksiyonu testi, hatalı veri girdilerini simüle ederek hattın beklenmedik veya bozuk veriyle karşılaşınca veri bütünlüğünü koruma yeteneğini değerlendirir ve hattın sağlamlığını ölçer.",
+            "byOption": {
+              "a": "Yanlış. Duman testi, hattın temel işleyişini doğrulamak için sistem testinin başında yapılır; bozuk girdilerle sağlamlığı ölçmez.",
+              "b": "Yanlış. Sırt sırta test, operasyonel hattı eğitim hattıyla karşılaştırıp tutarlı işlev gösterdiğini doğrular; bozuk veri simüle etmez.",
+              "c": "Doğru. Hata enjeksiyonu testi, hatalı veri girdilerini simüle ederek hattın bozuk veri karşısında veri bütünlüğünü koruyup koruyamadığını değerlendirir.",
+              "d": "Yanlış. Yapılandırma yönetimi gözden geçirmeleri, eğitim, test ve üretimde doğru hat kodu sürümlerinin, yapılandırmaların ve veri setlerinin kullanıldığını doğrular; bozuk veriyle hattı zorlamaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "Once a complete data pipeline has been assembled, a team deliberately feeds it defective and unexpected data inputs to measure whether the pipeline keeps its data integrity. According to the syllabus, which activity is this?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Smoke testing"
+            },
+            {
+              "id": "b",
+              "text": "Back-to-back testing"
+            },
+            {
+              "id": "c",
+              "text": "Fault injection testing"
+            },
+            {
+              "id": "d",
+              "text": "Configuration management review"
+            }
+          ],
+          "rationale": {
+            "summary": "According to the syllabus, fault injection testing measures pipeline robustness by simulating defective data inputs and assessing the system's ability to maintain data integrity when faced with unexpected or corrupted data.",
+            "byOption": {
+              "a": "Incorrect. Smoke testing opens system testing of the pipeline to confirm basic functionality; it does not measure robustness against corrupted inputs.",
+              "b": "Incorrect. Back-to-back testing compares the operational pipeline against the training pipeline to verify consistent functionality; it does not simulate corrupted data.",
+              "c": "Correct. Fault injection testing simulates defective inputs and assesses whether the pipeline maintains data integrity when faced with unexpected or corrupted data.",
+              "d": "Incorrect. Configuration management reviews verify that the correct pipeline code versions, configurations and datasets are used across training, testing and production; they do not stress the pipeline with bad data."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0058",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.3",
+      "objectives": [
+        "AI-5.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "data-pipeline",
+        "test-strategy"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir kuruluş hem bir eğitim veri hattı hem de bir operasyonel veri hattı geliştiriyor. Müfredata göre test stratejileri bu iki hattın amacıyla nasıl uyumlu olmalıdır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Eğitim hatlarının testi veri bütünlüğüne odaklanabilir; operasyonel hat testi güvenilirliğe, performansa ve bakım yapılabilirliğe öncelik verir"
+            },
+            {
+              "id": "b",
+              "text": "Eğitim hatlarının testi performansa ve ölçeklenebilirliğe odaklanır; operasyonel hat testi ise yalnızca veri bütünlüğüne ve güvenlik ayarlarına bakar"
+            },
+            {
+              "id": "c",
+              "text": "İki hat da aynı veriyi işlediği ve aynı amaca hizmet ettiği için ikisine de aynı test stratejisi ve aynı öncelikler uygulanır"
+            },
+            {
+              "id": "d",
+              "text": "Eğitim hatları genellikle sağlam üretim sistemleridir; bu nedenle operasyonel hatlara göre daha ağır ve daha kapsamlı bir test gerektirir"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredata göre test stratejileri hattın amacıyla uyumlu olmalıdır: genellikle keşif niteliğindeki prototipler olan eğitim hatları, güvenilirliğe, performansa ve bakım yapılabilirliğe öncelik veren operasyonel hatlardan farklı önceliklere sahiptir; eğitim hattı testi veri bütünlüğüne odaklanabilir.",
+            "byOption": {
+              "a": "Doğru. Eğitim hattı testi veri bütünlüğüne odaklanabilir; operasyonel hat testi güvenilirliğe, performansa ve bakım yapılabilirliğe öncelik verir.",
+              "b": "Yanlış. Öncelikler tersine çevrilmiştir; performans (güvenilirlik ve bakım yapılabilirlikle birlikte) operasyonel hat testinin önceliğidir, veri bütünlüğü ise eğitim hattı testinin odağı olabilir.",
+              "c": "Yanlış. Müfredat tam tersini söyler: test stratejileri hattın amacına göre uyarlanmalıdır ve eğitim hatlarının öncelikleri operasyonel hatlardan farklıdır.",
+              "d": "Yanlış. Eğitim hatları çoğunlukla keşif niteliğindeki prototiplerdir; sağlam olanlar operasyonel hatlardır, bu yüzden güvenilirlik ve bakım yapılabilirlik yükü operasyonel hatta aittir."
+            }
+          }
+        },
+        "en": {
+          "stem": "An organization develops both a training data pipeline and an operational data pipeline. According to the syllabus, how should the test strategies align with the purpose of these two pipelines?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Testing of training pipelines may focus on data integrity, while operational pipeline testing prioritizes reliability, performance and maintainability"
+            },
+            {
+              "id": "b",
+              "text": "Testing of training pipelines focuses on performance and scalability, while operational pipeline testing looks only at data integrity and security settings"
+            },
+            {
+              "id": "c",
+              "text": "Because both pipelines process the same data and serve the same purpose, the same test strategy and priorities apply to both of them"
+            },
+            {
+              "id": "d",
+              "text": "Training pipelines are usually robust production systems and therefore need heavier and broader testing than operational pipelines do"
+            }
+          ],
+          "rationale": {
+            "summary": "According to the syllabus, test strategies must align with the pipeline's purpose: training pipelines, often exploratory prototypes, have different priorities than robust operational pipelines. Training pipeline testing may focus on data integrity; operational testing prioritizes reliability, performance and maintainability.",
+            "byOption": {
+              "a": "Correct. Training pipeline testing may focus on data integrity, while operational pipeline testing prioritizes reliability, performance and maintainability.",
+              "b": "Incorrect. The priorities are reversed; performance (with reliability and maintainability) is the priority of operational pipeline testing, while data integrity can be the focus for training pipelines.",
+              "c": "Incorrect. The syllabus says the opposite: strategies must align with the pipeline's purpose, and training pipelines have different priorities than operational ones.",
+              "d": "Incorrect. Training pipelines are often exploratory prototypes; the robust systems are the operational pipelines, which therefore carry the reliability and maintainability emphasis."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0059",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.4",
+      "objectives": [
+        "AI-5.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "data-representativeness",
+        "reference-data"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, eğitim veri setinin gerçek dünyada karşılaşılacak veriyi ne kadar temsil ettiğini sınamak istiyor. Müfredata göre bu karşılaştırmanın dayanacağı temel veri nasıl oluşturulur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Eğitim veri seti kendi içinde rastgele parçalara bölünür ve parçaların dağılımları birbiriyle karşılaştırılır"
+            },
+            {
+              "id": "b",
+              "text": "Alan uzmanlarının görüşü, mevcut sistem verisi ve güvenilir kıyaslama veri setleriyle tabakalı referans veri oluşturulur"
+            },
+            {
+              "id": "c",
+              "text": "Yalnızca tipik senaryolar toplanır; uç ve sınır durumlar dengeyi bozacağı için referans veriden bilinçli olarak dışarıda bırakılır"
+            },
+            {
+              "id": "d",
+              "text": "Aynı veri noktaları birden çok kişiye bağımsız olarak etiketletilir ve aralarındaki uyum oranı temel olarak alınır"
+            }
+          ],
+          "rationale": {
+            "summary": "Temsil edicilik testinin ilk adımı hedef popülasyonu tanımlamaktır: alan uzmanlarına danışarak, mevcut sistemlerin verisini çözümleyerek veya güvenilir kıyaslama veri setlerini kullanarak beklenen dağılımlar ve kritik uç durumlar belirlenir; tabakalı örnekleme ile tüm ilgili alt grupları kapsayan bir referans oluşturulur.",
+            "byOption": {
+              "a": "Yanlış. Eğitim setini kendi parçalarıyla karşılaştırmak, gerçek dünyayı temsil eden bağımsız bir referans sağlamaz; sorun tam da eğitim setinin gerçekle uyuşup uyuşmadığıdır.",
+              "b": "Doğru. Hedef popülasyon, alan uzmanları, mevcut sistemlerin verisi ve güvenilir kıyaslama veri setleriyle tanımlanır; tabakalı örnekleme tüm alt grupları kapsayan bir referans oluşturur.",
+              "c": "Yanlış. Müfredat tipik senaryoların yanında uç ve sınır durumların da yeterince kapsandığının doğrulanmasını ister; bu durumları dışarıda bırakmak temsil edicilik sorununun kendisidir.",
+              "d": "Yanlış. Bu, çoklu etiketleme ve etiketleyiciler arası uyum ölçümüdür ve etiket doğruluğu testine aittir; operasyonel veriyi temsil eden bir referans oluşturmaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team wants to test how well its training dataset represents the data the model will meet in the real world. According to the syllabus, how is the baseline for this comparison established?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The training dataset is split into random parts and the distributions of the parts are compared with each other"
+            },
+            {
+              "id": "b",
+              "text": "A stratified reference dataset is built using domain experts, existing system data and trusted benchmark datasets"
+            },
+            {
+              "id": "c",
+              "text": "Only typical scenarios are collected, and edge and boundary cases are deliberately left out of the reference data because they would distort its balance"
+            },
+            {
+              "id": "d",
+              "text": "The same data points are labelled independently by several people and the agreement rate between them is taken as the baseline"
+            }
+          ],
+          "rationale": {
+            "summary": "The first step of representativeness testing is defining the target population: expected distributions and critical edge cases are identified by consulting domain experts, analyzing existing systems or using trusted benchmark datasets, and stratified sampling creates a baseline covering all relevant subgroups.",
+            "byOption": {
+              "a": "Incorrect. Comparing the training set with its own parts gives no independent reference for the real world; the question is whether the training set matches reality.",
+              "b": "Correct. The target population is defined through domain experts, existing system data and trusted benchmark datasets, and stratified sampling builds a baseline covering all relevant subgroups.",
+              "c": "Incorrect. The syllabus asks to verify adequate coverage of both typical scenarios and edge or boundary cases; leaving them out is itself a representativeness defect.",
+              "d": "Incorrect. This is multiple annotation and inter-annotator agreement, part of label correctness testing; it does not build a reference representing operational data."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0060",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.4",
+      "objectives": [
+        "AI-5.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "data-representativeness",
+        "statistical-tests",
+        "drift"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Müfredata göre veri temsil ediciliği testinde dağılımları karşılaştırmak için hangi istatistiksel testler kullanılabilir ve bu test ne zaman yapılmalıdır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Cohen'in Kappa ölçüsü; model eğitildikten sonra, doğruluğu görüldüğünde ve sonuçlar karşılaştırılarak"
+            },
+            {
+              "id": "b",
+              "text": "Ki-kare ve Kolmogorov-Smirnov testleri; yalnızca dağıtımdan sonra, canlı verinin ilk geldiği anda tek seferlik olarak"
+            },
+            {
+              "id": "c",
+              "text": "Ki-kare ve Kolmogorov-Smirnov testleri; model eğitiminden önce, dağıtımdan sonra da veri kayması sürekli izlenerek"
+            },
+            {
+              "id": "d",
+              "text": "Yalnızca görsel grafikler; temsil edicilik istatistiksel testlerle ölçülemez ve dağıtım sonrası izleme de gerekmez"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredat dağılımları karşılaştırmak için Ki-kare ve Kolmogorov-Smirnov gibi biçimsel istatistiksel testleri sayar; testin, temsil edici olmayan veriyle model eğitmemek için model eğitiminden önce yapılmasını ve dağıtımdan sonra veri kaymasının izlenmesini ister.",
+            "byOption": {
+              "a": "Yanlış. Cohen'in Kappa ölçüsü etiketleyiciler arası uyum için kullanılır; ayrıca temsil edicilik testi modelin eğitiminden önce yapılmalıdır.",
+              "b": "Yanlış. Testler doğru ama zamanlama yanlıştır: temsil edicilik testi dağıtıma kadar bekletilmez, model eğitiminden önce yapılır; dağıtımdan sonraki izleme ek bir faaliyettir.",
+              "c": "Doğru. Dağılımlar Ki-kare ve Kolmogorov-Smirnov ile karşılaştırılır; test model eğitiminden önce yapılır ve dağıtımdan sonra girdi verisi veri kayması için sürekli izlenir.",
+              "d": "Yanlış. Müfredat grafiklerin (histogram, saçılım grafiği) yanında biçimsel istatistiksel testleri de ister ve dağıtımdan sonra girdi verisinin veri kayması için sürekli izlenmesini öngörür."
+            }
+          }
+        },
+        "en": {
+          "stem": "According to the syllabus, which statistical tests can be used in data representativeness testing to compare distributions, and when should the testing be performed?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Cohen's Kappa; after the model has been trained, once its accuracy is known and can be compared"
+            },
+            {
+              "id": "b",
+              "text": "Chi-squared and Kolmogorov-Smirnov tests; only after deployment, when live data first arrives, as a one-off check"
+            },
+            {
+              "id": "c",
+              "text": "Chi-squared and Kolmogorov-Smirnov tests; before training, then continuous drift monitoring after deployment"
+            },
+            {
+              "id": "d",
+              "text": "Only visual plots; representativeness cannot be measured statistically, and no monitoring is needed after deployment"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus names formal statistical tests such as Chi-squared and Kolmogorov-Smirnov for comparing distributions, says the testing should be done before model training to avoid building models on unrepresentative data, and asks for continuous monitoring of operational input data for drift after deployment.",
+            "byOption": {
+              "a": "Incorrect. Cohen's Kappa measures inter-annotator agreement, and representativeness testing is done before training, not after.",
+              "b": "Incorrect. The tests are right but the timing is wrong: representativeness testing is not postponed to deployment but done before model training; post-deployment monitoring is an additional activity.",
+              "c": "Correct. Distributions are compared with Chi-squared and Kolmogorov-Smirnov, the testing is done before model training, and operational input data is continuously monitored for data drift after deployment.",
+              "d": "Incorrect. The syllabus uses plots such as histograms and scatter plots alongside formal statistical tests, and calls for continuous monitoring of operational input data for drift after deployment."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0061",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.5",
+      "objectives": [
+        "AI-5.1.5"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 2,
+      "difficulty": 3,
+      "tags": [
+        "dataset-constraint-testing",
+        "range-constraint",
+        "type-constraint"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir MÖ projesinin öğrenci veri setinde şu kısıtlar tanımlıdır: Not 0 ile 100 arasında (sınırlar dahil) olmalıdır; Yaş tam sayı olmalıdır. Veri setinin kayıtları (Kayıt: Not; Yaş) şöyledir: K1: 72; 19. K2: 134; 20. K3: 58; 21,5. K4: 91; \"on dokuz\". K5: 100; 22. Kısıt testi hangi kayıtların kısıtları ihlal ettiğini bildirmelidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yalnızca K2"
+            },
+            {
+              "id": "b",
+              "text": "K2 ve K4"
+            },
+            {
+              "id": "c",
+              "text": "K2, K3 ve K4"
+            },
+            {
+              "id": "d",
+              "text": "K2, K3, K4 ve K5"
+            }
+          ],
+          "rationale": {
+            "summary": "Aralık kısıtı Notun 0-100 arasında (sınırlar dahil) olmasını sınar: K2 (134) ihlal eder; K5'teki 100 sınır değerdir ve geçerlidir. Tür kısıtı Yaşın tam sayı olmasını sınar: K3 (21,5 gerçel sayı) ve K4 (\"on dokuz\" metin) ihlal eder. İhlal eden kayıtlar K2, K3 ve K4'tür.",
+            "byOption": {
+              "a": "Yanlış. K2 aralık ihlalidir, ancak tür kısıtı da uygulanmalıdır: K3 (21,5 gerçel sayı) ve K4 (\"on dokuz\" metin) Yaş için tür ihlalidir.",
+              "b": "Yanlış. K4'teki metin yakalanmıştır, ancak K3'teki 21,5 gerçel sayıdır ve Yaş için tam sayı tür kısıtını ihlal eder.",
+              "c": "Doğru. K2 aralık kısıtını (Not 134), K3 ve K4 tür kısıtını (21,5 gerçel sayı; \"on dokuz\" metin) ihlal eder; K1 ve K5 iki kısıtı da sağlar.",
+              "d": "Yanlış. K5'in Notu olan 100, sınırlar dahil 0–100 aralığının içindedir ve Yaşı 22 tam sayıdır; 100'ü aralık dışı saymak aralığı sınırlar hariç okumaktır."
+            }
+          }
+        },
+        "en": {
+          "stem": "In the student dataset of an ML project, these constraints are defined: Marks must be between 0 and 100 inclusive; Age must be an integer. The dataset records (Record: Marks, Age) are: R1: 72, 19. R2: 134, 20. R3: 58, 21.5. R4: 91, \"nineteen\". R5: 100, 22. Which records should the constraint test report as violating the constraints?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Only R2"
+            },
+            {
+              "id": "b",
+              "text": "R2 and R4"
+            },
+            {
+              "id": "c",
+              "text": "R2, R3 and R4"
+            },
+            {
+              "id": "d",
+              "text": "R2, R3, R4 and R5"
+            }
+          ],
+          "rationale": {
+            "summary": "The range constraint checks that Marks lie between 0 and 100 inclusive: R2 (134) violates it, while the 100 in R5 is a valid boundary value. The type constraint checks that Age is an integer: R3 (21.5, a real number) and R4 (\"nineteen\", a string) violate it. The violating records are R2, R3 and R4.",
+            "byOption": {
+              "a": "Incorrect. R2 is a range violation, but the type constraint must also be applied: R3 (21.5, a real number) and R4 (\"nineteen\", a string) violate it for Age.",
+              "b": "Incorrect. R4's string is caught, but 21.5 in R3 is a real number and violates the integer type constraint on Age.",
+              "c": "Correct. R2 violates the range constraint (Marks 134); R3 and R4 violate the type constraint (21.5 is a real number; \"nineteen\" is a string); R1 and R5 satisfy both constraints.",
+              "d": "Incorrect. R5's Marks of 100 lies inside the inclusive range 0–100 and its Age 22 is an integer; treating 100 as out of range reads the range as exclusive."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0062",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.5",
+      "objectives": [
+        "AI-5.1.5"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 2,
+      "difficulty": 3,
+      "tags": [
+        "dataset-constraint-testing",
+        "comparison-constraint",
+        "greater-than"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir üretim hattı veri setinde her kayıt bir parti için Üretilen Birim ve Reddedilen Birim değerlerini tutar. Tanımlı kısıt şudur: bir partinin Üretilen Birim değeri, aynı partinin Reddedilen Birim değerinden büyük olmalıdır. Kayıtlar (Parti: Üretilen, Reddedilen) şöyledir: P1: 500, 12. P2: 300, 300. P3: 250, 0. P4: 400, 415. Kısıt testi hangi kısıt türünü uygular ve hangi partileri ihlal olarak bildirmelidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Büyüktür (karşılaştırma) kısıtı; P2 ve P4"
+            },
+            {
+              "id": "b",
+              "text": "Büyüktür (karşılaştırma) kısıtı; yalnızca P4"
+            },
+            {
+              "id": "c",
+              "text": "Tüm partilerde Toplam kısıtı; P2 ve P4"
+            },
+            {
+              "id": "d",
+              "text": "İki nitelik arasında Korelasyon kısıtı; yalnızca P4"
+            }
+          ],
+          "rationale": {
+            "summary": "Kısıt, bir niteliğin değerinin ikinci bir niteliğin değerinden büyük olmasını sınar; bu bir karşılaştırma kısıtı olan Büyüktür kısıtıdır. 'Büyük' kesin eşitsizliktir: P2'de iki değer eşittir (300, 300) ve P4'te üretilen reddedilenden azdır (400, 415); ikisi de ihlaldir.",
+            "byOption": {
+              "a": "Doğru. Kısıt iki nitelik değerini karşılaştırır (Büyüktür); P2'de değerler eşit olduğu için kesin 'büyük' sağlanmaz, P4'te üretilen reddedilenden küçüktür.",
+              "b": "Yanlış. Kısıt türü doğrudur, ancak P2 atlanmıştır: Üretilen Birim Reddedilen Birim'den büyük olmalıdır ve 300, 300'den büyük değildir.",
+              "c": "Yanlış. Toplam kısıtı, bir niteliğin birçok kayıttaki değerlerinin toplamını belirli bir değerle karşılaştırır; burada kayıt içindeki iki nitelik karşılaştırılmaktadır.",
+              "d": "Yanlış. Korelasyon kısıtı iki niteliğin değerlerinin birlikte değişip değişmediğini sınar (örneğin yüksek notla A harf notu); iki değerin büyüklüğünü karşılaştırmaz ve P2'yi de kaçırır."
+            }
+          }
+        },
+        "en": {
+          "stem": "In a production-line dataset, each record holds the Units Produced and Units Rejected for one batch. The defined constraint is: a batch's Units Produced must be greater than the same batch's Units Rejected. The records (Batch: Produced, Rejected) are: P1: 500, 12. P2: 300, 300. P3: 250, 0. P4: 400, 415. Which type of constraint does the constraint test apply, and which batches should it report as violations?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Greater Than (comparison) constraint; P2 and P4"
+            },
+            {
+              "id": "b",
+              "text": "Greater Than (comparison) constraint; only P4"
+            },
+            {
+              "id": "c",
+              "text": "Sum constraint across all batches; P2 and P4"
+            },
+            {
+              "id": "d",
+              "text": "Correlate constraint between the two attributes; only P4"
+            }
+          ],
+          "rationale": {
+            "summary": "The constraint tests that the value of one attribute is greater than the value of a second attribute, which is the Greater Than constraint, a comparison constraint. 'Greater' is strict: in P2 the two values are equal (300, 300) and in P4 the produced count is below the rejected count (400, 415); both violate it.",
+            "byOption": {
+              "a": "Correct. The constraint compares two attribute values (Greater Than); in P2 the values are equal, so strict 'greater than' fails, and in P4 produced is less than rejected.",
+              "b": "Incorrect. The constraint type is right, but P2 is missed: Units Produced must be greater than Units Rejected, and 300 is not greater than 300.",
+              "c": "Incorrect. A Sum constraint compares the total of an attribute's values across instances with a specified value; here two attributes within one record are compared.",
+              "d": "Incorrect. A Correlate constraint tests whether the values of one attribute correlate with those of another (for example a high marks value going with grade A); it does not compare magnitudes, and it also misses P2."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0063",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.6",
+      "objectives": [
+        "AI-5.1.6"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "label-correctness",
+        "multiple-annotation",
+        "iaa"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Denetimli öğrenme için hazırlanan bir görüntü veri setinde iki etiketleyici aynı görüntüleri birbirinden bağımsız etiketledi ve yüzde uyum düşük çıktı. Müfredata göre düşük etiketleyiciler arası uyum (IAA) neye işaret edebilir ve ne yapılmalıdır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Model aşırı uyum göstermektedir; modelin eğitimi daha erken durdurulmalı ve düzenlileştirilmelidir"
+            },
+            {
+              "id": "b",
+              "text": "Etiketleme yönergelerinde hata, belirsiz veri veya zayıf etiketleme olabilir; uyuşmazlıklar araştırılıp çözülmelidir"
+            },
+            {
+              "id": "c",
+              "text": "Eğitim verisi operasyonel veriyi yeterince temsil etmemektedir; model daha büyük hacimli veriyle yeniden eğitilmelidir"
+            },
+            {
+              "id": "d",
+              "text": "Veri setinde çok sayıda yinelenen kayıt vardır; bunların tümü yineleme kısıtı kontrolüyle silinmelidir"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredata göre bağımsız etiketleme sonuçları sırt sırta test benzeri biçimde karşılaştırılır; uyuşmazlıklar araştırılması ve çözülmesi gereken hatalara işaret eder ve düşük IAA, etiketleme yönergelerinde hata, belirsiz veri veya zayıf etiketlemeyi gösterebilir.",
+            "byOption": {
+              "a": "Yanlış. Aşırı uyum bir model davranışıdır; iki etiketleyicinin birbirinden bağımsız verdiği etiketlerin uyuşmaması modeli değil etiket kalitesini ilgilendirir.",
+              "b": "Doğru. Düşük IAA etiketleme yönergelerinde hata, belirsiz veri veya zayıf etiketlemeye işaret edebilir; uyuşmazlıklar araştırılıp çözülmesi gereken hatalardır.",
+              "c": "Yanlış. Temsil edicilik sorunu, eğitim verisinin gerçek dünya verisiyle karşılaştırılmasıyla bulunur ve daha fazla veriyle yeniden eğitim etiket uyuşmazlığını gidermez; iki etiketleyicinin uyuşmaması etiket kalitesini ilgilendirir.",
+              "d": "Yanlış. Yinelenen kayıtlar veri seti kısıt testindeki yineleme kısıtıyla bulunur; etiketleyiciler arasındaki uyuşmazlık kayıtların tekrar ettiğini göstermez."
+            }
+          }
+        },
+        "en": {
+          "stem": "In an image dataset prepared for supervised learning, two annotators labelled the same images independently, and the percentage agreement turned out low. According to the syllabus, what can low inter-annotator agreement (IAA) indicate, and what should be done?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The model is overfitting to the labelled images; its training should be stopped earlier and regularized"
+            },
+            {
+              "id": "b",
+              "text": "Possible defects in guidelines, ambiguous data or poor annotation; investigate and resolve the disagreements"
+            },
+            {
+              "id": "c",
+              "text": "The training data does not sufficiently represent the operational data; the model should be retrained on a larger volume of data"
+            },
+            {
+              "id": "d",
+              "text": "The dataset contains many duplicate records; these should all be removed with a duplicate constraint check"
+            }
+          ],
+          "rationale": {
+            "summary": "According to the syllabus, independent labels are compared using a form of back-to-back testing; disagreements highlight defects that need investigation and resolution, and low IAA scores can indicate defects in labelling guidelines, ambiguous data or poor annotation.",
+            "byOption": {
+              "a": "Incorrect. Overfitting is a model behaviour; disagreement between two annotators' independent labels concerns label quality, not the model.",
+              "b": "Correct. Low IAA can indicate defects in labelling guidelines, ambiguous data or poor annotation, and disagreements are defects that need investigation and resolution.",
+              "c": "Incorrect. A representativeness problem is found by comparing the training data with real-world data, and retraining on more data does not resolve label disagreement; disagreement between annotators concerns label quality.",
+              "d": "Incorrect. Duplicate records are found by the Duplicate constraint in dataset constraint testing; annotator disagreement does not mean records are repeated."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0064",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.6",
+      "objectives": [
+        "AI-5.1.6"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "label-correctness",
+        "model-loss",
+        "automated-checks"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip bir sınıflandırıcıyı eğitirken bazı eğitim veri noktalarının kaybının (loss) yüksek olduğunu görüyor; yani modelin bu noktalar için tahminleri gerçek etiketlerinden belirgin biçimde ayrışıyor. Müfredata göre etiket doğruluğu testi açısından bu nasıl yorumlanır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Model yetersiz uyum gösteriyor olabilir; bu noktalardaki kayıp düşene kadar modelin kapasitesi artırılmalıdır"
+            },
+            {
+              "id": "b",
+              "text": "Bu noktalar büyük olasılıkla kopya kayıtlardır ve yineleme kısıtıyla veri setinden silinmelidir"
+            },
+            {
+              "id": "c",
+              "text": "Eğitim ve operasyonel veri hatlarının farklı davrandığını gösterir; iki hat sırt sırta testle karşılaştırılmalıdır"
+            },
+            {
+              "id": "d",
+              "text": "Bu noktalara atanan etiketler yanlış olabilir; bu noktalar olası etiket hatası olarak incelenmelidir"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredata göre eğitim sırasında yüksek kayıp gösteren veri noktaları, modelin atanan etiketi öğrenmekte zorlandığını ve olası bir hata olduğunu gösterir; yanlış etiketlemeye işaret edebilir ve incelenmelidir (model kaybı çözümlemesi).",
+            "byOption": {
+              "a": "Yanlış. Bu seçenek yüksek kaybı model kapasitesi sorunu olarak yorumlar; etiket doğruluğu testinde müfredat tek tek noktalardaki yüksek kaybı, modelin atanan etiketi öğrenmekte zorlandığının, yani olası yanlış etiketlemenin işareti sayar; modeli büyütme gerekçesi saymaz.",
+              "b": "Yanlış. Yinelenen kayıtlar veri seti kısıt testinin yineleme kısıtıyla bulunur; yüksek kayıp, noktaların kopya olduğunu değil etiket sorununu düşündürür.",
+              "c": "Yanlış. Sırt sırta test iki hattın tutarlılığını doğrular; tek tek veri noktalarının yüksek kaybı hat farkını değil olası etiket hatasını düşündürür.",
+              "d": "Doğru. Yüksek kayıp, modelin atanan etiketi öğrenmekte zorlandığını gösterir ve olası yanlış etiketlemeye ve incelenmesi gereken bir hataya işaret eder."
+            }
+          }
+        },
+        "en": {
+          "stem": "While training a classifier, a team sees that some training data points show high loss, meaning the model's predictions for these points deviate substantially from their true labels. According to the syllabus, how should this be interpreted in label correctness testing?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The model may be underfitting, so its capacity should be increased until the loss on these points falls"
+            },
+            {
+              "id": "b",
+              "text": "The points are probably duplicate records and should be removed from the dataset with a duplicate constraint"
+            },
+            {
+              "id": "c",
+              "text": "It shows that the training and operational data pipelines behave differently, so the two pipelines should be compared back to back"
+            },
+            {
+              "id": "d",
+              "text": "The labels assigned to these points may be wrong, so the points should be examined as potential label defects"
+            }
+          ],
+          "rationale": {
+            "summary": "According to the syllabus, data points with high loss during training show that the model struggles to learn the assigned label, which can indicate mislabeling and points to a potential defect that should be examined (model loss analysis).",
+            "byOption": {
+              "a": "Incorrect. This treats high loss as a model-capacity problem; in label correctness testing the syllabus reads high loss on individual points as a sign that the model struggles to learn the assigned label, i.e. possible mislabelling, not as a reason to enlarge the model.",
+              "b": "Incorrect. Duplicate records are found with the Duplicate constraint in dataset constraint testing; high loss points to a label problem, not to copied records.",
+              "c": "Incorrect. Back-to-back testing verifies consistency between pipelines; high loss on individual data points suggests possible label defects, not a pipeline difference.",
+              "d": "Correct. High loss shows the model struggles to learn the assigned label, indicating possible mislabelling and a potential defect that needs examination."
+            }
+          }
+        }
+      }
+    }
+  ]
+}

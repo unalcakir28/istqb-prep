@@ -16,6 +16,7 @@ import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import { CertificationTag } from "@/components/CertificationTag";
 import { ErrorNotice } from "@/components/ErrorNotice";
 import { ScoreBar } from "@/components/ScoreBar";
 import { Spinner } from "@/components/Spinner";
@@ -162,7 +163,10 @@ export default function ExamSetup() {
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-8 px-4 py-8 sm:py-12">
-      <h1 className="text-[28px] font-semibold leading-tight">{t("setup.title")}</h1>
+      <div className="flex flex-col gap-1">
+        <CertificationTag cert={cert} />
+        <h1 className="text-[28px] font-semibold leading-tight">{t("setup.title")}</h1>
+      </div>
 
       <fieldset className="flex flex-col gap-3">
         <legend className="mb-2 text-base font-semibold">{t("setup.contentLanguage")}</legend>

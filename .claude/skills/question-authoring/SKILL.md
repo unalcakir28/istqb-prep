@@ -36,7 +36,7 @@ never deleted.
 Emphasis words go uppercase in the stem: `EN İYİ`, `HARİÇ`, `DEĞİLDİR`,
 `HANGİ İKİSİ`.
 
-Question ids follow `ctfl4-NNNN` and are never reused. At most 40 questions per
+Question ids follow `ctfl4-NNNN` for CTFL and `ctai-NNNN` for CT-AI, are unique across certifications (check #25) and are never reused. At most 40 questions per
 chunk file, and a chunk's filename never changes — CDN and PWA caches key on it.
 
 ## Turkish terminology
@@ -45,8 +45,8 @@ chunk file, and a chunk's filename never changes — CDN and PWA caches key on i
 
 These three are not all "hata". The distinction is examined directly. The word
 `kusur` is not used for _defect_; it appears only inside official phrases such
-as "kusur ortaya çıkarmaya yönelik saldırılar". `terms.json` is the only source
-of truth — 97 terms, aligned from the official keyword lists. Check it rather
+as "kusur ortaya çıkarmaya yönelik saldırılar". the certification's own `terms.json` is the only source
+of truth (97 CTFL terms, aligned from the official keyword lists · 156 CT-AI). Check it rather
 than translating freshly.
 
 After a list containing both `insan hataları` and `hatalar`, a bare "bu hataları"

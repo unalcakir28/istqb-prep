@@ -52,7 +52,7 @@ yarn e2e
   the README badges agree with the content. The PostToolUse hook does this
   automatically; check `git status` for an unexpected diff in those files.
 - No question's status was changed by hand. Publishing has exactly one path:
-  `yarn publish:questions --reviewer "<name>" --chunk <chunk>`.
+  `yarn publish:questions --reviewer "<name>" --cert <id> --chunk <chunk>`.
 - The commit message and the pull request description are in English.
 
 Report the result as: which steps passed, the first one that failed, and the

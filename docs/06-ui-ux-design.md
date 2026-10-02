@@ -69,7 +69,7 @@ Route paths are Turkish, like the rest of the product's user-facing surface; the
 
 | Route | Screen | Mode |
 |---|---|---|
-| `/` | Home — three mode cards, resume banner, coverage | — |
+| `/` | Home — certification picker (when 2+ are active), three mode cards, resume banner, coverage | — |
 | `/calisma` | Chapter list, with per-chapter mastery counts | study |
 | `/calisma/:chapter` | That chapter's learning objectives, each with a state badge | study |
 | `/calisma/lo/:loCode` | One objective: the lesson card, then "start test" | study |
@@ -82,7 +82,7 @@ Route paths are Turkish, like the rest of the product's user-facing surface; the
 | `/inceleme/:attemptId` | Review pass — reached from the result screen | exam + practice |
 | `/listelerim` | My lists — wrong, flagged, never right twice in a row | — |
 | `/tekrar` | Repetition — the SRS deck's due cards, one at a time (§3.8) | — |
-| `/sozluk` | Glossary — 97 bilingual terms, searched in both languages | — |
+| `/sozluk` | Glossary — the active certification's bilingual terms (97 CTFL · 156 CT-AI), searched in both languages | — |
 | `/verilerim` | Your data — download a copy of the progress, load one (§3.11) | — |
 | `/kaynaklar` | Sources, copyright, disclaimer | — |
 | `/deneme`, `/deneme/:attemptId` | **Legacy redirect** to `/sinav`. Bookmarks and in-progress attempts on the old exam path keep working. | — |
@@ -152,7 +152,7 @@ The coverage line has **no progress bar**. For CTFL, `objectivesTotal` is fixed 
 
 **Above the hero, one of two blocks, never both (F1-16).** With no finished session and nothing mastered, "Where should I start?" points at study and offers "measure me first" as the alternative — an empty dashboard of zeros is worse than a direction. Otherwise "Your status": objectives learned, sessions finished, and the last score. The last score is **omitted** rather than shown as 0% before the first finished session, because a dash reads as a score of zero.
 
-**The certification picker (F4-01).** Once the manifest has two `active` certifications, the page opens with a "Certification" group of toggle buttons — acronym and version, with the full name under it — above everything else, the resume banner included: what the page shows depends on it. It is the interface-language control's pattern (`aria-pressed`), not a radio group, because a pick reloads the page and arrow keys that moved the selection would reload it on every press. The choice is kept in localStorage (`src/lib/certification.ts`); every screen that is not tied to an attempt reads it, and a session, its result and its review keep reading their own attempt's certification. The routes carry no certification, so every existing bookmark lands where it did. One exception follows a link: `/calisma/lo/:loCode` with another certification's objective switches to that certification rather than saying "not found". A pick loads the page again but keeps the current one on screen until the new one arrives, so the pressed button never unmounts and keeps focus; a status line under the picker then says "Now showing CT-AI v2.0 — Certified Tester AI Testing", because everything under it changed without focus moving. The pressed button carries a check mark and a heavier border, not only a colour.
+**The certification picker (F4-01).** Once the manifest has two `active` certifications, the page opens with a "Certification" group of toggle buttons — acronym and version, with the full name under it — above everything else, the resume banner included: what the page shows depends on it. It is the interface-language control's pattern (`aria-pressed`), not a radio group, because a pick reloads the page and arrow keys that moved the selection would reload it on every press. The choice is kept in localStorage (`src/lib/certification.ts`); every screen that is not tied to an attempt reads it, and a session, its result and its review keep reading their own attempt's certification. The routes carry no certification, so every existing bookmark lands where it did. One exception follows a link: `/calisma/lo/:loCode` with another certification's objective switches to that certification rather than saying "not found". A pick loads the page again but keeps the current one on screen until the new one arrives, so the pressed button never unmounts and keeps focus; a status line under the picker then says "Now showing CT-AI v2.0 — Certified Tester AI Testing", because everything under it changed without focus moving. The pressed button carries a check mark and a heavier border, not only a colour. Because the routes do not say which certification is shown, the three screens that start a session — `/calisma`, `/alistirma`, `/sinav` — name it above their heading (`CertificationTag`).
 
 **Points are said, not drawn.** For CTFL the caption ends "Each one is worth a single point." For a certification whose questions differ — CT-AI v2.0, where a K3 question is worth 2 — it says so ("a K2 question is worth 1 point and a K3 question is worth 2 points, 44 points in all"), read from the blueprint's groups. A cell is still one question: the paper has 40, whatever they are worth. The pass line under the figure is in points.
 
@@ -300,7 +300,7 @@ Built in F3-02. One due card at a time, the most overdue first.
 
 ### 3.9 Glossary `/sozluk`
 
-All 97 keyword pairs the two official syllabi publish in their own per-chapter keyword lists, aligned positionally rather than translated (`terms.json`, `source.method`).
+For CTFL, all 97 keyword pairs the two official syllabi publish in their own per-chapter keyword lists, aligned positionally rather than translated (`terms.json`, `source.method`). For CT-AI, 156 terms: the v2.0 keyword lists plus the terms the content needed, with Turkish from the TTB v1.0 syllabus where it exists and editorial otherwise — each term records its `trSource`.
 
 - One search box over **both** languages at once. "regression" and "regresyon" find the same row, so a candidate who knows only one side can still get to the other.
 - Turkish-aware lowercasing: `"I".toLowerCase()` is `"i"` by default but `"ı"` in Turkish, and the terms are full of dotted and dotless i.

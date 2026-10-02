@@ -23,6 +23,7 @@ data/
 ├── manifest.json                    # Root index — certifications, versions, data version
 ├── certifications.json              # Exam parameters for all ISTQB certifications (seed)
 │
+├── ct-ai-v2.0/                      # Second certification (F4-01) — the same layout as ctfl-v4.0.1/
 └── ctfl-v4.0.1/
     ├── meta.json                    # This certification's exam mechanics + source links
     ├── syllabus.json                # Chapters and sub-sections (TR/EN titles)
@@ -643,8 +644,9 @@ Checks that run on every PR (`yarn validate:data`). The registry in [`../scripts
 | 23 | ~~Do the keyed letters run a rotation in file order (`a → b → c → d …`), per chunk?~~ **Retired by D-03**, for the same reason as #14. | — |
 | 24 | Are the points consistent? Every group of one K-level carries the same `pointsPerQuestion`; the groups add up to `meta.exam.totalPoints` and to each chapter's `examPoints`; every question's `points` equals its K-level's. | ❌ |
 | 25 | Do the manifest `id`, its `path` and `meta.id` agree, and is every question id unique **across** certifications? An attempt's `certId` is reused as its content path, and the repetition deck is keyed by question id alone. | ❌ |
+| 26 | Does each option's rationale open with the verdict its key implies? A rationale opening "Correct." / "Doğru." must belong to a keyed option, and one opening "Incorrect." / "Wrong." / "Yanlış." must not. Added after a CT-AI question reached review with a key its own rationales contradicted. | ❌ |
 
-**23 live checks: 16 errors (#1–#9, #15–#19, #24, #25) and 7 warnings (#10–#13, #20–#22).** #14 and #23 are retired; their numbers are not reused, so every other check keeps its number. A warning prints and exits 0: content gaps must be visible without blocking CI.
+**24 live checks: 17 errors (#1–#9, #15–#19, #24–#26) and 7 warnings (#10–#13, #20–#22).** #14 and #23 are retired; their numbers are not reused, so every other check keeps its number. A warning prints and exits 0: content gaps must be visible without blocking CI.
 
 #13 and #21 are the two halves of one problem and neither covers the other. #13
 catches an untranslated **English** word sitting in Turkish text; #21 catches a

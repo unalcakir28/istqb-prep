@@ -1,0 +1,1521 @@
+{
+  "chunk": "ch01-a",
+  "chapter": 1,
+  "dataVersion": "2.0",
+  "questions": [
+    {
+      "id": "ctai-0001",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.1",
+      "objectives": [
+        "AI-1.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ai-based-systems",
+        "conventional-systems"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, binlerce kedi fotoğrafıyla eğitilmiş bir görüntü sınıflandırıcısını, buyurgan (imperative) bir dille yazılmış geleneksel bir programla karşılaştırıyor. Aşağıdakilerden hangisi, her ikisinin davranışının nasıl ortaya çıktığını EN İYİ biçimde anlatır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "İkisi de davranışını açıkça kodlanmış if-then-else kurallarından alır; sınıflandırıcı yalnızca her kedi görüntüsünü kapsamak için çok daha fazla kurala ihtiyaç duyar."
+            },
+            {
+              "id": "b",
+              "text": "Sınıflandırıcı geliştiricilerin açıkça yazdığı adım adım talimatları izler; geleneksel program davranışını kullanımda karşılaştığı veriden öğrenir."
+            },
+            {
+              "id": "c",
+              "text": "Sınıflandırıcı davranışını veriden çıkarılan örüntülerden alır; program ise geliştiricilerin açıkça yazdığı talimatları izler."
+            },
+            {
+              "id": "d",
+              "text": "İkisi de davranışını veriden çıkarılan örüntülerden alır; aralarındaki tek fark, eğitimde kullanılan programlama dilidir."
+            }
+          ],
+          "rationale": {
+            "summary": "Geleneksel sistemlerde adım adım talimatları geliştiriciler açıkça tanımlar; bu da davranışı deterministik ve öngörülebilir kılar. Çoğu yapay zekâ tabanlı sistem ise, özellikle MÖ tabanlı olanlar, verideki örüntüleri çıkarır ve yeni girdilere uygular. Çeldiriciler bu rolleri tersine çevirir ya da farkı ortadan kaldırır.",
+            "byOption": {
+              "a": "Yanlış. Bu yalnızca geleneksel yaklaşımı anlatır. MÖ tabanlı bir sınıflandırıcı önceden tanımlı kuralları izlemez; yeni girdilere nasıl yanıt vereceğini verideki örüntüleri analiz ederek belirler.",
+              "b": "Yanlış. Roller tersine çevrilmiş. Buyurgan programlar geliştiriciler tarafından açık talimatlarla yazılır; veriden öğrenen, MÖ tabanlı sınıflandırıcıdır.",
+              "c": "Doğru. Müfredatın çizdiği temel fark budur: görüntü sınıflandırıcısı açıkça kodlanmış kurallara değil bir veri setinden öğrenmeye dayanır; geleneksel programın davranışını ise geliştiricilerin yazdığı adım adım talimatlar belirler.",
+              "d": "Yanlış. Geleneksel program hiç veriyle eğitilmez; davranışı buyurgan bir dildeki açık talimatlarla tanımlanır. Fark, davranışın nasıl ortaya çıktığındadır, kullanılan dilde değil."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team compares an image classifier trained on thousands of cat photos with a conventional program written in an imperative language. Which statement BEST describes how the behavior of each one arises?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Both get their behavior from explicitly coded if-then-else rules; the classifier simply needs a much larger number of such rules to cover every cat image."
+            },
+            {
+              "id": "b",
+              "text": "The classifier follows step-by-step instructions that developers wrote explicitly; the conventional program learns its behavior from the data it meets in use."
+            },
+            {
+              "id": "c",
+              "text": "The classifier gets its behavior from patterns extracted from data; the program follows instructions that developers wrote explicitly."
+            },
+            {
+              "id": "d",
+              "text": "Both get their behavior from patterns extracted from data; they differ only in the programming language that is used to train them."
+            }
+          ],
+          "rationale": {
+            "summary": "In conventional systems developers define the step-by-step instructions explicitly, which keeps behavior deterministic and predictable. Most AI-based systems, particularly ML-based ones, instead extract patterns from data and apply them to new inputs. The distractors swap these roles or erase the difference.",
+            "byOption": {
+              "a": "Incorrect. This describes only the conventional approach. An ML-based classifier does not follow predefined rules; it analyzes patterns in data to decide how to respond to new inputs.",
+              "b": "Incorrect. The roles are reversed. Imperative programs are written with explicit instructions by developers, and it is the ML-based classifier that learns from data.",
+              "c": "Correct. This is the core difference the syllabus draws: the image classifier learns from a dataset instead of relying on explicitly coded rules, while the conventional program's behavior is fixed by developer-written step-by-step instructions.",
+              "d": "Incorrect. A conventional program is not trained on data at all; its behavior is defined by explicit instructions in an imperative language, so the difference is in how behavior arises, not in the language used."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0002",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.1",
+      "objectives": [
+        "AI-1.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ai-based-systems",
+        "adaptability",
+        "explainability"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Geleneksel bir sistemle karşılaştırıldığında, kendi kendine öğrenen bir yapay zekâ tabanlı sistem yeni verilerle karşılaştıkça performansını iyileştirmeyi sürdürebilir. Müfredat bu uyarlanabilirliğin hangi sonucunu belirtir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Temel gereksinimlerle süregelen uyumun korunması için sistemin sürekli izlenmesi gerekir."
+            },
+            {
+              "id": "b",
+              "text": "İzleme gereksiz hale gelir, çünkü kendi kendine öğrenen bir sistem gereksinimlerinden uzaklaşamaz."
+            },
+            {
+              "id": "c",
+              "text": "Her davranış değişikliği, geleneksel sistemlerde olduğu gibi manuel bir güncellemeyle uygulanmalıdır."
+            },
+            {
+              "id": "d",
+              "text": "Sistem kendini küçük adımlarla ayarladığı için iç işleyişinin yorumlanması kolaylaşır."
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredat, manuel güncelleme gerektiren statik geleneksel sistemleri kendi kendine öğrenebilen yapay zekâ tabanlı sistemlerle karşılaştırır. Uyarlanabilirliğin, sistemin temel gereksinimlerle uyumunu korumak için sürekli izleme gerektirdiğini ekler.",
+            "byOption": {
+              "a": "Doğru. Müfredat, uyarlanabilirliğin dinamik ortamlarda güçlü olduğunu ama temel gereksinimlerle süregelen uyumu sürdürmek için sürekli izleme de gerektirdiğini belirtir.",
+              "b": "Yanlış. Bu, müfredatın tersidir: sistem öğrendikçe değişmeye devam ettiği için temel gereksinimlerle uyumu sürekli izlenmelidir.",
+              "c": "Yanlış. Yeni bilgiyi içermek için manuel güncelleme gerekmesi, statik geleneksel sistemleri anlatır. Kendi kendine öğrenen bir yapay zekâ tabanlı sistem yeni verilerle karşılaştıkça kendiliğinden gelişebilir.",
+              "d": "Yanlış. Sınırlı açıklanabilirlik, özellikle milyarlarca parametreli derin öğrenme modellerinde, yapay zekâ tabanlı sistemlerin ayrı bir temel zorluğudur; kendi kendine öğrenme onları daha yorumlanabilir yapmaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "Compared with a conventional system, a self-learning AI-based system can keep improving as it meets new data. Which consequence of this adaptability does the syllabus state?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Continuous monitoring is needed to keep the system aligned with its core requirements over time."
+            },
+            {
+              "id": "b",
+              "text": "Monitoring becomes unnecessary, because a system that learns on its own cannot drift away from its requirements."
+            },
+            {
+              "id": "c",
+              "text": "Every behavior change must be applied by a manual update, as in a conventional system."
+            },
+            {
+              "id": "d",
+              "text": "Its internal workings become easy to interpret, because it adjusts itself in small steps."
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus contrasts static conventional systems, which need manual updates, with AI-based systems that can be self-learning. It adds that adaptability requires continuous monitoring so the system stays aligned with its core requirements.",
+            "byOption": {
+              "a": "Correct. The syllabus states that adaptability is powerful in dynamic environments but also requires continuous monitoring to maintain ongoing alignment with core requirements.",
+              "b": "Incorrect. This is the opposite of the syllabus: because the system keeps changing as it learns, its alignment with core requirements has to be monitored continuously.",
+              "c": "Incorrect. Needing manual updates to incorporate new knowledge describes conventional, static systems. A self-learning AI-based system can improve by itself as it encounters new data.",
+              "d": "Incorrect. Limited explainability is a separate key challenge of AI-based systems, especially deep learning models with billions of parameters; self-learning does not make them more interpretable."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0003",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.2",
+      "objectives": [
+        "AI-1.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "narrow-ai",
+        "general-ai",
+        "super-ai"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir yapay zekâ tabanlı sistem yüzleri çok iyi tanıyor, ancak açıkça yeniden eğitilmedikçe bir cümleyi çeviremiyor. Bu sistem hangi yapay zekâ türünü temsil eder?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Genel yapay zekâ; çünkü çoğu insanın başaramayacağı bir düzeyde tek bir zihinsel görevi yerine getirir."
+            },
+            {
+              "id": "b",
+              "text": "Dar yapay zekâ; çünkü sınırlı bir alanda çalışır ve öğrendiği işlevlerin ötesine genelleme yapamaz."
+            },
+            {
+              "id": "c",
+              "text": "Süper yapay zekâ; çünkü yüz tanıma görevinde insan yeteneğini zaten aşmıştır."
+            },
+            {
+              "id": "d",
+              "text": "Güçlü yapay zekâ; çünkü görevinde insan performansına ulaşmış, kullanımda bir sistemdir."
+            }
+          ],
+          "rationale": {
+            "summary": "Dar yapay zekâ, sınırlı bir alanda belirli görevleri yerine getirir ve öğrendiği işlevlerin ötesine genelleme yapamaz; bugün kullanılan tüm yapay zekâ sistemleri dar yapay zekâdır. Genel ve süper yapay zekâ varsayımsaldır.",
+            "byOption": {
+              "a": "Yanlış. Genel yapay zekâ, her yeni görev için yeniden eğitilmeye gerek kalmadan geniş bir görev yelpazesinde bilgiyi anlayabilen, öğrenebilen ve uygulayabilen sistemdir. Tek bir görevde başarılı olmak sistemi genel yapmaz.",
+              "b": "Doğru. Dar yapay zekâ belirli görevler için tasarlanmıştır. Müfredat tam olarak bu örneği kullanır: yüz tanıma sistemi, açıkça yeniden eğitilmedikçe dil çevirisi yapamaz.",
+              "c": "Yanlış. Süper yapay zekâ varsayımsaldır ve genel olarak insan zekâsını aşacak bir sistemi anlatır. Tek bir dar görevde çok iyi olmak bunu sağlamaz.",
+              "d": "Yanlış. Güçlü yapay zekâ, genel yapay zekânın diğer adıdır ve bugün hiçbir yapay zekâ tabanlı sistem buna sahip değildir. Kullanımdaki, göreve özgü bir sistem dar (zayıf) yapay zekâdır."
+            }
+          }
+        },
+        "en": {
+          "stem": "An AI-based system recognizes faces extremely well, but it cannot translate a sentence unless it is explicitly retrained to do so. Which type of AI does it represent?",
+          "options": [
+            {
+              "id": "a",
+              "text": "General AI, because it performs one intellectual task at a level that most humans cannot match."
+            },
+            {
+              "id": "b",
+              "text": "Narrow AI, because it works in a limited domain and cannot generalize beyond what it learned."
+            },
+            {
+              "id": "c",
+              "text": "Super AI, because it already exceeds human ability at the task of recognizing faces."
+            },
+            {
+              "id": "d",
+              "text": "Strong AI, because it is a deployed system that matches human performance on its task."
+            }
+          ],
+          "rationale": {
+            "summary": "Narrow AI performs specific tasks within a limited domain and cannot generalize beyond what it has learned; all AI systems deployed today are narrow AI. General AI and super AI are hypothetical.",
+            "byOption": {
+              "a": "Incorrect. General AI would be able to understand, learn and apply knowledge across a broad range of tasks without being retrained for each new task. Excelling at one task does not make a system general.",
+              "b": "Correct. Narrow AI is designed for specific tasks. The syllabus uses exactly this example: a face-recognition system cannot perform language translation unless it is explicitly retrained.",
+              "c": "Incorrect. Super AI is hypothetical and would surpass human intelligence in general. Being very good at one narrow task does not qualify.",
+              "d": "Incorrect. Strong AI is another name for general AI, which no AI-based system possesses today. A deployed, task-specific system is narrow (weak) AI."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0004",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.2",
+      "objectives": [
+        "AI-1.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "narrow-ai",
+        "general-ai",
+        "super-ai"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdaki tanımlardan hangisi süper yapay zekâya uyar?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Birçok alanda insan benzeri uyarlanabilirlikle, bir insanın yapabildiği zihinsel görevlerin çoğunu yerine getirebilen bir sistem."
+            },
+            {
+              "id": "b",
+              "text": "Yüksek düzeyde özerk, büyük ölçekli, üretken yapay zekâ modellerine dayanan; ancak göreve özgü kalan ve genel yapay zekânın çok yönlülüğüne ulaşmamış bir sistem."
+            },
+            {
+              "id": "c",
+              "text": "Öğrenmek için ihtiyaç duyduğu sınırsız İnternet erişimi sağlandığında ancak mümkün olabilecek bir sistem."
+            },
+            {
+              "id": "d",
+              "text": "İnsan müdahalesi ya da kontrolü olmadan kendini sürekli geliştiren ve hem insan zekâsını hem genel yapay zekâyı aşan bir sistem."
+            }
+          ],
+          "rationale": {
+            "summary": "Süper yapay zekâ, sistemin insan müdahalesi ya da kontrolü olmadan kendini sürekli geliştirdiği ve insan zekâsını ve genel yapay zekâyı aşacağı yapay zekâ biçimidir. Çeldiriciler genel yapay zekâyı, öncü (frontier) yapay zekâyı ve yanlış bir İnternet erişimi koşulunu anlatır.",
+            "byOption": {
+              "a": "Yanlış. Bu, geniş bir görev yelpazesinde bilgiyi uygulayacak olan genel yapay zekâyı (güçlü yapay zekâ) anlatır. Süper yapay zekâ, kendini geliştirerek ve insan zekâsını aşarak bunun ötesine geçer.",
+              "b": "Yanlış. Bu, müfredatın dar yapay zekânın bir alt kümesi saydığı öncü (frontier) yapay zekâyı anlatır; süper yapay zekânın bir biçimi değildir.",
+              "c": "Yanlış. Müfredat, süper yapay zekânın mümkün olması için İnternet erişiminin kesin olarak gerekmediğini, ancak yeteneklerini önemli ölçüde genişletebileceğini belirtir.",
+              "d": "Doğru. Bu, müfredattaki süper yapay zekâ (yapay süper zekâ) tanımıdır; genel yapay zekâdan buna geçişin varsayımsal anı genellikle teknolojik tekillik olarak adlandırılır."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which description matches super AI?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A system that can perform most intellectual tasks a human can, with human-like adaptability, across many domains."
+            },
+            {
+              "id": "b",
+              "text": "A highly autonomous, large-scale GenAI system that remains task-specific and has not reached the versatility of general AI."
+            },
+            {
+              "id": "c",
+              "text": "A system that can only become possible once it has unrestricted access to the Internet, which it needs to learn."
+            },
+            {
+              "id": "d",
+              "text": "A system that continuously improves itself without human intervention or control and surpasses human intelligence."
+            }
+          ],
+          "rationale": {
+            "summary": "Super AI is the form of AI in which a system continuously improves itself without human intervention or control and would surpass human intelligence and general AI. The distractors describe general AI, frontier AI and a false Internet-access condition.",
+            "byOption": {
+              "a": "Incorrect. This describes general AI (strong AI), which would apply knowledge across a broad range of tasks. Super AI goes beyond it by improving itself and surpassing human intelligence.",
+              "b": "Incorrect. This describes frontier AI, which the syllabus classes as a subset of narrow AI, not as a form of super AI.",
+              "c": "Incorrect. The syllabus states that Internet access is not strictly required for super AI to be possible, although it could significantly expand its capabilities.",
+              "d": "Correct. This is the syllabus definition of super AI (artificial superintelligence); the hypothetical transition to it from general AI is commonly called the technological singularity."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0005",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.3",
+      "objectives": [
+        "AI-1.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-approaches",
+        "unsupervised-learning",
+        "clustering"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir şehrin elinde, üzerinde etiket bulunmayan, binlerce trafik sensörünün okumaları var. Şehir, benzer trafik davranışı gösteren yol kesimlerinin gruplarını keşfedecek bir MÖ yaklaşımı istiyor. EN uygun yaklaşım hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Denetimsiz öğrenme; örneğin benzer sensör okumalarını bir arada gruplayan kümeleme algoritmalarıyla."
+            },
+            {
+              "id": "b",
+              "text": "Etiketsiz okumalara uygulanan denetimli öğrenme; örneğin doğrusal regresyon ya da karar ağaçlarıyla."
+            },
+            {
+              "id": "c",
+              "text": "Akıllı bir ajanın ortamıyla deneme-yanılma etkileşimleriyle gelişmesine dayanan takviyeli öğrenme."
+            },
+            {
+              "id": "d",
+              "text": "Mühendislerin yol kesimi gruplarını yapılandırılmış kurallar olarak kodladığı kural tabanlı akıl yürütme sistemi (uzman sistem)."
+            }
+          ],
+          "rationale": {
+            "summary": "Denetimsiz öğrenme, etiketsiz verideki örüntüleri, örneğin kümeleme ile ortaya çıkarır. Denetimli öğrenme etiketli veri gerektirir, takviyeli öğrenme bir ortamla etkileşimden öğrenir, kural tabanlı akıl yürütme ise bir MÖ yaklaşımı değildir.",
+            "byOption": {
+              "a": "Doğru. Denetimsiz öğrenme, etiketsiz verideki örüntüleri kümeleme gibi tekniklerle ortaya çıkarır; benzer yol kesimlerini gruplamak tam olarak bunu gerektirir.",
+              "b": "Yanlış. Denetimli öğrenme, tahmin ve sınıflandırma gibi görevler için etiketli veri kullanır. Buradaki okumaların etiketi yoktur ve amaç bilinen bir etiketi tahmin etmek değil, grupları keşfetmektir.",
+              "c": "Yanlış. Takviyeli öğrenme, en uygun davranışları bir ortamla etkileşimden öğrenir; şehrin elinde durağan bir okuma kümesi vardır ve bir ortamda eylemde bulunan bir ajan yoktur.",
+              "d": "Yanlış. Müfredat, kural tabanlı akıl yürütme sistemlerini (uzman sistemler) yapılandırılmış karar desteği için yapay zekânın diğer özelleşmiş teknolojileri arasında sayar. Gruplar önceden kurallara yazılırsa veriden keşfedilmiş olmaz; dolayısıyla bu bir MÖ yaklaşımı değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A city holds readings from thousands of road traffic sensors, with no labels attached. It wants an ML approach that discovers groups of road segments with similar traffic behavior. Which approach fits BEST?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Unsupervised learning, for example with clustering algorithms that group similar sensor readings together."
+            },
+            {
+              "id": "b",
+              "text": "Supervised learning, for example with linear regression or decision trees, on the unlabeled readings."
+            },
+            {
+              "id": "c",
+              "text": "Reinforcement learning, in which an intelligent agent improves through trial-and-error interactions with its environment."
+            },
+            {
+              "id": "d",
+              "text": "A rule-based reasoning system (expert system) in which engineers encode the road-segment groups as structured rules."
+            }
+          ],
+          "rationale": {
+            "summary": "Unsupervised learning uncovers patterns in unlabeled data, for example through clustering. Supervised learning needs labeled data, reinforcement learning learns through interaction with an environment, and rule-based reasoning is not an ML approach.",
+            "byOption": {
+              "a": "Correct. Unsupervised learning uncovers patterns in unlabeled data through techniques such as clustering, which is what grouping similar road segments requires.",
+              "b": "Incorrect. Supervised learning utilizes labeled data for tasks like prediction and classification. The readings here have no labels, and the goal is to discover groups, not to predict a known label.",
+              "c": "Incorrect. Reinforcement learning learns optimal behaviors from interaction with an environment; the city has a static set of readings and no agent acting in an environment.",
+              "d": "Incorrect. The syllabus lists rule-based reasoning systems, or expert systems, among the other specialized AI technologies, for structured decision support. Groups written into rules in advance are not discovered from the data, so this is not an ML approach."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0006",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.3",
+      "objectives": [
+        "AI-1.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "deep-learning",
+        "ml-approaches"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Derin öğrenme (DL) ile ilgili aşağıdaki ifadelerden hangisi DOĞRUDUR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Veriden öğrenmediği için MÖ'nün parçası olmayan, ayrı bir yapay zekâ dalıdır."
+            },
+            {
+              "id": "b",
+              "text": "Yapılandırılmış uzman bilgisiyle karar desteği sağlayan kural tabanlı akıl yürütme sistemlerinin adıdır."
+            },
+            {
+              "id": "c",
+              "text": "Karmaşık problemleri çözmek için derin sinir ağları kullanan MÖ yöntemlerinin bir alt kümesidir."
+            },
+            {
+              "id": "d",
+              "text": "Derin ağlar etiketli veriyle eğitilemediği için yalnızca denetimsiz öğrenmeyle sınırlıdır."
+            }
+          ],
+          "rationale": {
+            "summary": "Derin öğrenme, karmaşık problemleri çözmek için derin sinir ağları kullanan MÖ yöntemlerinin bir alt kümesidir; CNN, RNN ve dönüştürücüler (transformer) gibi mimarileri vardır. Çeldiriciler onu MÖ'nün dışına yerleştirir ya da başka teknolojilerin özelliklerini ona yükler.",
+            "byOption": {
+              "a": "Yanlış. DL veriden öğrenir ve müfredat onu MÖ'nün dışında bir dal olarak değil, MÖ yöntemlerinin bir alt kümesi olarak sınıflandırır.",
+              "b": "Yanlış. Kural tabanlı akıl yürütme sistemleri ya da uzman sistemler farklı, özelleşmiş bir yapay zekâ teknolojisidir; DL değildir.",
+              "c": "Doğru. Müfredattaki tanım budur: DL, derin sinir ağlarına dayanan MÖ yöntemlerinin bir alt kümesidir.",
+              "d": "Yanlış. Derin ağlar tek bir MÖ yaklaşımıyla sınırlı değildir ve etiketli veri kullanılmasını engelleyen bir şey yoktur; DL'yi tanımlayan, derin sinir ağlarının kullanılmasıdır."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which statement about deep learning (DL) is CORRECT?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It is a separate branch of AI that is not part of ML, because it does not learn from data."
+            },
+            {
+              "id": "b",
+              "text": "It is the term for rule-based reasoning systems that use structured expert knowledge for decision support."
+            },
+            {
+              "id": "c",
+              "text": "It is a subset of ML methods that relies on deep neural networks to solve complex problems."
+            },
+            {
+              "id": "d",
+              "text": "It is limited to unsupervised learning, because deep networks cannot be trained on labeled data."
+            }
+          ],
+          "rationale": {
+            "summary": "Deep learning is a subset of ML methods that uses deep neural networks to solve complex problems, with architectures such as CNN, RNN and transformers. The distractors place it outside ML or give it traits of other technologies.",
+            "byOption": {
+              "a": "Incorrect. DL does learn from data and the syllabus classes it as a subset of ML methods, not as a branch outside ML.",
+              "b": "Incorrect. Rule-based reasoning systems, or expert systems, are a different, specialized AI technology; they are not DL.",
+              "c": "Correct. This is the syllabus definition: DL is a subset of ML methods built on deep neural networks.",
+              "d": "Incorrect. Deep networks are not restricted to one ML approach, and nothing prevents labeled data from being used; the defining feature of DL is the use of deep neural networks."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0007",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.4",
+      "objectives": [
+        "AI-1.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "generative-ai",
+        "gan",
+        "diffusion-models"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Hangi üretken yapay zekâ teknolojisi, birbiriyle yarışan iki sinir ağı kullanarak son derece gerçekçi sentetik veri üretir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Difüzyon modeli"
+            },
+            {
+              "id": "b",
+              "text": "Dönüştürücü (transformer) tabanlı büyük dil modeli (LLM)"
+            },
+            {
+              "id": "c",
+              "text": "Tekrarlayan sinir ağı (RNN)"
+            },
+            {
+              "id": "d",
+              "text": "Üretken karşıt ağ (GAN)"
+            }
+          ],
+          "rationale": {
+            "summary": "Üretken karşıt ağlar (GAN), son derece gerçekçi sentetik veri üretmek için birbiriyle yarışan iki sinir ağı kullanır. Difüzyon modelleri ve dönüştürücüler diğer ana üretken yapay zekâ teknolojileridir ve farklı çalışır.",
+            "byOption": {
+              "a": "Yanlış. Bu gerçek bir üretken yapay zekâ teknolojisidir, ancak yüksek kaliteli çıktıyı gürültü ekleyip sonra gidererek üretir; yarışan iki ağla değil.",
+              "b": "Yanlış. Büyük dil modellerinin temelini oluşturan dönüştürücü modeller, tutarlı metin üretmek için öz-dikkat mekanizmalarına dayanır; yarışan bir ağ çiftine değil.",
+              "c": "Yanlış. RNN, ardışık veriler için bir derin öğrenme mimarisidir. Müfredat onu ana üretken yapay zekâ teknolojileri arasında saymaz ve yarışan bir ağ çifti içermez.",
+              "d": "Doğru. GAN'lar son derece gerçekçi sentetik veri üretmek için birbiriyle yarışan iki sinir ağı kullanır."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which GenAI technology creates highly realistic synthetic data by having two neural networks compete with each other?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Diffusion model"
+            },
+            {
+              "id": "b",
+              "text": "Transformer-based large language model (LLM)"
+            },
+            {
+              "id": "c",
+              "text": "Recurrent neural network (RNN)"
+            },
+            {
+              "id": "d",
+              "text": "Generative adversarial network (GAN)"
+            }
+          ],
+          "rationale": {
+            "summary": "Generative adversarial networks (GANs) use two neural networks in competition to create highly realistic synthetic data. Diffusion models and transformers are the other main GenAI technologies, each working differently.",
+            "byOption": {
+              "a": "Incorrect. Diffusion models are a real GenAI technology, but they produce high-quality outputs by gradually adding and then removing noise, not through two competing networks.",
+              "b": "Incorrect. Transformer models, which underpin LLM, rely on self-attention mechanisms to generate coherent text, not on a pair of competing networks.",
+              "c": "Incorrect. An RNN is a deep learning architecture for sequential data. The syllabus does not list it among the main GenAI technologies, and it has no competing pair of networks.",
+              "d": "Correct. GANs use two neural networks in competition to create highly realistic synthetic data."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0008",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.4",
+      "objectives": [
+        "AI-1.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "generative-ai",
+        "ethics",
+        "sustainability"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Üretken yapay zekânın ortaya çıkardığı toplumsal, etik ve çevresel kaygılara ilişkin aşağıdaki ifadelerden hangisi DOĞRUDUR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Üretken yapay zekâ yalnızca var olan içeriği analiz ettiği için deepfake ya da ikna edici sahte içerik üretmek için kullanılamaz."
+            },
+            {
+              "id": "b",
+              "text": "Büyük üretken yapay zekâ modelleri önemli hesaplama kaynağı ister; bu da yüksek enerji tüketimi ve büyük karbon ayak izi doğurur."
+            },
+            {
+              "id": "c",
+              "text": "İstihdam etkisinin ağırlıklı olarak el emeğine dayalı işlere yansıması beklenir; beyaz yakalı meslekler etkilenmez."
+            },
+            {
+              "id": "d",
+              "text": "Sentetik içeriğin kolayca üretilmesi, içerik yapay olduğu için gizlilik ve manipülasyonla ilgili riskleri azaltır."
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredat; kötüye kullanımı (deepfake, yanlış bilgi, dolandırıcılık), özellikle beyaz yakalı mesleklerde istihdam etkisini ve sürdürülebilirliği anar; çünkü büyük modellerin eğitilmesi ve çalıştırılması önemli ölçüde hesaplama kaynağı ve enerji tüketir.",
+            "byOption": {
+              "a": "Yanlış. Üretken yapay zekâ yeni içerik üretir ve müfredat deepfake, yanlış bilgi ve sahte içerik gibi kötüye kullanımı büyük bir kaygı olarak anar.",
+              "b": "Doğru. Sürdürülebilirlik müfredatın andığı kaygılardan biridir ve daha verimli model tasarımları ile daha yeşil altyapı çağrılarına yol açmıştır.",
+              "c": "Yanlış. Müfredata göre etki, üretken yapay zekâ yazma, tasarım, kodlama ve hukuki ya da tıbbi dokümantasyon gibi işleri otomatikleştirdiği için özellikle beyaz yakalı mesleklerde belirgindir.",
+              "d": "Yanlış. Müfredata göre sentetik içeriğin kolay üretilmesi gizlilik, güvenlik ve manipülasyonla ilgili riskleri artırır."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which statement about the societal, ethical and environmental concerns raised by GenAI is CORRECT?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Because GenAI only analyzes existing content, it cannot be used to create deepfakes or convincing fraudulent content."
+            },
+            {
+              "id": "b",
+              "text": "Large GenAI models need substantial computing resources, causing high energy consumption and a large carbon footprint."
+            },
+            {
+              "id": "c",
+              "text": "The impact on employment is expected to fall mainly on manual jobs, while white-collar professions are unaffected."
+            },
+            {
+              "id": "d",
+              "text": "The ease of producing synthetic content reduces risks related to privacy and manipulation, because the content is artificial."
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus names misuse (deepfakes, misinformation, fraud), employment impact, particularly on white-collar professions, and sustainability, because training and running large models consumes substantial computing resources and energy.",
+            "byOption": {
+              "a": "Incorrect. GenAI creates new content, and the syllabus names misuse such as deepfakes, misinformation and fraudulent content as a major concern.",
+              "b": "Correct. Sustainability is one of the concerns the syllabus names, and it has prompted calls for more efficient model designs and greener infrastructure.",
+              "c": "Incorrect. The syllabus says the impact is notable particularly among white-collar professions, as GenAI automates writing, design, coding and legal or medical documentation.",
+              "d": "Incorrect. The syllabus says the ease of producing synthetic content amplifies risks related to privacy, security and manipulation."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0009",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.5",
+      "objectives": [
+        "AI-1.1.5"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-hardware",
+        "gpu",
+        "cpu"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "MÖ modellerini eğitirken ve çalıştırırken GPU'lar neden genel amaçlı CPU'lardan tipik olarak daha iyi performans gösterir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "GPU'larda büyük ölçüde paralel, görece basit işlem için tasarlanmış binlerce çekirdek vardır."
+            },
+            {
+              "id": "b",
+              "text": "GPU'lar CPU'lardan daha yüksek saat hızında çalışır; böylece her işlem daha erken biter."
+            },
+            {
+              "id": "c",
+              "text": "GPU'lar, MÖ uygulamalarının tipik olarak ihtiyaç duyduğu ve CPU'larda bulunmayan karmaşık, yüksek duyarlıklı işlemleri destekler."
+            },
+            {
+              "id": "d",
+              "text": "GPU'larda yalnızca birkaç güçlü çekirdek vardır; bu da çok sayıda paralel görevi koordine etmenin getirdiği yükü ortadan kaldırır."
+            }
+          ],
+          "rationale": {
+            "summary": "GPU'lar, matris çarpımı gibi MÖ iş yüklerine uygun, büyük ölçüde paralel ve görece basit işlem için tasarlanmış binlerce çekirdeğe sahiptir. CPU'lar ise MÖ'nün tipik olarak ihtiyaç duymadığı karmaşık, yüksek duyarlıklı işlemleri yalnızca birkaç çekirdekte sunar.",
+            "byOption": {
+              "a": "Doğru. MÖ, örneğin matris çarpımı için büyük ölçüde paralel işlemden yararlanır. GPU'lar bunu binlerce çekirdekle sağlar; CPU'larda ise yalnızca birkaç çekirdek bulunur.",
+              "b": "Yanlış. Müfredat tersini söyler: CPU'lar genellikle daha yüksek saat hızında çalışır, yine de MÖ'de GPU'lar onlardan daha iyi performans gösterir.",
+              "c": "Yanlış. Karmaşık, yüksek duyarlıklı işlemleri sunan genel amaçlı CPU'lardır ve MÖ uygulamaları tipik olarak bunlara ihtiyaç duymaz.",
+              "d": "Yanlış. Yalnızca birkaç çekirdek sunan tipik olarak CPU'dur. GPU'larda binlerce çekirdek vardır ve MÖ bunları eşzamanlı kullanmaktan yararlanır."
+            }
+          }
+        },
+        "en": {
+          "stem": "Why do GPUs typically outperform general-purpose CPUs when training and running ML models?",
+          "options": [
+            {
+              "id": "a",
+              "text": "GPUs have thousands of cores built for massively parallel, relatively simple processing."
+            },
+            {
+              "id": "b",
+              "text": "GPUs run at higher clock speeds than CPUs, so each operation finishes sooner."
+            },
+            {
+              "id": "c",
+              "text": "GPUs support the complex, high-precision operations that ML applications typically need and that CPUs lack."
+            },
+            {
+              "id": "d",
+              "text": "GPUs have only a few powerful cores, which avoids the overhead of coordinating many parallel tasks."
+            }
+          ],
+          "rationale": {
+            "summary": "GPUs have thousands of cores designed for massively parallel, relatively simple processing, which suits ML workloads such as matrix multiplication. CPUs offer complex, high-precision operations that ML does not typically need, on only a few cores.",
+            "byOption": {
+              "a": "Correct. ML benefits from massively parallel processing, for example matrix multiplication. GPUs provide it with thousands of cores, while CPUs have only a few.",
+              "b": "Incorrect. The syllabus says the opposite: CPUs usually run at higher clock speeds, yet GPUs still outperform them for ML.",
+              "c": "Incorrect. Complex, high-precision operations are what general-purpose CPUs provide, and ML applications do not typically require them.",
+              "d": "Incorrect. It is the CPU that typically provides only a few cores. GPUs have thousands, and ML gains from using them concurrently."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0010",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.5",
+      "objectives": [
+        "AI-1.1.5"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-hardware",
+        "quantization"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir donanım tasarımcısı MÖ için, örneğin 32 bit yerine 4 bit kullanan, düşük duyarlıklı aritmetik (nicemleme) kullanıyor. Müfredat bu yaklaşımla hangi faydayı ilişkilendirir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Daha az bit yuvarlama gürültüsünü azalttığı için daha yüksek model doğruluğu."
+            },
+            {
+              "id": "b",
+              "text": "4 bitlik modeller özel donanım gerektirmediği için eğitim buluttan düşük seviyeli akıllı telefonlara taşınabilir."
+            },
+            {
+              "id": "c",
+              "text": "Daha hızlı işlem, daha düşük güç tüketimi ve azalmış bant genişliği gereksinimi."
+            },
+            {
+              "id": "d",
+              "text": "Daha az bit tek bir çekirdekte işlenebildiğinden büyük ölçüde paralel işlemeye duyulan ihtiyacın ortadan kalkması."
+            }
+          ],
+          "rationale": {
+            "summary": "Nicemleme hesaplamada daha az bit kullanır; bu da daha hızlı işlem, daha düşük güç tüketimi, daha küçük ve daha uygun maliyetli çipler ve azalmış bant genişliği gereksinimi sağlar.",
+            "byOption": {
+              "a": "Yanlış. Bu, düşük duyarlığı yüksek doğrulukla karıştırır. Daha az bit kullanmak sayısal duyarlığı bilerek düşürür; müfredat nicemlemeyi, MÖ'nün tipik olarak yüksek duyarlığa ihtiyaç duymaması nedeniyle hız ve verimlilik kazanma yolu olarak sunar.",
+              "b": "Yanlış. Müfredat düşük duyarlıklı aritmetiği daha hızlı işlem, daha düşük güç tüketimi, daha küçük ve daha uygun maliyetli çipler ve azalmış bant genişliğiyle ilişkilendirir; eğitimin cihazlara taşınmasıyla değil. Müfredatın kendi örneğinde bir konuşma tanıma modeli düşük seviyeli bir akıllı telefonda çalışabilir, ama eğitilmesi için bulut bilişim gerekebilir.",
+              "c": "Doğru. Bunlar müfredatın düşük duyarlıklı aritmetik için saydığı faydalardır; ayrıca daha küçük ve daha uygun maliyetli çipler de sağlar.",
+              "d": "Yanlış. Nicemleme paralelliğin yerini almaz. Müfredat, büyük ölçüde paralel işlemeyi ve düşük duyarlıklı aritmetiği MÖ'nün yararlandığı ayrı özellikler olarak sayar."
+            }
+          }
+        },
+        "en": {
+          "stem": "A hardware designer uses low-precision arithmetic (quantization) for ML, for example 4 bits instead of 32 bits. Which benefit does the syllabus associate with this approach?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Higher model accuracy, because fewer bits remove rounding noise from results."
+            },
+            {
+              "id": "b",
+              "text": "Training can move from the cloud to low-end smartphones, because 4-bit models need no specialized hardware."
+            },
+            {
+              "id": "c",
+              "text": "Faster processing, lower power consumption and reduced bandwidth requirements."
+            },
+            {
+              "id": "d",
+              "text": "No need for massively parallel processing, because fewer bits can be handled by a single core."
+            }
+          ],
+          "rationale": {
+            "summary": "Quantization uses fewer bits for computation, which gives faster processing, lower power consumption, smaller and more cost-effective chips, and reduced bandwidth requirements.",
+            "byOption": {
+              "a": "Incorrect. This confuses lower precision with higher accuracy. Using fewer bits lowers numerical precision on purpose; the syllabus presents quantization as a way to gain speed and efficiency, since ML does not typically need high precision.",
+              "b": "Incorrect. The syllabus links low-precision arithmetic to faster processing, lower power consumption, smaller and more cost-effective chips and reduced bandwidth, not to moving training onto devices. Its own example is a speech recognition model that may run on a low-end smartphone, although cloud computing may be needed to train it.",
+              "c": "Correct. These are benefits the syllabus lists for low-precision arithmetic, along with smaller and more cost-effective chips.",
+              "d": "Incorrect. Quantization does not replace parallelism. The syllabus lists massively parallel processing and low-precision arithmetic as separate things ML benefits from."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0011",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.6",
+      "objectives": [
+        "AI-1.1.6"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ai-development",
+        "ai-hosting",
+        "aiaas"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Kurum içinde yapay zekâ uzmanı bulunmayan bir kuruluşun, piyasaya hızla bir yapay zekâ yeteneği sunması gerekiyor. Müfredat bu durumda daha hızlı dağıtım ve daha kısa pazara çıkış süresiyle hangi seçeneği ilişkilendirir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kurum içi ya da dışarıdan sağlanan uzmanlardan oluşan bir ekiple özel, özelleştirilmiş bir yapay zekâ tabanlı sistem geliştirmek."
+            },
+            {
+              "id": "b",
+              "text": "Önceden eğitilmiş model ya da hizmet olarak yapay zekâ (AIaaS) biçiminde üçüncü taraf bir yapay zekâ tabanlı sistem edinmek."
+            },
+            {
+              "id": "c",
+              "text": "Büyük ölçekli bir modeli yüksek performanslı şirket içi sunucu kümelerinde sıfırdan eğitmek."
+            },
+            {
+              "id": "d",
+              "text": "Karar ağacı gibi küçük modelleri kişisel bilgisayarlarda prototipleyip sonra büyütmek."
+            }
+          ],
+          "rationale": {
+            "summary": "Üçüncü taraf yapay zekâ tabanlı sistemler genellikle önceden eğitilmiş model ya da hizmet olarak yapay zekâ (AIaaS) biçiminde gelir; bu da daha hızlı dağıtımı ve daha kısa pazara çıkış süresini sağlar. Özel sistemler daha iyi uyarlanabilir ama genellikle uzmanlaşmış beceri gerektirir.",
+            "byOption": {
+              "a": "Yanlış. Özel sistemler belirli gereksinimlere daha iyi uyarlanabilir, ancak geliştirilmeleri büyük olasılıkla kurum içi uzmanlar ya da dışarıdan sağlanan ekipler aracılığıyla uzmanlaşmış beceri gerektirir. Uzmanları dışarıdan sağlamak da özel bir sistem geliştirmek demektir; dağıtıma hazır bir sistem edinmek değildir.",
+              "b": "Doğru. Üçüncü taraf sistemler genellikle önceden eğitilmiş model ya da AIaaS olarak gelir; bu, daha hızlı dağıtımı ve daha kısa pazara çıkış süresini sağlar. Özel bir sistem geliştirmek ise büyük olasılıkla uzmanlaşmış beceri gerektirir.",
+              "c": "Yanlış. Bu, büyük ölçekli bir modelin yerel olarak geliştirilmesidir; bunun için yüksek performanslı şirket içi sunucu kümeleri, enerji, soğutma ve donanım maliyetleriyle birlikte gerekli hale gelir. Bu bir geliştirme yoludur; müfredatın daha hızlı dağıtımla ilişkilendirdiği seçenek değildir.",
+              "d": "Yanlış. Küçük modelleri kişisel bilgisayarlarda geliştirmek, müfredata göre doğrudan kontrol ve gizlilik sağlayan yerel geliştirmedir; ölçeklemeden önce yerelde prototip geliştirmek ise hibrit bir yaklaşımdır. İkisi de hazır bir sistem edinmenin değil, sistem oluşturmanın yollarıdır."
+            }
+          }
+        },
+        "en": {
+          "stem": "An organization with no in-house AI experts needs an AI-based capability on the market quickly. Which option does the syllabus associate with faster deployment and quicker time-to-market in this situation?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Developing a private, customized AI-based system with a team of in-house or outsourced experts."
+            },
+            {
+              "id": "b",
+              "text": "Acquiring a third-party AI-based system, as a pretrained model or as AI as a Service (AIaaS)."
+            },
+            {
+              "id": "c",
+              "text": "Training a large-scale model from scratch on high-performance on-premises server clusters."
+            },
+            {
+              "id": "d",
+              "text": "Prototyping small models such as decision trees on personal computers, then scaling them up later."
+            }
+          ],
+          "rationale": {
+            "summary": "Third-party AI-based systems typically come as pretrained models or AIaaS, which enables faster deployment and quicker time-to-market. Private systems can be better tailored but usually need specialized skills.",
+            "byOption": {
+              "a": "Incorrect. Private systems can be better tailored to specific requirements, but their development will likely require specialized skills, either through in-house experts or outsourced teams. Outsourcing the experts still means developing a private system, not acquiring one that is ready to deploy.",
+              "b": "Correct. Third-party systems typically come as pretrained models or AIaaS, which enables faster deployment and quicker time-to-market, whereas developing a private system will likely require specialized skills.",
+              "c": "Incorrect. This is local development of a large-scale model, for which high-performance on-premises server clusters become necessary, with their energy, cooling and hardware costs. It is a way of developing a model, not the option the syllabus links to faster deployment.",
+              "d": "Incorrect. Developing small models on personal computers is local development, which the syllabus says enables direct control and privacy; prototyping locally before scaling up is a hybrid approach. Both are ways of building a system, not of acquiring a ready one."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0012",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.6",
+      "objectives": [
+        "AI-1.1.6"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "ai-development",
+        "ai-hosting",
+        "cloud"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Yapay zekâ modellerinin geliştirilmesi ve barındırılması açısından genel (public) ve özel (private) bulutları doğru karşılaştıran ifade hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Özel bulut, kullandıkça öde fiyatlandırması ve kolay ölçeklenmeyle ilk donanım yatırımını sınırlar; genel bulut gelişmiş güvenlik ve gizlilik sunar ama daha fazla peşin yatırım ister."
+            },
+            {
+              "id": "b",
+              "text": "İkisi de aynı peşin yatırımı gerektirir; bu yüzden seçim yalnızca modelin boyutuna bağlıdır."
+            },
+            {
+              "id": "c",
+              "text": "Genel bulut, kullandıkça öde fiyatlandırmasıyla ilk donanım yatırımını sınırlar; özel bulut gelişmiş güvenlik ve gizlilik sunar ama daha fazla peşin yatırım ister."
+            },
+            {
+              "id": "d",
+              "text": "Hiçbiri yapay zekâ modellerini barındıramaz; barındırma yalnızca yerel ya da şirket içi kurulumlarda mümkündür."
+            }
+          ],
+          "rationale": {
+            "summary": "Genel bulutlar önceden yapılandırılmış ortamlar ve kullandıkça öde fiyatlandırması sunar; bu da ilk donanım yatırımını sınırlar. Özel bulutlar gelişmiş güvenlik ve gizlilik sunabilir, ancak bu kontrol daha yüksek bir peşin altyapı yatırımı gerektirir.",
+            "byOption": {
+              "a": "Yanlış. Özellikler yer değiştirmiş. Kullandıkça öde fiyatlandırması genel bulutlara, gelişmiş güvenlik ve gizlilik ile daha yüksek peşin maliyet ise özel bulutlara aittir.",
+              "b": "Yanlış. Müfredat bunların maliyet profillerini ayırır; model boyutu da bütçe, güvenlik ve veri gizliliği, dağıtım ihtiyaçları ve düzenlemeler gibi birkaç faktörden yalnızca biridir.",
+              "c": "Doğru. Bu, müfredatla iki yönden de uyuşur: genel bulut önceden yapılandırılmış ortamlar, kullandıkça öde fiyatlandırması ve kolay ölçeklenme demektir; özel bulutun kontrolü ise daha büyük bir peşin altyapı yatırımıyla gelir.",
+              "d": "Yanlış. Müfredat, yapay zekâ modellerinin yerel kurulumlardan genel ya da özel bulut tabanlı platformlara uzanan çeşitli ortamlarda barındırılabildiğini söyler."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which statement correctly compares public and private clouds for developing and hosting AI models?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A private cloud limits the initial hardware investment through pay-as-you-go pricing and easy scaling; a public cloud offers enhanced security and privacy but needs more upfront investment."
+            },
+            {
+              "id": "b",
+              "text": "Both need the same upfront investment, so the choice depends only on the size of the model."
+            },
+            {
+              "id": "c",
+              "text": "A public cloud limits the initial hardware investment through pay-as-you-go pricing; a private cloud offers enhanced security and privacy but needs more upfront investment."
+            },
+            {
+              "id": "d",
+              "text": "Neither can host AI models, because hosting is possible only on local or on-premises setups."
+            }
+          ],
+          "rationale": {
+            "summary": "Public clouds offer pre-configured environments and pay-as-you-go pricing, which limits the initial hardware investment. Private clouds can offer enhanced security and privacy, but this control needs a greater upfront infrastructure investment.",
+            "byOption": {
+              "a": "Incorrect. The attributes are swapped. Pay-as-you-go pricing belongs to public clouds, and the enhanced security and privacy with higher upfront cost belongs to private clouds.",
+              "b": "Incorrect. The syllabus distinguishes their cost profiles, and model size is only one of several factors, alongside budget, security and privacy, deployment needs and regulations.",
+              "c": "Correct. This matches the syllabus on both sides: public cloud means pre-configured environments, pay-as-you-go pricing and easy scaling, while private cloud control comes with a greater upfront infrastructure investment.",
+              "d": "Incorrect. The syllabus says AI models can be hosted in environments from local setups to cloud-based platforms, public or private."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0013",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.7",
+      "objectives": [
+        "AI-1.1.7"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-frameworks",
+        "evaluation"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekibin MÖ geliştirme çerçevesi, eğitilmiş bir sınıflandırma modelinin görülmemiş veri üzerindeki doğruluk, hassasiyet ve hatırlama değerlerini ölçmek için araçlar sunuyor. Bu, çerçevenin hangi tipik işlevselliğidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Veri işleme"
+            },
+            {
+              "id": "b",
+              "text": "Eğitim ve optimizasyon"
+            },
+            {
+              "id": "c",
+              "text": "Dağıtım"
+            },
+            {
+              "id": "d",
+              "text": "Değerlendirme"
+            }
+          ],
+          "rationale": {
+            "summary": "Değerlendirme işlevselliği, eğitilmiş modelin görülmemiş veri üzerinde ne kadar iyi performans gösterdiğini değerlendirmeye yarayan araçlar sunar; örneğin sınıflandırma için doğruluk, hassasiyet ve hatırlama ya da MÖ regresyonu için hata oranları.",
+            "byOption": {
+              "a": "Yanlış. Veri işleme, veriyi yükleyerek, ön işleyerek ve yöneterek hazırlar; eğitilmiş modelin performansını değerlendirmez.",
+              "b": "Yanlış. Eğitim ve optimizasyon, istenen görevdeki performansı iyileştirmek için parametreleri ayarlar; görülmemiş veri üzerindeki performansın ölçülmesi değildir.",
+              "c": "Yanlış. Dağıtım, eğitilmiş modeli gerçek dünyada kullanılabilir kılar; modelin ne kadar iyi performans gösterdiğini ölçmez.",
+              "d": "Doğru. Müfredat, görülmemiş veri üzerinde doğruluk, hassasiyet ve hatırlama ölçmeyi Değerlendirme işlevselliği olarak sayar."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team's ML development framework offers tools to measure accuracy, precision and recall of a trained classification model on unseen data. Which typical framework functionality is this?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Data handling"
+            },
+            {
+              "id": "b",
+              "text": "Training and optimization"
+            },
+            {
+              "id": "c",
+              "text": "Deployment"
+            },
+            {
+              "id": "d",
+              "text": "Evaluation"
+            }
+          ],
+          "rationale": {
+            "summary": "Evaluation functionality offers tools to assess how well the trained model performs on unseen data, for example accuracy, precision and recall for classification, or error rates for ML regression.",
+            "byOption": {
+              "a": "Incorrect. Data handling prepares the data, by loading, preprocessing and managing it, rather than assessing the trained model's performance.",
+              "b": "Incorrect. Training and optimization adjusts parameters to improve performance on the desired task; it is not the measurement of performance on unseen data.",
+              "c": "Incorrect. Deployment makes the trained model usable in real-world settings; it does not measure how well the model performs.",
+              "d": "Correct. The syllabus lists measuring accuracy, precision and recall on unseen data as the Evaluation functionality."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0014",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.7",
+      "objectives": [
+        "AI-1.1.7"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-frameworks",
+        "api-abstraction"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir MÖ geliştirme çerçevesi alt düzey bir API sunuyor. Üst düzey bir API'ye kıyasla bu, onu kullanan geliştiriciler için ne anlama gelir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Model kurma üzerinde daha fazla kontrol ve daha fazla kodlama uzmanlığı gereksinimi."
+            },
+            {
+              "id": "b",
+              "text": "Daha basit model oluşturma ve daha az özelleştirme seçeneği."
+            },
+            {
+              "id": "c",
+              "text": "Model kurma üzerinde daha fazla kontrol ve daha düşük kodlama uzmanlığı gereksinimi."
+            },
+            {
+              "id": "d",
+              "text": "Daha basit model oluşturma ve daha fazla özelleştirme seçeneği."
+            }
+          ],
+          "rationale": {
+            "summary": "Alt düzey API geliştiricilere model kurma üzerinde daha fazla kontrol verir ama daha fazla kodlama uzmanlığı gerektirir; üst düzey API model oluşturmayı basitleştirir ama daha az özelleştirme seçeneği sunar.",
+            "byOption": {
+              "a": "Doğru. Müfredat alt düzey bir API'yi böyle tanımlar.",
+              "b": "Yanlış. Bu, özelleştirmeyi basitlikle takas eden üst düzey API'yi anlatır.",
+              "c": "Yanlış. Bu, alt düzey API'nin faydasını tutup bedelini düşürür. Müfredat model kurma üzerindeki ek kontrolü daha az değil, daha fazla kodlama uzmanlığıyla birlikte anar.",
+              "d": "Yanlış. Bu, iki avantajı birden ileri sürer. Müfredatta basitleşen model oluşturma üst düzey API'den gelir ve bedeli daha fazla değil, daha az özelleştirme seçeneğidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "An ML development framework exposes a lower-level API. Compared with a higher-level API, what does this mean for the developers who use it?",
+          "options": [
+            {
+              "id": "a",
+              "text": "More control over model building, with more coding expertise required."
+            },
+            {
+              "id": "b",
+              "text": "Simpler model creation, with fewer customization options offered."
+            },
+            {
+              "id": "c",
+              "text": "More control over model building, with less coding expertise required."
+            },
+            {
+              "id": "d",
+              "text": "Simpler model creation, with more customization options offered."
+            }
+          ],
+          "rationale": {
+            "summary": "A lower-level API gives developers more control over model building but requires more coding expertise; a higher-level API simplifies model creation but offers fewer customization options.",
+            "byOption": {
+              "a": "Correct. This is how the syllabus describes a lower-level API.",
+              "b": "Incorrect. This describes a higher-level API, which trades customization for simplicity.",
+              "c": "Incorrect. This keeps the benefit of a lower-level API and drops its cost. The syllabus pairs the extra control over model building with more coding expertise, not less.",
+              "d": "Incorrect. This claims both advantages at once. In the syllabus, simplified model creation comes from a higher-level API and is paid for with fewer customization options, not more."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0015",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.8",
+      "objectives": [
+        "AI-1.1.8"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "regulations",
+        "eu-ai-act"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdaki ifadelerden hangisi AB Yapay Zekâ Yasası'nın (EU AI Act) yaklaşımını anlatır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Riski ne olursa olsun her yapay zekâ tabanlı sisteme tek ve aynı gereksinim kümesini uygular."
+            },
+            {
+              "id": "b",
+              "text": "Sistemleri riske göre sınıflar; yüksek riskli olanlara titiz test gibi sıkı gereksinimler getirir."
+            },
+            {
+              "id": "c",
+              "text": "Hükümetlerin kendi stratejileri için pusula olarak kullandığı, yaptırımı olmayan gönüllü ilkelerden oluşur."
+            },
+            {
+              "id": "d",
+              "text": "ISO ve IEEE tarafından yayımlanan, yapay zekâ tabanlı sistemlerin nasıl test edileceğini belirleyen teknik bir standarttır."
+            }
+          ],
+          "rationale": {
+            "summary": "AB Yapay Zekâ Yasası risk bazlı bir yaklaşım benimser: yapay zekâ tabanlı sistemler asgari riskten kabul edilemez riske kadar kategorilere ayrılır ve yüksek riskli sistemler titiz test, veri yönetişimi ve insan gözetimini kapsayan sıkı gereksinimlerle karşılaşır.",
+            "byOption": {
+              "a": "Yanlış. Yasa risk bazlıdır: gereksinimler asgari riskten kabul edilemez riske kadar kategoriye göre uyarlanır.",
+              "b": "Doğru. Müfredatın anlattığı risk bazlı yaklaşım budur; gereksinimler risk kategorisine göre uyarlanır.",
+              "c": "Yanlış. Bu, OECD Yapay Zekâ İlkeleri gibi bağlayıcı olmayan düzenleme (soft law) araçlarını anlatır. AB Yapay Zekâ Yasası, uymamanın önemli mali cezalar doğurduğu bir düzenlemedir.",
+              "d": "Yanlış. Teknik spesifikasyonlar ve test rehberliği, örneğin ISO/IEC TR 29119-11, ISO ve IEEE gibi standart kuruluşlarından gelir. AB Yapay Zekâ Yasası bir düzenleyici çerçevedir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which statement describes the approach of the EU AI Act?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It applies one uniform set of requirements to every AI-based system, whatever its risk."
+            },
+            {
+              "id": "b",
+              "text": "It categorizes systems by risk and sets stringent requirements, such as rigorous testing, for high-risk ones."
+            },
+            {
+              "id": "c",
+              "text": "It consists of voluntary principles without enforcement, which governments use as a compass for their own strategies."
+            },
+            {
+              "id": "d",
+              "text": "It is a technical standard that specifies how to test AI-based systems, issued by ISO and IEEE."
+            }
+          ],
+          "rationale": {
+            "summary": "The EU AI Act takes a risk-based approach: AI-based systems are categorized from minimal to unacceptable risk, and high-risk systems face stringent requirements covering rigorous testing, data governance and human oversight.",
+            "byOption": {
+              "a": "Incorrect. The Act is risk-based: requirements are tailored to the category, from minimal to unacceptable risk.",
+              "b": "Correct. This is the risk-based approach the syllabus describes, with requirements tailored to the risk category.",
+              "c": "Incorrect. This describes soft law instruments such as the OECD AI Principles. The EU AI Act is a regulation with substantial financial penalties for non-compliance.",
+              "d": "Incorrect. Technical specifications and testing guidance, such as ISO/IEC TR 29119-11, come from standards bodies like ISO and IEEE. The EU AI Act is a regulatory framework."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0016",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 1,
+      "section": "1.1",
+      "syllabusRef": "§1.1.8",
+      "objectives": [
+        "AI-1.1.8"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "standards",
+        "iso-iec-29119-11",
+        "regulations"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "ISO/IEC TR 29119-11 gibi teknik standartlar yapay zekâ yönetişiminde hangi rolü oynar?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Üst düzey beklentileri somut spesifikasyonlara ve en iyi uygulamalara dönüştürerek politika ile uygulama arasında köprü kurarlar."
+            },
+            {
+              "id": "b",
+              "text": "Küresel cironun belirli bir yüzdesine dayalı para cezaları getiren, yasal olarak bağlayıcı yasalardır."
+            },
+            {
+              "id": "c",
+              "text": "Bir standarda uymak yapay zekâ tabanlı sistemin adil ve emniyetli olmasını garanti ettiği için düzenlemeleri gereksiz kılar."
+            },
+            {
+              "id": "d",
+              "text": "Yayımlandıktan sonra sabittirler; bu yüzden sertifikalı bir yapay zekâ tabanlı sistemin onlara karşı yeniden değerlendirilmesi gerekmez."
+            }
+          ],
+          "rationale": {
+            "summary": "ISO ve IEEE gibi kuruluşların teknik standartları üst düzey beklentileri somut spesifikasyonlara ve en iyi uygulamalara dönüştürür; politika ile uygulama arasında köprü kurar. ISO/IEC TR 29119-11, yapay zekâ tabanlı sistemlerin testi için rehberlik sunar ve bu, düzenlemelere uyumun gösterilmesine yardımcı olur.",
+            "byOption": {
+              "a": "Doğru. Müfredat teknik standartları politika ile uygulama arasında köprü olarak tanımlar ve ISO/IEC TR 29119-11'deki test rehberliğini düzenlemelere uyumu göstermenin kritik bir unsuru olarak adlandırır.",
+              "b": "Yanlış. Küresel ciroya bağlı önemli mali cezalar, bir düzenleme olan AB Yapay Zekâ Yasası'na atfedilir. Teknik standartlar spesifikasyon ve uygulama sağlar, yasal ceza değil.",
+              "c": "Yanlış. Standartlar düzenlemeyi destekler; onun yerine geçmez. Müfredat, ideal olarak düzenlemelere ve standartlara birlikte uyumun yapay zekâ tabanlı sistemlerin emniyetli ve adil olmasını güvence altına alması gerektiğini söyler. \"İdeal olarak\" \"her zaman\" demek değildir ve bir standarda uymak düzenlemeyi gereksiz kılmaz.",
+              "d": "Yanlış. Müfredat, yapay zekânın dinamik doğası nedeniyle düzenlemelerin ve standartların geçerliliklerini korumak için düzenli olarak gözden geçirilip güncellenmesi gerektiğini vurgular."
+            }
+          }
+        },
+        "en": {
+          "stem": "What role do technical standards such as ISO/IEC TR 29119-11 play in the governance of AI?",
+          "options": [
+            {
+              "id": "a",
+              "text": "They turn high-level aspirations into concrete specifications and best practices, bridging policy and practice."
+            },
+            {
+              "id": "b",
+              "text": "They are legally binding laws that impose fines based on a percentage of an organization's global turnover."
+            },
+            {
+              "id": "c",
+              "text": "They make regulations unnecessary, because following a standard guarantees an AI-based system is fair and safe."
+            },
+            {
+              "id": "d",
+              "text": "They are fixed once published, so a certified AI-based system never needs to be re-assessed against them."
+            }
+          ],
+          "rationale": {
+            "summary": "Technical standards from organizations such as ISO and IEEE translate high-level aspirations into concrete specifications and best practices, bridging policy and practice. ISO/IEC TR 29119-11 gives guidance on testing AI-based systems, which helps demonstrate regulatory compliance.",
+            "byOption": {
+              "a": "Correct. The syllabus describes technical standards as bridging policy and practice, and calls the testing guidance in ISO/IEC TR 29119-11 a critical element in demonstrating regulatory compliance.",
+              "b": "Incorrect. Substantial financial penalties tied to global turnover are attributed to the EU AI Act, a regulation. Technical standards provide specifications and practices, not legal penalties.",
+              "c": "Incorrect. Standards support regulation; they do not replace it. The syllabus says that, ideally, compliance with regulations and standards together should guarantee that AI-based systems are safe and fair. \"Ideally\" is not \"always\", and following a standard does not make regulation unnecessary.",
+              "d": "Incorrect. The syllabus stresses that, given the dynamic nature of AI, regulations and standards must be regularly reviewed and updated to remain relevant."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    }
+  ]
+}

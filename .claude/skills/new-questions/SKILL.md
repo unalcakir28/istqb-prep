@@ -70,8 +70,8 @@ Publishing records a reviewer, which is an assertion about a human. Ask who the
 reviewer is; never invent one, and never infer it from git config.
 
 ```bash
-yarn publish:questions --reviewer "<name>" --chunk <chunk> --dry-run
-yarn publish:questions --reviewer "<name>" --chunk <chunk>
+yarn publish:questions --reviewer "<name>" --cert ctfl-v4.0.1 --chunk <chunk> --dry-run
+yarn publish:questions --reviewer "<name>" --cert ctfl-v4.0.1 --chunk <chunk>
 ```
 
 Run the dry run first and show its output. This script is the only path:

@@ -1,0 +1,463 @@
+{
+  "chunk": "ch03",
+  "chapter": 3,
+  "dataVersion": "2.0",
+  "lessons": [
+    {
+      "objective": "AI-3.1.1",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§3.1.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Makine öğreniminin biçimleri",
+          "paragraphs": [
+            "Makine öğrenimi (MÖ) algoritmaları üç ana biçime ayrılır: denetimli öğrenme, denetimsiz öğrenme ve takviyeli öğrenme. Biçimi belirleyen şey algoritmanın adı değil, modelin neyden öğrendiğidir: etiketli veriden, etiketsiz veriden ya da ortamıyla etkileşimden.",
+            "Denetimli öğrenmede her girdi kümesinin karşılığında bir çıktı etiketi vardır ve model girdiyle çıktı arasındaki eşlemeyi öğrenir. Çıktı önceden tanımlı sınıflardan biriyse bu sınıflandırmadır (e-postanın istenmeyen posta olup olmadığı). Çıktı sürekli bir sayısal değerse bu MÖ regresyonudur (yaşam tarzı verisinden yaş tahmini). Denetimsiz öğrenmede etiket yoktur; model benzer girdileri ortak özniteliklere göre gruplar. Benzerliğe göre gruplama kümelemedir (müşteri kesimleri), veri nitelikleri arasındaki ilişkileri bulmak ilişkilendirmedir (satın alma örüntülerinden ürün önerisi).",
+            "Takviyeli öğrenmede yapay zekâ tabanlı sistem (akıllı ajan) bir veri setinden değil, ortamıyla etkileşerek öğrenir: eylemlerinin sonucuna göre ödül ya da ceza alır. Burada zorluklar ortamı kurmak, ödül fonksiyonunu tasarlamak ve hedefe götüren en iyi stratejiyi seçmektir. Verilen bir senaryoda biçimi ayırt etmek için şunu sorun: veri etiketli mi, etiketsiz mi, yoksa hiç veri seti yok da ortamında eylemde bulunan bir ajan mı var?"
+          ],
+          "keyPoints": [
+            "Denetimli öğrenme etiketli veriyle çalışır ve sınıflandırma ile MÖ regresyonuna ayrılır.",
+            "Sınıflandırma çıktıyı önceden tanımlı sınıflara atar; MÖ regresyonu sürekli sayısal değer tahmin eder.",
+            "Denetimsiz öğrenme etiketsiz veriyle çalışır ve kümeleme ile ilişkilendirmeye ayrılır.",
+            "Takviyeli öğrenmede ajan ortamıyla etkileşir ve ödül ya da ceza ile bir veri setinden değil deneyimden öğrenir.",
+            "Takviyeli öğrenmenin zorlukları ortamı kurmak, ödül fonksiyonunu tasarlamak ve en iyi stratejiyi seçmektir."
+          ],
+          "commonMistakes": [
+            "MÖ regresyonu, ISTQB'nin diğer müfredatlarındaki regresyon testiyle karıştırılır. MÖ bağlamında regresyon, sürekli sayısal değer tahmin etmektir; diğer müfredatlardaki regresyon ise yazılım değişikliklerinin değişimle ilgili hatalara yol açması sorunudur.",
+            "Sayı tahmin eden her problemin denetimsiz olduğu sanılır. Sayısal bir etiketi öğrenmek denetimli öğrenmedir; denetimsiz öğrenmeyi belirleyen etiketin hiç bulunmamasıdır.",
+            "Takviyeli öğrenmede de bir eğitim veri setinin bulunduğu varsayılır. Ajan deneyimden öğrenir ve geri bildirim olarak ödül ya da ceza alır."
+          ]
+        },
+        "en": {
+          "title": "The forms of machine learning",
+          "paragraphs": [
+            "Machine learning (ML) algorithms fall into three forms: supervised, unsupervised and reinforcement learning. What decides the form is not the name of the algorithm but what the model learns from: labeled data, unlabeled data, or interaction with an environment.",
+            "In supervised learning every set of inputs has a corresponding output label and the model learns the mapping from inputs to outputs. If the output is one of a set of predefined classes, the task is classification (is this email spam or not). If the output is a continuous numerical value, the task is ML regression (estimating age from lifestyle data). In unsupervised learning there are no labels and the model groups similar inputs by shared features. Grouping by similarity is clustering (customer segments); finding relationships among data attributes is association (recommending products from purchasing patterns).",
+            "In reinforcement learning the AI-based system (an intelligent agent) learns not from a dataset but by interacting with its environment, receiving rewards or penalties for the outcome of its actions. The difficulties here are setting up the environment, designing the reward function and selecting the best strategy for the goal. To tell the forms apart in a given scenario, ask: is the data labeled, is it unlabeled, or is there no dataset at all but an agent acting in an environment?"
+          ],
+          "keyPoints": [
+            "Supervised learning works with labeled data and divides into classification and ML regression.",
+            "Classification assigns inputs to predefined classes; ML regression predicts a continuous numerical value.",
+            "Unsupervised learning works with unlabeled data and divides into clustering and association.",
+            "In reinforcement learning an agent interacts with its environment and learns from rewards or penalties, from experience rather than from a dataset.",
+            "The challenges of reinforcement learning are setting up the environment, designing the reward function and selecting the best strategy."
+          ],
+          "commonMistakes": [
+            "ML regression is confused with regression testing as used in other ISTQB syllabi. In ML, regression means predicting a continuous numerical value; in other syllabi it is the problem of software modifications causing change-related defects.",
+            "Any problem that predicts a number is taken to be unsupervised. Learning a numerical label is supervised learning; what makes learning unsupervised is that no label exists at all.",
+            "Reinforcement learning is assumed to have a training dataset too. The agent learns from experience, receiving rewards or penalties as feedback."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-3.1.2",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§3.1.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "MÖ iş akışı",
+          "paragraphs": [
+            "MÖ iş akışı, bir MÖ sisteminin hedeflerin anlaşılmasından izlemeye kadar geçtiği etkinliklerin mantıksal dizisidir: hedefleri anlama, çerçeve seçme, algoritmayı seçme ve oluşturma, veriyi hazırlama ve test etme, modeli eğitme, değerlendirme, ayarlama, test etme, dağıtım, kullanma, izleme ve ayarlama. Pratikte bu dizi bir kez izlenip bırakılmaz; adımlar yinelemeli olarak tekrarlanır.",
+            "Temel ayrım model üretimi ile model testi arasındadır. Eğitme, değerlendirme ve ayarlama birlikte model üretimini oluşturur. Eğitimde seçilen algoritma eğitim verisiyle modeli eğitir; model yapısını belirleyen parametreler (ör. katman sayısı) model hiperparametreleri, eğitimi yöneten parametreler (ör. yineleme sayısı) algoritma hiperparametreleridir. Değerlendirmede model, kararlaştırılan MÖ fonksiyonel performans metriklerine göre doğrulama veri setiyle ölçülür; ayarlamada bu sonuçlarla hiperparametreler düzeltilir ve model yeniden eğitilir. Kabul edilebilir bir model çıktığında ise bağımsız bir test veri setiyle test edilir. Test sonuçları değerlendirme sonuçlarıyla karşılaştırılır; belirgin biçimde düşükse model üretimine, hatta veri hazırlığına geri dönmek gerekebilir.",
+            "Akış dağıtımla bitmez. Dağıtılan model genellikle dağıtım için yeniden mühendislikten geçirilir ve kabul kriterlerini hâlâ karşılayıp karşılamadığı açısından test edilir. Kullanım sırasında model amaçlanan performanstan sapabilir (kayma); bu yüzden işletimdeki model düzenli olarak kabul kriterlerine göre değerlendirilir ve gerekirse yeni verilerle, yeni hiperparametrelerle ya da her ikisiyle yeniden eğitilir. Model çoğu zaman MÖ olmayan bileşenlerle entegre edilmek zorunda olduğundan entegrasyon, sistem ve kabul test seviyeleri de gerekebilir."
+          ],
+          "keyPoints": [
+            "Eğitme, değerlendirme ve ayarlama birlikte model üretimini oluşturur.",
+            "Değerlendirme doğrulama veri setini kullanır ve sonuçları ayarlamaya girdi olur; model testi ise bağımsız bir test veri setini kullanır.",
+            "Model hiperparametreleri model yapısını, algoritma hiperparametreleri eğitimi belirler.",
+            "Test sonuçları değerlendirme sonuçlarından belirgin biçimde düşükse model üretimine ya da veri hazırlığına dönmek gerekebilir.",
+            "Dağıtılan model kabul kriterlerine karşı yeniden test edilir; işletimde kayma izlenir ve gerekirse model yeniden eğitilir.",
+            "İş akışı mantıksal bir dizidir; uygulamada yinelemeli olarak tekrarlanır."
+          ],
+          "commonMistakes": [
+            "Değerlendirme ile test aynı şey sanılır. Değerlendirme doğrulama veri setiyle yapılır ve ayarlamayı besler; test, ayarlanmış model üzerinde bağımsız test veri setiyle yapılır ve kararlaştırılan MÖ fonksiyonel performans kriterlerinin karşılandığını doğrular.",
+            "Model dağıtıldığında işin bittiği varsayılır. Dağıtılan model yeniden test edilir ve işletim boyunca kabul kriterlerine göre izlenir, çünkü model beklenen performanstan sapabilir.",
+            "Akışın tek yönlü olduğu düşünülür. Şekildeki sıra mantıksaldır; adımlar yinelemeli olarak tekrarlanır ve test sonuçları önceki adımlara dönmeyi gerektirebilir."
+          ]
+        },
+        "en": {
+          "title": "The ML workflow",
+          "paragraphs": [
+            "The ML workflow is the logical sequence of activities an ML system passes through, from understanding the objectives to monitoring: understand the objectives, select a framework, select and build the algorithm, prepare and test the data, train, evaluate, tune, test the model, deploy, use, and monitor and tune. In practice the sequence is not followed once and left; the steps are repeated iteratively.",
+            "The key distinction is between model generation and model testing. Training, evaluation and tuning together make up model generation. In training, the selected algorithm uses the training data to train the model; the parameters that define the model structure (e.g., the number of layers) are model hyperparameters, and the parameters that control training (e.g., the number of iterations) are algorithm hyperparameters. In evaluation the model is measured against the agreed ML functional performance metrics using the validation dataset; in tuning those results are used to adjust the hyperparameters and the model is retrained. Only once an acceptable model exists is it tested, using an independent test dataset. The test results are compared with the evaluation results; if they are significantly lower, it may be necessary to return to model generation or even to data preparation.",
+            "The workflow does not end at deployment. The deployed model, which is typically re-engineered for deployment, is tested to verify that it still meets its acceptance criteria. During use the model may drift away from its intended performance, so the operational model is regularly evaluated against its acceptance criteria and, if needed, retrained with new data, new hyperparameters or both. Because the model usually has to be integrated with non-ML components, integration, system and acceptance test levels may also apply."
+          ],
+          "keyPoints": [
+            "Training, evaluation and tuning together make up model generation.",
+            "Evaluation uses the validation dataset and its results feed tuning; testing the model uses an independent test dataset.",
+            "Model hyperparameters define the model structure and algorithm hyperparameters control the training.",
+            "If test results are significantly lower than evaluation results, it may be necessary to return to model generation or to data preparation.",
+            "The deployed model is re-tested against its acceptance criteria, and in operation drift is monitored and the model retrained if necessary.",
+            "The workflow is a logical sequence that is applied iteratively in practice."
+          ],
+          "commonMistakes": [
+            "Evaluation and testing are treated as the same thing. Evaluation uses the validation dataset and feeds tuning; testing uses an independent test dataset on the tuned model to verify that the agreed ML functional performance criteria are met.",
+            "The job is assumed to be finished at deployment. The deployed model is tested again and monitored against its acceptance criteria throughout operation, because it may drift from its expected performance.",
+            "The workflow is read as one-directional. The order in the figure is logical; the steps are repeated iteratively and test results may send the team back to earlier steps."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-3.1.4",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§3.1.4",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Önceden eğitilmiş modeller, ince ayar ve erişimle artırılmış üretim",
+          "paragraphs": [
+            "Yeni bir yapay zekâ modelini sıfırdan eğitmek pahalı ve zaman alıcıdır. Yaygın çözüm, önceden eğitilmiş bir modeli yeni bir göreve uyarlamaktır. İnce ayarda önceden eğitilmiş sinir ağı, yeni göreve özgü veriyle ek eğitimden geçirilir. Ayar tüm ağa, yalnızca belirli katmanlara (genellikle çıktı ucuna yakın olanlara) ya da eklenen katmanlara uygulanabilir. Eğitimden sonra modelin MÖ fonksiyonel performansı değerlendirilir ve sonuçlara göre model gerekli kabul kriterlerini karşılayana dek ince ayara devam edilebilir. Sıfırdan eğitime göre çok daha az eğitim verisi ve çaba gerekir.",
+            "İnce ayarın başarısı özgün görev ile yeni görev arasındaki benzerliğe bağlıdır. Kedi cinsi sınıflandırıcısını köpek cinslerine uyarlamak büyük olasılıkla iyi sonuç verir; aksanları tanımaya uyarlamak, fark büyük olduğu için daha az etkilidir.",
+            "Erişimle artırılmış üretim (RAG) ince ayara bir alternatiftir. Büyük dil modeline göreve özgü veri kaynakları verilir; bu kaynaklar aranabilir biçime dönüştürülür ve istemin konusuyla karşılaştırılır. İlgili belgeler bulununca zenginleştirilmiş bir isteme eklenir ve model bu istemle çağrılır. Ayrım şudur: ince ayar modelin kendisini değiştirir, RAG ise önceden eğitilmiş modelde hiçbir değişiklik yapmaz; yalnızca modele daha ilgili bilgi sağlar. İkisi birlikte de kullanılabilir.",
+            "Test açısından önemli nokta, önceden eğitilmiş modeldeki yanlılıkların ve güvenlik açıklarının genellikle yeni modele taşınmasıdır. Bu nedenle yeni görevde modelin güvenilir ve adil çalıştığını doğrulamak için test gerekir."
+          ],
+          "keyPoints": [
+            "İnce ayar, önceden eğitilmiş bir sinir ağını yeni göreve özgü veriyle ek eğitimle uyarlar ve sıfırdan eğitimden çok daha az veri gerektirir.",
+            "İnce ayar tüm ağa, belirli katmanlara (genellikle çıktı ucuna yakın) ya da eklenen katmanlara uygulanabilir.",
+            "İnce ayarın başarısı özgün ve yeni görevlerin benzerliğine bağlıdır.",
+            "RAG, göreve özgü kaynaklardan bulunan belgeleri zenginleştirilmiş isteme ekler ve önceden eğitilmiş modeli değiştirmez.",
+            "Önceden eğitilmiş modelin yanlılıkları ve güvenlik açıkları genellikle yeni modele taşınır; bu yüzden test gerekir."
+          ],
+          "commonMistakes": [
+            "RAG'in modeli yeni belgelerle yeniden eğittiği sanılır. RAG'de model aynı kalır; değişen, modele geçirilen istemdir. Modeli değiştiren yöntem ince ayardır.",
+            "Önceden eğitilmiş bir modelin yeni görevde ince ayarla her zaman iyi çalışacağı varsayılır. Başarı görevler arasındaki benzerliğe bağlıdır; küçük farklar çok etkili bir ince ayar sağlayabilir, daha büyük farklar ise ince ayarı daha az etkili kılar.",
+            "Önceden eğitilmiş modeli kullanmanın test yükünü kaldırdığı düşünülür. Modelin yanlılıkları ve güvenlik açıkları genellikle yeni modele taşınır, bu yüzden yeni görevdeki güvenilirlik ve adillik yine test edilmelidir."
+          ]
+        },
+        "en": {
+          "title": "Pretrained models, fine-tuning and retrieval-augmented generation",
+          "paragraphs": [
+            "Training a new AI model from scratch is costly and time-consuming. A common solution is to adapt a pretrained model to a new task. In fine-tuning, a pretrained neural network is given additional training with data specific to the new task. The tuning can be applied to the entire network, to specific layers (typically near the output end), or to additional layers. After training, the model's ML functional performance is evaluated, and based on the results further fine-tuning may be performed until the model meets the necessary acceptance criteria. It needs much less training data and effort than building from scratch.",
+            "Fine-tuning succeeds to the degree that the original and new tasks are similar. Adapting a cat breed image classifier to dog breeds is likely to work well; adapting it to spoken accents is less effective because the difference is larger.",
+            "Retrieval-augmented generation (RAG) is an alternative to fine-tuning. The large language model (LLM) is supplied with data sources specific to the task; these are transformed into a searchable format and compared with the subject of the prompt. Once relevant documents are found, they are incorporated into an enhanced prompt that is passed to the LLM. The distinction is this: fine-tuning changes the model itself, while with RAG no change is made to the pretrained model, which is only given more pertinent information. The two can also be used together.",
+            "For testing, the important point is that biases and vulnerabilities in the pretrained model typically carry over to the new model, so testing is necessary to confirm that it performs reliably and fairly in the new task."
+          ],
+          "keyPoints": [
+            "Fine-tuning adapts a pretrained neural network to a new task through additional training with task-specific data, needing far less data than training from scratch.",
+            "Fine-tuning can be applied to the whole network, to specific layers (typically near the output end) or to additional layers.",
+            "The success of fine-tuning depends on the similarity between the original and the new task.",
+            "RAG adds documents retrieved from task-specific sources to an enhanced prompt and makes no change to the pretrained model.",
+            "Biases and vulnerabilities in a pretrained model typically carry over to the new model, so testing is necessary."
+          ],
+          "commonMistakes": [
+            "RAG is thought to retrain the model on new documents. With RAG the model stays the same and what changes is the prompt passed to it. The method that changes the model is fine-tuning.",
+            "A pretrained model is assumed to fine-tune well to any new task. Success depends on how similar the tasks are: small differences can lead to highly effective fine-tuning, larger ones make it less effective.",
+            "Using a pretrained model is believed to remove the testing burden. Its biases and vulnerabilities typically carry over, so reliability and fairness in the new task must still be tested."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-3.2.1",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§3.2.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Veri hazırlığı etkinlikleri",
+          "paragraphs": [
+            "Veri hazırlığı, MÖ iş akışının en kritik ve en çok kaynak tüketen etkinliklerindendir ve verinin model eğitimi için kalitesini ve uygunluğunu sağlamayı amaçlar. Üç etkinlik grubundan oluşur: veri edinimi, veri ön işleme ve öznitelik mühendisliği. Bunlarla paralel olarak keşifsel veri analizi (EDA) yapılır.",
+            "Veri edinimi, ilgili veri türlerini belirlemeyi, veriyi veri tabanları, API'ler ya da gerçek zamanlı sensörler gibi kaynaklardan toplamayı ve denetimli öğrenme için veriyi etiketlemeyi (doğruluk ve tutarlılığı doğrulayarak) içerir. Veri ön işleme; temizlemeyi (hataları, yinelenen kayıtları ve aykırı değerleri kaldırmak, eksik değerleri ortalama, medyan ya da mod ile doldurmak, kişisel bilgiyi anonimleştirmek ya da kaldırmak), biçim dönüştürmeyi, ölçeklemeyi ve normalleştirmeyi, veri artırmayı (örnek sayısını artırmak, karşıt örnekler eklemek, sentetik veri üretmek) ve eğitim süresini ve maliyeti azaltmak için alt küme örneklemeyi kapsar. Öznitelik mühendisliği, model performansına katkısına göre öznitelik seçmeyi ve mevcut özniteliklerden bilgilendirici, birbirini tekrarlamayan bir alt küme çıkarmayı kapsar. EDA ise veride eğilimleri, örüntüleri ve anomalileri keşfeder ve grafiklerle görselleştirir.",
+            "Hazırlık yinelemeli ve çoğunlukla elle yapılan bir süreçtir; etkinliklerin sırası değişebilir ya da bazıları projeye göre atlanabilir. İşletimdeki veri, modelin üretimde beklendiği gibi çalışması için eğitim verisinin özelliklerine (ör. dağılımlar ve öznitelik aralıkları) uymalıdır. Hazırlık adımlarının kendisi ise üretim verimliliği ve ölçeklenebilirlik için uyarlanabilir."
+          ],
+          "keyPoints": [
+            "Veri hazırlığı veri edinimi, veri ön işleme ve öznitelik mühendisliğinden oluşur; EDA bunlarla paralel yürür.",
+            "Etiketleme veri edinimine aittir.",
+            "Temizleme (hata, yinelenen kayıt ve aykırı değer kaldırma, eksik değer doldurma, anonimleştirme), dönüştürme, ölçekleme, normalleştirme, veri artırma ve örnekleme ön işlemeye aittir.",
+            "Öznitelik mühendisliği, öznitelik seçmek ve bilgilendirici, tekrarlamayan bir alt küme çıkarmaktır.",
+            "İşletimdeki veri, eğitim verisinin özelliklerine (dağılımlar, öznitelik aralıkları) uymalıdır."
+          ],
+          "commonMistakes": [
+            "Etiketlemenin ön işleme olduğu sanılır. Müfredat etiketlemeyi veri edinimi altında sayar; ön işleme ise elde edilmiş veriyi temizler, dönüştürür, artırır ve örnekler.",
+            "EDA'nın hazırlıktan sonra gelen ayrı bir adım olduğu düşünülür. EDA, hazırlık etkinliklerine paralel olarak yürütülür ve veri hakkında içgörü sağlar.",
+            "Hazırlığın sabit sırayla izlenen tek seferlik bir iş olduğu varsayılır. Süreç yinelemelidir; etkinliklerin sırası değişebilir ya da bazıları atlanabilir."
+          ]
+        },
+        "en": {
+          "title": "Activities in data preparation",
+          "paragraphs": [
+            "Data preparation is one of the most crucial and resource-intensive activities in the ML workflow, and it aims to achieve the quality and suitability of data for model training. It has three groups of activities: data acquisition, data preprocessing and feature engineering. Exploratory data analysis (EDA) is carried out in parallel with them.",
+            "Data acquisition covers identifying relevant data types, gathering data from sources such as databases, APIs or real-time sensors, and labeling data for supervised learning while verifying accuracy and consistency. Data preprocessing covers cleaning (removing defects, duplicates and outliers, imputing missing values with the mean, median or mode, anonymizing or removing personal information), transforming formats, scaling and normalizing, augmenting data (increasing sample size, adding adversarial examples, generating synthetic data) and sampling subsets to reduce training time and cost. Feature engineering covers selecting relevant features by their contribution to model performance and extracting a subset of informative, non-redundant features from existing ones. EDA discovers trends, patterns and anomalies and visualizes the data with plots and charts.",
+            "Preparation is an iterative, often manual process; the activities may be reordered or omitted depending on the project. Operational data should match the characteristics of the training data (e.g., data distributions and feature ranges) so that the model performs as expected in production. The preparation steps themselves may be adjusted for production efficiency and scalability."
+          ],
+          "keyPoints": [
+            "Data preparation consists of data acquisition, data preprocessing and feature engineering, with EDA carried out in parallel.",
+            "Labeling belongs to data acquisition.",
+            "Cleaning (removing defects, duplicates and outliers, imputing missing values, anonymizing), transforming, scaling, normalizing, augmenting and sampling belong to preprocessing.",
+            "Feature engineering is selecting features and extracting an informative, non-redundant subset.",
+            "Operational data should match the characteristics of the training data (distributions, feature ranges)."
+          ],
+          "commonMistakes": [
+            "Labeling is taken to be preprocessing. The syllabus places labeling under data acquisition; preprocessing cleans, transforms, augments and samples data that has already been acquired.",
+            "EDA is thought of as a separate step after preparation. EDA runs in parallel with the preparation activities and provides insight into the data.",
+            "Preparation is assumed to be a one-off job in a fixed order. The process is iterative, and activities may be reordered or omitted."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-3.2.3",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§3.2.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Eğitim, doğrulama ve test veri setleri",
+          "paragraphs": [
+            "Bir MÖ modelini geliştirmek için mantıksal olarak üç eşdeğer veri seti gerekir (ör. tek bir temsil edici veri setinden rastgele seçilmiş). Eğitim veri seti modeli eğitmek için kullanılır. Doğrulama veri seti modeli değerlendirmek ve ardından ayarlamak için kullanılır. Test veri seti, ayrılmış (holdout) veri seti olarak da bilinir ve ayarlanmış modeli test etmek için kullanılır. Ayarlanmış modelin nihai ve tarafsız değerlendirmesini test veri seti sağlar.",
+            "Veri bol olduğunda her bir setin boyutu modelin beklenen karmaşıklığına, eğitimde kullanılan algoritmaya, kaynakların (RAM, disk, işlem gücü, ağ bant genişliği, zaman) elverişliliğine ve model için istenen güvene bağlıdır. Veri sınırlı olduğunda üçlü bölme etkili eğitime yetecek veri bırakmayabilir ve yetersiz uyum riskini artırır. Yaygın strateji, mümkünse küçük bir son ayrılmış test seti ayırmak, kalan havuzda (eğitim ve doğrulama) k-katlı çapraz doğrulama kullanmaktır.",
+            "k-katlı çapraz doğrulamada havuz k kata bölünür; her seferinde model k-1 katla eğitilir ve dışarıda kalan katla doğrulanır, bu k kez tekrarlanır ve her kat bir kez doğrulama seti olur. Her katın metrikleri (ör. doğruluk, F1 skoru) ortalanarak modelin genelleme yeteneğine dair daha güvenilir bir tahmin elde edilir. En iyi hiperparametreler bulunduktan sonra son model tüm havuzla eğitilir ve ayrılmış test setinde yalnızca bir kez değerlendirilir. Ayrılmış bir test setine yetmeyecek kadar veri azsa çapraz doğrulama ortalaması iyimser yanlıdır ve tarafsız tahmin olarak kullanılamaz."
+          ],
+          "keyPoints": [
+            "Eğitim veri seti modeli eğitir; doğrulama veri seti modeli değerlendirmek ve ayarlamak için kullanılır; test (ayrılmış) veri seti ayarlanmış modeli test eder.",
+            "Sınırlı veride üçlü bölme yetersiz uyum riskini artırır.",
+            "Yaygın strateji, mümkünse küçük bir ayrılmış test seti ayırıp kalan havuzda k-katlı çapraz doğrulama kullanmaktır.",
+            "k-katlı çapraz doğrulamada her kat bir kez doğrulama seti olur ve k doğrulamanın metrikleri ortalanır.",
+            "Son model tüm havuzla eğitilir ve ayrılmış test setinde bir kez değerlendirilir; ayrılmış set yoksa çapraz doğrulama ortalaması iyimser yanlıdır."
+          ],
+          "commonMistakes": [
+            "Doğrulama ve test veri setleri aynı amaç için kullanılır sanılır. Doğrulama seti değerlendirme ve ayarlama içindir, yani modelin kendisini şekillendirir; test seti ayarlanmış modelin bağımsız ve tarafsız sınanması içindir.",
+            "Çapraz doğrulama ortalamasının her durumda tarafsız performans tahmini olduğu düşünülür. Tarafsız nihai tahmin ayrılmış test setinden gelir; bu set oluşturulamıyorsa ortalama iyimser yanlıdır.",
+            "Çapraz doğrulamada modelin yalnızca bir kez eğitildiği sanılır. Model k kez eğitilir ve her seferinde farklı bir kat doğrulama için dışarıda bırakılır."
+          ]
+        },
+        "en": {
+          "title": "Training, validation and test datasets",
+          "paragraphs": [
+            "Logically, three sets of equivalent data are required to develop an ML model (e.g., randomly selected from a single representative dataset). The training dataset is used to train the model. The validation dataset is used to evaluate and then tune the model. The test dataset, also known as the holdout dataset, is used to test the tuned model. The test dataset provides the final, unbiased assessment of the tuned model.",
+            "When data is abundant, the amount used for each set depends on the expected complexity of the model, the algorithm used, the availability of resources (RAM, disk space, computing power, network bandwidth, time) and the desired confidence in the model. When data is limited, a three-way split can leave too little data for effective training and increase the risk of underfitting. A common strategy is to set aside a small final hold-out test set if feasible and to use k-fold cross-validation on the remaining pool (training and validation combined).",
+            "In k-fold cross-validation the pool is divided into k folds; for each fold the model is trained on k-1 folds and validated on the held-out fold, repeated k times so that each fold serves as the validation set once. The metrics from each fold (e.g., accuracy, F1-score) are averaged to give a more reliable estimate of generalization ability. After the optimal hyperparameters are found, a final model is trained on the entire pool and evaluated once on the hold-out test set. If a hold-out test set is not feasible because data is extremely scarce, the average cross-validation performance is optimistically biased and cannot serve as an unbiased estimate."
+          ],
+          "keyPoints": [
+            "The training dataset trains the model, the validation dataset is used to evaluate and tune it, and the test (holdout) dataset tests the tuned model.",
+            "With limited data, a three-way split increases the risk of underfitting.",
+            "A common strategy is to set aside a small hold-out test set if feasible and use k-fold cross-validation on the remaining pool.",
+            "In k-fold cross-validation each fold serves as the validation set once and the metrics of the k validations are averaged.",
+            "The final model is trained on the whole pool and evaluated once on the hold-out test set; without a hold-out set the cross-validation average is optimistically biased."
+          ],
+          "commonMistakes": [
+            "The validation and test datasets are thought to serve the same purpose. The validation dataset is for evaluation and tuning, so it shapes the model; the test dataset is for an independent, unbiased check of the tuned model.",
+            "The cross-validation average is believed to be an unbiased performance estimate in every case. The unbiased final estimate comes from the hold-out test set; when none can be set aside, the average is optimistically biased.",
+            "Cross-validation is imagined to train the model only once. The model is trained k times, each time leaving a different fold out for validation."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-3.3.1",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§3.3.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Karışıklık matrisinden MÖ fonksiyonel performans metriklerinin hesaplanması",
+          "paragraphs": [
+            "Bir sınıflandırma modeli doğru sonucu her zaman vermez. Karışıklık matrisi tahminleri dört gruba ayırır: doğru pozitif (TP), yanlış pozitif (FP), yanlış negatif (FN) ve doğru negatif (TN). Müfredattaki şemada satırlar tahmin edilen, sütunlar gerçek değerdir; bu yüzden FP, pozitif tahmin edilip gerçekte negatif olandır, FN ise negatif tahmin edilip gerçekte pozitif olandır. Matris tahmin ve gerçek değer yer değiştirmiş biçimde de sunulabilir, ancak dört değeri her zaman verir. Bu yüzden hesaplamadan önce hangi eksenin ne olduğuna bakmak gerekir.",
+            "Müfredatın tanımladığı metrikler şunlardır. Doğruluk = (TP + TN) / (TP + TN + FP + FN) * %100; tüm doğru sınıflandırmaların yüzdesidir. Hassasiyet (precision) = TP / (TP + FP) * %100; pozitif tahminlerden ne kadarına güvenilebileceğini gösterir. Hatırlama (recall; duyarlılık (sensitivity) olarak da bilinir) = TP / (TP + FN) * %100; gerçek pozitiflerin ne kadarının doğru tahmin edildiğini, yani hiçbir pozitifin kaçırılmayacağından ne kadar emin olunabileceğini gösterir. F1 skoru = 2 * (Hassasiyet * Hatırlama) / (Hassasiyet + Hatırlama); hassasiyetin ve hatırlamanın harmonik ortalamasıdır, 0 ile 100 arasında değer alır. Yüksek F1 hem yüksek hassasiyeti hem yüksek hatırlamayı, düşük F1 ise pozitifleri kaçırmayı ya da çok yanlış alarm üretmeyi gösterir.",
+            "Çözümlü örnek: bir modelin 200 test örneğinde TP = 38, FP = 2, FN = 22, TN = 138 olsun. Toplam 38 + 2 + 22 + 138 = 200 eder. Doğruluk = (38 + 138) / 200 = 176 / 200 = %88. Hassasiyet = 38 / (38 + 2) = 38 / 40 = %95. Hatırlama = 38 / (38 + 22) = 38 / 60 = yaklaşık %63,3. F1 skoru = 2 * (0,95 * 0,633) / (0,95 + 0,633) = 1,203 / 1,583 = yaklaşık 0,76, yani yaklaşık 76. Doğruluğun yüksek görünmesine rağmen hatırlamanın düşük olduğuna dikkat edin: model 60 gerçek pozitiften 22'sini, yani üçte birinden fazlasını kaçırıyor. Hesaplarken önce hangi metriğin gerektiğini ve paydasının hangi hücrelerden oluştuğunu belirleyin."
+          ],
+          "keyPoints": [
+            "Karışıklık matrisi dört değer verir: TP, TN, FP ve FN; tahmin ve gerçek eksenleri yer değiştirmiş sunulabilir.",
+            "Doğruluk = (TP + TN) / (TP + TN + FP + FN) * %100.",
+            "Hassasiyet (precision) = TP / (TP + FP) * %100.",
+            "Hatırlama (recall; duyarlılık, sensitivity) = TP / (TP + FN) * %100.",
+            "F1 skoru = 2 * (Hassasiyet * Hatırlama) / (Hassasiyet + Hatırlama), hassasiyet ile hatırlamanın harmonik ortalamasıdır.",
+            "Hassasiyet FP'den, hatırlama FN'den etkilenir: hassasiyet pozitif tahminlere güveni, hatırlama pozitiflerin kaçırılmamasına güveni ölçer."
+          ],
+          "commonMistakes": [
+            "Hassasiyet ile hatırlama birbirine karıştırılır, çünkü ikisinin payı da TP'dir. Paydaya bakılır: hassasiyetin paydasında FP (yanlış alarmlar), hatırlamanın paydasında FN (kaçırılan pozitifler) vardır.",
+            "Matris satır ve sütunlarının her zaman şemadaki gibi olduğu varsayılır. Tahmin ve gerçek yer değiştirmiş olabilir; FP ve FN'yi tanımlarından, yani tahmin pozitif-gerçek negatif ve tahmin negatif-gerçek pozitif olarak bulmak gerekir.",
+            "Yüksek doğruluğun modelin iyi olduğunu gösterdiği düşünülür. Doğruluk tüm doğru sınıflandırmaların oranıdır ve büyük bir TN sayısı yüzünden yüksek çıkabilir; yukarıdaki örnekte doğruluk %88, hatırlama ise yaklaşık %63,3'tür."
+          ]
+        },
+        "en": {
+          "title": "Calculating ML functional performance metrics from a confusion matrix",
+          "paragraphs": [
+            "A classification model will rarely predict correctly all the time. The confusion matrix sorts predictions into four groups: true positive (TP), false positive (FP), false negative (FN) and true negative (TN). In the syllabus figure rows are the predicted values and columns are the actual values, so an FP is predicted positive and actually negative, and an FN is predicted negative and actually positive. The matrix may be presented differently, for example with predicted and actual swapped, but it always yields the four values. Check which axis is which before calculating.",
+            "The syllabus defines these metrics. Accuracy = (TP + TN) / (TP + TN + FP + FN) * 100%; it is the percentage of all correct classifications. Precision = TP / (TP + FP) * 100%; it shows how sure one can be about positive predictions. Recall = TP / (TP + FN) * 100%, also known as sensitivity; it shows what proportion of the actual positives are correctly predicted, that is, how confident one can be that no positives will be missed. F1-score = 2 * (Precision * Recall) / (Precision + Recall); it is the harmonic mean of precision and recall, with values from 0 to 100. A high F1 means both high precision and high recall; a low F1 means the model misses true cases or generates many false alarms.",
+            "Worked example: suppose a model gives TP = 38, FP = 2, FN = 22, TN = 138 on 200 test samples. The total is 38 + 2 + 22 + 138 = 200. Accuracy = (38 + 138) / 200 = 176 / 200 = 88%. Precision = 38 / (38 + 2) = 38 / 40 = 95%. Recall = 38 / (38 + 22) = 38 / 60 = about 63.3%. F1-score = 2 * (0.95 * 0.633) / (0.95 + 0.633) = 1.203 / 1.583 = about 0.76, i.e. about 76. Note that accuracy looks high while recall is low: the model misses 22 of the 60 actual positives, more than a third. When calculating, first identify the metric required and which cells make up its denominator."
+          ],
+          "keyPoints": [
+            "The confusion matrix yields four values, TP, TN, FP and FN, and the predicted and actual axes may be swapped in its presentation.",
+            "Accuracy = (TP + TN) / (TP + TN + FP + FN) * 100%.",
+            "Precision = TP / (TP + FP) * 100%.",
+            "Recall (sensitivity) = TP / (TP + FN) * 100%.",
+            "F1-score = 2 * (Precision * Recall) / (Precision + Recall), the harmonic mean of precision and recall.",
+            "Precision is affected by FP and recall by FN: precision measures confidence in positive predictions, recall confidence that no positives are missed."
+          ],
+          "commonMistakes": [
+            "Precision and recall are mixed up because both have TP as the numerator. Look at the denominator: precision's contains FP (false alarms), recall's contains FN (missed positives).",
+            "The matrix is assumed always to be laid out as in the figure. Predicted and actual may be swapped; derive FP and FN from their definitions, predicted positive-actually negative and predicted negative-actually positive.",
+            "High accuracy is taken to mean a good model. Accuracy is the share of all correct classifications and can be high because of a large TN count; in the example above accuracy is 88% while recall is about 63.3%."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-3.4.1",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§3.4.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Derin sinir ağının yapısı ve çalışması",
+          "paragraphs": [
+            "Derin sinir ağı tipik olarak üç tür katmandan oluşur. Girdi katmanı girdileri alır (ör. bir kameradan piksel değerleri). Çıktı katmanı sonucu dış dünyaya verir (ör. görüntünün kedi olma olasılığı). Aradaki gizli katmanlar yapay nöronlardan, yani düğümlerden oluşur. Tam bağlantılı ağlarda bir katmandaki her nöron bir sonraki katmandaki her nörona bağlıdır ve her katmanda farklı sayıda nöron olabilir. Bilgi girdiden çıktıya doğru ilerlerken girdi verisi giderek daha soyut temsillere dönüşür.",
+            "Girdi katmanından sonraki her nöron bir aktivasyon değeri üretir. Hesap şöyledir: önceki katmanda bağlı olduğu tüm nöronların aktivasyon değerlerinin ağırlıklı toplamı alınır (her bağlantının kendi bağımsız ağırlığı vardır), nöronun kendi yanlılık değeri eklenir ve toplam doğrusal olmayan bir formülden, yani aktivasyon fonksiyonundan geçirilir. Farklı aktivasyon fonksiyonları farklı aktivasyon değerleri verir. Buradaki yanlılık değeri, §5.1.2'de ele alınan yanlılıkla ilgisizdir.",
+            "Eğitimin başında ağırlıklar ve yanlılık değerleri genellikle küçük rastgele değerlere ayarlanır (yanlılık değerleri bazen sıfıra). Eğitim verisi ağdan geçirilir ve bir çıktı üretilir; bu çıktı bilinen doğru sonuçla karşılaştırılır. Aradaki farkı ölçen kayıp (loss), ağa geri beslenerek ağırlıkları ve yanlılık değerlerini farkı en aza indirecek biçimde ayarlar. Eğitim veri setinden her tam geçişe dönem (epoch) denir. Çıktı yeterince iyi sayıldığında eğitim sona erer."
+          ],
+          "keyPoints": [
+            "Derin sinir ağı girdi katmanı, gizli katmanlar ve çıktı katmanından oluşur.",
+            "Tam bağlantılı ağda bir katmandaki her nöron bir sonraki katmandaki her nörona bağlıdır.",
+            "Bir nöronun aktivasyon değeri, önceki katmandaki aktivasyon değerlerinin ağırlıklı toplamına nöronun yanlılık değerini ekleyip sonucu aktivasyon fonksiyonundan geçirerek bulunur.",
+            "Ağırlıklar ve yanlılık değerleri başlangıçta küçük rastgele değerlere ayarlanır (yanlılık değerleri bazen sıfıra).",
+            "Çıktı ile bilinen doğru sonuç arasındaki kayıp ağa geri beslenir ve ağırlıkları ile yanlılık değerlerini ayarlar.",
+            "Eğitim veri setinden her tam geçiş bir dönemdir (epoch)."
+          ],
+          "commonMistakes": [
+            "Nöronun yanlılık değeri ile yapay zekâ sistemlerindeki yanlılık (örneğin adil olmayan sonuçlar) karıştırılır. Nöronun yanlılık değeri hesaba eklenen ve eğitimle ayarlanan bir sayıdır ve §5.1.2'deki yanlılıkla ilgisizdir.",
+            "Aktivasyon fonksiyonunun ağırlıklı toplamı hesaplayan adım olduğu sanılır. Ağırlıklı toplam ve yanlılık önce hesaplanır; aktivasyon fonksiyonu bu toplamı doğrusal olmayan bir formülden geçirir.",
+            "Ağırlıkların elle ya da kurallarla belirlendiği düşünülür. Ağırlıklar ve yanlılık değerleri rastgele küçük değerlerle başlar, eğitim sırasında kayıp geri beslenerek ayarlanır."
+          ]
+        },
+        "en": {
+          "title": "Structure and working of a deep neural network",
+          "paragraphs": [
+            "A deep neural network is typically described as having three types of layers. The input layer receives inputs (e.g., pixel values from a camera). The output layer provides results to the outside world (e.g., a value indicating the likelihood that the image is of a cat). Between them are hidden layers made of artificial neurons, also known as nodes. In fully connected networks each neuron in a layer is connected to every neuron in the next layer, and layers may have different numbers of neurons. As information passes from input to output, the input data is gradually transformed into increasingly abstract representations.",
+            "Every neuron after the input layer produces an activation value. It is calculated by taking the weighted sum of the activation values of all connected neurons in the previous layer (each connection has its own independent weight), adding the neuron's own bias, and passing the sum through a non-linear formula, the activation function. Different activation functions yield different activation values. This bias is unrelated to the bias considered in section 5.1.2.",
+            "At the start of training the weights and biases are typically initialized to small random values (biases sometimes to zero). The training data is passed through the network to generate an output, which is compared with the known correct result. The resulting error (or loss) is fed back through the network to adjust the weights and biases so as to minimize the difference. Each pass through the training dataset is called an epoch. Training ends when the output is considered good enough."
+          ],
+          "keyPoints": [
+            "A deep neural network consists of an input layer, hidden layers and an output layer.",
+            "In a fully connected network each neuron in a layer is connected to every neuron in the next layer.",
+            "A neuron's activation value is the weighted sum of the previous layer's activation values plus the neuron's bias, passed through the activation function.",
+            "Weights and biases start as small random values (biases sometimes zero).",
+            "The error (loss) between the output and the known correct result is fed back through the network and adjusts the weights and biases.",
+            "Each pass through the training dataset is an epoch."
+          ],
+          "commonMistakes": [
+            "A neuron's bias is confused with bias in AI-based systems (for example unfair outcomes). A neuron's bias is a number added in the calculation and adjusted by training, and it is unrelated to the bias in section 5.1.2.",
+            "The activation function is thought to be the step that computes the weighted sum. The weighted sum and the bias are computed first; the activation function then passes that sum through a non-linear formula.",
+            "Weights are imagined to be set by hand or by rules. Weights and biases start as small random values and are adjusted during training by feeding the error back."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-3.4.3",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§3.4.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Sinir ağları için kapsam ölçümleri",
+          "paragraphs": [
+            "Sinir ağları açıkça kodlanmış yollar izlemez; davranışları öğrenilmiş ağırlıklar, yanlılık değerleri ve aktivasyonlarla belirlenir. Bu yüzden test girdilerinin modelin iç işleyişini ne kadar çalıştırdığını ölçen yapısal kapsam metrikleri ortaya çıkmıştır. Üç tipik yaklaşım vardır.",
+            "Nöron kapsamı, test sırasında çıktısı belirli bir eşiği aşan nöronların oranını ölçer. k-bölümlü nöron kapsamı (kMNC) her nöronun olası çıktı aralığını k bölüme ayırır ve test sırasında etkinleşen bölümlerin oranını ölçer. Nöron sınır kapsamı (NBC) ise çıktısı test sırasında eğitimde görülen en büyük değeri aşan ya da en küçük değerin altına düşen nöronların oranını ölçer. Dolayısıyla nöron kapsamı bir eşiğe, kMNC aralığın bölümlerine, NBC ise eğitimde gözlenen uçlara bakar.",
+            "Bu ölçümler, modelin test edilmemiş kalan bölgelerini göstererek işe yarar; örneğin bazı nöronlar ya da katmanlar testte hiç etkinleşmiyorsa ilgili karar sınırlarındaki performans şüpheli olabilir. Test uzmanları bu bilgiyle ek test girdileri tasarlayabilir. Ancak yapısal kapsam tek başına ağın iyi genelleyeceğini ya da gerçek dünya çeşitliliğiyle başa çıkacağını garanti etmez; ağ yanlış nedenlerle doğru aktivasyon üretecek sahte korelasyonlar öğrenmiş olabilir. Bu yüzden karşıt test ve metamorfik test gibi diğer teknikler de kullanılmalıdır. Şu an bu ölçümleri destekleyen ticari araçlar sınırlıdır."
+          ],
+          "keyPoints": [
+            "Sinir ağlarının davranışı kodlanmış yollarla değil öğrenilmiş ağırlıklarla belirlendiği için özel yapısal kapsam ölçümleri gerekir.",
+            "Nöron kapsamı, çıktısı belirli bir eşiği aşan nöronların oranıdır.",
+            "k-bölümlü nöron kapsamı (kMNC), her nöronun çıktı aralığının k bölümünden etkinleşenlerin oranıdır.",
+            "Nöron sınır kapsamı (NBC), çıktısı eğitimdeki en büyük değeri aşan ya da en küçük değerin altına düşen nöronların oranıdır.",
+            "Kapsam ölçümleri ağın test edilmemiş bölgelerini gösterir, ancak iyi genellemeyi garanti etmez; karşıt test ve metamorfik test gibi tekniklerle de desteklenmelidir."
+          ],
+          "commonMistakes": [
+            "Nöron sınır kapsamının eğitim verisinin aralığı içinde kalan etkinleşmeleri saydığı sanılır. NBC tersini ölçer: eğitimde görülen uç değerlerin dışına çıkan nöronları sayar.",
+            "kMNC ile nöron kapsamı karıştırılır. Nöron kapsamı bir nöronun eşiği aşıp aşmadığına bakar; kMNC her nöronun çıktı aralığını k bölüme ayırır ve etkinleşen bölümleri sayar.",
+            "Yüksek yapısal kapsamın ağın doğru çalıştığını kanıtladığı düşünülür. Ağ sahte korelasyonlar öğrenmiş olabilir ve doğru aktivasyonları yanlış nedenlerle üretebilir; kapsam esas olarak test edilmemiş bölgeleri gösterir."
+          ]
+        },
+        "en": {
+          "title": "Coverage measures for neural networks",
+          "paragraphs": [
+            "Neural networks do not follow explicitly coded paths; their behavior is dictated by learned weights, bias values and activations. For that reason structural coverage metrics have emerged that assess how thoroughly test inputs exercise a model's internal mechanisms. There are three typical approaches.",
+            "Neuron coverage measures the proportion of neurons whose output exceeds a specified threshold during testing. k-multisection neuron coverage (kMNC) divides the possible output range of each neuron into k sections and measures the proportion of these sections activated during testing. Neuron boundary coverage (NBC) measures the proportion of neurons whose output, during testing, exceeds the maximum achieved in training or is less than the minimum achieved in training. So neuron coverage looks at a threshold, kMNC at sections of the range, and NBC at the extremes observed in training.",
+            "These measures help by revealing areas of the model that remain untested; for example, if certain neurons or layers never activate during testing, the model's performance in the related decision boundaries might be questionable. Testers can use this to design additional test inputs. However, structural coverage alone does not guarantee that the network will generalize well or handle real-world variation; a network can learn spurious correlations, producing correct activations for incorrect reasons. Testers should therefore also use other techniques such as adversarial testing and metamorphic testing. At present, commercial tools supporting these measures are limited."
+          ],
+          "keyPoints": [
+            "Specialized structural coverage measures are needed because a network's behavior is dictated by learned weights, not by coded paths.",
+            "Neuron coverage is the proportion of neurons whose output exceeds a specified threshold.",
+            "k-multisection neuron coverage (kMNC) is the proportion of the k sections of each neuron's output range that are activated.",
+            "Neuron boundary coverage (NBC) is the proportion of neurons whose output exceeds the training maximum or falls below the training minimum.",
+            "Coverage measures reveal untested areas of the network but do not guarantee good generalization; they should be complemented by techniques such as adversarial and metamorphic testing."
+          ],
+          "commonMistakes": [
+            "NBC is taken to count activations that stay within the range seen in training. NBC measures the opposite: neurons whose output goes outside the extremes seen in training.",
+            "kMNC is confused with neuron coverage. Neuron coverage asks whether a neuron exceeds a threshold; kMNC divides each neuron's output range into k sections and counts the sections activated.",
+            "High structural coverage is believed to prove the network works. The network may have learned spurious correlations and produce correct activations for incorrect reasons; coverage mainly shows which areas remain untested."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    }
+  ]
+}

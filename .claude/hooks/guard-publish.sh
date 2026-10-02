@@ -17,8 +17,8 @@ file_path=$(printf '%s' "$payload" | jq -r '.tool_input.file_path // empty')
 [[ -z $file_path ]] && exit 0
 
 case $file_path in
-  *data/*/questions/*.json) command='yarn publish:questions --reviewer "<name>" --chunk <chunk>' ;;
-  *data/*/lessons/*.json)   command='yarn publish:lessons   --reviewer "<name>" --chunk <chunk>' ;;
+  *data/*/questions/*.json) command='yarn publish:questions --reviewer "<name>" --cert <id> --chunk <chunk>' ;;
+  *data/*/lessons/*.json)   command='yarn publish:lessons   --reviewer "<name>" --cert <id> --chunk <chunk>' ;;
   *) exit 0 ;;
 esac
 

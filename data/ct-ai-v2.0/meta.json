@@ -1,0 +1,43 @@
+{
+  "id": "ct-ai-v2.0",
+  "name": {
+    "tr": "Sertifikalı Test Uzmanı Yapay Zekâ Testi",
+    "en": "Certified Tester AI Testing"
+  },
+  "acronym": "CT-AI",
+  "stream": "specialist",
+  "level": "specialist",
+  "syllabusVersion": "2.0",
+  "syllabusReleaseDate": "2026-04-17",
+  "status": "active",
+  "exam": {
+    "questionCount": 40,
+    "totalPoints": 44,
+    "passPoints": 29,
+    "passPercent": 65,
+    "durationMinutes": 60,
+    "negativeMarking": null,
+    "questionKLevelDistribution": {
+      "K1": 0,
+      "K2": 36,
+      "K3": 4
+    }
+  },
+  "sources": {
+    "syllabusEn": "https://istqb.org/?sdm_process_download=1&download_id=9558",
+    "certificationPage": "https://istqb.org/certifications/certified-tester-ai-testing-ct-ai/",
+    "examRules": "https://istqb.org/?sdm_process_download=1&download_id=3829",
+    "examTables": "https://istqb.org/?sdm_process_download=1&download_id=3832",
+    "ttbSyllabusPage": "https://www.turkishtestingboard.org/sertifikali-test-uzmani-yapay-zeka-testi-ct-ai-mufredati-v2-0-ingilizce/",
+    "ttbTerminologyV1Tr": "https://www.turkishtestingboard.org/files/ISTQB-CT-AI-Syllabus-v1-TR.pdf"
+  },
+  "officialSampleExams": [
+    {
+      "set": "Sample Exam",
+      "lang": "en",
+      "url": "https://istqb.org/certifications/certified-tester-ai-testing-ct-ai/",
+      "publisher": "ISTQB",
+      "documentVersion": "2.2"
+    }
+  ]
+}

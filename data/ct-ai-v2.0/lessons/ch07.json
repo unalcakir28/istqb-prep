@@ -1,0 +1,123 @@
+{
+  "chunk": "ch07",
+  "chapter": 7,
+  "dataVersion": "2.0",
+  "lessons": [
+    {
+      "objective": "AI-7.1.1",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§7.1.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "MÖ geliştirme riskleri ve bunları azaltan test yaklaşımları",
+          "paragraphs": [
+            "Bu hedef, modelin kendisinden çok onu üreten geliştirme araçlarındaki, yapılandırma seçimlerindeki ve dağıtım mekanizmalarındaki riskleri ele alır. Bu, AI-6.1.1'in model riskleriyle karıştırılmamalıdır. Müfredat yine bir risk-yaklaşım tablosu verir; hedef, bu tablodan örnek verebilmeyi ister.",
+            "Çerçeve riskleri: TensorFlow veya PyTorch gibi kütüphanelerin API'lerinin yanlış kullanımı için API testi; en uygun olmayan çerçeve seçimi için çerçeve uygunluğu gözden geçirmesi; hatalı çerçeve kurulumu veya derlemesi için duman testi (smoke testing); çerçevenin değerlendirme kodunun hatalı uygulanması için o kodun gözden geçirilmesi ve sonuçların elle hazırlanmış kıyaslama değerleriyle çapraz kontrolü; yavaş çerçeve için performans testi; zayıf kullanılabilirlik için kullanılabilirlik testi; güvenlik açıkları için güvenlik testi; zayıf kullanıcı belgeleri için çerçeve belgeleri gözden geçirmesi. Algoritma, model veya çerçevedeki sistemik adillik sorunları için yanlılık testi. Kütüphanedeki veya algoritma uygulamasındaki hata için MÖ fonksiyonel performans testi ve sırt sırta test.",
+            "Yapılandırma riskleri: en uygun olmayan algoritma seçimi için algoritma uygunluğu gözden geçirmesi ve A/B testi; en uygun olmayan hiperparametre seçimi için MÖ fonksiyonel performans testi ve A/B testi; verinin eğitim, doğrulama ve test veri setlerine hatalı ayrılması için veri ayırma gözden geçirmesi; kötü değerlendirme yaklaşımı (ör. k-katlı çapraz doğrulama) veya öğrenmenin rastgeleliği yüzünden test sonuçlarının yanlış yorumlanması için MÖ fonksiyonel performans testi. Dağıtım riskleri: dağıtım hatası için duman testi, MÖ fonksiyonel performans testi ve A/B testi; ortamla uyumsuzluk için duman testi ve MÖ sistemi dağıtım testi; yeni modelin mevcut modele üstünlük sağlamaması için gölge testi."
+          ],
+          "keyPoints": [
+            "Geliştirme riskleri model değil, geliştirme araçları, yapılandırma seçimleri ve dağıtım mekanizmalarından doğar.",
+            "Çerçeve API'lerinin yanlış kullanımı API testiyle, hatalı kurulum veya derleme duman testiyle azaltılır.",
+            "Çerçeve ve algoritma seçimi uygunluk gözden geçirmeleriyle, algoritma seçimi ayrıca A/B testiyle ele alınır.",
+            "En uygun olmayan hiperparametre seçimi MÖ fonksiyonel performans testi ve A/B testiyle ele alınır.",
+            "Verinin veri setlerine hatalı ayrılması veri ayırma gözden geçirmesiyle ele alınır.",
+            "Dağıtılan yeni modelin mevcut modele üstünlük sağlamaması riskine gölge testi karşılık verir."
+          ],
+          "commonMistakes": [
+            "MÖ geliştirme riskleri ile MÖ model riskleri aynı sanılır; geliştirme riskleri model dışındaki araçlardan, yapılandırmadan ve dağıtımdan doğar (ör. çerçeve seçimi, hiperparametre, dağıtım hatası).",
+            "Her geliştirme riskinin test çalıştırılarak azaltıldığı sanılır; birçoğu gözden geçirmeyle azaltılır (çerçeve uygunluğu, algoritma uygunluğu, veri ayırma, çerçeve belgeleri).",
+            "Dağıtılan yeni modelin mevcut modele üstünlük sağlamaması riski için gölge testi gözden kaçırılır; 7.1.1 tablosu bu dağıtım riskini gölge testine bağlar: yeni model, canlı yanıtları etkilemeden aynı canlı isteklerle üretimdeki modele paralel olarak çalıştırılır."
+          ]
+        },
+        "en": {
+          "title": "ML development risks and the test approaches that mitigate them",
+          "paragraphs": [
+            "This objective is about risks introduced by ML development tools, configuration choices and deployment mechanisms rather than by the model itself, so it should not be confused with the model risks of AI-6.1.1. The syllabus again gives a risk-to-approach table, and the objective asks for examples from that table.",
+            "Framework risks: incorrect use of library or framework APIs (for example TensorFlow, PyTorch) calls for API testing; sub-optimal framework selection for a framework suitability review; defective installation or build for smoke testing; defective evaluation by the framework for reviews of the evaluation code and cross-checking results against manual benchmarks; slow response for performance testing; poor usability for usability testing; security vulnerabilities for security testing; poor user documentation for a framework documentation review. Problems in the algorithm, model or framework that introduce systemic unfairness call for testing for bias. A defect in a library or algorithm implementation calls for ML functional performance testing and back-to-back testing.",
+            "Configuration risks: sub-optimal algorithm selection calls for an algorithm suitability review and A/B testing; sub-optimal hyperparameters for ML functional performance testing and A/B testing; defective allocation of data to training, validation and test datasets for a data allocation review; a poor evaluation approach (for example k-fold cross-validation) or misreading results because learning is stochastic for ML functional performance testing. Deployment risks: a deployment defect calls for smoke testing, ML functional performance testing and A/B testing; an incompatible deployed model for smoke testing and ML system deployment testing; a deployed model that is no improvement over the current one for shadow testing."
+          ],
+          "keyPoints": [
+            "Development risks come from development tools, configuration choices and deployment mechanisms, not from the model itself.",
+            "Incorrect use of framework APIs is mitigated by API testing, a defective framework installation or build by smoke testing.",
+            "Framework and algorithm selection are mitigated by suitability reviews; algorithm selection also by A/B testing.",
+            "Sub-optimal hyperparameter selection is mitigated by ML functional performance testing and A/B testing.",
+            "Defective allocation of data to training, validation and test datasets is mitigated by a data allocation review.",
+            "A deployed model that is no improvement over the current model is mitigated by shadow testing."
+          ],
+          "commonMistakes": [
+            "ML development risks are taken to be the same as ML model risks; development risks arise from tools, configuration and deployment (framework choice, hyperparameters, deployment defects).",
+            "Every development risk is assumed to be mitigated by running tests; many are mitigated by reviews (framework suitability, algorithm suitability, data allocation, framework documentation).",
+            "Shadow testing is overlooked for a deployed model that may be no improvement over the current one; the 7.1.1 table pairs this deployment risk with shadow testing, which runs the new model in parallel with the production model on the same live requests without affecting live responses."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-7.1.2",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§7.1.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "MÖ sistemi dağıtım testinin biçimleri",
+          "paragraphs": [
+            "MÖ sistemi dağıtırken, hedef ortamda (bulut, uç cihaz, mobil) sistemin doğru ve güvenilir çalıştığı yedi test biçimiyle doğrulanır; her biri belirli bir dağıtım riskine cevap verir. Müfredat bu biçimleri sayar: kurulabilirlik, geri alma, kanarya (canary), gölge, model dönüştürme, cihazlar arası ve API testi.",
+            "Kurulabilirlik testi, sistemin desteklenen tüm ortamlarda kurulup yapılandırılabildiğini ve kaldırılabildiğini doğrular (GPU sürücüleri gibi bağımlılıklar dahil). Geri alma testi, başarısız veya bozulmuş bir dağıtımdan sonra önceki kararlı duruma dönülebildiğini doğrular; yalnızca modeli veya veri hattı dahil tüm sistemi kapsayabilir ve geri almaya hazır olmayı doğrulamak için dağıtımdan önce yapılmalıdır. Model dönüştürme testi, modelin eğitim biçiminden dağıtım biçimine dönüştürüldükten sonra kabul edilebilir tahmin doğruluğunu, tutarlı davranışı ve işletim verimliliğini (çıkarım hızı, bellek) koruduğunu doğrular. Cihazlar arası test, sistemin mobil, uç ve bulut sunucuları dahil hedeflerde doğru çalıştığını doğrular. API testi, iyi tanımlı ve standartlara uygun arayüzleri, girdi ve çıktı işlemeyi, hata mesajlarını ve dış sistemlerle entegrasyon akışlarını doğrular.",
+            "Kanarya testi ile gölge testi kolayca karıştırılabilir. Kanarya testinde güncellenmiş model gerçek trafiğin küçük bir bölümüne (ör. %5) sunulur ve gecikme, doğruluk ve hata oranları gibi gerçek zamanlı metrikler izlenir; yani yeni model canlı yanıtları etkiler. Gölge testinde yeni model mevcut üretim modeliyle paralel çalışır, aynı istekler her ikisine de yönlendirilir ama canlı yanıtları etkilemez; yeni ve eski model canlı veriyle düşük riskli ortamda karşılaştırılır ve performans regresyonları ile veri kayması gibi hatalar tam dağıtımdan önce bulunabilir."
+          ],
+          "keyPoints": [
+            "Kurulabilirlik testi, desteklenen tüm ortamlarda kurulumu, yapılandırmayı ve kaldırmayı doğrular.",
+            "Geri alma testi önceki kararlı duruma dönülebildiğini doğrular ve geri almaya hazırlığı doğrulamak için dağıtımdan önce yapılmalıdır.",
+            "Kanarya testi, güncellenmiş modeli trafiğin küçük bir bölümüne sunar ve gerçek zamanlı metrikleri izler.",
+            "Gölge testi, yeni modeli üretim modeliyle paralel çalıştırır; aynı istekler iki sisteme gider ama canlı yanıtlar etkilenmez.",
+            "Model dönüştürme testi, dönüştürmeden sonra tahmin doğruluğunun, davranışın ve verimliliğin korunduğunu doğrular.",
+            "Cihazlar arası test mobil ve uç cihazlardan bulut sunucularına kadar dağıtım hedeflerini, API testi ise arayüzleri ve entegrasyonu kapsar."
+          ],
+          "commonMistakes": [
+            "Kanarya ve gölge testi aynı sanılır; kanaryada yeni model trafiğin küçük bir bölümüne gerçekten yanıt verir, gölgede ise yanıtları kullanıcıya gitmez.",
+            "Geri alma testinin sorun çıktıktan sonra yapıldığı sanılır; müfredata göre geri almaya hazır olmayı doğrulamak için dağıtımdan önce yapılmalıdır.",
+            "Model dönüştürme testinin yalnızca dosya biçiminin açılıp açılmadığına baktığı sanılır; dönüşümden sonra tahmin doğruluğunun, davranış tutarlılığının ve işletim verimliliğinin korunduğunu doğrular."
+          ]
+        },
+        "en": {
+          "title": "Forms of ML system deployment testing",
+          "paragraphs": [
+            "Deploying an ML system involves test activities that verify the system functions correctly and reliably in its target environment (for example cloud, edge device, mobile). The syllabus lists seven test types, each addressing specific deployment risks: installability, rollback, canary, shadow, model conversion, cross-device and API testing.",
+            "Installability testing verifies the system can be installed, configured and uninstalled in all supported environments, including dependencies such as GPU drivers. Rollback testing verifies the ability to revert to a previously stable state after a degraded or failed deployment; it may cover only the model or the complete system including the data pipeline, and it must be performed before deployment to confirm rollback readiness. Model conversion testing verifies that the model keeps acceptable predictive accuracy, consistent behaviour and operational efficiency (inference speed, memory) after conversion from its training format to a deployment format. Cross-device testing verifies correct performance across deployment targets from mobile and edge devices to cloud servers. API testing verifies well-defined, standards-compliant interfaces, handling of inputs and outputs, error messages and integration with external systems.",
+            "Canary and shadow testing are easy to confuse. In canary testing an updated model is released to a small subset of production traffic (for example 5% of users) and real-time metrics such as latency, accuracy and error rates are monitored; the new model does serve live responses. In shadow testing the new model runs in parallel with the current production model, the same requests are routed to both, and live responses are unaffected; old and new models are compared on live data in a low-risk environment, uncovering defects such as performance regressions and data drift before full deployment."
+          ],
+          "keyPoints": [
+            "Installability testing verifies installation, configuration and uninstallation in all supported environments.",
+            "Rollback testing verifies reverting to a stable state and must be performed before deployment to confirm rollback readiness.",
+            "Canary testing releases the updated model to a small subset of production traffic and monitors real-time metrics.",
+            "Shadow testing runs the new model in parallel with the production model on the same requests without affecting live responses.",
+            "Model conversion testing verifies accuracy, behaviour and efficiency are retained after conversion to a deployment format.",
+            "Cross-device testing covers deployment targets from mobile and edge devices to cloud, and API testing covers interfaces and integration."
+          ],
+          "commonMistakes": [
+            "Canary and shadow testing are treated as the same; in a canary test the new model answers a small share of real traffic, in a shadow test it receives the same requests but its answers do not reach users.",
+            "Rollback testing is assumed to happen after a deployment has failed; it must be performed before deployment to confirm rollback readiness.",
+            "Model conversion testing is assumed to check only that the converted file loads; it verifies that predictive accuracy, consistent behaviour and operational efficiency are retained."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    }
+  ]
+}

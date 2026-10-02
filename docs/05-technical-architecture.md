@@ -73,7 +73,7 @@ istqb-prep/
 ├── data/                        # Source data (reviewed in Git) — questions/, lessons/, terms.json …
 ├── schemas/                     # JSON Schema definitions, incl. lesson + lessons-index
 ├── scripts/
-│   ├── validate-data.ts         # CI validator — 23 live checks (#1–#25; #14, #23 retired)
+│   ├── validate-data.ts         # CI validator — 24 live checks (#1–#26; #14, #23 retired)
 │   ├── build-index.ts           # Builds questions/index.json, lessons/index.json, the manifest (certification list + counts)
 │   ├── check-i18n.ts            # TR/EN locale key parity — its own CI gate
 │   ├── publish-questions.ts     # review -> published, the only path that records a reviewer
@@ -93,7 +93,7 @@ istqb-prep/
 │   │   ├── LegacyExamRedirect.tsx
 │   │   ├── Sources.tsx · NotFound.tsx
 │   │   ├── MyLists.tsx          # /listelerim — wrong / flagged / never right twice
-│   │   ├── Glossary.tsx         # /sozluk — 97 bilingual terms
+│   │   ├── Glossary.tsx         # /sozluk — the active certification's terms (97 CTFL · 156 CT-AI)
 │   │   ├── Repetition.tsx       # /tekrar — the SRS review screen
 │   │   ├── MyData.tsx           # /verilerim — download / load the progress file
 │   │   └── Progress.tsx         # planned (Phase 3)
@@ -122,7 +122,7 @@ istqb-prep/
 │   ├── types/content.ts         # Data model types, hand-written against schemas/
 │   ├── test/                    # Vitest setup + shared fixtures
 │   └── styles/
-├── e2e/                         # Playwright — labels.ts, deck.ts + exam/practice/study/lists-and-glossary/repetition/my-data/a11y specs
+├── e2e/                         # Playwright — labels.ts, deck.ts + exam/practice/study/lists-and-glossary/repetition/my-data/certification/a11y specs
 ├── docs/
 └── .github/workflows/
     ├── ci.yml                   # lint → format → typecheck → test → validate:data → validate:i18n → build → e2e
@@ -269,14 +269,14 @@ jobs:
 
 | Level | Tool | Scope |
 |---|---|---|
-| **Data** | Ajv + custom rules | §6 [`04-data-model.md`](04-data-model.md) — 23 live checks (#1–#25; #14, #23 retired) |
+| **Data** | Ajv + custom rules | §6 [`04-data-model.md`](04-data-model.md) — 24 live checks (#1–#26; #14, #23 retired) |
 | **Unit** | Vitest | Selection (the 8/6/4/11/9/2 and 8/24/8 distributions hold across independent seeds; the scoped paths), scoring (exact match for multi-select), the timer, the Dexie v3 backfill, mastery, `routeForAttempt`, the session store, the FSRS scheduler (a card reloaded from its row schedules exactly as the library's own), the interval preview and the due queue, the progress file's validation and merge, the content cache across visits |
 | **Component** | Testing Library | `QuestionCard` heading level and option shape, `RationalePanel`'s verdict naming and per-option coverage, `LessonCard`'s missing-card placeholder |
 | **E2E** | Playwright | All three modes end to end; auto-submit when time runs out; attempt recovery after a page reload; the legacy `/deneme` redirect; TR/EN switching; a wrong answer reaching the repetition deck, and a rating storing the schedule its button showed; a progress file downloaded in one browser and loaded in another |
 | **Accessibility** | `@axe-core/playwright` + hand-written specs | Zero violations on every main route in both themes, **plus** the failures axe cannot see: focus destinations, accessible names, live-region behaviour |
 | **Visual** | Playwright snapshot | Not set up |
 
-Counts as of 02.10.2026: **181 unit tests in 26 files**, **69 end-to-end specs across 7 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
+Counts as of 02.10.2026: **181 unit tests in 26 files**, **72 end-to-end specs across 8 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
 
 > This is a **testing certification** project. Test discipline is part of the product itself here; the README will display a test-coverage badge.
 

@@ -1,0 +1,349 @@
+{
+  "chunk": "ch05",
+  "chapter": 5,
+  "dataVersion": "2.0",
+  "lessons": [
+    {
+      "objective": "AI-5.1.1",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§5.1.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Girdi verisi riskleri ve bunları azaltan test yaklaşımları",
+          "paragraphs": [
+            "Girdi verisi testinin amacı, MÖ sisteminin eğitimde, testte ve tahminde kullandığı verinin yeterli kalitede olduğunu doğrulamaktır. Bu başlıktaki hedef, ezberlenecek bir liste değil bir eşleştirmedir: her veri riski için hangi test yaklaşımının o riski azalttığını söyleyebilmek.",
+            "Eşleştirme şöyledir. Eğitim verisindeki hatalardan veya algoritma, model ya da geliştirme çerçevesindeki sorunlardan doğan yanlılık için yanlılık testi (5.1.2). Güvenilmez kaynaktan alınmış veya kötü yönetilen veri için veri kaynağı izlenebilirliği (data provenance) testi. Zehirlenmiş eğitim verisi için A/B testi, veri kaynağı izlenebilirliği testi, keşifsel veri analizi (EDA) ve kırmızı takım çalışması kapsamındaki saldırılar. Kendi içinde tutarsız veri, aralık dışı değer ve yanlış veri türü için veri seti kısıt testi (5.1.5). Yetersiz öznitelik seçimi için öznitelik testi.",
+            "Sınıf dengesizliği, veri artırmayla çarpılmış dağılım, eksik veri, yalnızca bir kullanım alt kümesine odaklanan veri ve değer aralığının tamamını kapsamayan veri için veri temsil ediciliği testi (5.1.4). Kötü etiketleme yönergeleri, belirsiz veri ve tutarsız etiketleme (annotation) için etiket doğruluğu testi (5.1.6). Zayıf tasarım veya entegrasyon nedeniyle, veri kalitesi hataları, canlı ortamda performans düşüşü, güvenlik ihlalleri veya kontrolsüz değişiklikler nedeniyle bozulan veri hattı için veri hattı testi (5.1.3).",
+            "Önemli ayrım şudur: aynı sonuç (kötü model) farklı veri hatalarından çıkabilir ve tablo her risk türünü ona uygun yaklaşımlarla eşleştirir (zehirlenmiş veri için birden fazla yaklaşım vardır). Yanlış aracı seçmek, örneğin sınıf dengesizliğini veri seti kısıt testiyle ya da yanlış etiketi veri temsil ediciliği testiyle aramak, hatayı gözden kaçırır."
+          ],
+          "keyPoints": [
+            "Girdi verisi testi; eğitim, test ve tahmin verisinin kalitesini gözden geçirme, istatistiksel teknik, EDA ve veri hattının statik ile dinamik testiyle sağlar.",
+            "Yanlılığa yol açan veri hataları için yanlılık testi uygulanır.",
+            "Zehirlenmiş veri için A/B testi, veri kaynağı izlenebilirliği testi, EDA ve kırmızı takım saldırıları uygulanır.",
+            "Tutarsız veri, aralık dışı değer ve yanlış veri türü için veri seti kısıt testi uygulanır.",
+            "Dengesiz veya eksik kapsamlı veri için veri temsil ediciliği testi, kötü etiketleme için etiket doğruluğu testi, hat bozulmaları için veri hattı testi uygulanır."
+          ],
+          "commonMistakes": [
+            "Veri riskinin her türüne aynı testin uygulanabileceğini sanmak; oysa tabloda her risk kümesi kendine uygun bir testle eşleştirilir (ör. aralık dışı değer kısıt testine, hatalı etiket etiket doğruluğu testine aittir).",
+            "Sınıf dengesizliğini veri seti kısıt testiyle aramak; kısıt testi tek tek değerlerin ve değerler arası kuralların uyumunu denetler, dağılımın gerçek dünyayı yansıtıp yansıtmadığını denetlemez, bunu veri temsil ediciliği testi yapar."
+          ]
+        },
+        "en": {
+          "title": "Input data risks and the tests that mitigate them",
+          "paragraphs": [
+            "The aim of input data testing is to confirm that the data an ML system uses for training, testing and prediction is of sufficient quality. What this objective asks for is a matching exercise, not a memorised list: for each kind of data risk, name the test approach that mitigates it.",
+            "The matching is as follows. Bias caused by defects in the training data, or by problems in the algorithm, model or ML development framework, is mitigated by testing for bias (5.1.2). Data from untrustworthy sources, or data that is poorly managed, by data provenance testing. Poisoned training data by A/B testing, data provenance testing, EDA and the attacks used in red teaming. An internally inconsistent dataset, out-of-range data and wrong data types by dataset constraint testing (5.1.5). Sub-optimal feature selection by feature testing.",
+            "An imbalanced dataset, a dataset skewed by data augmentation, missing data, data focused on a subset of use cases and a dataset that does not cover the full range of values are mitigated by data representativeness testing (5.1.4). Poor labelling guidelines, ambiguous data and inaccurate or inconsistent annotation by label correctness testing (5.1.6). A data pipeline that fails through poor design or integration, data quality defects, degraded performance in operation, or security breaches and uncontrolled changes by data pipeline testing (5.1.3).",
+            "The distinction that matters is that the same symptom, a poor model, can come from different data defects, and the table pairs each kind of risk with the approaches suited to it (poisoned data has several). Using the wrong one, such as dataset constraint testing to look for class imbalance, or data representativeness testing to look for a wrong label, misses the defect."
+          ],
+          "keyPoints": [
+            "Input data testing uses reviews, statistical techniques, EDA, and static and dynamic testing of the data pipeline to check the quality of training, test and prediction data.",
+            "Data defects that lead to bias are mitigated by testing for bias.",
+            "Poisoned training data is mitigated by A/B testing, data provenance testing, EDA and red teaming attacks.",
+            "Inconsistent data, out-of-range values and wrong data types are mitigated by dataset constraint testing.",
+            "Imbalanced or incomplete data is mitigated by data representativeness testing, bad labelling by label correctness testing, and pipeline failures by data pipeline testing."
+          ],
+          "commonMistakes": [
+            "Assuming one test fits every data risk; in fact each group of risks is paired with a suited test in the syllabus table (an out-of-range value belongs to constraint testing, a wrong label to label correctness testing).",
+            "Searching for class imbalance with dataset constraint testing; constraint testing checks single values and rules between values, it does not tell whether the distribution mirrors the real world, which is the job of data representativeness testing."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-5.1.2",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§5.1.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Yanlılığın nasıl test edileceği",
+          "paragraphs": [
+            "Yapay zekâ tabanlı bir sistemde yanlılık, cinsiyet, yaş veya ırk gibi hassas niteliklere dayanan, rastgele olmayan ve haksız bir muamele farkıdır; çoğu zaman yasa dışıdır ve sistemi ayrımcı yapar. Yanlılık testi, önce yanlılığın nereden gelebileceğini bilmeyi gerektirir.",
+            "İki ana kaynak vardır. Veri yanlılığı, eğitim verisindeki hatalardan doğar: temsil eksikliği, tarihsel çarpıklık veya kasıtlı zehirleme. Algoritmik yanlılık ise algoritmadaki, modeldeki veya geliştirme çerçevesindeki hatalardan doğar; müfredat örnek olarak kredi onay sisteminde kredi puanı için kullanılan bir karar eşiğini verir.",
+            "Yaklaşımlar şunlardır: tüm MÖ iş akışının, özellikle veri hazırlığının gözden geçirilmesi; veri seti belgelerinin (verinin nasıl toplandığı, etiketlendiği, hangi popülasyonları içerdiği) gözden geçirilmesi; veri hazırlama ve model kodunun statik analizi; eğitim verisinin görselleştirme ve kümeleme ile EDA'sı; etiket doğruluğu testi; dinamik test ve orantısız etki analizi. Dinamik testte bilinen yansız ve temsil edici bir veri seti sisteme verilir ve tahminler, hassas gruplar arasında istatistiksel olarak anlamlı fark açısından çözümlenir. Bu test, yanlılık eğitimde mi model geliştirmede mi girmiş olursa olsun model çıktısındaki yanlılığı yakalar.",
+            "Orantısız etki analizi dört adımdır: modelin hassas niteliklerini belirle; bu nitelikler için karşı olgusal örnekler üret (ör. bir kredi başvurusunda cinsiyeti erkekten kadına çevir); örnekleri modele ver; çok sayıda testin sonucunu istatistiksel olarak anlamlı bir sonuca varacak biçimde çözümle. Hassas nitelik değişince sonuç da değişiyorsa yanlılık vardır. Analiz nitelik kombinasyonlarına da uygulanabilir, ancak karşı olgusal örnekler gerçekçi olmalıdır; gerçekçi olmayan bir örneğe model, altta yatan yanlılığa değil örneğin gerçekçi olmayışına tepki verebilir."
+          ],
+          "keyPoints": [
+            "Yanlılık, hassas niteliklere dayanan rastgele olmayan ve haksız muamele farkıdır.",
+            "Kaynaklar veri yanlılığı (eğitim verisindeki hatalar) ve algoritmik yanlılıktır (algoritma, model veya çerçevedeki hatalar).",
+            "Gözden geçirme, statik analiz, EDA, etiket doğruluğu testi ve dinamik test yanlılık arama yaklaşımlarıdır.",
+            "Dinamik test, yansız ve temsil edici bir veri setinin tahminlerini hassas gruplar arasında istatistiksel olarak karşılaştırır.",
+            "Orantısız etki analizi: hassas nitelikleri belirle, karşı olgusal örnek üret, modele ver, sonuçları istatistiksel olarak çözümle."
+          ],
+          "commonMistakes": [
+            "Yanlılığın yalnızca eğitim verisinden geldiğini sanmak; algoritma, model veya geliştirme çerçevesindeki hatalar da (algoritmik yanlılık) yanlılık üretir. Model çıktısı üzerindeki dinamik test her iki kaynağı da yakalar.",
+            "Orantısız etki analizinde tek bir karşı olgusal çiftin sonucunu yeterli saymak; müfredat, hassas nitelik değişince sonucun değiştiğini göstermek için birden çok testin istatistiksel olarak anlamlı sonucunu ister."
+          ]
+        },
+        "en": {
+          "title": "How to test for bias",
+          "paragraphs": [
+            "In an ML system, bias is a non-random, unfair difference in treatment based on sensitive attributes such as gender, age or race. It is often unlawful and makes the system discriminatory. Testing for it starts with knowing where it can come from.",
+            "There are two main sources. Data bias comes from defects in the training data: unrepresentativeness, historical skews or deliberate poisoning. Algorithmic bias comes from defects in the algorithm, the model or the development framework; the syllabus gives the example of an algorithm using a decision threshold for credit scores in a loan approval system.",
+            "The approaches are: reviews of the whole ML workflow, especially data preparation; reviews of dataset documentation (how the data was collected, annotated and which populations it represents); static analysis of the data preparation programs and the model code; EDA of the training data with visualisation and clustering; label correctness testing; dynamic testing; and disparate impact analysis. In dynamic testing a known unbiased, representative dataset is fed through the system and the predictions are analysed for statistically significant differences across sensitive groups. It finds bias in model outputs whether it entered during training or during model development.",
+            "Disparate impact analysis has four steps: identify the sensitive attributes; generate counterfactuals for them (for example, change gender from male to female in a loan application); present the counterfactuals to the model; analyse the results of multiple tests to reach a statistically significant result showing whether changing the sensitive attribute changes the output. It can also be applied to combinations of attributes, but the counterfactuals must be realistic, otherwise the model may react to the unrealistic example rather than to any underlying bias."
+          ],
+          "keyPoints": [
+            "Bias is a non-random, unfair difference in treatment based on sensitive attributes.",
+            "The sources are data bias (defects in the training data) and algorithmic bias (defects in the algorithm, model or framework).",
+            "Reviews, static analysis, EDA, label correctness testing and dynamic testing are approaches for detecting bias.",
+            "Dynamic testing feeds a known unbiased, representative dataset through the system and compares predictions across sensitive groups for statistically significant differences.",
+            "Disparate impact analysis: identify sensitive attributes, generate counterfactuals, present them to the model, analyse multiple results statistically."
+          ],
+          "commonMistakes": [
+            "Assuming bias only comes from the training data; defects in the algorithm, model or framework produce algorithmic bias too. Dynamic testing of model outputs catches both sources.",
+            "Treating one counterfactual pair as enough in disparate impact analysis; the syllabus requires the results of multiple tests to be analysed for a statistically significant result before concluding that the sensitive attribute changes the outcome."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-5.1.3",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§5.1.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Veri hattı testinin biçimleri",
+          "paragraphs": [
+            "Veri hattı testi, veri odaklı sistemin güvenilirliğini ve performansını doğrulamak ve MÖ iş akışı boyunca veri kalitesini korumak için gereklidir. Müfredat katmanlı bir yaklaşım anlatır; hedef, bu katmanları ve her birinin neyi sınadığını özetleyebilmektir.",
+            "Tasarım aşamasında veri hattı tasarımı gözden geçirilir. Bileşen testi, veri alma bileşenlerini, dönüşüm betiklerini ve sensör arayüzlerini kapsar; gözden geçirme, statik analiz ve donanıma özgü testler kullanılır; dönüşüm mantığını, veri geçerlilik denetimi kurallarının uygulanışını, hata işlemeyi ve kötü amaçlı yazılım veya zehirli veri sokmaya yarayabilecek açıkları sınar. Bileşen entegrasyon testi, verinin iç arayüzlerden akışını ve veriden doğru anlam çıkarılmasını sınar; uyuşmayan arayüzleri ve bileşenler arası yanlış varsayımları yakalar.",
+            "Sistem testi, bütünüyle kurulmuş hattı sınar: önce temel işleyişi görmek için duman testi, sonra gereksinimlere uygunluk için fonksiyonel test (veri dönüşümü ve yönlendirme dahil), ardından yük altında performans, ölçeklenebilirlik ve güvenlik için fonksiyonel olmayan test. Hata enjeksiyonu testi, bozuk veri girdilerini benzeterek hattın veri bütünlüğünü koruyup koruyamadığını ölçer. Sırt sırta test, canlı hattı eğitim hattıyla karşılaştırır. Sistem entegrasyon testi, hattın veri kaynakları, depolama, izleme araçları ve model gibi alt tüketicilerle etkileşimini sınar.",
+            "Üretim ortamında test, sırt sırta test ile performansın önceki sürümlere göre aynı veya daha iyi olduğunu, A/B testi ile yeni hat sürümünün temel çizgiye göre iyileştiğini ve canlı veri akışında bozulma olmadığını doğrular; izleme araçları gerçek zamanlı gözlem sağlar. Yapılandırma yönetimi gözden geçirmeleri, eğitim, test ve üretimde doğru kod sürümlerinin, yapılandırmaların ve veri setlerinin kullanıldığını denetler. Strateji hattın amacına uymalıdır: çoğu kez keşif niteliğindeki eğitim hatlarında veri bütünlüğü öne çıkabilir, operasyonel hatlarda ise güvenilirlik, performans ve bakım yapılabilirlik önceliklidir."
+          ],
+          "keyPoints": [
+            "Veri hattı testi tasarım gözden geçirmesiyle başlar ve bileşen, bileşen entegrasyon, sistem, sistem entegrasyon ve üretim ortamı testi katmanlarıyla sürer.",
+            "Bileşen testi veri alma, dönüşüm betikleri, geçerlilik denetimi kuralları ve hata işlemeyi sınar.",
+            "Sistem testi duman, fonksiyonel, fonksiyonel olmayan, hata enjeksiyonu ve sırt sırta testi içerir.",
+            "Hata enjeksiyonu testi bozuk girdileri benzeterek hattın veri bütünlüğünü koruyup korumadığını ölçer.",
+            "Üretim ortamında sırt sırta test ve A/B testi uygulanır; yapılandırma yönetimi gözden geçirmeleri doğru sürümlerin kullanıldığını denetler."
+          ],
+          "commonMistakes": [
+            "Veri hattı testini yalnızca bitmiş hattın uçtan uca testi sanmak; müfredat tasarım gözden geçirmesiyle ve bileşen düzeyinde statik testlerle başlayan katmanlı bir yaklaşım anlatır.",
+            "Eğitim hattı ile operasyonel hattın aynı öncelikle test edileceğini sanmak; eğitim hattında veri bütünlüğü, operasyonel hatta güvenilirlik, performans ve bakım yapılabilirlik öne çıkar."
+          ]
+        },
+        "en": {
+          "title": "The forms of data pipeline testing",
+          "paragraphs": [
+            "Data pipeline testing is essential for confirming the reliability and performance of data-driven systems and for keeping data quality high throughout the ML workflow. The syllabus describes a layered approach; the objective is to summarise the layers and what each one examines.",
+            "In the design phase the pipeline design is reviewed. Component testing covers data ingestion components, transformation scripts and sensor interfaces, using code reviews, static analysis and hardware-specific tests; it checks transformation logic, the implementation of data validation rules, error handling, and vulnerabilities that could be exploited to introduce malware or poisoned data. Component integration testing verifies the flow of data across internal interfaces and its correct interpretation, catching mismatched interfaces and wrong assumptions between components.",
+            "System testing assesses the fully assembled pipeline: smoke testing first for basic functionality, then functional testing against requirements (including data transformation and routing), then non-functional testing of performance under load, scalability and security. Fault injection testing simulates defective data inputs to measure whether the pipeline keeps data integrity. Back-to-back testing compares the operational pipeline with the training pipeline. System integration testing verifies interaction with external systems such as data sources, storage, monitoring tools and downstream consumers like ML models.",
+            "Testing in production uses back-to-back testing to check that performance is consistent or improved against previous versions, and A/B testing to compare new pipeline versions with baselines without degrading the live data stream; tools can monitor behaviour in real time. Configuration management reviews check that the right code versions, configurations and datasets are used in training, testing and production. The strategy must fit the purpose: training pipelines, often exploratory prototypes, may focus on data integrity, while operational pipelines prioritise reliability, performance and maintainability."
+          ],
+          "keyPoints": [
+            "Data pipeline testing starts with a design review and continues through component, component integration, system, system integration and production testing.",
+            "Component testing covers ingestion components, transformation scripts, validation rules and error handling.",
+            "System testing includes smoke, functional, non-functional, fault injection and back-to-back testing.",
+            "Fault injection testing simulates defective data inputs to measure whether the pipeline maintains data integrity.",
+            "In production, back-to-back and A/B testing are used, and configuration management reviews check that the right versions are in use."
+          ],
+          "commonMistakes": [
+            "Treating pipeline testing as an end-to-end test of the finished pipeline only; the syllabus describes layers that begin with design reviews and static testing of components.",
+            "Testing training and operational pipelines with the same priorities; a training pipeline emphasises data integrity, an operational one reliability, performance and maintainability."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-5.1.4",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§5.1.4",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Veri temsil ediciliğinin nasıl test edileceği",
+          "paragraphs": [
+            "Veri temsil ediciliği testi, eğitim, doğrulama ve test veri setlerinin özelliklerinin, modelin işletimde karşılaşacağı gerçek dünya verisine ne kadar yakın olduğunu belirler. Amaç, çarpık dağılımı, eksik veriyi, orantısız öznitelik dağılımını, işletim senaryolarının yetersiz kapsamını ve sınıf dengesizliğini yakalamaktır.",
+            "Test üç adımdan oluşur. Birinci adım hedef popülasyonu tanımlamaktır: kullanım durumlarını ve işletim bağlamını anlamak, son kullanıcıları ve ortamları çözümlemek, beklenen işletim verisi dağılımlarını ve kritik uç durumları alan uzmanlarına danışarak, mevcut sistemlerin verisini çözümleyerek veya güvenilir kaynaklardaki kıyaslama veri setlerini (ör. NIST) kullanarak belirlemek; ardından tabakalı örnekleme ile tüm ilgili alt grupları kapsayan bir temel çizgi oluşturmak.",
+            "İkinci adım veri özelliklerini çözümlemektir: değerlendirilen eğitim veya test veri setine ve beklenen işletim verisini temsil eden referans veri setine EDA uygulanır; dağılımlar histogram ve saçılım grafikleriyle görselleştirilir, öznitelik ilişkileri (özellikle korelasyonlar) çözümlenir; anomaliler, boşluklar ve olağandışı yığılmalar belirlenir. Üçüncü adım istatistiksel değerlendirmedir: dağılımları karşılaştırmak için Ki-kare ve Kolmogorov-Smirnov gibi testler, özellikle sınıflandırmada dengesizlik denetimi, tipik ve uç/sınır senaryoların kapsamının doğrulanması.",
+            "Zamanlama da önemlidir: bu test model eğitiminden önce yapılmalıdır. Dağıtımdan sonra ise işletim girdi verisi sürekli izlenir; eğitim dağılımından uzaklaşma, yani veri kayması işaretini verir (6.1.7)."
+          ],
+          "keyPoints": [
+            "Veri temsil ediciliği testi, veri setlerinin modelin işletimde karşılaşacağı gerçek dünya verisini ne kadar yansıttığını belirler.",
+            "Üç adım: hedef popülasyonu tanımla, veri özelliklerini EDA ile çözümle, istatistiksel teknikleri uygula.",
+            "Hedef popülasyon; alan uzmanları, mevcut sistemlerin verisi veya güvenilir kıyaslama veri setleriyle ve tabakalı örneklemeyle belirlenir.",
+            "Dağılımları karşılaştırmak için Ki-kare ve Kolmogorov-Smirnov gibi istatistiksel testler kullanılır.",
+            "Test model eğitiminden önce yapılır; dağıtımdan sonra girdi verisi, veri kayması için sürekli izlenir."
+          ],
+          "commonMistakes": [
+            "Temsil ediciliği yalnızca eğitim verisinin boyutuna bakarak değerlendirmek; ölçüt boyut değil, veri setinin gerçek işletim verisinin dağılımına ve kapsamına yakınlığıdır, bu yüzden bir referans veri seti gerekir.",
+            "Testi modelin dağıtımından sonra yapılacak bir iş sanmak; müfredat onu eğitimden önce yapmayı ister, dağıtımdan sonra yapılan ise veri kaymasını izlemedir."
+          ]
+        },
+        "en": {
+          "title": "How to test for data representativeness",
+          "paragraphs": [
+            "Data representativeness testing determines how closely the training, validation and test datasets match the real-world data the model will meet in operation. It targets skewed datasets, missing data, disproportionate feature distributions, inadequate coverage of operational scenarios and imbalanced class representation.",
+            "The test has three steps. Step one is to define the target population: understand the use cases and operational context, analyse end users and environments, identify expected operational data distributions and critical edge cases (by consulting domain experts, analysing data from existing systems, or using benchmark datasets from trusted sources such as NIST), and apply stratified sampling to the reference data to create a baseline that covers all relevant subgroups.",
+            "Step two is to analyse data characteristics: apply EDA to the dataset under evaluation and to the reference dataset representing expected operational data, visualise distributions with histograms and scatter plots, examine feature relationships (correlations in particular), and identify anomalies, gaps and unusual concentrations. Step three is statistical assessment: formal tests such as Chi-squared and Kolmogorov-Smirnov to compare distributions, a check for data imbalance (particularly in classification), and verification that typical and edge or boundary cases are covered.",
+            "Timing matters as well: the test should be done before model training. After deployment, the operational input data is monitored continuously, because a departure from the training distribution signals data drift (see 6.1.7)."
+          ],
+          "keyPoints": [
+            "Data representativeness testing determines how closely the datasets match the real-world data the model will meet in operation.",
+            "Three steps: define the target population, analyse data characteristics with EDA, apply statistical assessment techniques.",
+            "The target population is defined with domain experts, data from existing systems or trusted benchmark datasets, and stratified sampling.",
+            "Chi-squared and Kolmogorov-Smirnov tests are used to compare distributions.",
+            "The test is performed before training; after deployment the input data is monitored for data drift."
+          ],
+          "commonMistakes": [
+            "Judging representativeness by the size of the training data alone; the criterion is closeness to the distribution and coverage of real operational data, which is why a reference dataset is needed.",
+            "Treating the test as something done after deployment; the syllabus wants it before training, and what happens after deployment is monitoring for data drift."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-5.1.5",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§5.1.5",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Veri seti kısıt testinin uygulanması",
+          "paragraphs": [
+            "Veri seti kısıt testi, bir veri setindeki verinin önceden tanımlı kurallara ya da kısıtlara uyup uymadığını sınar; amaç MÖ'de kullanılan verinin bütünlüğünü ve tutarlılığını doğrulamaktır. Kısıtlar veri tabanı şemalarındaki gibi verinin mantıksal modelini oluşturur: veri doğruysa hepsi sağlanmalıdır. K3 hedefi, kısıtları sınıflandırıp somut bir veri setine uygulayabilmektir.",
+            "Tek değer kısıtları, tek bir örnekteki tek bir niteliğin değerine uygulanır. Eksik: eksik değerleri ve nitelikleri arar. Aralık: değerin verilen aralıkta olduğunu sınar. Tür: değerin belirtilen türe uyduğunu sınar (tam sayı olması gereken yere metin veya gerçel sayı gelmemelidir). Çoklu değer kısıtları ise genellikle tek bir niteliğin birçok örnekteki değerlerine uygulanır. Toplam: değerlerin toplamının bir sınıra eşit olmasını, aşmasını veya aşmamasını sınar. Sayı: boş olmayan değerlerin sayısını sınar. Yineleme: aynı veya yaklaşık aynı değerleri ya da örnekleri arar ve izin verilen sayıyı sınırlar (çoğu kez sıfır). Yararlı: bir niteliğin bazı değerleri tekrarlamasını bekler, çünkü her girdisi benzersiz olan nitelik (ör. kimlik, zaman damgası) modelin öğrenebileceği bir örüntü sunmaz. Aykırı değer: istatistiksel aykırı değerleri bulur. Özel bir çoklu değer biçimi olan karşılaştırma kısıtları değerleri birbiriyle kıyaslar: Büyüktür (bir niteliğin değeri başka bir niteliğinkinden büyük olmalı) ve Korelasyon (iki niteliğin değerleri ilişkili olmalı; müfredatın örneği: notu ortalamanın en az 1,33 standart sapma üstünde olan tüm öğrencilerin harf notu da 'A' olmalı). Büyüktür kesin bir karşılaştırmadır: 'büyük' eşitliği kapsamadığından eşit değerler bu kısıtı ihlal eder.",
+            "Pratik bir uygulama yolu (müfredattaki bir prosedür değil, bir çalışma yöntemi): (1) Şemadan, gereksinimlerden veya alan bilgisinden her nitelik için kısıtları çıkar ve türünü belirle. (2) Her kısıtı sınanabilir bir kural olarak yaz. (3) Kuralı her örneğe ya da nitelik sütununa uygula ve ihlal eden örnekleri listele. (4) İhlalleri yorumla: veri mi yanlış, yoksa kısıt mı eksik tanımlanmış?",
+            "Örnek: kredi başvurusu veri setinde kimlik, yaş, aylık gelir ve aylık taksit var. Satırlar (kimlik, yaş, gelir, taksit): S1: 1, 30, 5000, 1200. S2: 2, 17, 4000, 800. S3: 3, 40, (boş), 900. S4: 4, 35, 3000, 3500. S5: 5, 30, 5000, 1200. Kısıtlar: yaş 18 ile 75 arasında tam sayı (aralık ve tür), gelir boş olmayacak (eksik), gelir taksitten büyük olacak (büyüktür), kimlik hariç aynı satır olmayacak (yineleme). S2'de yaş 17 aralığı ihlal eder; S3'te gelir yoktur, eksik kısıtı ihlal edilir; S4'te taksit 3500, gelir 3000 olduğundan büyüktür kısıtı ihlal edilir; S5, kimlik dışında S1'in kopyasıdır, yineleme kısıtı ihlal edilir. S1 hiçbirini ihlal etmez ve tür kısıtı tüm satırlarda sağlanır.",
+            "Elle yapılabilir, ancak veri setlerinin büyüklüğü bu işin veri hattının parçası olarak otomatikleştirilmesini gerektirir. Araç, eğitim verisi anomalilerini veri bilimcilere, işletim verisi sorunlarını operasyon ekiplerine raporlayabilir."
+          ],
+          "keyPoints": [
+            "Veri seti kısıt testi, verinin önceden tanımlı kural ve kısıtlara uyup uymadığını sınayarak bütünlük ve tutarlılığı doğrular.",
+            "Tek değer kısıtları: eksik, aralık, tür.",
+            "Çoklu değer kısıtları: toplam, sayı, yineleme, yararlı, aykırı değer.",
+            "Karşılaştırma kısıtları: büyüktür ve korelasyon.",
+            "Pratik bir çalışma yöntemi (müfredat prosedürü değil): kısıtları çıkar ve türünü belirle, kural olarak yaz, veri setine uygula, ihlalleri yorumla; büyük veri setlerinde işlem veri hattında otomatikleştirilir."
+          ],
+          "commonMistakes": [
+            "Aralık kısıtını (tek değer) toplam veya sayı kısıtıyla (çoklu değer) karıştırmak: aralık tek bir örneğin tek bir değerine bakar, toplam ve sayı ise birçok örnekteki değerlere bakar.",
+            "Veri setindeki ihlalsiz görünen her kolonu doğru sanmak; kısıt testi yalnızca tanımlanan kısıtları sınar, tanımlanmamış bir kuralın ihlali bu testle görünmez.",
+            "Yararlı kısıtını bir başka yineleme denetimi sanmak; yineleme kısıtı tekrarlanan değer veya örnekleri sınırlar (çoğu kez sıfıra), yararlı kısıtı ise her girdisi benzersiz olan bir niteliği (kimlik, zaman damgası), öğrenilecek bir örüntü sunmadığı için ihlal olarak işaretler."
+          ]
+        },
+        "en": {
+          "title": "Applying dataset constraint testing",
+          "paragraphs": [
+            "Dataset constraint testing checks whether the data in a dataset adheres to predefined rules or constraints, to confirm the integrity and consistency of the data used in ML. Constraints work like a database schema: together they form a logical model of the data that must hold if the data is correct. As a K3 objective, it asks you to classify constraints and apply them to a concrete dataset.",
+            "A single-value constraint applies to the value of one attribute in one instance. Missing: tests for missing values and attributes. Range: tests that a value is within a given range. Type: tests that the value matches the specified type (an attribute specified as an integer must not hold a string or a real number). A multi-value constraint applies across values, typically one attribute across several instances. Sum: the sum of the values equals, exceeds or does not exceed a given value. Count: the count of non-null values equals, exceeds or does not exceed a given value. Duplicate: identical or near-identical values or instances, with a limit on how many are allowed (often zero). Useful: an attribute should contain some repeated values, because an attribute where every entry is unique (an ID, a timestamp) gives a model no pattern to learn. Outlier: values that could be statistical outliers. A special form of multi-value constraint, the comparison constraint, relates values: Greater Than (a value of one attribute exceeds a value of another) and Correlate (values of one attribute correlate with values of another; the syllabus example is that every student whose marks are at least 1.33 standard deviations above the mean also has an 'A' grade). Greater Than is a strict comparison: because 'greater' excludes equality, equal values violate it.",
+            "A practical way to apply it (a working method, not a syllabus procedure): (1) derive the constraints from the schema, requirements or domain knowledge and classify each one; (2) write each as a testable rule; (3) run the rule over every instance or attribute column and list the violating instances; (4) interpret the violations: is the data wrong or was the constraint defined wrongly?",
+            "Worked example: a loan dataset with id, age, monthly income and monthly instalment. The rows (id, age, income, instalment) are: R1: 1, 30, 5000, 1200. R2: 2, 17, 4000, 800. R3: 3, 40, (empty), 900. R4: 4, 35, 3000, 3500. R5: 5, 30, 5000, 1200. The constraints are: age an integer from 18 to 75 (range and type), income not null (missing), income greater than instalment (greater than), and no two rows equal apart from the id (duplicate). R2 has age 17 and violates the range. R3 has no income and violates the missing constraint. R4 has an instalment of 3500 against an income of 3000 and violates the comparison. R5 is a copy of R1 except for the id and violates the duplicate constraint. R1 violates nothing, and the type constraint holds in every row.",
+            "Testing can be done manually, but the typical size of datasets means it should be automated as part of the data pipeline. The tool can report to data scientists (training data anomalies) or to operations staff (operational data problems)."
+          ],
+          "keyPoints": [
+            "Dataset constraint testing verifies that the data adheres to predefined rules, confirming integrity and consistency.",
+            "Single-value constraints are missing, range and type.",
+            "Multi-value constraints are sum, count, duplicate, useful and outlier.",
+            "Comparison constraints, a special form of multi-value constraint, are greater than and correlate.",
+            "A practical working method (not a syllabus procedure): derive and classify the constraints, write them as rules, run them over the dataset, interpret the violations; automate this in the data pipeline for large datasets."
+          ],
+          "commonMistakes": [
+            "Mixing up a range constraint (single-value) with sum or count constraints (multi-value); a range looks at one value in one instance, sum and count look at values across many instances.",
+            "Assuming a dataset with no violations is correct; the test checks only the constraints that were defined, so a rule nobody wrote down is never tested.",
+            "Treating Useful as just another duplicate check; Duplicate limits repeated values or instances (often to zero), whereas Useful flags an attribute whose entries are all unique (an ID, a timestamp) because it offers no pattern to learn."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-5.1.6",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§5.1.6",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Etiket doğruluğu testi",
+          "paragraphs": [
+            "Denetimli öğrenmede etiket doğruluğu esastır: yanlış veya tutarsız etiketler modelin performansını ve genellemesini doğrudan zayıflatır. Etiket doğruluğu testi, bu etiket hatalarını bulmak için kullanılan yaklaşımların bir bileşimidir; hedef her yaklaşımın ne yaptığını açıklayabilmektir.",
+            "Üç yaklaşım insan odaklıdır. Uzman gözden geçirmesinde alan uzmanları veya eğitimli etiketleyiciler etiketli verinin bir örneklemini kendi bilgileri ve yönergelerle gözden geçirir. Çoklu etiketlemede aynı veri noktaları birden çok etiketleyici tarafından bağımsız etiketlenir ve sonuçlar bir tür sırt sırta testle karşılaştırılır; anlaşmazlıklar araştırılıp çözülmesi gereken hataları gösterir. Etiketleyiciler arası uyum (IAA), Cohen'in Kappa'sı veya basit yüzde uyumu gibi ölçütlerle ölçülebilir; düşük IAA, etiketleme yönergelerinde hata, belirsiz veri veya kötü etiketleme işareti olabilir. Riske dayalı önceliklendirmede ise gözden geçirme ve çoklu etiketleme, yanlış etiketlenme olasılığı yüksek (belirsiz veya sınıf sınırına yakın) ve uygulamanın başarısını ya da emniyetini en çok etkileyecek veri noktalarına odaklanır.",
+            "Diğer yaklaşımlar otomatik veya veri odaklıdır. Veri dağılımı analizinde, benzer veri setleri varsa etiket dağılımı onlarla karşılaştırılır ve anomaliler olası yanlış etiketleri gösterir. Otomatik kural tabanlı testler, önceden tanımlı etiket kurallarını sınar (ör. sınırlayıcı kutuların çakışmaması ve görüntü sınırını aşmaması). Model kaybı analizinde, eğitim sırasında yüksek kayıp veren, yani tahmini gerçek etiketten çok sapan veri noktaları yanlış etiketlenmiş olabilir. Model güven skoru analizinde, eğitilmiş modelin düşük güvenle tahmin ettiği noktalar yanlış etiketlenmiş, belirsiz veya eğitim dağılımı dışında olabilir.",
+            "Birleşim genellikle daha etkilidir; müfredat şu örneği verir: uzman gözden geçirmesi başta net etiketleme yönergeleri kurmakta değerlidir, ardından IAA skorları etiketleme sürecini iyileştirir, model geliştikçe de model tabanlı yaklaşımlar kalan etiket hatalarını bulur."
+          ],
+          "keyPoints": [
+            "Etiket doğruluğu denetimli öğrenmede esastır; yanlış veya tutarsız etiketler performansı ve genellemeyi zayıflatır.",
+            "Uzman gözden geçirmesi, etiketli verinin bir örnekleminin alan uzmanları veya eğitimli etiketleyiciler tarafından elle gözden geçirilmesidir.",
+            "Çoklu etiketlemede bağımsız etiketler sırt sırta testle karşılaştırılır ve uyum IAA ile (ör. Cohen'in Kappa'sı) ölçülür; düşük IAA yönerge, veri veya etiketleme sorununa işaret eder.",
+            "Veri dağılımı analizi, kural tabanlı testler, model kaybı analizi ve model güven skoru analizi otomatik veya model tabanlı yaklaşımlardır.",
+            "Yaklaşımların birleşimi genellikle daha etkilidir (ör. uzman gözden geçirmesi, sonra IAA, sonra model tabanlı analiz)."
+          ],
+          "commonMistakes": [
+            "Düşük etiketleyiciler arası uyumun her zaman etiketleyicilerin dikkatsizliğinden kaynaklandığını sanmak; düşük IAA etiketleme yönergelerindeki hataya veya belirsiz veriye de işaret edebilir.",
+            "Yüksek model kaybını modelin kötü olduğunun kanıtı saymak; müfredata göre yüksek kayıplı noktalar yanlış etiketlenmiş olabilir ve araştırılması gereken olası etiket hatalarıdır.",
+            "Yanlış etiketleri yalnızca veri seti kısıt testiyle aramaya çalışmak; kısıtlar ve kural tabanlı etiket testleri bir kuralı çiğneyen etiketleri yakalar, ama kurala uyan ve yine de gerçek dünyaya göre yanlış olan etiketi yakalamaz; bunu uzman gözden geçirmesi, çoklu etiketleme ve model tabanlı yaklaşımlar yapar."
+          ]
+        },
+        "en": {
+          "title": "Label correctness testing",
+          "paragraphs": [
+            "In supervised learning, label correctness is essential: inaccurate or inconsistent labels directly undermine a model's performance and generalisation. Label correctness testing is a set of approaches for finding label defects, and the objective is to explain what each one does.",
+            "Three approaches rely on people. In expert review, domain experts or trained annotators manually review a sample of labelled data using their knowledge and the guidelines. In multiple annotation, data points are labelled independently by several annotators and compared using a form of back-to-back testing; disagreements highlight defects that need investigation and resolution. Inter-annotator agreement (IAA) can be measured with metrics such as Cohen's Kappa or simple percentage agreement, and low IAA can indicate defects in the labelling guidelines, ambiguous data or poor annotation. With risk-based prioritisation, review and multiple annotation are focused on the data points most likely to be mislabelled (ambiguous ones, or ones near a class boundary) and those most likely to affect the application's success or safety.",
+            "The other approaches are automated or data-driven. Data distribution analysis compares the label distribution with that of similar datasets, where they exist, to reveal anomalies. Automated rule-based tests check predefined label rules, for example that bounding boxes do not overlap or extend beyond the image. Model loss analysis treats data points with high loss during training, where predictions deviate substantially from the true labels, as possible mislabelling. Model confidence score analysis treats points with low prediction confidence as possibly mislabelled, ambiguous or outside the training distribution.",
+            "A combination is usually most effective; the syllabus gives this example: expert review is valuable for setting clear labelling guidelines early, IAA scores then refine the labelling process, and model-based approaches later find remaining label defects as the model develops."
+          ],
+          "keyPoints": [
+            "Label correctness is essential in supervised learning because wrong or inconsistent labels undermine performance and generalisation.",
+            "Expert review is a manual review of a sample of labelled data by domain experts or trained annotators.",
+            "Multiple annotation compares independent labels using back-to-back testing and measures agreement with IAA (for example Cohen's Kappa); low IAA points to guideline, data or annotation defects.",
+            "Data distribution analysis, rule-based tests, model loss analysis and model confidence score analysis are automated or model-based approaches.",
+            "A combination of approaches is often most effective (for example: expert review, then IAA, then model-based analysis)."
+          ],
+          "commonMistakes": [
+            "Assuming low inter-annotator agreement always means careless annotators; it can equally indicate defects in the labelling guidelines or ambiguous data.",
+            "Reading high model loss on a data point as proof that the model is bad; according to the syllabus such points may be mislabelled and are candidates for investigation as possible label defects.",
+            "Trying to find wrong labels with dataset constraint testing alone; constraints (and rule-based label tests) catch labels that break a rule, but not a label that is rule-conformant and still wrong about the real world, which expert review, multiple annotation and the model-based approaches address."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    }
+  ]
+}

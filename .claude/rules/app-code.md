@@ -47,7 +47,7 @@ routes/            Screens · components/ shared UI · types/content.ts data typ
 user-facing surface:
 
 ```
-/                              Home — three mode cards, resume banner
+/                              Home — certification picker, three mode cards, resume banner
 /calisma                       Study: chapters
 /calisma/:chapter              Study: that chapter's objectives
 /calisma/lo/:loCode            Study: one objective — lesson card + start test
@@ -58,7 +58,7 @@ user-facing surface:
 /inceleme/:attemptId           Review   — reached from the result screen
 /listelerim                    My lists — wrong · flagged · never right twice in a row
 /tekrar                        Repetition — the SRS deck's due cards, one at a time
-/sozluk                        Glossary — 97 bilingual terms, no definitions (see F2-11)
+/sozluk                        Glossary — the active certification's terms (97 CTFL · 156 CT-AI), no definitions (see F2-11)
 /verilerim                     Your data — download / load a progress file (F3-08)
 /kaynaklar                     Sources
 /deneme  ·  /deneme/:attemptId Legacy redirect to /sinav — old bookmarks keep working

@@ -1,0 +1,1422 @@
+{
+  "syllabusVersion": "2.0",
+  "source": {
+    "en": "ISTQB® Certified Tester AI Testing (CT-AI) Syllabus v2.0 (GA 2026-04-17), the per-chapter 'Keywords' and 'AI-Specific Keywords' lists of chapters 1-7",
+    "tr": "TTB Certified Tester AI Testing (CT-AI) Syllabus v1.0, Turkish translation (2021): chapter keyword lists ('Anahtar Kelimeler', 'YZ-Spesifik Anahtar Kelimeleri'), the Appendix B term list ('Ek B - Yapay Zekâ Özellikleri ve Diğer Terimler') and body text; plus data/ctfl-v4.0.1/terms.json (TTB CTFL v4.0.1 Turkish syllabus) for general testing terms",
+    "method": "Every entry of the v2.0 Keywords and AI-Specific Keywords lists was collected and deduplicated; 'chapters' lists every chapter whose lists name the term. No Turkish v2.0 syllabus exists, so the positional mapping used for CTFL is impossible and each Turkish term was looked up instead. General testing terms reuse data/ctfl-v4.0.1/terms.json exactly, including its trForbidden (trSource 'ttb-syllabus-v4.0.1'). AI terms take the TTB v1.0 Turkish wording, attested as a phrase in the v1.0 keyword lists, Appendix B or body text (trSource 'ttb-ct-ai-v1.0'); where v1.0 uses two words for one term, the one more frequent in the v1.0 text was taken. Terms new in v2.0, and v2.0 compounds not attested as a phrase in v1.0, are editorial translations (trSource 'editorial'), built from the v1.0 or CTFL Turkish words for their parts where those exist."
+  },
+  "trSource": "mixed",
+  "note": "trSource on each term records where its Turkish comes from; 'editorial' terms have no official Turkish source and need review before content relies on them. trForbidden is kept sparse: it lists a rendering found in the TTB v1.0 syllabus only when it would be actively misleading (it names a different concept), plus the trForbidden entries carried over unchanged from the CTFL terms file. 'safety' is 'emniyet', as in this project's CTFL content: the TTB v1.0 syllabus writes 'güvenlik' for both safety and security, and 'güvenlik' stays the word for security. The ML functional performance family uses 'fonksiyonel', which the v1.0 keyword lists and LOs use and which matches CTFL's 'fonksiyonel test'. Added on 02.10.2026 after the first content pass: the terms the writers needed beyond the syllabus keyword lists, settled once so every question and lesson uses the same word. 'precision'/'recall' are the TTB v1.0 'hassasiyet'/'hatırlama' (numeric precision, as in low-precision arithmetic, is 'duyarlık'); the neural-network bias parameter is 'yanlılık değeri', as in TTB v1.0; 'feature engineering' is 'öznitelik mühendisliği', although TTB v1.0 writes 'özellik mühendisliği', because 'özellik' is this product's word for a quality characteristic. The general testing terms defect, failure, error, test case, validation and verification were copied from the CTFL file with their trForbidden lists, so check #21 holds CT-AI content to the same words. A second batch was added on 02.10.2026 after verification: 'agent' is 'ajan' and 'chip' is 'çip', as in TTB v1.0; 'vulnerability' is 'güvenlik açığı', the TTB v1.0 phrase, rather than 'zafiyet'; 'hybrid' is 'hibrit'. 'deterministic' is 'deterministik'; 'belirleyici' is not listed in trForbidden only because it is ordinary Turkish for 'decisive'.",
+  "termCount": 156,
+  "terms": [
+    {
+      "en": "A/B testing",
+      "tr": "A/B testi",
+      "chapters": [
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "accuracy",
+      "tr": "doğruluk",
+      "chapters": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "activation function",
+      "tr": "aktivasyon fonksiyonu",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "adaptive AI-based system",
+      "tr": "uyarlanabilir yapay zekâ tabanlı sistem",
+      "chapters": [
+        4
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "adversarial example",
+      "tr": "karşıt örnek",
+      "chapters": [
+        3,
+        4,
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0",
+      "trForbidden": [
+        "çekişmeli örnek"
+      ]
+    },
+    {
+      "en": "adversarial testing",
+      "tr": "karşıt test",
+      "chapters": [
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "agent",
+      "tr": "ajan",
+      "chapters": [
+        1
+      ],
+      "trSource": "ttb-ct-ai-v1.0",
+      "trForbidden": [
+        "etmen"
+      ]
+    },
+    {
+      "en": "AI functional correctness",
+      "tr": "yapay zekâ fonksiyonel doğruluğu",
+      "chapters": [
+        2
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "AI robustness",
+      "tr": "yapay zekâ sağlamlığı",
+      "chapters": [
+        2
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "AI-based system",
+      "tr": "yapay zekâ tabanlı sistem",
+      "chapters": [
+        1,
+        4
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "annotation",
+      "tr": "etiketleme",
+      "chapters": [
+        3,
+        5
+      ],
+      "trSource": "ttb-ct-ai-v1.0",
+      "trForbidden": [
+        "ek açıklama"
+      ]
+    },
+    {
+      "en": "annotator",
+      "tr": "etiketleyici",
+      "chapters": [
+        5
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "artificial intelligence",
+      "tr": "yapay zekâ",
+      "chapters": [
+        1
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "association",
+      "tr": "ilişkilendirme",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "attack",
+      "tr": "saldırı",
+      "chapters": [
+        4
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "attribute (of a data record)",
+      "tr": "nitelik",
+      "chapters": [
+        5
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "back-to-back testing",
+      "tr": "sırt sırta test",
+      "chapters": [
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "benchmark suite",
+      "tr": "kıyaslama paketi",
+      "chapters": [
+        4
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "bias (neural network parameter)",
+      "tr": "yanlılık değeri",
+      "chapters": [
+        3,
+        4
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "blue teaming",
+      "tr": "mavi takım çalışması",
+      "chapters": [
+        4
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "canary testing",
+      "tr": "kanarya testi",
+      "chapters": [
+        7
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "chip",
+      "tr": "çip",
+      "chapters": [
+        1
+      ],
+      "trSource": "ttb-ct-ai-v1.0",
+      "trForbidden": [
+        "yonga"
+      ]
+    },
+    {
+      "en": "classification",
+      "tr": "sınıflandırma",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "clustering",
+      "tr": "kümeleme",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "concept drift",
+      "tr": "kavram kayması",
+      "chapters": [
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "confirmation testing",
+      "tr": "onaylama testi",
+      "chapters": [
+        4
+      ],
+      "trSource": "ttb-syllabus-v4.0.1",
+      "trForbidden": [
+        "doğrulama testi"
+      ]
+    },
+    {
+      "en": "confusion matrix",
+      "tr": "karışıklık matrisi",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "counterfactual",
+      "tr": "karşı olgusal örnek",
+      "chapters": [
+        5
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "cross-validation",
+      "tr": "çapraz doğrulama",
+      "chapters": [
+        3,
+        7
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "data allocation review",
+      "tr": "veri ayırma gözden geçirmesi",
+      "chapters": [
+        7
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "data augmentation",
+      "tr": "veri artırma",
+      "chapters": [
+        5
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "data drift",
+      "tr": "veri kayması",
+      "chapters": [
+        6
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "data pipeline testing",
+      "tr": "veri hattı testi",
+      "chapters": [
+        5
+      ],
+      "trSource": "ttb-ct-ai-v1.0",
+      "trForbidden": [
+        "veri akışı testi"
+      ]
+    },
+    {
+      "en": "data preparation",
+      "tr": "veri hazırlığı",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "data provenance testing",
+      "tr": "veri kaynağı izlenebilirliği testi",
+      "chapters": [
+        5
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "data representativeness testing",
+      "tr": "veri temsil ediciliği testi",
+      "chapters": [
+        5
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "dataset constraint testing",
+      "tr": "veri seti kısıt testi",
+      "chapters": [
+        5
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "deep learning",
+      "tr": "derin öğrenme",
+      "chapters": [
+        1
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "defect",
+      "tr": "hata",
+      "chapters": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "trForbidden": [
+        "kusur"
+      ],
+      "trSource": "ttb-syllabus-v4.0.1"
+    },
+    {
+      "en": "deployment",
+      "tr": "dağıtım",
+      "chapters": [
+        1,
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "deterministic",
+      "tr": "deterministik",
+      "chapters": [
+        1,
+        4,
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0",
+      "trForbidden": [
+        "belirlenimci"
+      ]
+    },
+    {
+      "en": "diffusion model",
+      "tr": "difüzyon modeli",
+      "chapters": [
+        1
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "disparate impact analysis",
+      "tr": "orantısız etki analizi",
+      "chapters": [
+        5
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "drift testing",
+      "tr": "kayma testi",
+      "chapters": [
+        6
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "edge computing",
+      "tr": "uç bilişim",
+      "chapters": [
+        1
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "error",
+      "tr": "insan hatası",
+      "chapters": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "trForbidden": [
+        "hata"
+      ],
+      "trSource": "ttb-syllabus-v4.0.1"
+    },
+    {
+      "en": "EU AI Act",
+      "tr": "AB Yapay Zekâ Yasası",
+      "chapters": [
+        1,
+        2
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "expert system",
+      "tr": "uzman sistem",
+      "chapters": [
+        1
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "explainable AI",
+      "tr": "açıklanabilir yapay zekâ",
+      "chapters": [
+        2,
+        7
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "exploratory data analysis",
+      "tr": "keşifsel veri analizi",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0",
+      "trForbidden": [
+        "keşifçi veri analizi"
+      ]
+    },
+    {
+      "en": "exploratory testing",
+      "tr": "keşif testi",
+      "chapters": [
+        4
+      ],
+      "trSource": "ttb-syllabus-v4.0.1",
+      "trForbidden": [
+        "keşifsel test",
+        "araştırmacı test"
+      ]
+    },
+    {
+      "en": "F1-score",
+      "tr": "F1 skoru",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "failure",
+      "tr": "arıza",
+      "chapters": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "trForbidden": [
+        "hata",
+        "başarısızlık"
+      ],
+      "trSource": "ttb-syllabus-v4.0.1"
+    },
+    {
+      "en": "fairness",
+      "tr": "adillik",
+      "chapters": [
+        2,
+        4
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "fault injection testing",
+      "tr": "hata enjeksiyonu testi",
+      "chapters": [
+        5
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "feature",
+      "tr": "öznitelik",
+      "chapters": [
+        3,
+        5,
+        6
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "feature engineering",
+      "tr": "öznitelik mühendisliği",
+      "chapters": [
+        3
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "fine-tuning",
+      "tr": "ince ayar",
+      "chapters": [
+        1,
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "follow-up test case",
+      "tr": "takip test senaryosu",
+      "chapters": [
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0",
+      "trForbidden": [
+        "izleyen test senaryosu"
+      ]
+    },
+    {
+      "en": "foundation model",
+      "tr": "temel model",
+      "chapters": [
+        1
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "frontier AI",
+      "tr": "öncü yapay zekâ",
+      "chapters": [
+        1
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "functional adaptability",
+      "tr": "fonksiyonel uyarlanabilirlik",
+      "chapters": [
+        2
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "functional suitability",
+      "tr": "fonksiyonel uygunluk",
+      "chapters": [
+        2
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "general AI",
+      "tr": "genel yapay zekâ",
+      "chapters": [
+        1
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "generative adversarial network",
+      "tr": "üretken karşıt ağ",
+      "chapters": [
+        1
+      ],
+      "trSource": "editorial",
+      "trForbidden": [
+        "çekişmeli üretici ağ"
+      ]
+    },
+    {
+      "en": "generative AI",
+      "tr": "üretken yapay zekâ",
+      "chapters": [
+        4
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "governance",
+      "tr": "yönetişim",
+      "chapters": [
+        1,
+        5
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "ground truth",
+      "tr": "gerçek değer",
+      "chapters": [
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "hold-out dataset",
+      "tr": "ayrılmış veri seti",
+      "chapters": [
+        3
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "hybrid",
+      "tr": "hibrit",
+      "chapters": [
+        1,
+        4
+      ],
+      "trSource": "ttb-ct-ai-v1.0",
+      "trForbidden": [
+        "melez"
+      ]
+    },
+    {
+      "en": "hyperparameter",
+      "tr": "hiperparametre",
+      "chapters": [
+        3,
+        7
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "inference",
+      "tr": "çıkarım",
+      "chapters": [
+        1
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "input data testing",
+      "tr": "girdi verisi testi",
+      "chapters": [
+        5
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "inter-annotator agreement",
+      "tr": "etiketleyiciler arası uyum",
+      "chapters": [
+        5
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "intervenability",
+      "tr": "müdahale edilebilirlik",
+      "chapters": [
+        2
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "invariance",
+      "tr": "değişmezlik",
+      "chapters": [
+        6
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "k-fold cross-validation",
+      "tr": "k-katlı çapraz doğrulama",
+      "chapters": [
+        3
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "k-multisection neuron coverage",
+      "tr": "k-bölümlü nöron kapsamı",
+      "chapters": [
+        3
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "label correctness testing",
+      "tr": "etiket doğruluğu testi",
+      "chapters": [
+        5
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "large language model",
+      "tr": "büyük dil modeli",
+      "chapters": [
+        4
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "learning curve",
+      "tr": "öğrenme eğrisi",
+      "chapters": [
+        6
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "locked AI-based system",
+      "tr": "kilitli yapay zekâ tabanlı sistem",
+      "chapters": [
+        4
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "loss",
+      "tr": "kayıp",
+      "chapters": [
+        3,
+        5,
+        6
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "machine learning",
+      "tr": "makine öğrenimi",
+      "chapters": [
+        1,
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "maintainability",
+      "tr": "bakım yapılabilirlik",
+      "chapters": [
+        5,
+        6
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "margin of error",
+      "tr": "yanılma payı",
+      "chapters": [
+        6
+      ],
+      "trSource": "editorial",
+      "trForbidden": [
+        "hata payı"
+      ]
+    },
+    {
+      "en": "metamorphic relation",
+      "tr": "metamorfik ilişki",
+      "chapters": [
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "metamorphic testing",
+      "tr": "metamorfik test",
+      "chapters": [
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "ML algorithm",
+      "tr": "MÖ algoritması",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "ML development framework",
+      "tr": "MÖ geliştirme çerçevesi",
+      "chapters": [
+        1,
+        3
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "ML development testing",
+      "tr": "MÖ geliştirme testi",
+      "chapters": [
+        7
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "ML functional performance",
+      "tr": "MÖ fonksiyonel performansı",
+      "chapters": [
+        6,
+        7
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "ML functional performance criteria",
+      "tr": "MÖ fonksiyonel performans kriterleri",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "ML functional performance metric",
+      "tr": "MÖ fonksiyonel performans metriği",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "ML model",
+      "tr": "MÖ modeli",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "ML model testing",
+      "tr": "MÖ model testi",
+      "chapters": [
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "ML regression",
+      "tr": "MÖ regresyonu",
+      "chapters": [
+        3
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "ML workflow",
+      "tr": "MÖ iş akışı",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "monotonicity",
+      "tr": "monotonluk",
+      "chapters": [
+        6
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "multimodal",
+      "tr": "çok kipli",
+      "chapters": [
+        1
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "multiple annotation",
+      "tr": "çoklu etiketleme",
+      "chapters": [
+        5
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "narrow AI",
+      "tr": "dar yapay zekâ",
+      "chapters": [
+        1
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "neuron boundary coverage",
+      "tr": "nöron sınır kapsamı",
+      "chapters": [
+        3
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "neuron coverage",
+      "tr": "nöron kapsamı",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "non-determinism",
+      "tr": "deterministik olmama",
+      "chapters": [
+        2
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "numeric precision",
+      "tr": "duyarlık",
+      "chapters": [
+        1
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "operational environment",
+      "tr": "işletim ortamı",
+      "chapters": [
+        2,
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "overfitting",
+      "tr": "aşırı uyum",
+      "chapters": [
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "perceptron",
+      "tr": "perseptron",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "precision",
+      "tr": "hassasiyet",
+      "chapters": [
+        1,
+        3,
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "pretrained model",
+      "tr": "önceden eğitilmiş model",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0",
+      "trForbidden": [
+        "eğitim öncesi model"
+      ]
+    },
+    {
+      "en": "prompt",
+      "tr": "istem",
+      "chapters": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "pseudo-oracle",
+      "tr": "sözde test doğrulayıcı",
+      "chapters": [
+        6
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "quantization",
+      "tr": "nicemleme",
+      "chapters": [
+        1
+      ],
+      "trSource": "editorial",
+      "trForbidden": [
+        "niceleme"
+      ]
+    },
+    {
+      "en": "recall",
+      "tr": "hatırlama",
+      "chapters": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "recurrent neural network",
+      "tr": "tekrarlayan sinir ağı",
+      "chapters": [
+        1
+      ],
+      "trSource": "editorial",
+      "trForbidden": [
+        "yinelemeli sinir ağı"
+      ]
+    },
+    {
+      "en": "red teaming",
+      "tr": "kırmızı takım çalışması",
+      "chapters": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "reinforcement learning",
+      "tr": "takviyeli öğrenme",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "reliability",
+      "tr": "güvenilirlik",
+      "chapters": [
+        2
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "retrieval-augmented generation",
+      "tr": "erişimle artırılmış üretim",
+      "chapters": [
+        3
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "review",
+      "tr": "gözden geçirme",
+      "chapters": [
+        5,
+        6
+      ],
+      "trSource": "ttb-syllabus-v4.0.1",
+      "trForbidden": [
+        "inceleme"
+      ]
+    },
+    {
+      "en": "risk-based testing",
+      "tr": "risk bazlı test",
+      "chapters": [
+        4
+      ],
+      "trSource": "ttb-syllabus-v4.0.1"
+    },
+    {
+      "en": "rollback testing",
+      "tr": "geri alma testi",
+      "chapters": [
+        6,
+        7
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "rule-based reasoning",
+      "tr": "kural tabanlı akıl yürütme",
+      "chapters": [
+        1
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "safety",
+      "tr": "emniyet",
+      "chapters": [
+        2
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "self-attention",
+      "tr": "öz-dikkat",
+      "chapters": [
+        1
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "sensitive attribute",
+      "tr": "hassas nitelik",
+      "chapters": [
+        5
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "sensitivity (recall)",
+      "tr": "duyarlılık",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "shadow testing",
+      "tr": "gölge testi",
+      "chapters": [
+        7
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "smoke testing",
+      "tr": "duman testi",
+      "chapters": [
+        5,
+        6,
+        7
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "societal and ethical risk mitigation",
+      "tr": "toplumsal ve etik risk azaltma",
+      "chapters": [
+        2
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "soft law",
+      "tr": "bağlayıcı olmayan düzenleme",
+      "chapters": [
+        1
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "source test case",
+      "tr": "kaynak test senaryosu",
+      "chapters": [
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "specification",
+      "tr": "spesifikasyon",
+      "chapters": [
+        2
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "stratified sampling",
+      "tr": "tabakalı örnekleme",
+      "chapters": [
+        5
+      ],
+      "trSource": "editorial",
+      "trForbidden": [
+        "katmanlı örnekleme"
+      ]
+    },
+    {
+      "en": "super AI",
+      "tr": "süper yapay zekâ",
+      "chapters": [
+        1
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "supervised learning",
+      "tr": "denetimli öğrenme",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "susceptibility (to adversarial examples)",
+      "tr": "yatkınlık",
+      "chapters": [
+        4
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "syllabus",
+      "tr": "müfredat",
+      "chapters": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "test case",
+      "tr": "test senaryosu",
+      "chapters": [
+        2,
+        4,
+        6
+      ],
+      "trForbidden": [
+        "test durumu"
+      ],
+      "trSource": "ttb-syllabus-v4.0.1"
+    },
+    {
+      "en": "test dataset",
+      "tr": "test veri seti",
+      "chapters": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "test oracle",
+      "tr": "test doğrulayıcı",
+      "chapters": [
+        4
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "test suite",
+      "tr": "test paketi",
+      "chapters": [
+        4,
+        6
+      ],
+      "trSource": "editorial",
+      "trForbidden": [
+        "test takımı"
+      ]
+    },
+    {
+      "en": "tester",
+      "tr": "test uzmanı",
+      "chapters": [
+        3,
+        4,
+        6
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "testing for bias",
+      "tr": "yanlılık testi",
+      "chapters": [
+        5
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "training dataset",
+      "tr": "eğitim veri seti",
+      "chapters": [
+        3,
+        5
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "transformer",
+      "tr": "dönüştürücü",
+      "chapters": [
+        1
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "transparency",
+      "tr": "şeffaflık",
+      "chapters": [
+        2
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "underfitting",
+      "tr": "yetersiz uyum",
+      "chapters": [
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "unsupervised learning",
+      "tr": "denetimsiz öğrenme",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "user controllability",
+      "tr": "kullanıcı kontrol edilebilirliği",
+      "chapters": [
+        2
+      ],
+      "trSource": "editorial"
+    },
+    {
+      "en": "validation",
+      "tr": "sağlama",
+      "chapters": [
+        3,
+        5,
+        6,
+        7
+      ],
+      "trForbidden": [
+        "geçerleme"
+      ],
+      "trSource": "ttb-syllabus-v4.0.1"
+    },
+    {
+      "en": "validation dataset",
+      "tr": "doğrulama veri seti",
+      "chapters": [
+        3,
+        6
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    },
+    {
+      "en": "verification",
+      "tr": "doğrulama",
+      "chapters": [
+        5
+      ],
+      "trSource": "ttb-syllabus-v4.0.1"
+    },
+    {
+      "en": "vulnerability",
+      "tr": "güvenlik açığı",
+      "chapters": [
+        4
+      ],
+      "trSource": "ttb-ct-ai-v1.0",
+      "trForbidden": [
+        "zafiyet"
+      ]
+    },
+    {
+      "en": "weight (neural network parameter)",
+      "tr": "ağırlık",
+      "chapters": [
+        3
+      ],
+      "trSource": "ttb-ct-ai-v1.0"
+    }
+  ]
+}

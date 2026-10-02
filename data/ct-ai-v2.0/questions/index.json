@@ -1,0 +1,2110 @@
+{
+  "dataVersion": "0870e472561c",
+  "count": 86,
+  "chunks": [
+    "ch01-a",
+    "ch02-a",
+    "ch03-a",
+    "ch04-a",
+    "ch05-a",
+    "ch06-a",
+    "ch07-a"
+  ],
+  "questions": [
+    {
+      "id": "ctai-0001",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ai-based-systems",
+        "conventional-systems"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0002",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ai-based-systems",
+        "adaptability",
+        "explainability"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0003",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "narrow-ai",
+        "general-ai",
+        "super-ai"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0004",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "narrow-ai",
+        "general-ai",
+        "super-ai"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0005",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-approaches",
+        "unsupervised-learning",
+        "clustering"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0006",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "deep-learning",
+        "ml-approaches"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0007",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "generative-ai",
+        "gan",
+        "diffusion-models"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0008",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "generative-ai",
+        "ethics",
+        "sustainability"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0009",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.5"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-hardware",
+        "gpu",
+        "cpu"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0010",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.5"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-hardware",
+        "quantization"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0011",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.6"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ai-development",
+        "ai-hosting",
+        "aiaas"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0012",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.6"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "ai-development",
+        "ai-hosting",
+        "cloud"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0013",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.7"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-frameworks",
+        "evaluation"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0014",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.7"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-frameworks",
+        "api-abstraction"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0015",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.8"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "regulations",
+        "eu-ai-act"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0016",
+      "chunk": "ch01-a",
+      "chapter": 1,
+      "section": "1.1",
+      "objectives": [
+        "AI-1.1.8"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "standards",
+        "iso-iec-29119-11",
+        "regulations"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0017",
+      "chunk": "ch02-a",
+      "chapter": 2,
+      "section": "2.1",
+      "objectives": [
+        "AI-2.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "quality-characteristics",
+        "iso-25059"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0018",
+      "chunk": "ch02-a",
+      "chapter": 2,
+      "section": "2.1",
+      "objectives": [
+        "AI-2.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "quality-characteristics",
+        "iso-25059"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0019",
+      "chunk": "ch02-a",
+      "chapter": 2,
+      "section": "2.1",
+      "objectives": [
+        "AI-2.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "safety",
+        "ai-safety-challenges"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0020",
+      "chunk": "ch02-a",
+      "chapter": 2,
+      "section": "2.1",
+      "objectives": [
+        "AI-2.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "safety",
+        "explainability",
+        "regulation"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0021",
+      "chunk": "ch02-a",
+      "chapter": 2,
+      "section": "2.2",
+      "objectives": [
+        "AI-2.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "acceptance-criteria",
+        "iso-25059"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0022",
+      "chunk": "ch02-a",
+      "chapter": 2,
+      "section": "2.2",
+      "objectives": [
+        "AI-2.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "acceptance-criteria",
+        "thresholds"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0023",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.1",
+      "objectives": [
+        "AI-3.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "hasMedia": false,
+      "tags": [
+        "ml-forms",
+        "reinforcement-learning"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0024",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.1",
+      "objectives": [
+        "AI-3.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-forms",
+        "ml-regression",
+        "terminology"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0025",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.1",
+      "objectives": [
+        "AI-3.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-workflow",
+        "test-the-model"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0026",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.1",
+      "objectives": [
+        "AI-3.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-workflow",
+        "hyperparameters"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0027",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.1",
+      "objectives": [
+        "AI-3.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "rag",
+        "llm",
+        "pretrained-model",
+        "fine-tuning"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0028",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.1",
+      "objectives": [
+        "AI-3.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "fine-tuning",
+        "pretrained-model",
+        "testing-inherited-limitations"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0029",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.2",
+      "objectives": [
+        "AI-3.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "data-preparation",
+        "feature-engineering"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0030",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.2",
+      "objectives": [
+        "AI-3.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "data-preparation",
+        "operational-data",
+        "eda"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0031",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.2",
+      "objectives": [
+        "AI-3.2.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "hasMedia": false,
+      "tags": [
+        "datasets",
+        "validation-dataset"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0032",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.2",
+      "objectives": [
+        "AI-3.2.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "datasets",
+        "k-fold-cross-validation"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0033",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.3",
+      "objectives": [
+        "AI-3.3.1"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "confusion-matrix",
+        "precision",
+        "metrics"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0034",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.3",
+      "objectives": [
+        "AI-3.3.1"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "confusion-matrix",
+        "f1-score",
+        "metrics"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0035",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.4",
+      "objectives": [
+        "AI-3.4.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "neural-networks",
+        "activation-value"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0036",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.4",
+      "objectives": [
+        "AI-3.4.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "neural-networks",
+        "training",
+        "loss"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0037",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.4",
+      "objectives": [
+        "AI-3.4.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "neural-networks",
+        "coverage",
+        "kmnc"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0038",
+      "chunk": "ch03-a",
+      "chapter": 3,
+      "section": "3.4",
+      "objectives": [
+        "AI-3.4.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "neural-networks",
+        "coverage",
+        "limits-of-coverage"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0039",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.1",
+      "objectives": [
+        "AI-4.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "locked-adaptive",
+        "testability"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0040",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.1",
+      "objectives": [
+        "AI-4.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "locked-adaptive",
+        "genai"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0041",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.1",
+      "objectives": [
+        "AI-4.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "statistical-testing",
+        "non-determinism"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0042",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.1",
+      "objectives": [
+        "AI-4.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "statistical-testing",
+        "regulation"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0043",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.1",
+      "objectives": [
+        "AI-4.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "test-oracle",
+        "challenges"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0044",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.1",
+      "objectives": [
+        "AI-4.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "test-oracle",
+        "solutions"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0045",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "AI-4.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "genai",
+        "input-explosion"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0046",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "AI-4.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "genai",
+        "test-result",
+        "bias"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0047",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "AI-4.2.2"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "red-teaming",
+        "security",
+        "rag"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0048",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.2",
+      "objectives": [
+        "AI-4.2.2"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "red-teaming",
+        "safety",
+        "process"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0049",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.3",
+      "objectives": [
+        "AI-4.3.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-specific",
+        "test-levels"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0050",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.3",
+      "objectives": [
+        "AI-4.3.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "test-levels",
+        "system-testing"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0051",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.3",
+      "objectives": [
+        "AI-4.3.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "risk-based",
+        "ml-workflow"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0052",
+      "chunk": "ch04-a",
+      "chapter": 4,
+      "section": "4.3",
+      "objectives": [
+        "AI-4.3.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "risk-based",
+        "regulation"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0053",
+      "chunk": "ch05-a",
+      "chapter": 5,
+      "section": "5.1",
+      "objectives": [
+        "AI-5.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "input-data",
+        "risk-mitigation",
+        "data-provenance"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0054",
+      "chunk": "ch05-a",
+      "chapter": 5,
+      "section": "5.1",
+      "objectives": [
+        "AI-5.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "input-data",
+        "risk-mitigation"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0055",
+      "chunk": "ch05-a",
+      "chapter": 5,
+      "section": "5.1",
+      "objectives": [
+        "AI-5.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "bias",
+        "disparate-impact-analysis"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0056",
+      "chunk": "ch05-a",
+      "chapter": 5,
+      "section": "5.1",
+      "objectives": [
+        "AI-5.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "bias",
+        "dynamic-testing"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0057",
+      "chunk": "ch05-a",
+      "chapter": 5,
+      "section": "5.1",
+      "objectives": [
+        "AI-5.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "data-pipeline",
+        "fault-injection"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0058",
+      "chunk": "ch05-a",
+      "chapter": 5,
+      "section": "5.1",
+      "objectives": [
+        "AI-5.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "data-pipeline",
+        "test-strategy"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0059",
+      "chunk": "ch05-a",
+      "chapter": 5,
+      "section": "5.1",
+      "objectives": [
+        "AI-5.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "data-representativeness",
+        "reference-data"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0060",
+      "chunk": "ch05-a",
+      "chapter": 5,
+      "section": "5.1",
+      "objectives": [
+        "AI-5.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "data-representativeness",
+        "statistical-tests",
+        "drift"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0061",
+      "chunk": "ch05-a",
+      "chapter": 5,
+      "section": "5.1",
+      "objectives": [
+        "AI-5.1.5"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "dataset-constraint-testing",
+        "range-constraint",
+        "type-constraint"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0062",
+      "chunk": "ch05-a",
+      "chapter": 5,
+      "section": "5.1",
+      "objectives": [
+        "AI-5.1.5"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "dataset-constraint-testing",
+        "comparison-constraint",
+        "greater-than"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0063",
+      "chunk": "ch05-a",
+      "chapter": 5,
+      "section": "5.1",
+      "objectives": [
+        "AI-5.1.6"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "label-correctness",
+        "multiple-annotation",
+        "iaa"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0064",
+      "chunk": "ch05-a",
+      "chapter": 5,
+      "section": "5.1",
+      "objectives": [
+        "AI-5.1.6"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "label-correctness",
+        "model-loss",
+        "automated-checks"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0065",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-model-risks",
+        "risk-mitigation"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0066",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-model-risks",
+        "risk-mitigation"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0067",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-model-documentation",
+        "review"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0068",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-model-documentation",
+        "review"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0069",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-functional-performance",
+        "statistical-testing"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0070",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-functional-performance",
+        "margin-of-error"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0071",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "adversarial-testing"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0072",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "adversarial-testing",
+        "black-box"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0073",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.5"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "metamorphic-testing",
+        "monotonicity"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0074",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.5"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "hasMedia": false,
+      "tags": [
+        "metamorphic-testing",
+        "invariance"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0075",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.7"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "drift-testing",
+        "concept-drift"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0076",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.7"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "drift-testing",
+        "static-drift-testing"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0077",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.8"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "overfitting",
+        "test-dataset"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0078",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.8"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "underfitting",
+        "learning-curves"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0079",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.9"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "a-b-testing",
+        "model-update"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0080",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.9"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "a-b-testing",
+        "self-learning"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0081",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.10"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "back-to-back-testing",
+        "pseudo-oracle"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0082",
+      "chunk": "ch06-a",
+      "chapter": 6,
+      "section": "6.1",
+      "objectives": [
+        "AI-6.1.10"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "back-to-back-testing",
+        "test-inputs"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0083",
+      "chunk": "ch07-a",
+      "chapter": 7,
+      "section": "7.1",
+      "objectives": [
+        "AI-7.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-development",
+        "risk-mitigation",
+        "review"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0084",
+      "chunk": "ch07-a",
+      "chapter": 7,
+      "section": "7.1",
+      "objectives": [
+        "AI-7.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "ml-development",
+        "risk-mitigation",
+        "back-to-back-testing"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0085",
+      "chunk": "ch07-a",
+      "chapter": 7,
+      "section": "7.1",
+      "objectives": [
+        "AI-7.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "deployment-testing",
+        "shadow-testing"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    },
+    {
+      "id": "ctai-0086",
+      "chunk": "ch07-a",
+      "chapter": 7,
+      "section": "7.1",
+      "objectives": [
+        "AI-7.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "hasMedia": false,
+      "tags": [
+        "deployment-testing",
+        "rollback-testing"
+      ],
+      "languages": [
+        "en",
+        "tr"
+      ],
+      "syllabusVersion": "2.0",
+      "status": "published"
+    }
+  ]
+}

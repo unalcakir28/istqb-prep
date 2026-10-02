@@ -1,0 +1,385 @@
+{
+  "chunk": "ch07-a",
+  "chapter": 7,
+  "dataVersion": "2.0",
+  "questions": [
+    {
+      "id": "ctai-0083",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 7,
+      "section": "7.1",
+      "syllabusRef": "§7.1.1",
+      "objectives": [
+        "AI-7.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-development",
+        "risk-mitigation",
+        "review"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, bir MÖ modelini eğitmek için kullanılan bazı kayıtların modelin test veri setine de girmiş olabileceğinden endişeleniyor. Müfredatın MÖ geliştirme riskleri için listelediği risk azaltma yaklaşımlarına göre bu riski azaltmak için hangisi kullanılır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Çerçeve uygunluğu gözden geçirmesi"
+            },
+            {
+              "id": "b",
+              "text": "Veri ayırma gözden geçirmesi"
+            },
+            {
+              "id": "c",
+              "text": "Performans testi"
+            },
+            {
+              "id": "d",
+              "text": "MÖ fonksiyonel performans testi"
+            }
+          ],
+          "rationale": {
+            "summary": "Eğitim için kullanılan kayıtların test veri setinde de yer alması, verinin eğitim, doğrulama ve test veri setlerine hatalı ayrılmasıdır. Müfredattaki risk tablosunda bu riskin karşılığı veri ayırma gözden geçirmesidir; diğer seçenekler tabloda başka risklerle eşleşir.",
+            "byOption": {
+              "a": "Yanlış. Çerçeve uygunluğu gözden geçirmesi, çerçeve seçiminin en uygun olmaması riskine karşılık gelir; veri setlerine veri ayırma hatasını ele almaz.",
+              "b": "Doğru. Hem eğitim hem test veri setinde bulunan bir kayıt, verinin veri setlerine hatalı ayrılmasıdır; müfredat bu risk için veri ayırma gözden geçirmesini (data allocation review) listeler.",
+              "c": "Yanlış. Performans testi, çerçevenin yavaş yanıt vermesi gibi zayıf performans verimliliği riskini azaltır; verinin hangi veri setine ayrıldığını denetlemez.",
+              "d": "Yanlış. Müfredat MÖ fonksiyonel performans testini, değerlendirme yaklaşımının (ör. k-katlı çapraz doğrulama) kötü seçilmesi veya en uygun olmayan hiperparametre seçimi gibi risklerle eşleştirir; verinin veri setlerine hatalı ayrılmasıyla değil."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team is concerned that some records used to train an ML model may also have ended up in its test dataset. According to the risk mitigations the syllabus lists for ML development, which approach is used to mitigate this risk?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Framework suitability review"
+            },
+            {
+              "id": "b",
+              "text": "Data allocation review"
+            },
+            {
+              "id": "c",
+              "text": "Performance testing"
+            },
+            {
+              "id": "d",
+              "text": "ML functional performance testing"
+            }
+          ],
+          "rationale": {
+            "summary": "Records used for training that also sit in the test dataset are a defective allocation of data to the training, validation and testing datasets. In the syllabus risk table this risk is paired with a data allocation review; the other options pair with different risks.",
+            "byOption": {
+              "a": "Incorrect. A framework suitability review mitigates the risk of a sub-optimal framework selection; it does not address defective allocation of data to datasets.",
+              "b": "Correct. A record that ends up in both the training and the test dataset is a defective allocation of data to the datasets; for this risk the syllabus lists a data allocation review.",
+              "c": "Incorrect. Performance testing mitigates poor performance efficiency, such as a framework that is slow to respond; it does not check which dataset the data was assigned to.",
+              "d": "Incorrect. The syllabus pairs ML functional performance testing with risks such as a poor selection of the evaluation approach (e.g. k-fold cross-validation) or a sub-optimal hyperparameter selection, not with defective allocation of data to the datasets."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0084",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 7,
+      "section": "7.1",
+      "syllabusRef": "§7.1.1",
+      "objectives": [
+        "AI-7.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-development",
+        "risk-mitigation",
+        "back-to-back-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir MÖ geliştirme çerçevesinin kullandığı kütüphanedeki bir hatanın (defect) çerçevedeki algoritma uygulamasını bozduğundan şüphelenilmektedir. Müfredatın bu risk için listelediği yaklaşımlardan hangisi uygundur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Çerçeve belgeleri gözden geçirmesi"
+            },
+            {
+              "id": "b",
+              "text": "Yanlılık testi"
+            },
+            {
+              "id": "c",
+              "text": "Sırt sırta test"
+            },
+            {
+              "id": "d",
+              "text": "Güvenlik testi"
+            }
+          ],
+          "rationale": {
+            "summary": "Çerçevenin kullandığı kütüphanedeki hata ve hatalı algoritma uygulaması için müfredat MÖ fonksiyonel performans testi ile sırt sırta testi eşler. Diğer seçenekler farklı risklere karşılık gelir.",
+            "byOption": {
+              "a": "Yanlış. Çerçeve belgeleri gözden geçirmesi, çerçevenin kullanıcı belgelerinin zayıf olması riskine karşılık gelir; kütüphanedeki bir hatayı ortaya çıkarmaz.",
+              "b": "Yanlış. Yanlılık testi, algoritma, model veya çerçevedeki sorunların yol açtığı sistemik adillik sorunları riskini ele alır; algoritma uygulamasının doğruluğunu sınamaz.",
+              "c": "Doğru. Çerçevenin kullandığı kütüphanedeki hata ve hatalı algoritma uygulaması riski için müfredat, MÖ fonksiyonel performans testinin yanında sırt sırta testi listeler.",
+              "d": "Yanlış. Güvenlik testi çerçevedeki güvenlik açıklarını hedefler; kütüphane hatasından doğan yanlış algoritma davranışını bulmaya yönelik değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A defect in a library used by an ML development framework is suspected of corrupting the framework's algorithm implementation. Which of the approaches the syllabus lists for this risk is appropriate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Framework documentation review"
+            },
+            {
+              "id": "b",
+              "text": "Testing for bias"
+            },
+            {
+              "id": "c",
+              "text": "Back-to-back testing"
+            },
+            {
+              "id": "d",
+              "text": "Security testing"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus pairs a defect in a library used by the framework, and a defective algorithm implementation, with ML functional performance testing and back-to-back testing. The other options pair with different risks.",
+            "byOption": {
+              "a": "Incorrect. This review mitigates poor user documentation for the framework; it would not reveal a defect in a library.",
+              "b": "Incorrect. Testing for bias addresses systemic unfairness introduced by the algorithm, model or framework; it does not check whether the algorithm is implemented correctly.",
+              "c": "Correct. For a defect in a library used by the framework and for a defective algorithm implementation, the syllabus lists back-to-back testing alongside ML functional performance testing.",
+              "d": "Incorrect. Security testing targets security vulnerabilities in the framework; it is not aimed at wrong algorithm behavior caused by a library defect."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0085",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 7,
+      "section": "7.1",
+      "syllabusRef": "§7.1.2",
+      "objectives": [
+        "AI-7.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "deployment-testing",
+        "shadow-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip yeni bir modeli, canlı veriyle ve kullanıcıları hiç etkilemeden mevcut üretim modeliyle karşılaştırmak istiyor. Gelen aynı istekler her iki modele de gönderiliyor, ancak kullanıcıya yalnızca mevcut modelin yanıtları dönüyor. Bu, hangi MÖ sistemi dağıtım testi türüdür?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kanarya testi (canary testing)"
+            },
+            {
+              "id": "b",
+              "text": "Model dönüştürme testi"
+            },
+            {
+              "id": "c",
+              "text": "Cihazlar arası test"
+            },
+            {
+              "id": "d",
+              "text": "Gölge testi (shadow testing)"
+            }
+          ],
+          "rationale": {
+            "summary": "Yeni modeli mevcut modelle paralel çalıştırıp aynı istekleri ikisine yönlendiren ve canlı yanıtları etkilemeyen test türü gölge testidir.",
+            "byOption": {
+              "a": "Yanlış. Kanarya testinde güncellenmiş model gerçek üretim trafiğinin küçük bir bölümüne sunulur, yani bu kullanıcılar yeni modelin yanıtını alır; senaryoda yanıtlar etkilenmiyor.",
+              "b": "Yanlış. Bu test, modelin eğitim biçiminden dağıtım biçimine dönüştürüldükten sonra doğruluğunu ve verimliliğini koruduğunu doğrular; iki modeli canlı istekle karşılaştırmaz.",
+              "c": "Yanlış. Cihazlar arası test, MÖ sisteminin mobil, uç ve bulut gibi hedeflerde doğru çalıştığını doğrular; mevcut ve yeni modeli karşılaştırmaz.",
+              "d": "Doğru. Gölge testi yeni modeli mevcut üretim modeliyle paralel çalıştırır, aynı istekleri ikisine de yönlendirir ve canlı yanıtları etkilemez."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team wants to compare a new model with the current production model using live data, without affecting users at all. The same incoming requests are sent to both models, but only the current model's responses are returned to users. Which type of ML system deployment testing is this?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Canary testing"
+            },
+            {
+              "id": "b",
+              "text": "Model conversion testing"
+            },
+            {
+              "id": "c",
+              "text": "Cross-device testing"
+            },
+            {
+              "id": "d",
+              "text": "Shadow testing"
+            }
+          ],
+          "rationale": {
+            "summary": "The test type that runs the new model in parallel with the current one, sends the same requests to both and does not affect live responses is shadow testing.",
+            "byOption": {
+              "a": "Incorrect. In canary testing the updated model is released to a small subset of real production traffic, so those users receive the new model's responses; in the scenario no live response is affected.",
+              "b": "Incorrect. This verifies that a model keeps acceptable accuracy and efficiency after conversion from its training format to a deployment format; it does not compare two models on live requests.",
+              "c": "Incorrect. Cross-device testing verifies that the MLS performs correctly across mobile, edge and cloud targets; it does not compare the old and new models.",
+              "d": "Correct. Shadow testing runs the new model in parallel with the current production model, routes the same requests to both, and leaves live responses unaffected."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "id": "ctai-0086",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 7,
+      "section": "7.1",
+      "syllabusRef": "§7.1.2",
+      "objectives": [
+        "AI-7.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "deployment-testing",
+        "rollback-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, başarısız bir dağıtımdan sonra sistemi önceki kararlı duruma döndürebildiğini sınamak için geri alma testi (rollback testing) planlıyor. Müfredata göre bu test türü hakkında hangisi doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Geri alma gerekmeden önce geri almaya hazır olunduğunu doğrulamak için dağıtımdan önce yapılmalıdır"
+            },
+            {
+              "id": "b",
+              "text": "Yalnızca dağıtım başarısız olduktan sonra, sorun ortaya çıkınca yapılabilir; öncesinde sınanamaz"
+            },
+            {
+              "id": "c",
+              "text": "Kapsamı modelle sınırlıdır; veri hattı ayrı bir veri hattı testiyle ele alınır"
+            },
+            {
+              "id": "d",
+              "text": "Desteklenen ortamlarda sistemin kurulabildiğini, yapılandırılabildiğini ve kaldırılabildiğini doğrular"
+            }
+          ],
+          "rationale": {
+            "summary": "Geri alma testi, bozulmuş ya da başarısız dağıtımdan sonra önceki kararlı duruma dönme yeteneğini doğrular; kapsamı yalnızca model ya da veri hattı dahil tüm sistem olabilir ve geri almaya hazır olunduğunu doğrulamak için dağıtımdan önce yapılmalıdır.",
+            "byOption": {
+              "a": "Doğru. Müfredat, geri alma testinin geri almaya hazır olunduğunu doğrulamak için dağıtımdan önce yapılması gerektiğini belirtir.",
+              "b": "Yanlış. Bu, testin zamanlamasını tersine çevirir; geri alma hazırlığı, ihtiyaç doğmadan önce, dağıtımdan önce doğrulanmalıdır.",
+              "c": "Yanlış. Bu seçenek geri alma testini modelle sınırlar; müfredata göre geri alma testi yalnızca modeli kapsayabilir, ancak veri hattı dahil tüm sistemi de kapsayabilir.",
+              "d": "Yanlış. Bu, kurulabilirlik testinin tanımıdır; geri alma testi sistemin önceki kararlı duruma dönme yeteneğini doğrular."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team plans rollback testing to check that it can return the system to its previous stable state after a failed deployment. According to the syllabus, which statement about this test type is correct?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It must be performed before deployment, so that rollback readiness is confirmed before a rollback is ever needed"
+            },
+            {
+              "id": "b",
+              "text": "It can only be carried out after a deployment has failed, once the problem has appeared; it cannot be tested earlier"
+            },
+            {
+              "id": "c",
+              "text": "Its scope is limited to the model; the data pipeline is covered by separate data pipeline testing"
+            },
+            {
+              "id": "d",
+              "text": "It verifies that the system can be installed, configured and uninstalled across supported environments"
+            }
+          ],
+          "rationale": {
+            "summary": "Rollback testing verifies the ability to revert to a previously stable state after a degraded or failed deployment; it may cover only the model or the complete system, and it must be performed before deployment to confirm rollback readiness.",
+            "byOption": {
+              "a": "Correct. The syllabus notes that rollback testing must be performed before deployment to confirm rollback readiness.",
+              "b": "Incorrect. This reverses the timing; rollback readiness has to be confirmed before deployment, not discovered when the need arises.",
+              "c": "Incorrect. This limits rollback testing to the model; according to the syllabus, rollback testing may cover only the model, but it may also cover the complete system, including the data pipeline.",
+              "d": "Incorrect. That is the definition of installability testing; rollback testing verifies the ability to revert to a previously stable state."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    }
+  ]
+}

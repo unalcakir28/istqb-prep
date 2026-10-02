@@ -1,0 +1,1698 @@
+{
+  "chunk": "ch06-a",
+  "chapter": 6,
+  "dataVersion": "2.0",
+  "questions": [
+    {
+      "id": "ctai-0065",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.1",
+      "objectives": [
+        "AI-6.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-model-risks",
+        "risk-mitigation"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip bir MÖ modelinin güncellenmiş sürümünü yayımlıyor ve güncellemenin MÖ fonksiyonel performansını önceki sürüme göre düşürmüş olmasından endişe ediyor. Müfredat bu risk için hangi test yaklaşımını bir azaltma yöntemi olarak listeler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kayma testi"
+            },
+            {
+              "id": "b",
+              "text": "Karşıt test"
+            },
+            {
+              "id": "c",
+              "text": "A/B testi"
+            },
+            {
+              "id": "d",
+              "text": "API testi"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredat 'model güncellemeleri MÖ modelinin fonksiyonel performansını düşürür' riskini A/B testiyle eşleştirir; A/B testi güncellenmiş varyantı, üzerinde anlaşılmış MÖ fonksiyonel performans metrikleriyle önceki varyantla karşılaştırır. Diğer yaklaşımlar başka risklerin karşısında listelenir.",
+            "byOption": {
+              "a": "Yanlış. Kayma testi, işletimde girdilerin ya da girdi-çıktı ilişkisinin zamanla değişmesinden doğan kabul edilemez veri kayması ve kavram kayması riskinin listelenen azaltma yöntemidir. Güncellemeyi öncülüyle karşılaştırmakla ilgili değildir.",
+              "b": "Yanlış. Karşıt test, karşıt örnekler riskini ve beklenmeyen girdilere karşı yapay zekâ sağlamlığının eksikliğini azaltır. Güncelleme sonrası zayıflayan model farklı bir risktir.",
+              "c": "Doğru. A/B testi 'model güncellemeleri MÖ modelinin fonksiyonel performansını düşürür' riskinin karşısında listelenir: güncellenmiş varyant, en az önceki kadar iyi olduğunu göstermek için anlaşılmış metriklerle önceki varyantla karşılaştırılır.",
+              "d": "Yanlış. API testi, müfredatın tablosunda model API'sindeki hataların karşısında listelenir; MÖ sisteminin iyi tanımlanmış arayüzler sunduğunu ve girdileri, çıktıları ve hata mesajlarını doğru işlediğini doğrular. Yeni sürümün MÖ fonksiyonel performansını eskisiyle karşılaştırmaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team releases an updated version of an ML model and fears that the update has decreased its ML functional performance compared with the previous version. Which test approach does the syllabus list as a mitigation for this risk?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Drift testing"
+            },
+            {
+              "id": "b",
+              "text": "Adversarial testing"
+            },
+            {
+              "id": "c",
+              "text": "A/B testing"
+            },
+            {
+              "id": "d",
+              "text": "API testing"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus pairs the risk 'model updates decrease ML model functional performance' with A/B testing, which compares the updated variant against the previous one using agreed ML functional performance metrics. The other approaches are listed against different risks.",
+            "byOption": {
+              "a": "Wrong. Drift testing is the listed mitigation for unacceptable data drift and concept drift in operation, where the inputs or the input-output relationship change over time. It is not about comparing an update with its predecessor.",
+              "b": "Wrong. Adversarial testing mitigates the risk of adversarial examples and of a lack of AI robustness to unexpected inputs. A weaker model after an update is a different risk.",
+              "c": "Correct. A/B testing is listed for 'model updates decrease ML model functional performance': the updated variant is compared with the previous one against agreed metrics to show it performs as well as or better.",
+              "d": "Wrong. API testing is listed in the syllabus table against defects in the model API; it verifies that the ML system exposes well-defined interfaces and handles inputs, outputs and error messages correctly. It does not compare the ML functional performance of a new release with the old one."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0066",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.1",
+      "objectives": [
+        "AI-6.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-model-risks",
+        "risk-mitigation"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden hangi MÖ modeli riski ve test yaklaşımı eşleşmesi müfredatta bir risk azaltma örneği olarak listelenir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yanlı ya da adil olmayan MÖ modeli; dağıtılmış sistemde kırmızı takım çalışmasıyla azaltılır"
+            },
+            {
+              "id": "b",
+              "text": "Model güncellemesi dağıtıldıktan hemen sonra oluşan arıza; duman testiyle azaltılır"
+            },
+            {
+              "id": "c",
+              "text": "Kabul edilemez veri kayması; modelin girdileri üzerinde karşıt testle azaltılır"
+            },
+            {
+              "id": "d",
+              "text": "Zayıf model belgelendirmesi; modelin performans verimliliği testiyle azaltılır"
+            }
+          ],
+          "rationale": {
+            "summary": "Güncellenmiş modelin dağıtımının anında arızaya yol açması riskinin listelenen azaltma yöntemi duman testidir. Yanlış eşleşmelerin her biri bir riski, müfredatın başka bir risk için listelediği yaklaşımla karıştırır.",
+            "byOption": {
+              "a": "Yanlış. Yanlı ya da adil olmayan model yanlılık testiyle azaltılır. Kırmızı takım çalışması güvenlik açıkları ve emniyet açıkları, gizlilik ihlalleri ve zararlı çıktılar için, ayrıca zayıf sistem gereksinimleri için listelenir; yanlılık için listelenmez.",
+              "b": "Doğru. Duman testi, güncellenmiş modelin dağıtımının anında arızaya yol açması riski için listelenir.",
+              "c": "Yanlış. Kabul edilemez veri kayması ve kavram kayması kayma testiyle azaltılır. Karşıt test, karşıt örnekleri ve beklenmeyen girdilere karşı sağlamlık eksikliğini ele alır.",
+              "d": "Yanlış. Zayıf model belgelendirmesi, model belgelerinin gözden geçirilmesiyle azaltılır. Performans testi, yetersiz MÖ model performans verimliliği için listelenir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which pairing of an ML model risk with a test approach is listed in the syllabus as a risk mitigation example?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A biased or unfair ML model, mitigated by red teaming of the deployed system"
+            },
+            {
+              "id": "b",
+              "text": "Immediate failure after a model update is deployed, mitigated by smoke testing"
+            },
+            {
+              "id": "c",
+              "text": "Unacceptable data drift, mitigated by adversarial testing of the model's inputs"
+            },
+            {
+              "id": "d",
+              "text": "Poor model documentation, mitigated by performance efficiency testing of the model"
+            }
+          ],
+          "rationale": {
+            "summary": "Smoke testing is the listed mitigation when deploying an updated model causes an immediate failure. Each wrong pairing mixes a risk with an approach that the syllabus lists for another risk.",
+            "byOption": {
+              "a": "Wrong. A biased or unfair model is mitigated by testing for bias. Red teaming is listed for security and safety vulnerabilities, privacy violations and harmful outputs, and also for poor system requirements; it is not listed for bias.",
+              "b": "Correct. Smoke testing is listed for the risk that deploying an updated model causes an immediate failure.",
+              "c": "Wrong. Unacceptable data drift and concept drift are mitigated by drift testing. Adversarial testing addresses adversarial examples and a lack of robustness to unexpected inputs.",
+              "d": "Wrong. Poor model documentation is mitigated by a model documentation review. Performance testing is listed for inadequate ML model performance efficiency."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0067",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.2",
+      "objectives": [
+        "AI-6.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-model-documentation",
+        "review"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Müfredat, bir MÖ modelinin belgelendirmesini neden bir formalite değil kritik bir kaynak olarak tanımlar?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Çünkü bir model kartı varsa belgeler MÖ fonksiyonel performans testinin yerini alır"
+            },
+            {
+              "id": "b",
+              "text": "Çünkü düzenleyiciler yalnızca Model Card biçimini kabul eder ve her proje bunu kullanmak zorundadır"
+            },
+            {
+              "id": "c",
+              "text": "Çünkü bir MÖ modelinin kaynak kodu geleneksel yazılımınkinden her zaman daha kolay incelenir"
+            },
+            {
+              "id": "d",
+              "text": "Çünkü model kara kutudur, makine üretimi kodu zor anlaşılır, veriye bağlıdır ve sık güncellenir"
+            }
+          ],
+          "rationale": {
+            "summary": "MÖ modelleri kara kutudur, makine tarafından üretilen kodları sınırlı anlaşılabilirliğe sahiptir, veriye bağımlıdır ve sık güncellenir; bu yüzden belgeler geliştiricilerin, test uzmanlarının ve düzenleyicilerin sistemi anlaması, değerlendirmesi ve ona güvenmesi için ana araçtır.",
+            "byOption": {
+              "a": "Yanlış. Belgeler anlamayı ve gözden geçirmeyi destekler; müfredat bunların testin yerini aldığını söylemez, belgeleri gözden geçirmek diğer testlerin yanında bir test faaliyetidir.",
+              "b": "Yanlış. Model Cards ve Datasheets for Datasets, belgelendirme çerçevesi örnekleri olarak anılır. Müfredat tek bir biçimi zorunlu kılmaz.",
+              "c": "Yanlış. Müfredat tam tersini söyler: makine tarafından üretilen kodun anlaşılabilirliği sınırlıdır, bu yüzden kaynak kod geleneksel sistemlerdeki kadar kolay incelenemez.",
+              "d": "Doğru. Makine tarafından üretilen kodun sınırlı anlaşılabilirliği, kara kutu yapısı, veri bağımlılığı ve sık güncellemeler belgeleri geliştiriciler, test uzmanları ve düzenleyiciler için ana araç yapar."
+            }
+          }
+        },
+        "en": {
+          "stem": "Why does the syllabus describe documentation of an ML model as a critical resource rather than a formality?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Because documentation replaces ML functional performance testing once a model card exists"
+            },
+            {
+              "id": "b",
+              "text": "Because regulators accept only Model Cards, so every project must use that one format"
+            },
+            {
+              "id": "c",
+              "text": "Because the source code of an ML model is always easier to inspect than that of conventional software"
+            },
+            {
+              "id": "d",
+              "text": "Because the black-box model has opaque generated code, depends on data and is often updated"
+            }
+          ],
+          "rationale": {
+            "summary": "ML models are black boxes whose machine-generated code has limited understandability; they depend on data and are updated frequently, so documentation becomes the main tool developers, testers and regulators have to understand, evaluate and trust the system.",
+            "byOption": {
+              "a": "Wrong. Documentation supports understanding and review; the syllabus does not say it replaces testing, and reviewing it is itself a test activity alongside other testing.",
+              "b": "Wrong. Model Cards and Datasheets for Datasets are named as examples of documentation frameworks. The syllabus does not make one format the only acceptable one.",
+              "c": "Wrong. The syllabus says the opposite: machine-generated code has limited understandability, so the source cannot be inspected as easily as in conventional systems.",
+              "d": "Correct. The limited understandability of machine-generated code, the black-box nature, data dependency and frequent updates make documentation the main tool for developers, testers and regulators."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0068",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.2",
+      "objectives": [
+        "AI-6.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-model-documentation",
+        "review"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir test uzmanı bir MÖ modelinin belgelerini genel, tasarım, kullanım, veri seti, test, fonksiyonel, fonksiyonel olmayan ve operasyonel içeriği kapsayan bir kontrol listesine göre gözden geçiriyor. Bu gözden geçirmenin amaçlarından biri aşağıdakilerden hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Model belgelerindeki eksik bilgileri, yanlışlıkları ve tutarsızlıkları belirlemek"
+            },
+            {
+              "id": "b",
+              "text": "Modelin doğruluk ve hatırlama değerlerini bağımsız bir test veri setinde ölçmek"
+            },
+            {
+              "id": "c",
+              "text": "Modelin yanlış sınıflandırmasına yol açan, hafifçe değiştirilmiş girdiler üretmek"
+            },
+            {
+              "id": "d",
+              "text": "İşletimde girdi verisinin istatistiksel özelliklerinin değiştiğini tespit etmek"
+            }
+          ],
+          "rationale": {
+            "summary": "Belgeleri bu tür kontrol listelerine göre gözden geçirmenin amaçları arasında eksik bilgileri, yanlışlıkları ve tutarsızlıkları belirlemek vardır. Performans ölçmek, girdi üretmek ve kaymayı izlemek modele ya da işletimine ihtiyaç duyan başka test faaliyetleridir.",
+            "byOption": {
+              "a": "Doğru. Eksik bilgileri, yanlışlıkları ve tutarsızlıkları bulmak, müfredatın bir kontrol listesine göre belge gözden geçirmesi için listelediği ilk amaçtır.",
+              "b": "Yanlış. Doğruluk ve hatırlama ölçmek, modeli çalıştıran MÖ fonksiyonel performans testidir. Belge gözden geçirmesi belgelerin ne söylediğini inceler.",
+              "c": "Yanlış. Bu tür girdiler üretmek karşıt testtir. Belgelerin gözden geçirilmesi modeli çalıştırmaz.",
+              "d": "Yanlış. İşletimde girdi verisindeki değişimi tespit etmek kayma testidir. Gözden geçirme ancak belgelerin, örneğin kullanım içeriğinde, veri kayması ve kavram kaymasını öngörüp öngörmediğini denetleyebilir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester reviews the documentation of an ML model against a checklist covering general, design, usage, dataset, testing, functional, non-functional and operational content. Which of the following is an aim of this review?",
+          "options": [
+            {
+              "id": "a",
+              "text": "To find missing information, inaccuracies and inconsistencies in the documentation"
+            },
+            {
+              "id": "b",
+              "text": "To measure the accuracy and recall of the model on an independent test dataset"
+            },
+            {
+              "id": "c",
+              "text": "To generate slightly perturbed inputs that cause the model to misclassify"
+            },
+            {
+              "id": "d",
+              "text": "To detect in operation that the statistical properties of the input data have changed"
+            }
+          ],
+          "rationale": {
+            "summary": "Reviewing documentation against such checklists aims, among other things, to find missing information, inaccuracies and inconsistencies. Measuring performance, generating inputs and monitoring drift are different test activities that need the model or its operation.",
+            "byOption": {
+              "a": "Correct. Finding missing information, inaccuracies and inconsistencies is the first aim the syllabus lists for reviewing documentation against a checklist.",
+              "b": "Wrong. Measuring accuracy and recall is ML functional performance testing, which executes the model. A documentation review examines what the documents say.",
+              "c": "Wrong. Generating such inputs is adversarial testing. A review of documents does not run the model.",
+              "d": "Wrong. Detecting changes in operational input data is drift testing. A review can only check that the documents plan for data drift and concept drift, for example in the usage content."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0069",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.3",
+      "objectives": [
+        "AI-6.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-functional-performance",
+        "statistical-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Olasılıksal bir MÖ sisteminin MÖ fonksiyonel performans testi, deterministik bir fonksiyonun kontrolünden nasıl farklıdır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Her test senaryosu tek başına geçmelidir; tek bir kalan test senaryosu modelin kabul kriterlerini karşılamadığı anlamına gelir"
+            },
+            {
+              "id": "b",
+              "text": "Sonuçlar, istatistiksel terimlerle yazılmış kriterlere karşı ölçülür; yanılma payı ve güven düzeyiyle raporlanır"
+            },
+            {
+              "id": "c",
+              "text": "Eğitim veri seti test veri seti olarak yeniden kullanılır, böylece test modelin öğrendiği her şeyi kapsar"
+            },
+            {
+              "id": "d",
+              "text": "Test uzmanının seçtiği sabit sayıda test senaryosu kabul kriterlerine duyulan ihtiyacın yerini alır"
+            }
+          ],
+          "rationale": {
+            "summary": "Olasılıksal sistemlerde model performansı, istatistiksel terimlerle ifade edilmiş kabul kriterlerine karşı, geniş, temsil edici ve bağımsız bir test veri setinde istatistiksel olarak ölçülür ve basit bir geçti/kaldı oranı olarak değil istatistiksel güvenle raporlanır.",
+            "byOption": {
+              "a": "Yanlış. Müfredatın yeterli bulmadığı tek geçti/kaldı bakışı budur. MÖ sistemlerinin deterministik olmaması, davranışın çok sayıda test senaryosu üzerinden istatistiksel olarak değerlendirilmesiyle ele alınır.",
+              "b": "Doğru. Kabul kriterleri istatistiksel olarak tanımlanır, geniş ve temsil edici bir test veri setinde değerlendirilir ve sonuç istatistiksel güvenle raporlanır.",
+              "c": "Yanlış. Test veri seti eğitim ve doğrulama veri setlerinden tamamen bağımsız olmalıdır; eğitim verisini yeniden kullanmak modelin yeni veride nasıl davrandığını göstermez.",
+              "d": "Yanlış. İstatistiksel terimlerle tanımlanmış kabul kriterleri bir ön koşuldur ve gereken en az test sayısının belirlenmesini sağlayan da bunlardır."
+            }
+          }
+        },
+        "en": {
+          "stem": "How does ML functional performance testing of a probabilistic ML system differ from checking a deterministic function?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Each test case must pass individually, so a single failed test case means the model fails its acceptance criteria"
+            },
+            {
+              "id": "b",
+              "text": "Results are measured statistically against criteria and reported with a margin of error and confidence level"
+            },
+            {
+              "id": "c",
+              "text": "The training dataset is reused as the test dataset so that the test covers everything the model has learned"
+            },
+            {
+              "id": "d",
+              "text": "A fixed number of test cases chosen by the tester replaces the need for any acceptance criteria"
+            }
+          ],
+          "rationale": {
+            "summary": "For probabilistic systems the model's performance is measured statistically on a large, representative, independent test dataset against acceptance criteria stated in statistical terms, and reported with statistical confidence rather than as a simple passed/failed ratio.",
+            "byOption": {
+              "a": "Wrong. That is the single passed/failed view the syllabus says is not enough. The non-determinism of ML systems is handled by evaluating behaviour across many test cases statistically.",
+              "b": "Correct. Acceptance criteria are defined statistically, evaluated across a large representative test dataset, and the result is reported with statistical confidence.",
+              "c": "Wrong. The test dataset must be completely independent of the training and validation datasets; reusing training data would not show how the model performs on new data.",
+              "d": "Wrong. Acceptance criteria defined in statistical terms are a precondition, and they are what lets the minimum number of tests be determined."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0070",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.3",
+      "objectives": [
+        "AI-6.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-functional-performance",
+        "margin-of-error"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, bir MÖ modelini performans metriği, yanılma payı (MoE) ve güven düzeyi (CL) belirten bir gereksinime karşı test ediyor. CL sabit tutulup çalıştırılan test senaryosu sayısı artırılıyor. Müfredatın tarif ettiği etki nedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "MoE artar, çünkü daha büyük bir örneklem daha çeşitli sonuçlar içerir"
+            },
+            {
+              "id": "b",
+              "text": "MoE aynı kalır, çünkü onu test sayısı değil gereksinim belirler"
+            },
+            {
+              "id": "c",
+              "text": "MoE azalır, böylece test sonucu öncekinden daha keskin hale gelir"
+            },
+            {
+              "id": "d",
+              "text": "Model daha sık test edildiği için ölçülen doğruluğu artar"
+            }
+          ],
+          "rationale": {
+            "summary": "CL sabitken test senaryosu sayısı arttıkça MoE azalır; bu, test sonucunun daha keskin olması demektir. Bunun yerine MoE sabit tutulursa daha fazla test CL'yi artırır ve sonuç daha kesin olur.",
+            "byOption": {
+              "a": "Yanlış. Daha büyük örneklem yanılma payını genişletmez, daraltır.",
+              "b": "Yanlış. Gereksinim ulaşılması gereken MoE'yi belirtir, ancak ölçülen MoE test senaryosu sayısına bağlıdır: CL sabitken daha fazla test senaryosu onu küçültür.",
+              "c": "Doğru. CL sabitken test senaryosu eklemek MoE'yi küçültür ve daha keskin bir sonuç verir.",
+              "d": "Yanlış. Daha fazla test çalıştırmak modeli değiştirmez; yalnızca doğruluğunun ne kadar kesin tahmin edildiğini değiştirir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team tests an ML model against a requirement that states a performance metric, a margin of error (MoE) and a confidence level (CL). It keeps the CL fixed and increases the number of test cases it runs. What is the effect described in the syllabus?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The MoE increases, because a larger sample contains more varied results"
+            },
+            {
+              "id": "b",
+              "text": "The MoE stays the same, because the requirement sets it, not the test count"
+            },
+            {
+              "id": "c",
+              "text": "The MoE decreases, which means the result of the test becomes more precise"
+            },
+            {
+              "id": "d",
+              "text": "The measured accuracy of the model improves because it is tested more often"
+            }
+          ],
+          "rationale": {
+            "summary": "With the CL fixed, more test cases make the MoE decrease, which means the test result becomes more precise. If instead the MoE is fixed, more tests raise the CL, making the result more certain.",
+            "byOption": {
+              "a": "Wrong. A larger sample narrows the margin of error rather than widening it.",
+              "b": "Wrong. The requirement states the MoE that must be reached, but the MoE actually measured depends on the number of test cases: with the CL fixed, more test cases make it smaller.",
+              "c": "Correct. Fixing the CL while adding test cases shrinks the MoE and gives a more precise result.",
+              "d": "Wrong. Running more tests does not change the model; it only changes how precisely its accuracy is estimated."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0071",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.4",
+      "objectives": [
+        "AI-6.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "adversarial-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Aşağıdakilerden hangisi bir MÖ sisteminin karşıt testini EN İYİ özetler?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Modele meşru girdilerin hafifçe değiştirilmiş sürümlerini verip yanlış tahmin yaptırmaya çalışır"
+            },
+            {
+              "id": "b",
+              "text": "Modelin iki varyantını çalıştırıp hangisinin daha iyi olduğuna istatistiksel olarak karar verir"
+            },
+            {
+              "id": "c",
+              "text": "Girdi ve beklenen sonuç arasındaki bir ilişkiyle geçmiş bir kaynak senaryodan takip test senaryoları türetir"
+            },
+            {
+              "id": "d",
+              "text": "İşletimdeki girdi verisinin istatistiksel özelliklerinin eğitimden bu yana değişip değişmediğini kontrol eder"
+            }
+          ],
+          "rationale": {
+            "summary": "Karşıt test, modele bilerek meşru girdilerin çoğunlukla insanlarca fark edilmeyecek ölçüde değiştirilmiş sürümlerini verir; amaç yanlış tahmin yaptırmaktır ve bunu başaran girdilere karşıt örnek denir.",
+            "byOption": {
+              "a": "Doğru. Tanımlayıcı fikir budur: modelin yanlış sınıflandırması için tasarlanmış bozulmuş girdiler; başarılı olanlar karşıt örnektir.",
+              "b": "Yanlış. Bir modelin iki varyantını çalıştırıp hangisinin daha iyi olduğuna istatistiksel olarak karar vermek A/B testidir, karşıt test değil.",
+              "c": "Yanlış. Bu, girdilerdeki değişimi beklenen sonuçlara bağlayan bir metamorfik ilişki kullanan metamorfik testi tarif eder.",
+              "d": "Yanlış. Bu, veri kayması için kayma testini tarif eder. Karşıt test girdileri doğal değişimi gözlemlemek yerine kasıtlı olarak bozar."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which statement BEST summarizes adversarial testing of an ML system?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It feeds slightly modified legitimate inputs to the model to cause incorrect predictions"
+            },
+            {
+              "id": "b",
+              "text": "It runs two variants of the model and decides statistically which one performs better"
+            },
+            {
+              "id": "c",
+              "text": "It derives follow-up test cases from a passed source test case via an input-to-result relation"
+            },
+            {
+              "id": "d",
+              "text": "It checks whether the statistical properties of operational input data have changed since training"
+            }
+          ],
+          "rationale": {
+            "summary": "Adversarial testing deliberately gives the model inputs that are slightly modified, often imperceptibly to humans, versions of legitimate inputs, designed to make it predict incorrectly; those that succeed are adversarial examples.",
+            "byOption": {
+              "a": "Correct. This is the defining idea: perturbed inputs designed to make the model misclassify; successful ones are adversarial examples.",
+              "b": "Wrong. Running two variants of a model and deciding statistically which one is better describes A/B testing, not adversarial testing.",
+              "c": "Wrong. This describes metamorphic testing, where a metamorphic relation links changes in inputs to expected results.",
+              "d": "Wrong. This describes drift testing for data drift. Adversarial testing deliberately perturbs inputs rather than observing natural change."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0072",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.4",
+      "objectives": [
+        "AI-6.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "adversarial-testing",
+        "black-box"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir test uzmanının dağıtılmış bir MÖ modelinin iç yapısı hakkında bilgisi yok, ancak model üzerinde karşıt test yapmak istiyor. Müfredat bu durum için hangi yaklaşımı tarif eder?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Karşıt örnekleri üretmek için dağıtılmış modelin mimarisini ve parametrelerini incelemek"
+            },
+            {
+              "id": "b",
+              "text": "Karşıt testi hiç yapmamak, çünkü modelin iç yapısına erişim olmadan yapılamaz"
+            },
+            {
+              "id": "c",
+              "text": "Dağıtılmış modeli kendi test veri setiyle tüm girdileri doğru sınıflandırana kadar yeniden eğitmek"
+            },
+            {
+              "id": "d",
+              "text": "İç yapısı bilinen eşdeğer bir model kurup girdileri ondan üretmek ve özgün modele uygulamak"
+            }
+          ],
+          "rationale": {
+            "summary": "Kara kutu karşıt test, iç yapısı bilinen eşdeğer bir model oluşturup karşıt test girdilerini ondan üretebilir ve eşdeğer modellerin sınıflandırma sınırlarını paylaştığı varsayımıyla (aktarılabilirlik) bunları özgün modele uygulayabilir. Diğer tarif edilen seçenek kaba kuvvet yaklaşımıdır.",
+            "byOption": {
+              "a": "Yanlış. Bu, örnek üretmeyi genellikle kolaylaştıran ama modelin iç yapısının bilinmesini gerektiren beyaz kutu yaklaşımıdır; bu test uzmanı iç yapıyı bilmiyor.",
+              "b": "Yanlış. Müfredat, karşıt testin girdi ve çıktı davranışına odaklanan kara kutu test olarak yapılabileceğini belirtir.",
+              "c": "Yanlış. Test verisiyle yeniden eğitim bir test yaklaşımı değildir, test veri setinin bağımsızlığını ortadan kaldırır ve karşıt girdi üretmez.",
+              "d": "Doğru. Bu yaklaşım aktarılabilirliğe dayanır: eşdeğer modellerin sınıflandırma sınırlarını paylaştığı varsayıldığından, eşdeğer modelde üretilen girdiler özgün modeli de yanıltabilir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester has no knowledge of the internals of a deployed ML model but wants to carry out adversarial testing on it. Which approach does the syllabus describe for this situation?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Inspect the architecture and parameters of the deployed model to craft the adversarial examples"
+            },
+            {
+              "id": "b",
+              "text": "Skip adversarial testing, because it cannot be carried out without access to the model's internals"
+            },
+            {
+              "id": "c",
+              "text": "Retrain the deployed model on its own test dataset until it classifies all inputs correctly"
+            },
+            {
+              "id": "d",
+              "text": "Build an equivalent model, craft adversarial inputs from it, and apply them to the original"
+            }
+          ],
+          "rationale": {
+            "summary": "Black-box adversarial testing can create an equivalent model with known internals, craft adversarial test inputs from it, and apply them to the original model on the assumption that equivalent models share classification boundaries (transferability). A brute-force approach is the other described option.",
+            "byOption": {
+              "a": "Wrong. That is the white-box approach, which typically makes crafting examples easier but requires knowledge of the model's internals, which this tester lacks.",
+              "b": "Wrong. The syllabus states that adversarial testing can be performed as black-box testing, focusing on input and output behaviour.",
+              "c": "Wrong. Retraining on test data is not a testing approach and would remove the independence of the test dataset; it does not generate adversarial inputs.",
+              "d": "Correct. This relies on transferability: equivalent models are assumed to share classification boundaries, so inputs crafted on the equivalent model can also fool the original."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0073",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.5",
+      "objectives": [
+        "AI-6.1.5"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 2,
+      "difficulty": 3,
+      "tags": [
+        "metamorphic-testing",
+        "monotonicity"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir ev fiyatı MÖ modeli; alan (m2), oda sayısı ve semt gibi özniteliklerden satış fiyatını tahmin ediyor. Kaynak test senaryosu (100 m2, 3 oda, X semti) 200.000 fiyat üretti ve geçti. Test uzmanı 'yalnızca alan (m2) artarsa tahmin edilen fiyat azalmamalıdır' metamorfik ilişkisini uyguluyor. Bu ilişkiyle türetilen takip test senaryosu ve beklenen sonucu hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "120 m2, 3 oda, X semti; tahmin edilen fiyat tam olarak 240.000 olmalıdır"
+            },
+            {
+              "id": "b",
+              "text": "120 m2, 4 oda, Y semti; tahmin edilen fiyat en az 200.000 olmalıdır"
+            },
+            {
+              "id": "c",
+              "text": "120 m2, 3 oda, X semti; tahmin edilen fiyat en az 200.000 olmalıdır"
+            },
+            {
+              "id": "d",
+              "text": "80 m2, 3 oda, X semti; tahmin edilen fiyat en az 200.000 olmalıdır"
+            }
+          ],
+          "rationale": {
+            "summary": "İlişki yalnızca alanı artırır ve mutlak bir değer değil, kaynağa göre bir çıktı ilişkisi bekler. Oda sayısı ve semt değişmeden 120 m2 ve en az 200.000 fiyat, ilişkiyi tam olarak uygular.",
+            "byOption": {
+              "a": "Yanlış. Metamorfik ilişki, girdilerdeki değişimin beklenen sonuca nasıl yansıdığını çıktılar arası bir ilişki olarak tanımlar; kesin bir değer vermez. Kesin bir değer beklemek, metamorfik testin (MT) aşmaya çalıştığı test doğrulayıcı sorununu geri getirir.",
+              "b": "Yanlış. İlişki yalnızca alanın değişmesine izin verir. Oda sayısı ve semti de değiştirmek ilişkinin kapsamadığı etkileşimler getirir; daha düşük fiyat artık bir hataya işaret etmez.",
+              "c": "Doğru. Yalnızca alan artırılır, diğer tüm girdiler kaynak test senaryosundaki gibi kalır ve beklenen sonuç kaynak sonuca göre (daha düşük olmama) ifade edilir.",
+              "d": "Yanlış. Bu, alanı yanlış yönde değiştirir. İlişki bir artış için geçerlidir; daha küçük bir dairenin fiyatının 200.000'den yüksek olmaması beklenir, en az 200.000 olması değil."
+            }
+          }
+        },
+        "en": {
+          "stem": "A house-price ML model predicts a sale price from features such as floor area, number of rooms and district. The source test case (area 100 m2, 3 rooms, district X) produced a price of 200,000 and passed. The tester applies the metamorphic relation 'if only the floor area increases, the predicted price must not decrease'. Which follow-up test case, with its expected result, is derived using this relation?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Area 120 m2, 3 rooms, district X; the predicted price must be exactly 240,000"
+            },
+            {
+              "id": "b",
+              "text": "Area 120 m2, 4 rooms, district Y; the predicted price must be at least 200,000"
+            },
+            {
+              "id": "c",
+              "text": "Area 120 m2, 3 rooms, district X; the predicted price must be at least 200,000"
+            },
+            {
+              "id": "d",
+              "text": "Area 80 m2, 3 rooms, district X; the predicted price must be at least 200,000"
+            }
+          ],
+          "rationale": {
+            "summary": "The relation changes only the floor area upward and expects a price relation (not lower than the source), not an absolute value. The follow-up 120 m2 with rooms and district unchanged and a price of at least 200,000 applies it exactly.",
+            "byOption": {
+              "a": "Wrong. A metamorphic relation describes how a change in inputs is reflected in the expected result as a relationship between outputs; it does not provide an exact value. Expecting an exact value brings back the test oracle problem that metamorphic testing (MT) is meant to avoid.",
+              "b": "Wrong. The relation allows only the floor area to change. Changing rooms and district also introduces interactions the relation does not cover, so a lower price would not signal a defect.",
+              "c": "Correct. Only the floor area is increased, all other inputs stay as in the source test case, and the expected result is stated relative to the source result (not lower).",
+              "d": "Wrong. This changes the area in the wrong direction. The relation applies to an increase, and a smaller flat would be expected to be priced no higher, not no lower."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0074",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.5",
+      "objectives": [
+        "AI-6.1.5"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 2,
+      "difficulty": 3,
+      "tags": [
+        "metamorphic-testing",
+        "invariance"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir konuşma tanıma MÖ sistemi kayıtları yazıya döküyor. Kaynak test senaryosu, bir kişinin tek bir cümleyi okuduğu kayıttır; sistem bunu doğru yazıya döktü, yani senaryo geçti. Test uzmanı bir takip test senaryosu türetmek için değişmezlik tipinde bir metamorfik ilişki istiyor. Bu sistem için hangi ilişki geçerlidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kayıt tersten çalınır; döküm kaynağınkiyle aynı olmalıdır"
+            },
+            {
+              "id": "b",
+              "text": "Aynı kayda hafif arka plan gürültüsü eklenir; döküm kaynağınkiyle aynı olmalıdır"
+            },
+            {
+              "id": "c",
+              "text": "Kaydın ikinci yarısı silinir; döküm kaynağınkiyle aynı olmalıdır"
+            },
+            {
+              "id": "d",
+              "text": "Aynı cümle, bir sözcüğü eş anlamlısıyla değiştirilerek yeniden kaydedilir; döküm kaynağınkiyle aynı olmalıdır"
+            }
+          ],
+          "rationale": {
+            "summary": "Değişmezlik, çıktıların bozulmalar altında kararlı kalması demektir. Hafif bir arka plan gürültüsü eklemek söylenen içeriği değiştirmez, bu yüzden döküm kaynakla aynı kalmalıdır. Diğer değişiklikler söylenen içeriği değiştirir; aynı dökümün beklenmesi fonksiyonun sahip olması gereken bir özellik değildir.",
+            "byOption": {
+              "a": "Yanlış. Tersten çalınan konuşma aynı sözcükleri taşımaz, bu yüzden bir konuşma tanıma fonksiyonunun aynı dökümü vermesini gerektiren bir özellik yoktur; ilişki geçersiz olur.",
+              "b": "Doğru. Söylenenleri değiştirmeyen küçük bir bozulma dökümü değiştirmemelidir; bu, gereken fonksiyonun bir özelliğine dayanan bir değişmezlik ilişkisidir.",
+              "c": "Yanlış. Konuşmanın yarısını silmek sözcükleri kaldırır, bu yüzden döküm aynı değil daha kısa olmalıdır. İlişki beklenen sonucu yanlış ifade eder.",
+              "d": "Yanlış. Eş anlamlı sözcük anlamı korur ama söylenen sözcüklerden birini değiştirir. Konuşma tanıma sözcükleri yazıya döker, bu yüzden döküm o sözcükte farklı olmalıdır; ilişki anlamın korunmasını söylenen içeriğin korunmasıyla karıştırır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A speech-recognition ML system transcribes recordings. The source test case is a recording of a person reading one sentence; the system transcribed it correctly, so it passed. The tester wants an invariance-type metamorphic relation to derive a follow-up test case. Which relation is valid for this system?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The recording played backwards; the transcript must be identical to that of the source"
+            },
+            {
+              "id": "b",
+              "text": "The same recording with faint background noise added; the transcript must be identical to that of the source"
+            },
+            {
+              "id": "c",
+              "text": "The recording with its second half deleted; the transcript must be identical to that of the source"
+            },
+            {
+              "id": "d",
+              "text": "The same sentence re-recorded with one word swapped for a synonym; the transcript must be identical to that of the source"
+            }
+          ],
+          "rationale": {
+            "summary": "Invariance means outputs remain stable under perturbations. Adding faint background noise leaves the spoken content intact, so the transcript should remain identical to the source. The other changes alter the spoken content, so an identical transcript is not a property the function should have.",
+            "byOption": {
+              "a": "Wrong. Reversed speech no longer carries the same words, so no property of a speech-recognition function demands the same transcript; the relation would be invalid.",
+              "b": "Correct. A small perturbation that does not change what is said should leave the transcript unchanged, which is an invariance relation based on a property of the required function.",
+              "c": "Wrong. Deleting half of the speech removes words, so the transcript should be shorter, not identical. The relation misstates the expected result.",
+              "d": "Wrong. A synonym keeps the meaning but changes one of the spoken words. Speech recognition transcribes words, so the transcript should differ at that word; the relation confuses preserving the meaning with preserving the spoken content."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0075",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.7",
+      "objectives": [
+        "AI-6.1.7"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "drift-testing",
+        "concept-drift"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir sahtecilik tespit modeli, belirli bir işlem türünün düşük riskli sayıldığı dönemde eğitildi. Yeni bir düzenleme bu işlem türünü artık yüksek riskli yapıyor, ancak işlemlerin kendisi eskisi gibi görünüyor. Modelin doğruluğu düşüyor. Müfredata göre bu hangi olgudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kavram kayması, çünkü aynı tür girdi için doğru çıktı değişmiştir"
+            },
+            {
+              "id": "b",
+              "text": "Veri kayması, çünkü işletimdeki girdi verisinin istatistiksel özellikleri değişmiştir"
+            },
+            {
+              "id": "c",
+              "text": "Aşırı uyum, çünkü model eğitim verisini fazla iyi öğrenmiştir"
+            },
+            {
+              "id": "d",
+              "text": "Yetersiz uyum, çünkü model verinin yapısını yakalayamayacak kadar basittir"
+            }
+          ],
+          "rationale": {
+            "summary": "Kavram kayması, girdi verisi ile doğru çıktı arasındaki ilişkinin zamanla değişmesidir. Burada girdiler aynı görünür ama doğru etiket değişmiştir; öğrenilen karar sınırları güncelliğini yitirmiştir.",
+            "byOption": {
+              "a": "Doğru. Girdi verisi ile doğru çıktı arasındaki ilişki değişmiştir; bu yüzden başlangıçta öğrenilen örüntüler artık gerçeği yansıtmaz.",
+              "b": "Yanlış. Veri kayması girdilerin istatistiksel özelliklerindeki değişimdir. Bu senaryoda girdiler değişmemiş görünür; değişen, onlar için doğru çıktıdır.",
+              "c": "Yanlış. Aşırı uyum, görülmemiş veride zayıf genellemeyle ortaya çıkan eğitim zamanı bir uyum sorunudur. Burada model, gerçek dünya kuralı değişene kadar yeterliydi.",
+              "d": "Yanlış. Yetersiz uyum, eğitim ve doğrulama verisinde de zayıf performans demektir. Bu model düzenleme değişmeden önce iyi çalışıyordu."
+            }
+          }
+        },
+        "en": {
+          "stem": "A fraud-detection model was trained when a certain type of transaction was considered low-risk. A new regulation now makes that transaction type high-risk, although the transactions themselves look just as before. The model's accuracy declines. Which phenomenon is this, according to the syllabus?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Concept drift, because the correct output for the same kind of input has changed"
+            },
+            {
+              "id": "b",
+              "text": "Data drift, because the statistical properties of the operational input data have changed"
+            },
+            {
+              "id": "c",
+              "text": "Overfitting, because the model learned its training data too well"
+            },
+            {
+              "id": "d",
+              "text": "Underfitting, because the model is too simple to capture the structure of the data"
+            }
+          ],
+          "rationale": {
+            "summary": "Concept drift occurs when the relationship between the input data and the correct output changes over time. Here the inputs look the same but the correct label has changed, so the learned decision boundaries are out of date.",
+            "byOption": {
+              "a": "Correct. The relationship between the input data and the correct output has changed, so the originally learned patterns no longer reflect reality.",
+              "b": "Wrong. Data drift is a change in the statistical properties of the inputs. In this scenario the inputs look unchanged; what changed is the correct output for them.",
+              "c": "Wrong. Overfitting is a training-time fit problem that shows as poor generalization to unseen data. Here the model was adequate until the real-world rule changed.",
+              "d": "Wrong. Underfitting means poor performance on the training and validation data too. This model performed well before the regulation changed."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0076",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.7",
+      "objectives": [
+        "AI-6.1.7"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "drift-testing",
+        "static-drift-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "İşletimdeki bir MÖ sisteminin, güncel gerçek değer (ground truth) hakkında kullanıcılardan geri bildirim almanın bir yolu yok. Kaymayı tespit etmek için yine de hangi test yaklaşımı kullanılabilir ve nasıl çalışır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Dinamik kayma testi; modelin çıktılarını kullanıcı geri bildirimiyle karşılaştırır ve farkı bir eşik değerle kıyaslar"
+            },
+            {
+              "id": "b",
+              "text": "A/B testi; iki varyantı çalıştırır ve sonuçlarını t-testiyle karşılaştırır"
+            },
+            {
+              "id": "c",
+              "text": "Statik kayma testi; girdi ve tahmin edilen çıktı dağılımlarının istatistiksel özelliklerini karşılaştırır"
+            },
+            {
+              "id": "d",
+              "text": "Sırt sırta test; sistemin çıktılarını bağımsız bir sözde test doğrulayıcının çıktılarıyla karşılaştırır"
+            }
+          ],
+          "rationale": {
+            "summary": "Statik kayma testi güncel gerçek değere bağlı değildir. Girdi ve tahmin edilen çıktı veri dağılımlarının istatistiksel özelliklerini, örneğin Kolmogorov-Smirnov testiyle karşılaştırır; anlamlı bir fark kaymanın oluştuğunun göstergesidir.",
+            "byOption": {
+              "a": "Yanlış. Dinamik kayma testi, güncel gerçek değeri sağlayan geri bildirime dayanan biçimdir ve burada bu geri bildirim yoktur.",
+              "b": "Yanlış. A/B testi bir sistemin iki varyantını aynı girdilerle karşılaştırır; kayma testi yaklaşımı değildir ve dağılımların kayıp kaymadığını söylemez.",
+              "c": "Doğru. Güncel gerçek değere ihtiyaç duymaz: Kolmogorov-Smirnov gibi bir testle ölçülen, dağılımlardan herhangi birindeki anlamlı fark kaymaya işaret eder.",
+              "d": "Yanlış. Sırt sırta test, bir referans sisteme karşı karşılaştırarak test doğrulayıcı sorununu ele alır; dağılımları zaman içinde izlemez."
+            }
+          }
+        },
+        "en": {
+          "stem": "An operational ML system has no way to obtain feedback from users about the current ground truth. Which test approach can still be used to detect drift, and how does it work?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Dynamic drift testing, which compares the model's outputs with user feedback and checks the difference against a threshold"
+            },
+            {
+              "id": "b",
+              "text": "A/B testing, which runs two variants and compares their results using a t-test"
+            },
+            {
+              "id": "c",
+              "text": "Static drift testing, which compares the statistical properties of the input and predicted-output distributions"
+            },
+            {
+              "id": "d",
+              "text": "Back-to-back testing, which compares the system's outputs with those of an independent pseudo-oracle"
+            }
+          ],
+          "rationale": {
+            "summary": "Static drift testing does not depend on current ground truth. It compares the statistical properties of the input and predicted-output data distributions, for example with a Kolmogorov-Smirnov test; a significant difference indicates that drift has occurred.",
+            "byOption": {
+              "a": "Wrong. Dynamic drift testing is the form that relies on feedback providing the current ground truth, which is not available here.",
+              "b": "Wrong. A/B testing compares two variants of a system on the same inputs; it is not the drift testing approach and does not tell whether the distributions have drifted.",
+              "c": "Correct. It needs no current ground truth: a significant difference in either distribution, measured with a test such as Kolmogorov-Smirnov, indicates drift.",
+              "d": "Wrong. Back-to-back testing addresses the test oracle problem by comparing against a reference system; it does not monitor distributions over time."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0077",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.8",
+      "objectives": [
+        "AI-6.1.8"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "overfitting",
+        "test-dataset"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir MÖ modeli doğrulama veri setinde %95 doğruluğa ulaşıyor. Ekip daha sonra modeli, eğitimde kullanılmamış ve daha az rastlanan bazı örnekleri de içeren ayrı bir test veri setinde değerlendiriyor ve %70 doğruluk elde ediyor. Müfredat bu sonuçtan ne çıkarır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Model yetersiz uyum yapıyor olabilir, çünkü test veri setindeki doğruluğu beklenenden belirgin biçimde düşük"
+            },
+            {
+              "id": "b",
+              "text": "Model iyi uyum sağlamış, çünkü doğrulama doğruluğu yüksek ve eğitim normal ilerlemiş"
+            },
+            {
+              "id": "c",
+              "text": "Test veri seti hatalı, çünkü iyi bir modelde test ve doğrulama doğruluğu her zaman eşit olmalıdır"
+            },
+            {
+              "id": "d",
+              "text": "Aşırı uyum olabilir; test performansı doğrulama performansından anlamlı derecede kötü"
+            }
+          ],
+          "rationale": {
+            "summary": "Model, test veri setinde doğrulama veri setine göre anlamlı biçimde daha kötü performans gösteriyorsa aşırı uyum yapıyor olabilir; bu, görülmemiş veriye zayıf genellemeye işaret eder.",
+            "byOption": {
+              "a": "Yanlış. Yetersiz uyum, hem eğitim hem doğrulama veri setinde tutarlı biçimde zayıf performans olarak görünür; burada doğrulama sonucu yüksektir.",
+              "b": "Yanlış. Tek başına yüksek doğrulama doğruluğu iyi uyumu kanıtlamaz; bağımsız test veri setindeki anlamlı derecede düşük sonuç tersini gösterir.",
+              "c": "Yanlış. Veri setlerinin birebir aynı sonuç vermesi beklenmez; gösterge, test sonucunun anlamlı biçimde daha kötü olmasıdır.",
+              "d": "Doğru. Eğitimde kullanılmamış ayrı bir test veri setindeki anlamlı düşüş, modelin gürültüyü öğrenmiş ve zayıf genelliyor olabileceğine işaret eder."
+            }
+          }
+        },
+        "en": {
+          "stem": "An ML model reaches 95% accuracy on its validation dataset. The team then evaluates it on a separate test dataset that was not used during training and that includes some less common examples, and obtains 70% accuracy. What does the syllabus conclude from this result?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The model might be underfitting, because its accuracy on the test dataset is clearly lower than expected"
+            },
+            {
+              "id": "b",
+              "text": "The model is well fitted, because the validation accuracy is high and training went normally"
+            },
+            {
+              "id": "c",
+              "text": "The test dataset is faulty, because test and validation accuracy must always be equal for a good model"
+            },
+            {
+              "id": "d",
+              "text": "It might be overfitting, as test performance is significantly worse than validation performance"
+            }
+          ],
+          "rationale": {
+            "summary": "The model might be overfitting if it performs significantly worse on the test dataset than on the validation dataset, which indicates poor generalization to unseen data.",
+            "byOption": {
+              "a": "Wrong. Underfitting shows as consistently poor performance on both the training and validation datasets; here the validation result is high.",
+              "b": "Wrong. High validation accuracy alone does not establish a good fit; the significantly lower result on the independent test dataset points the other way.",
+              "c": "Wrong. The datasets are not expected to give identical results; it is the significantly worse test result that is the indicator.",
+              "d": "Correct. A significant drop on a separate test dataset not used in training suggests that the model may have captured noise and generalize poorly."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0078",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.8",
+      "objectives": [
+        "AI-6.1.8"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "underfitting",
+        "learning-curves"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir MÖ modelinin öğrenme eğrileri incelenirken hangi gözlem yetersiz uyuma işaret eder?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Eğitim ve doğrulama kayıpları birlikte düşer ve birbirine yakın düşük bir değerde durur"
+            },
+            {
+              "id": "b",
+              "text": "Eğitim ve doğrulama kayıpları yüksek ve birbirine yakın kalır, belirgin iyileşme olmaz"
+            },
+            {
+              "id": "c",
+              "text": "Model, altta yatan örüntü yerine eğitim verisindeki gürültüyü öğrenmiştir"
+            },
+            {
+              "id": "d",
+              "text": "İşletimdeki girdi verisinin istatistiksel özellikleri eğitim verisinden farklıdır"
+            }
+          ],
+          "rationale": {
+            "summary": "Eğitim ve doğrulama kayıpları yüksek kalır, birbirine görece yakındır ve eğitim ilerledikçe belirgin biçimde iyileşmezse bu, yetersiz uyuma işaret eder; her iki veri setinde sürekli düşük metrikler de bunu destekler.",
+            "byOption": {
+              "a": "Yanlış. Kayıpların birlikte düşüp düşük bir değerde durması, müfredatın yetersiz uyum için verdiği yüksek ve birbirine yakın kalan örüntünün tersidir; yetersiz uyuma işaret etmez.",
+              "b": "Doğru. Bu, müfredatın yetersiz uyum için verdiği öğrenme eğrisi örüntüsüdür; her iki veri setinde doğruluk, hassasiyet, hatırlama ya da F1 skorunun sürekli düşük olması da buna eşlik eder.",
+              "c": "Yanlış. Örüntü yerine gürültüyü öğrenmek aşırı uyumun tanımıdır, yetersiz uyumun değil.",
+              "d": "Yanlış. Bu, işletimdeki veri kaymasını tarif eder; eğitim sırasındaki öğrenme eğrileriyle değil kayma testiyle bulunur."
+            }
+          }
+        },
+        "en": {
+          "stem": "While examining the learning curves of an ML model, which observation indicates underfitting?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Training and validation errors both fall and settle at a low value close to each other"
+            },
+            {
+              "id": "b",
+              "text": "Training and validation errors stay high and close together, without significant improvement"
+            },
+            {
+              "id": "c",
+              "text": "The model has learned noise in the training data instead of the underlying pattern"
+            },
+            {
+              "id": "d",
+              "text": "The statistical properties of the input data in operation differ from those of the training data"
+            }
+          ],
+          "rationale": {
+            "summary": "If the training and validation errors remain high and relatively close together without significant improvement as training progresses, it indicates underfitting; consistently low metrics on both datasets support this.",
+            "byOption": {
+              "a": "Wrong. Errors that fall together and settle at a low value are the opposite of the high, close-together pattern the syllabus gives for underfitting, so they do not indicate underfitting.",
+              "b": "Correct. This is the learning-curve pattern the syllabus gives for underfitting, together with consistently low accuracy, precision, recall or F1 score on both datasets.",
+              "c": "Wrong. Learning noise rather than the pattern is the definition of overfitting, not underfitting.",
+              "d": "Wrong. This describes data drift in operation, which is found by drift testing rather than by learning curves during training."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0079",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.9",
+      "objectives": [
+        "AI-6.1.9"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "a-b-testing",
+        "model-update"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Yapay zekâ tabanlı bir sistem güncellendiğinde A/B testi nasıl kullanılır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Metamorfik bir ilişkiyle geçmiş bir kaynak test senaryosundan takip test senaryoları türetir"
+            },
+            {
+              "id": "b",
+              "text": "Modelin eğitim verisinden otomatik olarak çok sayıda test girdisi üretir"
+            },
+            {
+              "id": "c",
+              "text": "Güncellenmiş ve önceki varyantı aynı girdilerle anlaşılmış performans metriklerine göre kıyaslar"
+            },
+            {
+              "id": "d",
+              "text": "Sistemin çıktılarını bağımsız geliştirilmiş bir sözde test doğrulayıcıyla karşılaştırarak hata arar"
+            }
+          ],
+          "rationale": {
+            "summary": "Sistem güncellendiğinde A/B testi, güncellenmiş varyantı önceki varyantla MÖ fonksiyonel performans metrikleri gibi anlaşılmış kabul kriterleriyle karşılaştırarak güncellemenin önceki varyant kadar ya da ondan daha iyi performans gösterdiğini belirler.",
+            "byOption": {
+              "a": "Yanlış. Bu metamorfik testtir. A/B testi test senaryosu üretmez ve testlerin nasıl tasarlanacağına dair rehberlik sağlamaz.",
+              "b": "Yanlış. Eğitim verisinden otomatik olarak çok sayıda test girdisi üretmek, sırt sırta testin girdilerini elde edebileceği bir yoldur. A/B testi test senaryosu üretmez; işletim girdileri sıklıkla kullanılır ama yaklaşım test tasarımı sunmaz.",
+              "c": "Doğru. A/B testi, MÖ fonksiyonel performans metrikleri gibi anlaşılmış kabul kriterleri ve istatistiksel tekniklerle güncellenmiş varyantın önceki varyant kadar ya da ondan daha iyi olduğunu belirler.",
+              "d": "Yanlış. Bu, hata tespitini amaçlayan sırt sırta testtir; A/B testi ise varyantları performans metrikleri ve istatistikle karşılaştırır."
+            }
+          }
+        },
+        "en": {
+          "stem": "How is A/B testing used when an AI-based system is updated?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It derives follow-up test cases from a passed source test case through a metamorphic relation"
+            },
+            {
+              "id": "b",
+              "text": "It generates a large number of test inputs automatically from the training data of the model"
+            },
+            {
+              "id": "c",
+              "text": "It compares the updated and previous variants on the same inputs against agreed performance metrics"
+            },
+            {
+              "id": "d",
+              "text": "It looks for defects by comparing the outputs of the system with an independently developed pseudo-oracle"
+            }
+          ],
+          "rationale": {
+            "summary": "When the system is updated, A/B testing compares the updated variant with the previous one, using agreed acceptance criteria such as ML functional performance metrics, to determine that the update performs as well as or better than before.",
+            "byOption": {
+              "a": "Wrong. That is metamorphic testing. A/B testing does not generate test cases and gives no guidance on how tests should be designed.",
+              "b": "Wrong. Generating large numbers of test inputs automatically from training data is a way back-to-back testing can obtain its inputs. A/B testing generates no test cases; operational inputs are often used, but the approach supplies no test design.",
+              "c": "Correct. A/B testing determines, using agreed acceptance criteria such as ML functional performance metrics and statistical techniques, that the updated variant performs as well as or better than the previous one.",
+              "d": "Wrong. That is back-to-back testing, which aims to detect defects; A/B testing instead compares variants using performance metrics and statistics."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0080",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.9",
+      "objectives": [
+        "AI-6.1.9"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "a-b-testing",
+        "self-learning"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Kendi kendine öğrenen bir yapay zekâ tabanlı sistem işletim sırasında kendini değiştiriyor. A/B testi böyle bir sistem için nasıl kullanılabilir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Her değişiklikten sonraki test sonuçlarını öncekilerle karşılaştırıp değişikliği yalnızca sistem iyileştiyse tutmak"
+            },
+            {
+              "id": "b",
+              "text": "Sistemin yaptığı her değişikliği kabul etmek ve bunlardan herhangi birinin zarar verip vermediğini işletimde sonradan kayma testine bırakmak"
+            },
+            {
+              "id": "c",
+              "text": "Değişiklikten önceki çıktıdan tek bir çıktı bile farklıysa değişikliği hemen geri almak"
+            },
+            {
+              "id": "d",
+              "text": "Değişen sistemi bağımsız geliştirilmiş bir referans modelle karşılaştırıp kendi önceki durumunu yok saymak"
+            }
+          ],
+          "rationale": {
+            "summary": "Kendi kendine öğrenen sistemlerde sistem her değişiklik yaptığında otomatik testler çalıştırılır ve ortaya çıkan sistem özellikleri değişiklikten öncekilerle karşılaştırılır. Sistem iyileşmişse değişiklik kabul edilir; aksi hâlde sistem önceki durumuna döner.",
+            "byOption": {
+              "a": "Doğru. Tarif edilen kullanım budur: her değişiklikten sonraki özellikleri öncekilerle karşılaştırmak, iyileşmeleri kabul etmek ve aksi hâlde geri almak.",
+              "b": "Yanlış. A/B testi değişikliğin kendisinde uygulanır; kabul ya da geri alma karşılaştırmayla belirlenir, sonraki izlemeye ertelenmez.",
+              "c": "Yanlış. Kendi kendine öğrenen bir sistemin davranışının değişmesi beklenir; ölçüt çıktıların farklı olması değil, sistemin iyileşip iyileşmediğidir.",
+              "d": "Yanlış. Bu, sözde test doğrulayıcıyla yapılan sırt sırta testi tarif eder. A/B testi sistemi kendi önceki varyantıyla karşılaştırır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A self-learning AI-based system modifies itself during operation. How can A/B testing be used for such a system?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Compare test results after each change with those before, keeping the change only if it improved the system"
+            },
+            {
+              "id": "b",
+              "text": "Accept every change the system makes and rely on drift testing in operation later to show whether any of them harmed the system"
+            },
+            {
+              "id": "c",
+              "text": "Revert every change as soon as any single output differs from the output before the change"
+            },
+            {
+              "id": "d",
+              "text": "Compare the changed system with an independently developed reference model and ignore its earlier state"
+            }
+          ],
+          "rationale": {
+            "summary": "For self-learning systems, automated tests are run each time the system makes a change and the resulting characteristics are compared with those before the change. If the system has improved the change is accepted; otherwise it reverts to its previous state.",
+            "byOption": {
+              "a": "Correct. This is the described use: compare characteristics after each change with those before it, accepting improvements and reverting otherwise.",
+              "b": "Wrong. A/B testing is applied at the change itself, with acceptance or reversion decided by comparison, not deferred to later monitoring.",
+              "c": "Wrong. A self-learning system is expected to change its behaviour; the criterion is whether the system has improved, not whether outputs differ.",
+              "d": "Wrong. This describes back-to-back testing with a pseudo-oracle. A/B testing compares the system with its own earlier variant."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0081",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.10",
+      "objectives": [
+        "AI-6.1.10"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "back-to-back-testing",
+        "pseudo-oracle"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, MÖ sınıflandırıcısının sırt sırta testi için bir sözde test doğrulayıcıyı (pseudo-oracle), test edilen sistemle aynı açık kaynaklı MÖ kütüphanesi, algoritması ve ayarlarıyla geliştiriyor. Bunun riski nedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "İki sistemin çıktıları her zaman farklı olur ve her testte yanlış arıza üretilir"
+            },
+            {
+              "id": "b",
+              "text": "Sözde test doğrulayıcı, regresyon test paketlerinden alınan test girdilerini kullanamaz"
+            },
+            {
+              "id": "c",
+              "text": "Bir sistem ortamlar arasında taşındığında sırt sırta test kullanılamaz"
+            },
+            {
+              "id": "d",
+              "text": "İkisi de aynı hatayı içerebilir; çıktıları ikisi de yanlış olsa bile eşleşir"
+            }
+          ],
+          "rationale": {
+            "summary": "İdeal olarak sözde test doğrulayıcı ile test edilen sistem ortak yazılım bileşenleri paylaşmamalıdır; aksi hâlde ikisi de aynı hatayı içerebilir ve her ikisi de yanlış olsa bile çıktıları eşleşir. Bu yüzden sözde test doğrulayıcı çoğunlukla farklı çerçeve, algoritma ya da ayarlar kullanan bağımsız bir ekipçe geliştirilir.",
+            "byOption": {
+              "a": "Yanlış. Ortak bileşenler çıktıların eşleşme olasılığını artırır, azaltmaz; bu da yanlış arıza üretmek yerine hataları gizler.",
+              "b": "Yanlış. Sözde test doğrulayıcının hangi bileşenleri kullandığından bağımsız olarak, girdiler regresyon test paketleri gibi mevcut test senaryolarından gelebilir.",
+              "c": "Yanlış. Müfredata göre bir MÖ sisteminin yeni bir ortama taşınması, sırt sırta testin önemli değer sağladığı durumlardan biridir.",
+              "d": "Doğru. Ortak bir bileşen her iki sistemde de aynı hataya yol açabilir, bu yüzden karşılaştırma hatayı ortaya çıkarmaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team builds a pseudo-oracle for back-to-back testing of its ML classifier, and builds it with the same open-source ML library, algorithm and settings as the system under test. What is the risk of doing so?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The outputs of the two systems will always differ, producing false failures on every test"
+            },
+            {
+              "id": "b",
+              "text": "The pseudo-oracle will be unable to use test inputs taken from regression test suites"
+            },
+            {
+              "id": "c",
+              "text": "Back-to-back testing cannot be used when a system is moved between environments"
+            },
+            {
+              "id": "d",
+              "text": "Both may contain the same defect, so their outputs match even when both are wrong"
+            }
+          ],
+          "rationale": {
+            "summary": "Ideally the pseudo-oracle and the system under test should not share common software components, otherwise both may contain the same defect, so their outputs match even when both are wrong. This is why the pseudo-oracle is often built by an independent team using different frameworks, algorithms or settings.",
+            "byOption": {
+              "a": "Wrong. Shared components make matching outputs more likely, not less, which hides defects rather than creating false failures.",
+              "b": "Wrong. Inputs can come from existing test cases such as regression suites whatever components the pseudo-oracle uses.",
+              "c": "Wrong. Migrating an MLS to a new environment is one of the situations where the syllabus says back-to-back testing provides significant value.",
+              "d": "Correct. A shared component can cause the same defect in both systems, so the comparison does not reveal it."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0082",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 6,
+      "section": "6.1",
+      "syllabusRef": "§6.1.10",
+      "objectives": [
+        "AI-6.1.10"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "back-to-back-testing",
+        "test-inputs"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — every key re-derived from the v2.0 syllabus, ctai-0041 key corrected to c, length cues cleared both ways, K3 items checked as applications)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Fonksiyonel sırt sırta test hakkında aşağıdakilerden hangisi doğrudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Karşılaştırma yapılabilmesi için test uzmanı her girdi için bir beklenen sonuç yazmalıdır"
+            },
+            {
+              "id": "b",
+              "text": "Yalnızca girdiler gerekir; regresyon test paketlerinden ya da eğitim verisinden elde edilebilir"
+            },
+            {
+              "id": "c",
+              "text": "Sözde test doğrulayıcı, test edilen sistemle aynı fonksiyonel olmayan gereksinimleri de karşılamalıdır"
+            },
+            {
+              "id": "d",
+              "text": "Girdiler, kullanıcıların işletimde geri bildirim olarak verdikleriyle sınırlı olmalıdır"
+            }
+          ],
+          "rationale": {
+            "summary": "Sırt sırta test yalnızca test girdilerine ihtiyaç duyar, çünkü karşılaştırma noktasını sözde test doğrulayıcı sağlar; girdiler regresyon test paketleri gibi mevcut test senaryolarından gelebilir ya da eğitim verisinden otomatik üretilebilir. Fonksiyonel sırt sırta testte sözde test doğrulayıcının yalnızca fonksiyonel davranışı eşleştirmesi yeterlidir.",
+            "byOption": {
+              "a": "Yanlış. Karşılaştırma noktasını sözde test doğrulayıcı sağlar; bu da beklenen sonuç yazma ihtiyacını ortadan kaldırır.",
+              "b": "Doğru. Referans çıktıyı sözde test doğrulayıcı sağladığı için yalnızca girdiler üretilmelidir ve bunlar mevcut test senaryolarından gelebilir ya da otomatik üretilebilir.",
+              "c": "Yanlış. Fonksiyonel sırt sırta testte sözde test doğrulayıcının yalnızca fonksiyonel davranışı eşleştirmesi yeterlidir; bu da onu kurmayı daha ucuz yapabilir.",
+              "d": "Yanlış. Müfredat kaynak olarak mevcut test senaryolarını ve eğitim verisinden otomatik üretimi anar; kullanıcı geri bildirimi dinamik kayma testinin dayanağıdır."
+            }
+          }
+        },
+        "en": {
+          "stem": "Which statement about functional back-to-back testing is correct?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The tester must write an expected result for every input before the comparison can be made"
+            },
+            {
+              "id": "b",
+              "text": "Only test inputs are needed, taken from regression test suites or generated from training data"
+            },
+            {
+              "id": "c",
+              "text": "The pseudo-oracle must also satisfy the same non-functional requirements as the system under test"
+            },
+            {
+              "id": "d",
+              "text": "The inputs must be limited to those the system's users have given as feedback in operation"
+            }
+          ],
+          "rationale": {
+            "summary": "Back-to-back testing needs only test inputs, because the pseudo-oracle supplies the comparison point; the inputs can come from existing test cases such as regression suites or be generated automatically from training data. For functional back-to-back testing the pseudo-oracle need only match functional behaviour.",
+            "byOption": {
+              "a": "Wrong. The pseudo-oracle provides the comparison point, which removes the need to write expected results.",
+              "b": "Correct. Because the pseudo-oracle supplies the reference output, only inputs must be produced, and they may come from existing test cases or be generated automatically.",
+              "c": "Wrong. For functional back-to-back testing the pseudo-oracle only needs to match functional behaviour, which can make it less expensive to build.",
+              "d": "Wrong. The syllabus names existing test cases and automatic generation from training data as sources; user feedback is a basis of dynamic drift testing."
+            }
+          }
+        }
+      }
+    }
+  ]
+}

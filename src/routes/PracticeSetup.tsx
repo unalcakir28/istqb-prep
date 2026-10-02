@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { ContentLangToggle } from "@/components/ContentLangToggle";
+import { CertificationTag } from "@/components/CertificationTag";
 import { ErrorNotice } from "@/components/ErrorNotice";
 import { Spinner } from "@/components/Spinner";
 import { useSessionStore } from "@/features/session/sessionStore";
@@ -189,7 +190,10 @@ export default function PracticeSetup() {
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-8 px-4 py-8 sm:py-12">
-      <h1 className="text-[28px] font-semibold leading-tight">{t("practice.setupTitle")}</h1>
+      <div className="flex flex-col gap-1">
+        <CertificationTag cert={cert} />
+        <h1 className="text-[28px] font-semibold leading-tight">{t("practice.setupTitle")}</h1>
+      </div>
 
       <fieldset className="flex flex-col gap-3">
         <legend className="mb-2 text-base font-semibold">{t("practice.scope")}</legend>

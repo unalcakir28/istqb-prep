@@ -340,7 +340,7 @@ Proportional to the real exam's weighting, **plus an extra allowance for K3**:
 ```
 Author → opens a PR (status: "draft")
   ↓
-CI: JSON Schema (#1) + 22 checks (#2-#25, #14 and #23 retired)
+CI: JSON Schema (#1) + 23 checks (#2-#26, #14 and #23 retired)
   ↓
 Reviewer: §6 checklist + syllabus comparison
   ↓

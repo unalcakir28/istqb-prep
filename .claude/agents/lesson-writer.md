@@ -87,7 +87,7 @@ Never rename a chunk; CDN and PWA caches key on the filename.
 Write every new card with `"status": "review"` and `"reviewedBy": ""`. A
 PreToolUse hook (`guard-publish.sh`) blocks you from writing `published` by
 hand, for lessons exactly as for questions. Publishing is
-`yarn publish:lessons --reviewer "<name>" --chunk chNN`, run by someone who did
+`yarn publish:lessons --reviewer "<name>" --cert <id> --chunk chNN`, run by someone who did
 not write the card. You do not review your own work.
 
 `revision` starts at 1. Rewriting a published card's text bumps it; fixing a

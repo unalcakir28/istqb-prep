@@ -1,0 +1,391 @@
+{
+  "chunk": "ch04",
+  "chapter": 4,
+  "dataVersion": "2.0",
+  "lessons": [
+    {
+      "objective": "AI-4.1.1",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§4.1.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Kilitli ve uyarlanabilir sistemlerin test edilebilirliği",
+          "paragraphs": [
+            "Kilitli yapay zekâ tabanlı sistem, dağıtımdan sonra davranışını değiştirmez. Örneğin eğitilmiş bir derin sinir ağının ağırlıkları ve yanlılık değerleri geliştirme sonunda sabitlenir ve ancak model yeniden eğitilirse değişir. Uyarlanabilir yapay zekâ tabanlı sistem ise dağıtımdan sonra davranışını uyarlayabilir; örneğin bir takviyeli öğrenme sistemi bir ödül fonksiyonuna ya da yeni bir işletim ortamına göre değişir ve bu değişikliklerin ayrıntıları önceden kestirilemez.",
+            "Öğrenme hedefinin istediği karşılaştırma test edilebilirlik üzerinedir. Kilitli sistemler büyük ölçüde deterministiktir, bu yüzden beklenen sonuçlar zaman içinde değişmez ve hazırlanan test senaryoları geçerli kalır. Güncellenen bir kilitli sistem genellikle yeni bir sistem sayılır ve yeniden test edilir. Uyarlanabilir sistem dağıtımdan önce titizlikle test edilebilir (ortam koşullarını simüle ederek, öğrenme mekanizmasının kendisini test ederek, kontrollü senaryolarda uyum yeteneğini sınayarak), ancak bu iş daha karmaşıktır; çünkü sistem test sırasında ya da testin sonucunda davranışını değiştirebilir.",
+            "Yeni davranışlar her zaman öngörülemediği için bunlara önceden senaryo hazırlanamaz. Çözüm, çekirdek fonksiyonelliğe odaklanan otomatik bir test paketini önemli değişikliklerden sonra koşmak ve performansın belirli bir eşiğin altına düşmediğini sürekli izleme kapsamında kontrol etmektir. Gerçekte bu ikisi bir süreklilik oluşturur: büyük dil modeli tabanlı sohbet robotları gibi birçok üretken yapay zekâ sistemi çalışma zamanında kilitlidir ama düzenli aralıklarla güncellenir, yani ikisinin arasında yer alır."
+          ],
+          "keyPoints": [
+            "Kilitli sistem dağıtımdan sonra davranışını değiştirmez; uyarlanabilir sistem değiştirebilir.",
+            "Kilitli sistemler büyük ölçüde deterministik olduğundan uyarlanabilir sistemlerden çok daha kolay test edilir.",
+            "Güncellenmiş kilitli sistem genellikle yeni bir sistem sayılır ve yeniden test edilir.",
+            "Uyarlanabilir sistemin öngörülemeyen yeni davranışları için önceden test senaryosu hazırlanamaz.",
+            "Uyarlanabilir sistemlerde çekirdek fonksiyonelliği kapsayan otomatik test paketi önemli değişikliklerde koşulur ve performansın eşiğin altına düşmediği kontrol edilir."
+          ],
+          "commonMistakes": [
+            "Kilitli sistemin her koşulda tamamen deterministik olduğu sanılır; oysa büyük sinir ağları kayan nokta duyarlığı sınırları ve donanım yürütme farkları (özellikle paralel hesaplama ve GPU) yüzünden pratikte deterministik olmayan davranış gösterebilir. Kilitli sistem 'büyük ölçüde' deterministiktir, tamamen değil.",
+            "Uyarlanabilir sistemin dağıtımdan önce test edilemeyeceği sanılır; oysa öncesinde ortam değişimi simülasyonu, öğrenme mekanizmasının testi ve kontrollü senaryolarla titizlikle test edilebilir. Test edilemeyen şey, dağıtım sonrasında ortaya çıkacak öngörülemeyen yeni davranışlardır."
+          ]
+        },
+        "en": {
+          "title": "Testability of locked and adaptive systems",
+          "paragraphs": [
+            "A locked AI-based system does not change its behavior once it is deployed. A trained deep neural network is one example: its weights and biases are fixed at the end of development and change only if the model is retrained. An adaptive AI-based system can adapt its behavior after deployment; a reinforcement learning system, for instance, changes in response to a reward function or a new operational environment, and the details of those changes cannot be predicted in advance.",
+            "The comparison the objective asks for is about testability. Locked systems are largely deterministic, so expected results do not drift and prepared test cases stay valid. An updated locked system is typically treated as a new system and tested afresh. An adaptive system can be tested rigorously before deployment (by simulating changes in the environment, testing the learning mechanism itself, or checking its ability to adapt in controlled scenarios), but this is more complex because the system may change its behavior during the testing or as a result of it.",
+            "New behaviors cannot always be predicted, so test cases cannot be prepared for them in advance. What can be done is to build an automated test suite on the core functionality and run it whenever the system changes significantly, and to check, as part of ongoing monitoring, that performance has not degraded beyond a threshold. In practice the two kinds form a continuum: many GenAI systems such as LLM-based chatbots are locked at runtime but updated periodically, which places them between the two."
+          ],
+          "keyPoints": [
+            "A locked system does not change its behavior after deployment; an adaptive system can.",
+            "Locked systems are largely deterministic and therefore far easier to test than adaptive ones.",
+            "An updated locked system is typically considered a new system and is tested afresh.",
+            "Test cases cannot be prepared in advance for the unpredictable new behaviors of an adaptive system.",
+            "For adaptive systems, an automated suite on core functionality is run after significant changes, and performance is checked against a degradation threshold."
+          ],
+          "commonMistakes": [
+            "A locked system is assumed to be fully deterministic under all conditions; in practice large neural networks can behave non-deterministically because of floating-point precision limits and hardware execution differences, especially with parallel computation or GPUs. A locked system is 'largely' deterministic, not completely.",
+            "An adaptive system is assumed to be untestable before deployment; in fact it can be tested rigorously beforehand through environment simulation, tests of the learning mechanism and controlled scenarios. What cannot be tested in advance are the unpredictable new behaviors that appear after deployment."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-4.1.2",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§4.1.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Yapay zekâ tabanlı sistemlerin testinde istatistiksel yaklaşımın gerekçesi",
+          "paragraphs": [
+            "Yapay zekâ tabanlı sistemler veriye dayalı ve olasılıksaldır; bu yüzden tek bir test senaryosunun sonucu sistemin genel durumu hakkında çok az şey söyler. İstatistiksel yaklaşım, sonucu tek örneklerle değil, yeterince büyük ve temsil edici örneklem üzerindeki performans dağılımıyla ve güven düzeyleriyle değerlendirmektir.",
+            "Müfredat dört gerekçe verir. Birincisi, deterministik olmama: aynı girdi her zaman aynı çıktıyı vermeyebilir; bir modelin tek bir kediyi köpek olarak sınıflandırması, modelin genel yapay zekâ fonksiyonel doğruluğunu yansıtmaz ve sonucun belirsizliği aşabilmesi için test paketi istatistiksel olarak anlamlı sonuç verecek kadar büyük olmalıdır. İkincisi, dağılımsal performans değerlendirmesi: model belirli veri dağılımlarıyla eğitilir ve bu dağılımlar işletim ortamıyla tam örtüşmez, bu yüzden ilgili işletim verisi dağılımlarından istatistiksel olarak anlamlı bir senaryo örneklemi test edilmelidir.",
+            "Üçüncüsü, belirsizlik ve yanlılıkla başa çıkma: sistemler veri yanlılığına açıktır ve kendinden emin ama yanlış tahminler üretebilir; güven aralıkları, hipotez testi ve hata analizi gibi ölçümler doğruluğu, adilliği ve yapay zekâ sağlamlığını nicelleştirmeyi sağlar. Dördüncüsü, düzenleyici ve emniyet bağlamı: sağlık ve ulaşım gibi düzenlemeye tabi alanlarda emniyet ya da adillik eşiklerinin yüksek güvenle karşılandığını göstermek çoğu zaman gereklidir ve istatistiksel yöntemler belirli örnekler yerine geniş bir senaryo yelpazesi için güvenilirlik iddialarını destekler."
+          ],
+          "keyPoints": [
+            "Yapay zekâ tabanlı sistemler olasılıksal olduğundan aynı girdi her zaman aynı çıktıyı vermeyebilir; tek bir test sistemin genel fonksiyonel doğruluğunu yansıtmaz.",
+            "Test paketi, belirsizliği aşan güvenilir sonuçlar için istatistiksel olarak anlamlı olacak kadar büyük olmalıdır.",
+            "Model eğitim dağılımlarıyla öğrenir; işletim ortamı bunlarla tam örtüşmediğinden işletim verisi dağılımlarından anlamlı bir senaryo örneklemi test edilmelidir.",
+            "Güven aralıkları, hipotez testi ve hata analizi doğruluğu, adilliği ve sağlamlığı nicelleştirir; model kendinden emin ama yanlış tahmin üretebilir.",
+            "Düzenlemeye tabi alanlarda istatistiksel yöntemler, emniyet ya da adillik eşiklerinin yüksek güvenle karşılandığı iddialarını destekler."
+          ],
+          "commonMistakes": [
+            "Tek bir yanlış sınıflandırmanın tüm model hakkında hüküm verdiği sanılır; oysa tek örnek modelin genel yapay zekâ fonksiyonel doğruluğunu yansıtmaz. Genel doğruluk hakkında karar, yeterince büyük bir örneklem üzerindeki sonuçlardan çıkarılır.",
+            "Test verisinde yüksek doğruluk görmenin işletim ortamında da aynı başarıyı garanti ettiği sanılır; oysa model belirli veri dağılımlarıyla eğitilmiştir ve bunlar işletim ortamıyla tam örtüşmez. Bu yüzden ilgili işletim verisi dağılımlarından örneklem alınması gerekir."
+          ]
+        },
+        "en": {
+          "title": "Why a statistical approach is needed for AI-based systems",
+          "paragraphs": [
+            "AI-based systems are data-driven and probabilistic, so the outcome of one test case says very little about the system as a whole. A statistical approach judges the system by the distribution of its performance and by confidence levels over a sufficiently large, representative sample, not by single examples.",
+            "The syllabus gives four reasons. First, non-determinism: the same input may not always give the same output, so one cat misclassified as a dog does not reflect the model's overall AI functional correctness, and the test suite must be large enough to give statistically significant results. Second, distributional performance evaluation: a model is trained on specific data distributions that do not exactly match its operational environment, so a statistically significant sample of scenarios from the relevant operational data distributions must be tested.",
+            "Third, handling uncertainty and bias: such systems are susceptible to data bias and can produce confident but incorrect predictions, and confidence intervals, hypothesis testing and error analysis let testers quantify accuracy, fairness and AI robustness. Fourth, the regulatory and safety context: in regulated industries such as healthcare and transport it is often necessary to show with high confidence that safety or fairness thresholds are met, and statistical methods support claims about reliability across a broad range of scenarios rather than for specific examples."
+          ],
+          "keyPoints": [
+            "AI-based systems are probabilistic, so the same input may not always yield the same output and a single test does not reflect overall functional correctness.",
+            "The test suite must be large enough to give statistically significant results that overcome the uncertainty.",
+            "A model learns from training distributions that do not exactly match the operational environment, so a significant sample from operational data distributions must be tested.",
+            "Confidence intervals, hypothesis testing and error analysis quantify accuracy, fairness and robustness; a model can be confident but wrong.",
+            "In regulated domains, statistical methods support high-confidence claims that safety or fairness thresholds are met."
+          ],
+          "commonMistakes": [
+            "One misclassification is often taken as a verdict on the whole model; in fact a single example does not reflect the model's overall AI functional correctness. A judgement about overall correctness comes from results over a sufficiently large sample.",
+            "High accuracy on the test data is often taken to guarantee the same result in operation; in fact the model was trained on specific distributions that do not exactly match the operational environment, which is why samples from the relevant operational distributions must be tested."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-4.1.3",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§4.1.3",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Yapay zekâ tabanlı sistemlerde test doğrulayıcı sorunu",
+          "paragraphs": [
+            "Test doğrulayıcı sorunu, bir girdi için sistemin ürettiği çıktının doğru olup olmadığına karar vermenin zor olmasıdır. Geleneksel yazılımda iyi tanımlı spesifikasyonlar beklenen sonucu belirlemeyi kolaylaştırır; yapay zekâ tabanlı sistemlerde ise, özellikle karmaşık ya da öznel görevlerde, beklenen sonuç çoğu zaman tanımlanamaz ya da tanımlanması çok zordur.",
+            "Müfredat beş zorluk sayar: çıktıların olasılıksal olması (katı bir geçti/kaldı doğrulayıcısı çoğu zaman eşik ya da tolerans aralığı belirlemeyi gerektirir); geliştirmenin keşfe dayalı olması ve gereksinimlerin eksik ya da hiç olmaması; görevlerin insanın elle doğrulayamayacağı kadar karmaşık olması; davranışın doğruluğunun öznel olması (sanal asistanlardan beklentiler çok farklı olabilir); ve kendi kendine öğrenen sistemlerde 'doğru' davranışın zamanla değişmesi, böylece ilk beklenen sonuçların hızla geçersiz kalması.",
+            "Çözümler de beş başlıkta toplanır: çıktı sınırlarını tanımlamak (kabul edilen aralıklar, dağılımlar, limitler ve toleranslar; örneğin otonom bir aracın en çok belirli bir mesafede durması); ortam sınırlarını tanımlamak (aydınlatma, sıcaklık, ağ gecikmesi gibi değerleri belirleyerek çıktıların öngörülebilir ve tekrarlanabilir olmasını sağlamak); uzmana danışmak (uzmanlar farklı düşünebilir ve yanılabilir); özel test türleri kullanmak (A/B testi, sırt sırta test, metamorfik test; çoğu zaman her durum için açık beklenen çıktı gerektirmeden davranışları karşılaştırır ya da özellikleri doğrular); ve vekil test doğrulayıcı kullanmak (doğrudan beklenen sonuç yokken çıktıyı değerlendirmek için ikincil bir sistem ya da model, örneğin etiketli veriyle eğitilmiş bir vekil model)."
+          ],
+          "keyPoints": [
+            "Test doğrulayıcı sorunu, sistem çıktısının verilen girdi için doğru olup olmadığına karar vermenin zor olmasıdır.",
+            "Zorluk kaynakları: olasılıksal çıktı, keşfe dayalı geliştirme ve eksik spesifikasyonlar, görev karmaşıklığı, davranışın öznelliği ve kendi kendine öğrenen sistemlerde doğru davranışın değişmesi.",
+            "Olasılıksal çıktılarda geçti/kaldı doğrulayıcısı genellikle eşik ya da tolerans aralığı belirlemeyi gerektirir.",
+            "Çözümler: çıktı sınırları, ortam sınırları, uzman danışmanlığı, özel test türleri ve vekil test doğrulayıcılar.",
+            "A/B, sırt sırta ve metamorfik testler, çoğu zaman her durum için açık beklenen çıktı gerektirmeden, davranışları karşılaştırarak ya da özellikleri doğrulayarak değerlendirme yapar."
+          ],
+          "commonMistakes": [
+            "Test doğrulayıcı sorununun yalnızca belirsiz gereksinimlerden kaynaklandığı sanılır; oysa gereksinimler iyi olsa bile olasılıksal çıktılar, görev karmaşıklığı, öznellik ve kendi kendine öğrenme de beklenen sonucu belirlemeyi zorlaştırır.",
+            "Uzman danışmanlığının sorunu kesin olarak çözdüğü sanılır; oysa uzmanların görüşleri farklı olabilir ve yanılabilirler. Bu yüzden uzman görüşü diğer çözümlerle birlikte kullanılan bir yaklaşımdır."
+          ]
+        },
+        "en": {
+          "title": "The test oracle problem in AI-based systems",
+          "paragraphs": [
+            "The test oracle problem is the difficulty of deciding whether the output a system produced for a given input is correct. In conventional software, well-defined specifications make expected results straightforward to state; in AI-based systems, especially for complex or subjective tasks, the expected result is often difficult or impossible to define.",
+            "The syllabus names five sources of difficulty: outputs are probabilistic, so a strict passed/failed oracle often requires thresholds or tolerance ranges; development is exploratory and requirements may be incomplete or missing; tasks are too complex for humans to check expected outputs by hand; correctness is subjective, as user expectations of virtual assistants vary widely; and in self-learning systems the 'correct' behavior changes over time, so an initial set of expected results can quickly become invalid.",
+            "It also names five ways to address the problem: defining output boundaries (agreed ranges, distributions, limits and tolerances, such as an autonomous car stopping within a maximum distance); defining environmental boundaries (fixing conditions such as lighting, temperature or network latency so that outputs are predictable and repeatable); expert consultation (experts may disagree or be fallible); specialized testing (A/B, back-to-back and metamorphic testing compare behaviors or verify properties often without needing an explicit expected output for every case); and proxy oracles (a secondary system or model assesses outputs when no direct expected result exists, for example a proxy model trained on labeled data)."
+          ],
+          "keyPoints": [
+            "The test oracle problem is the difficulty of deciding whether a system's output is correct for a given input.",
+            "Sources of difficulty: probabilistic outputs, exploratory development with incomplete specifications, task complexity, subjectivity of behavior, and 'correct' behavior changing in self-learning systems.",
+            "For probabilistic outputs a passed/failed oracle often requires thresholds or tolerance ranges.",
+            "Solutions: output boundaries, environmental boundaries, expert consultation, specialized testing and proxy oracles.",
+            "A/B, back-to-back and metamorphic testing assess behavior by comparing or verifying properties, often without an explicit expected output for every case."
+          ],
+          "commonMistakes": [
+            "The oracle problem is often attributed only to vague requirements; in fact even with good requirements, probabilistic outputs, task complexity, subjectivity and self-learning make expected results hard to fix.",
+            "Expert consultation is often taken to settle the question; in fact experts' opinions may differ and they may be wrong, so expert judgement is one approach to be used alongside the others."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-4.2.1",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§4.2.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Üretken yapay zekânın testi",
+          "paragraphs": [
+            "Üretken yapay zekânın testi, çıktıların doğruluğunu, tutarlılığını ve yaratıcılığını (özgünlük ve yenilik dahil) değerlendirmeyi ve belirtilen fonksiyonel ve fonksiyonel olmayan gereksinimlerin karşılandığını doğrulamayı kapsar. Sistem metin, görüntü, video ve ses üretebildiğinden test stratejisi içeriğin kalite özelliklerine göre uyarlanır.",
+            "Yaygın yaklaşım kara kutu testidir: test uzmanı sisteme çeşitli girdiler (istemler, görüntüler, kısmi veri) verir ve sonuçları değerlendirir; netlik, özgünlük ve alana özgü kurallara uyum gibi etkenler gözetilir. Bu yaklaşım elle ya da otomatik yapılabilir ve kullanıcı memnuniyetinin üretilen içeriğin yararlılığına ve inandırıcılığına bağlı olduğu sohbet robotu ya da tasarım aracı gibi son kullanıcı uygulamalarında özellikle yararlıdır. Önemli bir güçlük 'girdi patlaması sorunu'dur: isteğe bağlı sistem istemi ve çok büyük miktarda farklı veri içerebilen kullanıcı istemi vardır, sistem bir API ile de erişilebilir, sıcaklık ve en fazla belirteç sayısı gibi parametreler ile önceki konuşmayı tutan bağlam penceresi de çıktıyı etkiler.",
+            "Sonucun geçti ya da kaldı olduğuna karar vermek için çoğu zaman elle gözden geçirme gerekir ve karar, gereksinimlerde tanımlanan nitel değerlendirme ölçütlerine dayanır. Bunun yerine ikinci bir üretken yapay zekâ sistemi sonucu otomatik belirleyebilir (örneğin üretilen görüntünün doğruluğunu bir görüntü tanıma sistemiyle denetlemek), ama bu özenle kullanılmalıdır; çünkü benzer yanlılıkları ya da yanlışları yineleyebilir. Fonksiyonel olmayan test de önemlidir: çıkarım ve eğitim sırasında kaynak kullanımı (işlemci ve GPU kullanımı, bellek, ağ bant genişliği, yanıt süreleri) değerlendirilir. Kıyaslama paketleri (benchmark) ise farklı modelleri tutarlı biçimde kıyaslamak ve iyileştirme alanlarını sistematik, tekrarlanabilir şekilde belirlemek için standart değerlendirme çerçeveleri sunar."
+          ],
+          "keyPoints": [
+            "Üretken yapay zekâ testi çıktının doğruluğunu, tutarlılığını ve yaratıcılığını değerlendirir ve fonksiyonel ile fonksiyonel olmayan gereksinimleri doğrular.",
+            "Yaygın yaklaşım, çeşitli girdiler verip sonuçları değerlendirmeye dayanan kara kutu testidir; elle ya da otomatik yapılabilir.",
+            "Girdi patlaması sorunu: sistem istemi, kullanıcı istemi, API erişimi, sıcaklık ve en fazla belirteç gibi parametreler ve bağlam penceresi çıktıyı etkiler ve girdileri denetlemeyi zorlaştırır.",
+            "Geçti/kaldı kararı çoğu zaman elle gözden geçirmeyle ve gereksinimlerdeki nitel ölçütlerle verilir; ikinci bir üretken yapay zekâ sistemi de kullanılabilir ama benzer yanlılıkları ya da yanlışları yineleyebilir.",
+            "Fonksiyonel olmayan test kaynak kullanımını (işlemci, GPU, bellek, ağ bant genişliği, yanıt süreleri) kapsar; kıyaslama paketleri modelleri tutarlı biçimde kıyaslar."
+          ],
+          "commonMistakes": [
+            "Üretken yapay zekâ çıktısını denetlemek için ikinci bir yapay zekâ sistemi kullanmanın güvenilir ve tarafsız olduğu sanılır; oysa bu yaklaşım benzer yanlılıkları ya da yanlışları yineleyebileceğinden özenle kullanılmalıdır.",
+            "Kıyaslama paketlerinin üretken yapay zekâ testinin tamamını karşıladığı sanılır; oysa bunlar modelleri tutarlı biçimde kıyaslamaya ve iyileştirme alanlarını bulmaya yarayan standart değerlendirme çerçeveleridir. Üretken yapay zekâ sisteminin testi, çıktıların gereksinimlere göre kara kutu testini ve kaynak kullanımı gibi fonksiyonel olmayan testleri de gerektirir."
+          ]
+        },
+        "en": {
+          "title": "Testing generative AI",
+          "paragraphs": [
+            "Testing generative AI means evaluating the correctness, coherence and creativity of its outputs (including originality and novelty) and verifying that the specified functional and non-functional requirements are met. Because these systems can produce text, images, video and audio, the test strategy has to be adapted to the quality characteristics of each kind of content.",
+            "A common approach is black-box testing: testers feed in various inputs (prompts, images, partial data) and assess the results, considering factors such as clarity, originality and adherence to domain-specific rules. It can be manual or automated and is particularly useful for end-user applications such as chatbots or design tools, where satisfaction depends on how useful and plausible the content is. A significant challenge is the 'input explosion problem': there are optional system prompts and a user prompt that can hold enormous amounts of disparate data, the system may also be reached through an API, and parameters such as temperature and maximum tokens and the context window that retains earlier conversation all affect the output.",
+            "Deciding whether a test has passed often involves manual review against the qualitative criteria defined in the requirements. Alternatively a second GenAI system can determine the result automatically (for example an image recognition system checking a generated image), but this must be used carefully because it may reproduce similar biases or errors. Non-functional testing matters as much: resource utilization during inference and training is evaluated (CPU and GPU usage, memory, network bandwidth, response times). Benchmark suites supply standardized evaluation frameworks so that models can be compared consistently and areas for improvement found in a systematic, reproducible way."
+          ],
+          "keyPoints": [
+            "Testing GenAI evaluates correctness, coherence and creativity of outputs and verifies functional and non-functional requirements.",
+            "A common approach is black-box testing: feed varied inputs and assess the results, manually or automatically.",
+            "The input explosion problem: system prompt, user prompt, API access, parameters such as temperature and maximum tokens, and the context window all affect the output and make inputs hard to control.",
+            "Pass/fail is often decided by manual review against qualitative criteria in the requirements; a second GenAI system can do it but may reproduce similar biases or errors.",
+            "Non-functional testing covers resource utilization (CPU, GPU, memory, network bandwidth, response times); benchmark suites allow consistent comparison of models."
+          ],
+          "commonMistakes": [
+            "Using a second AI system to judge GenAI output is often assumed to be reliable and neutral; in fact it may reproduce similar biases or errors, so it must be used carefully.",
+            "Benchmark suites are often taken to cover all GenAI testing; in fact they are standardized evaluation frameworks for comparing models consistently and finding areas for improvement. Testing a GenAI system also needs black-box testing of its outputs against the requirements and non-functional testing such as resource utilization."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-4.2.2",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§4.2.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Üretken yapay zekâ için kırmızı takım çalışması uygulamak",
+          "paragraphs": [
+            "Kırmızı takım çalışması (red teaming), bir yapay zekâ tabanlı sistemi özellikle çıktılarındaki zararlı yetenekleri bulmak için araştıran sistematik, çoğu zaman kara kutu bir hata saldırısı biçimidir. Amaç, sistemi bilerek gizlilik ihlali, ırkçı görüşler ya da kimyasal, biyolojik, radyolojik veya nükleer (KBRN) saldırı yönlendirmesi gibi zararlı ya da istenmeyen çıktılar üretmeye zorlamaktır. Bulunan yetenekler sistemi güçlendirmek için kullanılır. Her yapay zekâ tabanlı sisteme uygulanabilir, ama üretken yapay zekâda girdi ve çıktı yelpazesi çok geniş, yani 'saldırı alanı' büyük olduğundan özellikle kritiktir. Genellikle uçtan uca sistemi kapsar, yalnızca modele de uygulanabilir.",
+            "Uygulama beş adımdır: (1) farklı bakış açılarını ve saldırı vektörlerini kapsayacak çeşitlilikte bir test ekibi kurmak; (2) sisteme emniyetli bir test ortamında erişim sağlamak; (3) açık uçlu keşifle ya da kontrol listeleriyle sistemi istemlerle sınayıp güvenlik açıklarını bulmak (çoğu zaman çok turlu diyaloglar, örneğin 15-20 tur); (4) tespit edilen arızaları tehditleri anlamak için analiz etmek; (5) bu tehditlerden risk azaltımlarını ve iyileştirmeleri destekleyecek veri setleri oluşturmak. Kapsamı artırmak için kitle kaynaklı istem üretimi, bir büyük dil modelinin saldırı istemi üretip çıktıları başka bir büyük dil modeline denetletmesi ya da insan yaratıcılığını otomasyonun ölçeğiyle birleştiren hibrit yaklaşım kullanılır. Amaç güvenlik ise kötü amaçlı girdiler (örneğin dolaylı istem enjeksiyonu, erişimle artırılmış üretimde (RAG) kullanılan belgelere kötü amaçlı içerik gizleme) odaktadır; emniyet ve diğer değerlendirmelerde ise kullanıcının saldırı niyeti olmadan olağan kullanımda zararlı çıktı oluşup oluşmadığına çoğu zaman bakılır.",
+            "Örnek senaryo: bir yazılım şirketi, büyük dil modeli (LLM) tabanlı bir iç kodlama asistanını yayına almak üzere. Asistanın sistem isteminde asla açığa çıkmaması gereken yapılandırma bilgileri vardır; iç kalite değerlendirmeleri tamamlanmıştır, bu yüzden kırmızı takım çalışması dağıtımdan önce başlar. (1) Ekipte bir güvenlik uzmanı, deneyimli bir geliştirici, işe yeni başlamış bir çalışan ve teknik olmayan bir kullanıcı yer alır. (2) Asistan, sistem isteminde gerçek yapılandırma yerine sahte değerler bulunan ayrı ve emniyetli bir test ortamında çalıştırılır. (3) Test uzmanları kontrol listesiyle güvenlik saldırıları dener: asistanı adım adım gizli talimatlarını tekrarlamaya yönelten çok turlu rol yapma diyalogları. Bir başka test uzmanı açık uçlu keşif yapar; kapsam için de bir büyük dil modeli çok sayıda saldırı istemi üretir, çıktıları ikinci bir büyük dil modeli denetler. Emniyet ve diğer değerlendirmeler için test uzmanları saldırı niyeti olmadan sıradan kodlama soruları da sorar ve yanıtların, sertifika denetimlerini kapatmak gibi zararlı uygulamalar önerip önermediğine bakar. (4) Arızalar, hangi diyalog desenlerinin ve isteklerin işe yaradığını görmek için analiz edilir. (5) Bu tehditlerden bir veri seti oluşturulur; risk azaltımlarını desteklemek ve asistanı iyileştirmek, ayrıca mavi takım çalışmasının (işletimdeki sistemin girdilerini sürekli ve gerçek zamanlı izleyip süzen savunma) filtrelerini güçlendirmek için kullanılır. Kırmızı takım çalışması proaktif ve dağıtım öncesidir; mavi takım çalışması ise çalışan sistemi korur."
+          ],
+          "keyPoints": [
+            "Kırmızı takım çalışması, bir yapay zekâ tabanlı sistemi özellikle çıktılarındaki zararlı yetenekleri bulmak için araştıran sistematik, çoğu zaman kara kutu bir hata saldırısı biçimidir.",
+            "Her yapay zekâ tabanlı sisteme uygulanabilir ama geniş saldırı alanı nedeniyle üretken yapay zekâ için özellikle kritiktir; genellikle uçtan uca sistemi kapsar.",
+            "Beş adım: çeşitli bir ekip kurmak, emniyetli bir test ortamında erişim sağlamak, istemlerle güvenlik açıklarını aramak, arızaları analiz etmek, tehditlerden veri seti oluşturmak.",
+            "En etkili zaman, dağıtımdan önce ama ilk iç kalite değerlendirmeleri bittikten sonradır; çekirdek etkinlik çoğu zaman çok turlu etkileşimli istemlemedir.",
+            "Kapsam için kitle kaynaklı istem üretimi, bir büyük dil modeliyle saldırı istemi üretip başkasına denetletme ve insan ile otomasyonu birleştiren hibrit yaklaşımlar kullanılır.",
+            "Kırmızı takım çalışması dağıtım öncesi proaktiftir; mavi takım çalışması çalışan sistemi gerçek zamanlı izleme ve süzmeyle korur ve kırmızı takım çalışmasının bulgularından beslenir."
+          ],
+          "commonMistakes": [
+            "Kırmızı takım çalışmasının yalnızca kötü niyetli dış saldırganları taklit ettiği sanılır; oysa güvenlik odağında kötü amaçlı girdiler aranırken, emniyet ve diğer değerlendirmelerde amaç çoğu zaman kullanıcının saldırı niyeti olmadan, olağan kullanımda zararlı çıktının (örneğin emniyetsiz tıbbi tavsiye) nasıl oluşabileceğini bulmaktır. Güvenlik ve emniyet dışında güvenilirlik, gizlilik, adillik, yanlılık ve yanlış bilgi üretimi de kapsanabilir.",
+            "Kırmızı takım çalışması ile mavi takım çalışmasının aynı şey olduğu ya da birinin diğerinin yerini aldığı sanılır; oysa kırmızı takım çalışması proaktif ve dağıtım öncesidir, mavi takım çalışması ise işletimdeki sistemin girdilerini gerçek zamanlı izler ve süzer. Kırmızı takım çalışmasının bulguları mavi takım çalışmasının filtrelerini geliştirmek için kullanılır.",
+            "Kırmızı takım çalışmasının kıyaslama paketlerinin yerine geçtiği ya da onlar kadar durağan olduğu sanılır; oysa istemlerin çıktılara göre anında güncellenebildiği uyarlanabilir, dinamik bir değerlendirmedir ve sistemleri aşırı ve beklenmedik koşullar altında sınayarak kıyaslama paketlerini tamamlar."
+          ]
+        },
+        "en": {
+          "title": "Implementing red teaming for GenAI systems",
+          "paragraphs": [
+            "Red teaming (RT) is a systematic, often black-box form of fault attack that probes an AI-based system to find harmful capabilities, particularly in its outputs. The goal is to deliberately cause the system to produce harmful or undesirable results, such as privacy violations, racist views or guidance on chemical, biological, radiological or nuclear (CBRN) attacks. The capabilities found are then used to strengthen the system. RT can be applied to any AI-based system but is especially critical for GenAI because the vast range of possible inputs and outputs creates an extensive 'attack space'. It typically covers the complete end-to-end system but can be applied to the model alone.",
+            "Applying it takes five steps: (1) assemble a diverse team covering a wide range of perspectives and attack vectors; (2) give access to the system in a safe test environment; (3) prompt the system to find vulnerabilities, by open-ended exploration or with checklists (often multi-turn dialogues of, say, 15-20 turns); (4) analyze the identified failures to understand the threats; (5) create datasets from those threats to support mitigations and improvements. For coverage beyond a small expert team, organizations use crowd-sourced prompt generation, an LLM that generates many attack prompts whose outputs another LLM checks, or hybrids that combine human creativity with automated scale. When RT is used for security, malicious inputs are the focus (for example indirect prompt injection, or malicious content hidden in documents used by retrieval-augmented generation (RAG)); for safety and other evaluations the aim is often to find how the system might create harmful outputs under ordinary use, without any adversarial intent from the user.",
+            "A scenario: a software company is about to release an internal coding assistant built on a large language model (LLM). Its system prompt holds configuration details that must never be revealed, and its internal quality assessments are complete, so red teaming starts before deployment. (1) The team includes a security specialist, an experienced developer, a new hire and a non-technical user. (2) The assistant runs in a separate, safe test environment whose system prompt holds dummy values instead of the real configuration. (3) Working from a checklist, testers try security attacks: multi-turn role-play dialogues that slowly coax the assistant into repeating its hidden instructions. Another tester explores open-endedly, and for coverage one LLM generates many attack prompts whose outputs a second LLM checks. For safety and other evaluations, testers also ask ordinary coding questions with no adversarial intent and check whether the answers recommend harmful practices, such as switching off certificate checks. (4) The failures are analyzed to see which dialogue patterns and requests worked. (5) A dataset is built from those threats and used to support mitigations and improve the assistant, and to strengthen the filters of blue teaming, the ongoing real-time monitoring and filtering of inputs to the operational system. Red teaming is proactive and pre-deployment; blue teaming defends the running system."
+          ],
+          "keyPoints": [
+            "Red teaming is a systematic, often black-box form of fault attack that probes an AI-based system to identify harmful capabilities, particularly in its outputs.",
+            "It can be applied to any AI-based system but is especially critical for GenAI because of its extensive attack space; it typically covers the complete end-to-end system.",
+            "The five steps: assemble a diverse team, give access in a safe test environment, prompt to find vulnerabilities, analyze the failures, create datasets from the threats.",
+            "It is most effective before deployment but after initial internal quality assessments; the core activity is often interactive multi-turn prompting.",
+            "Coverage strategies: crowd-sourced prompt generation, an LLM generating attack prompts checked by another LLM, and hybrids of human and automated approaches.",
+            "RT is proactive and pre-deployment; blue teaming is ongoing real-time monitoring and filtering of an operational system and can be improved with RT insights."
+          ],
+          "commonMistakes": [
+            "Red teaming is often taken to imitate only malicious outsiders; in fact security RT focuses on malicious inputs, but for safety and other evaluations the aim is often to find how harmful outputs arise under ordinary use with no adversarial intent, such as unsafe medical advice. It can also target reliability, privacy, fairness, bias and misinformation.",
+            "Red teaming and blue teaming are often treated as the same activity, or one as a replacement for the other; in fact RT is proactive and pre-deployment, while blue teaming monitors and filters the inputs of the operational system in real time. RT findings are used to improve blue teaming's filters.",
+            "Red teaming is often thought of as a substitute for benchmarking, or as equally static; in fact it is an adaptive, dynamic evaluation in which prompts can be updated immediately in response to outputs, and it complements benchmarking by testing under extreme and unexpected conditions."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-4.3.1",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§4.3.1",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Makine öğrenimi sistemleri için test seviyeleri",
+          "paragraphs": [
+            "Makine öğrenimi sistemlerinin yapay zekâ olmayan bileşenleri geleneksel test seviyeleriyle test edilir. Makine öğrenimi modelleri ve sistemleri ise MÖ'ye özgü riskler için ek test gerektirir ve bunun için iki özel seviye vardır: girdi verisi testi ve MÖ model testi.",
+            "Girdi verisi testi (Bölüm 5), modeli eğitmek için kullanılan eğitim verisiyle, sistemin işletim ortamında tahmin üretmek için kullandığı üretim verisini kapsar. MÖ model testi (Bölüm 6) ise MÖ iş akışının nihai çıktısı olan modellerin kendisini test eder. Bu iki seviye MÖ risklerinin hepsini karşılamaz; algılanan risklere bağlı olarak geleneksel seviyeler de gerekir.",
+            "Bileşen testi, kullanıcı arayüzü, veri hattı ve iletişim bileşenleri gibi yapay zekâ olmayan bileşenlere uygulanır. Bileşen entegrasyon testi, veri hattından gelen girdilerin modele beklendiği gibi ulaştığını ve modelin tahminlerinin ilgili sistem bileşenleriyle (örneğin kullanıcı arayüzü) doğru aktarılıp kullanıldığını sınar; yapay zekâ hizmet olarak sağlanıyorsa hizmetin API testi de buradadır. Sistem testi, ilk model testindeki MÖ fonksiyonel performansının model tam sistemin içine gömüldüğünde olumsuz etkilenmediğini doğrular (model bilerek değiştirildiğinde, örneğin bir derin sinir ağı boyutunu küçültmek için sıkıştırıldığında özellikle önemlidir) ve bir tahminin sunulma süresi gibi fonksiyonel olmayan yönleri de kapsar. Sistem entegrasyon testi, yapay zekâ tabanlı sistemin dış sistem ve hizmetlerle arayüzlerini ve veri alışverişini işletim koşullarını temsil eden bir ortamda doğrular. Kabul testi, yapay zekâ hizmet olarak kullanıldığında hizmetin hedeflenen sisteme uygunluğunu ve örneğin MÖ fonksiyonel performans kriterlerinin sağlanıp sağlanmadığını belirler."
+          ],
+          "keyPoints": [
+            "Yapay zekâ olmayan bileşenler geleneksel test seviyeleriyle test edilir; MÖ'ye özgü riskler için iki özel seviye vardır.",
+            "Girdi verisi testi, eğitim verisini ve sistemin işletim ortamında tahmin için kullandığı üretim verisini kapsar.",
+            "MÖ model testi, MÖ iş akışının nihai çıktısı olan modelleri test eder.",
+            "Bileşen entegrasyon testi, veri hattından modele ve modelden sistem bileşenlerine veri akışını sınar; hizmet olarak yapay zekânın API testi de buradadır.",
+            "Sistem testi, model sisteme gömüldüğünde MÖ fonksiyonel performansının olumsuz etkilenmediğini teyit eder ve fonksiyonel olmayan test de içerir; kabul testi, hizmet olarak yapay zekânın uygunluğunu belirlemek için gerekebilir."
+          ],
+          "commonMistakes": [
+            "Girdi verisi testi ile MÖ model testinin MÖ'nün tüm risklerini karşıladığı ve geleneksel seviyelere gerek kalmadığı sanılır; oysa bu iki seviye tüm riskleri karşılamaz ve algılanan risklere göre bileşen, bileşen entegrasyon, sistem, sistem entegrasyon ve kabul testi de gerekir.",
+            "Model testinde elde edilen MÖ fonksiyonel performansının sistemde de aynen korunacağı sanılır; oysa sistem testi, performansın olumsuz etkilenmediğini teyit etmeyi de içerir ve bu, model bilerek değiştirildiğinde (örneğin sıkıştırıldığında) özellikle önemlidir."
+          ]
+        },
+        "en": {
+          "title": "Test levels for machine learning systems",
+          "paragraphs": [
+            "The non-AI components of a machine learning system are tested at conventional test levels. ML models and ML systems, however, need further testing for the risks specific to ML, and two specialized test levels exist for that: input data testing and ML model testing.",
+            "Input data testing (Chapter 5) is concerned with the training data used to train a model and with the production data the system uses to generate predictions in the operational environment. ML model testing (Chapter 6) is concerned with the models themselves, which are the ultimate output of the ML workflow. These two levels cannot address all ML risks, so depending on the perceived risks the conventional levels are also needed.",
+            "Component testing applies to non-AI components such as the user interface, data pipeline and communication components. Component integration testing checks that inputs from the data pipeline reach the model as expected and that the model's predictions are exchanged with the relevant system components (for example the user interface) and used correctly; where AI is provided as a service, API testing of that service belongs here. System testing includes confirmation that the ML functional performance from the initial model testing is not adversely affected once the model is embedded in the complete system (especially important if the model was deliberately changed, for example by compressing a DNN to reduce its size), and it covers non-functional aspects such as the time needed to deliver a prediction. System integration testing verifies the interfaces and data exchanges with external systems and services in an environment representative of operation. Acceptance testing, where AI is used as a service, may be needed to determine the service's suitability for the intended system and, for example, whether ML functional performance criteria have been achieved."
+          ],
+          "keyPoints": [
+            "Non-AI components are tested at conventional test levels; two specialized levels address ML-specific risks.",
+            "Input data testing covers the training data and the production data used for predictions in the operational environment.",
+            "ML model testing covers the models, which are the ultimate output of the ML workflow.",
+            "Component integration testing checks data flow from the pipeline to the model and from the model to system components; API testing of AI as a service belongs here.",
+            "System testing confirms ML functional performance is not adversely affected when the model is embedded and includes non-functional testing; acceptance testing may be needed to determine the suitability of AI as a service."
+          ],
+          "commonMistakes": [
+            "Input data testing and ML model testing are often assumed to cover every ML risk, making conventional levels unnecessary; in fact the two levels cannot address all risks, and component, component integration, system, system integration and acceptance testing are also needed depending on the perceived risks.",
+            "The ML functional performance measured in model testing is often assumed to carry over unchanged into the system; in fact system testing includes confirming that it is not adversely affected, which matters especially when the model has been deliberately changed, for example compressed."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    },
+    {
+      "objective": "AI-4.3.2",
+      "syllabusVersion": "2.0",
+      "syllabusRef": "§4.3.2",
+      "revision": 1,
+      "status": "published",
+      "origin": "original",
+      "i18n": {
+        "tr": {
+          "title": "Makine öğrenimi sistemlerinde risk bazlı test",
+          "paragraphs": [
+            "Risk bazlı test, yapay zekâ bileşeni içersin içermesin tüm sistemlere uygulanmalıdır; yayımlanmış ya da hazırlanmakta olan düzenleyici çerçevelerin çoğu yapay zekâ tabanlı sistemlerin geliştirilmesinde ve yönetiminde risk bazlı bir yaklaşım ister. Yapay zekâ tabanlı sistemler kendine özgü riskler taşıdığından bunların testi yapay zekâ olmayan sistemlerden farklıdır.",
+            "MÖ risklerini sınıflandırmanın standart bir yolu yoktur, ama riskler hem MÖ sisteminin geliştirilmesiyle (proje riskleri) hem de sistemin kendisiyle (ürün riskleri) ilişkilidir. Bir yol, MÖ iş akışını üç alana bölmektir. Geliştirme alanı MÖ algoritmasını, model geliştirmeyi ve MÖ geliştirme çerçevesini kapsar; örnek proje riskleri en uygun olmayan algoritma seçimi, kötü değerlendirme yaklaşımı seçimi ve çerçevedeki güvenlik açıklarıdır. Girdi verisi alanı eğitim verisini ve üretim verisini kapsar; örnek ürün riskleri yanlı eğitim verisi, veri hattı hataları ve temsil edici olmayan eğitim verisidir. Model alanı üretilen modeli kapsar; örnek ürün riskleri gereken MÖ fonksiyonel performans ölçütlerine ulaşılamaması, aşırı uyumlu model ve karşıt örneklere yatkınlıktır.",
+            "Riskleri sınıflandırmanın diğer bir yolu ISO/IEC 25059'da tanımlanan kalite özelliklerini kullanmaktır. Bu risklere karşı, MÖ sistemleri için özel tasarlanmış test biçimleri vardır: veri hattı testi, karşıt test ve algoritma/model uygunluğunun gözden geçirilmesi gibi. Her alan ilerleyen bölümlerde ayrıntılı ele alınır: geliştirme riskleri Bölüm 7'de, girdi verisi riskleri Bölüm 5'te, model riskleri Bölüm 6'da."
+          ],
+          "keyPoints": [
+            "Risk bazlı test, yapay zekâ bileşeni içersin içermesin tüm sistemlere uygulanmalıdır ve çoğu düzenleyici çerçeve risk bazlı yaklaşım ister.",
+            "MÖ riskleri için standart bir sınıflandırma yoktur; MÖ sisteminin geliştirilmesiyle ilgili proje risklerini ve sistemin kendisiyle ilgili ürün risklerini kapsar.",
+            "Bir sınıflandırma MÖ iş akışını üç alana böler: geliştirme, girdi verisi ve model.",
+            "Örnekler: geliştirmede en uygun olmayan algoritma seçimi; girdi verisinde yanlı eğitim verisi ve veri hattı hataları; modelde aşırı uyum ve karşıt örneklere yatkınlık.",
+            "Diğer bir sınıflandırma ISO/IEC 25059 kalite özelliklerini kullanır; veri hattı testi, karşıt test ve algoritma/model uygunluğunun gözden geçirilmesi bu riskleri hedefleyen test biçimleridir."
+          ],
+          "commonMistakes": [
+            "Risk bazlı testin yalnızca yapay zekâ bileşenli sistemlere özgü olduğu sanılır; oysa tüm sistemlere uygulanmalıdır. Yapay zekâ tabanlı sistemlerde değişen şey, kendine özgü risklerin bulunması ve bu yüzden testin yapay zekâ olmayan sistemlerinkinden farklı olmasıdır.",
+            "MÖ risklerinin tek, standart bir sınıflandırması olduğu sanılır; oysa böyle bir standart yoktur. İş akışına dayalı üçlü bölme ya da ISO/IEC 25059 kalite özelliklerine göre sınıflandırma, olası yollardan yalnızca ikisidir.",
+            "Tüm MÖ risklerinin ürün riski olduğu sanılır; oysa geliştirme alanındaki riskler (örneğin kötü algoritma seçimi, çerçevedeki güvenlik açıkları) proje riskleri, girdi verisi ve model alanındaki örnekler ise ürün riskleridir."
+          ]
+        },
+        "en": {
+          "title": "Risk-based testing of machine learning systems",
+          "paragraphs": [
+            "Risk-based testing should be applied to all systems, whether or not they contain AI components; most regulatory frameworks, published or in development, require a risk-based approach to the development and management of AI-based systems. Because AI-based systems pose unique risks, testing them differs from testing non-AI-based systems.",
+            "There is no standard way to categorize ML risks, but they are associated both with the development of the MLS (project risks) and with the MLS itself (product risks). One way is to divide the ML workflow into three areas. Development covers the ML algorithm, model development and the ML development framework; example project risks are sub-optimal algorithm selection, poor selection of evaluation approach and framework security vulnerabilities. Input data covers the training data and the production data; example product risks are biased training data, data-pipeline defects and unrepresentative training data. Model covers the generated ML model; example product risks are failure to achieve the required ML functional performance measures, an overfitted model and susceptibility to adversarial examples.",
+            "Another way to categorize risks is by the quality characteristics defined in ISO/IEC 25059. Several forms of testing are designed for MLS to address these risks, such as data pipeline testing, adversarial testing and review of algorithm/model suitability. Each area is treated in more detail later: development risks in Chapter 7, input data risks in Chapter 5 and model risks in Chapter 6."
+          ],
+          "keyPoints": [
+            "Risk-based testing applies to all systems, with or without AI components, and most regulatory frameworks require a risk-based approach.",
+            "There is no standard categorization of ML risks; they include project risks (development of the MLS) and product risks (the MLS itself).",
+            "One categorization divides the ML workflow into three areas: development, input data and model.",
+            "Examples: sub-optimal algorithm selection in development; biased training data and data-pipeline defects in input data; overfitting and susceptibility to adversarial examples in the model.",
+            "Another categorization uses the ISO/IEC 25059 quality characteristics; data pipeline testing, adversarial testing and review of algorithm/model suitability are forms of testing aimed at these risks."
+          ],
+          "commonMistakes": [
+            "Risk-based testing is often thought to be specific to systems with AI components; in fact it applies to all systems. What differs for AI-based systems is that they pose unique risks, so their testing differs from that of non-AI systems.",
+            "ML risks are often thought to have one standard categorization; in fact there is none. The three-area split of the workflow and the ISO/IEC 25059 quality characteristics are only two possible ways.",
+            "All ML risks are often assumed to be product risks; in fact the risks in the development area (such as poor algorithm selection or framework vulnerabilities) are project risks, while the examples under input data and model are product risks."
+          ]
+        }
+      },
+      "meta": {
+        "author": "lesson-writer",
+        "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
+        "createdAt": "2026-10-02",
+        "updatedAt": "2026-10-02"
+      }
+    }
+  ]
+}

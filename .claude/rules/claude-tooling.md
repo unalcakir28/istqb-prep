@@ -22,7 +22,7 @@ PreToolUse guards block Edit/Write with exit 2 — by design:
 
 - `guard-publish.sh` — setting `status` to `published` by hand, for a question or
   a lesson (F2-12). The only path is `yarn publish:questions|publish:lessons
---reviewer "<name>"`, the one place the reviewer gets recorded.
+--reviewer "<name>" --cert <id>`, the one place the reviewer gets recorded.
 - `guard-generated.sh` — `questions/index.json`, `lessons/index.json`,
   `data/manifest.json`, `docs/coverage.md`, `public/data/*`, `yarn.lock`.
 

@@ -3,9 +3,9 @@
  * scripts/validate-data.ts
  *
  * Implements the CI checks from docs/04-data-model.md §6. Check numbers run
- * #1-#25 and are never reused or renumbered; #14 and #23 are RETIRED (D-03)
- * and no longer run, which leaves 23 live checks. Checks #1-9, #15-19, #24 and
- * #25 are ERRORS (exit 1); #10-13 and #20-22 are WARNINGS (exit 0, printed). The
+ * #1-#26 and are never reused or renumbered; #14 and #23 are RETIRED (D-03)
+ * and no longer run, which leaves 24 live checks. Checks #1-9, #15-19 and
+ * #24-26 are ERRORS (exit 1); #10-13 and #20-22 are WARNINGS (exit 0, printed). The
  * registry below is the source of truth for the severity levels.
  *
  * Retired, kept here so the numbers stay stable:
@@ -85,6 +85,7 @@ const CHECKS: Record<number, CheckDef> = {
   // 23: retired by D-03 (option order is shuffled per attempt) — see the header.
   24: { num: 24, level: "error", name: "Are question points and blueprint points consistent with meta.json and syllabus.json" },
   25: { num: 25, level: "error", name: "Do manifest id, path and meta.id agree, and are question IDs unique across certifications" },
+  26: { num: 26, level: "error", name: "Does each rationale's Correct/Incorrect opening agree with correct[]" },
 };
 
 interface Issue {
@@ -523,6 +524,39 @@ function checkRationaleByOptionComplete(questions: QuestionRecord[]): void {
         if (isNonEmptyString(text) && text.trim().length >= 15) continue;
         if (missing.includes(id)) continue; // already reported above
         report(5, file, question.id, `rationale.byOption.${id} (i18n.${lang}) is empty or too short. Expected: a rationale of at least 15 characters explaining what that option describes; Found: ${JSON.stringify(text)}.`);
+      }
+    }
+  }
+}
+
+/**
+ * #26 — Does each rationale's opening verdict agree with correct[]?
+ *
+ * A rationale opens with "Correct." / "Doğru." for a key and "Incorrect." /
+ * "Wrong." / "Yanlış." for a distractor. CT-AI ctai-0041 shipped to review
+ * with `correct: ["d"]` while both languages' rationales called option c the
+ * correct one: every other check passed, because each looks at the key or at
+ * the text, never at the two together. A rationale that opens with neither
+ * word (a matching question's "Doğru eşleştirme, ...") is not judged.
+ */
+const RATIONALE_SAYS_KEY = /^(?:Correct|Doğru)[.:;,—–-]/;
+const RATIONALE_SAYS_DISTRACTOR = /^(?:Incorrect|Wrong|Yanlış)[.:;,—–-]/;
+
+function checkRationaleVerdictMatchesKey(questions: QuestionRecord[]): void {
+  for (const { question, file } of questions) {
+    const keys = new Set<string>(Array.isArray(question.correct) ? question.correct : []);
+    for (const lang of ["tr", "en"] as const) {
+      const byOption = question.i18n?.[lang]?.rationale?.byOption ?? {};
+      for (const [id, text] of Object.entries(byOption)) {
+        if (!isNonEmptyString(text)) continue;
+        const opening = text.trim();
+        const isKey = keys.has(id);
+        if (isKey && RATIONALE_SAYS_DISTRACTOR.test(opening)) {
+          report(26, file, question.id, `rationale.byOption.${id} (i18n.${lang}) calls a keyed option wrong. Expected: a key's rationale to open "Correct" / "Doğru", or correct[] to change; Found: correct=${JSON.stringify([...keys])}, rationale ${JSON.stringify(opening.slice(0, 40))}.`);
+        }
+        if (!isKey && RATIONALE_SAYS_KEY.test(opening)) {
+          report(26, file, question.id, `rationale.byOption.${id} (i18n.${lang}) calls an unkeyed option correct. Expected: correct[] to include ${JSON.stringify(id)}, or the rationale to say why it is wrong; Found: correct=${JSON.stringify([...keys])}, rationale ${JSON.stringify(opening.slice(0, 40))}.`);
+        }
       }
     }
   }
@@ -1209,6 +1243,7 @@ function validateCertification(certEntry: any): QuestionRecord[] {
   checkCorrectLengthMatchesSelectCount(allQuestions);
   checkCorrectIdsInOptions(allQuestions);
   checkRationaleByOptionComplete(allQuestions);
+  checkRationaleVerdictMatchesKey(allQuestions);
   checkI18nTrEnConsistent(allQuestions);
   checkQuestionIdsUnique(allQuestions);
   checkIndexConsistency(index, indexFile, actualChunkNames, allQuestions, chunkByQuestionId);
