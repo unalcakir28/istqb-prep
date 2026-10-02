@@ -48,7 +48,7 @@ Priority: **P0** blocks the next phase from starting · **P1** required within t
 - [x] **F1-01c** `P0` CI: ESLint + Prettier + `tsc --noEmit` + Vitest + `validate:data`
 - [x] **F1-02** `P0` `contentClient` — index first, then only the needed chunks; memory + Cache API, invalidated via `dataVersion`
 - [x] **F1-03** `P0` Dexie schema + recovery/discard helpers
-- [x] **F1-04** `P0` i18next; UI language ≠ content language; TR/EN dictionaries match at 182 keys, checked by `yarn validate:i18n` in CI
+- [x] **F1-04** `P0` i18next; UI language ≠ content language; TR/EN dictionaries match at 258 keys, checked by `yarn validate:i18n` in CI
 
 ### Exam engine
 
@@ -73,8 +73,8 @@ Priority: **P0** blocks the next phase from starting · **P1** required within t
 
 ### Quality
 
-- [x] **F1-15** `P1` E2E (Playwright): the full 40-question mock exam flow, resuming an unfinished attempt, the answer being preserved when the question language changes — `e2e/exam.spec.ts`. Practice and study have their own specs (`e2e/practice.spec.ts`, `e2e/study.spec.ts`), and my lists plus the glossary have `e2e/lists-and-glossary.spec.ts`; **57 specs across 5 files** under `yarn e2e`
-- [x] **F1-18** `P1` `@axe-core/playwright` — 0 violations in light **and** dark theme on the home, exam setup, practice setup, sources, exam, study chapter list, chapter objective list and study objective screens, plus a revealed practice answer; alongside the hand-written specs for what axe cannot see (focus destinations, accessible names, live regions) — `e2e/a11y.spec.ts`
+- [x] **F1-15** `P1` E2E (Playwright): the full 40-question mock exam flow, resuming an unfinished attempt, the answer being preserved when the question language changes — `e2e/exam.spec.ts`. Practice and study have their own specs (`e2e/practice.spec.ts`, `e2e/study.spec.ts`), my lists plus the glossary have `e2e/lists-and-glossary.spec.ts`, and the repetition deck has `e2e/repetition.spec.ts`; **64 specs across 6 files** under `yarn e2e`
+- [x] **F1-18** `P1` `@axe-core/playwright` — 0 violations in light **and** dark theme on the home, exam setup, practice setup, sources, exam, study chapter list, chapter objective list and study objective screens, the empty repetition deck, plus a revealed practice answer and a revealed repetition card with its grade buttons; alongside the hand-written specs for what axe cannot see (focus destinations, accessible names, live regions) — `e2e/a11y.spec.ts`
 - [x] **F1-19** `P2` **Done 22.09.2026.** Lighthouse CI asserts ≥95 in all 4 categories. `@lhci/cli@0.15.1` was approved and added as a dev dependency; `lighthouserc.json` holds the thresholds, `yarn lighthouse` runs it, and the CI job runs it after the e2e step. First local run: performance 99, accessibility 100, best practices 100, SEO 100. The step builds with `--base=/`, because lhci serves the bundle from its own static server at `/` and vite's base would otherwise be `/istqb-prep/`. The first CI run failed with `NO_FCP`: a step-level `env: GITHUB_ACTIONS: ""` does not reach the build inside a GitHub Actions job, so the base stayed `/istqb-prep/` and every asset 404'd on a blank page
 
 ### Content and pages
@@ -144,9 +144,9 @@ Each gets its own spec and plan; nothing above anticipates them beyond the exten
 ## Phase 3 — Repetition, progress, offline
 
 - [x] **F3-01** `P0` **Done 02.10.2026.** `ts-fsrs@5.4.2` (pinned) behind `src/features/srs/scheduler.ts`, the only file that imports it: card ↔ row conversion, grading, the four-way interval preview, and the deck rule as a pure, unit-tested function. Default parameters (FSRS-6 weights, 90% retention, 1 m / 10 m learning steps), fuzz off so a button's interval is the one it applies. `srsCards` rows now carry every field ts-fsrs needs (`scheduledDays`, `learningSteps`, `addedAt`, a readable `state`) — no Dexie bump, because no row had ever been written and the indexes did not change. `sessionStore.submit` writes the attempt and the deck in one transaction: a question answered **wrong** (not unanswered) in any mode joins the deck as a new card due now; one already in it is rated Again unless it is still new. A right answer outside the review screen changes nothing, because a lucky guess scores the same as knowledge. Questions answered wrong before this shipped are not backfilled
-- [ ] **F3-02** `P0` Review screen: **Again / Hard / Good / Easy** + a **next-interval preview** on each button
+- [x] **F3-02** `P0` **Done 02.10.2026.** `/tekrar` (`src/routes/Repetition.tsx`): one due card at a time, most overdue first; question → answer (revealed on a complete selection) → rationale → **Again / Hard / Good / Easy**, each button printing the interval it sets, from the same scheduler call that applies it. A wrong answer offers only Again — a wrong answer is not a matter of confidence. Each rating is saved at once; the screen keeps no attempt and writes no responses. Options are shuffled per visit. A card whose question is no longer published is skipped. Entry points: a nav link, a footer link on narrow screens, and a "Repeat N due questions" link on the home status block (the due-count half of F3-04) once the deck holds a card. `e2e/repetition.spec.ts` drives a real practice set into the deck, and seeds a card to check the stored schedule; `a11y.spec.ts` scans the empty and the revealed screen in both themes
 - [ ] **F3-03** `P1` Blocking consecutive questions from the same LO (sibling burying)
-- [ ] **F3-04** `P1` Due-date forecast chart + the count of due cards on the home screen
+- [ ] **F3-04** `P1` Due-date forecast chart. _The count of due cards on the home screen shipped with F3-02._
 - [ ] **F3-05** `P1` Progress screen: score trend, per-section improvement, a **forgiving streak**
 - [ ] **F3-06** `P1` **Readiness estimate** — based on the last 3 timed attempts ("2 of them passed the mark, you can schedule the exam")
 - [ ] **F3-07** `P1` PWA: manifest, service worker, chunk caching (`StaleWhileRevalidate`), installability

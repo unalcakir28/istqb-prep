@@ -94,11 +94,12 @@ istqb-prep/
 │   │   ├── Sources.tsx · NotFound.tsx
 │   │   ├── MyLists.tsx          # /listelerim — wrong / flagged / never right twice
 │   │   ├── Glossary.tsx         # /sozluk — 97 bilingual terms
+│   │   ├── Repetition.tsx       # /tekrar — the SRS review screen
 │   │   └── Progress.tsx         # planned (Phase 3)
 │   ├── features/
 │   │   ├── session/             # SessionRunner (the shell), sessionStore, routeForAttempt
 │   │   ├── exam/                # selectQuestions, generateExam, scoreExam, examTimer, rng, optionOrder
-│   │   └── srs/                 # scheduler (the only ts-fsrs import), interval
+│   │   └── srs/                 # scheduler (the only ts-fsrs import), interval, queue
 │   ├── components/              # QuestionCard, OptionList, RationalePanel, QuestionNavigator,
 │   │   │                        # ExamTimer, SubmitConfirm, ShortcutsOverlay, LessonCard,
 │   │   │                        # ObjectiveStateBadge, ScoreBar, CitationChips, Layout,
@@ -114,13 +115,13 @@ istqb-prep/
 │   │   │                        # questionHistory.ts (the saved lists, derived),
 │   │   │                        # srsCards.ts (the repetition deck)
 │   │   ├── i18n/                # index.ts + locales/{tr,en}.json
-│   │   ├── theme.ts · useAsyncData.ts · useDialogFocus.ts · bilingual.ts
+│   │   ├── theme.ts · useAsyncData.ts · useDialogFocus.ts · bilingual.ts · isTextEntry.ts
 │   │   ├── product.ts           # PRODUCT_NAME, REPO_URL — the name lives here, not in i18n
 │   │   ├── useDocumentTitle.ts · useArrivalFocus.ts
 │   ├── types/content.ts         # Data model types, hand-written against schemas/
 │   ├── test/                    # Vitest setup + shared fixtures
 │   └── styles/
-├── e2e/                         # Playwright — labels.ts + exam/practice/study/a11y specs
+├── e2e/                         # Playwright — labels.ts, deck.ts + exam/practice/study/lists-and-glossary/repetition/a11y specs
 ├── docs/
 └── .github/workflows/
     ├── ci.yml                   # lint → format → typecheck → test → validate:data → validate:i18n → build → e2e
@@ -266,13 +267,13 @@ jobs:
 | Level | Tool | Scope |
 |---|---|---|
 | **Data** | Ajv + custom rules | §6 [`04-data-model.md`](04-data-model.md) — 21 live checks (#1–#23; #14, #23 retired) |
-| **Unit** | Vitest | Selection (the 8/6/4/11/9/2 and 8/24/8 distributions hold across independent seeds; the scoped paths), scoring (exact match for multi-select), the timer, the Dexie v3 backfill, mastery, `routeForAttempt`, the session store, the FSRS scheduler (a card reloaded from its row schedules exactly as the library's own) and the interval preview |
+| **Unit** | Vitest | Selection (the 8/6/4/11/9/2 and 8/24/8 distributions hold across independent seeds; the scoped paths), scoring (exact match for multi-select), the timer, the Dexie v3 backfill, mastery, `routeForAttempt`, the session store, the FSRS scheduler (a card reloaded from its row schedules exactly as the library's own), the interval preview and the due queue |
 | **Component** | Testing Library | `QuestionCard` heading level and option shape, `RationalePanel`'s verdict naming and per-option coverage, `LessonCard`'s missing-card placeholder |
-| **E2E** | Playwright | All three modes end to end; auto-submit when time runs out; attempt recovery after a page reload; the legacy `/deneme` redirect; TR/EN switching |
+| **E2E** | Playwright | All three modes end to end; auto-submit when time runs out; attempt recovery after a page reload; the legacy `/deneme` redirect; TR/EN switching; a wrong answer reaching the repetition deck, and a rating storing the schedule its button showed |
 | **Accessibility** | `@axe-core/playwright` + hand-written specs | Zero violations on every main route in both themes, **plus** the failures axe cannot see: focus destinations, accessible names, live-region behaviour |
 | **Visual** | Playwright snapshot | Not set up |
 
-Counts as of 02.10.2026: **150 unit tests in 21 files**, **end-to-end specs across 5 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
+Counts as of 02.10.2026: **154 unit tests in 22 files**, **64 end-to-end specs across 6 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
 
 > This is a **testing certification** project. Test discipline is part of the product itself here; the README will display a test-coverage badge.
 

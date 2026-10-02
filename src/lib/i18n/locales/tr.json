@@ -10,6 +10,7 @@
     "exam": "Sınav",
     "syllabus": "Müfredat",
     "lists": "Listelerim",
+    "repetition": "Tekrar",
     "glossary": "Sözlük",
     "sources": "Kaynaklar",
     "theme": "Temayı değiştir",
@@ -63,7 +64,10 @@
     "examScore": "{{total}} soruda {{pass}} doğru geçer. Ardından soru soru inceleme.",
     "officialTitle": "Resmî soruları mı arıyorsun?",
     "officialBody": "ISTQB ve Turkish Testing Board, cevap anahtarlarıyla birlikte dört örnek sınavı ücretsiz yayımlıyor. Lisansları kimsenin bu soruları yeniden yayımlamasına izin vermiyor; bu yüzden havuzda bulamazsın — nereden indireceğini bulursun.",
-    "officialAction": "Nereden indirilir"
+    "officialAction": "Nereden indirilir",
+    "repetitionDue_one": "Zamanı gelen {{count}} soruyu tekrar et",
+    "repetitionDue_other": "Zamanı gelen {{count}} soruyu tekrar et",
+    "repetitionNone": "Tekrar — zamanı gelen soru yok"
   },
   "setup": {
     "title": "Deneme kurulumu",
@@ -213,6 +217,29 @@
     "shakyEmpty": "Cevapladığın her soruyu en az bir kez üst üste iki doğruyla geçtin.",
     "practise_one": "Bu {{count}} soruyu çöz",
     "practise_other": "Bu {{count}} soruyu çöz"
+  },
+  "repetition": {
+    "title": "Tekrar",
+    "intro": "Çalışmada, alıştırmada ya da sınavda yanlış cevapladığın her soru buraya gelir ve tam unutmak üzereyken yeniden karşına çıkacak şekilde aralıklandırılır. Her cevaptan sonra ne kadar iyi bildiğini işaretle: soruyu bir sonraki görüşün buna göre belirlenir.",
+    "card": "Kart {{current}} / {{total}}",
+    "gradeTitle": "Ne kadar iyi biliyordun?",
+    "gradeLead": "Dürüst ol — şans eseri doğru tahmin bilgi değildir. Her düğmenin altındaki süre, sorunun ne zaman geri geleceğini gösterir.",
+    "gradeWrongLead": "Yanlış cevap verdin, bu yüzden soru kısa süre sonra geri gelecek.",
+    "again": "Yeniden",
+    "hard": "Zor",
+    "good": "İyi",
+    "easy": "Kolay",
+    "dueIn": "{{interval}} sonra",
+    "saveFailed": "Değerlendirmen kaydedilemedi — tarayıcın depolamayı engelliyor olabilir. Yeniden dene.",
+    "emptyTitle": "Henüz tekrar edilecek soru yok",
+    "emptyBody": "Çalışmada, alıştırmada ya da sınavda bir soruyu yanlış cevapladığında buraya otomatik olarak eklenir.",
+    "doneTitle": "Şu anda zamanı gelmiş soru yok",
+    "reviewed_one": "Bu oturumda {{count}} soruyu tekrar ettin.",
+    "reviewed_other": "Bu oturumda {{count}} soruyu tekrar ettin.",
+    "deckSize_one": "Destende {{count}} soru var.",
+    "deckSize_other": "Destende {{count}} soru var.",
+    "nextDue": "Bir sonraki sorunun zamanı {{interval}} sonra gelecek.",
+    "checkAgain": "Yeniden kontrol et"
   },
   "review": {
     "title": "İnceleme",

@@ -17,6 +17,7 @@ import {
   shownOptionIds,
   totalQuestions,
 } from "./labels";
+import { publishedQuestionId, seedDueCard } from "./deck";
 
 /**
  * F1-18 — no critical accessibility violation on any main route.
@@ -123,6 +124,28 @@ for (const theme of THEMES) {
     // with nothing named under it.
     await page.goto("/listelerim");
     await expect(page.getByRole("heading", { name: en.lists.title, level: 1 })).toBeVisible();
+    await scan(page);
+  });
+
+  test(`the empty repetition deck is accessible (${theme})`, async ({ page }) => {
+    await setTheme(page, theme);
+    await page.goto("/tekrar");
+    await expect(page.getByRole("heading", { name: en.repetition.emptyTitle })).toBeVisible();
+    await scan(page);
+  });
+
+  test(`a revealed repetition card and its grade buttons are accessible (${theme})`, async ({
+    page,
+  }) => {
+    await setTheme(page, theme);
+    await page.goto("/");
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    await seedDueCard(page, await publishedQuestionId(page));
+
+    await page.goto("/tekrar");
+    await answerCurrentQuestion(page);
+    // The grade buttons are the one part of this screen no other scan covers.
+    await expect(page.getByRole("heading", { name: en.repetition.gradeTitle })).toBeVisible();
     await scan(page);
   });
 

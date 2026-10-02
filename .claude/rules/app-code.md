@@ -20,7 +20,8 @@ features/exam/     Selection and scoring — selectQuestions (one entry point,
                    deadline), rng, optionOrder (per-attempt option shuffle)
 features/srs/      Spaced repetition — scheduler (the only ts-fsrs import:
                    card <-> row, grading, the interval preview, and the rule
-                   for what a wrong answer does to the deck), interval
+                   for what a wrong answer does to the deck), interval,
+                   queue (what is due; the home count and /tekrar share it)
 lib/content/       Static JSON access + a two-tier cache (Map + Cache API),
                    invalidated via dataVersion. Questions AND lessons.
 lib/db/            Dexie/IndexedDB — the single place for persistence. db.ts
@@ -51,6 +52,7 @@ user-facing surface:
 /sonuc/:attemptId              Result   — exam and practice; study keeps its result in its own route
 /inceleme/:attemptId           Review   — reached from the result screen
 /listelerim                    My lists — wrong · flagged · never right twice in a row
+/tekrar                        Repetition — the SRS deck's due cards, one at a time
 /sozluk                        Glossary — 97 bilingual terms, no definitions (see F2-11)
 /kaynaklar                     Sources
 /deneme  ·  /deneme/:attemptId Legacy redirect to /sinav — old bookmarks keep working

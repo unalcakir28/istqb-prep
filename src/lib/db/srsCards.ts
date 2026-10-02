@@ -5,7 +5,7 @@
  * functions; this file only reads and writes `srsCards`.
  */
 
-import { deckUpdatesForWrongAnswers } from "@/features/srs/scheduler";
+import { deckUpdatesForWrongAnswers, gradeCard, type SrsGrade } from "@/features/srs/scheduler";
 
 import { db, type SrsCard } from "./db";
 
@@ -14,8 +14,11 @@ export async function loadDeck(certId: string): Promise<SrsCard[]> {
   return db.srsCards.where("certId").equals(certId).toArray();
 }
 
-export async function saveCard(card: SrsCard): Promise<void> {
-  await db.srsCards.put(card);
+/** Rates a card on the review screen, now, and stores the result. */
+export async function rateCard(card: SrsCard, grade: SrsGrade): Promise<SrsCard> {
+  const rated = gradeCard(card, grade, Date.now());
+  await db.srsCards.put(rated);
+  return rated;
 }
 
 /**

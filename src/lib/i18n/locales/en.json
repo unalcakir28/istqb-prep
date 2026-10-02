@@ -10,6 +10,7 @@
     "exam": "Exam",
     "syllabus": "Syllabus",
     "lists": "My lists",
+    "repetition": "Repetition",
     "glossary": "Glossary",
     "sources": "Sources",
     "theme": "Toggle theme",
@@ -63,7 +64,10 @@
     "examScore": "{{pass}} of {{total}} correct passes. Then a full review, question by question.",
     "officialTitle": "Looking for the official questions?",
     "officialBody": "ISTQB and the Turkish Testing Board publish four sample exams with answer keys, free. Their licence does not let anyone republish them, so you will not find them in this pool — but you will find where to download them.",
-    "officialAction": "Where to find them"
+    "officialAction": "Where to find them",
+    "repetitionDue_one": "Repeat {{count}} due question",
+    "repetitionDue_other": "Repeat {{count}} due questions",
+    "repetitionNone": "Repetition — nothing due"
   },
   "setup": {
     "title": "Exam setup",
@@ -213,6 +217,29 @@
     "shakyEmpty": "Every question you have answered has been right twice in a row at least once.",
     "practise_one": "Practise this {{count}} question",
     "practise_other": "Practise these {{count}} questions"
+  },
+  "repetition": {
+    "title": "Repetition",
+    "intro": "Every question you answer wrong — in study, practice or the exam — comes back here, spaced so that it returns just before you would forget it. After each answer, rate how well you knew it: your rating decides when you see it next.",
+    "card": "Card {{current}} of {{total}}",
+    "gradeTitle": "How well did you know it?",
+    "gradeLead": "Be honest — a lucky guess is not knowledge. The time under each button is when the question comes back.",
+    "gradeWrongLead": "You answered incorrectly, so the question comes back soon.",
+    "again": "Again",
+    "hard": "Hard",
+    "good": "Good",
+    "easy": "Easy",
+    "dueIn": "in {{interval}}",
+    "saveFailed": "Your rating could not be saved — your browser may be blocking storage. Try again.",
+    "emptyTitle": "Nothing to repeat yet",
+    "emptyBody": "When you answer a question wrong in study, practice or the exam, it is added here automatically.",
+    "doneTitle": "Nothing due right now",
+    "reviewed_one": "You repeated {{count}} question in this session.",
+    "reviewed_other": "You repeated {{count}} questions in this session.",
+    "deckSize_one": "Your deck holds {{count}} question.",
+    "deckSize_other": "Your deck holds {{count}} questions.",
+    "nextDue": "The next one is due in {{interval}}.",
+    "checkAgain": "Check again"
   },
   "review": {
     "title": "Review",

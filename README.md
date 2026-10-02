@@ -88,8 +88,8 @@ Detailed rationale and sources: [`docs/01-market-research.md`](docs/01-market-re
 | Results + review    | ✅ Pass-mark line, section and LO breakdown, option-by-option rationale                                          |
 | Question pool       | ✅ 256 questions published, 64/64 learning objectives covered, at least 4 each · Phase 3 target: 300             |
 | Lesson cards        | ✅ All 64 written and published — one per learning objective, TR+EN, key points and common mistakes              |
-| SRS, glossary       | ✅ Glossary: 97 bilingual terms, no definitions · ⬜ SRS: the engine is built, the review screen is not yet      |
-| Tests               | ✅ 150 unit tests (Vitest) · 57 end-to-end specs (Playwright, including axe scans of every route in both themes) |
+| SRS, glossary       | ✅ Wrong answers come back on a spaced-repetition schedule (`/tekrar`) · glossary of 97 bilingual terms          |
+| Tests               | ✅ 154 unit tests (Vitest) · 64 end-to-end specs (Playwright, including axe scans of every route in both themes) |
 
 **Data accuracy.** The exam constants, learning objectives, and Turkish terms
 were extracted from the official ISTQB and TTB PDFs; none of it was hand-guessed.

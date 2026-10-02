@@ -110,6 +110,16 @@ export function Layout() {
 
             <nav className="ml-auto hidden items-center gap-1 sm:flex">
               <NavLink
+                to="/tekrar"
+                className={({ isActive }) =>
+                  isActive
+                    ? "rounded-[var(--radius-btn)] px-3 py-1.5 text-sm font-medium text-fg"
+                    : "rounded-[var(--radius-btn)] px-3 py-1.5 text-sm text-fg-muted hover:text-fg"
+                }
+              >
+                {t("nav.repetition")}
+              </NavLink>
+              <NavLink
                 to="/listelerim"
                 className={({ isActive }) =>
                   isActive
@@ -162,8 +172,12 @@ export function Layout() {
             <Link to="/kaynaklar" className="underline underline-offset-2 hover:text-fg">
               {t("footer.sources")}
             </Link>
-            {/* The top nav is hidden below `sm`, so without this the saved
-                lists have no entry point at all on a phone. */}
+            {/* The top nav is hidden below `sm`, so without these the
+                repetition deck and the saved lists have no entry point at all
+                on a phone. */}
+            <Link to="/tekrar" className="underline underline-offset-2 hover:text-fg sm:hidden">
+              {t("nav.repetition")}
+            </Link>
             <Link to="/listelerim" className="underline underline-offset-2 hover:text-fg sm:hidden">
               {t("nav.lists")}
             </Link>

@@ -21,6 +21,7 @@ const StudySession = lazy(() => import("@/routes/StudySession"));
 const LegacyExamRedirect = lazy(() => import("@/routes/LegacyExamRedirect"));
 const MyLists = lazy(() => import("@/routes/MyLists"));
 const Glossary = lazy(() => import("@/routes/Glossary"));
+const Repetition = lazy(() => import("@/routes/Repetition"));
 
 /**
  * Runs under a GitHub Pages subpath: `base` becomes '/istqb-prep/' at build
@@ -47,6 +48,7 @@ const router = createBrowserRouter(
         { path: "/sonuc/:attemptId", element: <ExamResult /> },
         { path: "/inceleme/:attemptId", element: <Review /> },
         { path: "/listelerim", element: <MyLists /> },
+        { path: "/tekrar", element: <Repetition /> },
         { path: "/sozluk", element: <Glossary /> },
         { path: "/kaynaklar", element: <Sources /> },
         { path: "*", element: <NotFound /> },

@@ -35,8 +35,10 @@ import {
   type GroupShortfall,
 } from "@/features/exam/generateExam";
 import { routeForAttempt } from "@/features/session/routeForAttempt";
+import { summarizeDeck } from "@/features/srs/queue";
 import { contentClient } from "@/lib/content/contentClient";
 import { db, discardAttempt, findResumableAttempt, getResponses, type Attempt } from "@/lib/db/db";
+import { loadDeck } from "@/lib/db/srsCards";
 import { useAsyncData } from "@/lib/useAsyncData";
 import type {
   CertMeta,
@@ -77,6 +79,8 @@ interface HomeData {
   shortfalls: GroupShortfall[];
   resume: ResumeState | null;
   progress: Progress;
+  /** F3-02 — the repetition deck, counted by the same rule the review screen serves by. */
+  repetition: { due: number; size: number };
 }
 
 /**
@@ -126,6 +130,11 @@ async function loadHome(): Promise<HomeData> {
   const attempt = await findResumableAttempt(cert.id);
   const responses = attempt ? await getResponses(attempt.id) : [];
   const progress = await loadProgress(cert.id, cert.coverage.objectivesTotal);
+  const deck = summarizeDeck(
+    await loadDeck(cert.id),
+    new Set(pool.map((entry) => entry.id)),
+    Date.now(),
+  );
 
   return {
     cert,
@@ -142,6 +151,7 @@ async function loadHome(): Promise<HomeData> {
         }
       : null,
     progress,
+    repetition: { due: deck.due.length, size: deck.size },
   };
 }
 
@@ -247,7 +257,17 @@ export default function Home() {
   if (failed) return <ErrorNotice onRetry={reload} />;
   if (!data) return <Spinner />;
 
-  const { cert, meta, blueprint, syllabus, poolSize, achievable, shortfalls, progress } = data;
+  const {
+    cert,
+    meta,
+    blueprint,
+    syllabus,
+    poolSize,
+    achievable,
+    shortfalls,
+    progress,
+    repetition,
+  } = data;
   const lang: Lang = i18n.language === "en" ? "en" : "tr";
   const exam = meta.exam;
   const resume = data.resume?.attempt.id === discardedId ? null : data.resume;
@@ -359,6 +379,23 @@ export default function Home() {
           </dl>
 
           <div className="flex flex-wrap gap-2">
+            {/* Only once there is a deck: before the first wrong answer the
+                link would lead to an empty screen. The count is in the link's
+                own text, so a screen reader hears it with the action. */}
+            {repetition.size > 0 ? (
+              <Link
+                to="/tekrar"
+                className={
+                  repetition.due > 0
+                    ? "rounded-[var(--radius-btn)] bg-accent px-4 py-2 text-sm font-semibold text-accent-fg"
+                    : "rounded-[var(--radius-btn)] border border-border px-4 py-2 text-sm font-medium hover:bg-surface-2"
+                }
+              >
+                {repetition.due > 0
+                  ? t("home.repetitionDue", { count: repetition.due })
+                  : t("home.repetitionNone")}
+              </Link>
+            ) : null}
             <Link
               to="/listelerim"
               className="rounded-[var(--radius-btn)] border border-border px-4 py-2 text-sm font-medium hover:bg-surface-2"

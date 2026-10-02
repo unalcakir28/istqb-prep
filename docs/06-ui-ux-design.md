@@ -81,6 +81,7 @@ Route paths are Turkish, like the rest of the product's user-facing surface; the
 | `/sonuc/:attemptId` | Result screen | exam + practice (study keeps its result in its own route) |
 | `/inceleme/:attemptId` | Review pass — reached from the result screen | exam + practice |
 | `/listelerim` | My lists — wrong, flagged, never right twice in a row | — |
+| `/tekrar` | Repetition — the SRS deck's due cards, one at a time (§3.8) | — |
 | `/sozluk` | Glossary — 97 bilingual terms, searched in both languages | — |
 | `/kaynaklar` | Sources, copyright, disclaimer | — |
 | `/deneme`, `/deneme/:attemptId` | **Legacy redirect** to `/sinav`. Bookmarks and in-progress attempts on the old exam path keep working. | — |
@@ -150,7 +151,9 @@ The coverage line has **no progress bar**. `objectivesTotal` is fixed at 64 by t
 
 **Above the hero, one of two blocks, never both (F1-16).** With no finished session and nothing mastered, "Where should I start?" points at study and offers "measure me first" as the alternative — an empty dashboard of zeros is worse than a direction. Otherwise "Your status": objectives learned, sessions finished, and the last score. The last score is **omitted** rather than shown as 0% before the first finished session, because a dash reads as a score of zero.
 
-**Not built yet:** the streak, the weakest-objectives summary and the SRS due count are Phase 3 (F3-04, F3-05).
+**The repetition link (F3-02).** "Your status" carries a link to `/tekrar` once the deck holds a card, with the due count in its own text ("Repeat 3 due questions"), accent-filled while something is due. Before the first wrong answer there is no link: it would lead to an empty screen. The count comes from the same `summarizeDeck` the review screen serves by, so the two numbers cannot disagree.
+
+**Not built yet:** the streak, the weakest-objectives summary and the 7-day forecast chart are Phase 3 (F3-04, F3-05).
 
 ### 3.2 Exam setup `/sinav`
 
@@ -249,7 +252,7 @@ For every question:
 
 Each question is one **nested group of headings**, not three flat ones — see §4.3. A filter switches between all questions and the wrong ones only.
 
-**Not built yet:** `[Add to review deck]` (F3-01) and `[Report an error in this question]` (F2-08).
+**Not built, deliberately:** an `[Add to review deck]` button. A question answered wrong joins the deck automatically when the session is submitted (F3-01), and a right answer is not evidence enough to add one. `[Report an error in this question]` (F2-08) lives in each question's rationale panel.
 
 ### 3.6 Practice mode `/alistirma`
 
@@ -274,13 +277,21 @@ Three levels, each one a route, and the entry point for persona P2. This **absor
 
 **Mastery is losable.** It reflects the most recent objective test, not a high-water mark: ≥3 questions answered for the objective across all sessions **and** ≥80% on the last test. A candidate who has forgotten a topic should see that. An attempt submitted with nothing answered writes nothing, so it cannot erase mastery already earned.
 
-### 3.8 Review (SRS) `/review`
+### 3.8 Repetition (SRS) `/tekrar`
 
-- **The number of cards due today** on the home screen
-- Card flow: question → answer → rationale → **Again / Hard / Good / Easy**
-- **The next interval** shown above each button (`Good → 4d`) — to build trust in the algorithm
-- Two questions from the same LO never appear back to back
-- Forecast chart: the load for the next 7 days
+Built in F3-02. One due card at a time, the most overdue first.
+
+- **How a card gets there:** a question answered wrong in study, practice or the exam (F3-01). Nothing else adds one; there is no manual "add to deck".
+- Card flow: question → answer → rationale → **Again / Hard / Good / Easy**. The answer reveals on a complete selection, as in study mode, and focus moves to the rationale panel, which is named after the verdict.
+- **The next interval is printed on each button** ("Good · in 4 days"), formatted by `Intl.NumberFormat` in the interface language — to build trust in the algorithm. The button's accessible name is its label plus that interval.
+- **A wrong answer offers only "Again".** The self-rating exists because a right answer can be a guess; a wrong one is not a matter of confidence, and rating it "Easy" would send a question the candidate does not know weeks away.
+- Each rating is written the moment it is given; leaving halfway loses nothing. After a rating focus moves to the next card's stem, or to the "nothing due" heading, which is described by the facts under it (how many were repeated, the deck size, when the next card is due).
+- The screen keeps no attempt and writes no responses, so the saved lists, the home numbers and the exam history stay about the three modes.
+- Options are shuffled per visit from a fresh seed (D-03), so a question that keeps returning does not keep its key in the same row.
+- `1`–`9` select an option before the reveal. **No grading keys:** the same digit would select one moment and rate the next.
+- A card whose question is no longer published is skipped, not shown, and stays in the deck.
+
+**Not built yet:** two questions from the same LO never back to back (F3-03), and the forecast chart for the next 7 days (F3-04).
 
 ### 3.9 Glossary `/sozluk`
 
@@ -370,7 +381,7 @@ Both `QuestionCard` and `RationalePanel` take a `headingLevel`, because the same
 | `h3` | `Summary` / `Per option` | the stem · `Why?` |
 | `h4` | — | `Summary` / `Per option` |
 
-In a session `RationalePanel` is rendered without a `headingLevel` (`SessionRunner.tsx:544`) and its default is `2` (`RationalePanel.tsx:70`, `:81`), so `Why?` is a sibling of the stem, not a child of it. The review pass passes `3` explicitly (`Review.tsx:166`, `:173`).
+In a session `RationalePanel` is rendered without a `headingLevel` (`SessionRunner.tsx`, and `Repetition.tsx` the same way) and its default is `2` (`RationalePanel.tsx:70`, `:81`), so `Why?` is a sibling of the stem, not a child of it. The review pass passes `3` explicitly (`Review.tsx:166`, `:173`).
 
 A 40-question review pass is **40 nested groups of three**, not 120 flat sibling headings. `RationalePanel`'s `Why?` title is a real heading rather than an `aria-label`, because focus lands on the panel the moment an answer is revealed, and a named region with nothing inside it announces only its own name.
 
@@ -382,7 +393,7 @@ One `alertdialog` shared by every mode that can end a session by hand. Submittin
 
 ## 5. Keyboard shortcuts
 
-Owned in one place — the shared session shell's key handler (§4.2) — and every one of them also has a visible control. The overlay opened with `?` documents the fast path; it never owns the only path.
+Owned in one place — the shared session shell's key handler (§4.2) — apart from `1`–`9` on `/tekrar` (§3.8), which has its own handler and no overlay. Every one of them also has a visible control. The overlay opened with `?` documents the fast path; it never owns the only path.
 
 | Key | Action | Notes |
 |---|---|---|
@@ -399,7 +410,7 @@ While a dialog is open — the navigator sheet, the shortcuts overlay, or a mode
 
 Typing in a real text field is never swallowed; radios and checkboxes are the options themselves, so shortcuts stay live there.
 
-**Not built:** `Enter`/`Space` as "answer / next" (native activation only), `R` to toggle the rationale (it is never collapsed), and the SRS grading keys (Phase 3).
+**Not built:** `Enter`/`Space` as "answer / next" (native activation only) and `R` to toggle the rationale (it is never collapsed). **Deliberately absent:** grading keys on `/tekrar` — `1`–`9` select an option before the reveal, and the same digit would rate the card a moment later.
 
 ---
 
