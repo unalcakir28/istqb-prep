@@ -158,7 +158,7 @@ interface ContentClient {
 3. Chunks are kept in memory (`Map`) and in the Cache API
 4. A 40-question exam typically downloads 4–6 chunks (~250 KB), not the whole pool
 
-**Cache invalidation:** the chunk cache is cleared when `manifest.dataVersion` changes.
+**Cache invalidation:** the Cache API cache is named after `manifest.dataVersion` (`istqb-prep-content:<version>`), and every other content cache is deleted when a new version is first seen. The version used to be compared only with the last one the current page load had seen — none, on a fresh load — so a release between two visits cleared nothing and a returning visitor kept the old pool. `dataVersion` itself is a hash of every content file, computed by `yarn build:index`, so it changes exactly when the content does; it used to be a date typed by hand, and it read `2026.09.19` through two later content releases.
 
 ---
 
@@ -268,13 +268,13 @@ jobs:
 | Level | Tool | Scope |
 |---|---|---|
 | **Data** | Ajv + custom rules | §6 [`04-data-model.md`](04-data-model.md) — 21 live checks (#1–#23; #14, #23 retired) |
-| **Unit** | Vitest | Selection (the 8/6/4/11/9/2 and 8/24/8 distributions hold across independent seeds; the scoped paths), scoring (exact match for multi-select), the timer, the Dexie v3 backfill, mastery, `routeForAttempt`, the session store, the FSRS scheduler (a card reloaded from its row schedules exactly as the library's own), the interval preview and the due queue, the progress file's validation and merge |
+| **Unit** | Vitest | Selection (the 8/6/4/11/9/2 and 8/24/8 distributions hold across independent seeds; the scoped paths), scoring (exact match for multi-select), the timer, the Dexie v3 backfill, mastery, `routeForAttempt`, the session store, the FSRS scheduler (a card reloaded from its row schedules exactly as the library's own), the interval preview and the due queue, the progress file's validation and merge, the content cache across visits |
 | **Component** | Testing Library | `QuestionCard` heading level and option shape, `RationalePanel`'s verdict naming and per-option coverage, `LessonCard`'s missing-card placeholder |
 | **E2E** | Playwright | All three modes end to end; auto-submit when time runs out; attempt recovery after a page reload; the legacy `/deneme` redirect; TR/EN switching; a wrong answer reaching the repetition deck, and a rating storing the schedule its button showed; a progress file downloaded in one browser and loaded in another |
 | **Accessibility** | `@axe-core/playwright` + hand-written specs | Zero violations on every main route in both themes, **plus** the failures axe cannot see: focus destinations, accessible names, live-region behaviour |
 | **Visual** | Playwright snapshot | Not set up |
 
-Counts as of 02.10.2026: **169 unit tests in 23 files**, **69 end-to-end specs across 7 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
+Counts as of 02.10.2026: **172 unit tests in 24 files**, **69 end-to-end specs across 7 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
 
 > This is a **testing certification** project. Test discipline is part of the product itself here; the README will display a test-coverage badge.
 

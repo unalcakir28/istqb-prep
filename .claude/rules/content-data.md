@@ -13,6 +13,11 @@ lessons, the validator's blind spots, and running writers in parallel.
 
 ## Keys and files
 
+- **`manifest.dataVersion` is a content hash written by `yarn build:index`.**
+  The app's cache is named after it, so any change to a file under `data/`
+  reaches returning visitors once the index is rebuilt. Each chunk's own
+  `dataVersion` field is informational and is not what the client reads.
+
 - **The LO code `FL-x.y.z` is the primary key.** It stays in English even in the
   Turkish syllabus; it is language-independent.
 - **One lesson per learning objective, keyed by `objective`.** Lesson chunks are

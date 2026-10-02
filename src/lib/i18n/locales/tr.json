@@ -253,7 +253,7 @@
     "importBody": "Bu cihazdaki hiçbir şey silinmez. Dosyada ve bu tarayıcıda aynı kayıt varsa daha yeni olan tutulur; bu yüzden aynı dosyayı iki kez yüklemek hiçbir şeyi değiştirmez.",
     "chooseFile": "Bir ilerleme dosyası seç",
     "preview": "Kayıt tarihi: {{date}}. Oturum: {{sessions}} · cevap: {{answers}} · hedef kaydı: {{objectives}} · tekrar kartı: {{cards}}.",
-    "versionWarning": "Dosya, sorular {{file}} sürümündeyken kaydedildi; bu site artık {{current}} sürümünü sunuyor. İlerlemen yine de yüklenir — o zamandan beri değişen bir soru güncel metniyle görünür.",
+    "versionWarning": "Bu dosya kaydedildikten sonra sorular güncellendi. İlerlemen yine de yüklenir — o zamandan beri değişen bir soru güncel metniyle görünür.",
     "importAction": "Bu tarayıcıya yükle",
     "imported": "Yüklendi. Yeni kayıt: {{added}} · dosyadan güncellenen: {{updated}} · daha yeni olduğu için bu tarayıcıda tutulan: {{kept}}.",
     "importFailed": "Dosya bu tarayıcıya yüklenemedi — tarayıcın depolamayı engelliyor olabilir. Hiçbir şey değişmedi.",

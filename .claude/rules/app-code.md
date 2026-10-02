@@ -22,8 +22,8 @@ features/srs/      Spaced repetition — scheduler (the only ts-fsrs import:
                    card <-> row, grading, the interval preview, and the rule
                    for what a wrong answer does to the deck), interval,
                    queue (what is due; the home count and /tekrar share it)
-lib/content/       Static JSON access + a two-tier cache (Map + Cache API),
-                   invalidated via dataVersion. Questions AND lessons.
+lib/content/       Static JSON access + a two-tier cache (Map + Cache API
+                   named per dataVersion). Questions AND lessons.
 lib/db/            Dexie/IndexedDB — the single place for persistence. db.ts
                    (schema v3), migrations.ts (the v3 backfill, extracted so it
                    is unit-testable), objectiveProgress.ts (study mastery),

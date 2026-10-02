@@ -253,7 +253,7 @@
     "importBody": "Nothing on this device is deleted. Where the file and this browser hold the same record, the newer one is kept, so loading the same file twice changes nothing.",
     "chooseFile": "Choose a progress file",
     "preview": "Saved on {{date}}. Sessions: {{sessions}} · answers: {{answers}} · objective records: {{objectives}} · repetition cards: {{cards}}.",
-    "versionWarning": "It was saved when the questions were at version {{file}}; this site now serves version {{current}}. Your progress still loads — a question that has changed since shows its current text.",
+    "versionWarning": "The questions have been updated since this file was saved. Your progress still loads — a question that has changed since shows its current text.",
     "importAction": "Load into this browser",
     "imported": "Loaded. New records: {{added}} · updated from the file: {{updated}} · kept from this browser because they were newer: {{kept}}.",
     "importFailed": "The file could not be loaded into this browser — your browser may be blocking storage. Nothing was changed.",

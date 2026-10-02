@@ -30,7 +30,19 @@ import type {
   Terms,
 } from "@/types/content";
 
-const CACHE_NAME = "istqb-prep-content";
+/**
+ * One Cache API cache per content version, named after it. The version used
+ * to be compared only against the last one this page load had seen — which,
+ * on a fresh load, is none — so a version change between two visits never
+ * cleared anything and a returning visitor was served the old pool. With the
+ * version in the name, an old cache cannot be read by mistake, and the ones
+ * left behind are deleted when the new version is first seen.
+ */
+const CACHE_PREFIX = "istqb-prep-content";
+
+function cacheName(version: string): string {
+  return `${CACHE_PREFIX}:${version}`;
+}
 
 /** Vite's `base` setting becomes '/istqb-prep/' on GitHub Pages. */
 function dataUrl(...segments: string[]): string {
@@ -38,13 +50,30 @@ function dataUrl(...segments: string[]): string {
   return `${base.replace(/\/$/, "")}/data/${segments.join("/")}`;
 }
 
-async function openCache(): Promise<Cache | null> {
+async function openCache(version: string | null): Promise<Cache | null> {
   // The Cache API doesn't exist in private browsing or older browsers; caching is optional.
   if (typeof caches === "undefined") return null;
+  // No version yet means the manifest failed to load: nothing is cached
+  // rather than something cached under no name.
+  if (version === null) return null;
   try {
-    return await caches.open(CACHE_NAME);
+    return await caches.open(cacheName(version));
   } catch {
     return null;
+  }
+}
+
+/** Deletes every content cache but the current version's, including the old unversioned one. */
+async function dropOtherCaches(version: string): Promise<void> {
+  if (typeof caches === "undefined") return;
+  try {
+    const names = await caches.keys();
+    const stale = names.filter(
+      (name) => name.startsWith(CACHE_PREFIX) && name !== cacheName(version),
+    );
+    await Promise.all(stale.map((name) => caches.delete(name)));
+  } catch {
+    // Keep working even if a cache can't be deleted; it is never read again.
   }
 }
 
@@ -92,7 +121,7 @@ export class ContentClient {
   }
 
   private async loadJson<T>(url: string, cacheable: boolean): Promise<T> {
-    const cache = cacheable ? await openCache() : null;
+    const cache = cacheable ? await openCache(this.dataVersion) : null;
 
     if (cache) {
       const hit = await cache.match(url);
@@ -143,18 +172,9 @@ export class ContentClient {
   private async applyDataVersion(version: string): Promise<void> {
     if (this.dataVersion === version) return;
 
-    if (this.dataVersion !== null) {
-      this.memory.clear();
-      if (typeof caches !== "undefined") {
-        try {
-          await caches.delete(CACHE_NAME);
-        } catch {
-          // Keep working even if the cache can't be deleted.
-        }
-      }
-    }
-
+    if (this.dataVersion !== null) this.memory.clear();
     this.dataVersion = version;
+    await dropOtherCaches(version);
   }
 
   getMeta(certPath: string): Promise<CertMeta> {

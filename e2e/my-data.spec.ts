@@ -119,7 +119,7 @@ test("a file saved under another question version warns, and still loads", async
   };
   await chooseFile(page, "old.json", JSON.stringify(old));
 
-  await expect(page.getByText(/1999\.01\.01/)).toBeVisible();
+  await expect(page.getByText(en.myData.versionWarning)).toBeVisible();
 
   // Cancel unmounts itself; focus goes back to where the file was chosen.
   await page.getByRole("button", { name: en.common.cancel }).click();

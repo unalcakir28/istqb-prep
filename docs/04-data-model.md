@@ -12,7 +12,7 @@
 3. **Language-independent identifiers.** LO codes like `FL-4.2.1` and question IDs never change in any language. The translation lives inside the `i18n` object — not in a separate file, because a question and its translation are reviewed together.
 4. **Multi-certification from day one.** The root directory is split by certification version: `data/ctfl-v4.0.1/`, then `data/ctfl-at-v3.1/`, etc. The application code contains no certification-specific logic.
 5. **Version integrity is a required field.** Every question carries the syllabus version it was written for. When a version is retired, those questions are filtered out, not deleted (archive + transparency).
-6. **Content is versioned.** `manifest.json` carries a `dataVersion`; the client cache is invalidated with it.
+6. **Content is versioned.** `manifest.json` carries a `dataVersion` — the first 12 hex digits of a SHA-256 over every content file under `data/`, written by `yarn build:index`, never by hand — and the client cache is named after it (`docs/05` §4).
 
 ---
 
@@ -71,7 +71,7 @@ In CI, every data file is validated against these schemas.
 
 ```json
 {
-  "dataVersion": "2026.09.19",
+  "dataVersion": "c9b1f7a44d9d",
   "generatedAt": "2026-09-19T12:00:00Z",
   "certifications": [
     {
@@ -203,7 +203,7 @@ This file enables realistic exam generation that **no competitor on the market d
 
 ```json
 {
-  "dataVersion": "2026.09.19",
+  "dataVersion": "c9b1f7a44d9d",
   "count": 312,
   "chunks": ["ch01-a", "ch01-b", "ch02-a", "ch03-a", "ch04-a", "ch04-b", "ch05-a", "ch06-a"],
   "questions": [
@@ -381,7 +381,7 @@ Schemas: [`../schemas/lessons-index.schema.json`](../schemas/lessons-index.schem
 ```json
 // lessons/index.json — no lesson text, only what the study screens filter on
 {
-  "dataVersion": "2026.09.19",
+  "dataVersion": "c9b1f7a44d9d",
   // Must equal lessons.length — check #19 fails otherwise. The shipped file is
   // at 64: Track C closed on 22.09.2026 and every objective has a card.
   "count": 64,
@@ -545,7 +545,7 @@ Written by [`../src/lib/db/objectiveProgress.ts`](../src/lib/db/objectiveProgres
 `mastered` is `attemptCount >= MASTERY_MIN_ANSWERED (3)` **and** `lastScorePercent >= MASTERY_MIN_PERCENT (80)`. `attemptCount` accumulates across sessions; the score replaces the previous one, so **mastery is losable** — it reflects the most recent objective test, not a high-water mark. A submit with nothing answered writes nothing, so an empty attempt cannot erase mastery the candidate had already earned.
 
 ### When the data version changes
-When `manifest.dataVersion` changes: the question cache is cleared, **user progress is preserved**. If a question's `revision` value has increased, that question's SRS card is set to `state: 'relearning'` (the content changed, so the old memory record is invalid). This is F3-11, not yet implemented.
+When `manifest.dataVersion` changes: the client opens a new cache named after the version and deletes the old content caches; **user progress is preserved**. If a question's `revision` value has increased, that question's SRS card is set to `state: 'relearning'` (the content changed, so the old memory record is invalid). This is F3-11, not yet implemented.
 
 ### Export/import (F3-08)
 [`../src/lib/db/backup.ts`](../src/lib/db/backup.ts), on the `/verilerim` screen. All six tables are exported as one JSON file, as stored:

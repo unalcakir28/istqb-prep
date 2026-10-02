@@ -286,7 +286,7 @@ export default function MyData() {
 
             {versionDiffers ? (
               <p id="import-warning" className={ALERT}>
-                {t("myData.versionWarning", { file: backup.dataVersion, current: dataVersion })}
+                {t("myData.versionWarning")}
               </p>
             ) : null}
 

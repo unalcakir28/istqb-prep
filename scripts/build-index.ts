@@ -7,9 +7,16 @@
  * (docs/04-data-model.md §3.6). That's why the index is never edited by
  * hand — its only source is the chunk files.
  *
+ * It also sets `manifest.dataVersion`, the key the app's content cache is
+ * invalidated by. It used to be a date typed by hand, and nobody retyped it:
+ * it read 2026.09.19 through two later content releases, so a returning
+ * visitor's cache kept serving the old pool. It is now a hash of every content
+ * file the app can fetch, so it changes exactly when the content does.
+ *
  * Usage:  yarn build:index
  */
 
+import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -60,7 +67,10 @@ function toIndexEntry(question: Json, chunk: string): Json {
   };
 }
 
-function buildCertificationIndex(certPath: string): {
+function buildCertificationIndex(
+  certPath: string,
+  dataVersion: string,
+): {
   count: number;
   objectivesCovered: number;
   minPerObjective: number;
@@ -95,7 +105,6 @@ function buildCertificationIndex(certPath: string): {
 
   entries.sort((a, b) => String(a.id).localeCompare(String(b.id)));
 
-  const dataVersion = readJson(MANIFEST).dataVersion;
   writeJson(path.join(questionsDir, "index.json"), {
     dataVersion,
     count: entries.length,
@@ -141,7 +150,7 @@ function toLessonIndexEntry(lesson: Json, chunk: string, chapter: number): Json 
   };
 }
 
-function buildLessonIndex(certPath: string): { count: number } {
+function buildLessonIndex(certPath: string, dataVersion: string): { count: number } {
   const certDir = path.join(DATA_DIR, certPath);
   const lessonsDir = path.join(certDir, "lessons");
   if (!fs.existsSync(lessonsDir)) return { count: 0 }; // no lessons/ yet for this certification
@@ -172,7 +181,6 @@ function buildLessonIndex(certPath: string): { count: number } {
 
   entries.sort((a, b) => String(a.objective).localeCompare(String(b.objective)));
 
-  const dataVersion = readJson(MANIFEST).dataVersion;
   writeJson(path.join(lessonsDir, "index.json"), {
     dataVersion,
     count: entries.length,
@@ -185,25 +193,59 @@ function buildLessonIndex(certPath: string): { count: number } {
   return { count: entries.length };
 }
 
+/** Every JSON file under data/ except the ones this script writes. */
+function contentFiles(dir: string): string[] {
+  const files: string[] = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const absPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...contentFiles(absPath));
+      continue;
+    }
+    if (!entry.name.endsWith(".json")) continue;
+    if (absPath === MANIFEST || entry.name === "index.json") continue;
+    files.push(absPath);
+  }
+  return files;
+}
+
+/**
+ * The content version: the first 12 hex digits of a SHA-256 over each content
+ * file's path and bytes, in a fixed order. The generated files are left out —
+ * they embed this value, and they are derived from the files that are hashed.
+ */
+function contentVersion(): string {
+  const hash = createHash("sha256");
+  for (const file of contentFiles(DATA_DIR).sort()) {
+    hash.update(path.relative(DATA_DIR, file).split(path.sep).join("/"));
+    hash.update("\0");
+    hash.update(fs.readFileSync(file));
+    hash.update("\0");
+  }
+  return hash.digest("hex").slice(0, 12);
+}
+
 function main(): void {
   const manifest = readJson(MANIFEST);
+  const dataVersion = contentVersion();
+  manifest.dataVersion = dataVersion;
   const certifications = manifest.certifications ?? [];
   if (certifications.length === 0) fail("data/manifest.json has no certifications.");
 
   console.log("Generating index...");
   for (const certification of certifications) {
-    const stats = buildCertificationIndex(certification.path);
+    const stats = buildCertificationIndex(certification.path, dataVersion);
     certification.questionCount = stats.count;
     certification.coverage = {
       objectivesTotal: certification.coverage?.objectivesTotal ?? 0,
       objectivesCovered: stats.objectivesCovered,
       minPerObjective: stats.minPerObjective,
     };
-    buildLessonIndex(certification.path);
+    buildLessonIndex(certification.path, dataVersion);
   }
 
   writeJson(MANIFEST, manifest);
-  console.log("  data/manifest.json counters updated");
+  console.log(`  data/manifest.json counters updated, dataVersion ${dataVersion}`);
   console.log("Done.");
 }
 
