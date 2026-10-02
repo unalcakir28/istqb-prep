@@ -8,9 +8,9 @@
  * cleared; that's why export/import (F3-08) is planned, and it's stated
  * explicitly on the privacy page.
  *
- * Not all tables are used in Phase 1 (srsCards and bookmarks are Phase 2-3),
- * but defining the schema up front lets future migrations happen without
- * skipping a version.
+ * `bookmarks` and `settings` are declared but not written to yet; defining
+ * the schema up front lets future migrations happen without skipping a
+ * version. `srsCards` is the repetition deck (F3-01, `srsCards.ts`).
  */
 
 import Dexie, { type Table } from "dexie";
@@ -85,16 +85,35 @@ export interface Response {
   updatedAt: number;
 }
 
+/** The four FSRS card states, spelled out so an exported file reads without the enum. */
+export type SrsState = "new" | "learning" | "review" | "relearning";
+
+/**
+ * F3-01 — one question's place in the repetition deck.
+ *
+ * Every field `ts-fsrs` needs to rebuild its `Card` is stored, with dates as
+ * epoch milliseconds like everywhere else in this database. The library's
+ * deprecated `elapsed_days` is not: it is derived from `lastReviewedAt` at
+ * review time (`src/features/srs/scheduler.ts`).
+ *
+ * Keyed by question id alone. Ids carry their certification's prefix
+ * (`ctfl4-`), so two certifications cannot collide.
+ */
 export interface SrsCard {
   questionId: string;
   certId: string;
+  /** Epoch ms. A card is due once this is in the past. */
   due: number;
   stability: number;
   difficulty: number;
+  scheduledDays: number;
+  learningSteps: number;
   reps: number;
   lapses: number;
-  state: string;
+  state: SrsState;
   lastReviewedAt?: number;
+  /** When the card entered the deck — the first wrong answer that put it there. */
+  addedAt: number;
 }
 
 export interface Bookmark {

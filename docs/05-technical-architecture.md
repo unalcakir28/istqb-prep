@@ -16,7 +16,7 @@
 │  ├── Data access  contentClient (fetch + cache)           │
 │  ├── Selection    scope → selection → scoring             │
 │  ├── Session      one shell, three modes                  │
-│  ├── SRS engine   ts-fsrs (Phase 3, not installed)        │
+│  ├── SRS engine   ts-fsrs (FSRS, wrong answers → deck)     │
 │  └── i18n         i18next (interface) + content language  │
 │                                                           │
 │  IndexedDB   attempts · responses · objectiveProgress     │
@@ -46,7 +46,7 @@ The **In tree?** column is the honest one: `package.json` is the source of truth
 | Routing | **React Router v7** (`createBrowserRouter` + the 404.html trick) | ✅ | No server-side routing on GitHub Pages — see §6 |
 | Session state | **Zustand** | ✅ | Small, boilerplate-free; ideal for a session |
 | Persistence | **Dexie 4 (IndexedDB)** | ✅ | localStorage quota is insufficient; queryable; migration support |
-| SRS | **ts-fsrs** | ⬜ | Phase 3. FSRS-5 implementation; the algorithm Anki uses |
+| SRS | **ts-fsrs 5** | ✅ | The FSRS reference implementation in TypeScript; the algorithm Anki uses. Run on its default parameters (FSRS-6 weights, 90% target retention, 1 m / 10 m learning steps) with fuzz off, so the interval shown on a grade button is the one it applies. Only `src/features/srs/scheduler.ts` imports it |
 | i18n | **i18next + react-i18next** | ✅ | Interface language; content language is managed separately |
 | Charts | hand-rolled SVG (`ScoreBar`) | ✅ | The result breakdown needed bars, not a charting library. Recharts stays on the table for the Phase 3 progress trend. |
 | PWA | **vite-plugin-pwa** (Workbox) | ⬜ | Phase 3; `StaleWhileRevalidate` for question chunks |
@@ -98,7 +98,7 @@ istqb-prep/
 │   ├── features/
 │   │   ├── session/             # SessionRunner (the shell), sessionStore, routeForAttempt
 │   │   ├── exam/                # selectQuestions, generateExam, scoreExam, examTimer, rng, optionOrder
-│   │   └── srs/                 # planned (Phase 3)
+│   │   └── srs/                 # scheduler (the only ts-fsrs import), interval
 │   ├── components/              # QuestionCard, OptionList, RationalePanel, QuestionNavigator,
 │   │   │                        # ExamTimer, SubmitConfirm, ShortcutsOverlay, LessonCard,
 │   │   │                        # ObjectiveStateBadge, ScoreBar, CitationChips, Layout,
@@ -111,7 +111,8 @@ istqb-prep/
 │   ├── lib/
 │   │   ├── content/             # contentClient, chunk cache (questions and lessons)
 │   │   ├── db/                  # db.ts (Dexie v3), migrations.ts, objectiveProgress.ts,
-│   │   │                        # questionHistory.ts (the saved lists, derived)
+│   │   │                        # questionHistory.ts (the saved lists, derived),
+│   │   │                        # srsCards.ts (the repetition deck)
 │   │   ├── i18n/                # index.ts + locales/{tr,en}.json
 │   │   ├── theme.ts · useAsyncData.ts · useDialogFocus.ts · bilingual.ts
 │   │   ├── product.ts           # PRODUCT_NAME, REPO_URL — the name lives here, not in i18n
@@ -265,13 +266,13 @@ jobs:
 | Level | Tool | Scope |
 |---|---|---|
 | **Data** | Ajv + custom rules | §6 [`04-data-model.md`](04-data-model.md) — 21 live checks (#1–#23; #14, #23 retired) |
-| **Unit** | Vitest | Selection (the 8/6/4/11/9/2 and 8/24/8 distributions hold across independent seeds; the scoped paths), scoring (exact match for multi-select), the timer, the Dexie v3 backfill, mastery, `routeForAttempt`, the session store |
+| **Unit** | Vitest | Selection (the 8/6/4/11/9/2 and 8/24/8 distributions hold across independent seeds; the scoped paths), scoring (exact match for multi-select), the timer, the Dexie v3 backfill, mastery, `routeForAttempt`, the session store, the FSRS scheduler (a card reloaded from its row schedules exactly as the library's own) and the interval preview |
 | **Component** | Testing Library | `QuestionCard` heading level and option shape, `RationalePanel`'s verdict naming and per-option coverage, `LessonCard`'s missing-card placeholder |
 | **E2E** | Playwright | All three modes end to end; auto-submit when time runs out; attempt recovery after a page reload; the legacy `/deneme` redirect; TR/EN switching |
 | **Accessibility** | `@axe-core/playwright` + hand-written specs | Zero violations on every main route in both themes, **plus** the failures axe cannot see: focus destinations, accessible names, live-region behaviour |
 | **Visual** | Playwright snapshot | Not set up |
 
-Counts as of 24.09.2026: **135 unit tests in 19 files**, **end-to-end specs across 5 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
+Counts as of 02.10.2026: **150 unit tests in 21 files**, **end-to-end specs across 5 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
 
 > This is a **testing certification** project. Test discipline is part of the product itself here; the README will display a test-coverage badge.
 

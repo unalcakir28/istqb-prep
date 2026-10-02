@@ -9,14 +9,23 @@ const dbMock = {
     put: vi.fn(),
     update: vi.fn(),
   },
+  srsCards: {},
+  // Runs the body straight away: the tables argument only scopes a real
+  // IndexedDB transaction, which jsdom does not have.
+  transaction: vi.fn((...args: unknown[]) => (args.at(-1) as () => Promise<unknown>)()),
 };
 const getResponsesMock = vi.fn();
 const saveResponseMock = vi.fn().mockResolvedValue(undefined);
+const addWrongAnswersToDeckMock = vi.fn().mockResolvedValue(undefined);
 
 vi.mock("@/lib/db/db", () => ({
   db: dbMock,
   getResponses: (...args: unknown[]) => getResponsesMock(...args),
   saveResponse: (...args: unknown[]) => saveResponseMock(...args),
+}));
+
+vi.mock("@/lib/db/srsCards", () => ({
+  addWrongAnswersToDeck: (...args: unknown[]) => addWrongAnswersToDeckMock(...args),
 }));
 
 vi.mock("@/lib/content/contentClient", () => ({
@@ -231,6 +240,34 @@ describe("useSessionStore", () => {
       // Absent, not false: `false` is the falsehood, and `"passed" in row` is
       // how a reader would tell "no verdict" from "failed".
       expect("passed" in stored).toBe(false);
+    });
+
+    it("puts the wrong answers in the repetition deck, and neither right nor unanswered ones", async () => {
+      const attempt = baseAttempt({
+        questionIds: ["ctfl4-0001", "ctfl4-0002", "ctfl4-0003"],
+        instantFeedback: false,
+      });
+      useSessionStore.setState({
+        attempt,
+        questions: [
+          singleSelectQuestion("ctfl4-0001"),
+          singleSelectQuestion("ctfl4-0002"),
+          singleSelectQuestion("ctfl4-0003"),
+        ],
+        // 0001 right, 0002 wrong, 0003 never answered.
+        answers: { "ctfl4-0001": ["a"], "ctfl4-0002": ["b"] },
+        meta: { exam: { passPoints: 26 } } as never,
+      });
+
+      await useSessionStore.getState().submit();
+
+      const stored = dbMock.attempts.put.mock.calls.at(-1)?.[0] as Attempt;
+      expect(dbMock.transaction).toHaveBeenCalled();
+      expect(addWrongAnswersToDeckMock).toHaveBeenLastCalledWith(
+        "ctfl-v4.0.1",
+        ["ctfl4-0002"],
+        stored.submittedAt,
+      );
     });
 
     it("stores the verdict for a blueprint attempt", async () => {

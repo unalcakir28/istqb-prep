@@ -143,7 +143,7 @@ Each gets its own spec and plan; nothing above anticipates them beyond the exten
 
 ## Phase 3 — Repetition, progress, offline
 
-- [ ] **F3-01** `P0` `ts-fsrs` integration + a `srsCards` table; wrong answers go into the deck automatically
+- [x] **F3-01** `P0` **Done 02.10.2026.** `ts-fsrs@5.4.2` (pinned) behind `src/features/srs/scheduler.ts`, the only file that imports it: card ↔ row conversion, grading, the four-way interval preview, and the deck rule as a pure, unit-tested function. Default parameters (FSRS-6 weights, 90% retention, 1 m / 10 m learning steps), fuzz off so a button's interval is the one it applies. `srsCards` rows now carry every field ts-fsrs needs (`scheduledDays`, `learningSteps`, `addedAt`, a readable `state`) — no Dexie bump, because no row had ever been written and the indexes did not change. `sessionStore.submit` writes the attempt and the deck in one transaction: a question answered **wrong** (not unanswered) in any mode joins the deck as a new card due now; one already in it is rated Again unless it is still new. A right answer outside the review screen changes nothing, because a lucky guess scores the same as knowledge. Questions answered wrong before this shipped are not backfilled
 - [ ] **F3-02** `P0` Review screen: **Again / Hard / Good / Easy** + a **next-interval preview** on each button
 - [ ] **F3-03** `P1` Blocking consecutive questions from the same LO (sibling burying)
 - [ ] **F3-04** `P1` Due-date forecast chart + the count of due cards on the home screen

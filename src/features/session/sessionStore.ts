@@ -27,6 +27,7 @@ import type { AttemptMode, AttemptScope } from "@/lib/db/db";
 import type { CertMeta, Lang, Question, QuestionIndexEntry } from "@/types/content";
 import { contentClient } from "@/lib/content/contentClient";
 import { db, getResponses, saveResponse, type Attempt } from "@/lib/db/db";
+import { addWrongAnswersToDeck } from "@/lib/db/srsCards";
 import { withOptionOrder } from "../exam/optionOrder";
 import { randomSeed } from "../exam/rng";
 import { isGraded, scoreExam, type AnswerMap, type ExamScore } from "../exam/scoreExam";
@@ -338,10 +339,11 @@ export const useSessionStore = create<SessionState>((set, get) => ({
     if (!attempt || !meta || attempt.status !== "in-progress") return;
 
     const score = scoreExam(questions, answers, meta);
+    const now = Date.now();
     const submitted: Attempt = {
       ...attempt,
       status: "submitted",
-      submittedAt: Date.now(),
+      submittedAt: now,
       autoSubmitted: auto,
       points: score.points,
       totalPoints: score.totalPoints,
@@ -354,7 +356,18 @@ export const useSessionStore = create<SessionState>((set, get) => ({
     // that reads the row. The field stays absent rather than false.
     if (isGraded(attempt.scope)) submitted.passed = score.passed;
 
-    await db.attempts.put(submitted);
+    // F3-01: the questions answered wrong join the repetition deck in the same
+    // transaction, so a submitted attempt never exists without its deck
+    // changes. Unanswered questions stay out — a question nobody reached is
+    // not a wrong belief to repeat (the same rule as F2-02's retry).
+    const wrong = score.outcomes
+      .filter((outcome) => !outcome.isCorrect && !outcome.isUnanswered)
+      .map((outcome) => outcome.questionId);
+
+    await db.transaction("rw", db.attempts, db.srsCards, async () => {
+      await db.attempts.put(submitted);
+      await addWrongAnswersToDeck(attempt.certId, wrong, now);
+    });
     set({ attempt: submitted, score });
   },
 }));

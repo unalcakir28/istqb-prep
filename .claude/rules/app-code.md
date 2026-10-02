@@ -18,13 +18,17 @@ features/exam/     Selection and scoring — selectQuestions (one entry point,
                    (blueprint-driven, seeded, reproducible), scoreExam (exact
                    match, NO partial credit), examTimer (absolute Date.now()
                    deadline), rng, optionOrder (per-attempt option shuffle)
+features/srs/      Spaced repetition — scheduler (the only ts-fsrs import:
+                   card <-> row, grading, the interval preview, and the rule
+                   for what a wrong answer does to the deck), interval
 lib/content/       Static JSON access + a two-tier cache (Map + Cache API),
                    invalidated via dataVersion. Questions AND lessons.
 lib/db/            Dexie/IndexedDB — the single place for persistence. db.ts
                    (schema v3), migrations.ts (the v3 backfill, extracted so it
                    is unit-testable), objectiveProgress.ts (study mastery),
                    questionHistory.ts (the saved lists, derived from the
-                   answers already stored — nothing new is persisted)
+                   answers already stored — nothing new is persisted),
+                   srsCards.ts (the repetition deck)
 lib/i18n/          UI language; question language is a separate concept (attempt.contentLang)
 lib/bilingual.ts   TR+EN side by side — a display preference in localStorage,
                    deliberately NOT on the attempt: "both" is not a language

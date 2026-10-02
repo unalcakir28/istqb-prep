@@ -505,8 +505,11 @@ objectiveProgress  // Study mode's per-objective mastery (v3)
   { key, certId, objectiveCode, cardReadAt?, attemptCount,
     lastScorePercent, mastered, updatedAt }
 
-srsCards      // FSRS state — declared, not yet written to (Phase 3)
-  { questionId, certId, due, stability, difficulty, reps, lapses, state, lastReviewedAt? }
+srsCards      // The repetition deck (F3-01) — one FSRS card per question
+  { questionId, certId, due, stability, difficulty, scheduledDays,
+    learningSteps, reps, lapses, state, lastReviewedAt?, addedAt }
+  // `state` is "new" | "learning" | "review" | "relearning", not ts-fsrs's
+  // numeric enum, so an exported file reads without it. Dates are epoch ms.
 
 bookmarks     // Bookmarked questions and notes — declared, not yet written to (Phase 2-3)
   { questionId, certId, createdAt, note? }
@@ -522,13 +525,14 @@ settings      // A generic key-value table, one row per setting
 - **`deadlineAt` is nullable, and null means untimed.** Study and practice carry `null`; only exam mode sets one. A separate boolean could contradict the timestamp, so there isn't one.
 - **`mode`, `scope` and `instantFeedback` are frozen at creation.** A resumed session reads them back rather than recomputing them from whatever the setup screen currently defaults to — resuming must not change the rules mid-session. `scope` is a discriminated union: `{ kind: "blueprint" }`, `{ kind: "chapter", chapters[], count }`, `{ kind: "objective", objectives[], count }`, or `{ kind: "questions", questionIds[], source }` — an explicit list rather than a rule, where `source` is `"wrong" | "flagged" | "shaky"`. That last one is what makes "retry the ones you missed" (F2-02) and the saved lists (F2-07) one feature instead of two: both hand `selectQuestions` a set of ids and let it report what the pool can still supply.
 - **`revealedAt` is the lock.** Once the rationale has been shown, the answer is final: `sessionStore.select` refuses a revealed question, so instant feedback cannot be gamed.
+- **A wrong answer is what puts a question in the deck.** `sessionStore.submit` writes the attempt and the deck changes in one transaction: a question answered wrong (not unanswered) in any mode joins `srsCards` as a new card, due now; one already in the deck is rated "Again", unless it is still new. A right answer outside the review screen changes nothing — a lucky guess scores the same as knowledge, which is why the review screen asks the candidate to rate themselves (`src/features/srs/scheduler.ts`).
 - **Breakdowns are not stored.** `chapterBreakdown` / `objectiveBreakdown` are recomputed by `scoreExam` from the questions and the stored answers whenever a result is shown.
 
 ### Schema versions
 
 | v | Change | Data migration |
 |---|---|---|
-| 1 | `attempts`, `responses`, `srsCards`, `bookmarks`, `settings` | — |
+| 1 | `attempts`, `responses`, `srsCards`, `bookmarks`, `settings` | — (`srsCards` was first written in F3-01; its row shape changed then without a version bump, because no row existed yet and its indexes stayed the same) |
 | 2 | Compound index `[certId+status]` on `attempts` — resumable-attempt lookup ran as a table scan without it | none |
 | 3 | Three modes: `mode` index and `[certId+mode+status]` on `attempts`, new `objectiveProgress` table | `applyAttemptV3Defaults` |
 

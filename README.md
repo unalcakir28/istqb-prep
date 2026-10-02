@@ -88,8 +88,8 @@ Detailed rationale and sources: [`docs/01-market-research.md`](docs/01-market-re
 | Results + review    | ✅ Pass-mark line, section and LO breakdown, option-by-option rationale                                          |
 | Question pool       | ✅ 256 questions published, 64/64 learning objectives covered, at least 4 each · Phase 3 target: 300             |
 | Lesson cards        | ✅ All 64 written and published — one per learning objective, TR+EN, key points and common mistakes              |
-| SRS, glossary       | ⬜ Phase 2-3                                                                                                     |
-| Tests               | ✅ 135 unit tests (Vitest) · 57 end-to-end specs (Playwright, including axe scans of every route in both themes) |
+| SRS, glossary       | ✅ Glossary: 97 bilingual terms, no definitions · ⬜ SRS: the engine is built, the review screen is not yet      |
+| Tests               | ✅ 150 unit tests (Vitest) · 57 end-to-end specs (Playwright, including axe scans of every route in both themes) |
 
 **Data accuracy.** The exam constants, learning objectives, and Turkish terms
 were extracted from the official ISTQB and TTB PDFs; none of it was hand-guessed.
@@ -104,12 +104,13 @@ Installed today
   Vite 6 + React 19 + TypeScript 5 + React Router 7
   Tailwind CSS v4 (no component library — the UI is hand-written on native controls)
   Zustand (state) · Dexie/IndexedDB (persistence) · i18next (TR/EN)
+  ts-fsrs (spaced repetition — the questions you get wrong come back)
   Vitest + Testing Library (unit) · Playwright + axe-core (end to end)
   Data: indexed, chunked static JSON under /public/data
   No backend · No accounts · No server cost · GitHub Pages
 
 Planned, not yet installed
-  ts-fsrs (spaced repetition, Phase 3) · vite-plugin-pwa (offline, Phase 3)
+  vite-plugin-pwa (offline, Phase 3)
 ```
 
 Rationale: [`docs/adr/0001-frontend-stack.md`](docs/adr/0001-frontend-stack.md)
