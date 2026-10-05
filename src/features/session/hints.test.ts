@@ -37,7 +37,7 @@ describe("hintFor", () => {
     });
   });
 
-  it("otherwise takes away the first wrong option in the order shown, without its rationale (D-07)", () => {
+  it("otherwise takes away the first wrong option in the order shown, without its rationale (TODO D-07)", () => {
     expect(hintFor(question(content(), content()), "en")).toEqual({
       kind: "eliminate",
       optionId: "c",

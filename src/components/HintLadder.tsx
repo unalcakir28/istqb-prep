@@ -5,7 +5,7 @@
  *      the question's language.
  *   2. The hint is `hintFor`'s (src/features/session/hints.ts): the
  *      question's authored hints, or the first wrong option shown taken
- *      away. Its rationale waits for the reveal (D-07).
+ *      away. Its rationale waits for the reveal (TODO D-07).
  *   3. The solution reveals the answer through the same path a complete
  *      answer takes, so it locks the question. The button says what that
  *      costs before it is pressed: the question is scored as it stands and

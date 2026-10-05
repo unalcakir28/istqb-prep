@@ -7,10 +7,11 @@
  * it has them (30 published CTFL questions, no CT-AI one, on 05.10.2026),
  * and otherwise one wrong option taken away.
  *
- * The option is taken away WITHOUT its rationale (D-07). The rationales are
- * written to be read beside the key, and many name it: a sweep of one third
- * of the CTFL pool found 15 wrong-option rationales in 13 questions that
- * quote or paraphrase the keyed option. Shown before the answer, any of them
+ * The option is taken away WITHOUT its rationale (TODO D-07). The rationales
+ * are written to be read beside the key, and many name it: a sweep found 15
+ * wrong-option rationales that quote or paraphrase the keyed option in 13 of
+ * the 45 questions without authored hints in ch03-a, ch03-b, ch03-c and
+ * ch04-a. Shown before the answer, any of them
  * would have handed the key over. The rationale waits for the reveal, where
  * it was always meant to be read.
  *

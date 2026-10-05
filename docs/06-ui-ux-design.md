@@ -259,7 +259,7 @@ For every question:
 
 Each question is one **nested group of headings**, not three flat ones — see §4.3. A filter switches between all questions and the wrong ones only.
 
-**Not built, deliberately:** an `[Add to review deck]` button. A question answered wrong joins the deck automatically when the session is submitted (F3-01), and a right answer is not evidence enough to add one. `[Report an error in this question]` (F2-08) and `[Discuss]` (F4-06) live in each question's rationale panel (§4.1).
+**Not built, deliberately:** an `[Add to review deck]` button. A question answered wrong joins the deck automatically when the session is submitted (F3-01), and a right answer is not evidence enough to add one. `[Report an error in this question]` (F2-08) and `[Discuss]` (F4-06, shown once `DISCUSSIONS_ENABLED` is on) live in each question's rationale panel (§4.1).
 
 ### 3.6 Practice mode `/alistirma`
 

@@ -101,7 +101,7 @@ istqb-prep/
 │   │   ├── Progress.tsx         # /ilerleme — readiness, streak, mock exams, per chapter
 │   │   └── MyData.tsx           # /verilerim — download / load the progress file
 │   ├── features/
-│   │   ├── session/             # SessionRunner (the shell), sessionStore, routeForAttempt, hints (F3-09)
+│   │   ├── session/             # SessionRunner (the shell), sessionStore, routeForAttempt, hints (F3-09), notKnown (F3-15)
 │   │   ├── exam/                # selectQuestions, generateExam, scoreExam, examTimer, rng, optionOrder
 │   │   ├── srs/                 # scheduler (the only ts-fsrs import), interval, queue
 │   │   ├── glossary/            # markTerms (which words a lesson card marks), lessonGlossary (F2-11)
@@ -253,7 +253,7 @@ A `dist/.nojekyll` file is added; otherwise Jekyll ignores files starting with `
 | Anything else under `data/` | Not handled: straight to the network | The file names never change and `contentClient` already caches per `dataVersion`. A copy here would carry no version and, offline, would be stored as the new version's content. Stale-while-revalidate would do the same online |
 | A page navigation | Network, whatever the status; the cached shell offline | GitHub Pages serves deep links as its 404 page, and that page is the app |
 
-There is no `skipWaiting`: a new worker waits until every tab of the old one is closed, so a running tab keeps the shell its lazy chunks belong to. Offline, a screen opens if its content was loaded once online; one never visited shows the error notice.
+There is no `skipWaiting`: a new worker waits until every tab of the old one is closed, so a running tab keeps the shell its lazy chunks belong to. Offline, a screen opens if its content was loaded once online; one never visited says it is not available offline yet and retries once the browser is back online (F3-13).
 
 ### Workflow
 

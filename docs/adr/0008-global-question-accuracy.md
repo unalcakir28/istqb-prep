@@ -3,7 +3,7 @@
 **Status:** Accepted · **Date:** 05.10.2026 · **Closes:** F4-08
 
 ## Context
-The market research names a global accuracy rate per question as a feature candidates value ([`../01-market-research.md`](../01-market-research.md), the filterable list with "global accuracy"). The metrics plan wants the same number for quality control: a question that 95% get right or 10% get right deserves a second look ([`../10-risks-and-metrics.md`](../10-risks-and-metrics.md) §2, target distribution 30–85%). F4-08 asked how to get it while preserving privacy, with no decision taken yet.
+The market research names a global accuracy rate per question as a feature candidates value ([`../01-market-research.md`](../01-market-research.md), the filterable list with "global accuracy"). The metrics plan wanted the same number for quality control: a question that 95% get right or 10% get right deserves a second look ([`../10-risks-and-metrics.md`](../10-risks-and-metrics.md) §2 had a target distribution of 30–85% until this decision). F4-08 asked how to get it while preserving privacy, with no decision taken yet.
 
 Two constraints are already in force:
 

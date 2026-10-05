@@ -54,7 +54,7 @@ data/
         └── mock-001.json            # Question ID list + order
 ```
 
-> `terms.json` also sits at the certification root: the Turkish terminology mapping, aligned from the official keyword lists. It is the single source of truth for CI checks #13 and #21. CT-AI's also carries `contentTerms` (F4-10): renderings its content uses for terms the syllabus body names but the keyword lists do not, all `editorial`. The checks guard them like `terms`; they are not counted in `termCount` and `/sozluk` does not list them.
+> `terms.json` also sits at the certification root: the Turkish terminology mapping, aligned from the official keyword lists. It is the single source of truth for CI checks #13 and #21. CT-AI's also carries `contentTerms` (F4-10): renderings its content uses for terms the syllabus body names but the keyword lists do not, all `editorial`. Check #13 guards them like `terms`; none carries `trForbidden` yet, so #21 has nothing to check for them. They are not counted in `termCount` and `/sozluk` does not list them.
 
 ### Chunking rule
 - **Question chunk:** chapter-based, **at most 40 questions** per chunk (≈ 50–60 KB uncompressed).
@@ -339,7 +339,7 @@ This file enables realistic exam generation that **no competitor on the market d
 | `correct` | string[] | Option IDs. Its length must match `selectCount` (CI check). |
 | `media` | object\|null | Table / diagram. See §4. |
 | `rationale.byOption` | object | **Required for every option.** CI fails if it's missing. |
-| `hints` | string[] | Optional. The hint ladder's middle step shows them (F3-09, docs/06 §3.6); a question without them shows one wrong option and its rationale instead. |
+| `hints` | string[] | Optional. The hint ladder's middle step shows them (F3-09, docs/06 §3.6); a question without them shows one wrong option instead, quoted without its rationale (TODO D-07). |
 
 ### 3.8 `media` — table and diagram
 
@@ -654,7 +654,7 @@ Checks that run on every PR (`yarn validate:data`). The registry in [`../scripts
 | 9 | Does `exam-blueprint.json` total 40 questions / 8-6-4-11-9-2 / K 8-24-8? | ❌ |
 | 10 | Is there at least 1 published question for every LO? | ⚠️ warning |
 | 11 | Is there at least 3 published questions for every LO? | ⚠️ warning |
-| 12 | Does `kLevel` match the highest K-level among the question's LOs? A question deliberately set lower is recorded with its reason in `K_LEVEL_EXCEPTIONS` (D-06), and an exception that no longer applies is itself reported | ⚠️ warning |
+| 12 | Does `kLevel` match the highest K-level among the question's LOs? A question deliberately set lower is recorded with its reason in `K_LEVEL_EXCEPTIONS` (TODO D-06), and an exception that no longer applies is itself reported | ⚠️ warning |
 | 13 | Is there English-term leakage in the Turkish text (glossary check)? | ⚠️ warning |
 | 14 | ~~Is the correct answer's option position balanced (a systematic "always a" bias)?~~ **Retired by D-03** — options are shuffled per attempt, so the authored letter never reaches a candidate. | — |
 | 15 | Does the rationale/question text refer to an option by its letter (e.g. "(c) is incorrect")? | ❌ |

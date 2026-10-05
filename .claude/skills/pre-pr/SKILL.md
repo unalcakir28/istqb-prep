@@ -31,11 +31,11 @@ yarn e2e
 
 - **`yarn format` fails.** It is `prettier --check`. Fix with `yarn format:write`,
   then rerun. Do not edit the files by hand to satisfy it.
-- **`yarn validate:data` prints warnings but PASSES.** Expected. They are content
-  gaps tracked in `TODO.md`, not blockers, and they come in two kinds: check #11
-  ("not enough to generate exams without repetition") is a question gap, check
-  #20 ("no published lesson yet") is a lesson gap waiting on Track C. Only
-  `0 error(s)` matters. If the error count is not zero, the pull request is not
+- **`yarn validate:data` prints a warning.** It printed none on 05.10.2026, so a
+  warning is new: a content gap (#10–#13, #20–#22) to fix or track in `TODO.md`,
+  not a blocker. A deliberate K-level mismatch is recorded in #12's
+  `K_LEVEL_EXCEPTIONS` rather than left as a warning. Only `0 error(s)` gates
+  the pull request. If the error count is not zero, the pull request is not
   ready.
 - **`yarn validate:data` reports a stale index.** `yarn build:index` was not run
   after the last `data/` edit. Run it and validate again.

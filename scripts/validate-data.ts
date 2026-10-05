@@ -616,7 +616,7 @@ function checkQuestionIdsUnique(questions: QuestionRecord[]): void {
  * objective's K-level, with the reason. A question tests one level, and a
  * verifier who finds that it asks for recognition rather than application
  * should be able to say so on the question instead of inventing an
- * application it does not contain (D-06). An entry whose question no
+ * application it does not contain (TODO D-06). An entry whose question no
  * longer differs is reported, so the list cannot outlive its reason.
  */
 const K_LEVEL_EXCEPTIONS: Record<string, string> = {
