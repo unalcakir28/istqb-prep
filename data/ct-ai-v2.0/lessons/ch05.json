@@ -291,7 +291,7 @@
       "objective": "AI-5.1.6",
       "syllabusVersion": "2.0",
       "syllabusRef": "§5.1.6",
-      "revision": 1,
+      "revision": 2,
       "status": "published",
       "origin": "original",
       "i18n": {
@@ -299,7 +299,7 @@
           "title": "Etiket doğruluğu testi",
           "paragraphs": [
             "Denetimli öğrenmede etiket doğruluğu esastır: yanlış veya tutarsız etiketler modelin performansını ve genellemesini doğrudan zayıflatır. Etiket doğruluğu testi, bu etiket hatalarını bulmak için kullanılan yaklaşımların bir bileşimidir; hedef her yaklaşımın ne yaptığını açıklayabilmektir.",
-            "Üç yaklaşım insan odaklıdır. Uzman gözden geçirmesinde alan uzmanları veya eğitimli etiketleyiciler etiketli verinin bir örneklemini kendi bilgileri ve yönergelerle gözden geçirir. Çoklu etiketlemede aynı veri noktaları birden çok etiketleyici tarafından bağımsız etiketlenir ve sonuçlar bir tür sırt sırta testle karşılaştırılır; anlaşmazlıklar araştırılıp çözülmesi gereken hataları gösterir. Etiketleyiciler arası uyum (IAA), Cohen'in Kappa'sı veya basit yüzde uyumu gibi ölçütlerle ölçülebilir; düşük IAA, etiketleme yönergelerinde hata, belirsiz veri veya kötü etiketleme işareti olabilir. Riske dayalı önceliklendirmede ise gözden geçirme ve çoklu etiketleme, yanlış etiketlenme olasılığı yüksek (belirsiz veya sınıf sınırına yakın) ve uygulamanın başarısını ya da emniyetini en çok etkileyecek veri noktalarına odaklanır.",
+            "Üç yaklaşım insan odaklıdır. Uzman gözden geçirmesinde alan uzmanları veya eğitimli etiketleyiciler etiketli verinin bir örneklemini kendi bilgileri ve yönergelerle gözden geçirir. Çoklu etiketlemede aynı veri noktaları birden çok etiketleyici tarafından bağımsız etiketlenir ve sonuçlar bir tür sırt sırta testle karşılaştırılır; anlaşmazlıklar araştırılıp çözülmesi gereken hataları gösterir. Etiketleyiciler arası uyum (IAA), Cohen'in Kappa'sı veya basit yüzde uyumu gibi ölçütlerle ölçülebilir; düşük IAA, etiketleme yönergelerinde hata, belirsiz veri veya kötü etiketleme işareti olabilir. Risk bazlı önceliklendirmede ise gözden geçirme ve çoklu etiketleme, yanlış etiketlenme olasılığı yüksek (belirsiz veya sınıf sınırına yakın) ve uygulamanın başarısını ya da emniyetini en çok etkileyecek veri noktalarına odaklanır.",
             "Diğer yaklaşımlar otomatik veya veri odaklıdır. Veri dağılımı analizinde, benzer veri setleri varsa etiket dağılımı onlarla karşılaştırılır ve anomaliler olası yanlış etiketleri gösterir. Otomatik kural tabanlı testler, önceden tanımlı etiket kurallarını sınar (ör. sınırlayıcı kutuların çakışmaması ve görüntü sınırını aşmaması). Model kaybı analizinde, eğitim sırasında yüksek kayıp veren, yani tahmini gerçek etiketten çok sapan veri noktaları yanlış etiketlenmiş olabilir. Model güven skoru analizinde, eğitilmiş modelin düşük güvenle tahmin ettiği noktalar yanlış etiketlenmiş, belirsiz veya eğitim dağılımı dışında olabilir.",
             "Birleşim genellikle daha etkilidir; müfredat şu örneği verir: uzman gözden geçirmesi başta net etiketleme yönergeleri kurmakta değerlidir, ardından IAA skorları etiketleme sürecini iyileştirir, model geliştikçe de model tabanlı yaklaşımlar kalan etiket hatalarını bulur."
           ],
@@ -342,7 +342,7 @@
         "author": "lesson-writer",
         "reviewedBy": "lesson-review (2 adversarial passes, 2026-10-02; CT-AI v2.0 F4-01 — claims checked against the v2.0 syllabus, exam meta-claims removed, worked examples recomputed)",
         "createdAt": "2026-10-02",
-        "updatedAt": "2026-10-02"
+        "updatedAt": "2026-10-05"
       }
     }
   ]

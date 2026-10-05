@@ -100,7 +100,7 @@
 
 | # | Task |
 |---|---|
-| F4-01 | **CT-AI v2.0 (AI Testing)** content — second certification, the real test of the architecture. Retargeted from CTFL-AT on 02.10.2026: CTFL-AT is in its sunset (`docs/03` §8). **Done 02.10.2026** — 86 questions, 43 lesson cards |
+| F4-01 | **CT-AI v2.0 (AI Testing)** content — second certification, the real test of the architecture. Retargeted from CTFL-AT on 02.10.2026: CTFL-AT is in its sunset (`docs/03` §8). **Done 02.10.2026** — 86 questions, 43 lesson cards; F4-01b (05.10.2026) took the pool to 129, 3 per objective |
 | F4-02 | ~~CT-AI v2.0~~ — merged into F4-01 |
 | F4-03 | CT-PT (Performance Testing) |
 | F4-04 | CTAL-TA v4.0 — first Advanced module (multi-point questions → scoring engine expands) |

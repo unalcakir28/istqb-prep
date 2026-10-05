@@ -567,6 +567,290 @@
         "createdAt": "2026-10-02",
         "updatedAt": "2026-10-02"
       }
+    },
+    {
+      "id": "ctai-0095",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.1",
+      "objectives": [
+        "AI-2.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "quality-characteristics",
+        "iso-25059",
+        "transparency"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir banka, yapay zekâ tabanlı bir kredi puanlama sistemi dağıtmıştır. Sistemin aşağıdaki davranışlarından hangisi ISO/IEC 25059'a göre EN İYİ şeffaflık kapsamında sınıflandırılır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bir kredi uzmanının otomatik puanlamayı istediği an durdurup bekleyen başvuruları elle karara bağlamasına izin verir."
+            },
+            {
+              "id": "b",
+              "text": "Kredi uzmanlarına modelin hangi veri kaynaklarıyla eğitildiğini ve puanlarının bilinen sınırlarını bildirir."
+            },
+            {
+              "id": "c",
+              "text": "Bazı başvuru alanları boş ya da geçersiz biçimde geldiğinde bile puanlama doğruluğunu korur."
+            },
+            {
+              "id": "d",
+              "text": "Dağıtımdan sonra, piyasadaki geri ödeme örüntüleri değiştikçe puanlama biçimini kademeli olarak değiştirir."
+            }
+          ],
+          "rationale": {
+            "summary": "Şeffaflık, yapay zekâ tabanlı sistem hakkındaki uygun bilginin paydaşlara iletilme derecesidir; etkileşim yeteneğinin (ürün kalitesi) ve memnuniyetin (kullanım kalitesi) alt özelliğidir. Kredi uzmanlarına eğitim verisinin kaynaklarını ve puanların sınırlarını bildirmek bu türden bir bilgidir. Diğer davranışlar zamanında insan müdahalesi, geçersiz girdilere rağmen doğruluğu korumak ve kendiliğinden uyum sağlamaktır.",
+            "byOption": {
+              "a": "Yanlış. Bu, sistemin işleyişine zamanında insan müdahalesini anlatır; bu da kullanıcı kontrol edilebilirliğidir (etkileşim yeteneğinin alt özelliği). Kontrolü kredi uzmanı alır; sistem hakkında herhangi bir bilgi iletilmez; bir zarar ya da tehlike önlenmediği için müdahale edilebilirlik de değildir.",
+              "b": "Doğru. Sistem hakkındaki uygun bilgiyi, burada eğitim verisinin kaynağını ve çıktılarının sınırlarını, paydaşlara iletmek ISO/IEC 25059'un şeffaflık dediği özelliktir.",
+              "c": "Yanlış. Geçersiz veri girdilerine rağmen yapay zekâ fonksiyonel doğruluğu düzeyini korumak yapay zekâ sağlamlığıdır ve güvenilirliğin alt özelliğidir. Sistemin ne kadar iyi davrandığıyla ilgilidir, paydaşlara ne ilettiğiyle değil.",
+              "d": "Yanlış. Dağıtımdan sonra işletim ortamındaki değişikliklere kendiliğinden uyum sağlamak fonksiyonel uyarlanabilirliktir ve fonksiyonel uygunluğun alt özelliğidir. Sistem kendi davranışını değiştirir; kimseyi bilgilendirmez."
+            }
+          }
+        },
+        "en": {
+          "stem": "A bank has deployed an AI-based credit-scoring system. Which of the following behaviors of the system would BEST be classified under transparency in ISO/IEC 25059?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It lets a loan officer pause automated scoring at any time and decide the pending applications by hand."
+            },
+            {
+              "id": "b",
+              "text": "It tells loan officers which data sources the model was trained on and the known limits of its scores."
+            },
+            {
+              "id": "c",
+              "text": "It keeps its scoring accuracy when some application fields arrive empty or in an invalid format."
+            },
+            {
+              "id": "d",
+              "text": "It gradually changes how it scores after deployment as repayment patterns in the market shift."
+            }
+          ],
+          "rationale": {
+            "summary": "Transparency is the degree to which appropriate information about the AI-based system is communicated to stakeholders; it is a sub-characteristic of interaction capability (product quality) and of satisfaction (quality in use). Telling loan officers about the training data sources and the limits of the scores is such information. The other behaviors are timely human intervention, keeping correctness under invalid inputs and autonomous adaptation.",
+            "byOption": {
+              "a": "Incorrect. This describes timely human intervention in the system's functioning, which is user controllability (a sub-characteristic of interaction capability). The loan officer takes control; no information about the system is communicated, and no harm or hazard is being prevented, so it is not intervenability either.",
+              "b": "Correct. Communicating appropriate information about the system, here the provenance of its training data and the limits of its outputs, to stakeholders is what ISO/IEC 25059 calls transparency.",
+              "c": "Incorrect. Maintaining the level of AI functional correctness despite invalid data inputs is AI robustness, a sub-characteristic of reliability. It concerns how well the system behaves, not what it tells stakeholders.",
+              "d": "Incorrect. Adapting autonomously to changes in the operational environment after deployment is functional adaptability, a sub-characteristic of functional suitability. The system changes its own behavior; it does not inform anyone."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0096",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 2,
+      "section": "2.1",
+      "syllabusRef": "§2.1.2",
+      "objectives": [
+        "AI-2.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "safety",
+        "ai-safety-challenges",
+        "self-learning"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Emniyetle ilgili, yapay zekâ tabanlı bir asistan tesis operatörlerinin sorularını yanıtlamakta ve dağıtımdan sonra bu etkileşimlerden öğrenmeye devam etmektedir. Asistanın emniyeti tehlikeye atabilecek şeyler öğrenmesini veya kararlar vermesini önlemeye hangi önlem yardımcı olabilir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Aynı girdiyle tekrarlanan çalıştırmalar aynı çıktıyı versin diye rastgele sayı tohumunu sabitlemek."
+            },
+            {
+              "id": "b",
+              "text": "Her kararı, verildikten sonra açıklamak için LIME gibi bir açıklanabilir yapay zekâ tekniği uygulamak."
+            },
+            {
+              "id": "c",
+              "text": "Asistan canlıya alınmadan hemen önce dağıtım öncesi emniyet test paketinin tamamını bir kez daha koşmak."
+            },
+            {
+              "id": "d",
+              "text": "Asistana gelen istemleri süzen, içerik denetimi bileşeni gibi bir emniyet koruyucusunu devreye almak."
+            }
+          ],
+          "rationale": {
+            "summary": "Kendi kendine öğrenen sistemlerde müfredat, yeni sorunlu davranışların ortaya çıkmasını önlemek için iki yol sayar: modelin nasıl öğrendiğini ve hangi verileri kullandığını yönetmek ya da modelin emniyeti tehlikeye atabilecek şeyler öğrenmesini veya kararlar vermesini önlemeye yardımcı olan emniyet koruyucuları uygulamak; istemleri süzen bir içerik denetimi bileşeni buna örnektir. Diğer önlemler deterministik olmama, açıklanabilirlik veya dağıtım öncesi kanıtla ilgilidir.",
+            "byOption": {
+              "a": "Yanlış. Rastgele sayı üretimi deterministik olmamanın nedenlerinden biridir; onu kontrol altına almak tek tek çalıştırmaların tekrarlanabilirliğini hedefler. Asistanın dağıtımdan sonra yeni istemlerden ne öğrendiğine bir etkisi yoktur.",
+              "b": "Yanlış. LIME gibi açıklanabilir yapay zekâ teknikleri sistemin akıl yürütmesine ilişkin içgörü sağlar; ayrıca yaygın olarak bulunmaz ve performansı düşürebilir. Bir kararı verildikten sonra açıklamak emniyetsiz bir kararı önlemez.",
+              "c": "Yanlış. Dağıtım öncesi test, kendi kendine öğrenmenin zayıflattığı kanıtın ta kendisidir; öğrenme sürdükçe davranış test edilen davranıştan uzaklaşır. Canlıya almadan önce bir kez daha koşmak bunu değiştirmez.",
+              "d": "Doğru. İstemleri süzen bir içerik denetimi bileşeni gibi emniyet koruyucuları (safety guards), müfredatın kendi kendine öğrenen bir modelin emniyeti tehlikeye atabilecek şeyler öğrenmesini veya kararlar vermesini önlemeye yardımcı olarak verdiği önlemdir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A safety-related AI-based assistant answers plant operators' questions and keeps learning from these interactions after deployment. Which measure can help prevent it from learning or making decisions that could compromise safety?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Fixing the random number seed so that repeated runs on the same input give identical outputs."
+            },
+            {
+              "id": "b",
+              "text": "Applying an explainable AI technique such as LIME to explain each decision after it has been made."
+            },
+            {
+              "id": "c",
+              "text": "Repeating the complete pre-deployment safety test suite once more just before the assistant goes live."
+            },
+            {
+              "id": "d",
+              "text": "Adding a safety guard, such as a content moderation component that filters the incoming prompts."
+            }
+          ],
+          "rationale": {
+            "summary": "For self-learning systems, the syllabus names two ways to keep new problematic behavior from emerging: managing how the model learns and which data it uses, or implementing safety guards that help prevent the model from learning or making decisions that could compromise safety, such as a content moderation component that filters prompts. The other measures address non-determinism, explainability or pre-deployment evidence.",
+            "byOption": {
+              "a": "Incorrect. Random number generation is one of the causes of non-determinism, so controlling it targets the repeatability of individual runs. It does nothing about what the assistant learns from new prompts after deployment.",
+              "b": "Incorrect. Explainable AI techniques such as LIME give insight into the system's reasoning, and they are not widely available and may compromise performance. Explaining a decision after it is made does not prevent an unsafe one.",
+              "c": "Incorrect. Pre-deployment testing is exactly the evidence that self-learning undermines, because the behavior moves away from the tested behavior once learning continues. Running it once more before go-live does not change that.",
+              "d": "Correct. Safety guards, such as a content moderation component that filters prompts, are the measure the syllabus gives to help prevent a self-learning model from learning or making decisions that could compromise safety."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0097",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 2,
+      "section": "2.2",
+      "syllabusRef": "§2.2.1",
+      "objectives": [
+        "AI-2.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "acceptance-criteria",
+        "safety"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Yapay zekâ tabanlı sistemler için kabul kriterleri, ISO/IEC 25059 kalite özelliklerinin yanı sıra emniyet için de tanımlanır. Aşağıdakilerden hangisi emniyete ilişkin bir kabul kriterinin EN İYİ örneğidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yapay zekâ tabanlı bir tren denetleyicisinin, belirlenen sınırları %5'ten fazla aşan fren sinyalleri 0,2 saniye içinde düzenlenir."
+            },
+            {
+              "id": "b",
+              "text": "Yapay zekâ tabanlı bir reaktör kontrol sistemindeki MÖ modelinin olgun bir fonksiyonel emniyet standardına uyumu belgelendirilir."
+            },
+            {
+              "id": "c",
+              "text": "Bir müşteri hizmetleri sohbet robotu, şirket içi bir kırmızı takım çalışmasındaki nefret içerikli isteklerin en az %98'ini reddeder."
+            },
+            {
+              "id": "d",
+              "text": "Bir müzik servisi, kullanıcı tek oturumda beş caz albümünü baştan sona dinledikten sonra önerilerinin en az %30'unu cazdan seçer."
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredattaki örnek emniyet kriterleri arasında belirlenen emniyet sınırlarını aşan kontrol sinyallerinin belirli bir süre içinde ele alınması, yapay zekâ dışı bileşenlerin bir fonksiyonel emniyet standardına uyumu ve girdi-çıktı ilişkilerinin bir açıklanabilirlik aracıyla eşlenmesi yer alır. Sınırı aşan fren sinyallerinin 0,2 saniye içinde düzenlenmesi ilk türdendir. Diğer kriterler yapay zekâyı olgun emniyet standartlarının kapsamındaymış gibi ele alır ya da toplumsal ve etik risk azaltmaya ve fonksiyonel uyarlanabilirliğe aittir.",
+            "byOption": {
+              "a": "Doğru. Zarar verebilecek bir sistemde belirlenen sınırları aşan kontrol sinyallerinin tespit edilip düzenlenmesi için ölçülebilir bir süre sınırı koymak, müfredatın verdiği türden bir emniyet kriteridir.",
+              "b": "Yanlış. Yapay zekâ kullanımı olgun fonksiyonel emniyet standartlarına dahil değildir ve bu standartların bazıları kullanımını yasaklar. Bu nedenle müfredattaki örnek uyum kriteri MÖ modelinin kendisini değil, yapay zekâ dışı bileşenleri ele alır.",
+              "c": "Yanlış. Sistemin zararlı içerik üretmeyi reddettiğini gösteren bir kırmızı takım çalışması değerlendirmesinde asgari bir puan, kullanım kalitesine ait toplumsal ve etik risk azaltma için örnek bir kriterdir.",
+              "d": "Yanlış. Tanımlı bir kullanıcı davranışı değişikliğinden sonra sistemin çıktısını ayarlaması, işletim ortamındaki değişikliklere kendiliğinden uyum sağlama yeteneği olan fonksiyonel uyarlanabilirlik için örnek bir kriterdir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Acceptance criteria for AI-based systems are defined for safety as well as for the ISO/IEC 25059 quality characteristics. Which of the following is the BEST example of an acceptance criterion for safety?",
+          "options": [
+            {
+              "id": "a",
+              "text": "An AI-based train controller's braking signals that exceed set limits by over 5% are regulated within 0.2 seconds."
+            },
+            {
+              "id": "b",
+              "text": "The ML model in an AI-based reactor control system is certified as compliant with a mature functional safety standard."
+            },
+            {
+              "id": "c",
+              "text": "A customer-service chatbot refuses at least 98% of the hateful requests used in an internal red teaming assessment."
+            },
+            {
+              "id": "d",
+              "text": "A music service recommends at least 30% jazz after a user plays five full jazz albums in a single session."
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus's example safety criteria include handling control signals that exceed specified safety limits within a specified time, compliance of the non-AI components with a functional safety standard, and mapping input-output relationships with an explainability tool. Regulating out-of-limit braking signals within 0.2 seconds is of the first kind. The other criteria misplace AI under mature safety standards or belong to societal and ethical risk mitigation and functional adaptability.",
+            "byOption": {
+              "a": "Correct. A measurable time limit for detecting and regulating control signals that exceed specified limits in a system that can cause harm is the kind of safety criterion the syllabus gives.",
+              "b": "Incorrect. The use of AI is not included in mature functional safety standards, and some of them even prohibit it. The syllabus's example compliance criterion for safety therefore names the non-AI components, not the ML model itself.",
+              "c": "Incorrect. A minimum score in a red teaming assessment that shows the system refuses to generate harmful content is an example criterion for societal and ethical risk mitigation, a quality-in-use characteristic.",
+              "d": "Incorrect. Adjusting the system's output after a defined change in user behavior is an example criterion for functional adaptability, the ability to adapt autonomously to changes in the operational environment."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
     }
   ]
 }

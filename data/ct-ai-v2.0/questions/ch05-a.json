@@ -1136,6 +1136,578 @@
           }
         }
       }
+    },
+    {
+      "id": "ctai-0113",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.1",
+      "objectives": [
+        "AI-5.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "input-data",
+        "risk-mitigation",
+        "data-poisoning"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, bir saldırganın istenmeyen e-posta filtresi modelinin eğitim verisine manipüle edilmiş kayıtlar sızdırmış olabileceğini öğreniyor. Müfredattaki girdi verisi riskleri tablosuna göre zehirlenmiş eğitim verisi riski için olası risk azaltma olarak hangi test yaklaşımı listelenmiştir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Keşifsel veri analizi"
+            },
+            {
+              "id": "b",
+              "text": "Veri seti kısıt testi"
+            },
+            {
+              "id": "c",
+              "text": "Öznitelik testi"
+            },
+            {
+              "id": "d",
+              "text": "Veri temsil ediciliği testi"
+            }
+          ],
+          "rationale": {
+            "summary": "Tablo, zehirlenmiş eğitim verisi riskini birden fazla olası risk azaltmayla eşleştirir: A/B testi, veri kaynağı izlenebilirliği testi, keşifsel veri analizi (EDA) ve kırmızı takım çalışması kapsamındaki saldırılar. Seçeneklerden yalnızca keşifsel veri analizi bu listededir; diğer üç yaklaşım tabloda başka risklerle eşleştirilmiştir.",
+            "byOption": {
+              "a": "Doğru. Keşifsel veri analizi (EDA), tabloda zehirlenmiş eğitim verisi için listelenen olası risk azaltmalardan biridir; aynı satırda A/B testi, veri kaynağı izlenebilirliği testi ve kırmızı takım çalışması kapsamındaki saldırılar da yer alır.",
+              "b": "Yanlış. Veri seti kısıt testi, tabloda kendi içinde tutarsız veri setleri, aralık dışı veriler ve yanlış veri türleriyle eşleştirilmiştir; verinin önceden tanımlı kurallara uyup uymadığını sınar ve zehirlenmiş veri için listelenmemiştir.",
+              "c": "Yanlış. Öznitelik testi, tabloda en uygun olmayan öznitelik seçimi riskiyle eşleştirilmiştir; modelin hangi öznitelikleri kullandığıyla ilgilidir, kayıtların manipüle edilip edilmediğiyle değil.",
+              "d": "Yanlış. Veri temsil ediciliği testi, tabloda dengesiz, çarpık veya eksik veri ve tüm kullanım durumlarını ya da değer aralığını kapsamayan veri gibi risklerle eşleştirilmiştir; zehirlenmiş veri için listelenmemiştir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team learns that an attacker may have slipped manipulated records into the training data of its spam filter model. According to the syllabus table of input data risks, which test approach is listed as a possible mitigation for the risk of poisoned training data?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Exploratory data analysis"
+            },
+            {
+              "id": "b",
+              "text": "Dataset constraint testing"
+            },
+            {
+              "id": "c",
+              "text": "Feature testing"
+            },
+            {
+              "id": "d",
+              "text": "Data representativeness testing"
+            }
+          ],
+          "rationale": {
+            "summary": "The table pairs poisoned training data with several possible mitigations: A/B testing, data provenance testing, exploratory data analysis (EDA) and attacks as part of red teaming. Of the options, only exploratory data analysis is on that list; the table pairs the other three approaches with different risks.",
+            "byOption": {
+              "a": "Correct. Exploratory data analysis (EDA) is one of the possible mitigations the table lists for poisoned training data; the same row also lists A/B testing, data provenance testing and attacks as part of red teaming.",
+              "b": "Incorrect. The table pairs dataset constraint testing with internally inconsistent datasets, out-of-range data and wrong data types; it checks whether the data adheres to predefined rules and is not listed for poisoned data.",
+              "c": "Incorrect. The table pairs feature testing with sub-optimal feature selection; it concerns which features the model uses, not whether records have been manipulated.",
+              "d": "Incorrect. The table pairs data representativeness testing with risks such as imbalanced, skewed or missing data and data that does not cover all use cases or the full range of values; it is not listed for poisoned data."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0114",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.2",
+      "objectives": [
+        "AI-5.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "bias",
+        "algorithmic-bias",
+        "dynamic-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir işe alım sisteminin MÖ modeli için veri seti dokümantasyonunun gözden geçirilmesi ve eğitim verisinin keşifsel veri analizi, yaş grupları arasında hiçbir dengesizlik göstermiyor. Ancak bilinen, yanlılık içermeyen ve temsil edici bir veri setiyle yapılan dinamik test, 55 yaş üstü adaylar için istatistiksel olarak anlamlı biçimde daha düşük başarı oranları gösteriyor. Neden, model gerçekleştiriminin skorlarından birine uyguladığı sabit bir eşik değerine dayandırılıyor. Müfredata göre bu sonucu EN İYİ hangi ifade açıklar?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bu algoritmik yanlılıktır; algoritmadaki ya da modeldeki bir hata, eğitim verisi hatasız görünse bile adil olmayan farklar yaratabilir"
+            },
+            {
+              "id": "b",
+              "text": "Bu veri yanlılığıdır; adil olmayan çıktılar her zaman eğitim verisindeki tarihsel çarpıklıklardan doğar, yani keşifsel analiz bunları kaçırmıştır"
+            },
+            {
+              "id": "c",
+              "text": "Bu, müfredat anlamında yanlılık değildir; çünkü yaş, hassas bir nitelik değil, modelin skorlamada kullandığı sıradan bir girdidir"
+            },
+            {
+              "id": "d",
+              "text": "Bu bir yanlış alarmdır; eğitim verisinin gözden geçirmeleri ve keşifsel analizi dengesizlik bulmadığında dinamik testin bulgusu geçersiz sayılır"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredat yanlılığın iki ana kaynağını ayırır: eğitim verisindeki hatalardan doğan veri yanlılığı ve algoritma, model veya geliştirme çerçevesindeki hatalardan doğan algoritmik yanlılık; kredi onay sisteminde kredi skorları için karar eşiği kullanan bir algoritma, müfredatın algoritmik yanlılık örneğidir. Bilinen, yanlılık içermeyen bir veri setiyle yapılan dinamik test, model çıktılarındaki yanlılığı, eğitim verisinden mi yoksa model geliştirmeden mi geldiğine bakmaksızın ortaya çıkarır. Burada veri temiz görünmekte, neden ise modelin eşiğindedir.",
+            "byOption": {
+              "a": "Doğru. Algoritma, model veya geliştirme çerçevesindeki hatalar, eğitim verisi hatasız olsa bile sistematik adil olmayan farklar getirebilir; müfredat bunu algoritmik yanlılık olarak adlandırır ve karar eşiğini örnek verir.",
+              "b": "Yanlış. Bu, yanlılığı yalnızca veri yanlılığı olarak görmektir. Müfredat eğitim verisindeki hataların yanında algoritma, model veya çerçevedeki hataları da yanlılık kaynağı sayar; burada neden verilerde değil, modelin eşiğindedir.",
+              "c": "Yanlış. Müfredat yaşı cinsiyet ve ırkla birlikte hassas nitelik örneği olarak sayar; yaşa dayalı rastgele olmayan, adil olmayan farklar tam da yanlılık tanımına girer.",
+              "d": "Yanlış. Bu, eğitim verisine yönelik gözden geçirmeleri model testinin üstünde tutmaktır. Gözden geçirmeler ve keşifsel analiz eğitim verisine bakar; dinamik test ise model çıktılarındaki yanlılığı, model geliştirme sırasında girmiş olsa bile yakalar."
+            }
+          }
+        },
+        "en": {
+          "stem": "For the ML model of a recruitment system, reviews of the dataset documentation and EDA of the training data show no imbalance across age groups. Dynamic testing with a known unbiased and representative dataset, however, shows statistically significant lower success rates for applicants over 55. The cause is traced to a fixed cut-off that the model implementation applies to one of its scores. According to the syllabus, which statement BEST explains this result?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It is algorithmic bias, since a defect in the algorithm or model can cause unfair differences even if the training data is sound"
+            },
+            {
+              "id": "b",
+              "text": "It is data bias, since unfair outputs always originate in historical skews of the training data, which the EDA must have missed"
+            },
+            {
+              "id": "c",
+              "text": "It is not bias in the syllabus sense, since age is an ordinary scoring input of the model rather than a sensitive attribute"
+            },
+            {
+              "id": "d",
+              "text": "It is a false alarm, since a bias found by dynamic testing is overruled when reviews and EDA of the training data find no imbalance"
+            }
+          ],
+          "rationale": {
+            "summary": "The syllabus separates two main sources of bias: data bias, from defects in the training data, and algorithmic bias, from defects in the algorithm, model or development framework; its example of algorithmic bias is an algorithm using a decision threshold for credit scores in a loan approval system. Dynamic testing with a known unbiased dataset identifies bias in model outputs regardless of whether it was introduced during data training or model development. Here the data looks clean and the cause is the model's threshold.",
+            "byOption": {
+              "a": "Correct. Defects in the algorithm, model or development framework can introduce systemic unfairness even when the training data is free of defects; the syllabus calls this algorithmic bias and gives a decision threshold as its example.",
+              "b": "Incorrect. This treats all bias as data bias. Besides defects in the training data, the syllabus names defects in the algorithm, model or framework as a source of bias; here the cause lies in the model's cut-off, not in the data.",
+              "c": "Incorrect. The syllabus lists age, with gender and race, as an example of a sensitive attribute; non-random, unfair differences based on age fall squarely within its definition of bias.",
+              "d": "Incorrect. This ranks the data reviews above the model test. Reviews and EDA look at the training data, whereas dynamic testing catches bias in the model outputs even when it entered during model development."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0115",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.3",
+      "objectives": [
+        "AI-5.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "data-pipeline",
+        "component-integration-testing",
+        "test-levels"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Aynı veri hattının iki bileşeninden veri alım bileşeni olay zaman damgalarını yerel saatle yazıyor; başka bir ekibin geliştirdiği dönüştürme bileşeni ise aldığı her zaman damgasının UTC olduğunu varsayıyor. Müfredata göre bu tür bir hatayı tespit etmeye yönelik test etkinliği hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bileşen testi"
+            },
+            {
+              "id": "b",
+              "text": "Bileşen entegrasyon testi"
+            },
+            {
+              "id": "c",
+              "text": "Sistem entegrasyon testi"
+            },
+            {
+              "id": "d",
+              "text": "Yapılandırma yönetimi gözden geçirmesi"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredata göre bileşen entegrasyon testi, verinin iç arayüzler boyunca sorunsuz akışını ve verinin hat içinde ilerlerken doğru yorumlanmasını doğrular; uyumsuz arayüzlerden veya bileşenler arasındaki yanlış varsayımlardan doğan hataları tespit eder. Zaman damgasının saat dilimine ilişkin farklı varsayımlar tam olarak böyle bir hatadır ve her bileşen tek başına doğru çalıştığı için bileşen testinde görünmez.",
+            "byOption": {
+              "a": "Yanlış. Bileşen testi veri alım bileşenlerini, dönüştürme betiklerini ve sensör arayüzlerini tek tek sınar; dönüştürme mantığını, veri geçerlilik denetimi kurallarını ve hata işlemeyi doğrular. Her bileşen tek başına doğru davranabilir; hata ikisinin arasındaki varsayımdadır.",
+              "b": "Doğru. Bileşen entegrasyon testi verinin iç arayüzler boyunca doğru yorumlanmasını doğrular ve uyumsuz arayüzlerden ya da bileşenler arasındaki yanlış varsayımlardan doğan hataları tespit eder.",
+              "c": "Yanlış. Sistem entegrasyon testi veri hattının veri kaynakları, depolama platformları, izleme araçları ve MÖ modelleri gibi aşağı akış tüketicileri olan harici sistemlerle etkileşimini doğrular; burada iki bileşen de aynı hattın içindedir.",
+              "d": "Yanlış. Yapılandırma yönetimi gözden geçirmesi eğitim, test ve üretim boyunca doğru hat kodu sürümlerinin, yapılandırmaların ve veri setlerinin kullanıldığını doğrular; iki bileşenin birbirine ilişkin varsayımlarını sınamaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "In one data pipeline, the ingestion component writes event timestamps in local time, while the transformation component, built by another team, assumes that every timestamp it receives is in UTC. According to the syllabus, which testing activity is aimed at detecting this kind of defect?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Component testing"
+            },
+            {
+              "id": "b",
+              "text": "Component integration testing"
+            },
+            {
+              "id": "c",
+              "text": "System integration testing"
+            },
+            {
+              "id": "d",
+              "text": "Configuration management review"
+            }
+          ],
+          "rationale": {
+            "summary": "According to the syllabus, component integration testing verifies the seamless flow of data across internal interfaces and the correct interpretation of data as it moves through the pipeline; it detects defects arising from mismatched interfaces or incorrect assumptions between components. Conflicting assumptions about the time zone of a timestamp are exactly such a defect, and they stay invisible in component testing because each component works correctly on its own.",
+            "byOption": {
+              "a": "Incorrect. Component testing tests ingestion components, transformation scripts and sensor interfaces one at a time, validating transformation logic, data validation rules and error handling. Each component can behave correctly on its own; the defect lies in an assumption between them.",
+              "b": "Correct. Component integration testing verifies the correct interpretation of data across internal interfaces and detects defects arising from mismatched interfaces or incorrect assumptions between components.",
+              "c": "Incorrect. System integration testing verifies the interaction between the data pipeline and external systems or services such as data sources, storage platforms, monitoring tools and downstream consumers like ML models; here both components sit inside the same pipeline.",
+              "d": "Incorrect. A configuration management review verifies that the correct pipeline code versions, configurations and datasets are used across training, testing and production; it does not test the assumptions two components make about each other."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0116",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.4",
+      "objectives": [
+        "AI-5.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "data-representativeness",
+        "eda",
+        "reference-data"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir bitki hastalığı sınıflandırıcısı için yapılan veri temsil ediciliği testinde ekip, keşifsel veri analizini (EDA) yalnızca eğitim veri setine uyguluyor. Histogramlar boşluk ya da olağandışı yoğunlaşma olmadan düzgün görünüyor ve ekip verinin temsil edici olduğu sonucuna varıyor. Müfredata göre bu sonucun neden erken olduğunu EN İYİ hangi ifade açıklar?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Temsil edicilik karşılaştırmayla ölçülür; EDA, beklenen işletim verisini temsil eden referans veri setine de uygulanmalıdır"
+            },
+            {
+              "id": "b",
+              "text": "EDA'nın veri temsil ediciliği testinde yeri yoktur; bu test yalnızca ki-kare gibi biçimsel istatistiksel testlere dayanır"
+            },
+            {
+              "id": "c",
+              "text": "Temsil edicilik esas olarak veri hacmine bağlıdır; bu yüzden bir sonuca varmadan önce eğitim veri seti büyütülmelidir"
+            },
+            {
+              "id": "d",
+              "text": "Temsil edicilik ancak dağıtımdan sonra, işletim girdi verisi veri kaymasına karşı bir süre izlendikten sonra sonuca bağlanabilir"
+            }
+          ],
+          "rationale": {
+            "summary": "Veri temsil ediciliği testi, veri setlerinin özelliklerinin modelin işletimde karşılaşacağı gerçek dünya verisine ne kadar yakın olduğunu belirler. Bu yüzden ikinci adımda EDA hem değerlendirilen eğitim veya test veri setlerine hem de beklenen işletim verisini temsil eden referans veri setine uygulanır. Yalnızca eğitim verisine bakmak, verinin kendi içinde düzgün olduğunu gösterir; gerçek dünyaya ne kadar benzediğini göstermez.",
+            "byOption": {
+              "a": "Doğru. Müfredat EDA'nın hem değerlendirilen eğitim veya test veri setlerine hem de beklenen işletim verisini temsil eden referans veri setine uygulanmasını ister; temsil edicilik bu iki veri setinin karşılaştırılmasıyla anlaşılır.",
+              "b": "Yanlış. Müfredat ikinci adımda dağılımları histogram ve saçılım grafikleriyle görselleştiren EDA'yı açıkça sayar; ki-kare ve Kolmogorov-Smirnov gibi biçimsel testler bunun yerine değil, üçüncü adımda ayrıca uygulanır.",
+              "c": "Yanlış. Bu, temsil ediciliği veri setinin boyutuyla ölçmektir. Ölçüt, verinin gerçek işletim verisinin dağılımına ne kadar yakın olduğu ve onu ne kadar kapsadığıdır; büyük ama çarpık bir veri seti de temsil edici olmayabilir.",
+              "d": "Yanlış. Müfredat temsil edicilik testinin, temsil edici olmayan veriyle model kurulmasını önlemek için model eğitiminden önce yapılmasını ister; dağıtımdan sonraki izleme, eğitim dağılımından kaymayı yakalamak için ek bir etkinliktir."
+            }
+          }
+        },
+        "en": {
+          "stem": "In a data representativeness test for a plant disease classifier, the team applies EDA only to its training dataset. The histograms look smooth, with no gaps or unusual concentrations, and the team concludes that the data is representative. According to the syllabus, which statement BEST explains why this conclusion is premature?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Representativeness is judged by comparison, so EDA must also cover a reference dataset of the expected operational data"
+            },
+            {
+              "id": "b",
+              "text": "EDA plays no part in representativeness testing, which relies on formal statistical tests such as Chi-squared alone"
+            },
+            {
+              "id": "c",
+              "text": "Representativeness depends mainly on data volume, so the training dataset must be enlarged before any conclusion is drawn"
+            },
+            {
+              "id": "d",
+              "text": "Representativeness can only be concluded after deployment, once the operational input data has been monitored for drift for some time"
+            }
+          ],
+          "rationale": {
+            "summary": "Data representativeness testing determines how closely the characteristics of the datasets match the real-world data the model will encounter in operation. In its second step EDA is therefore applied both to the training or test datasets being evaluated and to a reference dataset that represents the expected operational data. Looking at the training data alone shows that the data is smooth in itself, not how closely it resembles the real world.",
+            "byOption": {
+              "a": "Correct. The syllabus applies EDA both to the training or test datasets being evaluated and to the reference dataset that represents the expected operational data; representativeness emerges from comparing the two.",
+              "b": "Incorrect. The syllabus explicitly includes EDA, visualizing distributions through histograms and scatter plots, in the second step; formal tests such as Chi-squared and Kolmogorov-Smirnov are applied in the third step in addition to it, not instead of it.",
+              "c": "Incorrect. This measures representativeness by the size of the dataset. The criterion is how closely the data matches the distribution of real operational data and how well it covers it; a large but skewed dataset can still be unrepresentative.",
+              "d": "Incorrect. The syllabus asks for representativeness testing before model training, to prevent building models on unrepresentative data; monitoring after deployment is an additional activity that detects drift from the training distribution."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0117",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.5",
+      "objectives": [
+        "AI-5.1.5"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 2,
+      "difficulty": 3,
+      "tags": [
+        "dataset-constraint-testing",
+        "missing-constraint",
+        "count-constraint",
+        "sum-constraint",
+        "duplicate-constraint"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir teslimat süresi tahmin modelinin veri setinde şu kısıtlar tanımlıdır. C1 (Eksik): Hiçbir siparişte Mesafe değeri eksik olmamalıdır. C2 (Sayı): Puan değerlerinin sayısı en az 5 olmalıdır. C3 (Toplam): Tüm siparişlerdeki Paket değerlerinin toplamı 16'yı aşmamalıdır. C4 (Yineleme): İki siparişin Mesafe, Paket ve Puan değerlerinin tümü aynı olamaz (izin verilen sayı: sıfır). Kayıtlar (Sipariş: Mesafe km; Paket; Puan) şöyledir: S1: 12; 3; 4. S2: 9; 5; (boş). S3: 8; 2; 5. S4: 15; 4; 3. S5: 8; 2; 5. Kısıt testi hangi kısıtların ihlal edildiğini bildirmelidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "C2 ve C4"
+            },
+            {
+              "id": "b",
+              "text": "C4"
+            },
+            {
+              "id": "c",
+              "text": "C2, C3 ve C4"
+            },
+            {
+              "id": "d",
+              "text": "C1, C2 ve C4"
+            }
+          ],
+          "rationale": {
+            "summary": "Her kısıt her kayda uygulanır. C1: beş siparişin hepsinde Mesafe değeri vardır, kısıt sağlanır. C2: Sayı kısıtı boş olmayan değerleri sayar; S2'nin Puanı boş olduğu için yalnızca 4 Puan değeri vardır, en az 5 koşulu ihlal edilir. C3: Paket toplamı 3 + 5 + 2 + 4 + 2 = 16'dır; 16'yı aşmamak eşitliğe izin verir, kısıt sağlanır. C4: S3 ve S5 tüm değerlerde (8; 2; 5) aynıdır ve izin verilen sayı sıfırdır, kısıt ihlal edilir. İhlal edilen kısıtlar C2 ve C4'tür.",
+            "byOption": {
+              "a": "Doğru. S2'nin boş Puanı sayılmadığından yalnızca 4 Puan değeri vardır ve C2 ihlal edilir; S3 ile S5 birbirinin aynısıdır ve C4 ihlal edilir. C1 (her siparişte Mesafe var) ve C3 (toplam tam 16) sağlanır.",
+              "b": "Yanlış. Bu, C2'yi değerleri değil kayıtları sayarak uygulamaktır. Beş kayıt vardır, ancak Sayı kısıtı boş olmayan değerleri sayar; S2'nin boş Puanı sayılmaz ve 4 değer en az 5 koşulunu karşılamaz.",
+              "c": "Yanlış. Bu, C3'ü \"16'dan az olmalı\" diye okumaktır. Paket toplamı 3 + 5 + 2 + 4 + 2 = 16'dır; 16'yı aşmamak 16'ya eşit olmaya izin verir, bu yüzden Toplam kısıtı sağlanır.",
+              "d": "Yanlış. Bu, S2'deki boş Puan hücresini C1'in ihlali saymaktır. C1 yalnızca Mesafe niteliği için tanımlıdır ve beş siparişin hepsinde Mesafe değeri vardır; boş Puan değerini yakalayan kısıt C2'dir."
+            }
+          }
+        },
+        "en": {
+          "stem": "In the dataset of a delivery time prediction model, these constraints are defined. C1 (Missing): no order may have a missing Distance value. C2 (Count): the count of Rating values must be at least 5. C3 (Sum): the total of the Packages values across all orders must not exceed 16. C4 (Duplicate): no two orders may have identical Distance, Packages and Rating values (allowed number: zero). The records (Order: Distance km; Packages; Rating) are: O1: 12; 3; 4. O2: 9; 5; (empty). O3: 8; 2; 5. O4: 15; 4; 3. O5: 8; 2; 5. Which constraints should the constraint test report as violated?",
+          "options": [
+            {
+              "id": "a",
+              "text": "C2 and C4"
+            },
+            {
+              "id": "b",
+              "text": "C4"
+            },
+            {
+              "id": "c",
+              "text": "C2, C3 and C4"
+            },
+            {
+              "id": "d",
+              "text": "C1, C2 and C4"
+            }
+          ],
+          "rationale": {
+            "summary": "Every constraint is applied to every record. C1: all five orders have a Distance value, so it holds. C2: a Count constraint counts non-null values; O2's Rating is empty, so there are only 4 Rating values and the minimum of 5 is violated. C3: the Packages total is 3 + 5 + 2 + 4 + 2 = 16; not exceeding 16 allows equality, so it holds. C4: O3 and O5 are identical in every value (8; 2; 5) and the allowed number is zero, so it is violated. The violated constraints are C2 and C4.",
+            "byOption": {
+              "a": "Correct. O2's empty Rating is not counted, leaving only 4 Rating values, so C2 is violated; O3 and O5 are identical, so C4 is violated. C1 (every order has a Distance) and C3 (the total is exactly 16) hold.",
+              "b": "Incorrect. This applies C2 by counting records instead of values. There are five records, but a Count constraint counts non-null values; O2's empty Rating is not counted, and 4 values do not meet the minimum of 5.",
+              "c": "Incorrect. This reads C3 as \"must be less than 16\". The Packages total is 3 + 5 + 2 + 4 + 2 = 16; not exceeding 16 allows a total equal to 16, so the Sum constraint holds.",
+              "d": "Incorrect. This counts the empty Rating cell in O2 as a breach of C1. C1 is defined for the Distance attribute only, and all five orders have a Distance value; the constraint that catches the empty Rating is C2."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ctai-0118",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 5,
+      "section": "5.1",
+      "syllabusRef": "§5.1.6",
+      "objectives": [
+        "AI-5.1.6"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "label-correctness",
+        "risk-based-prioritization",
+        "expert-review"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      },
+      "i18n": {
+        "tr": {
+          "stem": "Bir yaya tespit modeli için yol sahnesi görüntülerini etiketleyen bir ekip, uzman gözden geçirmesini ve çoklu etiketlemeyi görüntülerin yalnızca küçük bir bölümü için karşılayabiliyor. Müfredatta anlatılan risk bazlı önceliklendirmeye göre bu ek kontrol için hangi görüntüler seçilmelidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yaya sınıfının sınırına yakın belirsiz görüntüler ve yanlış etiketlenmesi emniyeti en çok etkileyecek görüntüler"
+            },
+            {
+              "id": "b",
+              "text": "Eğitilmiş modelin en yüksek güvenle sınıflandırdığı görüntüler, çünkü bunlar modelin en iyi öğrendiği örüntüleri gösterir"
+            },
+            {
+              "id": "c",
+              "text": "Tamamen rastgele seçilmiş bir görüntü örneklemi, böylece seçim tüm veri setinin etiket dağılımını aynen korur"
+            },
+            {
+              "id": "d",
+              "text": "En net ve en az belirsiz görüntüler, böylece uzmanlar etiketleme yönergelerinin işlediğini hızla teyit edebilir"
+            }
+          ],
+          "rationale": {
+            "summary": "Müfredata göre uzman gözden geçirmeleri ve çoklu etiketleme, gözden geçirme ve çoklu etiketleme için örnekleri belirleyen risk bazlı bir yaklaşımla odaklanabilir. Önceliklendirme iki şeye dayanır: yanlış etiketlenme olasılığı (hangi sınıfa ait olduğu belirsiz ya da sınıflar arasındaki sınıra yakın veri noktaları) ve uygulamanın başarısını veya emniyetini en çok etkileme olasılığı olan veri.",
+            "byOption": {
+              "a": "Doğru. Bu, müfredattaki iki önceliklendirme ölçütünü birleştirir: sınıf sınırına yakın belirsiz veri noktalarının yanlış etiketlenme olasılığı yüksektir, yayaları içeren hatalı etiketler ise emniyeti en çok etkileyecek verilerdir.",
+              "b": "Yanlış. Bu, model güven skoru analizini tersine çevirmektir. Müfredata göre eğitilmiş modelin düşük güvenle tahmin ettiği veri noktaları yanlış etiketlenmiş, belirsiz veya eğitim dağılımının dışında olabilir; yüksek güven bir risk işareti değildir.",
+              "c": "Yanlış. Bu, riski hesaba katmayan bir örneklemedir. Her görüntüyü eşit riskli sayar; risk bazlı önceliklendirme ise kontrolü yanlış etiketlenme olasılığı ve etkisi yüksek olan veri noktalarına yoğunlaştırır.",
+              "d": "Yanlış. Bu, yanlış etiketlenme olasılığı en düşük görüntüleri seçmektir. Müfredat belirsiz veri noktalarını önceliklendirir; uzman gözden geçirmelerinin yönergeleri erken aşamada netleştirmedeki değeri, kontrol bütçesinin en net görüntülere harcanmasını gerektirmez."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team labelling road-scene images for a pedestrian detection model can afford expert review and multiple annotation for only a small share of the images. Following the risk-based prioritization described in the syllabus, which images should be selected for this extra checking?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Ambiguous images near the boundary of the pedestrian class, and images whose mislabelling would most affect safety"
+            },
+            {
+              "id": "b",
+              "text": "Images that the trained model classifies with the highest confidence, because they show what the model has learned best"
+            },
+            {
+              "id": "c",
+              "text": "A purely random sample of images, so that the selection keeps the label distribution of the full dataset intact"
+            },
+            {
+              "id": "d",
+              "text": "The clearest and least ambiguous images, so that the experts can quickly confirm that the labelling guidelines work"
+            }
+          ],
+          "rationale": {
+            "summary": "According to the syllabus, expert reviews and multiple annotation can be focused using a risk-based approach to identify samples for review and multiple annotation. Prioritization rests on two things: the likelihood of mislabelling (ambiguous data points whose category is unclear or that lie near a boundary between classes) and the data most likely to impact the application's success or safety.",
+            "byOption": {
+              "a": "Correct. This combines the two prioritization criteria in the syllabus: ambiguous data points near a class boundary are the most likely to be mislabelled, and wrong labels involving pedestrians are the data most likely to impact safety.",
+              "b": "Incorrect. This inverts model confidence score analysis. According to the syllabus, data points with low prediction confidence from a trained model may be mislabelled, ambiguous or outside the training data distribution; high confidence is not a risk signal.",
+              "c": "Incorrect. This is sampling that ignores risk. It treats every image as equally risky, whereas risk-based prioritization concentrates the checking on data points with a high likelihood and impact of mislabelling.",
+              "d": "Incorrect. This picks the images least likely to be mislabelled. The syllabus prioritizes ambiguous data points; the value of expert reviews in establishing clear labelling guidelines early on does not mean spending the checking budget on the clearest images."
+            }
+          }
+        }
+      }
     }
   ]
 }

@@ -380,6 +380,195 @@
         "createdAt": "2026-10-02",
         "updatedAt": "2026-10-02"
       }
+    },
+    {
+      "id": "ctai-0128",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 7,
+      "section": "7.1",
+      "syllabusRef": "§7.1.1",
+      "objectives": [
+        "AI-7.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-development",
+        "risk-mitigation",
+        "framework-evaluation"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, MÖ geliştirme çerçevesinin eğitilen modeller için raporladığı doğruluk değerlerini yanlış hesapladığından şüpheleniyor: raporlanan değerler modellerin gerçekte ulaştığı değerlerle örtüşmeyebilir. Müfredatın MÖ geliştirme riskleri için listelediği yaklaşımlara göre bu riski azaltmak için hangisi kullanılır?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Çerçevenin kullanıcı belgelerini eksik veya belirsiz kısımlar açısından gözden geçirmek"
+            },
+            {
+              "id": "b",
+              "text": "Çerçevenin kurulumuna ve derlemesine duman testi (smoke testing) uygulamak"
+            },
+            {
+              "id": "c",
+              "text": "Çerçevenin sonuçlarını elle hazırlanmış kıyaslama değerleriyle çapraz kontrol etmek"
+            },
+            {
+              "id": "d",
+              "text": "Çerçeveyi kullanan veri bilimcilerle çerçevenin kullanılabilirlik testini yapmak"
+            }
+          ],
+          "rationale": {
+            "summary": "Çerçevenin raporladığı metriklerin yanlış hesaplanması, değerlendirmenin çerçeve tarafından hatalı uygulanması riskidir. Müfredattaki risk tablosu bu risk için çerçevenin değerlendirme kodunun gözden geçirilmesini ve çerçevenin değerlendirme sonuçlarının çapraz kontrolünü (ör. elle hazırlanmış kıyaslama değerlerine karşı) listeler; diğer seçenekler tabloda başka risklerle eşleşir.",
+            "byOption": {
+              "a": "Yanlış. Bu, çerçeve belgeleri gözden geçirmesidir; müfredat onu çerçevenin kullanıcı belgelerinin zayıf olması riskiyle eşleştirir. Belgeleri gözden geçirmek, çerçevenin metrikleri doğru hesaplayıp hesaplamadığını göstermez.",
+              "b": "Yanlış. Müfredat duman testini hatalı çerçeve kurulumu veya derlemesi riskiyle eşleştirir; çerçevenin kurulup çalıştığını hızla gösterir, raporladığı değerlerin doğru hesaplandığını değil.",
+              "c": "Doğru. Değerlendirmenin çerçeve tarafından hatalı uygulanması riski için müfredat, çerçevenin değerlendirme sonuçlarının çapraz kontrolünü (ör. elle hazırlanmış kıyaslama değerlerine karşı) ve değerlendirme kodunun gözden geçirilmesini listeler.",
+              "d": "Yanlış. Kullanılabilirlik testi, müfredatta çerçevenin kullanılabilirliğinin zayıf olması riskine karşılık gelir; çerçevenin kullanımının zor olup olmadığını ölçer, hesapladığı metriklerin doğruluğunu değil."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team suspects that its ML development framework computes the accuracy figures it reports for trained models incorrectly: the reported values may not match what the models actually achieve. According to the approaches the syllabus lists for ML development risks, which one is used to mitigate this risk?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Reviewing the framework's user documentation for missing or unclear parts"
+            },
+            {
+              "id": "b",
+              "text": "Smoke testing the framework's installation and build"
+            },
+            {
+              "id": "c",
+              "text": "Cross-checking the framework's results against manual benchmarks"
+            },
+            {
+              "id": "d",
+              "text": "Usability testing of the framework with the data scientists who use it"
+            }
+          ],
+          "rationale": {
+            "summary": "A framework that computes its reported metrics incorrectly is the risk of a defective implementation of the evaluation by the framework. The syllabus risk table lists reviews of the framework evaluation code and cross-checking the framework evaluation results (e.g. against manual benchmarks) for this risk; the other options pair with different risks.",
+            "byOption": {
+              "a": "Incorrect. This is a framework documentation review, which the syllabus pairs with poor user documentation for the framework. Reviewing the documentation does not show whether the framework computes its metrics correctly.",
+              "b": "Incorrect. The syllabus pairs smoke testing with a defective framework installation or build; it quickly shows that the framework installs and runs, not that the values it reports are computed correctly.",
+              "c": "Correct. For a defective implementation of the evaluation by the framework, the syllabus lists cross-checking the framework evaluation results (e.g. against manual benchmarks) together with reviews of the framework evaluation code.",
+              "d": "Incorrect. Usability testing is the syllabus mitigation for poor usability of the framework; it measures how hard the framework is to use, not whether the metrics it computes are right."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0129",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 7,
+      "section": "7.1",
+      "syllabusRef": "§7.1.2",
+      "objectives": [
+        "AI-7.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "deployment-testing",
+        "model-conversion-testing"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, bir MÖ modelini özgün eğitim biçiminden üretim sunucularına uygun bir dağıtım biçimine dönüştürüyor ve ardından model dönüştürme testi yapıyor. Bu test türünün neyi doğruladığını EN İYİ hangi ifade açıklar?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Dönüştürülen model dosyasının üretim ortamında sorunsuz yüklenip başlatılabildiğini"
+            },
+            {
+              "id": "b",
+              "text": "Dönüştürülen modelin kabul edilebilir doğruluğunu, tutarlı davranışını ve işletim verimliliğini koruduğunu"
+            },
+            {
+              "id": "c",
+              "text": "Dönüştürülen modelin mobil ve uç cihazlardan bulut sunucularına kadar hedeflenen her ortamda doğru çalıştığını"
+            },
+            {
+              "id": "d",
+              "text": "Dönüştürülen model dağıtımdan sonra başarısız olursa sistemin önceki kararlı modele geri dönebildiğini"
+            }
+          ],
+          "rationale": {
+            "summary": "Model dönüştürme testi, modelin eğitim biçiminden hedef üretim ortamına uygun dağıtım biçimine dönüştürüldükten sonra kabul edilebilir tahmin doğruluğunu, tutarlı davranışını ve işletim verimliliğini (ör. çıkarım hızı, bellek kullanımı) koruduğunu doğrular. Diğer seçenekler daha dar bir başlatma kontrolünü ya da başka dağıtım testi türlerini tarif eder.",
+            "byOption": {
+              "a": "Yanlış. Modelin yüklenip başlatılabilmesi gerekli ama yetersizdir; model sorunsuz yüklenip yine de daha düşük doğrulukla veya daha yavaş çalışabilir. Müfredat model dönüştürme testinin doğruluğun, davranışın ve verimliliğin korunduğunu doğruladığını söyler.",
+              "b": "Doğru. Müfredata göre model dönüştürme testi, dönüştürmeden sonra modelin kabul edilebilir tahmin doğruluğunu, tutarlı davranışını ve işletim verimliliğini (ör. çıkarım hızı, bellek kullanımı) koruduğunu doğrular.",
+              "c": "Yanlış. Bu, cihazlar arası testi tarif eder: sistemin mobil ve uç cihazlardan bulut sunucularına kadar hedeflenen dağıtım hedeflerinde doğru çalıştığını doğrular; dönüştürmeden önceki ve sonraki model karşılaştırmasıyla ilgili değildir.",
+              "d": "Yanlış. Bu, geri alma testini tarif eder: başarısız veya bozulmuş bir dağıtımdan sonra önceki kararlı ve çalışır duruma dönülebildiğini doğrular; dönüştürülen modelin performansını korumasıyla ilgili değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team converts an ML model from its original training format to a deployment format suited to its production servers, and then performs model conversion testing. Which statement BEST describes what this test type verifies?",
+          "options": [
+            {
+              "id": "a",
+              "text": "That the converted model file loads and starts without errors in the production environment"
+            },
+            {
+              "id": "b",
+              "text": "That the converted model keeps acceptable accuracy, consistent behaviour and operational efficiency"
+            },
+            {
+              "id": "c",
+              "text": "That the converted model performs correctly on every intended target, from mobile and edge devices to cloud servers"
+            },
+            {
+              "id": "d",
+              "text": "That the system can revert to the previous stable model if the converted one fails after deployment"
+            }
+          ],
+          "rationale": {
+            "summary": "Model conversion testing verifies that an ML model retains acceptable predictive accuracy, consistent behaviour and operational efficiency (e.g. inference speed, memory usage) after it is converted from its training format to a deployment format suitable for the target production environment. The other options describe a narrower start-up check or other deployment test types.",
+            "byOption": {
+              "a": "Incorrect. Loading and starting is necessary but not sufficient: a model can load without errors and still run with lower accuracy or more slowly. The syllabus says model conversion testing verifies that accuracy, behaviour and efficiency are retained.",
+              "b": "Correct. According to the syllabus, model conversion testing verifies that after conversion the model retains acceptable predictive accuracy, consistent behaviour and operational efficiency (e.g. inference speed, memory usage).",
+              "c": "Incorrect. This describes cross-device testing, which verifies that the system performs correctly across its intended deployment targets, from mobile and edge devices to cloud servers; it does not compare the model before and after conversion.",
+              "d": "Incorrect. This describes rollback testing, which verifies the ability to revert to a previously stable and operational state after a degraded or failed deployment; it does not check that the converted model keeps its performance."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
     }
   ]
 }

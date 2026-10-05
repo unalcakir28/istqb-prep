@@ -1516,6 +1516,768 @@
         "createdAt": "2026-10-02",
         "updatedAt": "2026-10-02"
       }
+    },
+    {
+      "id": "ctai-0098",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 3,
+      "section": "3.1",
+      "syllabusRef": "§3.1.1",
+      "objectives": [
+        "AI-3.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-forms",
+        "reinforcement-learning",
+        "rl-challenges"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, bir ofis ısıtma sistemi için bir kontrolcü geliştiriyor. Doğru ayarlardan oluşan bir veri seti yoktur. Kontrolcü binada ayarlar dener; odalar düşük enerji tüketimiyle konforlu kaldığında olumlu, aksi durumda olumsuz bir puan alır. Müfredata göre, aşağıdakilerden hangisi burada kullanılan MÖ biçiminin bir zorluğudur?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Eylemin geri bildirimini belirleyen ödül fonksiyonunu tasarlamak"
+            },
+            {
+              "id": "b",
+              "text": "Kaydedilen her girdiyi doğru ısıtma ayarıyla etiketlemek"
+            },
+            {
+              "id": "c",
+              "text": "Her okumanın atanacağı sınıfları önceden tanımlamak"
+            },
+            {
+              "id": "d",
+              "text": "Kaydedilen sensör okumalarını benzerliklerine göre gruplara ayırmak"
+            }
+          ],
+          "rationale": {
+            "summary": "Veri seti olmadan, eylemlerinin sonucuna olumlu ya da olumsuz geri bildirim alarak öğrenen kontrolcü takviyeli öğrenme kullanır; müfredat bu biçimin zorlukları olarak ortamı kurmayı, ödül fonksiyonunu tasarlamayı ve en iyi stratejiyi seçmeyi sayar.",
+            "byOption": {
+              "a": "Doğru. Kontrolcü, eylemlerinin sonucuna göre ödül ve ceza alarak öğrenen akıllı bir ajan gibi davranır; bu takviyeli öğrenmedir. Müfredat, ödül fonksiyonunu tasarlamayı bu biçimin zorlukları arasında, ortamı kurmak ve istenen hedefe ulaşmak için en iyi stratejiyi seçmekle birlikte sayar.",
+              "b": "Yanlış. Her girdiyi karşılık gelen bir çıktı etiketiyle eşleştirmek denetimli öğrenmenin ihtiyacıdır: model, girdiden çıktıya eşlemeyi etiketli eğitim verisinden öğrenir. Kontrolcünün doğru ayarlardan oluşan bir veri seti yoktur; deneyimden öğrenir.",
+              "c": "Yanlış. Girdileri önceden tanımlı sınıflara atamak sınıflandırmadır; etiketli veriyle eğitilen bir denetimli öğrenme görevidir. Kontrolcü okumaları sınıflara ayırmaz; eylemler dener ve sonuçlarına gelen geri bildirimden öğrenir.",
+              "d": "Yanlış. Veri noktalarını benzerliklerine göre gruplamak kümelemedir; var olan etiketsiz bir veri seti üzerinde yapılan bir denetimsiz öğrenme görevidir. Kontrolcü veri gruplamaz; ortamıyla etkileşerek öğrenir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team builds a controller for an office heating system. There is no dataset of correct settings. The controller tries settings in the building and receives a positive score when the rooms stay comfortable with low energy use, and a negative score otherwise. According to the syllabus, which of the following is a challenge of the form of ML used here?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Designing the reward function that sets the feedback for an action"
+            },
+            {
+              "id": "b",
+              "text": "Labeling each recorded set of inputs with its correct heating setting"
+            },
+            {
+              "id": "c",
+              "text": "Defining in advance the classes to which each reading is assigned"
+            },
+            {
+              "id": "d",
+              "text": "Grouping the recorded sensor readings into segments by similarity"
+            }
+          ],
+          "rationale": {
+            "summary": "With no dataset and positive or negative feedback on the outcome of its actions, the controller uses reinforcement learning; the syllabus names setting up the environment, designing the reward function and selecting the best strategy as its challenges.",
+            "byOption": {
+              "a": "Correct. The controller acts as an intelligent agent that learns from rewards and penalties for the outcome of its actions, so this is reinforcement learning. The syllabus lists designing the reward function among its challenges, together with setting up the environment and selecting the best strategy to meet the desired goal.",
+              "b": "Incorrect. Labeling each set of inputs with a corresponding output label is what supervised learning needs: the model learns the mapping from labeled training data. The controller has no dataset of correct settings; it learns from experience.",
+              "c": "Incorrect. Assigning inputs to predefined classes is classification, a supervised learning task trained on labeled data. The controller does not sort readings into classes; it tries actions and learns from the feedback on their outcome.",
+              "d": "Incorrect. Grouping data points by similarity is clustering, an unsupervised learning task performed on an existing unlabeled dataset. The controller is not grouping data; it learns by interacting with its environment."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0099",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 3,
+      "section": "3.1",
+      "syllabusRef": "§3.1.2",
+      "objectives": [
+        "AI-3.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "ml-workflow",
+        "deploy-the-model"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir model \"modeli test et\" etkinliğini geçmiştir. Ekip ardından modeli, veri hattıyla birlikte, bir araçtaki gömülü bir cihazda çalışabilecek şekilde yeniden mühendislikten geçirir. MÖ iş akışına göre, model kullanıma alınmadan ÖNCE bu model için hangi adım gereklidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Doğrulama veri setiyle değerlendirmeyi yeniden yapmak ve hiperparametrelerini yeniden ayarlamak"
+            },
+            {
+              "id": "b",
+              "text": "Dağıtılan modeli, kabul kriterlerini hâlâ karşıladığını doğrulamak için yeniden test etmek"
+            },
+            {
+              "id": "c",
+              "text": "Modeli yeni işletim verisiyle yeniden eğitmek ve eski modelle A/B testi yaparak karşılaştırmak"
+            },
+            {
+              "id": "d",
+              "text": "Bağımsız test veri seti kriterleri zaten doğruladığı için modeli doğrudan kullanıma almak"
+            }
+          ],
+          "rationale": {
+            "summary": "Model üretimi ve testinden sonra model genellikle veri hattıyla birlikte dağıtım için yeniden mühendislikten geçirilir ve dağıtılan bu model, kabul kriterlerini hâlâ karşıladığını doğrulamak için test edilir.",
+            "byOption": {
+              "a": "Yanlış. Modeli doğrulama veri setiyle değerlendirmek ve hiperparametrelerini ayarlamak, model üretiminin \"modeli değerlendir\" ve \"modeli ayarla\" etkinlikleridir; model test edilmeden önce gelirler. İş akışının dağıtım için yeniden mühendislikten sonra istediği kontrol bunlar değildir.",
+              "b": "Doğru. İş akışına göre \"model üretimi ve testi\" tamamlandığında ayarlanmış model genellikle veri hattıyla birlikte dağıtım için yeniden mühendislikten geçirilir ve yeniden mühendislikten geçirilmiş dağıtılan model, kabul kriterlerini hâlâ karşıladığını doğrulamak için test edilir.",
+              "c": "Yanlış. Yeni verilerle yeniden eğitmek ve en son modeli var olan modelle bir tür A/B testiyle karşılaştırmak, model işletimde kullanılırken kayma fark edildiğinde yapılan \"modeli izle ve ayarla\" etkinliğine aittir. Bu model henüz kullanıma alınmamıştır.",
+              "d": "Yanlış. Bu seçenek, bağımsız test veri setinin sonuçları gelince işin bittiğini varsayar. İş akışı orada bitmez: yeniden mühendislikten geçirilmiş dağıtılan model, kabul kriterlerini hâlâ karşıladığını doğrulamak için yeniden test edilir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A model has passed the \"test the model\" activity. The team then re-engineers it, together with its data pipeline, so that it can run on an embedded device in a vehicle. According to the ML workflow, which step is required for this model BEFORE it is put into use?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Re-running the evaluation on the validation dataset and re-tuning its hyperparameters"
+            },
+            {
+              "id": "b",
+              "text": "Testing the deployed model again to verify that it still meets its acceptance criteria"
+            },
+            {
+              "id": "c",
+              "text": "Retraining it on new operational data and comparing it with the old one by A/B testing"
+            },
+            {
+              "id": "d",
+              "text": "Releasing it directly, as the independent test dataset already verified the criteria"
+            }
+          ],
+          "rationale": {
+            "summary": "After model generation and test, the model is typically re-engineered for deployment with its data pipeline, and the re-engineered deployed model is tested to verify that it still meets its acceptance criteria.",
+            "byOption": {
+              "a": "Incorrect. Evaluating the model on the validation dataset and adjusting its hyperparameters are the \"evaluate the model\" and \"tune the model\" activities of model generation, which come before the model is tested. They are not the check the workflow calls for after re-engineering for deployment.",
+              "b": "Correct. The workflow states that once model generation and test is complete, the tuned model is typically re-engineered for deployment along with its data pipeline, and that the re-engineered deployed model is tested to verify that it still meets its acceptance criteria.",
+              "c": "Incorrect. Retraining with new data and comparing the latest model with the existing one through a form of A/B testing belong to \"monitor & tune the model\", when drift is found while the model is in operational use. This model has not been put into use yet.",
+              "d": "Incorrect. This treats the job as finished once the independent test dataset results are in. The workflow does not end there: the re-engineered deployed model is tested again to verify that it still meets its acceptance criteria."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0100",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 3,
+      "section": "3.1",
+      "syllabusRef": "§3.1.4",
+      "objectives": [
+        "AI-3.1.4"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "fine-tuning",
+        "pretrained-model",
+        "task-similarity"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir kuruluşun, trafik kamerası görüntülerinde kara taşıtlarını (otomobil, kamyon, otobüs) sınıflandıran önceden eğitilmiş bir sinir ağı vardır. Kuruluş bu ağı ince ayar yaparak yeni bir görevde yeniden kullanmak istiyor. İnce ayarın hangi yeni görevde etkili olma olasılığı EN YÜKSEKTİR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kaydedilmiş sesli aramalardan sürücülerin bölgesel aksanını tanımak"
+            },
+            {
+              "id": "b",
+              "text": "Sensör kayıtlarından gelecek haftanın trafik hacmini sayı olarak tahmin etmek"
+            },
+            {
+              "id": "c",
+              "text": "Aynı trafik kameralarının görüntülerinde bisikletleri türüne göre sınıflandırmak"
+            },
+            {
+              "id": "d",
+              "text": "Tablo biçimindeki işlem kayıtlarından sahte geçiş ücreti ödemelerini tespit etmek"
+            }
+          ],
+          "rationale": {
+            "summary": "İnce ayarın başarısı, özgün görev ile yeni görev arasındaki benzerliğe bağlıdır; aynı kamera görüntülerinde başka bir yol kullanıcısını sınıflandırmak küçük bir farktır, girdi türünün ya da görev türünün değişmesi ise büyük bir farktır.",
+            "byOption": {
+              "a": "Yanlış. Görüntülerden konuşma sesine geçmek görevler arasında büyük bir farktır. Müfredat, bir görüntü sınıflandırıcısını konuşma aksanlarına uyarlamayı, fark daha büyük olduğu için daha az etkili kalan ince ayar örneği olarak verir.",
+              "b": "Yanlış. Bu görev trafik konusunu korur ama görevi değiştirir: sürekli bir sayısal değeri tahmin etmek sınıflandırma değil MÖ regresyonudur ve girdi görüntü değil sensör kayıtlarıdır. Belirleyici olan konu alanının değil görevlerin benzerliğidir; burada fark büyüktür.",
+              "c": "Doğru. İnce ayarın başarısı özgün görev ile yeni görev arasındaki benzerliğe bağlıdır ve küçük farklar oldukça etkili bir ince ayar sağlayabilir. Aynı tür kamera görüntülerinde bisiklet türlerini sınıflandırmak, taşıt türlerini sınıflandırmaktan küçük bir adımdır; bir kedi ırkı sınıflandırıcısını köpek ırklarına uyarlamaya benzer.",
+              "d": "Yanlış. Sahtecilik tespiti de bir sınıflandırma görevidir, ancak görüntüler yerine tablo biçimindeki kayıtlar üzerindedir. \"Sınıflandırma\" adını paylaşmak iki görevi benzer yapmaz: ağın işlemeyi öğrendiği veri tamamen farklıdır, dolayısıyla fark büyüktür."
+            }
+          }
+        },
+        "en": {
+          "stem": "An organization owns a pretrained neural network that classifies road vehicles (cars, trucks, buses) in traffic-camera images. It wants to reuse the network for a new task by fine-tuning it. For which new task is fine-tuning MOST likely to be effective?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Recognizing the regional accent of drivers from recorded voice calls"
+            },
+            {
+              "id": "b",
+              "text": "Forecasting next week's traffic volume as a number from sensor logs"
+            },
+            {
+              "id": "c",
+              "text": "Classifying bicycles by type in images from the same traffic cameras"
+            },
+            {
+              "id": "d",
+              "text": "Detecting fraudulent toll payments from tabular transaction records"
+            }
+          ],
+          "rationale": {
+            "summary": "Fine-tuning success depends on the similarity between the original and the new task; classifying another kind of road user in the same camera images is a small difference, while a change of input type or of task type is a large one.",
+            "byOption": {
+              "a": "Incorrect. Moving from images to spoken audio is a large difference between the tasks. The syllabus gives adapting an image classifier to spoken accents as an example of fine-tuning that is less effective because of the larger difference.",
+              "b": "Incorrect. This keeps the traffic subject but changes the task: predicting a continuous numerical value is ML regression rather than classification, and the input is sensor logs rather than images. What matters is the similarity of the tasks, not of the subject area, and here the difference is large.",
+              "c": "Correct. Fine-tuning success depends on the similarity between the original and new tasks, and small differences can lead to highly effective fine-tuning. Classifying bicycle types in the same kind of camera images is a small step from classifying vehicle types, much like adapting a cat breed classifier to dog breeds.",
+              "d": "Incorrect. Fraud detection is also a classification task, but on tabular records instead of images. Sharing the name \"classification\" does not make two tasks similar: the data the network learned to handle is entirely different, so the difference is large."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0101",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 3,
+      "section": "3.2",
+      "syllabusRef": "§3.2.1",
+      "objectives": [
+        "AI-3.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "data-preparation",
+        "data-preprocessing",
+        "data-cleaning"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir üretim hattından gelen saatlik okumalardan oluşan bir veri setinde boşluklar vardır: bazı sıcaklık değerleri hiç kaydedilmemiştir. Bir veri mühendisi, eğitimden önce her boşluğu o sensörün kaydedilmiş sıcaklıklarının medyanıyla doldurur. Bu hangi veri hazırlığı etkinliğidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Veri edinimi, veriyi gerçek zamanlı sensörler gibi kaynaklardan toplama"
+            },
+            {
+              "id": "b",
+              "text": "Öznitelik mühendisliği, bilgilendirici ve birbirini tekrarlamayan öznitelikleri çıkarma"
+            },
+            {
+              "id": "c",
+              "text": "Veri ön işleme, verinin eksiksizliğini korumak için veriyi temizleme"
+            },
+            {
+              "id": "d",
+              "text": "Keşifsel veri analizi, verideki anomalileri keşfetme"
+            }
+          ],
+          "rationale": {
+            "summary": "Eksik değerleri ortalama, medyan ya da mod ile doldurmak, verinin eksiksizliğini koruyan bir veri ön işleme etkinliği olan veri temizlemenin parçasıdır.",
+            "byOption": {
+              "a": "Yanlış. Veri edinimi; ilgili veri türlerini belirlemeyi, veriyi veri tabanları, API'ler ya da gerçek zamanlı sensörler gibi kaynaklardan toplamayı ve denetimli öğrenme için veriyi etiketlemeyi kapsar. Okumalar zaten toplanmıştır; boşlukları doldurmak, veri setinde zaten bulunan veri üzerinde yapılan bir iştir.",
+              "b": "Yanlış. Öznitelik mühendisliği, öznitelikleri MÖ model performansına katkılarına göre seçer ve mevcut özniteliklerden bilgilendirici, birbirini tekrarlamayan bir alt küme çıkarır. Eksik değerleri doldurmak öznitelik seçmez ya da azaltmaz: sıcaklık özniteliği yerinde kalır, yalnızca boşlukları doldurulur.",
+              "c": "Doğru. Veriyi temizlemek veri ön işlemenin parçasıdır ve verinin eksiksizliğini korumak için eksik değerleri ortalama, medyan ya da mod gibi tekniklerle doldurmayı içerir. Her boşluğu sensörün medyanıyla doldurmak tam olarak budur.",
+              "d": "Yanlış. Keşifsel veri analizi, veri hakkında içgörü sağlamak için veri hazırlığıyla paralel yürütülür: verideki eğilimleri, örüntüleri ve anomalileri keşfeder ve veriyi görselleştirir. Değerlerin eksik olduğunu ortaya çıkarabilir, ancak onları doldurmaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "A dataset of hourly readings from a production line has gaps: some temperature values were never recorded. Before training, a data engineer fills each gap with the median of that sensor's recorded temperatures. Which data preparation activity is this?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Data acquisition, gathering data from sources such as real-time sensors"
+            },
+            {
+              "id": "b",
+              "text": "Feature engineering, extracting informative and non-redundant features"
+            },
+            {
+              "id": "c",
+              "text": "Data preprocessing, cleaning the data to maintain its completeness"
+            },
+            {
+              "id": "d",
+              "text": "Exploratory data analysis, discovering anomalies in the data"
+            }
+          ],
+          "rationale": {
+            "summary": "Imputing missing values with the mean, median or mode is part of cleaning the data, a data preprocessing activity that maintains data completeness.",
+            "byOption": {
+              "a": "Incorrect. Data acquisition covers identifying relevant data types, gathering data from sources such as databases, APIs or real-time sensors, and labeling data for supervised learning. The readings have already been gathered; filling the gaps works on data that is already in the dataset.",
+              "b": "Incorrect. Feature engineering selects relevant features by their contribution to ML model performance and extracts a subset of informative, non-redundant features from existing ones. Filling missing values neither selects nor reduces features: the temperature feature stays, only its gaps are filled.",
+              "c": "Correct. Cleaning the data is part of data preprocessing, and it includes imputing missing values using techniques like the mean, median or mode to maintain data completeness. Replacing each gap with the sensor's median is exactly this.",
+              "d": "Incorrect. Exploratory data analysis is carried out in parallel with data preparation to provide insights into the data: discovering trends, patterns and anomalies and visualizing the data. It may reveal that values are missing, but it does not fill them in."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0102",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 3,
+      "section": "3.2",
+      "syllabusRef": "§3.2.3",
+      "objectives": [
+        "AI-3.2.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "datasets",
+        "k-fold-cross-validation",
+        "hold-out-dataset"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Nadir bir hastalık için geliştirilen bir sınıflandırıcının verisi o kadar kıttır ki ekip ayrılmış bir test seti ayıramaz. Ekip tüm veri üzerinde 10-katlı çapraz doğrulama uygular, sonuçları hiperparametreleri ayarlamak için kullanır ve on katın ortalama F1 skorunu modelin beklenen performansı olarak raporlar. Raporlanan değerle ilgili hangi ifade DOĞRUDUR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yanlı değildir, çünkü her kat doğrulama seti olarak bir kez kullanılmıştır"
+            },
+            {
+              "id": "b",
+              "text": "İyimser yanlıdır ve yanlı olmayan bir performans tahmini işlevi göremez"
+            },
+            {
+              "id": "c",
+              "text": "Kötümser yanlıdır, çünkü her turda model yalnızca dokuz katla eğitilir"
+            },
+            {
+              "id": "d",
+              "text": "Yalnızca k, 10 yerine tam olarak 5 seçilirse yanlı olmayan bir tahmindir"
+            }
+          ],
+          "rationale": {
+            "summary": "Veri aşırı kıt olduğu için ayrılmış bir test seti mümkün değilse, çapraz doğrulamanın ortalama performansı iyimser yanlıdır; yanlı olmayan değerlendirme, nihai modelin ayrılmış test setinde bir kez değerlendirilmesinden gelir.",
+            "byOption": {
+              "a": "Yanlış. Her katın bir kez doğrulama seti olması k-katlı çapraz doğrulamanın işleyişidir ve katların ortalaması tek bir bölmeden daha güvenilir bir tahmin verir. Bu yanlılığı ortadan kaldırmaz: müfredata göre ayrılmış test seti olmadan çapraz doğrulamanın ortalama performansı iyimser yanlıdır.",
+              "b": "Doğru. Müfredata göre aşırı veri kıtlığı nedeniyle ayrılmış bir test seti mümkün değilse, çapraz doğrulamanın ortalama performansı iyimser yanlıdır ve yanlı olmayan bir tahmin işlevi göremez. Nihai ve yanlı olmayan değerlendirme, nihai modelin ayrılmış test setinde bir kez değerlendirilmesinden gelir.",
+              "c": "Yanlış. Yanlılığın yönü ters verilmiştir. Müfredata göre aşırı veri kıtlığı nedeniyle ayrılmış bir test seti mümkün değilse çapraz doğrulamanın ortalama performansı iyimser yanlıdır: modelin performansını olduğundan düşük değil, yüksek gösterir. Her turda k-1 kat üzerinde eğitmek, k-katlı çapraz doğrulamanın olağan işleyişidir.",
+              "d": "Yanlış. k, kullanıcının belirlediği bir tam sayıdır ve genellikle 5 ya da 10 seçilir; iki değer de çapraz doğrulama ortalamasını yanlı olmayan bir tahmine dönüştürmez. Eksik olan belirli bir k değeri değil, ayrılmış test setidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "Data for a rare-disease classifier is so scarce that the team cannot set aside a hold-out test set. It runs 10-fold cross-validation on all the data, uses the results to tune the hyperparameters, and reports the average F1-score of the ten folds as the model's expected performance. Which statement about the reported figure is CORRECT?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It is an unbiased estimate, because every fold served once as the validation set"
+            },
+            {
+              "id": "b",
+              "text": "It is optimistically biased and cannot serve as an unbiased performance estimate"
+            },
+            {
+              "id": "c",
+              "text": "It is pessimistically biased, because each round trains on only nine of the ten folds"
+            },
+            {
+              "id": "d",
+              "text": "It is a valid unbiased estimate only if k is set to exactly 5 rather than to 10"
+            }
+          ],
+          "rationale": {
+            "summary": "When extreme data scarcity makes a hold-out test set infeasible, the average cross-validation performance is optimistically biased; the unbiased assessment comes from evaluating the final model once on a hold-out test set.",
+            "byOption": {
+              "a": "Incorrect. Each fold serving once as the validation set is how k-fold cross-validation works, and averaging the folds gives a more reliable estimate than a single split. It does not remove the bias: the syllabus states that without a hold-out test set the average cross-validation performance is optimistically biased.",
+              "b": "Correct. The syllabus states that if a hold-out test set is not feasible due to extreme data scarcity, the average cross-validation performance is optimistically biased and cannot serve as an unbiased estimate. The final, unbiased assessment comes from evaluating the final model once on a hold-out test set.",
+              "c": "Incorrect. The direction of the bias is wrong. The syllabus states that when a hold-out test set is not feasible due to extreme data scarcity, the average cross-validation performance is optimistically biased: it overstates the model's performance rather than understating it. Training each round on k-1 folds is simply how k-fold cross-validation works.",
+              "d": "Incorrect. k is a user-specified integer, commonly 5 or 10, and neither value turns the cross-validation average into an unbiased estimate. What is missing is the hold-out test set, not a particular value of k."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0103",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 3,
+      "section": "3.3",
+      "syllabusRef": "§3.3.1",
+      "objectives": [
+        "AI-3.3.1"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 2,
+      "difficulty": 3,
+      "tags": [
+        "confusion-matrix",
+        "recall",
+        "metrics",
+        "matrix-orientation"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir görüntü modeli, bir üretim hattındaki kaynak dikişlerini denetler; pozitif sınıf \"hatalı\"dır. 250 test görüntüsündeki sonuçlar, satırlarda gerçek sınıf ve sütunlarda tahmin edilen sınıf olacak şekilde raporlanmıştır: gerçekte hatalı olan dikişlerin 45'i hatalı, 15'i sağlam olarak tahmin edilmiştir; gerçekte sağlam olan dikişlerin 5'i hatalı, 185'i sağlam olarak tahmin edilmiştir. Fabrika müdürü şunu soruyor: gerçekten hatalı olan dikişlerin ne kadarını model yakalıyor? Bu soruyu hangi metrik yanıtlar ve değeri nedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Hassasiyet, %90"
+            },
+            {
+              "id": "b",
+              "text": "Hatırlama, %90"
+            },
+            {
+              "id": "c",
+              "text": "Doğruluk, %92"
+            },
+            {
+              "id": "d",
+              "text": "Hatırlama, %75"
+            }
+          ],
+          "rationale": {
+            "summary": "Hatırlama = TP / (TP + FN) = 45 / (45 + 15) = %75. Gerçek sınıf satırlarda olduğundan FN, sağlam tahmin edilen 15 gerçekten hatalı dikiştir; 45 / 50 = %90 hassasiyet, 230 / 250 = %92 doğruluktur.",
+            "byOption": {
+              "a": "Yanlış. Hassasiyet = TP / (TP + FP) = 45 / (45 + 5) = 45 / 50 = %90. Pozitif tahminlerden ne kadar emin olunabileceğini, yani hatalı diye işaretlenen dikişlerin ne kadarının gerçekten hatalı olduğunu ölçer. Müdürün tam olarak sorduğu, sağlam tahmin edilen 15 hatalı dikişi hesaba katmaz.",
+              "b": "Yanlış. Metrik doğru ama hesap yanlış: %90, 45 / (45 + 5) işlemidir; gerçekten hatalı olan dikişlere değil, hatalı tahmin edilen dikişlere böler. Bu hassasiyet formülüdür; sayılar eksenler değiştirilmeden müfredattaki şeklin düzenine (tahmin edilen değerler satırlarda) yerleştirildiğinde de aynı %90 çıkar ve kaçırılan 15 dikiş yanlış pozitif sayılır.",
+              "c": "Yanlış. Doğruluk = (TP + TN) / (TP + TN + FP + FN) = (45 + 185) / 250 = 230 / 250 = %92; tüm doğru sınıflandırmaların yüzdesidir. Doğru şekilde geçirilen 185 sağlam dikiş bu değeri belirler ve 60 hatalı dikişten 15'inin kaçırıldığını gizler.",
+              "d": "Doğru. Gerçekten hatalı olan dikişlerden modelin yakaladığı pay hatırlamadır = TP / (TP + FN). Gerçek sınıf satırlarda olduğundan TP = 45 (gerçekte hatalı, hatalı tahmin edilen) ve FN = 15 (gerçekte hatalı, sağlam tahmin edilen); dolayısıyla hatırlama = 45 / (45 + 15) = 45 / 60 = %75. 15 yanlış negatif, kaçırılan hatalı dikişlerdir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A vision model inspects weld seams on a production line; the positive class is \"defective\". The results on 250 test images are reported with the actual class in rows and the predicted class in columns: of the seams that are actually defective, 45 were predicted defective and 15 good; of the seams that are actually good, 5 were predicted defective and 185 good. The plant manager asks: of the seams that really are defective, what share does the model catch? Which metric answers this question, and what is its value?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Precision, 90%"
+            },
+            {
+              "id": "b",
+              "text": "Recall, 90%"
+            },
+            {
+              "id": "c",
+              "text": "Accuracy, 92%"
+            },
+            {
+              "id": "d",
+              "text": "Recall, 75%"
+            }
+          ],
+          "rationale": {
+            "summary": "Recall = TP / (TP + FN) = 45 / (45 + 15) = 75%. With the actual class in rows, FN is the 15 actually defective seams predicted good; 45 / 50 = 90% is precision and 230 / 250 = 92% is accuracy.",
+            "byOption": {
+              "a": "Incorrect. Precision = TP / (TP + FP) = 45 / (45 + 5) = 45 / 50 = 90%. It measures how sure one can be about positive predictions, that is, what share of the seams flagged as defective really are defective. It leaves out the 15 defective seams predicted good, which are exactly what the manager is asking about.",
+              "b": "Incorrect. The metric is right but the calculation is not: 90% is 45 / (45 + 5), which divides by the seams predicted defective instead of the seams that are actually defective. That is the precision formula; the same 90% also comes out if the counts are placed in the syllabus figure's layout (predicted values in rows) without swapping the axes, which turns the 15 missed seams into false positives.",
+              "c": "Incorrect. Accuracy = (TP + TN) / (TP + TN + FP + FN) = (45 + 185) / 250 = 230 / 250 = 92%, the percentage of all correct classifications. It is dominated by the 185 good seams correctly passed and hides that 15 of the 60 defective seams were missed.",
+              "d": "Correct. The share of actually defective seams that the model catches is recall = TP / (TP + FN). With the actual class in rows, TP = 45 (actually defective, predicted defective) and FN = 15 (actually defective, predicted good), so recall = 45 / (45 + 15) = 45 / 60 = 75%. The 15 false negatives are the defective seams that were missed."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0104",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 3,
+      "section": "3.4",
+      "syllabusRef": "§3.4.1",
+      "objectives": [
+        "AI-3.4.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "neural-networks",
+        "dnn-structure",
+        "training",
+        "epoch"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test uzmanı, görüntü tanıma için tam bağlantılı bir derin sinir ağını hem eğitimden önce hem de eğitim sırasında gözlemler. Hangi ifade böyle bir ağın yapısı ve eğitilme biçimiyle TUTARLIDIR?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Her gizli katmanda girdi katmanıyla aynı sayıda nöron bulunmak zorundadır"
+            },
+            {
+              "id": "b",
+              "text": "Eğitimin başında ağırlıklar ve yanlılık değerleri küçük rastgele değerler taşır"
+            },
+            {
+              "id": "c",
+              "text": "Bir dönem (epoch), tek bir nöronun aktivasyon değerini sonraki katmana iletmesidir"
+            },
+            {
+              "id": "d",
+              "text": "Çıktı katmanı, kameranın piksel değerlerini ağın girdileri olarak alır"
+            }
+          ],
+          "rationale": {
+            "summary": "Ağırlıklar ve yanlılık değerleri genellikle küçük rastgele değerlerle başlar (yanlılık değerleri bazen sıfırla); katmanların boyutu farklı olabilir, bir dönem eğitim veri setinden bir geçiştir ve girdileri çıktı katmanı değil girdi katmanı alır.",
+            "byOption": {
+              "a": "Yanlış. Tam bağlantılı ağlarda bir katmandaki her nöron sonraki katmandaki her nörona bağlıdır, ancak art arda gelen katmanlarda farklı sayıda nöron bulunabilir. Tam bağlantı, gizli katmanların boyutunu girdi katmanına eşit olmaya zorlamaz.",
+              "b": "Doğru. Eğitimin başında nöronları bağlayan ağırlıklar ve her nöronun yanlılık değeri genellikle küçük rastgele değerlerle başlatılır; yanlılık değerleri bazen sıfıra ayarlanır. Bu değerler daha sonra kayıp (loss) ağ boyunca geri beslendikçe kademeli olarak ayarlanır.",
+              "c": "Yanlış. Bir dönem (epoch), eğitim veri setinden yapılan her bir geçiştir. Bir nöronun aktivasyon değerini ileri iletmesi, böyle bir geçiş içinde bilgiyi girdi nöronlarından çıktı nöronlarına taşıyan hesaplamanın bir parçasıdır.",
+              "d": "Yanlış. Girdileri, örneğin bir kameradan gelen piksel değerlerini alan girdi katmanıdır. Çıktı katmanı sonuçları dış dünyaya verir; örneğin girdi görüntüsünün bir kedi olma olasılığını gösteren bir değer."
+            }
+          }
+        },
+        "en": {
+          "stem": "A tester observes a fully connected deep neural network for image recognition, both before and during its training. Which statement is CONSISTENT with how such a network is structured and trained?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Each hidden layer must have the same number of neurons as the input layer"
+            },
+            {
+              "id": "b",
+              "text": "At the start of training, the weights and biases hold small random values"
+            },
+            {
+              "id": "c",
+              "text": "One epoch is a single neuron passing its activation value to the next layer"
+            },
+            {
+              "id": "d",
+              "text": "The output layer receives the camera's pixel values as the network's inputs"
+            }
+          ],
+          "rationale": {
+            "summary": "Weights and biases typically start as small random values (biases sometimes zero); layers may differ in size, an epoch is a pass through the training dataset, and the input layer, not the output layer, receives the inputs.",
+            "byOption": {
+              "a": "Incorrect. In fully connected networks each neuron in one layer is connected to each neuron in the next layer, but there may be different numbers of neurons in each successive layer. Full connection does not force the hidden layers to match the input layer in size.",
+              "b": "Correct. At the start of training the weights connecting neurons and each neuron's bias value are typically initialized to small random values, with biases sometimes set to zero. They are then gradually adjusted as the error (loss) is fed back through the network.",
+              "c": "Incorrect. An epoch is each pass through the training dataset. A neuron passing its activation value onward is part of the computation that carries information from the input neurons to the output neurons within such a pass.",
+              "d": "Incorrect. It is the input layer that receives the inputs, for example pixel values from a camera. The output layer provides results to the outside world, such as a value indicating the likelihood that the input image is of a cat."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0105",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 3,
+      "section": "3.4",
+      "syllabusRef": "§3.4.3",
+      "objectives": [
+        "AI-3.4.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "neural-networks",
+        "coverage",
+        "neuron-coverage",
+        "untested-areas"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir trafik işareti sınıflandırıcısı için nöron kapsamını ölçen bir test uzmanı, bir gizli katmandaki nöronların test sırasında hiçbir zaman eşiği aşmadığını görür. Müfredata göre EN İYİ yanıt hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Ağın az keşfedilmiş bu bölümünü çalıştırmayı amaçlayan ek test girdileri tasarlamak"
+            },
+            {
+              "id": "b",
+              "text": "Bu nöronları kaldırmak, çünkü test sırasında etkinleşmeyen bir nöron hata gizleyemez"
+            },
+            {
+              "id": "c",
+              "text": "Sonucu kabul etmek, çünkü etkinleşen nöronlar her testte doğru çıktılar vermiştir"
+            },
+            {
+              "id": "d",
+              "text": "Bu nöronlar kapsanmış sayılana dek eşiği düşürmek ve daha yüksek kapsamı raporlamak"
+            }
+          ],
+          "rationale": {
+            "summary": "Kapsam ölçümleri asıl olarak ağın test edilmemiş bölgelerini gösterdiği için yararlıdır; hiç etkinleşmeyen bir katman ilgili karar sınırlarını şüpheli kılar, bu yüzden test uzmanları onu çalıştıracak ek test girdileri tasarlar.",
+            "byOption": {
+              "a": "Doğru. Kapsam ölçümleri asıl olarak modelin test edilmemiş kalan ve hataları ya da öğrenilmemiş davranışları gizleyebilecek bölgelerini göstererek yardımcı olur. Bazı nöronlar ya da katmanlar test sırasında hiç etkinleşmiyorsa ilgili karar sınırlarındaki performans şüpheli olabilir; bu yüzden test uzmanları ağın az keşfedilmiş bölümlerini çalıştıracak ek test girdileri ya da test koşulları tasarlar.",
+              "b": "Yanlış. Müfredat bunun tersini söyler: modelin test edilmemiş kalan bölgeleri hataları ya da öğrenilmemiş davranışları gizleyebilir. Test sırasında hiç etkinleşmeyen bir katman, testteki bir boşluktur; o katmanın zararsız olduğunun kanıtı değildir.",
+              "c": "Yanlış. Etkinleşen bölümlerin doğru çıktılar vermesi, hiç çalıştırılmamış katman hakkında bir şey söylemez; o katmanla ilgili karar sınırları şüpheli kalır. Yapısal kapsam yüksek olduğu yerde bile iyi genellemeyi garanti etmez, çünkü ağ yanlış nedenlerle doğru aktivasyonlar üretebilir.",
+              "d": "Yanlış. Nöron kapsamı, çıktısı belirli bir eşiği aşan nöronları sayar; eşiği düşürmek testlerin neyi çalıştırdığını değil ölçümün nasıl sayıldığını değiştirir. Katman eskisi kadar test edilmemiş kalır; ölçümün değeri, nerede ek test girdilerine ihtiyaç olduğunu göstermesindedir."
+            }
+          }
+        },
+        "en": {
+          "stem": "While measuring neuron coverage for a traffic-sign classifier, a tester finds that the neurons of one hidden layer never exceed the threshold during testing. According to the syllabus, which response is BEST?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Design additional test inputs aimed at exercising this underexplored part of the network"
+            },
+            {
+              "id": "b",
+              "text": "Remove those neurons, as a neuron that does not activate during testing cannot hide defects"
+            },
+            {
+              "id": "c",
+              "text": "Accept the result, since the neurons that did activate gave correct outputs in every test"
+            },
+            {
+              "id": "d",
+              "text": "Lower the threshold until those neurons count as covered, and report the higher coverage"
+            }
+          ],
+          "rationale": {
+            "summary": "Coverage measures are useful mainly because they reveal untested areas of the network; a layer that never activates makes the related decision boundaries questionable, so testers design additional test inputs to exercise it.",
+            "byOption": {
+              "a": "Correct. Coverage measures help mainly by revealing areas of the model that remain untested and may hide defects or unlearned behaviors. If certain neurons or layers never activate during testing, the model's performance in the related decision boundaries might be questionable, so testers design additional test inputs or test conditions to exercise the underexplored parts of the network.",
+              "b": "Incorrect. The syllabus says the opposite: areas of the model that remain untested may potentially hide defects or unlearned behaviors. A layer that never activates under test is a gap in the testing, not evidence that the layer is harmless.",
+              "c": "Incorrect. Correct outputs from the parts that did activate say nothing about the layer that was never exercised, whose related decision boundaries remain questionable. Structural coverage does not guarantee good generalization even where it is high, because a network can produce correct activations for incorrect reasons.",
+              "d": "Incorrect. Neuron coverage counts the neurons whose output exceeds a specified threshold, so lowering the threshold changes how the measure is counted, not what the tests exercise. The layer remains as untested as before; the value of the measure lies in showing where additional test inputs are needed."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
     }
   ]
 }

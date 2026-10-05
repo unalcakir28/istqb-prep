@@ -2,7 +2,7 @@
 
 > This file is **generated** by `yarn stats`. Do not edit by hand — it is overwritten on the next run.
 
-Generated: 2026-10-02
+Generated: 2026-10-05
 
 ## CTFL v4.0.1
 
@@ -122,103 +122,103 @@ Generated: 2026-10-02
 
 ## CT-AI v2.0
 
-**86** published question(s) in the pool · **43/43** learning objective(s) covered.
+**129** published question(s) in the pool · **43/43** learning objective(s) covered.
 
 | Target | Questions | LO >= threshold | Status |
 |---|--:|--:|---|
-| Depth 1 — 43 questions, every LO >= 1 | 86/43 | 43/43 | done |
-| Depth 2 — 86 questions, every LO >= 2 | 86/86 | 43/43 | done |
-| Depth 3 — 129 questions, every LO >= 3 | 86/129 | 0/43 | in progress |
+| Depth 1 — 43 questions, every LO >= 1 | 129/43 | 43/43 | done |
+| Depth 2 — 86 questions, every LO >= 2 | 129/86 | 43/43 | done |
+| Depth 3 — 129 questions, every LO >= 3 | 129/129 | 43/43 | done |
 
 ### Chapter 1 — Introduction to Artificial Intelligence
 
-16 question(s) · 6 question(s) on the exam · 8 learning objective(s)
+24 question(s) · 6 question(s) on the exam · 8 learning objective(s)
 
 | LO | K | Questions | | Objective text |
 |---|:--:|--:|---|---|
-| `AI-1.1.1` | K2 | 2 | `████████····` | Differentiate between AI-based systems and conventional systems |
-| `AI-1.1.2` | K2 | 2 | `████████····` | Distinguish between narrow AI, general AI, and super AI |
-| `AI-1.1.3` | K2 | 2 | `████████····` | Explain the different types of AI technologies |
-| `AI-1.1.4` | K2 | 2 | `████████····` | Explain generative AI |
-| `AI-1.1.5` | K2 | 2 | `████████····` | Compare the choices available for hardware to implement machine learning systems |
-| `AI-1.1.6` | K2 | 2 | `████████····` | Compare the options for the development and hosting of AI models |
-| `AI-1.1.7` | K2 | 2 | `████████····` | Summarize the functionality provided by ML development frameworks |
-| `AI-1.1.8` | K2 | 2 | `████████····` | Explain how regulations and standards affect the development and testing of AI-based systems |
+| `AI-1.1.1` | K2 | 3 | `████████████` | Differentiate between AI-based systems and conventional systems |
+| `AI-1.1.2` | K2 | 3 | `████████████` | Distinguish between narrow AI, general AI, and super AI |
+| `AI-1.1.3` | K2 | 3 | `████████████` | Explain the different types of AI technologies |
+| `AI-1.1.4` | K2 | 3 | `████████████` | Explain generative AI |
+| `AI-1.1.5` | K2 | 3 | `████████████` | Compare the choices available for hardware to implement machine learning systems |
+| `AI-1.1.6` | K2 | 3 | `████████████` | Compare the options for the development and hosting of AI models |
+| `AI-1.1.7` | K2 | 3 | `████████████` | Summarize the functionality provided by ML development frameworks |
+| `AI-1.1.8` | K2 | 3 | `████████████` | Explain how regulations and standards affect the development and testing of AI-based systems |
 
 ### Chapter 2 — Quality Characteristics for AI-Based Systems
 
-6 question(s) · 3 question(s) on the exam · 3 learning objective(s)
+9 question(s) · 3 question(s) on the exam · 3 learning objective(s)
 
 | LO | K | Questions | | Objective text |
 |---|:--:|--:|---|---|
-| `AI-2.1.1` | K2 | 2 | `████████····` | Classify behaviors of AI-based systems according to the quality characteristics defined in ISO/IEC 25059 |
-| `AI-2.1.2` | K2 | 2 | `████████····` | Explain the special considerations that arise when AI is used in safety-related systems |
-| `AI-2.2.1` | K2 | 2 | `████████····` | Give examples of acceptance criteria for AI-based systems |
+| `AI-2.1.1` | K2 | 3 | `████████████` | Classify behaviors of AI-based systems according to the quality characteristics defined in ISO/IEC 25059 |
+| `AI-2.1.2` | K2 | 3 | `████████████` | Explain the special considerations that arise when AI is used in safety-related systems |
+| `AI-2.2.1` | K2 | 3 | `████████████` | Give examples of acceptance criteria for AI-based systems |
 
 ### Chapter 3 — Machine Learning
 
-16 question(s) · 7 question(s) on the exam · 8 learning objective(s)
+24 question(s) · 7 question(s) on the exam · 8 learning objective(s)
 
 | LO | K | Questions | | Objective text |
 |---|:--:|--:|---|---|
-| `AI-3.1.1` | K2 | 2 | `████████····` | Distinguish between the different forms of ML |
-| `AI-3.1.2` | K2 | 2 | `████████····` | Summarize the workflow used to create an ML system |
-| `AI-3.1.4` | K2 | 2 | `████████····` | Summarize the use of pretrained models, fine-tuning, and retrieval-augmented generation |
-| `AI-3.2.1` | K2 | 2 | `████████····` | Explain the activities related to data preparation |
-| `AI-3.2.3` | K2 | 2 | `████████····` | Contrast the use of training, validation, and test datasets in the development of an ML model |
-| `AI-3.3.1` | K3 | 2 | `████████····` | Calculate common ML functional performance metrics from a given set of confusion matrix data |
-| `AI-3.4.1` | K2 | 2 | `████████····` | Explain the structure and working of a deep neural network |
-| `AI-3.4.3` | K2 | 2 | `████████····` | Describe the different coverage measures for neural networks |
+| `AI-3.1.1` | K2 | 3 | `████████████` | Distinguish between the different forms of ML |
+| `AI-3.1.2` | K2 | 3 | `████████████` | Summarize the workflow used to create an ML system |
+| `AI-3.1.4` | K2 | 3 | `████████████` | Summarize the use of pretrained models, fine-tuning, and retrieval-augmented generation |
+| `AI-3.2.1` | K2 | 3 | `████████████` | Explain the activities related to data preparation |
+| `AI-3.2.3` | K2 | 3 | `████████████` | Contrast the use of training, validation, and test datasets in the development of an ML model |
+| `AI-3.3.1` | K3 | 3 | `████████████` | Calculate common ML functional performance metrics from a given set of confusion matrix data |
+| `AI-3.4.1` | K2 | 3 | `████████████` | Explain the structure and working of a deep neural network |
+| `AI-3.4.3` | K2 | 3 | `████████████` | Describe the different coverage measures for neural networks |
 
 ### Chapter 4 — Testing AI-Based Systems
 
-14 question(s) · 7 question(s) on the exam · 7 learning objective(s)
+21 question(s) · 7 question(s) on the exam · 7 learning objective(s)
 
 | LO | K | Questions | | Objective text |
 |---|:--:|--:|---|---|
-| `AI-4.1.1` | K2 | 2 | `████████····` | Compare the testability of locked and adaptive AI-based systems |
-| `AI-4.1.2` | K2 | 2 | `████████····` | Explain why a statistical approach is often needed when testing AI-based systems |
-| `AI-4.1.3` | K2 | 2 | `████████····` | Explain the challenges and solutions relating to test oracles for AI-based systems |
-| `AI-4.2.1` | K2 | 2 | `████████····` | Explain how generative AI can be tested |
-| `AI-4.2.2` | K3 | 2 | `████████····` | Implement red teaming for GenAI systems |
-| `AI-4.3.1` | K2 | 2 | `████████····` | Summarize the test levels used to develop machine learning systems |
-| `AI-4.3.2` | K2 | 2 | `████████····` | Explain how risk-based testing is applied to machine learning systems |
+| `AI-4.1.1` | K2 | 3 | `████████████` | Compare the testability of locked and adaptive AI-based systems |
+| `AI-4.1.2` | K2 | 3 | `████████████` | Explain why a statistical approach is often needed when testing AI-based systems |
+| `AI-4.1.3` | K2 | 3 | `████████████` | Explain the challenges and solutions relating to test oracles for AI-based systems |
+| `AI-4.2.1` | K2 | 3 | `████████████` | Explain how generative AI can be tested |
+| `AI-4.2.2` | K3 | 3 | `████████████` | Implement red teaming for GenAI systems |
+| `AI-4.3.1` | K2 | 3 | `████████████` | Summarize the test levels used to develop machine learning systems |
+| `AI-4.3.2` | K2 | 3 | `████████████` | Explain how risk-based testing is applied to machine learning systems |
 
 ### Chapter 5 — Input Data Testing for Machine Learning Systems
 
-12 question(s) · 6 question(s) on the exam · 6 learning objective(s)
+18 question(s) · 6 question(s) on the exam · 6 learning objective(s)
 
 | LO | K | Questions | | Objective text |
 |---|:--:|--:|---|---|
-| `AI-5.1.1` | K2 | 2 | `████████····` | Give examples of test approaches used for the risk mitigation of input data for a machine learning system |
-| `AI-5.1.2` | K2 | 2 | `████████····` | Explain how to test for bias |
-| `AI-5.1.3` | K2 | 2 | `████████····` | Summarize the various forms of data pipeline testing |
-| `AI-5.1.4` | K2 | 2 | `████████····` | Explain how to test for data representativeness |
-| `AI-5.1.5` | K3 | 2 | `████████····` | Apply dataset constraint testing |
-| `AI-5.1.6` | K2 | 2 | `████████····` | Explain label correctness testing |
+| `AI-5.1.1` | K2 | 3 | `████████████` | Give examples of test approaches used for the risk mitigation of input data for a machine learning system |
+| `AI-5.1.2` | K2 | 3 | `████████████` | Explain how to test for bias |
+| `AI-5.1.3` | K2 | 3 | `████████████` | Summarize the various forms of data pipeline testing |
+| `AI-5.1.4` | K2 | 3 | `████████████` | Explain how to test for data representativeness |
+| `AI-5.1.5` | K3 | 3 | `████████████` | Apply dataset constraint testing |
+| `AI-5.1.6` | K2 | 3 | `████████████` | Explain label correctness testing |
 
 ### Chapter 6 — Model Testing for Machine Learning Systems
 
-18 question(s) · 9 question(s) on the exam · 9 learning objective(s)
+27 question(s) · 9 question(s) on the exam · 9 learning objective(s)
 
 | LO | K | Questions | | Objective text |
 |---|:--:|--:|---|---|
-| `AI-6.1.1` | K2 | 2 | `████████····` | Give examples of test approaches used for risk mitigation of ML models |
-| `AI-6.1.2` | K2 | 2 | `████████····` | Explain the purpose and focus of reviewing ML model documentation |
-| `AI-6.1.3` | K2 | 2 | `████████····` | Explain how ML functional performance testing is carried out for probabilistic machine learning systems |
-| `AI-6.1.4` | K2 | 2 | `████████····` | Summarize adversarial testing of machine learning systems |
-| `AI-6.1.5` | K3 | 2 | `████████····` | Use metamorphic testing to derive test cases for a given scenario |
-| `AI-6.1.7` | K2 | 2 | `████████····` | Explain how drift testing is used on operational machine learning systems |
-| `AI-6.1.8` | K2 | 2 | `████████····` | Explain how overfitting and underfitting are detected by testing |
-| `AI-6.1.9` | K2 | 2 | `████████····` | Explain how A/B testing is used in the context of machine learning systems |
-| `AI-6.1.10` | K2 | 2 | `████████····` | Explain how back-to-back testing is used in the context of machine learning systems |
+| `AI-6.1.1` | K2 | 3 | `████████████` | Give examples of test approaches used for risk mitigation of ML models |
+| `AI-6.1.2` | K2 | 3 | `████████████` | Explain the purpose and focus of reviewing ML model documentation |
+| `AI-6.1.3` | K2 | 3 | `████████████` | Explain how ML functional performance testing is carried out for probabilistic machine learning systems |
+| `AI-6.1.4` | K2 | 3 | `████████████` | Summarize adversarial testing of machine learning systems |
+| `AI-6.1.5` | K3 | 3 | `████████████` | Use metamorphic testing to derive test cases for a given scenario |
+| `AI-6.1.7` | K2 | 3 | `████████████` | Explain how drift testing is used on operational machine learning systems |
+| `AI-6.1.8` | K2 | 3 | `████████████` | Explain how overfitting and underfitting are detected by testing |
+| `AI-6.1.9` | K2 | 3 | `████████████` | Explain how A/B testing is used in the context of machine learning systems |
+| `AI-6.1.10` | K2 | 3 | `████████████` | Explain how back-to-back testing is used in the context of machine learning systems |
 
 ### Chapter 7 — Machine Learning Development Testing
 
-4 question(s) · 2 question(s) on the exam · 2 learning objective(s)
+6 question(s) · 2 question(s) on the exam · 2 learning objective(s)
 
 | LO | K | Questions | | Objective text |
 |---|:--:|--:|---|---|
-| `AI-7.1.1` | K2 | 2 | `████████····` | Give examples of test approaches used for risk mitigation of ML development |
-| `AI-7.1.2` | K2 | 2 | `████████····` | Explain the various forms of ML system deployment testing |
+| `AI-7.1.1` | K2 | 3 | `████████████` | Give examples of test approaches used for risk mitigation of ML development |
+| `AI-7.1.2` | K2 | 3 | `████████████` | Explain the various forms of ML system deployment testing |
 

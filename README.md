@@ -88,7 +88,7 @@ Detailed rationale and sources: [`docs/01-market-research.md`](docs/01-market-re
 | Results + review    | ✅ Pass-mark line, section and LO breakdown, option-by-option rationale                                                                               |
 | Question pool       | ✅ 302 questions published, 64/64 learning objectives covered, at least 4 each · Phase 3 target (300) met                                             |
 | Lesson cards        | ✅ All 64 written and published — one per learning objective, TR+EN, key points and common mistakes                                                   |
-| CT-AI v2.0          | ✅ Second certification: 43 lesson cards, 86 questions (2 per objective), 2-point K3 questions, a 44-point mock exam                                  |
+| CT-AI v2.0          | ✅ Second certification: 43 lesson cards, 129 questions (3 per objective), 2-point K3 questions, a 44-point mock exam                                 |
 | SRS, glossary       | ✅ Wrong answers come back on a spaced-repetition schedule (`/tekrar`) · glossary of the picked certification's bilingual terms (97 CTFL · 156 CT-AI) |
 | Your data           | ✅ Download your progress as one file and load it in another browser — still no account (`/verilerim`)                                                |
 | Tests               | ✅ 206 unit tests (Vitest) · 76 end-to-end specs (Playwright, including axe scans of the main screens in both themes)                                 |

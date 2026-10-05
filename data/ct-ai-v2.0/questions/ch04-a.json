@@ -1321,6 +1321,669 @@
         "createdAt": "2026-10-02",
         "updatedAt": "2026-10-02"
       }
+    },
+    {
+      "id": "ctai-0106",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 4,
+      "section": "4.1",
+      "syllabusRef": "§4.1.1",
+      "objectives": [
+        "AI-4.1.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "locked-adaptive",
+        "testability",
+        "pre-deployment"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir ekip, depo robotlarının rotalarını planlayan ve davranışını bir ödül fonksiyonu aracılığıyla sürekli ayarlayan takviyeli öğrenme tabanlı bir sistemi dağıtımdan önce test etmek zorunda. Derin sinir ağı (DNN) tabanlı kilitli bir sistemi test etmekle karşılaştırıldığında, bu dağıtım öncesi testi DAHA karmaşık kılan nedir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Dağıtımdan önce test edilemez, çünkü davranışı ancak gerçek depo ortamıyla karşılaştığında tanımlanmış olur."
+            },
+            {
+              "id": "b",
+              "text": "Sistem davranışını test sırasında ya da testin sonucunda değiştirebilir; bu yüzden önceki test sonuçları artık geçerli olmayabilir."
+            },
+            {
+              "id": "c",
+              "text": "Ağırlıkları ve yanlılık değerleri geliştirmeden sonra sabitlenir; bu yüzden testler yeniden eğitime kadar öğrenme mekanizmasına ulaşamaz."
+            },
+            {
+              "id": "d",
+              "text": "Kayan nokta duyarlığı sınırları ve GPU üzerindeki çalıştırma farkları çıktılarını değiştirebilir; bu etki kilitli sistemlerde ortaya çıkmaz."
+            }
+          ],
+          "rationale": {
+            "summary": "Uyarlanabilir yapay zekâ tabanlı sistem dağıtımdan önce titizlikle test edilebilir; ancak bu test kilitli bir sisteme göre daha karmaşıktır, çünkü uyarlanabilir sistem test sırasında ya da testin sonucunda davranışını değiştirebilir. Kilitli sistemin beklenen sonuçları ise değişmez.",
+            "byOption": {
+              "a": "Yanlış. Bu, uyarlanabilir sistemin dağıtımdan önce test edilemeyeceği yanılgısıdır. Müfredata göre böyle bir sistem önceden titizlikle test edilebilir; örneğin ortam koşullarındaki değişiklikler simüle edilerek, öğrenme mekanizmasının kendisi test edilerek ya da kontrollü senaryolarda uyum yeteneği sınanarak. Önceden test edilemeyen, öngörülemeyen yeni davranışlardır.",
+              "b": "Doğru. Uyarlanabilir sistemin dağıtım öncesi testi mümkündür, ancak kilitli bir sisteme göre daha karmaşıktır; çünkü uyarlanabilir sistem test sırasında ya da testin sonucunda davranışını değiştirebilir.",
+              "c": "Yanlış. Geliştirmeden sonra sabitlenen ve yalnızca yeniden eğitimle değişen ağırlıklar ve yanlılık değerleri, dağıtılmış bir derin sinir ağı gibi kilitli yapay zekâ tabanlı sistemi tanımlar, uyarlanabilir sistemi değil. Öğrenme mekanizmasının kendisini test etmek, uyarlanabilir bir sistemin dağıtımdan önce test edilme yollarından biridir.",
+              "d": "Yanlış. Kayan nokta duyarlığı sınırlarından ve donanım farklarından (paralel hesaplama, GPU) kaynaklanan deterministik olmama, büyük sinir ağları için belirtilir; bunlara normalde deterministik sayılan kilitli sistemler de dahildir. Bu, yalnızca uyarlanabilir sistemlere özgü bir etki değildir ve onları test etmeyi zorlaştıran neden de değildir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A team must test, before deployment, a reinforcement learning system that plans routes for warehouse robots and keeps adjusting its behavior through a reward function. Compared with testing a locked DNN-based system, what makes this pre-deployment testing MORE complex?",
+          "options": [
+            {
+              "id": "a",
+              "text": "It cannot be tested before deployment, because its behavior is defined only once it meets the real warehouse."
+            },
+            {
+              "id": "b",
+              "text": "The system may change its behavior during the testing or as a result of it, so earlier test results may no longer hold."
+            },
+            {
+              "id": "c",
+              "text": "Its weights and biases are fixed after development, so tests cannot reach the learning mechanism until it is retrained."
+            },
+            {
+              "id": "d",
+              "text": "Floating-point precision limits and GPU execution can make its outputs vary, an effect that does not arise in locked systems."
+            }
+          ],
+          "rationale": {
+            "summary": "An adaptive AI-based system can be rigorously tested before deployment, but this testing is more complex than for a locked system, because the adaptive system may change its behavior during the testing or as a result of the testing. A locked system's expected results do not change.",
+            "byOption": {
+              "a": "Incorrect. This is the common mistake that an adaptive system is untestable before deployment. The syllabus says it can be rigorously tested beforehand, for example by simulating changes in environmental conditions, testing the learning mechanism itself or testing its ability to adapt in controlled scenarios. What cannot be tested in advance are the unpredictable new behaviors.",
+              "b": "Correct. Pre-deployment testing of an adaptive system is possible but more complex than for a locked system, because the adaptive system may change its behavior during the testing or as a result of the testing.",
+              "c": "Incorrect. Weights and biases that are fixed after development and change only through retraining describe a locked AI-based system such as a deployed DNN, not an adaptive one. Testing the learning mechanism itself is one of the ways an adaptive system is tested before deployment.",
+              "d": "Incorrect. Non-determinism from floating-point precision limits and hardware execution (parallel computation, GPUs) is noted for large neural networks, including locked systems that are otherwise considered deterministic. It is not an adaptive-only effect and not the reason adaptive systems are harder to test."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0107",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 4,
+      "section": "4.1",
+      "syllabusRef": "§4.1.2",
+      "objectives": [
+        "AI-4.1.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "statistical-testing",
+        "distribution"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir bitki hastalığı sınıflandırıcısı, tek bir bölgedeki seralarda çekilmiş yaprak görüntüleriyle eğitildi ve aynı görüntülerden ayrılan bir test veri setinde çok yüksek sonuç aldı. Model şimdi başka birçok bölgedeki açık tarlalarda kullanılacak. İstatistiksel yaklaşım gerekçelerinden hangisi, testin hâlâ ne yapması gerektiğini EN İYİ açıklar?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Aynı girdiler farklı çıktılar verebilir; bu yüzden seradaki her test görüntüsü defalarca yeniden koşulmalı ve sonuçların ortalaması alınmalıdır."
+            },
+            {
+              "id": "b",
+              "text": "İstatistiksel test yalnızca bir düzenleyici kurum talep ettiğinde gerekir; düzenleyici olmadığında mevcut test sonucu yeterlidir."
+            },
+            {
+              "id": "c",
+              "text": "Kendinden emin tahminler doğru tahminlere işaret eder; bu yüzden yalnızca modelin emin olmadığı görüntüler ek istatistiksel analiz gerektirir."
+            },
+            {
+              "id": "d",
+              "text": "Eğitim verisi dağılımları tarlalarla tam örtüşmez; bu yüzden tarlaların işletim verisinden anlamlı büyüklükte bir örneklem test edilmelidir."
+            }
+          ],
+          "rationale": {
+            "summary": "Dağılımsal performans değerlendirmesi: model belirli veri dağılımlarıyla eğitilir ve bu dağılımlar işletim ortamıyla tam örtüşmez; modelin gerçek koşullarda nasıl performans göstereceğini görmek için ilgili işletim verisi dağılımlarından istatistiksel olarak anlamlı bir senaryo örneklemi test edilmelidir.",
+            "byOption": {
+              "a": "Yanlış. Bu, deterministik olmama gerekçesinin (aynı girdi her zaman aynı çıktıyı vermeyebilir, bu yüzden test paketi istatistiksel olarak anlamlı sonuç verecek kadar büyük olmalıdır) yanlış uygulanmasıdır. Sera görüntülerini yeniden koşmak yine yalnızca eğitim koşullarından örnek alır; modelin karşılaşacağı tarla koşulları hakkında bilgi vermez.",
+              "b": "Yanlış. Düzenleyici ve emniyet bağlamı, istatistiksel yaklaşımın gerekçelerinden yalnızca biridir. Deterministik olmama ve dağılımsal performans değerlendirmesi gibi diğer gerekçeler, bir düzenleyici kurum olsun olmasın geçerlidir.",
+              "c": "Yanlış. Müfredat bunun tersine dikkat çeker: yapay zekâ tabanlı sistemler kendinden emin ama yanlış tahminler üretebilir; istatistiksel testin doğruluğu, adilliği ve yapay zekâ sağlamlığını nicelleştirmek için kullanılmasının bir nedeni budur (belirsizlik ve yanlılıkla başa çıkma).",
+              "d": "Doğru. Bu, dağılımsal performans değerlendirmesidir: modeller belirli veri dağılımlarıyla eğitilir ve bu dağılımlar işletim ortamıyla tam örtüşmez; bu yüzden ilgili işletim verisi dağılımlarından istatistiksel olarak anlamlı bir senaryo örneklemi test edilmelidir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A crop-disease classifier was trained on leaf images taken in greenhouses in one region, and it scored very well on a test dataset split from those same images. It will now be used on open farms in several other regions. Which reason for a statistical approach BEST explains what testing must still do?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Same inputs may yield different outputs, so each greenhouse test image should be re-run many times and the results averaged."
+            },
+            {
+              "id": "b",
+              "text": "Statistical testing is needed only where a regulator demands it, so without a regulator the existing test score is sufficient."
+            },
+            {
+              "id": "c",
+              "text": "Confident predictions indicate correct ones, so only the images the model was unsure about need further statistical analysis."
+            },
+            {
+              "id": "d",
+              "text": "Training distributions do not exactly match the farms, so a significant sample of the farms' operational data must be tested."
+            }
+          ],
+          "rationale": {
+            "summary": "Distributional performance evaluation: a model is trained on specific data distributions that do not exactly match its operational environment, so a statistically significant sample of scenarios from the relevant operational data distributions must be tested to see how it will perform under real-world conditions.",
+            "byOption": {
+              "a": "Incorrect. This misapplies the non-determinism reason (the same input may not always give the same output, so the test suite must be large enough for statistically significant results). Re-running the greenhouse images still samples only the training conditions and says nothing about the farm conditions the model will meet.",
+              "b": "Incorrect. The regulatory and safety context is only one of the reasons for a statistical approach. The other reasons, such as non-determinism and distributional performance evaluation, apply whether or not a regulator is involved.",
+              "c": "Incorrect. The syllabus warns of the opposite: AI-based systems can produce confident but incorrect predictions, which is one reason statistical testing is used to quantify accuracy, fairness and AI robustness (handling uncertainty and bias).",
+              "d": "Correct. This is distributional performance evaluation: models are trained on specific data distributions that do not exactly match their operational environment, so a statistically significant sample of scenarios from the relevant operational data distributions must be tested."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0108",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 4,
+      "section": "4.1",
+      "syllabusRef": "§4.1.3",
+      "objectives": [
+        "AI-4.1.3"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-oracle",
+        "proxy-oracle"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir model, milyonlarca uydu görüntüsü parçasının arazi kullanımını etiketliyor. Görev, test uzmanlarının her çıktıyı elle kontrol edemeyeceği kadar karmaşık ve saha ekipleri parçaların yalnızca küçük bir alt kümesini etiketlemiş. Etiketsiz parçalardaki çıktıları değerlendirmek için test doğrulayıcı sorununa yönelik EN UYGUN yaklaşım hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Tek bir alan uzmanının her çıktıyı elle kontrol etmesini istemek ve bu uzmanın kararını kesin ve yanılmaz kabul etmek."
+            },
+            {
+              "id": "b",
+              "text": "Her etiketsiz parçayı birkaç kez çalıştırmak ve modelin en sık verdiği çıktıyı o parçanın beklenen sonucu kabul etmek."
+            },
+            {
+              "id": "c",
+              "text": "Etiketli alt kümeyle bir vekil model eğitmek ve ana modelin etiketsiz parçalardaki çıktılarını bu modelle değerlendirmek."
+            },
+            {
+              "id": "d",
+              "text": "Gereksinimler olası her uydu görüntüsü parçası için beklenen bir arazi kullanımı etiketi belirtene kadar testi ertelemek."
+            }
+          ],
+          "rationale": {
+            "summary": "Doğrudan beklenen sonuç bulunmadığında vekil test doğrulayıcı kullanılabilir: ikincil bir sistem ya da model çıktıları değerlendirir. Müfredatın örneği, etiketli veriyle eğitilen bir vekil modelin etiketsiz testler için tahmin üretmesidir.",
+            "byOption": {
+              "a": "Yanlış. Uzmana danışmak müfredatta adı geçen bir çözümdür, ancak uzmanların görüşleri farklı olabilir ve uzmanlar yanılabilir; bu yüzden tek bir uzmanın kararı hatasız sayılamaz. Bu kadar karmaşık bir görevde milyonlarca çıktıyı elle kontrol etmek de pratik değildir.",
+              "b": "Yanlış. Tekrarlanan çalıştırmalar modelin çıktılarının ne kadar tutarlı olduğunu gösterir, doğru olup olmadıklarını değil. Test edilen sistemin en sık verdiği çıktıyı kendi beklenen sonucu saymak, doğruluk hakkında bağımsız bir yargı sağlamaz.",
+              "c": "Doğru. Vekil test doğrulayıcı, doğrudan beklenen sonuç bulunmadığında çıktıları değerlendirmek için ikincil bir sistem ya da model kullanır; örneğin etiketli veriyle eğitilip etiketsiz testler için tahmin üreten bir vekil model.",
+              "d": "Yanlış. Yapay zekâ geliştirme çoğu zaman keşfe dayalıdır ve gereksinimler eksik olabilir ya da hiç bulunmayabilir. Olası her girdi için beklenen sonuç belirlenmesini beklemek, yapay zekâ tabanlı sistemlerde çoğu zaman bulunmayan ayrıntılı spesifikasyonları varsayar; bu nedenle test doğrulayıcı sorununa çözüm olmaz."
+            }
+          }
+        },
+        "en": {
+          "stem": "A model labels the land use of millions of satellite image tiles. The task is too complex for testers to check each output by hand, and surveyors have labeled only a small subset of the tiles. Which approach to the test oracle problem is BEST suited to judging the outputs on the unlabeled tiles?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Ask one domain expert to check every output by hand and treat that expert's verdict as final and free of error."
+            },
+            {
+              "id": "b",
+              "text": "Run each unlabeled tile several times and treat the model's most frequent output as its expected result."
+            },
+            {
+              "id": "c",
+              "text": "Train a proxy model on the labeled subset and use it to assess the main model's outputs on the unlabeled tiles."
+            },
+            {
+              "id": "d",
+              "text": "Postpone testing until the requirements state an expected land-use label for every possible satellite tile."
+            }
+          ],
+          "rationale": {
+            "summary": "When direct expected results are unavailable, a proxy oracle can be used: a secondary system or model assesses the outputs. The syllabus gives the example of training a proxy model on labeled data to predict for unlabeled tests.",
+            "byOption": {
+              "a": "Incorrect. Expert consultation is a named solution, but experts' opinions might differ or be fallible, so one expert's verdict is not error-free. Checking millions of outputs by hand is also impractical for a task this complex.",
+              "b": "Incorrect. Repeated runs show how consistent the model's outputs are, not whether they are correct. Taking the most frequent output of the system under test as its own expected result gives no independent judgement of correctness.",
+              "c": "Correct. A proxy oracle uses a secondary system or model to assess outputs when direct expected results are unavailable, such as a proxy model trained on labeled data to predict for unlabeled tests.",
+              "d": "Incorrect. AI development is frequently exploratory, and requirements may be incomplete or missing. Waiting for an expected result for every possible input assumes the detailed specifications that AI-based systems often lack, so it does not address the test oracle problem."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0109",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.1",
+      "objectives": [
+        "AI-4.2.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "genai",
+        "non-functional",
+        "resource-utilization"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "a"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir şirket, müşteri destek taleplerini özetlemek için kendi sunucularında bir büyük dil modeli (LLM) çalıştıracak. Yönetim, yayına almadan önce modelin verimli ve maliyet etkin çalışacağına dair kanıt istiyor. Bu kaygıyı EN İYİ karşılayan test etkinliği hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Model çıkarım yaparken CPU ve GPU kullanımını, bellek tüketimini, ağ bant genişliğini ve yanıt sürelerini ölçmek."
+            },
+            {
+              "id": "b",
+              "text": "Akıl yürütme ve kodlama görevlerinden oluşan bir kıyaslama paketi koşmak ve modelin puanlarını diğer modellerin puanlarıyla karşılaştırmak."
+            },
+            {
+              "id": "c",
+              "text": "Şirketin müşteri verisi politikalarını ihlal eden çıktıları bulmak için modele çok turlu diyaloglarla kırmızı takım çalışması uygulamak."
+            },
+            {
+              "id": "d",
+              "text": "Özetlerden bir örneklemi tutarlılık, özgünlük ve alana özgü kurallara uygunluk açısından gözden geçirmek."
+            }
+          ],
+          "rationale": {
+            "summary": "Üretken yapay zekâ sistemlerinde fonksiyonel olmayan test, fonksiyonel test kadar gerekli olabilir. Buna, verimli çalışmayı ve maliyet etkinliğini doğrulamak için çıkarım ve eğitim sırasında kaynak kullanımının değerlendirilmesi dahildir; ölçümler arasında CPU ve GPU kullanımı, bellek tüketimi, ağ bant genişliği ve yanıt süreleri vardır.",
+            "byOption": {
+              "a": "Doğru. Çıkarım (ve eğitim) sırasında kaynak kullanımını değerlendirmek, verimli çalışmayı ve maliyet etkinliğini doğrular; müfredat ölçüm olarak CPU ve GPU kullanımını, bellek tüketimini, ağ bant genişliğini ve yanıt sürelerini sayar.",
+              "b": "Yanlış. Kıyaslama paketleri, dil anlama, akıl yürütme ve kodlama gibi yetenekleri modeller arasında karşılaştırmaya yarayan standart değerlendirme çerçeveleridir. Modelin ne yapabildiğini ölçerler, bunu yaparken tükettiği kaynakları değil.",
+              "c": "Yanlış. Kırmızı takım çalışması, sistemi bilerek mahremiyet ihlali gibi zararlı ya da istenmeyen sonuçlar üretmeye zorlar. Zararlı yetenekleri arar; verimliliği ya da işletim maliyetini değil.",
+              "d": "Yanlış. Tutarlılığı, özgünlüğü ve alana özgü kurallara uygunluğu değerlendirmek, kara kutu testinde olduğu gibi üretilen içeriğin kalitesini değerlendirir. Bu, çıktıların değerlendirilmesidir; onların arkasındaki kaynak kullanımının değil."
+            }
+          }
+        },
+        "en": {
+          "stem": "A company will run a large language model (LLM) on its own servers to summarize customer support tickets. Before release, management wants evidence that the model will operate efficiently and cost-effectively. Which testing activity BEST addresses this concern?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Measuring CPU and GPU usage, memory consumption, network bandwidth and response times while the model performs inference."
+            },
+            {
+              "id": "b",
+              "text": "Running a benchmark suite of reasoning and coding tasks and comparing the model's scores with the scores of other models."
+            },
+            {
+              "id": "c",
+              "text": "Red teaming the model in multi-turn dialogues to find outputs that violate the company's policies on customer data."
+            },
+            {
+              "id": "d",
+              "text": "Reviewing a sample of the summaries for coherence, originality and adherence to domain-specific rules."
+            }
+          ],
+          "rationale": {
+            "summary": "Non-functional testing can be as necessary as functional testing for GenAI systems. It includes evaluating resource utilization during inference and training to verify efficient operation and cost-effectiveness, with measures such as CPU and GPU usage, memory consumption, network bandwidth and response times.",
+            "byOption": {
+              "a": "Correct. Evaluating resource utilization during inference (and training) verifies efficient operation and cost-effectiveness; the syllabus names CPU and GPU usage, memory consumption, network bandwidth and response times as the measures.",
+              "b": "Incorrect. Benchmark suites are standardized evaluation frameworks for comparing capabilities such as language understanding, reasoning and coding across models. They measure what the model can do, not the resources it consumes while doing it.",
+              "c": "Incorrect. Red teaming deliberately tries to make the system produce harmful or undesirable results, such as privacy violations. It looks for harmful capabilities, not for efficiency or operating cost.",
+              "d": "Incorrect. Assessing coherence, originality and adherence to domain-specific rules evaluates the quality of the generated content, as in black-box testing of outputs. That is an evaluation of the outputs, not of the resource utilization behind them."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0110",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 4,
+      "section": "4.2",
+      "syllabusRef": "§4.2.2",
+      "objectives": [
+        "AI-4.2.2"
+      ],
+      "kLevel": "K3",
+      "type": "single",
+      "selectCount": 1,
+      "points": 2,
+      "difficulty": 3,
+      "tags": [
+        "red-teaming",
+        "fairness",
+        "team"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "c"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir banka, müşterilerin kredi sorularını yanıtlayan büyük dil modeli (LLM) tabanlı bir asistanı yakında dağıtacak; asistanın iç kalite değerlendirmeleri tamamlandı. Kırmızı takım çalışması planında, aynı ekipten üç güvenlik mühendisi istem enjeksiyonu kontrol listeleri üzerinde çalışıyor. Ürün sahibinin asıl kaygısı, kimse saldırmaya çalışmasa bile asistanın farklı cinsiyet ya da etnik kökenden başvuru sahiplerine farklı öneriler vermesi. Bu kaygıyı EN İYİ karşılayan plan değişikliği hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Üç güvenlik mühendisini tutmak ve istem enjeksiyonu kontrol listelerini genişletmek, çünkü kırmızı takım çalışması yalnızca güvenlik açıklarını kapsar."
+            },
+            {
+              "id": "b",
+              "text": "Oturumun yerine herkese açık bir adillik kıyaslama paketi koşmak, çünkü statik bir kıyaslama yanlılığı etkileşimli istemlerden çok daha iyi yoklar."
+            },
+            {
+              "id": "c",
+              "text": "Kredi alanını bilen, farklı geçmişlerden test uzmanları eklemek; sıradan çok turlu diyaloglarda önerinin başvuru profiline göre değişip değişmediğini yoklamak."
+            },
+            {
+              "id": "d",
+              "text": "Önce yayımlanmış yanlı kredi önerisi örneklerinden bir azaltım veri seti oluşturmak, asistanı ise sonradan yalnızca düzeltmeleri kontrol etmek için istemlemek."
+            }
+          ],
+          "rationale": {
+            "summary": "Kırmızı takım çalışması, geniş bir bakış açısı yelpazesini kapsayan çeşitli bir ekip kurarak başlar ve güvenlikle sınırlı değildir: adillik ve yanlılık alanlarındaki zararlı yetenekleri de ortaya çıkarabilir. Bu tür değerlendirmelerde amaç çoğu zaman, saldırı niyeti olmadan sıradan kullanımda ortaya çıkan zararlı çıktıları etkileşimli, çok turlu istemlerle bulmaktır.",
+            "byOption": {
+              "a": "Yanlış. Birçok kuruluş kırmızı takım çalışmasını güvenlik ve emniyet açıklarına odaklar, ancak bu çalışma adillik, yanlılık, mahremiyet, güvenilirlik ve yanlış bilgi gibi alanlardaki zararlı yetenekleri de ortaya çıkarabilir. İstem enjeksiyonu kontrol listeleri kötü niyetli girdileri hedefler; buradaki kaygı ise sıradan kullanımdaki zararlı çıktıdır. Aynı ekipten üç mühendis de ilk adımın gerektirdiği çeşitli bakış açılarını sağlamaz.",
+              "b": "Yanlış. Kırmızı takım çalışması, istemlerin çıktılara göre hemen güncellenebildiği uyarlanabilir, dinamik bir değerlendirme yaklaşımıdır. Sistemi aşırı ve beklenmedik koşullarda test ederek kıyaslama gibi statik yaklaşımları tamamlar; statik yaklaşımlar onun yerine geçmez.",
+              "c": "Doğru. Yaklaşım, geniş bir bakış açısı yelpazesini kapsayan çeşitli bir ekip kurmakla başlar ve kırmızı takım çalışması yalnızca güvenliği değil, adilliği ve yanlılığı da hedefleyebilir. Buradaki amaç saldırı niyeti olmadan sıradan kullanımda ortaya çıkan zararlı çıktıları bulmaktır ve temel etkinlik etkileşimli, çok turlu istemlerdir.",
+              "d": "Yanlış. Kırmızı takım çalışması yaklaşımında önce sistem istemlerle yoklanır, bulunan arızalar tehditleri anlamak için analiz edilir ve azaltımları desteklemek için veri setleri bu tehditlerden oluşturulur. Bu asistanı yoklamadan önce dışarıdan örneklerle veri seti oluşturmak bu sırayı tersine çevirir ve asistanın kendi arızalarını bulma adımını atlar."
+            }
+          }
+        },
+        "en": {
+          "stem": "A bank will soon deploy an assistant based on a large language model (LLM) that answers customers' loan questions; its internal quality assessments are complete. The red-teaming plan has three security engineers from one team working through prompt-injection checklists. The product owner's main worry is that the assistant may give applicants of different genders or ethnic origins different advice, even when nobody is trying to attack it. Which change to the red-teaming plan BEST addresses this worry?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Keep the three security engineers and extend their prompt-injection checklists, since red teaming covers security vulnerabilities and nothing else."
+            },
+            {
+              "id": "b",
+              "text": "Replace the session with a public fairness benchmark suite, since a static benchmark probes bias far better than interactive prompting does."
+            },
+            {
+              "id": "c",
+              "text": "Add testers with lending expertise and varied backgrounds, and check in ordinary multi-turn dialogues if advice shifts by applicant profile."
+            },
+            {
+              "id": "d",
+              "text": "Build a mitigation dataset from published examples of biased loan advice first, and prompt the assistant afterwards only to check the fixes."
+            }
+          ],
+          "rationale": {
+            "summary": "Red teaming starts by assembling a diverse team that covers a wide range of perspectives, and it is not limited to security: it can also detect harmful capabilities in fairness and bias. For such evaluations the aim is often to find harmful outputs under ordinary use, without adversarial intent, through interactive multi-turn prompting.",
+            "byOption": {
+              "a": "Incorrect. Many organizations focus red teaming on security and safety, but it can also detect harmful capabilities in areas such as fairness, bias, privacy, reliability and misinformation. Prompt-injection checklists target malicious inputs, while the worry here is harmful output under ordinary use, and three engineers from one team lack the diverse perspectives the first step calls for.",
+              "b": "Incorrect. Red teaming is an adaptive, dynamic evaluation in which prompts can be updated immediately in response to outputs. It complements static approaches such as benchmarking by testing the system under extreme and unexpected conditions; it is not replaced by them.",
+              "c": "Correct. The approach starts by assembling a diverse team covering a wide range of perspectives, and red teaming can target fairness and bias, not only security. Here the aim is to find harmful outputs under ordinary use without adversarial intent, and the core activity is interactive multi-turn prompting.",
+              "d": "Incorrect. In the red-teaming approach, the system is prompted first, the identified failures are analyzed to understand the threats, and datasets are then created from those threats to support mitigations. Building the dataset from outside examples before probing this assistant reverses that order and skips finding its own failures."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0111",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.1",
+      "objectives": [
+        "AI-4.3.1"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 2,
+      "tags": [
+        "test-levels",
+        "component-integration",
+        "ai-as-a-service"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "d"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir lojistik şirketinin rota planlayan makine öğrenimi sistemi (MLS), talep tahminlerini bir tedarikçinin API üzerinden hizmet olarak sunduğu MÖ modelinden alıyor. Bir test uzmanı bu API'yi test etmek istiyor: veri hattının oluşturduğu isteklerin hizmete beklendiği gibi ulaşıp ulaşmadığını ve dönen tahminlerin planlama kullanıcı arayüzüne ulaşıp doğru kullanılıp kullanılmadığını. Bunu hangi test seviyesi kapsar ve neden?",
+          "options": [
+            {
+              "id": "a",
+              "text": "MÖ model testi, çünkü tahminleri bir model üretir ve bu nedenle tahminlerle ilgili her kontrol bu seviyeye aittir"
+            },
+            {
+              "id": "b",
+              "text": "Girdi verisi testi, çünkü veri hattı istekleri üretim verisinden oluşturur ve bu nedenle hizmetle alışveriş bir veri kontrolüdür"
+            },
+            {
+              "id": "c",
+              "text": "Kabul testi, çünkü model bir tedarikçi hizmetidir ve bu nedenle ona yönelik her test yalnızca satın almayı kabul etmeye yarar"
+            },
+            {
+              "id": "d",
+              "text": "Bileşen entegrasyon testi, çünkü veri hattından modele ve oradan da kullanıcı arayüzüne uzanan veri akışını sınar"
+            }
+          ],
+          "rationale": {
+            "summary": "Bileşen entegrasyon testi, veri hattından gelen girdilerin modele beklendiği gibi ulaştığını ve modelin tahminlerinin kullanıcı arayüzü gibi ilgili sistem bileşenleriyle aktarılıp doğru kullanıldığını test etmeyi içerir. Yapay zekâ hizmet olarak sağlanıyorsa, hizmetin API testi bileşen entegrasyon testinin bir parçası olarak yapılır.",
+            "byOption": {
+              "a": "Yanlış. MÖ model testi, MÖ iş akışının nihai çıktısı olan MÖ modellerinin kendisinin test edilmesiyle ilgilidir. Buradaki kontroller ise modelin kendi davranışıyla değil, isteklerin ve tahminlerin tedarikçi hizmeti ile diğer bileşenler arasında nasıl aktarıldığıyla ilgilidir.",
+              "b": "Yanlış. Girdi verisi testi, eğitim verisiyle ve bir MLS'nin tahmin üretmek için kullandığı üretim verisiyle ilgilidir. Bu verinin modele beklendiği gibi ulaşıp ulaşmadığı ve tahminlerin doğru kullanılıp kullanılmadığı bileşen entegrasyon testinde kontrol edilir.",
+              "c": "Yanlış. Yapay zekâ hizmet olarak kullanıldığında, hizmetin hedeflenen sisteme uygunluğunu ve MÖ fonksiyonel performans kriterlerinin sağlanıp sağlanmadığını belirlemek için kabul testi gerekebilir. API'nin veri alışverişini test etmek bu karar değildir; bileşen entegrasyon testinin parçasıdır.",
+              "d": "Doğru. Bileşen entegrasyon testi, veri hattından gelen girdilerin modele beklendiği gibi ulaştığını ve tahminlerinin kullanıcı arayüzü gibi bileşenlerle aktarılıp doğru kullanıldığını sınar. Yapay zekâ hizmet olarak sağlanıyorsa, hizmetin API testi bu seviyenin bir parçası olarak yapılır."
+            }
+          }
+        },
+        "en": {
+          "stem": "A logistics company's route-planning machine learning system (MLS) gets demand forecasts from a vendor's ML model, which is provided as a service through an API. A tester wants to test that API: that the requests built by the data pipeline are received by the service as expected, and that the returned forecasts reach the planning user interface and are used correctly. Which test level covers this, and why?",
+          "options": [
+            {
+              "id": "a",
+              "text": "ML model testing, because the forecasts are produced by a model, so every check involving them belongs to that level"
+            },
+            {
+              "id": "b",
+              "text": "Input data testing, because the data pipeline builds the requests from production data, so the exchange is a data check"
+            },
+            {
+              "id": "c",
+              "text": "Acceptance testing, because the model is a vendor's service, so any test of it serves only to accept the purchase"
+            },
+            {
+              "id": "d",
+              "text": "Component integration testing, because it checks the data flow from the data pipeline to the model and on to the UI"
+            }
+          ],
+          "rationale": {
+            "summary": "Component integration testing includes testing that inputs from the data pipeline are received as expected by the model and that the model's predictions are exchanged with the relevant system components, such as the user interface, and used correctly. Where AI is provided as a service, API testing of the service is performed as part of component integration testing.",
+            "byOption": {
+              "a": "Incorrect. ML model testing is concerned with testing the ML models themselves, which are the ultimate output of the ML workflow. Here the checks concern how requests and forecasts pass between the vendor's service and the other components, not the model's own behavior.",
+              "b": "Incorrect. Input data testing is concerned with the training data and with the production data an MLS uses to generate predictions. Whether that data is received by the model as expected, and whether the predictions are used correctly, is checked in component integration testing.",
+              "c": "Incorrect. Where AI is used as a service, acceptance testing may be needed to determine the suitability of the service for the intended system and whether ML functional performance criteria have been achieved. Testing the API's data exchange is not that decision; it is part of component integration testing.",
+              "d": "Correct. Component integration testing checks that inputs from the data pipeline are received as expected by the model and that its predictions are exchanged with components such as the user interface and used correctly. Where AI is provided as a service, API testing of the service is performed as part of this level."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
+    },
+    {
+      "id": "ctai-0112",
+      "revision": 1,
+      "syllabusVersion": "2.0",
+      "chapter": 4,
+      "section": "4.3",
+      "syllabusRef": "§4.3.2",
+      "objectives": [
+        "AI-4.3.2"
+      ],
+      "kLevel": "K2",
+      "type": "single",
+      "selectCount": 1,
+      "points": 1,
+      "difficulty": 3,
+      "tags": [
+        "risk-based",
+        "ml-workflow",
+        "test-forms"
+      ],
+      "origin": "original",
+      "status": "published",
+      "correct": [
+        "b"
+      ],
+      "media": null,
+      "i18n": {
+        "tr": {
+          "stem": "Bir test yöneticisi, MÖ iş akışını üç alana bölen sınıflandırmayı kullanarak kredi puanlayan bir makine öğrenimi sistemine risk bazlı test uyguluyor. Test planında şimdilik yalnızca veri hattı testi ve karşıt test var. Müfredatta verilen örnek risklerden HİÇBİRİNİN planlı bir etkinlikle hedeflenmediği alan hangisidir?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Girdi verisi; örnek riskler arasında veri hattı hataları vardır"
+            },
+            {
+              "id": "b",
+              "text": "Geliştirme; örnek riskler arasında kötü değerlendirme yaklaşımı seçimi vardır"
+            },
+            {
+              "id": "c",
+              "text": "Model; örnek riskler arasında karşıt örneklere yatkınlık vardır"
+            },
+            {
+              "id": "d",
+              "text": "İşletim; örnek riskler arasında eğitim verisinden farklı üretim verisi vardır"
+            }
+          ],
+          "rationale": {
+            "summary": "İş akışı sınıflandırmasının üç alanı vardır: geliştirme (en uygun olmayan algoritma seçimi, kötü değerlendirme yaklaşımı seçimi, çerçevedeki güvenlik açıkları gibi proje riskleri), girdi verisi (veri hattı hataları gibi ürün riskleri) ve model (karşıt örneklere yatkınlık gibi ürün riskleri). Veri hattı testi ve karşıt test son ikisini hedefler; geliştirme alanı planlı bir etkinlik olmadan kalır.",
+            "byOption": {
+              "a": "Yanlış. Veri hattı hataları girdi verisi alanının örnek ürün risklerinden biridir ve veri hattı testi tam da bu riske yönelik bir test biçimidir; bu alanda zaten planlı bir etkinlik vardır.",
+              "b": "Doğru. Geliştirme alanı MÖ algoritmasını, model geliştirmeyi ve MÖ geliştirme çerçevesini kapsar; örnek proje riskleri en uygun olmayan algoritma seçimi, kötü değerlendirme yaklaşımı seçimi ve çerçevedeki güvenlik açıklarıdır. Planlı etkinliklerin hiçbiri bunları hedeflemez; müfredatın saydığı test biçimlerinden algoritmayla ilgili olanı algoritma/model uygunluğunun gözden geçirilmesidir.",
+              "c": "Yanlış. Karşıt örneklere yatkınlık model alanının örnek ürün risklerinden biridir ve karşıt test bu riske yönelik bir test biçimidir; bu alanda zaten planlı bir etkinlik vardır.",
+              "d": "Yanlış. İş akışı sınıflandırmasında işletim diye bir alan yoktur; üç alan geliştirme, girdi verisi ve modeldir. Modelin işletim ortamında kullandığı üretim verisi girdi verisi alanına aittir."
+            }
+          }
+        },
+        "en": {
+          "stem": "A test manager applies risk-based testing to a credit-scoring machine learning system, using the categorization that divides the ML workflow into three areas. So far the test plan contains only data pipeline testing and adversarial testing. In which area is NONE of the example risks given in the syllabus targeted by a planned activity?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Input data, with example risks such as data-pipeline defects"
+            },
+            {
+              "id": "b",
+              "text": "Development, with example risks such as poor selection of evaluation approach"
+            },
+            {
+              "id": "c",
+              "text": "Model, with example risks such as susceptibility to adversarial examples"
+            },
+            {
+              "id": "d",
+              "text": "Operation, with example risks such as production data that differs from training data"
+            }
+          ],
+          "rationale": {
+            "summary": "The workflow categorization has three areas: development (project risks such as sub-optimal algorithm selection, poor selection of evaluation approach, framework security vulnerabilities), input data (product risks such as data-pipeline defects) and model (product risks such as susceptibility to adversarial examples). Data pipeline testing and adversarial testing target the last two, leaving the development area without a planned activity.",
+            "byOption": {
+              "a": "Incorrect. Data-pipeline defects are an example product risk of the input data area, and data pipeline testing is a form of testing aimed at exactly that risk, so this area already has a planned activity.",
+              "b": "Correct. The development area covers the ML algorithm, model development and the ML development framework, with project risks such as sub-optimal algorithm selection, poor selection of evaluation approach and framework security vulnerabilities. Neither planned activity targets them; of the forms of testing the syllabus names, review of algorithm/model suitability is the one that concerns the algorithm.",
+              "c": "Incorrect. Susceptibility to adversarial examples is an example product risk of the model area, and adversarial testing is a form of testing aimed at it, so this area already has a planned activity.",
+              "d": "Incorrect. The workflow categorization has no operation area; its three areas are development, input data and model. The production data used by the model in its operational environment belongs to the input data area."
+            }
+          }
+        }
+      },
+      "meta": {
+        "author": "claude",
+        "reviewedBy": "question-verifier (two adversarial passes, 2026-10-05; CT-AI v2.0 F4-01b — every key re-derived from the v2.0 syllabus, 12 items fixed after the first pass and re-checked, length and stem-echo cues cleared both ways, K3 arithmetic recomputed)",
+        "createdAt": "2026-10-05",
+        "updatedAt": "2026-10-05"
+      }
     }
   ]
 }

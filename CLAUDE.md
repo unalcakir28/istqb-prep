@@ -7,7 +7,7 @@ This file is for Claude Code sessions working in this repo. It holds only what e
 **ISTQB-PREP** — a **free, open-source, bilingual (TR/EN)** mock exam and study platform for ISTQB certification exam preparation. The product name matches the repo name (D-01).
 **Priority: CTFL v4.0.1 (Foundation Level).** The architecture is designed to cover all levels, but content comes Foundation-first.
 
-**Status: working MVP.** Study, practice and exam run on one shared session shell. All 64 lesson cards are published and the pool holds 302 published questions, at least 4 per objective. A second certification, **CT-AI v2.0**, is live beside it (ADR-0006): 43 lesson cards and 86 questions, 2 per objective, picked on the home screen. What is open: `TODO.md`.
+**Status: working MVP.** Study, practice and exam run on one shared session shell. All 64 lesson cards are published and the pool holds 302 published questions, at least 4 per objective. A second certification, **CT-AI v2.0**, is live beside it (ADR-0006): 43 lesson cards and 129 questions, 3 per objective, picked on the home screen. What is open: `TODO.md`.
 
 ## Read these first
 
