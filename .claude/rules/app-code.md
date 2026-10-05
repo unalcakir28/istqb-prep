@@ -11,7 +11,9 @@ paths:
 features/session/  The three modes' shared machinery — SessionRunner (one shell
                    for study/practice/exam: load-and-resume, question card,
                    navigator, keyboard, announcements), sessionStore (Zustand,
-                   was examStore), routeForAttempt (an attempt's own URL)
+                   was examStore; reveal() is the hint ladder's last step),
+                   routeForAttempt (an attempt's own URL), hints (what the
+                   hint ladder's middle step shows, F3-09)
 features/exam/     Selection and scoring — selectQuestions (one entry point,
                    four scopes: blueprint / chapter / objective / questions,
                    the last being an explicit id list), generateExam

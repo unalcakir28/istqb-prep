@@ -182,6 +182,50 @@ describe("useSessionStore", () => {
     });
   });
 
+  describe("reveal (F3-09)", () => {
+    it("shows the answer of an unanswered question and stores the reveal", () => {
+      const attempt = baseAttempt({ instantFeedback: true });
+      useSessionStore.setState({ attempt, questions: [multiSelectQuestion("ctfl4-0001")] });
+      useSessionStore.getState().select("ctfl4-0001", "a");
+
+      useSessionStore.getState().reveal("ctfl4-0001");
+
+      expect(useSessionStore.getState().revealed["ctfl4-0001"]).toBeTypeOf("number");
+      expect(saveResponseMock).toHaveBeenLastCalledWith(
+        "attempt-1",
+        "ctfl4-0001",
+        expect.objectContaining({ selected: ["a"], revealedAt: expect.any(Number) }),
+      );
+      // Revealed means final: the partial pick cannot be completed now.
+      useSessionStore.getState().select("ctfl4-0001", "b");
+      expect(useSessionStore.getState().answers["ctfl4-0001"]).toEqual(["a"]);
+    });
+
+    it("does nothing where answers are not revealed on the spot", () => {
+      const attempt = baseAttempt({ instantFeedback: false });
+      useSessionStore.setState({ attempt, questions: [singleSelectQuestion("ctfl4-0001")] });
+
+      useSessionStore.getState().reveal("ctfl4-0001");
+
+      expect(useSessionStore.getState().revealed["ctfl4-0001"]).toBeUndefined();
+      expect(saveResponseMock).not.toHaveBeenCalled();
+    });
+
+    it("leaves an already-revealed question alone", () => {
+      const attempt = baseAttempt({ instantFeedback: true });
+      useSessionStore.setState({
+        attempt,
+        questions: [singleSelectQuestion("ctfl4-0001")],
+        revealed: { "ctfl4-0001": 1_700_000_001_000 },
+      });
+
+      useSessionStore.getState().reveal("ctfl4-0001");
+
+      expect(useSessionStore.getState().revealed["ctfl4-0001"]).toBe(1_700_000_001_000);
+      expect(saveResponseMock).not.toHaveBeenCalled();
+    });
+  });
+
   describe("toggleFlag", () => {
     it("preserves revealedAt on a revealed question in the persisted row", () => {
       const attempt = baseAttempt({ instantFeedback: true });
@@ -278,6 +322,25 @@ describe("useSessionStore", () => {
       expect(revisionOf("ctfl4-9999")).toBeUndefined();
     });
 
+    it("puts an unanswered question whose answer was shown in the deck (F3-09)", async () => {
+      const attempt = baseAttempt({
+        questionIds: ["ctfl4-0001", "ctfl4-0002"],
+        instantFeedback: true,
+      });
+      useSessionStore.setState({
+        attempt,
+        questions: [singleSelectQuestion("ctfl4-0001"), singleSelectQuestion("ctfl4-0002")],
+        // 0001 shown before any pick; 0002 never reached.
+        answers: { "ctfl4-0001": [] },
+        revealed: { "ctfl4-0001": 1_700_000_001_000 },
+        meta: { exam: { passPoints: 26 } } as never,
+      });
+
+      await useSessionStore.getState().submit();
+
+      expect(addWrongAnswersToDeckMock.mock.calls.at(-1)?.[1]).toEqual(["ctfl4-0001"]);
+    });
+
     it("stores the verdict for a blueprint attempt", async () => {
       const stored = await submitPerfectRun({ kind: "blueprint" });
 
@@ -323,6 +386,34 @@ describe("useSessionStore", () => {
       expect(ok).toBe(true);
       expect(useSessionStore.getState().revealed).toEqual({ "ctfl4-0001": revealedAt });
       expect(useSessionStore.getState().revealed["ctfl4-0002"]).toBeUndefined();
+    });
+
+    it("resumes past a question whose answer was shown unanswered (F3-09)", async () => {
+      const attempt = baseAttempt({ questionIds: ["ctfl4-0001", "ctfl4-0002"] });
+      const responses: Response[] = [
+        {
+          key: "attempt-1:ctfl4-0001",
+          attemptId: "attempt-1",
+          questionId: "ctfl4-0001",
+          selected: [],
+          flagged: false,
+          revealedAt: 1_700_000_002_000,
+          updatedAt: 1_700_000_002_000,
+        },
+      ];
+
+      dbMock.attempts.get.mockResolvedValue(attempt);
+      getResponsesMock.mockResolvedValue(responses);
+      vi.mocked(contentClient.getMeta).mockResolvedValue({ id: "ctfl-v4.0.1" } as never);
+      vi.mocked(contentClient.getQuestions).mockResolvedValue([
+        singleSelectQuestion("ctfl4-0001"),
+        singleSelectQuestion("ctfl4-0002"),
+      ]);
+
+      await useSessionStore.getState().resumeAttempt("attempt-1");
+
+      // The first is locked; the second is the one still to answer.
+      expect(useSessionStore.getState().currentIndex).toBe(1);
     });
 
     /**

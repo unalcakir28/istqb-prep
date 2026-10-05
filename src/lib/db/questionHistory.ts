@@ -35,6 +35,12 @@ export interface HistoryEntry {
   isCorrect: boolean;
   /** No option was ticked. Separate from wrong — it is not a wrong belief. */
   isUnanswered: boolean;
+  /**
+   * F3-09 — the answer was shown before one was given. An unanswered entry
+   * with it was reached and not known, so it counts as wrong, as it does
+   * for the repetition deck.
+   */
+  revealed?: boolean;
 }
 
 /** Everything one question's history says about it. */
@@ -87,7 +93,7 @@ export function listsFor(history: QuestionHistory): ListKey[] {
   if (!latest) return [];
 
   const lists: ListKey[] = [];
-  if (!latest.isCorrect && !latest.isUnanswered) lists.push("wrong");
+  if (!latest.isCorrect && (!latest.isUnanswered || latest.revealed)) lists.push("wrong");
   if (latest.flagged) lists.push("flagged");
   if (isShaky(history.entries)) lists.push("shaky");
 
@@ -162,6 +168,7 @@ export async function buildQuestionHistory(
         flagged: response.flagged,
         isCorrect: isExactMatch(response.selected, correct),
         isUnanswered: response.selected.length === 0,
+        revealed: Boolean(response.revealedAt),
       });
 
       histories.set(response.questionId, history);

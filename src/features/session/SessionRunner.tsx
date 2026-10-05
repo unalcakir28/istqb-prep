@@ -3,6 +3,7 @@ import { Link, Navigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { ContentLangToggle } from "@/components/ContentLangToggle";
+import { HintLadder, type HintLevel } from "@/components/HintLadder";
 import { QuestionCard } from "@/components/QuestionCard";
 import { QuestionNavigator, QuestionNavigatorSheet } from "@/components/QuestionNavigator";
 import { RationalePanel } from "@/components/RationalePanel";
@@ -132,6 +133,7 @@ export function SessionRunner({
 
   const resumeAttempt = useSessionStore((state) => state.resumeAttempt);
   const select = useSessionStore((state) => state.select);
+  const reveal = useSessionStore((state) => state.reveal);
   const toggleFlag = useSessionStore((state) => state.toggleFlag);
   const goTo = useSessionStore((state) => state.goTo);
   const next = useSessionStore((state) => state.next);
@@ -143,6 +145,10 @@ export function SessionRunner({
   const [sideBySide, setSideBySide] = useState(readSideBySide);
   const [navigatorOpen, setNavigatorOpen] = useState(false);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
+  // F3-09 — how far up the hint ladder each question is. Not persisted: a
+  // hint changes no score, and the one step that does (the solution) is
+  // stored as the reveal it is.
+  const [hintLevels, setHintLevels] = useState<Record<string, HintLevel>>({});
 
   const requestedRef = useRef<string | null>(null);
   const sidePanelRef = useRef<HTMLElement>(null);
@@ -167,6 +173,12 @@ export function SessionRunner({
     !!question &&
     selectedIds.length === question.correct.length &&
     selectedIds.every((id) => question.correct.includes(id));
+  // A revealed question without a complete answer had its answer shown (F3-09).
+  const verdict = isAnswerCorrect
+    ? "correct"
+    : question && selectedIds.length === question.selectCount
+      ? "incorrect"
+      : "shown";
 
   // F1-10 — rehydrate from IndexedDB when the store is cold (reload, new tab).
   useEffect(() => {
@@ -535,6 +547,27 @@ export function SessionRunner({
               is the only thing that puts text in it. */}
           <p ref={liveRegionRef} aria-live="polite" aria-atomic="true" className="sr-only" />
 
+          {/* Only where the answer is revealed on the spot: a hint in a mock
+              exam would change what the score measures. */}
+          {attempt.instantFeedback && attempt.mode !== "exam" && !isRevealed ? (
+            <div className="mt-5">
+              <HintLadder
+                key={question.id}
+                question={question}
+                lang={contentLang}
+                certId={attempt.certId}
+                level={hintLevels[question.id] ?? 0}
+                onStep={() =>
+                  setHintLevels((levels) => ({
+                    ...levels,
+                    [question.id]: Math.min((levels[question.id] ?? 0) + 1, 2) as HintLevel,
+                  }))
+                }
+                onReveal={() => reveal(question.id)}
+              />
+            </div>
+          ) : null}
+
           {isRevealed ? (
             <div className="mt-5">
               <RationalePanel
@@ -542,7 +575,7 @@ export function SessionRunner({
                 lang={contentLang}
                 selected={selectedIds}
                 panelRef={rationaleRef}
-                verdict={isAnswerCorrect ? "correct" : "incorrect"}
+                verdict={verdict}
               />
             </div>
           ) : null}

@@ -29,6 +29,7 @@ export default function PracticeSession() {
 
   const questions = useSessionStore((state) => state.questions);
   const answers = useSessionStore((state) => state.answers);
+  const revealed = useSessionStore((state) => state.revealed);
   const submit = useSessionStore((state) => state.submit);
 
   const submittingRef = useRef(false);
@@ -56,7 +57,10 @@ export default function PracticeSession() {
   // non-optional prop type.
   if (!attemptId) return <Spinner full />;
 
-  const unanswered = questions.filter((item) => (answers[item.id]?.length ?? 0) === 0).length;
+  // A question whose answer was shown (F3-09) is locked: going back cannot answer it.
+  const unanswered = questions.filter(
+    (item) => (answers[item.id]?.length ?? 0) === 0 && !revealed[item.id],
+  ).length;
 
   return (
     <>

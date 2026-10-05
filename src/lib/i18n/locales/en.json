@@ -142,6 +142,7 @@
   "session": {
     "feedbackCorrect": "Correct answer!",
     "feedbackIncorrect": "Incorrect answer.",
+    "feedbackShown": "Answer shown.",
     "answerLocked": "The answer has been revealed and can no longer be changed.",
     "optionReplaced": "Option {{position}} was cleared to make room for this one.",
     "shortfallScope_one": "Only {{available}}/{{required}} question could be found for this selection.",
@@ -430,5 +431,15 @@
   "storage": {
     "unavailable": "This browser is not saving anything for this site: its storage does not open here, and the app cannot run without it. Allow site data for this site, or open it in a normal window.",
     "unavailableLink": "What this means"
+  },
+  "hints": {
+    "stuck": "Stuck?",
+    "nudge": "Give me a nudge",
+    "hint": "Give me a hint",
+    "solution": "Show the answer",
+    "solutionNote": "Shows the answer and locks the question: it counts as not answered correctly and goes to your repetition deck when you finish.",
+    "nudgeLabel": "What this question checks",
+    "hintLabel": "Hint",
+    "notThis": "Not this one:"
   }
 }

@@ -142,6 +142,7 @@
   "session": {
     "feedbackCorrect": "Doğru cevap!",
     "feedbackIncorrect": "Yanlış cevap.",
+    "feedbackShown": "Cevap gösterildi.",
     "answerLocked": "Cevap gösterildi, artık değiştirilemez.",
     "optionReplaced": "Bu şıka yer açmak için {{position}}. şıkkın seçimi kaldırıldı.",
     "shortfallScope_one": "Bu seçim için sadece {{available}}/{{required}} soru bulunabildi.",
@@ -430,5 +431,15 @@
   "storage": {
     "unavailable": "Bu tarayıcı bu site için hiçbir şey kaydetmiyor: depolaması burada açılmıyor ve uygulama bunsuz çalışmaz. Bu site için site verilerine izin ver ya da siteyi normal bir pencerede aç.",
     "unavailableLink": "Bu ne demek?"
+  },
+  "hints": {
+    "stuck": "Takıldın mı?",
+    "nudge": "Beni biraz yönlendir",
+    "hint": "Bir ipucu ver",
+    "solution": "Cevabı göster",
+    "solutionNote": "Cevabı gösterir ve soruyu kilitler: soru doğru cevaplanmamış sayılır ve oturumu bitirdiğinde tekrar destene eklenir.",
+    "nudgeLabel": "Bu soru neyi ölçüyor",
+    "hintLabel": "İpucu",
+    "notThis": "Bu değil:"
   }
 }

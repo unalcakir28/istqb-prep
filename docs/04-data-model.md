@@ -339,7 +339,7 @@ This file enables realistic exam generation that **no competitor on the market d
 | `correct` | string[] | Option IDs. Its length must match `selectCount` (CI check). |
 | `media` | object\|null | Table / diagram. See §4. |
 | `rationale.byOption` | object | **Required for every option.** CI fails if it's missing. |
-| `hints` | string[] | Graduated hint. Optional. |
+| `hints` | string[] | Optional. The hint ladder's middle step shows them (F3-09, docs/06 §3.6); a question without them shows one wrong option and its rationale instead. |
 
 ### 3.8 `media` — table and diagram
 
@@ -560,7 +560,7 @@ settings      // A generic key-value table, one row per setting
 - **`deadlineAt` is nullable, and null means untimed.** Study and practice carry `null`; only exam mode sets one. A separate boolean could contradict the timestamp, so there isn't one.
 - **`mode`, `scope` and `instantFeedback` are frozen at creation.** A resumed session reads them back rather than recomputing them from whatever the setup screen currently defaults to — resuming must not change the rules mid-session. `scope` is a discriminated union: `{ kind: "blueprint" }`, `{ kind: "chapter", chapters[], count }`, `{ kind: "objective", objectives[], count }`, or `{ kind: "questions", questionIds[], source }` — an explicit list rather than a rule, where `source` is `"wrong" | "flagged" | "shaky"`. That last one is what makes "retry the ones you missed" (F2-02) and the saved lists (F2-07) one feature instead of two: both hand `selectQuestions` a set of ids and let it report what the pool can still supply.
 - **`revealedAt` is the lock.** Once the rationale has been shown, the answer is final: `sessionStore.select` refuses a revealed question, so instant feedback cannot be gamed.
-- **A wrong answer is what puts a question in the deck.** `sessionStore.submit` writes the attempt and the deck changes in one transaction: a question answered wrong (not unanswered) in any mode joins `srsCards` as a new card, due now; one already in the deck is rated "Again", unless it is still new. A right answer outside the review screen changes nothing — a lucky guess scores the same as knowledge, which is why the review screen asks the candidate to rate themselves (`src/features/srs/scheduler.ts`).
+- **A wrong answer is what puts a question in the deck.** `sessionStore.submit` writes the attempt and the deck changes in one transaction: a question answered wrong in any mode, or left unanswered after its answer was shown through the hint ladder (F3-09, docs/06 §3.6), joins `srsCards` as a new card, due now; one already in the deck is rated "Again", unless it is still new. A right answer outside the review screen changes nothing — a lucky guess scores the same as knowledge, which is why the review screen asks the candidate to rate themselves (`src/features/srs/scheduler.ts`).
 - **Breakdowns are not stored.** `chapterBreakdown` / `objectiveBreakdown` are recomputed by `scoreExam` from the questions and the stored answers whenever a result is shown.
 
 ### Schema versions

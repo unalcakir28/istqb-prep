@@ -101,7 +101,7 @@ istqb-prep/
 │   │   ├── Progress.tsx         # /ilerleme — readiness, streak, mock exams, per chapter
 │   │   └── MyData.tsx           # /verilerim — download / load the progress file
 │   ├── features/
-│   │   ├── session/             # SessionRunner (the shell), sessionStore, routeForAttempt
+│   │   ├── session/             # SessionRunner (the shell), sessionStore, routeForAttempt, hints (F3-09)
 │   │   ├── exam/                # selectQuestions, generateExam, scoreExam, examTimer, rng, optionOrder
 │   │   ├── srs/                 # scheduler (the only ts-fsrs import), interval, queue
 │   │   ├── glossary/            # markTerms (which words a lesson card marks), lessonGlossary (F2-11)
@@ -115,6 +115,7 @@ istqb-prep/
 │   │   │                        #   radios, used by the language toggle, the review
 │   │   │                        #   filter and the glossary chapter filter),
 │   │   │                        # GlossaryTerm (a lesson card's term and its definition, F2-11),
+│   │   │                        # HintLadder (nudge -> hint -> answer, F3-09),
 │   │   │                        # StorageWarning (every screen: storage does not open),
 │   │   │                        # StorageSection (/verilerim: persistence, F3-12),
 │   │   └──                      # ReportQuestionLink (F2-08) …
@@ -301,7 +302,7 @@ jobs:
 | **Accessibility** | `@axe-core/playwright` + hand-written specs | Zero violations on every main route in both themes, **plus** the failures axe cannot see: focus destinations, accessible names, live-region behaviour |
 | **Visual** | Playwright snapshot | Not set up |
 
-Counts as of 05.10.2026: **242 unit tests in 30 files**, **85 end-to-end specs across 11 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
+Counts as of 05.10.2026: **253 unit tests in 31 files**, **87 end-to-end specs across 11 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
 
 > This is a **testing certification** project. Test discipline is part of the product itself here; the README will display a test-coverage badge.
 

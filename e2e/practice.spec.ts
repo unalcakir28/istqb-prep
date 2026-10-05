@@ -273,3 +273,47 @@ test("a legacy /deneme/:attemptId link redirects into the same exam session", as
   // The attempt itself came back, not just the URL.
   await expect(page.getByText(questionCounter(1))).toBeVisible();
 });
+
+/**
+ * F3-09 — the hint ladder: nudge, then hint, then the answer. Each step
+ * moves focus to what it added; the last reveals the question the way a
+ * complete answer does, locked, and the rationale panel is named "Answer
+ * shown" rather than given a verdict nobody earned.
+ */
+test("the hint ladder goes nudge, hint, answer, and the answer locks the question", async ({
+  page,
+}) => {
+  await startPractice(page, true);
+  const ladder = page.getByRole("region", { name: en.hints.stuck });
+
+  await ladder.getByRole("button", { name: en.hints.nudge }).click();
+  const nudge = ladder.getByRole("heading", { name: en.hints.nudgeLabel });
+  await expect(nudge).toBeVisible();
+  await expect(page.locator(":focus")).toContainText(en.hints.nudgeLabel);
+
+  await ladder.getByRole("button", { name: en.hints.hint }).click();
+  await expect(ladder.getByRole("heading", { name: en.hints.hintLabel })).toBeVisible();
+  await expect(page.locator(":focus")).toContainText(en.hints.hintLabel);
+
+  const solution = ladder.getByRole("button", { name: en.hints.solution });
+  await expect(solution).toHaveAccessibleDescription(en.hints.solutionNote);
+  await solution.click();
+
+  const panel = page.getByRole("region", {
+    name: `${en.session.feedbackShown} ${en.review.whyTitle}`,
+  });
+  await expect(panel).toBeFocused();
+  await expect(ladder).toHaveCount(0);
+
+  const inputs = optionInputs(page);
+  const count = await inputs.count();
+  for (let index = 0; index < count; index += 1) {
+    await expect(inputs.nth(index)).toBeDisabled();
+  }
+});
+
+test("with instant feedback off there is no hint ladder", async ({ page }) => {
+  await startPractice(page, false);
+
+  await expect(page.getByRole("region", { name: en.hints.stuck })).toHaveCount(0);
+});

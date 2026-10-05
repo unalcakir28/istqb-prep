@@ -72,6 +72,10 @@ describe("listsFor", () => {
     expect(listsFor(history([skipped]))).toEqual(["shaky"]);
   });
 
+  it("calls an unanswered question a mistake once its answer was shown (F3-09)", () => {
+    expect(listsFor(history([right, { ...skipped, revealed: true }]))).toEqual(["wrong", "shaky"]);
+  });
+
   it("puts one question on every list it qualifies for", () => {
     expect(listsFor(history([entry({ flagged: true })]))).toEqual(["wrong", "flagged", "shaky"]);
   });

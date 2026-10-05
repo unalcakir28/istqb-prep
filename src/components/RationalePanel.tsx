@@ -45,7 +45,7 @@ export interface RationalePanelProps {
    * nothing focuses the panel there and every question already carries its own
    * outcome badge.
    */
-  verdict?: "correct" | "incorrect";
+  verdict?: "correct" | "incorrect" | "shown";
   /**
    * The panel heading's level — `<h2>` in session, where it sits under the
    * counter `<h1>`, `<h3>` on the review screen, where it belongs under that
@@ -59,6 +59,8 @@ export interface RationalePanelProps {
 const VERDICT_KEY = {
   correct: "session.feedbackCorrect",
   incorrect: "session.feedbackIncorrect",
+  /** F3-09 — the answer was asked for, not given. */
+  shown: "session.feedbackShown",
 } as const;
 
 /** Left border color: green for the correct option, red for the candidate's wrong pick. */

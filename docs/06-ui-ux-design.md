@@ -271,7 +271,15 @@ The scope is **chosen, not fixed**. The setup screen offers:
 - **A live preview of how many questions the scope can actually produce**, computed by the same `selectQuestions` the session will run — so the preview cannot drift from the result. A shortfall is stated before the session starts (rule 8).
 - Untimed. Finishing is manual and confirmed, through the same `SubmitConfirm` exam mode uses.
 
-**Not built yet:** re-queuing a missed question at the end of the same session (F2-02), progressive hints (F3-09), and the "10 more from the same topic" follow-on.
+**The hint ladder (F3-09).** With instant feedback on — practice by default, study always, never a mock exam — a "Stuck?" box sits under each unrevealed question, one press per step (`HintLadder`):
+
+1. **Give me a nudge** — what the question checks: its learning objective's code and text, in the question's language.
+2. **Give me a hint** — the question's authored `hints` where it has them; otherwise one wrong option taken away, quoted, with its own rationale (`features/session/hints.ts`). It is always the first wrong option in the order shown, whatever has been picked: a hint that followed the picks would let a multi-select question be probed and answered without the last step's cost.
+3. **Show the answer** — reveals the question through the same path a complete answer takes, so it locks. The cost is stated under the button and is its accessible description: the question counts as not answered correctly and goes to the repetition deck at the finish, even with no option picked; the result screen counts it as unanswered if nothing was picked and as wrong otherwise. The rationale panel is named "Answer shown." rather than given a verdict.
+
+No new content is written for it: the nudge and the hint are text the product already ships and reviewed. Each step moves focus to what it added; the last needs nothing, because the shell focuses the rationale panel on a reveal. How far up the ladder a question is lives in the session screen only — a hint changes no score, and the step that does is stored as the reveal it is. A mock exam has no ladder: a hint would change what the score measures. Practice with instant feedback off has none either: nothing is revealed before the review.
+
+**Not built yet:** the "10 more from the same topic" follow-on. Re-queuing a missed question inside the same session is not planned: F2-02 starts a new practice attempt instead.
 
 ### 3.7 Study mode `/calisma`
 
@@ -280,7 +288,7 @@ Three levels, each one a route, and the entry point for persona P2. This **absor
 1. **`/calisma` — chapters.** The six syllabus chapters, each with its objective count and how many of them are mastered.
 2. **`/calisma/:chapter` — objectives.** Every LO in the chapter as a row: code · K-level · text · an `ObjectiveStateBadge` reading `not started` / `in progress` / `mastered`. The badge is an icon **plus words**, never a coloured dot (WCAG 1.4.1).
 3. **`/calisma/lo/:loCode` — one objective.** The lesson card (§3.10), then `Start test`. **Opening the card is itself progress** — the objective leaves "not started" on mount, even if the test is never taken. If the objective has fewer published questions than the mastery bar, the screen says so before the test starts.
-4. **`/calisma/lo/:loCode/:attemptId` — the test, and its result in the same route.** Always untimed, always instant feedback: the point is to close the loop between the explanation and the question while the explanation is still in reach. At most 10 questions — a study-mode product choice, not an exam constant, so it does not come from `meta.json`. The result does not navigate away; the way back to the card and the way on to the next objective are both on it.
+4. **`/calisma/lo/:loCode/:attemptId` — the test, and its result in the same route.** Always untimed, always instant feedback: the point is to close the loop between the explanation and the question while the explanation is still in reach. The hint ladder (§3.6, F3-09) is there too. At most 10 questions — a study-mode product choice, not an exam constant, so it does not come from `meta.json`. The result does not navigate away; the way back to the card and the way on to the next objective are both on it.
 
 **Mastery is losable.** It reflects the most recent objective test, not a high-water mark: ≥3 questions answered for the objective across all sessions **and** ≥80% on the last test. A candidate who has forgotten a topic should see that. An attempt submitted with nothing answered writes nothing, so it cannot erase mastery already earned.
 
@@ -288,7 +296,7 @@ Three levels, each one a route, and the entry point for persona P2. This **absor
 
 Built in F3-02. One due card at a time, the most overdue first.
 
-- **How a card gets there:** a question answered wrong in study, practice or the exam (F3-01). Nothing else adds one; there is no manual "add to deck".
+- **How a card gets there:** a question answered wrong in study, practice or the exam (F3-01), or one whose answer was shown through the hint ladder before it was answered (F3-09, §3.6). Nothing else adds one; there is no manual "add to deck".
 - Card flow: question → answer → rationale → **Again / Hard / Good / Easy**. The answer reveals on a complete selection, as in study mode, and focus moves to the rationale panel, which is named after the verdict.
 - **The next interval is printed on each button** ("Good · in 4 days"), formatted by `Intl.NumberFormat` in the interface language — to build trust in the algorithm. The button's accessible name is its label plus that interval.
 - **A wrong answer offers only "Again".** The self-rating exists because a right answer can be a guess; a wrong one is not a matter of confidence, and rating it "Easy" would send a question the candidate does not know weeks away.
@@ -369,7 +377,7 @@ Paragraphs are plain text, not Markdown — the project ships no Markdown render
 - **Matching** (`features/glossary/markTerms.ts`) is case-insensitive on the term as written: the glossary's English, or the Turkish from `terms.json`. English takes a plural `s`/`es`; Turkish takes any suffix, except on a verbal noun in `-ma`/`-me`: a one-word one (`sağlama`) is matched only as written, because `sağlamak`, `sağlaması` and `sağlamaya` are nearly always the verb "to ensure", and a longer one refuses only the infinitive (`gözden geçirmek`). Consonant softening is not undone, so such an occurrence stays plain. A hyphen is part of a word, and the longer of two terms starting at one place wins.
 - **There is no Turkish definition.** A Turkish card marks the Turkish term and opens the English definition, saying it is the glossary's English definition and a Turkish definition has no verified source yet (docs/04 §3.10).
 - **Only the chunks the card needs are fetched**; the glossary index is fetched beside the lesson. If the glossary fails to load, the card is shown unmarked rather than the screen failing.
-- Not in sessions: in a test, a definition one press away would be a hint.
+- Not in sessions: in a test, a definition one press away would be a hint, and an unpriced one, unlike the hint ladder's (§3.6).
 
 ---
 
@@ -414,7 +422,8 @@ Two rules keep the shell honest:
 | Event | Focus goes to | Which reads |
 |---|---|---|
 | Next / previous question | The stem heading | `Question 3 of 40 <stem>` — the counter is referenced, never duplicated in the DOM |
-| The answer is revealed | The rationale panel | `Correct answer! Why?` — the verdict is part of the panel's accessible name |
+| The answer is revealed | The rationale panel | `Correct answer! Why?` / `Incorrect answer. Why?` / `Answer shown. Why?` (F3-09) — the verdict is part of the panel's accessible name |
+| A hint step (nudge, hint) | The block that step added | Its text: the objective, or the hint |
 | A multi-select pick displaces an older one | nothing moves | The polite live region, which is its **only** writer: "option 1 cleared" |
 
 Prev/Next at a boundary carry `aria-disabled`, not `disabled`: a real `disabled` fires while the user is still pressing the button and throws focus to `<body>` at exactly the moment they want Submit, the very next tab stop.
@@ -500,7 +509,7 @@ Typing in a real text field is never swallowed; radios and checkboxes are the op
 - [x] Correct/incorrect: color + icon + text (all three together) — on the option rows and on the objective state badge
 - [x] Contrast ≥ 4.5:1 (text), ≥ 3:1 (UI component) — in both themes
 - [x] Modal/sheet has a focus trap and closes with `Esc`; shortcuts stand down while one is open
-- [x] Every screen change that is not a page load moves focus and says where: next question → the stem heading; reveal → the rationale panel, named after the verdict; study finish → the result heading; `/sonuc` and `/inceleme` → their own `<h1>` on arrival. `useArrivalFocus` gates that on the navigation type, so a cold open, a reload and the Back button all stay silent — a page load has nothing to announce, and moving focus to the `tabIndex={-1}` heading there would leave the skip link behind a Shift+Tab. Back is the accepted cost of that: `location.key` would have told arrival from Back but not from a reload, because the browser restores `history.state`
+- [x] Every screen change that is not a page load moves focus and says where: next question → the stem heading; reveal → the rationale panel, named after the verdict; hint ladder step → the block it added (F3-09); study finish → the result heading; `/sonuc` and `/inceleme` → their own `<h1>` on arrival. `useArrivalFocus` gates that on the navigation type, so a cold open, a reload and the Back button all stay silent — a page load has nothing to announce, and moving focus to the `tabIndex={-1}` heading there would leave the skip link behind a Shift+Tab. Back is the accepted cost of that: `location.key` would have told arrival from Back but not from a reload, because the browser restores `history.state`
 - [x] Boundary buttons use `aria-disabled`, so focus is never yanked out from under the user
 - [x] The question is on the heading outline, and nests correctly in both the session and the review outline (§4.3)
 - [ ] Page title updates on **every** route change — the session shell, the study result, `/sonuc` and `/inceleme` set it through `useDocumentTitle`. No other route sets one and no route clears one, so the setup, home, chapter and sources routes show the static title only until the first session and whatever was last set after that: "Back home" from `/sonuc` leaves "Result · ISTQB-PREP" on the home page. Closing this means every route declaring its own title, not a reset in `Layout` — a reset there would run after its children's effects on mount and clobber the title the route just set

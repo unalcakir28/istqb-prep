@@ -66,6 +66,8 @@ interface SessionState {
   resumeAttempt: (attemptId: string) => Promise<boolean>;
   loadSubmitted: (attemptId: string) => Promise<boolean>;
   select: (questionId: string, optionId: string) => void;
+  /** F3-09 — the hint ladder's last step: show the answer now, which locks it. */
+  reveal: (questionId: string) => void;
   toggleFlag: (questionId: string) => void;
   goTo: (index: number) => void;
   next: () => void;
@@ -232,7 +234,8 @@ export const useSessionStore = create<SessionState>((set, get) => ({
       }
 
       // Resuming at the first unanswered question is more useful than resuming where the user left off.
-      const firstUnanswered = attempt.questionIds.findIndex((id) => !answers[id]);
+      // One whose answer was shown (F3-09) is locked, so it is not where to resume.
+      const firstUnanswered = attempt.questionIds.findIndex((id) => !answers[id] && !revealed[id]);
 
       set({
         attempt,
@@ -308,6 +311,23 @@ export const useSessionStore = create<SessionState>((set, get) => ({
     });
   },
 
+  reveal(questionId) {
+    const { attempt, answers, flagged, revealed } = get();
+    if (!attempt || attempt.status !== "in-progress") return;
+    // Only where a complete answer would have revealed it anyway: with
+    // instant feedback off, nothing is shown before the review.
+    if (!attempt.instantFeedback) return;
+    if (revealed[questionId]) return;
+
+    const revealedAt = Date.now();
+    set({ revealed: { ...revealed, [questionId]: revealedAt } });
+    persist(set, attempt.id, questionId, {
+      selected: answers[questionId] ?? [],
+      flagged: flagged[questionId] ?? false,
+      revealedAt,
+    });
+  },
+
   toggleFlag(questionId) {
     const { attempt, flagged } = get();
     if (!attempt) return;
@@ -342,7 +362,7 @@ export const useSessionStore = create<SessionState>((set, get) => ({
   },
 
   async submit(auto = false) {
-    const { attempt, questions, answers, meta } = get();
+    const { attempt, questions, answers, revealed, meta } = get();
     if (!attempt || !meta || attempt.status !== "in-progress") return;
 
     const score = scoreExam(questions, answers, meta);
@@ -366,9 +386,14 @@ export const useSessionStore = create<SessionState>((set, get) => ({
     // F3-01: the questions answered wrong join the repetition deck in the same
     // transaction, so a submitted attempt never exists without its deck
     // changes. Unanswered questions stay out — a question nobody reached is
-    // not a wrong belief to repeat (the same rule as F2-02's retry).
+    // not a wrong belief to repeat (the same rule as F2-02's retry) — except
+    // one whose answer was shown before it was answered (F3-09): it was
+    // reached, and the candidate did not know it.
     const wrong = score.outcomes
-      .filter((outcome) => !outcome.isCorrect && !outcome.isUnanswered)
+      .filter(
+        (outcome) =>
+          !outcome.isCorrect && (!outcome.isUnanswered || Boolean(revealed[outcome.questionId])),
+      )
       .map((outcome) => outcome.questionId);
 
     // F3-11: each card remembers the revision the wrong answer was given to.

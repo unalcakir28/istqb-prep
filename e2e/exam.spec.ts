@@ -62,6 +62,8 @@ test("a full exam is set up, answered and reviewed from the home page", async ({
   await expect(counter).toBeVisible();
   const total = Number((await counter.innerText()).match(questionCounter(1))![1]);
   expect(total).toBeGreaterThan(0);
+  // F3-09: a hint in a mock exam would change what the score measures.
+  await expect(page.getByRole("region", { name: en.hints.stuck })).toHaveCount(0);
 
   // D-03: the order each question's options were shown in, to hold the
   // review screen to below.

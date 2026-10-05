@@ -69,6 +69,7 @@ export default function StudySession() {
 
   const questions = useSessionStore((state) => state.questions);
   const answers = useSessionStore((state) => state.answers);
+  const revealed = useSessionStore((state) => state.revealed);
   const submit = useSessionStore((state) => state.submit);
   const submittingRef = useRef(false);
   const [submitting, setSubmitting] = useState(false);
@@ -138,7 +139,10 @@ export default function StudySession() {
       />
     );
 
-  const unanswered = questions.filter((item) => (answers[item.id]?.length ?? 0) === 0).length;
+  // A question whose answer was shown (F3-09) is locked: going back cannot answer it.
+  const unanswered = questions.filter(
+    (item) => (answers[item.id]?.length ?? 0) === 0 && !revealed[item.id],
+  ).length;
 
   return (
     <>
