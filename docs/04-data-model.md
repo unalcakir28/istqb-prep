@@ -654,7 +654,7 @@ Checks that run on every PR (`yarn validate:data`). The registry in [`../scripts
 | 9 | Does `exam-blueprint.json` total 40 questions / 8-6-4-11-9-2 / K 8-24-8? | ❌ |
 | 10 | Is there at least 1 published question for every LO? | ⚠️ warning |
 | 11 | Is there at least 3 published questions for every LO? | ⚠️ warning |
-| 12 | Does `kLevel` match the highest K-level among the question's LOs? | ⚠️ warning |
+| 12 | Does `kLevel` match the highest K-level among the question's LOs? A question deliberately set lower is recorded with its reason in `K_LEVEL_EXCEPTIONS` (D-06), and an exception that no longer applies is itself reported | ⚠️ warning |
 | 13 | Is there English-term leakage in the Turkish text (glossary check)? | ⚠️ warning |
 | 14 | ~~Is the correct answer's option position balanced (a systematic "always a" bias)?~~ **Retired by D-03** — options are shuffled per attempt, so the authored letter never reaches a candidate. | — |
 | 15 | Does the rationale/question text refer to an option by its letter (e.g. "(c) is incorrect")? | ❌ |

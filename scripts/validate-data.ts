@@ -611,6 +611,19 @@ function checkQuestionIdsUnique(questions: QuestionRecord[]): void {
   }
 }
 
+/**
+ * #12's recorded exceptions: a question deliberately set below its
+ * objective's K-level, with the reason. A question tests one level, and a
+ * verifier who finds that it asks for recognition rather than application
+ * should be able to say so on the question instead of inventing an
+ * application it does not contain (D-06). An entry whose question no
+ * longer differs is reported, so the list cannot outlive its reason.
+ */
+const K_LEVEL_EXCEPTIONS: Record<string, string> = {
+  "ctfl4-0216":
+    "Asks which of a team's practices does not conform to ATDD: recognising the practice, not deriving test cases with it; relabelled K2 by the 2026-09-22 adversarial pass. FL-4.5.3 keeps four K3 questions (0086, 0087, 0215, 0302).",
+};
+
 function checkKLevelConsistency(questions: QuestionRecord[], objectivesByCode: Map<string, any>): void {
   for (const { question, file } of questions) {
     const objectives: string[] = Array.isArray(question.objectives) ? question.objectives : [];
@@ -621,7 +634,12 @@ function checkKLevelConsistency(questions: QuestionRecord[], objectivesByCode: M
     if (knownKLevels.length === 0) continue; // check #2 already flags unknown LO codes
 
     const expected = highestKLevel(knownKLevels);
-    if (expected === question.kLevel) continue;
+    const exception = K_LEVEL_EXCEPTIONS[question.id];
+    if (expected === question.kLevel) {
+      if (exception) report(12, file, question.id, `Recorded K-level exception is stale: the question now matches its LOs (${expected}). Remove it from K_LEVEL_EXCEPTIONS.`);
+      continue;
+    }
+    if (exception) continue;
     report(12, file, question.id, `The question's kLevel does not match the highest K-level among its LOs. Expected: ${expected} (LOs: ${JSON.stringify(objectives)} → ${JSON.stringify(knownKLevels)}); Found: ${question.kLevel}.`);
   }
 }
