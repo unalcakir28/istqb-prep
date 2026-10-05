@@ -337,8 +337,11 @@ describe("ExamResult retry the ones you missed", () => {
     expect(asked!.excludeSeen).toBe(false);
     expect(asked!.durationMinutes).toBeNull();
 
-    // The new attempt, not a re-queue inside the one just scored.
-    expect(screen.getByTestId("location")).toHaveTextContent("/alistirma/attempt-2");
+    // The new attempt, not a re-queue inside the one just scored. The
+    // navigation follows the session's promise, so it is waited for too.
+    await waitFor(() => {
+      expect(screen.getByTestId("location")).toHaveTextContent("/alistirma/attempt-2");
+    });
   });
 
   it("is not offered when nothing was answered wrongly", async () => {
