@@ -24,7 +24,8 @@ features/srs/      Spaced repetition — scheduler (the only ts-fsrs import:
                    card <-> row, grading, the interval preview, and the rule
                    for what a wrong answer does to the deck), interval,
                    queue (what is due; the home count and /tekrar share it;
-                   spreadSiblings keeps two cards of one LO apart)
+                   spreadSiblings keeps two cards of one LO apart;
+                   forecastDue counts the next days for /tekrar)
 lib/content/       Static JSON access + a two-tier cache (Map + Cache API
                    named per dataVersion). Questions AND lessons.
 lib/db/            Dexie/IndexedDB — the single place for persistence. db.ts

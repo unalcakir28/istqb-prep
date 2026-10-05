@@ -247,7 +247,12 @@
     "deckSize_one": "Your deck holds {{count}} question.",
     "deckSize_other": "Your deck holds {{count}} questions.",
     "nextDue": "The next one is due in {{interval}}.",
-    "checkAgain": "Check again"
+    "checkAgain": "Check again",
+    "forecastTitle": "Coming up",
+    "forecastCaption_one": "Questions that come due over the next day.",
+    "forecastCaption_other": "Questions that come due over the next {{count}} days.",
+    "forecastCount_one": "{{count}} question",
+    "forecastCount_other": "{{count}} questions"
   },
   "myData": {
     "title": "Your data",

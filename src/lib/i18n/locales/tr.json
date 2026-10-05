@@ -247,7 +247,12 @@
     "deckSize_one": "Destende {{count}} soru var.",
     "deckSize_other": "Destende {{count}} soru var.",
     "nextDue": "Bir sonraki sorunun zamanı {{interval}} sonra gelecek.",
-    "checkAgain": "Yeniden kontrol et"
+    "checkAgain": "Yeniden kontrol et",
+    "forecastTitle": "Sırada olanlar",
+    "forecastCaption_one": "Önümüzdeki gün zamanı gelecek sorular.",
+    "forecastCaption_other": "Önümüzdeki {{count}} günde zamanı gelecek sorular.",
+    "forecastCount_one": "{{count}} soru",
+    "forecastCount_other": "{{count}} soru"
   },
   "myData": {
     "title": "Verilerim",

@@ -158,7 +158,7 @@ The coverage line has **no progress bar**. For CTFL, `objectivesTotal` is fixed 
 
 **The repetition link (F3-02).** "Your status" carries a link to `/tekrar` once the deck holds a card, with the due count in its own text ("Repeat 3 due questions"), accent-filled while something is due. Before the first wrong answer there is no link: it would lead to an empty screen. The count comes from the same `summarizeDeck` the review screen serves by, so the two numbers cannot disagree.
 
-**Not built yet:** the streak, the weakest-objectives summary and the 7-day forecast chart are Phase 3 (F3-04, F3-05).
+**Not built yet:** the streak and the weakest-objectives summary (F3-05). The 7-day forecast (F3-04) lives on the /tekrar done panel, not here (§3.8).
 
 ### 3.2 Exam setup `/sinav`
 
@@ -297,8 +297,7 @@ Built in F3-02. One due card at a time, the most overdue first.
 - A card whose question is no longer published is skipped, not shown, and stays in the deck.
 
 - **Two cards of the same LO are not served back to back** (F3-03, `spreadSiblings` in `features/srs/queue.ts`): the first one's rationale would answer the second. A sibling moves back, most overdue first otherwise. Two siblings meet only when no order can keep them apart (a deck of one LO, say) — a due card is moved, never held back.
-
-**Not built yet:** the forecast chart for the next 7 days (F3-04).
+- **The next 7 days, one row each** (F3-04, `DueForecast`): when nothing is due, the done panel shows how many questions come due today, tomorrow and on each following day, with a bar scaled to the busiest day. The bar is `aria-hidden`; the row's own words carry the count. Day names come from `Intl` in the interface language. A week with nothing in it shows no chart, only the "next one is due in" sentence.
 
 ### 3.9 Glossary `/sozluk`
 

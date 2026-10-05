@@ -42,6 +42,39 @@ export function summarizeDeck(
   };
 }
 
+export interface ForecastDay {
+  /** Local midnight that starts the day. */
+  start: number;
+  count: number;
+}
+
+/**
+ * F3-04 — how many cards come due on each of the next `days` local days.
+ *
+ * Day 0 is the rest of today. A card that is already due is not in it: it is
+ * waiting now, and the screen says so separately. Boundaries are local
+ * midnights built from the calendar date, so a day with a clock change is
+ * still one day.
+ */
+export function forecastDue(
+  deck: readonly SrsCard[],
+  published: ReadonlySet<string>,
+  now: number,
+  days: number,
+): ForecastDay[] {
+  const today = new Date(now);
+  const startOf = (offset: number) =>
+    new Date(today.getFullYear(), today.getMonth(), today.getDate() + offset).getTime();
+  const waiting = deck.filter((card) => published.has(card.questionId) && !isDue(card, now));
+
+  return Array.from({ length: days }, (_, offset) => {
+    const start = startOf(offset);
+    const end = startOf(offset + 1);
+    const count = waiting.filter((card) => card.due >= start && card.due < end).length;
+    return { start, count };
+  });
+}
+
 /**
  * Reorders cards so that no two neighbours share a learning objective, while
  * keeping the given order (most overdue first) wherever the rule allows.

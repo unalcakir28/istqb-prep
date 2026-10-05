@@ -25,6 +25,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { ContentLangToggle } from "@/components/ContentLangToggle";
+import { DueForecast } from "@/components/DueForecast";
 import { ErrorNotice } from "@/components/ErrorNotice";
 import { QuestionCard } from "@/components/QuestionCard";
 import { RationalePanel } from "@/components/RationalePanel";
@@ -33,7 +34,7 @@ import { withOptionOrder } from "@/features/exam/optionOrder";
 import { randomSeed } from "@/features/exam/rng";
 import { isExactMatch } from "@/features/exam/scoreExam";
 import { formatInterval } from "@/features/srs/interval";
-import { spreadSiblings, summarizeDeck } from "@/features/srs/queue";
+import { forecastDue, spreadSiblings, summarizeDeck, type ForecastDay } from "@/features/srs/queue";
 import { GRADES, previewDue, type SrsGrade } from "@/features/srs/scheduler";
 import { otherLang, readSideBySide, writeSideBySide } from "@/lib/bilingual";
 import { contentClient } from "@/lib/content/contentClient";
@@ -56,7 +57,11 @@ interface RepetitionData {
   nextDueAt: number | null;
   /** The "now" the deck was summarised at — what "next due in" counts from. */
   loadedAt: number;
+  /** F3-04: the cards that come due on each of the next days. */
+  forecast: ForecastDay[];
 }
+
+const FORECAST_DAYS = 7;
 
 const COUNTER_ID = "repetition-counter";
 
@@ -86,7 +91,13 @@ async function loadRepetition(): Promise<RepetitionData> {
     return question ? [{ card, question }] : [];
   });
 
-  return { items, size: summary.size, nextDueAt: summary.nextDueAt, loadedAt };
+  return {
+    items,
+    size: summary.size,
+    nextDueAt: summary.nextDueAt,
+    loadedAt,
+    forecast: forecastDue(deck, published, loadedAt, FORECAST_DAYS),
+  };
 }
 
 export default function Repetition() {
@@ -264,6 +275,8 @@ export default function Repetition() {
               <p className="max-w-[65ch] text-[15px] text-fg-muted">{t("repetition.emptyBody")}</p>
             )}
           </div>
+
+          {hasDeck ? <DueForecast days={data.forecast} /> : null}
 
           <div className="flex flex-wrap gap-2 pt-1">
             {hasDeck ? (

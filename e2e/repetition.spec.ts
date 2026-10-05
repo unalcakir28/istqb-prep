@@ -132,6 +132,11 @@ test("rating a card stores the schedule the button showed, and empties the queue
   await expect(done).toBeVisible();
   await expect(done).toBeFocused();
   await expect(page.getByText(fill(en.repetition.reviewed_one, { count: 1 }))).toBeVisible();
+  // F3-04: the "Again" card comes back within a minute, so the forecast shows it.
+  const forecast = page.getByRole("figure", { name: en.repetition.forecastTitle });
+  await expect(
+    forecast.getByText(fill(en.repetition.forecastCount_one, { count: 1 })),
+  ).toBeVisible();
 
   const row = await storedCard(page, questionId);
   expect(row.state).toBe("learning");

@@ -1,6 +1,6 @@
-import { describe, expect, it } from "vitest";
+import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
-import { spreadSiblings, summarizeDeck } from "./queue";
+import { forecastDue, spreadSiblings, summarizeDeck } from "./queue";
 import { newCard } from "./scheduler";
 import type { SrsCard } from "@/lib/db/db";
 
@@ -100,5 +100,54 @@ describe("spreadSiblings", () => {
 
   it("returns an empty list for an empty one", () => {
     expect(spreadSiblings([], objectivesOf)).toEqual([]);
+  });
+});
+
+describe("forecastDue", () => {
+  // Local times, so the day boundaries hold in any time zone the suite runs in.
+  const at = (day: number, hour: number) => new Date(2026, 9, day, hour).getTime();
+  const now = at(5, 10);
+
+  it("counts the cards that come due on each of the next days, today's rest first", () => {
+    const deck = [
+      card("today", at(5, 18)),
+      card("tomorrow-early", at(6, 0)),
+      card("tomorrow-late", at(6, 23)),
+      card("in-three-days", at(8, 9)),
+      card("too-late", at(12, 9)),
+    ];
+    const ids = new Set(deck.map((row) => row.questionId));
+    const days = forecastDue(deck, ids, now, 7);
+
+    expect(days.map((day) => day.count)).toEqual([1, 2, 0, 1, 0, 0, 0]);
+    expect(days[0].start).toBe(at(5, 0));
+    expect(days[1].start).toBe(at(6, 0));
+  });
+
+  it("leaves out a card that is already due, and one that is no longer published", () => {
+    const deck = [card("overdue", now - 1_000), card("retired", at(6, 9)), card("q1", at(6, 9))];
+    const days = forecastDue(deck, new Set(["overdue", "q1"]), now, 3);
+
+    expect(days.map((day) => day.count)).toEqual([0, 1, 0]);
+  });
+});
+
+describe("forecastDue across a clock change", () => {
+  const original = process.env.TZ;
+  beforeAll(() => {
+    process.env.TZ = "Europe/Berlin";
+  });
+  afterAll(() => {
+    process.env.TZ = original;
+  });
+
+  it("keeps a 25-hour day as one day", () => {
+    // Berlin leaves summer time on 25 October 2026: that day has 25 hours.
+    const now = new Date(2026, 9, 24, 10).getTime();
+    const lateOnTheLongDay = card("long-day", new Date(2026, 9, 25, 23, 30).getTime());
+    const days = forecastDue([lateOnTheLongDay], new Set(["long-day"]), now, 3);
+
+    expect(days[2].start - days[1].start).toBe(25 * 3_600_000);
+    expect(days.map((day) => day.count)).toEqual([0, 1, 0]);
   });
 });
