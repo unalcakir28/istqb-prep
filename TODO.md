@@ -123,7 +123,7 @@ Each gets its own spec and plan; nothing above anticipates them beyond the exten
 
 ### Track A — official-question handling
 
-- [ ] **A-01** `P1` Decide and document what "official" material may be referenced without being reproduced (rule 1 is not up for negotiation; this is about citation and linking, not copying)
+- [x] **A-01** `P1` Decide and document what "official" material may be referenced without being reproduced (rule 1 is not up for negotiation; this is about citation and linking, not copying) _Done 05.10.2026: `docs/adr/0007-referencing-official-material.md` — link always, cite identifiers, facts, short attributed syllabus extracts and CC BY glossary definitions, never reproduce a sample exam question in any form or point at one._
 - [ ] **A-02** `P1` Dexie **v4** + a widened `origin` union in `src/types/content.ts`, `schemas/question.schema.json` and the validator. The v3 backfill in `migrations.ts` is the pattern to follow
 
 ### Track C — the 64 lesson cards

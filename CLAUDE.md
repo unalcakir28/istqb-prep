@@ -37,7 +37,7 @@ Planning such work before opening a matching file → read the rule file first.
 
 These are not up for debate; violating them collapses the project either legally or as an identity.
 
-1. **Official ISTQB/TTB sample exam questions are never copied, translated, or "adapted."** Changing the numbers isn't adaptation, it's a derivative work. Every question is written from scratch from a learning objective (LO). → `docs/adr/0004-original-question-authoring.md`
+1. **Official ISTQB/TTB sample exam questions are never copied, translated, or "adapted."** Changing the numbers isn't adaptation, it's a derivative work. Every question is written from scratch from a learning objective (LO). → `docs/adr/0004-original-question-authoring.md` · what may be linked or cited instead: `docs/adr/0007-referencing-official-material.md`
    The `origin` field **has no** `official` value.
 2. **A rationale is mandatory for every option** (`rationale.byOption`), in TR and EN. _"Wrong, because the correct answer is C"_ is not a rationale — every wrong option states **what it actually describes**. This is the product's main differentiator.
 3. **Every question includes TR and EN.** If either is missing, it can't be published. → `docs/adr/0005-bilingualism.md`

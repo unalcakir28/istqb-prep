@@ -41,13 +41,15 @@ The *Exam Structures & Rules* and *Exam Tables* documents carry the same 5 claus
 
 ## 3. Analysis: what we can and cannot do
 
+> The working rule — what may be linked, cited or never reproduced — is [ADR-0007](adr/0007-referencing-official-material.md). This section is the reasoning behind it.
+
 | Action | Status | Rationale |
 |---|:---:|---|
 | Showing chapter titles, LO codes and text, K-levels, the exam distribution table | ✅ | *"Extracts, for non-commercial use ... if the source is acknowledged"* — a limited extract, with attribution |
 | Explaining the exam mechanics (40 questions / 26 points / 60 min) | ✅ | Factual information; not a copyright matter |
 | **Our own original questions** | ✅ | Not a derivative work. **This is our core content strategy.** |
 | Linking to the official PDFs | ✅ | Linking isn't copying |
-| Showing glossary terms and definitions | ✅ | CC BY 4.0, verified 22.09.2026 — see §5; shown with attribution |
+| Showing glossary terms and definitions | ✅ | CC BY 4.0, verified 22.09.2026 — see §5; shown with attribution ([ADR-0007](adr/0007-referencing-official-material.md)) |
 | Showing a few official questions as examples, with attribution | ⚠️ | "Extract" is arguable, but a **website isn't** in the list of permitted uses |
 | **Putting all 186 official sample questions on the site** | ❌ | Not an "extract" — the whole document. Also, the permitted uses are limited to an *accredited training course* and *articles/books* |
 | Ad or subscription revenue | ❌ | The permission is explicitly limited to **non-commercial** use |
