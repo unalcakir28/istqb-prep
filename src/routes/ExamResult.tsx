@@ -21,6 +21,7 @@ import { ReadinessNote } from "@/components/ReadinessNote";
 import { ScoreBar } from "@/components/ScoreBar";
 import { Spinner } from "@/components/Spinner";
 import { resultRedirectPathFor, routeForAttempt } from "@/features/session/routeForAttempt";
+import { notKnownQuestionIds } from "@/features/session/notKnown";
 import { useSessionStore } from "@/features/session/sessionStore";
 import { isGraded, weakestObjectives } from "@/features/exam/scoreExam";
 import { examPoints, readiness, type Readiness } from "@/features/progress/progress";
@@ -84,6 +85,7 @@ export default function ExamResult() {
 
   const attempt = useSessionStore((state) => state.attempt);
   const score = useSessionStore((state) => state.score);
+  const revealed = useSessionStore((state) => state.revealed);
   const contentLang = useSessionStore((state) => state.contentLang);
   const loading = useSessionStore((state) => state.loading);
   const loadSubmitted = useSessionStore((state) => state.loadSubmitted);
@@ -194,13 +196,12 @@ export default function ExamResult() {
   const passLabel = t("result.passLine", { pass: score.passPoints });
   const verdict = graded ? (score.passed ? t("result.passed") : t("result.failed")) : null;
   /**
-   * The questions that were answered wrongly. Unanswered ones are left out on
-   * purpose: "try the ones you missed" is about a wrong belief to correct, and
-   * a question nobody reached teaches nothing about one.
+   * The questions not known: answered wrongly, or left unanswered after the
+   * hint ladder showed the answer (F3-09). Plain unanswered ones are left out
+   * on purpose: "try the ones you missed" is about a wrong belief to correct,
+   * and a question nobody reached teaches nothing about one.
    */
-  const missed = score.outcomes
-    .filter((outcome) => !outcome.isCorrect && !outcome.isUnanswered)
-    .map((outcome) => outcome.questionId);
+  const missed = notKnownQuestionIds(score.outcomes, revealed);
 
   async function onRetryMissed() {
     if (!attempt) return;

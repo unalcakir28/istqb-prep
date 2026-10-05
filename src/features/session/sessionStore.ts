@@ -33,6 +33,7 @@ import { withOptionOrder } from "../exam/optionOrder";
 import { randomSeed } from "../exam/rng";
 import { isGraded, scoreExam, type AnswerMap, type ExamScore } from "../exam/scoreExam";
 import { selectQuestions, type Shortfall } from "../exam/selectQuestions";
+import { notKnownQuestionIds } from "./notKnown";
 
 export interface StartSessionOptions {
   certPath: string;
@@ -383,18 +384,10 @@ export const useSessionStore = create<SessionState>((set, get) => ({
     // that reads the row. The field stays absent rather than false.
     if (isGraded(attempt.scope)) submitted.passed = score.passed;
 
-    // F3-01: the questions answered wrong join the repetition deck in the same
+    // F3-01: the questions not known join the repetition deck in the same
     // transaction, so a submitted attempt never exists without its deck
-    // changes. Unanswered questions stay out — a question nobody reached is
-    // not a wrong belief to repeat (the same rule as F2-02's retry) — except
-    // one whose answer was shown before it was answered (F3-09): it was
-    // reached, and the candidate did not know it.
-    const wrong = score.outcomes
-      .filter(
-        (outcome) =>
-          !outcome.isCorrect && (!outcome.isUnanswered || Boolean(revealed[outcome.questionId])),
-      )
-      .map((outcome) => outcome.questionId);
+    // changes. The rule is shared with the wrong list and the retry.
+    const wrong = notKnownQuestionIds(score.outcomes, revealed);
 
     // F3-11: each card remembers the revision the wrong answer was given to.
     const revisions = new Map(questions.map((question) => [question.id, question.revision]));

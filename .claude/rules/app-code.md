@@ -13,7 +13,8 @@ features/session/  The three modes' shared machinery — SessionRunner (one shel
                    navigator, keyboard, announcements), sessionStore (Zustand,
                    was examStore; reveal() is the hint ladder's last step),
                    routeForAttempt (an attempt's own URL), hints (what the
-                   hint ladder's middle step shows, F3-09)
+                   hint ladder's middle step shows, F3-09), notKnown (the
+                   one rule for "not known" the deck and the retry share)
 features/exam/     Selection and scoring — selectQuestions (one entry point,
                    four scopes: blueprint / chapter / objective / questions,
                    the last being an explicit id list), generateExam

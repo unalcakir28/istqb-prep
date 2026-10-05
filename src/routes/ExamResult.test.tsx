@@ -84,6 +84,7 @@ vi.mock("@/lib/db/db", () => ({
 /** Swapped per test before rendering; the store is read with plain selectors. */
 let attempt: Attempt;
 let score: ExamScore;
+let revealed: Record<string, number> = {};
 
 /** Replaced by the retry tests so they can assert what the screen asked for. */
 let startSession: (options: unknown) => Promise<string | null> = () => Promise.resolve(null);
@@ -93,6 +94,7 @@ vi.mock("@/features/session/sessionStore", () => ({
     selector({
       attempt,
       score,
+      revealed,
       contentLang: "en",
       loading: false,
       loadSubmitted: () => Promise.resolve(),
@@ -222,6 +224,7 @@ beforeAll(async () => {
 beforeEach(() => {
   document.title = "";
   storedAttempts = [];
+  revealed = {};
 });
 
 describe("ExamResult verdict", () => {
@@ -342,6 +345,30 @@ describe("ExamResult retry the ones you missed", () => {
     await waitFor(() => {
       expect(screen.getByTestId("location")).toHaveTextContent("/alistirma/attempt-2");
     });
+  });
+
+  it("takes in an unanswered question whose answer was shown (F3-09)", async () => {
+    attempt = makeAttempt("practice", { kind: "blueprint" });
+    score = scoreWithOutcomes();
+    revealed = { "q-skipped": 1_700_000_000_000 };
+
+    let asked: Record<string, unknown> | null = null;
+    startSession = (options) => {
+      asked = options as Record<string, unknown>;
+      return Promise.resolve("attempt-2");
+    };
+
+    renderResult();
+    const label = en.result.retryMissed_other.replace("{{count}}", "2");
+    fireEvent.click(await screen.findByRole("button", { name: label }));
+
+    await waitFor(() => {
+      expect(asked).not.toBeNull();
+    });
+    expect((asked!.scope as { questionIds: string[] }).questionIds).toEqual([
+      "q-wrong",
+      "q-skipped",
+    ]);
   });
 
   it("is not offered when nothing was answered wrongly", async () => {
