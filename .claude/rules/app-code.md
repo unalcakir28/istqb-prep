@@ -112,3 +112,8 @@ user-facing surface:
   `rationale.byOption` and scoring use option ids; only the row number, the 1-9
   shortcut and the rationale panel label follow displayed position. The GitHub
   issue from `ReportQuestionLink` names authored ids.
+- **Only `Layout` and what it imports ship in the entry chunk**; every route is
+  `lazy()`. A static import of `@/lib/db/db` from anything `Layout` renders
+  pulls Dexie into the chunk every screen downloads first (+107 kB, F3-12),
+  so `src/lib/storage.ts` imports it on demand. Check `yarn build` output
+  for `index-*.js` after touching the layout.
