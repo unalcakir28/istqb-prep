@@ -81,6 +81,15 @@ Every question carries a **two-layer** rationale:
 ✅ **Good:** *"Yanlış. Bu prensip her kombinasyonun test edilemeyeceğini söyler; test etkinliğinin zamanla azalmasını açıklamaz."*
 ❌ **Bad:** *"Yanlış, bu doğru cevap değil."*
 
+### `hints` — the hint ladder's middle step (F3-09)
+
+Candidates see these. In study and in practice with instant feedback, a "Stuck?" box offers the question's objective, then its hint, then the answer (docs/06 §3.6). The hint step shows `i18n.<lang>.hints` when the question has them; when it does not, it takes the **first wrong option shown** away and shows that option's `rationale.byOption` instead. Both are therefore read **before** the candidate has answered, which sets two rules:
+
+- **A hint points at the reasoning, never at the key.** Ask the question the candidate should be asking themselves, or name the concept to check against: ✅ *"Does the definition of static testing include executing the software?"* — ❌ *"Static testing does not execute the code, so B is right."* No option letter, no option text, no "the correct one is…".
+- **A wrong option's rationale must stand on its own.** It can be shown as a hint, alone, with the key still hidden. Say what the option describes and why it does not fit; do not name the correct option or the concept that is the key. *"Yanlış. Bu, test analizinin işidir; test tasarımı ise…"* is fine when test design is not the key; it is a giveaway when it is.
+
+`hints` is optional and an array of short sentences; TR and EN carry the same number. A hint is reviewed like any other text in the question.
+
 ### Attribution
 Every rationale carries `syllabusRef` (`§4.2.3`), `objectives[]`, and `kLevel`, and is shown as a chip in the UI. This is **the highest-credibility feature that costs nothing beyond editorial discipline.**
 

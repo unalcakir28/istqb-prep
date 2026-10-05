@@ -30,6 +30,12 @@ rationale says _what that option actually describes_ — the concept the candida
 confused it with. "Wrong, because the answer is C" is not a rationale, and this
 per-option explanation is the product's main differentiator.
 
+Both `hints` and a wrong option's rationale are shown **before** the candidate
+answers: the hint ladder's middle step shows the authored hints, or else the
+first wrong option's rationale (F3-09). So a hint points at the reasoning,
+never the key, and a wrong option's rationale must not name the correct option
+or the concept that is the key (`docs/07` §4, `hints`).
+
 `syllabusVersion` on every item. Retired content gets `status: "retired"`; it is
 never deleted.
 
