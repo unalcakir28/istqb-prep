@@ -94,6 +94,7 @@ istqb-prep/
 │   │   ├── Review.tsx           # /inceleme/:attemptId — reached from the result screen
 │   │   ├── LegacyExamRedirect.tsx
 │   │   ├── Sources.tsx · NotFound.tsx
+│   │   ├── ExamProcess.tsx      # /sinav-sureci — taking the exam in Turkey, through TTB (F4-07)
 │   │   ├── MyLists.tsx          # /listelerim — wrong / flagged / never right twice
 │   │   ├── Glossary.tsx         # /sozluk — the active certification's terms (97 CTFL · 156 CT-AI)
 │   │   ├── Repetition.tsx       # /tekrar — the SRS review screen
@@ -126,7 +127,7 @@ istqb-prep/
 │   ├── types/content.ts         # Data model types, hand-written against schemas/
 │   ├── test/                    # Vitest setup + shared fixtures
 │   └── styles/
-├── e2e/                         # Playwright — labels.ts, deck.ts + exam/practice/study/lists-and-glossary/repetition/my-data/certification/progress/a11y specs
+├── e2e/                         # Playwright — labels.ts, deck.ts + exam/practice/study/lists-and-glossary/repetition/my-data/certification/progress/process/a11y specs
 ├── docs/
 └── .github/workflows/
     ├── ci.yml                   # lint → format → typecheck → test → validate:data → validate:i18n → build → e2e
@@ -292,7 +293,7 @@ jobs:
 | **Accessibility** | `@axe-core/playwright` + hand-written specs | Zero violations on every main route in both themes, **plus** the failures axe cannot see: focus destinations, accessible names, live-region behaviour |
 | **Visual** | Playwright snapshot | Not set up |
 
-Counts as of 05.10.2026: **211 unit tests in 28 files**, **76 end-to-end specs across 9 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
+Counts as of 05.10.2026: **211 unit tests in 28 files**, **79 end-to-end specs across 10 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
 
 > This is a **testing certification** project. Test discipline is part of the product itself here; the README will display a test-coverage badge.
 

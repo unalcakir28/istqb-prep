@@ -86,6 +86,7 @@ Route paths are Turkish, like the rest of the product's user-facing surface; the
 | `/sozluk` | Glossary — the active certification's bilingual terms (97 CTFL · 156 CT-AI), searched in both languages | — |
 | `/verilerim` | Your data — download a copy of the progress, load one (§3.11) | — |
 | `/kaynaklar` | Sources, copyright, disclaimer | — |
+| `/sinav-sureci` | Taking the exam in Turkey: registration, the proctored online exam, result, retake (F4-07) | — |
 | `/deneme`, `/deneme/:attemptId` | **Legacy redirect** to `/sinav`. Bookmarks and in-progress attempts on the old exam path keep working. | — |
 
 **An attempt can only be opened at its own mode's URL.** `routeForAttempt` derives the address from the stored attempt's `mode` and `scope`, and the shared session shell redirects anything that arrives at the wrong one — a practice attempt opened at `/sinav/:id` bounces to `/alistirma/:id` rather than mounting a timer over a null deadline.
@@ -341,6 +342,14 @@ Built in F3-08. The one mitigation for R-08: progress lives only in this browser
 - **Load a copy** — two steps on purpose, because it writes into this browser's progress: choose a file, read what it holds (when it was saved; how many sessions, answers, objective records and repetition cards), then confirm. The screen says before the button that nothing is deleted and the newer copy of a record wins.
 - A file from another question version shows a warning and still loads. A file that is not a progress file, is damaged, or comes from a newer version of the site is refused with a reason, as an alert, and no load button appears.
 - The result names what happened: new records, records updated from the file, and records kept from this browser because they were newer.
+
+### 3.11b Taking the exam `/sinav-sureci`
+
+F4-07, the gap the market research found: nobody explains, in Turkish, what happens between deciding to sit the exam and holding the certificate. One page, linked from the footer on every width.
+
+- **Only what TTB or ISTQB states**, read on one date (docs/03 §9) and shown with that date in the intro. Each section ends with links to the pages it rests on, in the interface language where TTB has one. The intro carries the reading date and the sale price repeats it, because the shop's price changes.
+- **Sections:** registration and payment · the online proctored exam (equipment, ID, what is forbidden) · the paper · result and certificate · retake, postpone, cancel · CT-AI (TTB still examines v1.0 until 21 October 2027, while this site teaches v2.0) · what could not be confirmed, with the address to ask instead of a guess.
+- **Where ISTQB and TTB differ** (retake limit, extra time), the page states TTB's rule, because it is the one a candidate in Turkey meets, and quotes ISTQB beside it.
 
 ### 3.10 Lesson card (inside `/calisma/lo/:loCode`)
 

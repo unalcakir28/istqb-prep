@@ -10,7 +10,7 @@
 
 | Fact | Value | Source |
 |---|---|---|
-| Exam format | 40 multiple choice, 60 min (75 min for non-native English speakers), pass mark 26/40 (%65) | ✅ istqb.org |
+| Exam format | 40 multiple choice, 60 min (75 min, +25%, for a candidate sitting in a language not their own; at TTB, for a non-native Turkish speaker on the English paper — `03-istqb-reference.md` §9), pass mark 26/40 (%65) | ✅ istqb.org |
 | Current syllabus | **v4.0.1** (15.09.2024 errata) — 797.172 downloads | ✅ istqb.org |
 | **Total official free practice supply** | **4 sample exams (A–D) = 160 questions + 26 additional questions**, PDF only, questions and answers in separate files | ✅ istqb.org |
 | Foundation pass rate | ~%70–75 pass → **%25–30 fail** | ✅ trendig.com |

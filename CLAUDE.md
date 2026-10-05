@@ -42,7 +42,7 @@ These are not up for debate; violating them collapses the project either legally
 2. **A rationale is mandatory for every option** (`rationale.byOption`), in TR and EN. _"Wrong, because the correct answer is C"_ is not a rationale — every wrong option states **what it actually describes**. This is the product's main differentiator.
 3. **Every question includes TR and EN.** If either is missing, it can't be published. → `docs/adr/0005-bilingualism.md`
 4. **Every content item carries a `syllabusVersion`** and shows up as a badge in the UI. Outdated content is never deleted, it gets `status: "retired"`.
-5. **Nothing unverified is asserted.** Example: negative marking doesn't appear in any official document → `negativeMarking: null`. Writing `false` would be wrong. The list of unverifiable items: `docs/03-istqb-reference.md §7`.
+5. **Nothing unverified is asserted.** Example: negative marking doesn't appear in any ISTQB document → `negativeMarking: null` (TTB's statement for its own exams, `docs/03` §9, does not change that). Writing `false` would be wrong. The list of unverifiable items: `docs/03-istqb-reference.md §7`.
 6. **No commercial use.** No ads, no subscriptions, no payments — ISTQB's _"for non-commercial use"_ condition is our copyright basis.
 7. **No backend, no accounts, no data goes to a server.** All progress lives in IndexedDB.
 8. **A mock exam is never silently generated incomplete.** If the pool is insufficient, the user is told explicitly.
@@ -80,7 +80,7 @@ yarn publish:questions  # review -> published; --reviewer is mandatory (the only
 yarn publish:lessons    # the same script with --kind lessons; --reviewer is mandatory
 yarn sync:data          # data/ -> public/data/ (needed when data/ changes while the dev server runs)
 yarn test               # Vitest (unit)
-yarn e2e                # Playwright: 76 specs across 9 files — flow + axe accessibility (its own dev server, 5183)
+yarn e2e                # Playwright: 79 specs across 10 files — flow + axe accessibility (its own dev server, 5183)
 yarn e2e:ui             # the same specs in Playwright's UI mode
 yarn build              # tsc -b && vite build (CI gate)
 yarn lighthouse         # lhci autorun — asserts >=95 in all 4 categories; needs `yarn build` first

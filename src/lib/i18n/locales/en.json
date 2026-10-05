@@ -329,7 +329,8 @@
   "footer": {
     "disclaimerShort": "Independent community project · not affiliated with ISTQB®",
     "sources": "Sources and copyright",
-    "myData": "Your data"
+    "myData": "Your data",
+    "process": "Taking the exam in Turkey"
   },
   "progress": {
     "title": "Progress",
@@ -362,5 +363,55 @@
     "chapterRow_one": "First answers {{first}}% right · latest answers {{latest}}% right · {{count}} question",
     "chapterRow_other": "First answers {{first}}% right · latest answers {{latest}}% right · {{count}} questions",
     "seeProgress": "See your progress"
+  },
+  "process": {
+    "title": "Taking the exam in Turkey",
+    "intro": "How a candidate in Turkey sits an ISTQB exam through the Turkish Testing Board (TTB), from registration to the certificate. Everything here was read from TTB's and ISTQB's own pages on {{date}}. Their rules and prices can change without notice, so the linked page always decides.",
+    "sourcesLabel": "Source",
+    "registerTitle": "Registration and payment",
+    "register1": "You buy the exam in TTB's online shop. TTB then e-mails you the free slots and you pick a day and time.",
+    "register2": "You must book your exam date within 1 year of registering, or you lose the right and register again.",
+    "register3": "CTFL has no prerequisite and no training is required. CT-AI requires the CTFL certificate.",
+    "register4": "You pay by bank transfer, at the latest 15 days before the exam, or by Visa, Mastercard or Amex. The e-archive invoice is issued against the T.C. kimlik number you give at registration.",
+    "register5": "The list price is 5,950 ₺ + 20% KDV for CTFL and for CT-AI. On {{date}} the shop showed a sale price of 4,700 ₺ + KDV, with no end date. TTB's English shop showed 98 USD + VAT instead.",
+    "register6": "If your native language is not Turkish, tell TTB in writing when you register: you get the English paper with 25% extra time. TTB says this is not optional. ISTQB's own page says a candidate \"is entitled to apply for\" the extension.",
+    "examDayTitle": "The exam: online, with a proctor",
+    "examDay1": "TTB's exam pages list the exam as remote online: you sit it on the Mettl platform, from your own computer, at the time you booked. TTB also mentions in-class exams on set dates and in-person exams on request. A proctor watches you through your computer's camera and your smartphone's camera, and the session is recorded.",
+    "examDay2": "The access e-mail arrives at the latest 3 days before the exam, with a link to test your computer. No reminder is sent: if the e-mail does not come, contact TTB.",
+    "examDay3": "You need a computer with a camera and a microphone, a charged smartphone, a stable connection, the current Chrome and the Mettl Secure Browser, which asks you to close your other applications. TTB advises against a work computer.",
+    "examDay4": "Keep an ID card, passport or driving licence with you; at entry you photograph your face and your ID.",
+    "examDay5": "Forbidden: breaks or leaving the screen, food, drink and tobacco, a second screen, headphones, a smart watch, a dictionary, a calculator, paper and pen, reading questions aloud, screenshots and noting questions. An erasable board is allowed if it is blank at the start and the end.",
+    "examDay6": "The chat with the proctor is for technical problems only. Time lost to a technical problem before the start does not count: the clock starts when the proctor starts the exam.",
+    "paperTitle": "The paper",
+    "paper1": "TTB says its online exam has the same number of questions, the same time and the same pass mark as its in-class exam.",
+    "paper2": "CTFL and CT-AI are in Turkish and English, both on the same screen, so you can read each question in either language.",
+    "paper3": "At TTB, a wrong answer costs nothing: \"Wrong answers do not delete correct answers.\"",
+    "resultTitle": "Result and certificate",
+    "result1": "The result comes by e-mail on the same day. You can ask TTB for a summary of your result by topic; the questions themselves are not shared.",
+    "result2": "If you pass, an English e-certificate comes by e-mail the same day; it can be verified through a link on it. ISTQB says Foundation Level certificates are valid for life.",
+    "result3": "Being listed on ISTQB's Successful Candidate Register is your choice: send TTB's signed form to scr@turkishtestingboard.org.",
+    "result4": "An appeal is made within 15 days of the result, and is answered within one month.",
+    "retakeTitle": "Retake, postpone, cancel",
+    "retake1": "A CTFL retake (the 2nd to the 4th attempt) costs 2,975 ₺ + KDV. On {{date}} TTB's shop listed no retake for CT-AI; ask TTB.",
+    "retake2": "TTB says there is no limit on attempts, but that under ISTQB rules you can sit an exam only as many times as there are question sets, a number it does not publish; if that is not enough, you can register with another exam provider. ISTQB's own exam page says you may sit an exam \"as many times as necessary\".",
+    "retake3": "You may postpone once, by e-mail at least 7 days before the exam; later, you pay 50% of the fee to sit it.",
+    "retake4": "Cancelling by e-mail at least 7 days before refunds the full fee; later, half of it.",
+    "ctaiTitle": "CT-AI: TTB still examines v1.0",
+    "ctai1": "This site teaches CT-AI v2.0. Through TTB, the exam is still the v1.0 (2021) paper until 21 October 2027, and its scoring differs from v2.0's. Check which version your exam date falls under before you study.",
+    "notFoundTitle": "What we could not confirm",
+    "notFound1": "The TTB pages we read do not say whether there is a printed certificate, whether you must wait between attempts, or how much a CT-AI retake costs. We do not guess: ask TTB at certification@turkishtestingboard.org.",
+    "page": {
+      "faq": "TTB — FAQ",
+      "examInfo": "TTB — About ISTQB exams",
+      "payment": "TTB — Payment terms (Turkish)",
+      "ctflRegistration": "TTB — CTFL registration",
+      "ctflPage": "TTB — Foundation Level",
+      "shop": "TTB — Registration (Turkish)",
+      "retake": "TTB — CTFL 2nd attempt (Turkish)",
+      "register": "TTB — Certified candidates (Turkish)",
+      "ctaiRegistration": "TTB — AI Testing registration",
+      "istqbCertificates": "ISTQB — Certifications FAQ",
+      "istqbExams": "ISTQB — Exams FAQ"
+    }
   }
 }

@@ -134,6 +134,13 @@ for (const theme of THEMES) {
     await scan(page);
   });
 
+  test(`the exam process guide is accessible (${theme})`, async ({ page }) => {
+    await setTheme(page, theme);
+    await page.goto("/sinav-sureci");
+    await expect(page.getByRole("heading", { level: 1, name: en.process.title })).toBeVisible();
+    await scan(page);
+  });
+
   test(`the empty repetition deck is accessible (${theme})`, async ({ page }) => {
     await setTheme(page, theme);
     await page.goto("/tekrar");

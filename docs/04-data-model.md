@@ -126,7 +126,7 @@ Source: [`03-istqb-reference.md §3`](03-istqb-reference.md)
 }
 ```
 
-> `negativeMarking: null` is deliberate — writing `false` would mean making an unverified claim. The UI displays this as "not specified in the official documents."
+> `negativeMarking: null` is deliberate — writing `false` would mean making an unverified claim. No ISTQB document states it; TTB states there is none for exams taken through it, which is a fact about that provider, not the paper (`03-istqb-reference.md` §9).
 >
 > `pointsPerQuestion` is CTFL's alone and optional; no code reads it. A certification whose questions are not all worth the same — CT-AI v2.0, where a K3 question is worth 2 — leaves it out, and the points live on the blueprint groups (§3.5).
 >

@@ -182,6 +182,9 @@ export function Layout() {
             <Link to="/kaynaklar" className="underline underline-offset-2 hover:text-fg">
               {t("footer.sources")}
             </Link>
+            <Link to="/sinav-sureci" className="underline underline-offset-2 hover:text-fg">
+              {t("footer.process")}
+            </Link>
             {/* On every width: the privacy promise is what makes a backup
                 necessary, so the way to make one sits beside it. */}
             <Link to="/verilerim" className="underline underline-offset-2 hover:text-fg">

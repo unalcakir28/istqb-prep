@@ -12,7 +12,7 @@
 
 Three facts are true at the same time:
 
-1. **There is demand, and it's expensive.** The TTB CTFL exam fee is 5,950 ₺ + 20% VAT ≈ **7,140 ₺**. The failure rate at Foundation level is **25–30%**. So roughly one in every 3–4 candidates pays this fee a second time.
+1. **There is demand, and it's expensive.** The TTB CTFL list price is 5,950 ₺ + 20% VAT ≈ **7,140 ₺** (the shop showed a 4,700 ₺ + VAT sale price on 05.10.2026, `03-istqb-reference.md` §9). The failure rate at Foundation level is **25–30%**. So roughly one in every 3–4 candidates pays again: a CTFL retake through TTB is 2,975 ₺ + VAT (`03-istqb-reference.md` §9).
 2. **There is no supply.** The total number of distinct questions circulating in Turkish is under ~700, and roughly half of that is republication of the same 160 official questions. There is no serious product to buy between free and the 30,000 ₺ accredited training course.
 3. **The supply that exists can't be trusted.** The largest free pool in the international market doesn't state its syllabus version; the cheapest paid pool openly markets itself as "taken from real exam questions" (an ethics violation); a paid iOS app is still on the retired 2021 syllabus. Expert advice has reached the point of *"stay away from online tests."*
 

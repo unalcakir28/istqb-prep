@@ -329,7 +329,8 @@
   "footer": {
     "disclaimerShort": "Bağımsız topluluk projesi · ISTQB® ile bağlantısı yoktur",
     "sources": "Kaynaklar ve telif",
-    "myData": "Verilerim"
+    "myData": "Verilerim",
+    "process": "Türkiye'de sınav süreci"
   },
   "progress": {
     "title": "İlerleme",
@@ -362,5 +363,55 @@
     "chapterRow_one": "İlk cevaplar %{{first}} doğru · son cevaplar %{{latest}} doğru · {{count}} soru",
     "chapterRow_other": "İlk cevaplar %{{first}} doğru · son cevaplar %{{latest}} doğru · {{count}} soru",
     "seeProgress": "İlerlemeni gör"
+  },
+  "process": {
+    "title": "Türkiye'de sınava girmek",
+    "intro": "Türkiye'deki bir adayın ISTQB sınavına Turkish Testing Board (TTB) üzerinden nasıl girdiği, kayıttan sertifikaya. Buradaki her bilgi {{date}} tarihinde TTB'nin ve ISTQB'nin kendi sayfalarından okundu. Kurallar ve ücretler haber verilmeden değişebilir; her zaman bağlantı verilen sayfa geçerlidir.",
+    "sourcesLabel": "Kaynak",
+    "registerTitle": "Kayıt ve ödeme",
+    "register1": "Sınavı TTB'nin çevrim içi mağazasından satın alırsın. TTB sonra boş saatleri e-postayla gönderir, sen de bir gün ve saat seçersin.",
+    "register2": "Sınav tarihini kayıttan itibaren 1 yıl içinde ayırtman gerekir; yoksa sınav hakkın düşer ve yeniden kaydolman gerekir.",
+    "register3": "CTFL için ön koşul yoktur ve eğitim zorunlu değildir. CT-AI için CTFL sertifikası gerekir.",
+    "register4": "Ödemeyi banka havalesiyle, en geç sınavdan 15 gün önce, ya da Visa, Mastercard veya Amex ile yaparsın. E-arşiv fatura kayıtta verdiğin T.C. kimlik numarasına göre kesilir.",
+    "register5": "Liste fiyatı CTFL ve CT-AI için 5.950 ₺ + %20 KDV'dir. {{date}} tarihinde mağaza 4.700 ₺ + KDV indirimli fiyat gösteriyordu; bitiş tarihi belirtilmemişti. TTB'nin İngilizce mağazası ise 98 USD + KDV gösteriyordu.",
+    "register6": "Ana dilin Türkçe değilse kayıt sırasında TTB'ye yazılı bildir: sınava İngilizce kitapçıkla ve %25 ek süreyle girersin. TTB bunun isteğe bağlı olmadığını belirtir. ISTQB'nin kendi sayfası ise adayın ek süreye \"başvurma hakkı\" olduğunu söyler.",
+    "examDayTitle": "Sınav: çevrim içi, gözetmenli",
+    "examDay1": "TTB'nin sınav sayfaları sınavı uzaktan ve çevrim içi olarak gösterir: Mettl platformunda, ayırttığın saatte, kendi bilgisayarından girersin. TTB ayrıca belirli tarihlerde sınıf içi, özel talep üzerine de yüz yüze sınav yapıldığını belirtir. Bir gözetmen seni bilgisayarının ve akıllı telefonunun kamerasından izler, oturum kaydedilir.",
+    "examDay2": "Sınav erişim e-postası en geç sınavdan 3 gün önce, bilgisayarını test edebileceğin bir bağlantıyla gelir. Hatırlatma gönderilmez: e-posta gelmezse TTB'ye ulaş.",
+    "examDay3": "Kamerası ve mikrofonu olan bir bilgisayar, şarjı dolu bir akıllı telefon, kararlı bir bağlantı, Chrome'un güncel sürümü ve diğer uygulamalarını kapatmanı isteyen Mettl Secure Browser gerekir. TTB iş bilgisayarını önermez.",
+    "examDay4": "Yanında kimlik kartı, pasaport veya sürücü belgesi bulunsun; girişte yüzünün ve kimliğinin fotoğrafını çekersin.",
+    "examDay5": "Yasak olanlar: mola vermek veya ekranın başından ayrılmak, yiyecek, içecek ve tütün, ikinci bir ekran, kulaklık, akıllı saat, sözlük, hesap makinesi, kâğıt ve kalem, soruları sesli okumak, ekran görüntüsü almak ve soruları not etmek. Silinebilir tahta, başta ve sonda boş olmak şartıyla kullanılabilir.",
+    "examDay6": "Gözetmenle sohbet yalnızca teknik sorunlar içindir. Başlamadan önce teknik bir sorunla geçen süre sayılmaz: süre, gözetmen sınavı başlattığında başlar.",
+    "paperTitle": "Sınav kitapçığı",
+    "paper1": "TTB, çevrim içi sınavın soru sayısı, süresi ve geçme oranının sınıf içi sınavla aynı olduğunu belirtir.",
+    "paper2": "CTFL ve CT-AI sınavları Türkçe ve İngilizcedir; iki dil aynı ekranda görünür, her soruyu dilediğin dilde okuyabilirsin.",
+    "paper3": "TTB'de yanlış cevap puan götürmez: \"Yanlışlar doğruları götürmemektedir.\"",
+    "resultTitle": "Sonuç ve sertifika",
+    "result1": "Sonuç aynı gün e-postayla gelir. TTB'den konu bazlı başarı özetini isteyebilirsin; soruların kendisi paylaşılmaz.",
+    "result2": "Geçersen İngilizce e-sertifikan aynı gün e-postayla gelir; üzerindeki bağlantıdan doğrulanabilir. ISTQB, Temel Seviye sertifikalarının ömür boyu geçerli olduğunu belirtir.",
+    "result3": "ISTQB'nin Başarılı Katılımcı Kaydı'nda listelenmek senin tercihindir: TTB'nin imzalı formunu scr@turkishtestingboard.org adresine gönderirsin.",
+    "result4": "İtiraz sonuçtan sonraki 15 gün içinde yapılır ve en geç bir ay içinde yanıtlanır.",
+    "retakeTitle": "Tekrar, erteleme, iptal",
+    "retake1": "CTFL tekrar sınavı (2. ile 4. katılım arası) 2.975 ₺ + KDV'dir. {{date}} tarihinde TTB'nin mağazasında CT-AI için tekrar sınavı yoktu; TTB'ye sor.",
+    "retake2": "TTB katılım sayısında sınır olmadığını, ancak ISTQB kurallarına göre sınava ancak soru seti sayısı kadar girilebileceğini söyler ve bu sayıyı yayımlamaz; yetmezse başka bir sınav sağlayıcısına kaydolabilirsin. ISTQB'nin kendi sayfası ise sınava \"gerektiği kadar\" girilebileceğini söyler.",
+    "retake3": "Sınavını bir kez, en geç 7 gün önce e-postayla erteleyebilirsin; daha geç ertelersen ücretin %50'sini ödeyerek girersin.",
+    "retake4": "En geç 7 gün önce e-postayla iptal edersen ücretin tamamı iade edilir; daha geç iptalde yarısı.",
+    "ctaiTitle": "CT-AI: TTB hâlâ v1.0 ile sınav yapıyor",
+    "ctai1": "Bu site CT-AI v2.0'ı öğretir. TTB üzerinden girilen sınav, 21 Ekim 2027'ye kadar hâlâ v1.0 (2021) sürümüne göre yapılır ve puanlaması v2.0'dan farklıdır. Çalışmaya başlamadan önce sınav tarihinin hangi sürüme denk geldiğine bak.",
+    "notFoundTitle": "Doğrulayamadıklarımız",
+    "notFound1": "Okuduğumuz TTB sayfaları basılı sertifika olup olmadığını, iki katılım arasında beklemek gerekip gerekmediğini ve CT-AI tekrar sınavının ücretini söylemiyor. Tahmin yürütmüyoruz: certification@turkishtestingboard.org adresinden TTB'ye sor.",
+    "page": {
+      "faq": "TTB — Sıkça sorulan sorular",
+      "examInfo": "TTB — ISTQB sınavları hakkında bilgi",
+      "payment": "TTB — Ödeme koşulları",
+      "ctflRegistration": "TTB — CTFL kaydı",
+      "ctflPage": "TTB — Foundation Level",
+      "shop": "TTB — Kayıt",
+      "retake": "TTB — CTFL 2. katılım",
+      "register": "TTB — Sertifika kazananlar",
+      "ctaiRegistration": "TTB — AI Testing kaydı",
+      "istqbCertificates": "ISTQB — Sertifikalar (İngilizce)",
+      "istqbExams": "ISTQB — Sınavlar (İngilizce)"
+    }
   }
 }

@@ -98,7 +98,7 @@ Source: *Exam Structures and Rules* v1.2 (02.05.2025)
 | Non-native English speakers | **+25% → 75 minutes** | §6.2.1 |
 | Format | Multiple choice | §2.1.4, §5.1.2 |
 | Points per question | **Every question is worth exactly 1 point** | §5.2.1 |
-| Negative marking | **Not mentioned in any official document** ⚠️ | — |
+| Negative marking | **Not mentioned in any ISTQB document** ⚠️ · TTB states there is none for exams taken through it (§9) | — |
 
 The +25% row is a verified fact and stays. The product does not offer it: the extension belongs to a candidate sitting in a language that is not their own, a Turkish candidate sitting the Turkish paper does not get it, and what the mock exam simulates is the paper. `data/ctfl-v4.0.1/meta.json` therefore carries only `durationMinutes`. See D-06 in `docs/00-project-overview.md §9`.
 
@@ -124,7 +124,7 @@ The official sample exams contain the phrase *"Select TWO options"*; the answer 
 - Syllabus §0.6 — *"All sections of the syllabus are examinable, except for the Introduction and Appendices"*. Chapter 7 references (standards/books) are not examinable.
 - §5.4.2 — If a question touches more than one LO, it targets **the LO with the highest K-level**.
 
-> ⚠️ **Negative marking:** the terms `negative mark`, `penalty`, `deduct` were searched across the syllabus, Exam Rules, Exam Tables, and all 4 sample exams — **none of them contain it**. The industry treats it as "does not exist," but this could not be confirmed with an official statement. **Do not claim this on the site;** if needed, add a note saying "not stated in the official documents."
+> ⚠️ **Negative marking:** the terms `negative mark`, `penalty`, `deduct` were searched across the syllabus, Exam Rules, Exam Tables, and all 4 sample exams — **none of them contain it**. The industry treats it as "does not exist," but this could not be confirmed with an official statement. TTB, an exam provider, does state it for its own exams (*"Yanlışlar doğruları götürmemektedir"*, §9); the exam guide quotes TTB for that, and the ISTQB paper's `negativeMarking` stays `null`. **Do not claim it for the ISTQB paper on the site;** if needed, add a note saying "not stated in the official documents."
 
 ---
 
@@ -246,7 +246,7 @@ Verified:
 
 The following items must **not be asserted** in the product:
 
-1. **Negative marking** — not mentioned in any official document; can't be said to exist, can't be said not to.
+1. **Negative marking** — not mentioned in any ISTQB document (TTB states there is none for exams taken through it, §9, which says nothing about the paper itself); can't be said to exist, can't be said not to.
 2. ~~**The ISTQB Glossary's CC BY 4.0 license**~~ — **verified 22.09.2026** and removed from this list. The footer of the rendered page (`glossary.istqb.org/en_US/search`, glossary V4.8.1) reads *"Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license"*, linking to creativecommons.org. Screenshot: `docs/evidence/istqb-glossary-licence-2026-09-22.png`. Two caveats carried forward: the live glossary is **V4.8.1**, not the syllabus's v4.0.1, and the API does not report the release, so the copied data records each term's `revision` and the index records `fetchedAt` (docs/08 §5); and *"except where otherwise noted"* makes the notice a default that a page can override, so each page is checked on its own.
 3. **Turkish term translation in the Glossary** — not found in the API.
 4. **Direct PDF addresses for TTB Turkish sample exams B/C/D.**
@@ -307,3 +307,34 @@ F4-01 named CTFL-AT. ISTQB's CTFL-AT page (read 02.10.2026) says the certificati
 
 **Copyright:** the same notice as CTFL — *"Extracts, for non-commercial use, from this document may be copied if the source is acknowledged."* The LO texts are copied as extracts with the source named, as for CTFL.
 
+
+---
+
+## 9. Taking the exam through TTB (F4-07)
+
+Read on **05.10.2026** from TTB's own pages (Turkish and English) and istqb.org; the in-app guide `/sinav-sureci` states only what is below. TTB's pages are the authority and can change without notice, so the guide gives the reading date in its intro, repeats it on the sale price, and links each section's pages.
+
+| Topic | Verified fact | Source |
+|---|---|---|
+| Registration | Bought in TTB's online shop; TTB then e-mails the free slots and the candidate picks one. The date must be booked within 1 year of registering, or the right is lost. | [TTB FAQ](https://www.turkishtestingboard.org/sikca-sorulan-sorular/), [TTB exam info](https://www.turkishtestingboard.org/istqb-sinavlar-hakkinda-bilgi/) |
+| Prerequisite | None for CTFL, and no training is required. CT-AI needs CTFL. | TTB FAQ, [TTB CT-AI registration](https://www.turkishtestingboard.org/kayit/specialist-ai-testing/) |
+| Payment | Bank transfer (at the latest 15 days before the exam) or Visa / Mastercard / Amex. The e-archive invoice is issued against the T.C. kimlik number given at registration. | [TTB payment terms](https://www.turkishtestingboard.org/odeme-kosullari/), TTB FAQ |
+| Fee | List price **5,950 ₺ + 20% KDV** (CTFL and CT-AI). The shop showed a sale price of 4,700 ₺ + KDV on 05.10.2026; no end date is given; the English shop showed 98 USD + VAT. | [TTB CTFL page](https://www.turkishtestingboard.org/foundation-level/), [TTB CTFL registration](https://www.turkishtestingboard.org/kayit/foundation-level-certified-tester/), [TTB CT-AI registration](https://www.turkishtestingboard.org/kayit/specialist-ai-testing/) |
+| Delivery | Remote online per the exam pages (TTB exam info also mentions in-class exams on set dates and in-person ones on request), on the Mettl platform, at a booked time, from the candidate's own computer, watched by a live proctor through the computer's camera and a smartphone's camera; the session is recorded. Time lost to a technical problem before the start does not count: the clock starts when the proctor starts the exam. The access e-mail arrives at the latest 3 days before; no reminder is sent. | TTB FAQ, TTB exam info |
+| Equipment | A computer with camera and microphone, a smartphone, a stable connection, current Chrome and the Mettl Secure Browser (which asks the candidate to close other applications). An ID card, passport or driving licence; a photo of face and ID at entry. A work computer is advised against. | TTB FAQ |
+| Forbidden | Breaks, leaving the screen, food, drink, tobacco, a second screen, headphones, a smart watch, dictionaries, a calculator, paper and pen, reading questions aloud, screenshots, noting questions. An erasable board is allowed if it is blank at the start and the end. The proctor's chat is for technical help only. | TTB FAQ |
+| Paper | The online exam has the same question count, time and pass rate as TTB's in-class exam. CTFL and CT-AI are both in Turkish and English, on the same screen. CTFL: 40 questions, 1 hour, pass mark 26, *"Yanlışlar doğruları götürmemektedir"* (wrong answers cost nothing). A candidate whose native language is not Turkish gets the English paper and 75 minutes; it is not optional and is declared in writing at registration. | TTB CTFL registration, TTB FAQ |
+| Result | By e-mail the same day; a summary by topic can be requested. The questions themselves are not shared. | TTB CTFL registration, TTB FAQ |
+| Certificate | An English e-certificate by e-mail the same day, verifiable through a link on it. CTFL certificates are valid for life. | TTB FAQ, [ISTQB certifications FAQ](https://istqb.org/help/certifications-2/) |
+| Register | Listing on the ISTQB Successful Candidate Register is opt-in: a signed form sent to scr@turkishtestingboard.org. | [TTB SCR page](https://www.turkishtestingboard.org/istqb-sertifika-kazananlar/) |
+| Retake | A CTFL retake (2nd to 4th attempt) is **2,975 ₺ + KDV**. Per TTB there is no numeric limit, but under "ISTQB rules" attempts are limited to the number of question sets, which it does not publish; another provider is the alternative. | [TTB CTFL 2nd attempt](https://www.turkishtestingboard.org/kayit/foundation-level-2-katilim/), TTB FAQ, [ISTQB exam FAQ](https://istqb.org/help/exam/) (*"as many times as necessary"*) |
+| Postpone | Once, by e-mail at least 7 days before; later costs 50% of the fee. | TTB FAQ |
+| Cancel | By e-mail at least 7 days before: full refund. Later: 50% refund. | TTB FAQ |
+| Appeal | Within 15 days of the result; answered within one month. | TTB FAQ |
+| CT-AI at TTB | The paper is **v1.0 (2021)**: 47 points, pass mark 31, until 21 October 2027 (§8). This site teaches v2.0. | TTB CT-AI registration |
+
+**Contact for open questions:** certification@turkishtestingboard.org (TTB FAQ: *"Sınava kayıt olmadan önce certification@turkishtestingboard.org adresine e-mail göndererek program hakkında bilgi alabilirsiniz."*).
+
+**Not found, so not asserted:** the registration form's fields, a printed certificate, a waiting period between attempts, a CT-AI retake price, the number of question sets, a fee for the register listing, the end of the sale price, the live text of the ISTQB Code of Ethics (its pages return 404).
+
+**Where sources differ:** ISTQB says a candidate may retake *"as many times as necessary"* and is *"entitled to apply for"* the +25% time; TTB limits attempts to its question sets and ties the extra time to the English paper. The guide states TTB's rules, because they are the ones a candidate in Turkey meets, and names ISTQB's wording where it differs. TTB's no-negative-marking sentence describes exams taken through TTB; `negativeMarking` in `meta.json` describes the ISTQB paper and stays `null` (§7).

@@ -24,6 +24,7 @@ const Glossary = lazy(() => import("@/routes/Glossary"));
 const Repetition = lazy(() => import("@/routes/Repetition"));
 const MyData = lazy(() => import("@/routes/MyData"));
 const Progress = lazy(() => import("@/routes/Progress"));
+const ExamProcess = lazy(() => import("@/routes/ExamProcess"));
 
 /**
  * Runs under a GitHub Pages subpath: `base` becomes '/istqb-prep/' at build
@@ -55,6 +56,7 @@ const router = createBrowserRouter(
         { path: "/sozluk", element: <Glossary /> },
         { path: "/verilerim", element: <MyData /> },
         { path: "/kaynaklar", element: <Sources /> },
+        { path: "/sinav-sureci", element: <ExamProcess /> },
         { path: "*", element: <NotFound /> },
       ],
     },
