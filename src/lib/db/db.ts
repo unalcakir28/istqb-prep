@@ -243,17 +243,3 @@ export async function discardAttempt(attemptId: string): Promise<void> {
     await db.attempts.delete(attemptId);
   });
 }
-
-/**
- * IndexedDB doesn't work in every environment (private tab, storage
- * disabled, old browser). The app must not swallow this silently: the user
- * is told their progress won't be saved (F3-12).
- */
-export async function isPersistenceAvailable(): Promise<boolean> {
-  try {
-    await db.open();
-    return true;
-  } catch {
-    return false;
-  }
-}

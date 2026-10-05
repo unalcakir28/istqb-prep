@@ -32,6 +32,6 @@ Not adding an account isn't a shortfall, it's a **product decision**: zero frict
 - **+** Fast; ready for offline use (Phase 3 PWA)
 - **+** "None of your data reaches us" is a verifiable claim (open source)
 - **−** Progress is lost if browser data is cleared → export feature and a first-use notice are mandatory
-- **−** No persistence in private/incognito tabs → the app detects this and warns
+- **−** No persistence in private/incognito tabs → the app warns (F3-12: no API reports a private window, so what is detected is storage that does not open; the texts say what a private window does)
 - **−** No automatic cross-device sync → manual export/import
 - **−** Aggregate metrics like global accuracy per question can't be produced in v1 (a deliberate trade-off)

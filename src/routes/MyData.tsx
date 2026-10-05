@@ -19,6 +19,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { Spinner } from "@/components/Spinner";
+import { StorageSection } from "@/components/StorageSection";
 import { contentClient } from "@/lib/content/contentClient";
 import {
   downloadBackup,
@@ -210,6 +211,8 @@ export default function MyData() {
           {t("myData.intro")}
         </p>
       </div>
+
+      <StorageSection />
 
       <section aria-labelledby="export-title" className="flex flex-col gap-3">
         <h2 id="export-title" className="text-base font-semibold">

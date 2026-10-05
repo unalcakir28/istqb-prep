@@ -386,6 +386,13 @@ export default function Home() {
           <p className="max-w-[60ch] text-[15px] leading-relaxed text-fg-muted">
             {t("home.startHereBody", { total: cert.coverage.objectivesTotal })}
           </p>
+          {/* F3-12 — the first-use notice ADR-0003 asks for. */}
+          <p className="max-w-[60ch] text-sm leading-relaxed text-fg-muted">
+            {t("home.startHereStorage")}{" "}
+            <Link to="/verilerim" className="text-accent underline underline-offset-2">
+              {t("home.startHereStorageLink")}
+            </Link>
+          </p>
           <div className="flex flex-wrap gap-2">
             <Link
               to="/calisma"

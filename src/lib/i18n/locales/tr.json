@@ -37,6 +37,8 @@
     "startHereBody": "İlk kez buradaysan çalışma modundan başla: {{total}} öğrenme hedefini tek tek alır, her birinin kartını okuyup yalnızca o hedeften soru çözersin. Konuyu zaten biliyorsan doğrudan deneme sınavına girip nerede olduğunu ölç.",
     "startHereStudy": "Çalışmaya başla",
     "startHereExam": "Önce seviyemi ölç",
+    "startHereStorage": "İlerlemen yalnızca bu tarayıcıda kaydedilir, hiçbir sunucuya gitmez. Tarayıcının verilerini temizlemek ya da gizli pencereyi kapatmak onu siler.",
+    "startHereStorageLink": "Kopyası nasıl saklanır",
     "statusTitle": "Durumun",
     "statusMastered": "Öğrenilen hedef",
     "statusSessions": "Biten oturum",
@@ -275,7 +277,15 @@
     "errorNotBackup": "Bu, bu siteye ait bir ilerleme dosyası değil.",
     "errorNewerFormat": "Bu dosya sitenin daha yeni bir sürümüyle oluşturulmuş. Sayfayı yenileyip yeniden dene.",
     "errorNewerSchema": "Bu dosya sitenin daha yeni bir sürümüyle oluşturulmuş. Sayfayı yenileyip yeniden dene.",
-    "errorInvalidRows": "Bu dosya bozuk: kayıtlarından bazıları eksik, bu yüzden hiçbiri yüklenmedi."
+    "errorInvalidRows": "Bu dosya bozuk: kayıtlarından bazıları eksik, bu yüzden hiçbiri yüklenmedi.",
+    "storageTitle": "Bu tarayıcı ilerlemeni saklıyor mu?",
+    "storagePersistent": "Evet. Bu tarayıcı, bu sitenin verilerini sen silene kadar saklamayı kabul etti. Başka bir cihaza taşımanın tek yolu yine de indirilen bir kopya.",
+    "storageBestEffort": "Şimdilik. Bu tarayıcı ilerlemeni kaydediyor ama saklayacağına söz vermedi: cihazda yer azalınca silebilir, bazı tarayıcılar bir süredir girilmeyen sitenin verilerini siler, gizli pencere ise kapanınca siler. Verileri saklamasını isteyebilirsin; her durumda güvenli olan, indirilmiş bir kopya.",
+    "storageUnknown": "Bu tarayıcı ilerlemeni kaydediyor ama saklayıp saklamayacağını söylemiyor. Bazı tarayıcılar bir süredir girilmeyen sitenin verilerini siler, gizli pencere de kapanınca siler. Güvende olmak için indirilmiş bir kopya tut.",
+    "storageUnavailable": "Hayır. Bu tarayıcı bu site için hiçbir şey kaydetmiyor: depolaması burada açılmıyor; bu, site verileri tarayıcı ayarlarında engellendiğinde ve bazı gizli pencerelerde olur. Uygulama bunsuz çalışmaz: bu site için site verilerine izin ver ya da siteyi normal bir pencerede aç.",
+    "storageAsk": "Tarayıcıdan verilerimi saklamasını iste",
+    "storageGranted": "Tarayıcı bu sitenin verilerini saklamayı kabul etti.",
+    "storageRefused": "Tarayıcı kabul etmedi. Buna tarayıcının kendisi karar verir; güvende olmak için indirilmiş bir kopya tut."
   },
   "review": {
     "title": "İnceleme",
@@ -413,5 +423,9 @@
       "istqbCertificates": "ISTQB — Sertifikalar (İngilizce)",
       "istqbExams": "ISTQB — Sınavlar (İngilizce)"
     }
+  },
+  "storage": {
+    "unavailable": "Bu tarayıcı bu site için hiçbir şey kaydetmiyor: depolaması burada açılmıyor ve uygulama bunsuz çalışmaz. Bu site için site verilerine izin ver ya da siteyi normal bir pencerede aç.",
+    "unavailableLink": "Bu ne demek?"
   }
 }

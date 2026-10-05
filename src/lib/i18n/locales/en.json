@@ -37,6 +37,8 @@
     "startHereBody": "If this is your first visit, start with study: it takes the {{total}} learning objectives one at a time, each with a card to read and questions drawn only from that objective. If you already know the material, sit a mock exam first and find out where you stand.",
     "startHereStudy": "Start studying",
     "startHereExam": "Measure me first",
+    "startHereStorage": "Your progress is saved in this browser only, never on a server. Clearing the browser's data, or closing a private window, deletes it.",
+    "startHereStorageLink": "How to keep a copy",
     "statusTitle": "Your status",
     "statusMastered": "Objectives learned",
     "statusSessions": "Sessions finished",
@@ -275,7 +277,15 @@
     "errorNotBackup": "This is not a progress file from this site.",
     "errorNewerFormat": "This file was made by a newer version of this site. Reload the page and try again.",
     "errorNewerSchema": "This file was made by a newer version of this site. Reload the page and try again.",
-    "errorInvalidRows": "This file is damaged: some of its records are incomplete, so none of it was loaded."
+    "errorInvalidRows": "This file is damaged: some of its records are incomplete, so none of it was loaded.",
+    "storageTitle": "Does this browser keep your progress?",
+    "storagePersistent": "Yes. This browser has agreed to keep this site's data until you clear it yourself. A downloaded copy is still the only way to move it to another device.",
+    "storageBestEffort": "For now. This browser saves your progress but has not promised to keep it: it may delete it when the device runs low on space, some browsers delete the data of a site that has not been visited for a while, and a private window deletes it when it closes. You can ask it to keep the data; a downloaded copy is the safe answer either way.",
+    "storageUnknown": "This browser saves your progress but does not say whether it will keep it. Some browsers delete the data of a site that has not been visited for a while, and a private window deletes it when it closes. Keep a downloaded copy to be safe.",
+    "storageUnavailable": "No. This browser is not saving anything for this site: its storage does not open here, which happens when site data is blocked in the browser's settings and in some private windows. The app needs it to run: allow site data for this site, or open it in a normal window.",
+    "storageAsk": "Ask the browser to keep my data",
+    "storageGranted": "The browser agreed to keep this site's data.",
+    "storageRefused": "The browser did not agree. Browsers decide this themselves; keep a downloaded copy to be safe."
   },
   "review": {
     "title": "Review",
@@ -413,5 +423,9 @@
       "istqbCertificates": "ISTQB — Certifications FAQ",
       "istqbExams": "ISTQB — Exams FAQ"
     }
+  },
+  "storage": {
+    "unavailable": "This browser is not saving anything for this site: its storage does not open here, and the app cannot run without it. Allow site data for this site, or open it in a normal window.",
+    "unavailableLink": "What this means"
   }
 }

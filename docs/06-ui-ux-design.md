@@ -84,7 +84,7 @@ Route paths are Turkish, like the rest of the product's user-facing surface; the
 | `/tekrar` | Repetition — the SRS deck's due cards, one at a time (§3.8) | — |
 | `/ilerleme` | Progress — readiness estimate, streak, mock exams over time, first vs latest answers per chapter (§3.9c) | — |
 | `/sozluk` | Glossary — the active certification's bilingual terms (97 CTFL · 156 CT-AI), searched in both languages | — |
-| `/verilerim` | Your data — download a copy of the progress, load one (§3.11) | — |
+| `/verilerim` | Your data — whether this browser keeps it, download a copy of the progress, load one (§3.11) | — |
 | `/kaynaklar` | Sources, copyright, disclaimer | — |
 | `/sinav-sureci` | Taking the exam in Turkey: registration, the proctored online exam, result, retake (F4-07) | — |
 | `/deneme`, `/deneme/:attemptId` | **Legacy redirect** to `/sinav`. Bookmarks and in-progress attempts on the old exam path keep working. | — |
@@ -152,7 +152,7 @@ Every number on this screen is read from `meta.json`, `syllabus.json` and the qu
 
 The coverage line has **no progress bar**. For CTFL, `objectivesTotal` is fixed at 64 by the syllabus and coverage is 64, so a bar would sit permanently full and read as decoration; the sentence carries both numbers.
 
-**Above the hero, one of two blocks, never both (F1-16).** With no finished session and nothing mastered, "Where should I start?" points at study and offers "measure me first" as the alternative — an empty dashboard of zeros is worse than a direction. Otherwise "Your status": objectives learned, sessions finished, and the last score. The last score is **omitted** rather than shown as 0% before the first finished session, because a dash reads as a score of zero.
+**Above the hero, one of two blocks, never both (F1-16).** With no finished session and nothing mastered, "Where should I start?" points at study and offers "measure me first" as the alternative — an empty dashboard of zeros is worse than a direction. Inside it, above the two actions, sits the first-use notice ADR-0003 asks for (F3-12): progress is saved in this browser only, clearing the browser's data or closing a private window deletes it, and a link to `/verilerim` says how to keep a copy. Otherwise "Your status": objectives learned, sessions finished, and the last score. The last score is **omitted** rather than shown as 0% before the first finished session, because a dash reads as a score of zero.
 
 **The certification picker (F4-01).** Once the manifest has two `active` certifications, the page opens with a "Certification" group of toggle buttons — acronym and version, with the full name under it — above everything else, the resume banner included: what the page shows depends on it. It is the interface-language control's pattern (`aria-pressed`), not a radio group, because a pick reloads the page and arrow keys that moved the selection would reload it on every press. The choice is kept in localStorage (`src/lib/certification.ts`); every screen that is not tied to an attempt reads it, and a session, its result and its review keep reading their own attempt's certification. The routes carry no certification, so every existing bookmark lands where it did. One exception follows a link: `/calisma/lo/:loCode` with another certification's objective switches to that certification rather than saying "not found". A pick loads the page again but keeps the current one on screen until the new one arrives, so the pressed button never unmounts and keeps focus; a status line under the picker then says "Now showing CT-AI v2.0 — Certified Tester AI Testing", because everything under it changed without focus moving. The pressed button carries a check mark and a heavier border, not only a colour. Because the routes do not say which certification is shown, the three screens that start a session — `/calisma`, `/alistirma`, `/sinav` — name it above their heading (`CertificationTag`).
 
@@ -336,13 +336,15 @@ Empty states say what each part waits for rather than showing zeros. The nav car
 
 ### 3.11 Your data `/verilerim`
 
-Built in F3-08. The one mitigation for R-08: progress lives only in this browser, so a file the candidate keeps is the only copy that survives a cleared browser, and the only way to another device. Linked from the footer on every width and from the privacy section of `/kaynaklar`.
+Built in F3-08 and F3-12. The one mitigation for R-08: progress lives only in this browser, so a file the candidate keeps is the only copy that survives a cleared browser, and the only way to another device. Linked from the footer on every width, from the privacy section of `/kaynaklar`, from the home screen's first-use notice and from the storage-unavailable alert.
 
 - **Download a copy** — one button; the file is `istqb-prep-progress-YYYY-MM-DD.json`. "Download started" and the file name are announced in a status region.
 - **Focus never falls to the page.** Every step unmounts the control just used, so focus moves on: to the file's description once it is read (the version warning is part of that description), back to the file input after Cancel, and to the result line after a load. A repeated failure re-announces, because each message is keyed to the attempt that produced it.
 - **Load a copy** — two steps on purpose, because it writes into this browser's progress: choose a file, read what it holds (when it was saved; how many sessions, answers, objective records and repetition cards), then confirm. The screen says before the button that nothing is deleted and the newer copy of a record wins.
 - A file from another question version shows a warning and still loads. A file that is not a progress file, is damaged, or comes from a newer version of the site is refused with a reason, as an alert, and no load button appears.
 - The result names what happened: new records, records updated from the file, and records kept from this browser because they were newer.
+- **Does this browser keep your progress?** (F3-12) — the first section, answered from `src/lib/storage.ts`: storage does not open (nothing is saved, nothing to download); the browser has agreed to keep the data (`navigator.storage.persisted()`); it saves but has not promised to keep it; or it does not say. Only the third offers a button, "Ask the browser to keep my data", which calls `navigator.storage.persist()`. It never runs unasked, because Firefox answers it with a permission prompt. The browser's answer is announced in a status line; a grant removes the button, so focus moves to that line.
+- **A private window is not detected.** No API reports one, and the heuristics change between browser versions; a guess shown as a fact would break rule 5. The texts say what a private window does to the data instead, and the candidate knows whether they are in one.
 
 ### 3.11b Taking the exam `/sinav-sureci`
 
@@ -473,8 +475,9 @@ Typing in a real text field is never swallowed; radios and checkboxes are the op
 | Pool insufficient (exam or practice) | An **explicit warning** on the setup screen, plus how many questions will be generated. Silently generating a short session is forbidden (rule 8). |
 | Network error (chunk failed to load) | "Couldn't load questions" + retry. Offline (F3-07), a screen whose content was loaded once online opens from the cache; one never visited shows this same notice — there is no separate offline message yet |
 | Answers cannot be written to IndexedDB | A banner inside the session: progress is not reaching disk and a reload will lose it |
+| IndexedDB does not open at all (F3-12) | An alert at the top of the main area on every screen, sessions included: nothing is being saved and the app cannot run without it; allow site data or use a normal window. It links to `/verilerim`, which explains why, except on `/verilerim` itself |
 | Attempt opened at another mode's URL | Redirected to the address `routeForAttempt` derives from the stored attempt |
-| Data version changed | Silent update; an SRS card notice only if a specific question actually changed |
+| Data version changed | Silent update. A repetition card whose question was revised comes due again (F3-11); no separate notice |
 | Attempt left unfinished | A banner at the top of the home page: "You have an unfinished session — 12/40 answered — [Continue] [Discard]" |
 
 ---

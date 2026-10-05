@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { Spinner } from "./Spinner";
+import { StorageWarning } from "./StorageWarning";
 import { setUiLanguage, UI_LANGUAGES, type UiLanguage } from "@/lib/i18n";
 import { PRODUCT_NAME } from "@/lib/product";
 import {
@@ -170,6 +171,9 @@ export function Layout() {
       )}
 
       <main id="main" className="flex-1">
+        {/* On every screen, sessions included, and inside main, so the skip
+            link lands on it. */}
+        <StorageWarning />
         <Suspense fallback={<Spinner />}>
           <Outlet />
         </Suspense>

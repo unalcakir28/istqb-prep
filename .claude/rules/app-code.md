@@ -45,6 +45,9 @@ lib/certification.ts  Which certification the screens show — the home
                    screen's pick, in localStorage (ADR-0006)
 lib/registerServiceWorker.ts  Registers build/pwa.ts's sw.js, production
                    builds only (F3-07)
+lib/storage.ts     Whether this browser keeps the data: IndexedDB opens,
+                   persisted() or not; persist() from a button only. A
+                   private window is NOT detected (F3-12)
 lib/bilingual.ts   TR+EN side by side — a display preference in localStorage,
                    deliberately NOT on the attempt: "both" is not a language
 routes/            Screens · components/ shared UI · types/content.ts data types
@@ -69,7 +72,7 @@ user-facing surface:
 /tekrar                        Repetition — the SRS deck's due cards, one at a time
 /ilerleme                      Progress — readiness estimate, streak, mock exams, per chapter
 /sozluk                        Glossary — the active certification's terms (97 CTFL · 156 CT-AI), no definitions (see F2-11)
-/verilerim                     Your data — download / load a progress file (F3-08)
+/verilerim                     Your data — does this browser keep it (F3-12); download / load a progress file (F3-08)
 /sinav-sureci                  Taking the exam in Turkey — TTB registration, proctoring, result, retake (F4-07)
 /kaynaklar                     Sources
 /deneme  ·  /deneme/:attemptId Legacy redirect to /sinav — old bookmarks keep working
