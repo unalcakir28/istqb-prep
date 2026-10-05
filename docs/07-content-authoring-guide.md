@@ -351,5 +351,33 @@ merge → deploy
 
 Even on a single-person project, **writing and reviewing never happen in the same session** — at least a day's gap is left. Reviewing your own question the same day you wrote it stops you from seeing weak distractors.
 
+### Community contributions (F4-05)
+
+D-04 kept question PRs closed until the editorial bar had settled; F4-05 opens them (05.10.2026). A contributed question goes through the same gate as ours, plus three things only a stranger's work needs.
+
+```
+Contributor
+  1. Pick an LO            → docs/coverage.md, the fewest questions first
+  2. Write from the LO     → §2–§6; never from a sample exam, a course or a dump
+  3. Fill the record       → id: next free in that certification (ctfl4-NNNN / ctai-NNNN)
+                             origin: "community" · status: "review"
+                             meta.author: your GitHub handle · meta.reviewedBy: ""
+  4. yarn build:index && yarn validate:data   → green
+  5. Open a PR             → the template's originality statement and licence box ticked
+Maintainer
+  6. Not reviewed until the statement is ticked; CI green
+  7. Adversarial verification → the question-verifier agent's checks, plus a read of the
+                             official sets for an accidental match (R-13; reported by our
+                             id only, ADR-0007)
+  8. Changes requested in the PR, or the id renumbered if another PR took it
+  9. Merge at "review", then publish in a separate commit:
+     yarn publish:questions --reviewer "<maintainer>" --cert <id> --chunk <chunk>
+```
+
+- **The contributor never publishes.** The hook blocks a hand-set `published`, and the schema refuses one with an empty `reviewedBy`; the reviewer named is the maintainer who verified it.
+- **Credit is `meta.author`.** It stays with the question through every revision.
+- **Licence:** a contributed question is published under the content licence, CC BY-SA 4.0 (D-03); the PR template asks the contributor to agree.
+- **AI use is declared in the PR.** §8 applies unchanged: a draft from a model is allowed, an unverified one is not, and "write an ISTQB sample exam question" is never the prompt.
+
 ### User error reports
 Every question card has a "Bu soruda hata var" button → a pre-filled GitHub Issue (question ID, version, selected option, language). Incoming reports are triaged weekly; when a fix is accepted, the question's `revision` value is incremented and its SRS cards are moved to the `relearning` state.

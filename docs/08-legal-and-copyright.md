@@ -142,7 +142,7 @@ Visible on the site:
 > *"Bu platform bağımsız bir topluluk projesidir; ISTQB® veya Turkish Testing Board ile hiçbir bağlantısı yoktur, onlar tarafından onaylanmamıştır. İçerik resmî müfredata dayanılarak özgün olarak hazırlanmıştır ancak sınavda çıkacak soruları yansıtmaz. Sınav sonucunuza dair hiçbir garanti verilmez. Resmî ve güncel bilgi için istqb.org ve turkishtestingboard.org adreslerine başvurunuz."*
 
 ### 6.3 Contributor declaration
-If question contributions are ever opened up (Phase 4), a mandatory checkbox in the PR template:
+Question contributions were opened by F4-05 (05.10.2026); the PR template carries this mandatory checkbox, in English:
 > ☐ Bu soruyu **kendim yazdım**. Herhangi bir resmî ISTQB/TTB örnek sınavından, ücretli bir kurstan veya "dump" kaynağından kopyalamadım/uyarlamadım.
 
 ### 6.4 The anti-"dump" stance

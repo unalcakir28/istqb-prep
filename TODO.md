@@ -165,7 +165,7 @@ Each gets its own spec and plan; nothing above anticipates them beyond the exten
 - [x] **F4-02** `P1` ~~CT-AI v2.0~~ — merged into F4-01 on 02.10.2026. (TTB's Turkish CT-AI syllabus is v1.0; v2.0 is English-only, `docs/03` §8.)
 - [ ] **F4-03** `P2` CT-PT (Performance Testing)
 - [ ] **F4-04** `P2` CTAL-TA v4.0 — the first Advanced module → support for **multi-point questions** (the scoring engine expands)
-- [ ] **F4-05** `P1` Community question contributions: PR template + an **originality declaration** + a review flow
+- [x] **F4-05** `P1` Community question contributions: PR template + an **originality declaration** + a review flow _Done 05.10.2026: `CONTRIBUTING.md` and `docs/07` §9 describe the flow (origin `community`, merged at `review`, published by the maintainer after adversarial verification); the PR template adds the licence and AI-use boxes._
 - [ ] **F4-06** `P2` Per-question discussion (via GitHub Discussions, serverless)
 - [x] **F4-07** `P1` **Turkish process guide**: registration, online proctoring, results, retake rights (a gap identified in the market research) _Done 05.10.2026: `/sinav-sureci`, every sentence from TTB's or ISTQB's own pages (docs/03 §9), sources linked per section, and what could not be confirmed listed as such._
 - [ ] **F4-08** `P2` Global per-question accuracy rate — how, while preserving privacy? (needs research)
