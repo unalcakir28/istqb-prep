@@ -26,6 +26,8 @@ features/srs/      Spaced repetition — scheduler (the only ts-fsrs import:
                    queue (what is due; the home count and /tekrar share it;
                    spreadSiblings keeps two cards of one LO apart;
                    forecastDue counts the next days for /tekrar)
+features/progress/ What /ilerleme reads — examPoints, readiness (2 of the last
+                   3 timed mock exams), chapterProgress, the forgiving streak
 lib/content/       Static JSON access + a two-tier cache (Map + Cache API
                    named per dataVersion). Questions AND lessons.
 lib/db/            Dexie/IndexedDB — the single place for persistence. db.ts
@@ -60,6 +62,7 @@ user-facing surface:
 /inceleme/:attemptId           Review   — reached from the result screen
 /listelerim                    My lists — wrong · flagged · never right twice in a row
 /tekrar                        Repetition — the SRS deck's due cards, one at a time
+/ilerleme                      Progress — readiness estimate, streak, mock exams, per chapter
 /sozluk                        Glossary — the active certification's terms (97 CTFL · 156 CT-AI), no definitions (see F2-11)
 /verilerim                     Your data — download / load a progress file (F3-08)
 /kaynaklar                     Sources

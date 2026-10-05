@@ -127,6 +127,13 @@ for (const theme of THEMES) {
     await scan(page);
   });
 
+  test(`the progress screen is accessible (${theme})`, async ({ page }) => {
+    await setTheme(page, theme);
+    await page.goto("/ilerleme");
+    await expect(page.getByRole("heading", { level: 1, name: en.progress.title })).toBeVisible();
+    await scan(page);
+  });
+
   test(`the empty repetition deck is accessible (${theme})`, async ({ page }) => {
     await setTheme(page, theme);
     await page.goto("/tekrar");

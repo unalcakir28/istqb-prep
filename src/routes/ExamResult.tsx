@@ -17,13 +17,15 @@ import { Link, Navigate, useLocation, useNavigate, useParams } from "react-route
 import { useTranslation } from "react-i18next";
 
 import { ErrorNotice } from "@/components/ErrorNotice";
+import { ReadinessNote } from "@/components/ReadinessNote";
 import { ScoreBar } from "@/components/ScoreBar";
 import { Spinner } from "@/components/Spinner";
 import { resultRedirectPathFor, routeForAttempt } from "@/features/session/routeForAttempt";
 import { useSessionStore } from "@/features/session/sessionStore";
 import { isGraded, weakestObjectives } from "@/features/exam/scoreExam";
+import { examPoints, readiness, type Readiness } from "@/features/progress/progress";
 import { contentClient } from "@/lib/content/contentClient";
-import type { Attempt, AttemptScope } from "@/lib/db/db";
+import { db, type Attempt, type AttemptScope } from "@/lib/db/db";
 import { useArrivalFocus } from "@/lib/useArrivalFocus";
 import { useDocumentTitle } from "@/lib/useDocumentTitle";
 import type { Chapter, Objective } from "@/types/content";
@@ -92,6 +94,7 @@ export default function ExamResult() {
   const [starting, setStarting] = useState(false);
   const [chapters, setChapters] = useState<Chapter[] | null>(null);
   const [objectives, setObjectives] = useState<Objective[] | null>(null);
+  const [estimate, setEstimate] = useState<Readiness | null>(null);
 
   const ready = Boolean(attemptId && attempt?.id === attemptId && score);
 
@@ -131,6 +134,30 @@ export default function ExamResult() {
       cancelled = true;
     };
   }, [certId]);
+
+  // F3-06: under a timed mock exam, what the last few say together. Read
+  // after the attempt is submitted, so this one is among them. Gated on
+  // `ready`: until then the store may still hold the previous attempt.
+  const timedExam =
+    ready && attempt ? isGraded(attempt.scope) && attempt.deadlineAt !== null : false;
+
+  useEffect(() => {
+    if (!certId || !timedExam) return;
+    let cancelled = false;
+
+    void db.attempts
+      .where({ certId })
+      .toArray()
+      .then((rows) => {
+        if (!cancelled) setEstimate(readiness(examPoints(rows)));
+      })
+      // The estimate is an extra: if it cannot be read the result still shows.
+      .catch(() => undefined);
+
+    return () => {
+      cancelled = true;
+    };
+  }, [certId, timedExam]);
 
   // A study attempt's result lives under its objective, not here (F2-14).
   // Checked before `loading` so a hand-typed URL is corrected on the first
@@ -284,6 +311,18 @@ export default function ExamResult() {
             seconds: elapsed % 60,
           })}
         </p>
+
+        {timedExam && estimate ? (
+          <div className="flex flex-col items-start gap-2 border-t border-border pt-4">
+            <ReadinessNote readiness={estimate} />
+            <Link
+              to="/ilerleme"
+              className="text-sm font-medium text-accent underline underline-offset-2"
+            >
+              {t("progress.seeProgress")}
+            </Link>
+          </div>
+        ) : null}
       </section>
 
       <section aria-labelledby="by-chapter" className="flex flex-col gap-4">

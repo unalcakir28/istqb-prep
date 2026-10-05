@@ -15,7 +15,8 @@
     "sources": "Kaynaklar",
     "theme": "Temayı değiştir",
     "uiLanguage": "Arayüz dili",
-    "menu": "Menü"
+    "menu": "Menü",
+    "progress": "İlerleme"
   },
   "home": {
     "heroTitle": "ISTQB {{name}} için ücretsiz deneme sınavı",
@@ -329,5 +330,37 @@
     "disclaimerShort": "Bağımsız topluluk projesi · ISTQB® ile bağlantısı yoktur",
     "sources": "Kaynaklar ve telif",
     "myData": "Verilerim"
+  },
+  "progress": {
+    "title": "İlerleme",
+    "intro": "Şimdiye kadarki oturumlarının söyledikleri: deneme sınavlarının sınava kaydolmaya işaret edip etmediği, ilk cevaplarından bu yana her bölümün nasıl gittiği ve kaç gün üst üste çalıştığın.",
+    "readinessTitle": "Sınava kaydolmaya hazır mısın?",
+    "readinessNeedMore_one": "Bir tahmin için {{count}} zamanlı deneme sınavı daha bitir.",
+    "readinessNeedMore_other": "Bir tahmin için {{count}} zamanlı deneme sınavı daha bitir.",
+    "readinessReady_one": "Son {{count}} zamanlı deneme sınavından {{passed}} tanesi geçme notuna ulaştı — bu sitenin pratik kuralına göre sınava kaydolabilirsin.",
+    "readinessReady_other": "Son {{count}} zamanlı deneme sınavından {{passed}} tanesi geçme notuna ulaştı — bu sitenin pratik kuralına göre sınava kaydolabilirsin.",
+    "readinessNotYet_one": "Son {{count}} zamanlı deneme sınavından {{passed}} tanesi geçme notuna ulaştı — bu sitenin pratik kuralına göre henüz değil.",
+    "readinessNotYet_other": "Son {{count}} zamanlı deneme sınavından {{passed}} tanesi geçme notuna ulaştı — bu sitenin pratik kuralına göre henüz değil.",
+    "readinessRule_one": "Pratik kural: son {{count}} zamanlı deneme sınavından en az {{passes}} tanesini geçmek. Bu bir tahmin değil, bu sitenin kuralıdır — ISTQB bir sonucu öngörmenin yolunu yayımlamaz.",
+    "readinessRule_other": "Pratik kural: son {{count}} zamanlı deneme sınavından en az {{passes}} tanesini geçmek. Bu bir tahmin değil, bu sitenin kuralıdır — ISTQB bir sonucu öngörmenin yolunu yayımlamaz.",
+    "streakTitle": "Seri",
+    "streakDays_one": "Üst üste {{count}} aktif gün.",
+    "streakDays_other": "Üst üste {{count}} aktif gün.",
+    "streakNone": "Henüz aktif gün yok — biten bir oturum ya da bir tekrar serini başlatır.",
+    "streakRule": "Biten bir oturum ya da bir tekrar o günü aktif yapar. Tek bir boş gün seriyi bozmaz.",
+    "streakKeep": "Bugün henüz bir şey yok. Tek bir boş gün seriyi bozmaz; iki gün bozar.",
+    "examsTitle": "Deneme sınavları",
+    "examsNone": "Henüz biten bir deneme sınavı yok.",
+    "examsCaption_one": "Son deneme sınavın, {{total}} puan üzerinden {{pass}} puanlık geçme notuna göre (çubuktaki çizgi).",
+    "examsCaption_other": "Son {{count}} deneme sınavın, eskiden yeniye, {{total}} puan üzerinden {{pass}} puanlık geçme notuna göre (her çubuktaki çizgi).",
+    "examPassed": "{{points}} / {{total}} · geçti",
+    "examNotPassed": "{{points}} / {{total}} · geçmedi",
+    "examUntimed": "zamansız",
+    "chaptersTitle": "Bölüm bölüm",
+    "chaptersNone": "Henüz cevap yok. Bir bölüm, sorularından birini cevapladığında burada görünür.",
+    "chaptersCaption": "Cevapladığın her soru için: ilk seferde ne sıklıkla doğruydu ve son cevabın ne sıklıkla doğru.",
+    "chapterRow_one": "İlk cevaplar %{{first}} doğru · son cevaplar %{{latest}} doğru · {{count}} soru",
+    "chapterRow_other": "İlk cevaplar %{{first}} doğru · son cevaplar %{{latest}} doğru · {{count}} soru",
+    "seeProgress": "İlerlemeni gör"
   }
 }

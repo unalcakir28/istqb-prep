@@ -79,7 +79,7 @@ yarn publish:questions  # review -> published; --reviewer is mandatory (the only
 yarn publish:lessons    # the same script with --kind lessons; --reviewer is mandatory
 yarn sync:data          # data/ -> public/data/ (needed when data/ changes while the dev server runs)
 yarn test               # Vitest (unit)
-yarn e2e                # Playwright: 72 specs across 8 files — flow + axe accessibility (its own dev server, 5183)
+yarn e2e                # Playwright: 76 specs across 9 files — flow + axe accessibility (its own dev server, 5183)
 yarn e2e:ui             # the same specs in Playwright's UI mode
 yarn build              # tsc -b && vite build (CI gate)
 yarn lighthouse         # lhci autorun — asserts >=95 in all 4 categories; needs `yarn build` first

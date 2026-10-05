@@ -82,6 +82,7 @@ Route paths are Turkish, like the rest of the product's user-facing surface; the
 | `/inceleme/:attemptId` | Review pass — reached from the result screen | exam + practice |
 | `/listelerim` | My lists — wrong, flagged, never right twice in a row | — |
 | `/tekrar` | Repetition — the SRS deck's due cards, one at a time (§3.8) | — |
+| `/ilerleme` | Progress — readiness estimate, streak, mock exams over time, first vs latest answers per chapter (§3.9c) | — |
 | `/sozluk` | Glossary — the active certification's bilingual terms (97 CTFL · 156 CT-AI), searched in both languages | — |
 | `/verilerim` | Your data — download a copy of the progress, load one (§3.11) | — |
 | `/kaynaklar` | Sources, copyright, disclaimer | — |
@@ -158,7 +159,7 @@ The coverage line has **no progress bar**. For CTFL, `objectivesTotal` is fixed 
 
 **The repetition link (F3-02).** "Your status" carries a link to `/tekrar` once the deck holds a card, with the due count in its own text ("Repeat 3 due questions"), accent-filled while something is due. Before the first wrong answer there is no link: it would lead to an empty screen. The count comes from the same `summarizeDeck` the review screen serves by, so the two numbers cannot disagree.
 
-**Not built yet:** the streak and the weakest-objectives summary (F3-05). The 7-day forecast (F3-04) lives on the /tekrar done panel, not here (§3.8).
+**Not on this page:** the streak and the per-chapter progress live on `/ilerleme` (§3.9c), and the 7-day forecast on the /tekrar done panel (§3.8). The weakest-objectives summary stays on the result screen (§3.4).
 
 ### 3.2 Exam setup `/sinav`
 
@@ -244,7 +245,7 @@ Details:
 - The pass line is **always** drawn — whether the user passed or failed — for an attempt whose `scope.kind` is `blueprint`. That is the one thing the 26/40 mark describes, and practice shares this screen: on a scoped set the mark, the verdict and the pass/fail tone are all dropped and the bar ends at the questions asked, because 10 and 20 can never reach 26 and a perfect run would otherwise read as a failure. The discriminator is the scope, never the mode.
 - Behind the chapter bars, **the real exam weight is shown as a ghost target** (the AWS Skill Builder pattern).
 - If the user failed, the top block isn't accusatory: *"4 points short of 26. Focus on the 3 weakest objectives."*
-- In Phase 3, a **readiness estimate**: *"2 of your last 3 timed attempts passed the bar — you can schedule the exam."*
+- Under a **timed mock exam**, the **readiness estimate** (F3-06, `ReadinessNote`): *"2 of your last 3 timed mock exams reached the pass mark — by this site's rule of thumb, you can book the exam."* With fewer than three it says how many more are needed. The rule's caveat is printed with it every time: it is this site's rule of thumb, and ISTQB publishes no way to predict a result (rule 5). An untimed blueprint attempt is not counted — the real paper has a clock.
 
 ### 3.5 Review pass `/inceleme/:attemptId`
 
@@ -319,6 +320,17 @@ Three lists, none of them stored: each is derived from the answers already in In
 - **Questions I got wrong** and **questions I flagged** read the LATEST answer only. Wrong in March and right in April is not a current mistake, and a flag cleared last session is cleared.
 - **Never right twice in a row** reads the whole history. One hit after a run of misses is as likely to be a guess as knowledge, and an unanswered attempt breaks a run exactly as a wrong one does.
 - Each list hands its ids straight to the `questions` scope, so "practise this list" is the same machinery as "retry the ones you missed" on the result screen, not a second path.
+
+### 3.9c Progress `/ilerleme`
+
+F3-05 and F3-06. Four readings of what IndexedDB already holds for the picked certification; nothing new is stored (`features/progress/progress.ts`).
+
+- **Readiness** first, because it is the question a candidate comes with: the same `ReadinessNote` as under a timed mock exam's result (§3.4) — the last 3 timed blueprint attempts, ready at 2 passes, with its caveat.
+- **Streak** — active days in a row. A finished session (any mode) or a repetition makes a day active; one missed day between two active days does not break the run, and the run is still alive while only yesterday was missed (Duolingo's streak freeze, given for free). Repetition counts through each card's last review, so a day whose only reviews were later repeated drops out; no history table was added for it.
+- **Mock exams** — the last 10 blueprint attempts, oldest first: date and time, a bar of the points with the pass line drawn over it (both on the paper's full scale, so a short exam's bar never crosses the line it did not reach), and "30 / 40 · passed" in words. The bar and the line are `aria-hidden`; an untimed attempt says so.
+- **By chapter** — for every question answered at least once (a flagged or cleared one with no answer does not count): the share right the first time against the share whose latest answer is right. It is the learning, not the luck of one paper: the same replay of answers against keys as the saved lists (`buildQuestionHistory`).
+
+Empty states say what each part waits for rather than showing zeros. The nav carries the page between Repetition and My lists; below `sm`, where the top nav is hidden, the footer links to it.
 
 ### 3.11 Your data `/verilerim`
 

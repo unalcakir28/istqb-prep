@@ -70,6 +70,17 @@ vi.mock("@/lib/content/contentClient", () => ({
   },
 }));
 
+/** What the readiness estimate reads: the stored attempts of the certification. */
+let storedAttempts: Attempt[] = [];
+
+vi.mock("@/lib/db/db", () => ({
+  db: {
+    attempts: {
+      where: () => ({ toArray: () => Promise.resolve(storedAttempts) }),
+    },
+  },
+}));
+
 /** Swapped per test before rendering; the store is read with plain selectors. */
 let attempt: Attempt;
 let score: ExamScore;
@@ -210,6 +221,7 @@ beforeAll(async () => {
 
 beforeEach(() => {
   document.title = "";
+  storedAttempts = [];
 });
 
 describe("ExamResult verdict", () => {
@@ -411,5 +423,55 @@ describe("ExamResult title and focus", () => {
     await waitFor(() => {
       expect(heading).toHaveFocus();
     });
+  });
+});
+
+describe("ExamResult readiness estimate", () => {
+  const needMore = (count: number) =>
+    en.progress.readinessNeedMore_other.replace("{{count}}", String(count));
+
+  /** A finished timed blueprint attempt, as `submit` stores it. */
+  function timed(overrides: Partial<Attempt> = {}): Attempt {
+    return {
+      ...makeAttempt("exam", { kind: "blueprint" }),
+      durationMinutes: 60,
+      deadlineAt: 3_601_000,
+      points: 26,
+      totalPoints: 40,
+      passed: true,
+      ...overrides,
+    };
+  }
+
+  it("shows the estimate under a timed mock exam, counting this one", async () => {
+    attempt = timed();
+    score = makeScore(26, 40);
+    storedAttempts = [attempt];
+
+    renderResult();
+
+    expect(await screen.findByText(needMore(2))).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: en.progress.seeProgress })).toHaveAttribute(
+      "href",
+      "/ilerleme",
+    );
+  });
+
+  it("shows no estimate under an untimed blueprint attempt or a practice set", async () => {
+    storedAttempts = [timed({ id: "older" })];
+
+    attempt = makeAttempt("exam", { kind: "blueprint" });
+    score = makeScore(26, 40);
+    const { unmount } = renderResult();
+    await screen.findByRole("heading", { name: en.result.title, level: 1 });
+    expect(screen.queryByText(needMore(2))).not.toBeInTheDocument();
+    unmount();
+
+    attempt = makeAttempt("practice", { kind: "chapter", chapters: [1], count: 10 });
+    score = makeScore(10, 10);
+    renderResult();
+    await screen.findByRole("heading", { name: en.result.title, level: 1 });
+    expect(screen.queryByText(needMore(2))).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: en.progress.seeProgress })).not.toBeInTheDocument();
   });
 });

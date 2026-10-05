@@ -120,6 +120,16 @@ export function Layout() {
                 {t("nav.repetition")}
               </NavLink>
               <NavLink
+                to="/ilerleme"
+                className={({ isActive }) =>
+                  isActive
+                    ? "rounded-[var(--radius-btn)] px-3 py-1.5 text-sm font-medium text-fg"
+                    : "rounded-[var(--radius-btn)] px-3 py-1.5 text-sm text-fg-muted hover:text-fg"
+                }
+              >
+                {t("nav.progress")}
+              </NavLink>
+              <NavLink
                 to="/listelerim"
                 className={({ isActive }) =>
                   isActive
@@ -178,10 +188,13 @@ export function Layout() {
               {t("footer.myData")}
             </Link>
             {/* The top nav is hidden below `sm`, so without these the
-                repetition deck and the saved lists have no entry point at all
-                on a phone. */}
+                repetition deck, the progress screen and the saved lists have
+                no entry point at all on a phone. */}
             <Link to="/tekrar" className="underline underline-offset-2 hover:text-fg sm:hidden">
               {t("nav.repetition")}
+            </Link>
+            <Link to="/ilerleme" className="underline underline-offset-2 hover:text-fg sm:hidden">
+              {t("nav.progress")}
             </Link>
             <Link to="/listelerim" className="underline underline-offset-2 hover:text-fg sm:hidden">
               {t("nav.lists")}

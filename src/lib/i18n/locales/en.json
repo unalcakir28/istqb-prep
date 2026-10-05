@@ -15,7 +15,8 @@
     "sources": "Sources",
     "theme": "Toggle theme",
     "uiLanguage": "Interface language",
-    "menu": "Menu"
+    "menu": "Menu",
+    "progress": "Progress"
   },
   "home": {
     "heroTitle": "A free mock exam for ISTQB {{name}}",
@@ -329,5 +330,37 @@
     "disclaimerShort": "Independent community project · not affiliated with ISTQB®",
     "sources": "Sources and copyright",
     "myData": "Your data"
+  },
+  "progress": {
+    "title": "Progress",
+    "intro": "What your sessions so far say: whether your mock exams point to booking the exam, how each chapter has gone since your first answers, and how many days in a row you have studied.",
+    "readinessTitle": "Are you ready to book the exam?",
+    "readinessNeedMore_one": "Finish {{count}} more timed mock exam to get an estimate.",
+    "readinessNeedMore_other": "Finish {{count}} more timed mock exams to get an estimate.",
+    "readinessReady_one": "{{passed}} of your last {{count}} timed mock exam reached the pass mark — by this site's rule of thumb, you can book the exam.",
+    "readinessReady_other": "{{passed}} of your last {{count}} timed mock exams reached the pass mark — by this site's rule of thumb, you can book the exam.",
+    "readinessNotYet_one": "{{passed}} of your last {{count}} timed mock exam reached the pass mark — not yet, by this site's rule of thumb.",
+    "readinessNotYet_other": "{{passed}} of your last {{count}} timed mock exams reached the pass mark — not yet, by this site's rule of thumb.",
+    "readinessRule_one": "The rule of thumb: at least {{passes}} of your last {{count}} timed mock exam passed. It is this site's rule, not a prediction — ISTQB publishes no way to predict a result.",
+    "readinessRule_other": "The rule of thumb: at least {{passes}} of your last {{count}} timed mock exams passed. It is this site's rule, not a prediction — ISTQB publishes no way to predict a result.",
+    "streakTitle": "Streak",
+    "streakDays_one": "{{count}} active day in a row.",
+    "streakDays_other": "{{count}} active days in a row.",
+    "streakNone": "No active days yet — a finished session or a repetition starts your streak.",
+    "streakRule": "A finished session or a repetition makes a day active. One missed day does not break the streak.",
+    "streakKeep": "Nothing yet today. One missed day does not break the streak; two do.",
+    "examsTitle": "Mock exams",
+    "examsNone": "No mock exam finished yet.",
+    "examsCaption_one": "Your last mock exam, against the pass mark of {{pass}} out of {{total}} points (the line on the bar).",
+    "examsCaption_other": "Your last {{count}} mock exams, oldest to newest, against the pass mark of {{pass}} out of {{total}} points (the line on each bar).",
+    "examPassed": "{{points}} / {{total}} · passed",
+    "examNotPassed": "{{points}} / {{total}} · not passed",
+    "examUntimed": "untimed",
+    "chaptersTitle": "By chapter",
+    "chaptersNone": "No answers yet. Each chapter appears here once you have answered one of its questions.",
+    "chaptersCaption": "For every question you have answered: how often it was right the first time, and how often your latest answer is right.",
+    "chapterRow_one": "First answers {{first}}% right · latest answers {{latest}}% right · {{count}} question",
+    "chapterRow_other": "First answers {{first}}% right · latest answers {{latest}}% right · {{count}} questions",
+    "seeProgress": "See your progress"
   }
 }
