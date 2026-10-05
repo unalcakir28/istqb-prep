@@ -296,7 +296,9 @@ Built in F3-02. One due card at a time, the most overdue first.
 - `1`–`9` select an option before the reveal. **No grading keys:** the same digit would select one moment and rate the next.
 - A card whose question is no longer published is skipped, not shown, and stays in the deck.
 
-**Not built yet:** two questions from the same LO never back to back (F3-03), and the forecast chart for the next 7 days (F3-04).
+- **Two cards of the same LO are not served back to back** (F3-03, `spreadSiblings` in `features/srs/queue.ts`): the first one's rationale would answer the second. A sibling moves back, most overdue first otherwise. Two siblings meet only when no order can keep them apart (a deck of one LO, say) — a due card is moved, never held back.
+
+**Not built yet:** the forecast chart for the next 7 days (F3-04).
 
 ### 3.9 Glossary `/sozluk`
 

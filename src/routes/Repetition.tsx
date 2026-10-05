@@ -33,7 +33,7 @@ import { withOptionOrder } from "@/features/exam/optionOrder";
 import { randomSeed } from "@/features/exam/rng";
 import { isExactMatch } from "@/features/exam/scoreExam";
 import { formatInterval } from "@/features/srs/interval";
-import { summarizeDeck } from "@/features/srs/queue";
+import { spreadSiblings, summarizeDeck } from "@/features/srs/queue";
 import { GRADES, previewDue, type SrsGrade } from "@/features/srs/scheduler";
 import { otherLang, readSideBySide, writeSideBySide } from "@/lib/bilingual";
 import { contentClient } from "@/lib/content/contentClient";
@@ -67,19 +67,21 @@ async function loadRepetition(): Promise<RepetitionData> {
   const cert = await contentClient.getActiveCertification();
   const [index, deck] = await Promise.all([contentClient.getIndex(cert.path), loadDeck(cert.id)]);
 
-  const published = new Set(
-    index.questions.filter((entry) => entry.status === "published").map((entry) => entry.id),
-  );
+  const publishedEntries = index.questions.filter((entry) => entry.status === "published");
+  const published = new Set(publishedEntries.map((entry) => entry.id));
+  const objectivesById = new Map(publishedEntries.map((entry) => [entry.id, entry.objectives]));
   const loadedAt = Date.now();
   const summary = summarizeDeck(deck, published, loadedAt);
+  // F3-03: a sibling is moved back, so one card's rationale does not answer the next.
+  const due = spreadSiblings(summary.due, (id) => objectivesById.get(id) ?? []);
   const questions = await contentClient.getQuestions(
     cert.path,
-    summary.due.map((card) => card.questionId),
+    due.map((card) => card.questionId),
   );
 
   const seed = randomSeed();
   const byId = new Map(questions.map((question) => [question.id, withOptionOrder(question, seed)]));
-  const items = summary.due.flatMap((card) => {
+  const items = due.flatMap((card) => {
     const question = byId.get(card.questionId);
     return question ? [{ card, question }] : [];
   });
