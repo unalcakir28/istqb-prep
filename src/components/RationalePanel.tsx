@@ -2,6 +2,7 @@ import type { RefObject } from "react";
 import { useTranslation } from "react-i18next";
 
 import { CitationChips } from "./CitationChips";
+import { DiscussQuestionLink } from "./DiscussQuestionLink";
 import { ReportQuestionLink } from "./ReportQuestionLink";
 import type { Lang, Question } from "@/types/content";
 
@@ -166,7 +167,11 @@ export function RationalePanel({
             because this is the only place a candidate can see the keyed answer
             and its reasoning, which is what they need in order to know that
             something is actually wrong. */}
-        <ReportQuestionLink question={question} lang={lang} selected={selected} />
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          {/* F4-06 — beside the report: both are about this question, after its key is shown. */}
+          <DiscussQuestionLink questionId={question.id} />
+          <ReportQuestionLink question={question} lang={lang} selected={selected} />
+        </div>
       </div>
     </section>
   );

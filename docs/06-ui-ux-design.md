@@ -259,7 +259,7 @@ For every question:
 
 Each question is one **nested group of headings**, not three flat ones — see §4.3. A filter switches between all questions and the wrong ones only.
 
-**Not built, deliberately:** an `[Add to review deck]` button. A question answered wrong joins the deck automatically when the session is submitted (F3-01), and a right answer is not evidence enough to add one. `[Report an error in this question]` (F2-08) lives in each question's rationale panel.
+**Not built, deliberately:** an `[Add to review deck]` button. A question answered wrong joins the deck automatically when the session is submitted (F3-01), and a right answer is not evidence enough to add one. `[Report an error in this question]` (F2-08) and `[Discuss]` (F4-06) live in each question's rationale panel (§4.1).
 
 ### 3.6 Practice mode `/alistirma`
 
@@ -406,7 +406,7 @@ Paragraphs are plain text, not Markdown — the project ships no Markdown render
 
 The primary language is still `contentLang`: it is what the heading is announced in and what the attempt records. "Both" is a state of the control, never of the content, so the preference lives in localStorage (`src/lib/bilingual.ts`) rather than on the attempt.
 
-**After answering (practice/study/review)**: the selected option and the correct option are marked — colour, an icon **and** a word, all three (WCAG 1.4.1) — and a `RationalePanel` opens below it with a summary, a "why" line for every option, and citation chips.
+**After answering (practice/study/review)**: the selected option and the correct option are marked — colour, an icon **and** a word, all three (WCAG 1.4.1) — and a `RationalePanel` opens below it with a summary, a "why" line for every option, and citation chips. Beside the chips sit two links about the question: **Discuss** (F4-06), which opens the repository's GitHub Discussions searched for the question's id, and **Report a problem** (F2-08), a pre-filled issue. Both are links, not embeds — nothing reaches GitHub until the candidate follows one (rule 7) — and both appear only once the key is shown, because a thread about a question discusses its answer.
 
 **The options are one named group**, `role="radiogroup"` for single-select and `role="group"` for multi, named by the stem **and** the "select 2 options" instruction. Without the group a multi-select gives each checkbox its own name, so a screen-reader user gets no "1 of 4" and no way to learn that two answers are wanted.
 

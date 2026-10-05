@@ -118,7 +118,7 @@ istqb-prep/
 │   │   │                        # HintLadder (nudge -> hint -> answer, F3-09),
 │   │   │                        # StorageWarning (every screen: storage does not open),
 │   │   │                        # StorageSection (/verilerim: persistence, F3-12),
-│   │   └──                      # ReportQuestionLink (F2-08) …
+│   │   └──                      # ReportQuestionLink (F2-08), DiscussQuestionLink (F4-06) …
 │   ├── lib/
 │   │   ├── content/             # contentClient, chunk cache (questions, lessons, glossary)
 │   │   ├── db/                  # db.ts (Dexie v3), migrations.ts, objectiveProgress.ts,
@@ -303,7 +303,7 @@ jobs:
 | **Accessibility** | `@axe-core/playwright` + hand-written specs | Zero violations on every main route in both themes, **plus** the failures axe cannot see: focus destinations, accessible names, live-region behaviour |
 | **Visual** | Playwright snapshot | Not set up |
 
-Counts as of 05.10.2026: **257 unit tests in 31 files**, **89 end-to-end specs across 12 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
+Counts as of 05.10.2026: **258 unit tests in 32 files**, **89 end-to-end specs across 12 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
 
 > This is a **testing certification** project. Test discipline is part of the product itself here; the README will display a test-coverage badge.
 

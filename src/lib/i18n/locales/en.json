@@ -303,7 +303,9 @@
     "noneWrong": "You had no incorrect answers.",
     "back": "Back to result",
     "report": "Report a problem",
-    "reportLabel": "Report a problem with question {{id}}"
+    "reportLabel": "Report a problem with question {{id}}",
+    "discuss": "Discuss",
+    "discussLabel": "Discuss question {{id}} with other candidates"
   },
   "question": {
     "objective": "Learning objective",
