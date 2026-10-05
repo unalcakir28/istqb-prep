@@ -24,6 +24,11 @@
     }
   },
   "glossaryUsedIn": { "syllabus": "Specialist - AI Testing", "version": "v2.0" },
+  "ttbPaper": {
+    "syllabusVersion": "1.0",
+    "replacedOn": "2027-10-21",
+    "source": "https://www.turkishtestingboard.org/en/ai-testing-exam/"
+  },
   "sources": {
     "syllabusEn": "https://istqb.org/?sdm_process_download=1&download_id=9558",
     "certificationPage": "https://istqb.org/certifications/certified-tester-ai-testing-ct-ai/",

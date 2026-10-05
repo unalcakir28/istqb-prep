@@ -131,6 +131,32 @@
         "format": "uri"
       }
     },
+    "ttbPaper": {
+      "type": "object",
+      "description": "Set only while TTB still examines an earlier syllabus version than this one (F4-09). The app shows a notice on the home and setup screens until replacedOn, the first exam day TTB names for this version (docs/03 §8).",
+      "required": [
+        "syllabusVersion",
+        "replacedOn",
+        "source"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "syllabusVersion": {
+          "type": "string",
+          "description": "The version TTB's paper follows today."
+        },
+        "replacedOn": {
+          "type": "string",
+          "format": "date",
+          "description": "The first TTB exam day on this certification's own syllabus version."
+        },
+        "source": {
+          "type": "string",
+          "format": "uri",
+          "description": "The TTB page that states replacedOn."
+        }
+      }
+    },
     "officialSampleExams": {
       "type": "array",
       "description": "Where the official sample exams live on the member board's own site. Links only — their copyright notice permits attributed excerpts for non-commercial use and prohibits every other use without ISTQB's written approval, so their questions are never reproduced here (docs/08 K-1, ADR-0004).",

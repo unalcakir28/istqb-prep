@@ -1,7 +1,7 @@
 import { test, expect, type Page } from "@playwright/test";
 
 import ctai from "../data/ct-ai-v2.0/meta.json" with { type: "json" };
-import { en, fill, pattern } from "./labels";
+import { en, escapeRegExp, fill, pattern } from "./labels";
 
 /**
  * F4-01 — the second certification (ADR-0006).
@@ -83,4 +83,58 @@ test("a link to a CT-AI objective opens it, and switches the site to CT-AI", asy
 
   await page.goto("/");
   await expect(pickerButton(page, "CT-AI")).toHaveAttribute("aria-pressed", "true");
+});
+
+test("CT-AI says which version TTB examines, on the home and setup screens (F4-09)", async ({
+  page,
+}) => {
+  // The notice ends on the day TTB moves to v2.0; pin the day so the spec does not expire.
+  await page.clock.setFixedTime(new Date(2026, 9, 5));
+  const anyNotice = page.getByRole("heading", {
+    name: pattern(en.ttbPaper.title, { acronym: "\\S+", examined: "\\S+" }),
+  });
+  const ctaiNotice = page.getByRole("heading", {
+    name: fill(en.ttbPaper.title, {
+      acronym: ctai.acronym,
+      examined: ctai.ttbPaper.syllabusVersion,
+    }),
+  });
+
+  await page.goto("/");
+  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+  await expect(anyNotice).toHaveCount(0);
+
+  await pickerButton(page, "CT-AI").click();
+  await expect(ctaiNotice).toBeVisible();
+  // The notice lands after the focused picker, so the pick announcement names it.
+  await expect(
+    page.getByRole("status").filter({ hasText: en.ttbPaper.title.split("{{")[0] }),
+  ).toHaveText(
+    new RegExp(
+      `${escapeRegExp(
+        fill(en.ttbPaper.title, {
+          acronym: ctai.acronym,
+          examined: ctai.ttbPaper.syllabusVersion,
+        }),
+      )}$`,
+    ),
+  );
+
+  for (const path of ["/calisma", "/alistirma", "/sinav"]) {
+    await page.goto(path);
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    await expect(ctaiNotice).toBeVisible();
+  }
+
+  // The footer carries a link with the same name; take the notice's own.
+  await page
+    .getByRole("region", {
+      name: fill(en.ttbPaper.title, {
+        acronym: ctai.acronym,
+        examined: ctai.ttbPaper.syllabusVersion,
+      }),
+    })
+    .getByRole("link", { name: en.ttbPaper.link })
+    .click();
+  await expect(page).toHaveURL(/\/sinav-sureci$/);
 });

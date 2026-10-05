@@ -54,6 +54,8 @@ lib/registerServiceWorker.ts  Registers build/pwa.ts's sw.js, production
 lib/storage.ts     Whether this browser keeps the data: IndexedDB opens,
                    persisted() or not; persist() from a button only. A
                    private window is NOT detected (F3-12)
+lib/ttbPaper.ts    F4-09 — whether meta.ttbPaper's notice still applies, and
+                   what it says; the notice and the home pick announcement share it
 lib/bilingual.ts   TR+EN side by side — a display preference in localStorage,
                    deliberately NOT on the attempt: "both" is not a language
 routes/            Screens · components/ shared UI · types/content.ts data types

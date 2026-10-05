@@ -70,6 +70,29 @@ for (const theme of THEMES) {
     await scan(page);
   });
 
+  test(`CT-AI's home and setup screens, with the TTB notice, are accessible (${theme})`, async ({
+    page,
+  }) => {
+    // F4-09: the notice exists only for CT-AI and only until TTB moves to v2.0.
+    await page.clock.setFixedTime(new Date(2026, 9, 5));
+    await setTheme(page, theme);
+    await page.goto("/");
+    await page
+      .getByRole("group", { name: en.home.certificationLabel })
+      .getByRole("button", { name: /^CT-AI v/ })
+      .click();
+    const notice = page.getByRole("region", {
+      name: new RegExp(`^${escapeRegExp(en.ttbPaper.title.split("{{")[0])}`),
+    });
+    await expect(notice).toBeVisible();
+    await scan(page);
+
+    await page.goto("/sinav");
+    await expect(page.getByRole("button", { name: en.setup.start })).toBeVisible();
+    await expect(notice).toBeVisible();
+    await scan(page);
+  });
+
   test(`the study chapter list is accessible (${theme})`, async ({ page }) => {
     await setTheme(page, theme);
     await page.goto("/calisma");

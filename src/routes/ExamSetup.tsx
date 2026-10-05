@@ -20,6 +20,7 @@ import { CertificationTag } from "@/components/CertificationTag";
 import { ErrorNotice } from "@/components/ErrorNotice";
 import { ScoreBar } from "@/components/ScoreBar";
 import { Spinner } from "@/components/Spinner";
+import { TtbPaperNotice } from "@/components/TtbPaperNotice";
 import { useSessionStore } from "@/features/session/sessionStore";
 import {
   previewCoverage,
@@ -167,6 +168,8 @@ export default function ExamSetup() {
         <CertificationTag cert={cert} />
         <h1 className="text-[28px] font-semibold leading-tight">{t("setup.title")}</h1>
       </div>
+
+      <TtbPaperNotice meta={meta} />
 
       <fieldset className="flex flex-col gap-3">
         <legend className="mb-2 text-base font-semibold">{t("setup.contentLanguage")}</legend>

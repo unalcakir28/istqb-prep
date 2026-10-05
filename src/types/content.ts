@@ -67,6 +67,12 @@ export interface CertMeta {
   };
   /** Which ISTQB Glossary terms `yarn fetch:glossary` copies for this syllabus. */
   glossaryUsedIn?: { syllabus: string; version: string };
+  /**
+   * F4-09 — set only while TTB still examines an earlier syllabus version.
+   * `replacedOn` is the first TTB exam day on this version (docs/03 §8); the
+   * notice it drives disappears on that day without a content change.
+   */
+  ttbPaper?: { syllabusVersion: string; replacedOn: string; source: string };
   sources: Record<string, string>;
   /**
    * Where the official sample exams live on the member board's own site.

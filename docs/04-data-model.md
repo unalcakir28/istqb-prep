@@ -133,6 +133,8 @@ Source: [`03-istqb-reference.md §3`](03-istqb-reference.md)
 > `status` (`active` / `draft` / `retired`) is what `yarn build:index` copies into the manifest, and what decides whether the certification can be picked.
 >
 > `sources` holds URLs only, because `/kaynaklar` renders every entry as a link; the schema rejects anything else. `glossaryUsedIn` is the ISTQB Glossary's own `used_in` value for this syllabus, the filter `yarn fetch:glossary` applies (§3.10).
+>
+> `ttbPaper` is optional and set only while TTB still examines an earlier syllabus version than this one: CT-AI v2.0 carries `{ "syllabusVersion": "1.0", "replacedOn": "2027-10-21", "source": … }`, from TTB's exam page (`03-istqb-reference.md` §8). `replacedOn` is the first TTB exam day on this version. The home and setup screens show a notice until that day and drop it on their own (F4-09); remove the field when the content is next touched after it.
 
 ### 3.3 `syllabus.json` — chapters
 

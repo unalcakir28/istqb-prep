@@ -363,6 +363,7 @@ F4-07, the gap the market research found: nobody explains, in Turkish, what happ
 - **Only what TTB or ISTQB states**, read on one date (docs/03 §9) and shown with that date in the intro. Each section ends with links to the pages it rests on, in the interface language where TTB has one. The intro carries the reading date and the sale price repeats it, because the shop's price changes.
 - **Sections:** registration and payment · the online proctored exam (equipment, ID, what is forbidden) · the paper · result and certificate · retake, postpone, cancel · CT-AI (TTB still examines v1.0 until 21 October 2027, while this site teaches v2.0) · what could not be confirmed, with the address to ask instead of a guess.
 - **Where ISTQB and TTB differ** (retake limit, extra time), the page states TTB's rule, because it is the one a candidate in Turkey meets, and quotes ISTQB beside it.
+- **The CT-AI version gap is also said where it is chosen** (F4-09): a notice under the home screen's certification picker and above the study, practice and exam setup screens, linking here. It reads `meta.ttbPaper` and stops showing on the day TTB starts examining the taught version.
 
 ### 3.10 Lesson card (inside `/calisma/lo/:loCode`)
 

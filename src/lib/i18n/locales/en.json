@@ -445,5 +445,10 @@
     "nudgeLabel": "What this question checks",
     "hintLabel": "Hint",
     "notThis": "Not this one:"
+  },
+  "ttbPaper": {
+    "title": "TTB still examines {{acronym}} v{{examined}}",
+    "body": "This site teaches {{acronym}} v{{taught}}. Through TTB, exams held before {{date}} use the v{{examined}} paper, which is scored differently. Check which version your exam date falls under before you study.",
+    "link": "Taking the exam in Turkey"
   }
 }

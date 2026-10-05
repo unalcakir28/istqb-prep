@@ -30,6 +30,7 @@ import { BlueprintFigure, type BlueprintChapter } from "@/components/BlueprintFi
 import { CertificationPicker, type PickableCertification } from "@/components/CertificationPicker";
 import { ErrorNotice } from "@/components/ErrorNotice";
 import { Spinner } from "@/components/Spinner";
+import { TtbPaperNotice } from "@/components/TtbPaperNotice";
 import {
   previewCoverage,
   shortfallsByChapter,
@@ -42,6 +43,7 @@ import { writeCertificationChoice } from "@/lib/certification";
 import { contentClient } from "@/lib/content/contentClient";
 import { db, discardAttempt, findResumableAttempt, getResponses, type Attempt } from "@/lib/db/db";
 import { loadRevisedDeck } from "@/lib/db/srsCards";
+import { ttbPaperValues } from "@/lib/ttbPaper";
 import { useAsyncData } from "@/lib/useAsyncData";
 import type {
   CertMeta,
@@ -312,11 +314,18 @@ export default function Home() {
   }
 
   const shown = data.certifications.find((item) => item.id === cert.id);
+  // The notice lands after the focused picker; say it, or it is heard only by reading on.
+  const paper = ttbPaperValues(meta, i18n.language);
   const pickAnnouncement =
     picked !== null && !refreshing && picked === cert.id && shown
-      ? t("home.certificationChanged", {
-          name: `${shown.acronym} v${shown.syllabusVersion} — ${shown.name[lang]}`,
-        })
+      ? [
+          t("home.certificationChanged", {
+            name: `${shown.acronym} v${shown.syllabusVersion} — ${shown.name[lang]}`,
+          }),
+          paper ? t("ttbPaper.title", paper) : null,
+        ]
+          .filter(Boolean)
+          .join(" ")
       : "";
 
   async function onDiscard(attemptId: string) {
@@ -339,6 +348,8 @@ export default function Home() {
           </p>
         </div>
       ) : null}
+
+      <TtbPaperNotice meta={meta} />
 
       {resume ? (
         <section

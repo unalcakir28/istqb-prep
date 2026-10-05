@@ -445,5 +445,10 @@
     "nudgeLabel": "Bu soru neyi ölçüyor",
     "hintLabel": "İpucu",
     "notThis": "Bu değil:"
+  },
+  "ttbPaper": {
+    "title": "TTB hâlâ {{acronym}} v{{examined}} ile sınav yapıyor",
+    "body": "Bu site {{acronym}} v{{taught}} sürümünü öğretir. TTB üzerinden {{date}} tarihinden önce girilen sınavlar v{{examined}} sürümüne göre yapılır ve puanlaması farklıdır. Çalışmaya başlamadan önce sınav tarihinin hangi sürüme denk geldiğine bak.",
+    "link": "Türkiye'de sınav süreci"
   }
 }

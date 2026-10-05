@@ -21,12 +21,14 @@ import { ContentLangToggle } from "@/components/ContentLangToggle";
 import { CertificationTag } from "@/components/CertificationTag";
 import { ErrorNotice } from "@/components/ErrorNotice";
 import { Spinner } from "@/components/Spinner";
+import { TtbPaperNotice } from "@/components/TtbPaperNotice";
 import { useSessionStore } from "@/features/session/sessionStore";
 import { selectQuestions, type Shortfall } from "@/features/exam/selectQuestions";
 import { contentClient } from "@/lib/content/contentClient";
 import { useAsyncData } from "@/lib/useAsyncData";
 import type {
   CertificationSummary,
+  CertMeta,
   ExamBlueprint,
   Lang,
   Objective,
@@ -37,6 +39,7 @@ import type { AttemptScope } from "@/lib/db/db";
 
 interface SetupData {
   cert: CertificationSummary;
+  meta: CertMeta;
   blueprint: ExamBlueprint;
   syllabus: Syllabus;
   objectives: Objective[];
@@ -54,7 +57,8 @@ const PREVIEW_SEED = 1;
 async function loadSetup(): Promise<SetupData> {
   const cert = await contentClient.getActiveCertification();
 
-  const [blueprint, syllabus, objectives, index] = await Promise.all([
+  const [meta, blueprint, syllabus, objectives, index] = await Promise.all([
+    contentClient.getMeta(cert.path),
     contentClient.getBlueprint(cert.path),
     contentClient.getSyllabus(cert.path),
     contentClient.getObjectives(cert.path),
@@ -63,6 +67,7 @@ async function loadSetup(): Promise<SetupData> {
 
   return {
     cert,
+    meta,
     blueprint,
     syllabus,
     objectives,
@@ -142,7 +147,7 @@ export default function PracticeSetup() {
   if (failed) return <ErrorNotice onRetry={reload} />;
   if (!data) return <Spinner />;
 
-  const { cert, syllabus, objectives } = data;
+  const { cert, meta, syllabus, objectives } = data;
   const chaptersMissing = scopeChoice === "chapters" && selectedChapters.length === 0;
   const achievable = preview?.questionIds.length ?? 0;
   const requiredTotal = scope?.kind === "blueprint" ? data.blueprint.totals.questions : count;
@@ -194,6 +199,8 @@ export default function PracticeSetup() {
         <CertificationTag cert={cert} />
         <h1 className="text-[28px] font-semibold leading-tight">{t("practice.setupTitle")}</h1>
       </div>
+
+      <TtbPaperNotice meta={meta} />
 
       <fieldset className="flex flex-col gap-3">
         <legend className="mb-2 text-base font-semibold">{t("practice.scope")}</legend>

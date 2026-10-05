@@ -15,13 +15,15 @@ import { useTranslation } from "react-i18next";
 import { CertificationTag } from "@/components/CertificationTag";
 import { ErrorNotice } from "@/components/ErrorNotice";
 import { Spinner } from "@/components/Spinner";
+import { TtbPaperNotice } from "@/components/TtbPaperNotice";
 import { contentClient } from "@/lib/content/contentClient";
 import { getObjectiveProgress } from "@/lib/db/objectiveProgress";
 import { useAsyncData } from "@/lib/useAsyncData";
-import type { CertificationSummary, Chapter, Lang, Objective } from "@/types/content";
+import type { CertificationSummary, CertMeta, Chapter, Lang, Objective } from "@/types/content";
 
 interface ChaptersData {
   cert: CertificationSummary;
+  meta: CertMeta;
   chapters: Chapter[];
   objectives: Objective[];
   /** Objective code -> whether its most recent test cleared the mastery bar. */
@@ -31,7 +33,8 @@ interface ChaptersData {
 async function loadChapters(): Promise<ChaptersData> {
   const cert = await contentClient.getActiveCertification();
 
-  const [syllabus, objectives] = await Promise.all([
+  const [meta, syllabus, objectives] = await Promise.all([
+    contentClient.getMeta(cert.path),
     contentClient.getSyllabus(cert.path),
     contentClient.getObjectives(cert.path),
   ]);
@@ -46,7 +49,7 @@ async function loadChapters(): Promise<ChaptersData> {
     if (row.mastered) mastered.add(code);
   }
 
-  return { cert, chapters: syllabus.chapters, objectives, mastered };
+  return { cert, meta, chapters: syllabus.chapters, objectives, mastered };
 }
 
 export default function StudyChapters() {
@@ -68,6 +71,8 @@ export default function StudyChapters() {
         <CertificationTag cert={data.cert} />
         <h1 className="text-[28px] font-semibold leading-tight">{t("study.chaptersTitle")}</h1>
       </div>
+
+      <TtbPaperNotice meta={data.meta} />
 
       <ul className="flex flex-col gap-3">
         {data.chapters.map((chapter) => {
