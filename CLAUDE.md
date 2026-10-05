@@ -105,6 +105,7 @@ schemas/    JSON Schema — CI gate
 docs/       Project docs + adr/
 scripts/    validate-data, check-i18n, build-index, stats, sync-data, fetch-glossary, publish-questions
 src/        The app (Vite + React + TS) — module map and routes: .claude/rules/app-code.md
+build/      Vite plugin: web app manifest + service worker (F3-07)
 e2e/        Playwright: flow + accessibility
 ```
 

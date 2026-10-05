@@ -22,3 +22,9 @@ paths:
 - **`deploy.yml` publishes to GitHub Pages on every push to `main`**, gated only
   on `validate:data` and `build` — not on tests. Deep links work because the job
   copies `dist/index.html` to `dist/404.html`; Pages has no SPA rewrite otherwise.
+- **The service worker exists only in a production build.** `build/pwa.ts`
+  (a Vite plugin, `apply: "build"`) emits `sw.js` and `manifest.webmanifest`;
+  `registerServiceWorker` skips the dev server, so `yarn e2e` never runs under
+  a worker but `yarn lighthouse` does. A worker left registered on
+  `localhost:4173` from a `vite preview` answers from its cache until it is
+  unregistered in DevTools.

@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath } from "node:url";
 
+import { pwa } from "./build/pwa";
 import { PRODUCT_NAME } from "./src/lib/product";
 
 /**
@@ -23,7 +24,7 @@ function appName() {
 // https://vite.dev/config/
 export default defineConfig({
   base: process.env.GITHUB_ACTIONS ? "/istqb-prep/" : "/",
-  plugins: [react(), tailwindcss(), appName()],
+  plugins: [react(), tailwindcss(), appName(), pwa()],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

@@ -48,8 +48,8 @@ The **In tree?** column is the honest one: `package.json` is the source of truth
 | Persistence | **Dexie 4 (IndexedDB)** | ✅ | localStorage quota is insufficient; queryable; migration support |
 | SRS | **ts-fsrs 5** | ✅ | The FSRS reference implementation in TypeScript; the algorithm Anki uses. Run on its default parameters (FSRS-6 weights, 90% target retention, 1 m / 10 m learning steps) with fuzz off, so the interval shown on a grade button is the one it applies. Only `src/features/srs/scheduler.ts` imports it |
 | i18n | **i18next + react-i18next** | ✅ | Interface language; content language is managed separately |
-| Charts | hand-rolled SVG (`ScoreBar`) | ✅ | The result breakdown needed bars, not a charting library. Recharts stays on the table for the Phase 3 progress trend. |
-| PWA | **vite-plugin-pwa** (Workbox) | ⬜ | Phase 3; `StaleWhileRevalidate` for question chunks |
+| Charts | hand-rolled SVG (`ScoreBar`) and CSS bars | ✅ | The result breakdown, the repetition forecast and the progress trend needed bars, not a charting library. |
+| PWA | hand-written: `build/pwa.ts` + `build/sw.template.js` | ✅ | F3-07. Three caching rules did not need Workbox or a new dependency; see §6 *Offline* for why data is network-first, not `StaleWhileRevalidate` |
 | Validation | **Ajv** + JSON Schema | ✅ | Data validation in CI |
 | Testing | **Vitest** + **Testing Library** + **Playwright** + **axe-core** | ✅ | Unit + component + end-to-end + accessibility |
 | Quality | ESLint + Prettier + `tsc --noEmit` | ✅ | CI gate |
@@ -69,7 +69,9 @@ As it stands. Directories marked *planned* do not exist yet.
 ```
 istqb-prep/
 ├── public/
-│   └── data/                    # data/ copied here by scripts/sync-data.ts (generated)
+│   ├── data/                    # data/ copied here by scripts/sync-data.ts (generated)
+│   └── icons/                   # The web app manifest's icons (192, 512)
+├── build/                       # Vite plugin for the PWA: web app manifest + service worker (F3-07)
 ├── data/                        # Source data (reviewed in Git) — questions/, lessons/, terms.json …
 ├── schemas/                     # JSON Schema definitions, incl. lesson + lessons-index
 ├── scripts/
@@ -119,7 +121,8 @@ istqb-prep/
 │   │   ├── i18n/                # index.ts + locales/{tr,en}.json
 │   │   ├── theme.ts · useAsyncData.ts · useDialogFocus.ts · bilingual.ts · isTextEntry.ts
 │   │   ├── product.ts           # PRODUCT_NAME, REPO_URL — the name lives here, not in i18n
-│   │   ├── useDocumentTitle.ts · useArrivalFocus.ts
+│   │   ├── useDocumentTitle.ts · useArrivalFocus.ts · certification.ts
+│   │   ├── registerServiceWorker.ts  # registers build/pwa.ts's sw.js, production builds only
 │   ├── types/content.ts         # Data model types, hand-written against schemas/
 │   ├── test/                    # Vitest setup + shared fixtures
 │   └── styles/
@@ -229,6 +232,18 @@ GitHub Pages does no server-side rewriting. Two options:
 ### `.nojekyll`
 A `dist/.nojekyll` file is added; otherwise Jekyll ignores files starting with `_`.
 
+### Offline (F3-07)
+`build/pwa.ts` emits `manifest.webmanifest` (name from `src/lib/product.ts`, icons from `public/icons/`) and `sw.js`, which is `build/sw.template.js` with the build's file list and a version hashed from those files' contents, so a change to any of them, `index.html` and the icons included, ships a new worker. `src/lib/registerServiceWorker.ts` registers it in production builds only, so the dev server and the E2E specs never run under a worker.
+
+| Request | Rule | Why |
+|---|---|---|
+| The shell: `index.html` and every emitted script, style and icon | Cached on install (bypassing the HTTP cache), then cache-first | The worker's version covers their contents, so a cached copy is replaced whenever one changes; the app opens with no network |
+| `data/manifest.json` | Network-first, the last copy only when offline | Offline, it names the `dataVersion` whose content `contentClient` cached |
+| Anything else under `data/` | Not handled: straight to the network | The file names never change and `contentClient` already caches per `dataVersion`. A copy here would carry no version and, offline, would be stored as the new version's content. Stale-while-revalidate would do the same online |
+| A page navigation | Network, whatever the status; the cached shell offline | GitHub Pages serves deep links as its 404 page, and that page is the app |
+
+There is no `skipWaiting`: a new worker waits until every tab of the old one is closed, so a running tab keeps the shell its lazy chunks belong to. Offline, a screen opens if its content was loaded once online; one never visited shows the error notice.
+
 ### Workflow
 
 ```yaml
@@ -277,7 +292,7 @@ jobs:
 | **Accessibility** | `@axe-core/playwright` + hand-written specs | Zero violations on every main route in both themes, **plus** the failures axe cannot see: focus destinations, accessible names, live-region behaviour |
 | **Visual** | Playwright snapshot | Not set up |
 
-Counts as of 05.10.2026: **206 unit tests in 27 files**, **76 end-to-end specs across 9 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
+Counts as of 05.10.2026: **211 unit tests in 28 files**, **76 end-to-end specs across 9 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
 
 > This is a **testing certification** project. Test discipline is part of the product itself here; the README will display a test-coverage badge.
 

@@ -461,7 +461,7 @@ Typing in a real text field is never swallowed; radios and checkboxes are the op
 | No question for an LO | The objective screen says so and `Start test` is disabled |
 | Fewer questions than the mastery bar | Stated on the objective screen **before** the test starts: this test cannot mark the objective learned however well it goes |
 | Pool insufficient (exam or practice) | An **explicit warning** on the setup screen, plus how many questions will be generated. Silently generating a short session is forbidden (rule 8). |
-| Network error (chunk failed to load) | "Couldn't load questions" + retry; if offline, a suggestion to continue with the cached chunks |
+| Network error (chunk failed to load) | "Couldn't load questions" + retry. Offline (F3-07), a screen whose content was loaded once online opens from the cache; one never visited shows this same notice — there is no separate offline message yet |
 | Answers cannot be written to IndexedDB | A banner inside the session: progress is not reaching disk and a reload will lose it |
 | Attempt opened at another mode's URL | Redirected to the address `routeForAttempt` derives from the stored attempt |
 | Data version changed | Silent update; an SRS card notice only if a specific question actually changed |

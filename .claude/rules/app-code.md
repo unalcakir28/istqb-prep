@@ -40,6 +40,8 @@ lib/db/            Dexie/IndexedDB — the single place for persistence. db.ts
 lib/i18n/          UI language; question language is a separate concept (attempt.contentLang)
 lib/certification.ts  Which certification the screens show — the home
                    screen's pick, in localStorage (ADR-0006)
+lib/registerServiceWorker.ts  Registers build/pwa.ts's sw.js, production
+                   builds only (F3-07)
 lib/bilingual.ts   TR+EN side by side — a display preference in localStorage,
                    deliberately NOT on the attempt: "both" is not a language
 routes/            Screens · components/ shared UI · types/content.ts data types
