@@ -11,9 +11,11 @@
  * presented as a fact would break rule 5. The screens say instead what a
  * private window does to the data, and leave the candidate to know whether
  * they are in one.
+ *
+ * The database module is imported on demand: `StorageWarning` sits in the
+ * layout, and a static import would pull Dexie into the entry chunk that
+ * every screen downloads first.
  */
-
-import { db } from "@/lib/db/db";
 
 export type StorageStatus =
   /** IndexedDB does not open: nothing is saved. */
@@ -27,6 +29,7 @@ export type StorageStatus =
 
 export async function storageStatus(): Promise<StorageStatus> {
   try {
+    const { db } = await import("@/lib/db/db");
     await db.open();
   } catch {
     return "unavailable";
