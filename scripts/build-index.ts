@@ -58,6 +58,7 @@ function toIndexEntry(question: Json, chunk: string): Json {
 
   return {
     id: question.id,
+    revision: question.revision,
     chunk,
     chapter: question.chapter,
     section: question.section,

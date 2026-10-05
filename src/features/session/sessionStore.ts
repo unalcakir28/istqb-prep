@@ -371,9 +371,12 @@ export const useSessionStore = create<SessionState>((set, get) => ({
       .filter((outcome) => !outcome.isCorrect && !outcome.isUnanswered)
       .map((outcome) => outcome.questionId);
 
+    // F3-11: each card remembers the revision the wrong answer was given to.
+    const revisions = new Map(questions.map((question) => [question.id, question.revision]));
+
     await db.transaction("rw", db.attempts, db.srsCards, async () => {
       await db.attempts.put(submitted);
-      await addWrongAnswersToDeck(attempt.certId, wrong, now);
+      await addWrongAnswersToDeck(attempt.certId, wrong, now, (id) => revisions.get(id));
     });
     set({ attempt: submitted, score });
   },

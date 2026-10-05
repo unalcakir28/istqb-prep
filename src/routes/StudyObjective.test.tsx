@@ -65,6 +65,7 @@ const LESSON: Lesson = {
 function entry(id: string): QuestionIndexEntry {
   return {
     id,
+    revision: 1,
     chunk: "ch01-a",
     chapter: 1,
     objectives: [LO_CODE],

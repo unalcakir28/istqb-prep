@@ -149,6 +149,14 @@ describe("parseBackup", () => {
     });
   });
 
+  it("accepts a card's revision (F3-11) and refuses one that is not a number", () => {
+    expect(parseBackup(file({}, { srsCards: [card({ revision: 2 })] }), SCHEMA).ok).toBe(true);
+    expect(parseBackup(file({}, { srsCards: [{ ...card(), revision: "2" }] }), SCHEMA)).toEqual({
+      ok: false,
+      error: "invalid-rows",
+    });
+  });
+
   it("refuses a table that is not a list", () => {
     expect(parseBackup(file({}, { srsCards: { questionId: "x" } }), SCHEMA)).toEqual({
       ok: false,

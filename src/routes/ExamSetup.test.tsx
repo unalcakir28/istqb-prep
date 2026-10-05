@@ -36,6 +36,7 @@ const SEEN = new Set(["q-seen-1", "q-seen-2"]);
 function entry(id: string): QuestionIndexEntry {
   return {
     id,
+    revision: 1,
     chunk: "ch01-a",
     chapter: 1,
     objectives: ["FL-1.1.1"],

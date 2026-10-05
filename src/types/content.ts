@@ -139,9 +139,11 @@ export interface ExamBlueprint {
   groups: BlueprintGroup[];
 }
 
-/** Index entry — no question text, only the fields selection needs. */
+/** Index entry — no question text, only the fields selection and the repetition deck need. */
 export interface QuestionIndexEntry {
   id: string;
+  /** The question's own revision; the repetition deck compares against it (F3-11). */
+  revision: number;
   chunk: string;
   chapter: number;
   section?: string;

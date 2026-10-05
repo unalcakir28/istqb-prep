@@ -8,7 +8,7 @@
 ## 1. Design principles
 
 1. **No single file.** As the question bank grows, a single JSON file stops being downloadable. Data is split into a **manifest → index → chunk** hierarchy.
-2. **Index light, chunk heavy.** The index carries only the fields needed for filtering/selection (no question text). Exam generation works from the index; only the chunks containing the selected questions are downloaded.
+2. **Index light, chunk heavy.** The index carries only the fields needed for filtering/selection and the repetition deck's revision check (no question text). Exam generation works from the index; only the chunks containing the selected questions are downloaded.
 3. **Language-independent identifiers.** LO codes like `FL-4.2.1` and question IDs never change in any language. The translation lives inside the `i18n` object — not in a separate file, because a question and its translation are reviewed together.
 4. **Multi-certification from day one.** The root directory is split by certification version: `data/ctfl-v4.0.1/`, then `data/ct-ai-v2.0/`, etc. The application code contains no certification-specific logic: which certification is shown comes from the manifest and the candidate's pick ([`adr/0006-second-certification.md`](adr/0006-second-certification.md)).
 5. **Version integrity is a required field.** Every question carries the syllabus version it was written for. When a version is retired, those questions are filtered out, not deleted (archive + transparency).
@@ -223,6 +223,7 @@ This file enables realistic exam generation that **no competitor on the market d
   "questions": [
     {
       "id": "ctfl4-0001",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.4",
@@ -539,9 +540,11 @@ objectiveProgress  // Study mode's per-objective mastery (v3)
 
 srsCards      // The repetition deck (F3-01) — one FSRS card per question
   { questionId, certId, due, stability, difficulty, scheduledDays,
-    learningSteps, reps, lapses, state, lastReviewedAt?, addedAt }
+    learningSteps, reps, lapses, state, lastReviewedAt?, addedAt, revision? }
   // `state` is "new" | "learning" | "review" | "relearning", not ts-fsrs's
   // numeric enum, so an exported file reads without it. Dates are epoch ms.
+  // `revision` (F3-11): the question's revision the card is scheduled
+  // against. Not indexed, so adding it needed no schema version.
 
 bookmarks     // Bookmarked questions and notes — declared, not yet written to (Phase 2-3)
   { questionId, certId, createdAt, note? }
@@ -577,7 +580,7 @@ Written by [`../src/lib/db/objectiveProgress.ts`](../src/lib/db/objectiveProgres
 `mastered` is `attemptCount >= MASTERY_MIN_ANSWERED (3)` **and** `lastScorePercent >= MASTERY_MIN_PERCENT (80)`. `attemptCount` accumulates across sessions; the score replaces the previous one, so **mastery is losable** — it reflects the most recent objective test, not a high-water mark. A submit with nothing answered writes nothing, so an empty attempt cannot erase mastery the candidate had already earned.
 
 ### When the data version changes
-When `manifest.dataVersion` changes: the client opens a new cache named after the version and deletes the old content caches; **user progress is preserved**. If a question's `revision` value has increased, that question's SRS card is set to `state: 'relearning'` (the content changed, so the old memory record is invalid). This is F3-11, not yet implemented.
+When `manifest.dataVersion` changes: the client opens a new cache named after the version and deletes the old content caches; **user progress is preserved**. **F3-11:** each repetition card records the question `revision` it was scheduled against — set when a wrong answer adds or fails it. Whenever the home screen or `/tekrar` reads the deck (`loadRevisedDeck`), every card is compared with the revision in `questions/index.json`. A newer one means the memory is of a text that no longer exists: a card in `review` goes to `relearning`, due now, keeping its stability and difficulty and counting no lapse; a card still being learned just comes due. A card written before F3-11 has no revision and adopts the current one without being reset, because which text it was scheduled against cannot be known. A question that has left the index is left alone.
 
 ### Export/import (F3-08)
 [`../src/lib/db/backup.ts`](../src/lib/db/backup.ts), on the `/verilerim` screen. All six tables are exported as one JSON file, as stored:
@@ -647,7 +650,7 @@ Checks that run on every PR (`yarn validate:data`). The registry in [`../scripts
 | 5 | Is `rationale.byOption` filled in for every option (TR and EN)? | ❌ |
 | 6 | Does `i18n` contain both `tr` and `en`, with matching option counts? | ❌ |
 | 7 | Are question IDs unique (across all chunks)? | ❌ |
-| 8 | Is `index.json` consistent with the chunk files (count, chunk name, chapter)? | ❌ |
+| 8 | Is `index.json` consistent with the chunk files (chunk list, count, membership, chunk name, revision)? | ❌ |
 | 9 | Does `exam-blueprint.json` total 40 questions / 8-6-4-11-9-2 / K 8-24-8? | ❌ |
 | 10 | Is there at least 1 published question for every LO? | ⚠️ warning |
 | 11 | Is there at least 3 published questions for every LO? | ⚠️ warning |

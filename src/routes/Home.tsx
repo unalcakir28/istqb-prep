@@ -41,7 +41,7 @@ import { summarizeDeck } from "@/features/srs/queue";
 import { writeCertificationChoice } from "@/lib/certification";
 import { contentClient } from "@/lib/content/contentClient";
 import { db, discardAttempt, findResumableAttempt, getResponses, type Attempt } from "@/lib/db/db";
-import { loadDeck } from "@/lib/db/srsCards";
+import { loadRevisedDeck } from "@/lib/db/srsCards";
 import { useAsyncData } from "@/lib/useAsyncData";
 import type {
   CertMeta,
@@ -144,10 +144,13 @@ async function loadHome(): Promise<HomeData> {
   const attempt = await findResumableAttempt(cert.id);
   const responses = attempt ? await getResponses(attempt.id) : [];
   const progress = await loadProgress(cert.id, cert.coverage.objectivesTotal);
+  // F3-11: read through the revision check, so the count matches /tekrar.
+  const now = Date.now();
+  const revisions = new Map(index.questions.map((entry) => [entry.id, entry.revision]));
   const deck = summarizeDeck(
-    await loadDeck(cert.id),
+    await loadRevisedDeck(cert.id, (id) => revisions.get(id), now),
     new Set(pool.map((entry) => entry.id)),
-    Date.now(),
+    now,
   );
 
   return {

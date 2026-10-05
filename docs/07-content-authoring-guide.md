@@ -380,4 +380,4 @@ Maintainer
 - **AI use is declared in the PR.** §8 applies unchanged: a draft from a model is allowed, an unverified one is not, and "write an ISTQB sample exam question" is never the prompt.
 
 ### User error reports
-Every question card has a "Bu soruda hata var" button → a pre-filled GitHub Issue (question ID, version, selected option, language). Incoming reports are triaged weekly; when a fix is accepted, the question's `revision` value is incremented and its SRS cards are moved to the `relearning` state.
+Every question card has a "Bu soruda hata var" button → a pre-filled GitHub Issue (question ID, version, selected option, language). Incoming reports are triaged weekly; when a fix is accepted, the question's `revision` value is incremented (then `yarn build:index`); the next time the home screen or `/tekrar` reads the deck, a review card of that question returns to relearning and any other card comes due.

@@ -13,6 +13,7 @@
   "questions": [
     {
       "id": "ctai-0001",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -37,6 +38,7 @@
     },
     {
       "id": "ctai-0002",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -62,6 +64,7 @@
     },
     {
       "id": "ctai-0003",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -87,6 +90,7 @@
     },
     {
       "id": "ctai-0004",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -112,6 +116,7 @@
     },
     {
       "id": "ctai-0005",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -137,6 +142,7 @@
     },
     {
       "id": "ctai-0006",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -161,6 +167,7 @@
     },
     {
       "id": "ctai-0007",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -186,6 +193,7 @@
     },
     {
       "id": "ctai-0008",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -211,6 +219,7 @@
     },
     {
       "id": "ctai-0009",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -236,6 +245,7 @@
     },
     {
       "id": "ctai-0010",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -260,6 +270,7 @@
     },
     {
       "id": "ctai-0011",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -285,6 +296,7 @@
     },
     {
       "id": "ctai-0012",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -310,6 +322,7 @@
     },
     {
       "id": "ctai-0013",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -334,6 +347,7 @@
     },
     {
       "id": "ctai-0014",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -358,6 +372,7 @@
     },
     {
       "id": "ctai-0015",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -382,6 +397,7 @@
     },
     {
       "id": "ctai-0016",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -407,6 +423,7 @@
     },
     {
       "id": "ctai-0017",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.1",
@@ -431,6 +448,7 @@
     },
     {
       "id": "ctai-0018",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.1",
@@ -455,6 +473,7 @@
     },
     {
       "id": "ctai-0019",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.1",
@@ -479,6 +498,7 @@
     },
     {
       "id": "ctai-0020",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.1",
@@ -504,6 +524,7 @@
     },
     {
       "id": "ctai-0021",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.2",
@@ -528,6 +549,7 @@
     },
     {
       "id": "ctai-0022",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.2",
@@ -552,6 +574,7 @@
     },
     {
       "id": "ctai-0023",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.1",
@@ -576,6 +599,7 @@
     },
     {
       "id": "ctai-0024",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.1",
@@ -601,6 +625,7 @@
     },
     {
       "id": "ctai-0025",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.1",
@@ -625,6 +650,7 @@
     },
     {
       "id": "ctai-0026",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.1",
@@ -649,6 +675,7 @@
     },
     {
       "id": "ctai-0027",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.1",
@@ -675,6 +702,7 @@
     },
     {
       "id": "ctai-0028",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.1",
@@ -700,6 +728,7 @@
     },
     {
       "id": "ctai-0029",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.2",
@@ -724,6 +753,7 @@
     },
     {
       "id": "ctai-0030",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.2",
@@ -749,6 +779,7 @@
     },
     {
       "id": "ctai-0031",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.2",
@@ -773,6 +804,7 @@
     },
     {
       "id": "ctai-0032",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.2",
@@ -797,6 +829,7 @@
     },
     {
       "id": "ctai-0033",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.3",
@@ -822,6 +855,7 @@
     },
     {
       "id": "ctai-0034",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.3",
@@ -847,6 +881,7 @@
     },
     {
       "id": "ctai-0035",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.4",
@@ -871,6 +906,7 @@
     },
     {
       "id": "ctai-0036",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.4",
@@ -896,6 +932,7 @@
     },
     {
       "id": "ctai-0037",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.4",
@@ -921,6 +958,7 @@
     },
     {
       "id": "ctai-0038",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.4",
@@ -946,6 +984,7 @@
     },
     {
       "id": "ctai-0039",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.1",
@@ -970,6 +1009,7 @@
     },
     {
       "id": "ctai-0040",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.1",
@@ -994,6 +1034,7 @@
     },
     {
       "id": "ctai-0041",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.1",
@@ -1018,6 +1059,7 @@
     },
     {
       "id": "ctai-0042",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.1",
@@ -1042,6 +1084,7 @@
     },
     {
       "id": "ctai-0043",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.1",
@@ -1066,6 +1109,7 @@
     },
     {
       "id": "ctai-0044",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.1",
@@ -1090,6 +1134,7 @@
     },
     {
       "id": "ctai-0045",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1114,6 +1159,7 @@
     },
     {
       "id": "ctai-0046",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1139,6 +1185,7 @@
     },
     {
       "id": "ctai-0047",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1164,6 +1211,7 @@
     },
     {
       "id": "ctai-0048",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1189,6 +1237,7 @@
     },
     {
       "id": "ctai-0049",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.3",
@@ -1213,6 +1262,7 @@
     },
     {
       "id": "ctai-0050",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.3",
@@ -1237,6 +1287,7 @@
     },
     {
       "id": "ctai-0051",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.3",
@@ -1261,6 +1312,7 @@
     },
     {
       "id": "ctai-0052",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.3",
@@ -1285,6 +1337,7 @@
     },
     {
       "id": "ctai-0053",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -1310,6 +1363,7 @@
     },
     {
       "id": "ctai-0054",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -1334,6 +1388,7 @@
     },
     {
       "id": "ctai-0055",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -1358,6 +1413,7 @@
     },
     {
       "id": "ctai-0056",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -1382,6 +1438,7 @@
     },
     {
       "id": "ctai-0057",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -1406,6 +1463,7 @@
     },
     {
       "id": "ctai-0058",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -1430,6 +1488,7 @@
     },
     {
       "id": "ctai-0059",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -1454,6 +1513,7 @@
     },
     {
       "id": "ctai-0060",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -1479,6 +1539,7 @@
     },
     {
       "id": "ctai-0061",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -1504,6 +1565,7 @@
     },
     {
       "id": "ctai-0062",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -1529,6 +1591,7 @@
     },
     {
       "id": "ctai-0063",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -1554,6 +1617,7 @@
     },
     {
       "id": "ctai-0064",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -1579,6 +1643,7 @@
     },
     {
       "id": "ctai-0065",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1603,6 +1668,7 @@
     },
     {
       "id": "ctai-0066",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1627,6 +1693,7 @@
     },
     {
       "id": "ctai-0067",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1651,6 +1718,7 @@
     },
     {
       "id": "ctai-0068",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1675,6 +1743,7 @@
     },
     {
       "id": "ctai-0069",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1699,6 +1768,7 @@
     },
     {
       "id": "ctai-0070",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1723,6 +1793,7 @@
     },
     {
       "id": "ctai-0071",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1746,6 +1817,7 @@
     },
     {
       "id": "ctai-0072",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1770,6 +1842,7 @@
     },
     {
       "id": "ctai-0073",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1794,6 +1867,7 @@
     },
     {
       "id": "ctai-0074",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1818,6 +1892,7 @@
     },
     {
       "id": "ctai-0075",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1842,6 +1917,7 @@
     },
     {
       "id": "ctai-0076",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1866,6 +1942,7 @@
     },
     {
       "id": "ctai-0077",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1890,6 +1967,7 @@
     },
     {
       "id": "ctai-0078",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1914,6 +1992,7 @@
     },
     {
       "id": "ctai-0079",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1938,6 +2017,7 @@
     },
     {
       "id": "ctai-0080",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1962,6 +2042,7 @@
     },
     {
       "id": "ctai-0081",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -1986,6 +2067,7 @@
     },
     {
       "id": "ctai-0082",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -2010,6 +2092,7 @@
     },
     {
       "id": "ctai-0083",
+      "revision": 1,
       "chunk": "ch07-a",
       "chapter": 7,
       "section": "7.1",
@@ -2035,6 +2118,7 @@
     },
     {
       "id": "ctai-0084",
+      "revision": 1,
       "chunk": "ch07-a",
       "chapter": 7,
       "section": "7.1",
@@ -2060,6 +2144,7 @@
     },
     {
       "id": "ctai-0085",
+      "revision": 1,
       "chunk": "ch07-a",
       "chapter": 7,
       "section": "7.1",
@@ -2084,6 +2169,7 @@
     },
     {
       "id": "ctai-0086",
+      "revision": 1,
       "chunk": "ch07-a",
       "chapter": 7,
       "section": "7.1",
@@ -2108,6 +2194,7 @@
     },
     {
       "id": "ctai-0087",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -2132,6 +2219,7 @@
     },
     {
       "id": "ctai-0088",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -2157,6 +2245,7 @@
     },
     {
       "id": "ctai-0089",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -2181,6 +2270,7 @@
     },
     {
       "id": "ctai-0090",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -2206,6 +2296,7 @@
     },
     {
       "id": "ctai-0091",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -2231,6 +2322,7 @@
     },
     {
       "id": "ctai-0092",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -2256,6 +2348,7 @@
     },
     {
       "id": "ctai-0093",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -2280,6 +2373,7 @@
     },
     {
       "id": "ctai-0094",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -2304,6 +2398,7 @@
     },
     {
       "id": "ctai-0095",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.1",
@@ -2329,6 +2424,7 @@
     },
     {
       "id": "ctai-0096",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.1",
@@ -2354,6 +2450,7 @@
     },
     {
       "id": "ctai-0097",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.2",
@@ -2378,6 +2475,7 @@
     },
     {
       "id": "ctai-0098",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.1",
@@ -2403,6 +2501,7 @@
     },
     {
       "id": "ctai-0099",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.1",
@@ -2427,6 +2526,7 @@
     },
     {
       "id": "ctai-0100",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.1",
@@ -2452,6 +2552,7 @@
     },
     {
       "id": "ctai-0101",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.2",
@@ -2477,6 +2578,7 @@
     },
     {
       "id": "ctai-0102",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.2",
@@ -2502,6 +2604,7 @@
     },
     {
       "id": "ctai-0103",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.3",
@@ -2528,6 +2631,7 @@
     },
     {
       "id": "ctai-0104",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.4",
@@ -2554,6 +2658,7 @@
     },
     {
       "id": "ctai-0105",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.4",
@@ -2580,6 +2685,7 @@
     },
     {
       "id": "ctai-0106",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.1",
@@ -2605,6 +2711,7 @@
     },
     {
       "id": "ctai-0107",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.1",
@@ -2629,6 +2736,7 @@
     },
     {
       "id": "ctai-0108",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.1",
@@ -2653,6 +2761,7 @@
     },
     {
       "id": "ctai-0109",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -2678,6 +2787,7 @@
     },
     {
       "id": "ctai-0110",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -2703,6 +2813,7 @@
     },
     {
       "id": "ctai-0111",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.3",
@@ -2728,6 +2839,7 @@
     },
     {
       "id": "ctai-0112",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.3",
@@ -2753,6 +2865,7 @@
     },
     {
       "id": "ctai-0113",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2778,6 +2891,7 @@
     },
     {
       "id": "ctai-0114",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2803,6 +2917,7 @@
     },
     {
       "id": "ctai-0115",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2828,6 +2943,7 @@
     },
     {
       "id": "ctai-0116",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2853,6 +2969,7 @@
     },
     {
       "id": "ctai-0117",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2880,6 +2997,7 @@
     },
     {
       "id": "ctai-0118",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2905,6 +3023,7 @@
     },
     {
       "id": "ctai-0119",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -2929,6 +3048,7 @@
     },
     {
       "id": "ctai-0120",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -2953,6 +3073,7 @@
     },
     {
       "id": "ctai-0121",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -2977,6 +3098,7 @@
     },
     {
       "id": "ctai-0122",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -3001,6 +3123,7 @@
     },
     {
       "id": "ctai-0123",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -3025,6 +3148,7 @@
     },
     {
       "id": "ctai-0124",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -3049,6 +3173,7 @@
     },
     {
       "id": "ctai-0125",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -3073,6 +3198,7 @@
     },
     {
       "id": "ctai-0126",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -3097,6 +3223,7 @@
     },
     {
       "id": "ctai-0127",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -3121,6 +3248,7 @@
     },
     {
       "id": "ctai-0128",
+      "revision": 1,
       "chunk": "ch07-a",
       "chapter": 7,
       "section": "7.1",
@@ -3146,6 +3274,7 @@
     },
     {
       "id": "ctai-0129",
+      "revision": 1,
       "chunk": "ch07-a",
       "chapter": 7,
       "section": "7.1",

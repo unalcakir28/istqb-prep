@@ -23,6 +23,7 @@
   "questions": [
     {
       "id": "ctfl4-0001",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.3",
@@ -47,6 +48,7 @@
     },
     {
       "id": "ctfl4-0002",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -70,6 +72,7 @@
     },
     {
       "id": "ctfl4-0003",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -94,6 +97,7 @@
     },
     {
       "id": "ctfl4-0004",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -117,6 +121,7 @@
     },
     {
       "id": "ctfl4-0005",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.1",
@@ -141,6 +146,7 @@
     },
     {
       "id": "ctfl4-0006",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.2",
@@ -165,6 +171,7 @@
     },
     {
       "id": "ctfl4-0007",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.2",
@@ -189,6 +196,7 @@
     },
     {
       "id": "ctfl4-0008",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.2",
@@ -213,6 +221,7 @@
     },
     {
       "id": "ctfl4-0009",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.2",
@@ -236,6 +245,7 @@
     },
     {
       "id": "ctfl4-0010",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.2",
@@ -260,6 +270,7 @@
     },
     {
       "id": "ctfl4-0011",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.2",
@@ -284,6 +295,7 @@
     },
     {
       "id": "ctfl4-0012",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.2",
@@ -309,6 +321,7 @@
     },
     {
       "id": "ctfl4-0013",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.3",
@@ -333,6 +346,7 @@
     },
     {
       "id": "ctfl4-0014",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.3",
@@ -358,6 +372,7 @@
     },
     {
       "id": "ctfl4-0015",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.3",
@@ -382,6 +397,7 @@
     },
     {
       "id": "ctfl4-0016",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.4",
@@ -407,6 +423,7 @@
     },
     {
       "id": "ctfl4-0017",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.4",
@@ -431,6 +448,7 @@
     },
     {
       "id": "ctfl4-0018",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.4",
@@ -454,6 +472,7 @@
     },
     {
       "id": "ctfl4-0019",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.4",
@@ -479,6 +498,7 @@
     },
     {
       "id": "ctfl4-0020",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.4",
@@ -503,6 +523,7 @@
     },
     {
       "id": "ctfl4-0021",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.4",
@@ -527,6 +548,7 @@
     },
     {
       "id": "ctfl4-0022",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.5",
@@ -551,6 +573,7 @@
     },
     {
       "id": "ctfl4-0023",
+      "revision": 2,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.5",
@@ -574,6 +597,7 @@
     },
     {
       "id": "ctfl4-0024",
+      "revision": 1,
       "chunk": "ch01-a",
       "chapter": 1,
       "section": "1.5",
@@ -597,6 +621,7 @@
     },
     {
       "id": "ctfl4-0025",
+      "revision": 2,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.1",
@@ -621,6 +646,7 @@
     },
     {
       "id": "ctfl4-0026",
+      "revision": 2,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.1",
@@ -645,6 +671,7 @@
     },
     {
       "id": "ctfl4-0027",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.1",
@@ -669,6 +696,7 @@
     },
     {
       "id": "ctfl4-0028",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.1",
@@ -693,6 +721,7 @@
     },
     {
       "id": "ctfl4-0029",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.3",
@@ -717,6 +746,7 @@
     },
     {
       "id": "ctfl4-0030",
+      "revision": 2,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.1",
@@ -741,6 +771,7 @@
     },
     {
       "id": "ctfl4-0031",
+      "revision": 2,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.1",
@@ -765,6 +796,7 @@
     },
     {
       "id": "ctfl4-0032",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.1",
@@ -789,6 +821,7 @@
     },
     {
       "id": "ctfl4-0033",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.1",
@@ -813,6 +846,7 @@
     },
     {
       "id": "ctfl4-0034",
+      "revision": 3,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.1",
@@ -837,6 +871,7 @@
     },
     {
       "id": "ctfl4-0035",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.2",
@@ -861,6 +896,7 @@
     },
     {
       "id": "ctfl4-0036",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.2",
@@ -885,6 +921,7 @@
     },
     {
       "id": "ctfl4-0037",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.2",
@@ -912,6 +949,7 @@
     },
     {
       "id": "ctfl4-0038",
+      "revision": 2,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.2",
@@ -936,6 +974,7 @@
     },
     {
       "id": "ctfl4-0039",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.2",
@@ -961,6 +1000,7 @@
     },
     {
       "id": "ctfl4-0040",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.2",
@@ -985,6 +1025,7 @@
     },
     {
       "id": "ctfl4-0041",
+      "revision": 2,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.2",
@@ -1010,6 +1051,7 @@
     },
     {
       "id": "ctfl4-0042",
+      "revision": 1,
       "chunk": "ch02-a",
       "chapter": 2,
       "section": "2.3",
@@ -1035,6 +1077,7 @@
     },
     {
       "id": "ctfl4-0043",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.1",
@@ -1060,6 +1103,7 @@
     },
     {
       "id": "ctfl4-0044",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.1",
@@ -1084,6 +1128,7 @@
     },
     {
       "id": "ctfl4-0045",
+      "revision": 2,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.1",
@@ -1107,6 +1152,7 @@
     },
     {
       "id": "ctfl4-0046",
+      "revision": 2,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.1",
@@ -1131,6 +1177,7 @@
     },
     {
       "id": "ctfl4-0047",
+      "revision": 2,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.2",
@@ -1155,6 +1202,7 @@
     },
     {
       "id": "ctfl4-0048",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.2",
@@ -1179,6 +1227,7 @@
     },
     {
       "id": "ctfl4-0049",
+      "revision": 2,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.2",
@@ -1203,6 +1252,7 @@
     },
     {
       "id": "ctfl4-0050",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.2",
@@ -1227,6 +1277,7 @@
     },
     {
       "id": "ctfl4-0051",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.2",
@@ -1252,6 +1303,7 @@
     },
     {
       "id": "ctfl4-0052",
+      "revision": 2,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.2",
@@ -1276,6 +1328,7 @@
     },
     {
       "id": "ctfl4-0053",
+      "revision": 1,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.2",
@@ -1301,6 +1354,7 @@
     },
     {
       "id": "ctfl4-0054",
+      "revision": 2,
       "chunk": "ch03-a",
       "chapter": 3,
       "section": "3.2",
@@ -1324,6 +1378,7 @@
     },
     {
       "id": "ctfl4-0055",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.1",
@@ -1349,6 +1404,7 @@
     },
     {
       "id": "ctfl4-0056",
+      "revision": 2,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.1",
@@ -1374,6 +1430,7 @@
     },
     {
       "id": "ctfl4-0057",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1399,6 +1456,7 @@
     },
     {
       "id": "ctfl4-0058",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1423,6 +1481,7 @@
     },
     {
       "id": "ctfl4-0059",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1448,6 +1507,7 @@
     },
     {
       "id": "ctfl4-0060",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1472,6 +1532,7 @@
     },
     {
       "id": "ctfl4-0061",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1497,6 +1558,7 @@
     },
     {
       "id": "ctfl4-0062",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1522,6 +1584,7 @@
     },
     {
       "id": "ctfl4-0063",
+      "revision": 2,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1547,6 +1610,7 @@
     },
     {
       "id": "ctfl4-0064",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1572,6 +1636,7 @@
     },
     {
       "id": "ctfl4-0065",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1596,6 +1661,7 @@
     },
     {
       "id": "ctfl4-0066",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1621,6 +1687,7 @@
     },
     {
       "id": "ctfl4-0067",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1645,6 +1712,7 @@
     },
     {
       "id": "ctfl4-0068",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1670,6 +1738,7 @@
     },
     {
       "id": "ctfl4-0069",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1695,6 +1764,7 @@
     },
     {
       "id": "ctfl4-0070",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1720,6 +1790,7 @@
     },
     {
       "id": "ctfl4-0071",
+      "revision": 2,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.2",
@@ -1744,6 +1815,7 @@
     },
     {
       "id": "ctfl4-0072",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.3",
@@ -1769,6 +1841,7 @@
     },
     {
       "id": "ctfl4-0073",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.3",
@@ -1794,6 +1867,7 @@
     },
     {
       "id": "ctfl4-0074",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.3",
@@ -1819,6 +1893,7 @@
     },
     {
       "id": "ctfl4-0075",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.3",
@@ -1844,6 +1919,7 @@
     },
     {
       "id": "ctfl4-0076",
+      "revision": 2,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.3",
@@ -1869,6 +1945,7 @@
     },
     {
       "id": "ctfl4-0077",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.3",
@@ -1894,6 +1971,7 @@
     },
     {
       "id": "ctfl4-0078",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.4",
@@ -1919,6 +1997,7 @@
     },
     {
       "id": "ctfl4-0079",
+      "revision": 3,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.4",
@@ -1944,6 +2023,7 @@
     },
     {
       "id": "ctfl4-0080",
+      "revision": 2,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.4",
@@ -1969,6 +2049,7 @@
     },
     {
       "id": "ctfl4-0081",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.4",
@@ -1994,6 +2075,7 @@
     },
     {
       "id": "ctfl4-0082",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.4",
@@ -2019,6 +2101,7 @@
     },
     {
       "id": "ctfl4-0083",
+      "revision": 2,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.4",
@@ -2044,6 +2127,7 @@
     },
     {
       "id": "ctfl4-0084",
+      "revision": 2,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.5",
@@ -2069,6 +2153,7 @@
     },
     {
       "id": "ctfl4-0085",
+      "revision": 2,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.5",
@@ -2095,6 +2180,7 @@
     },
     {
       "id": "ctfl4-0086",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.5",
@@ -2120,6 +2206,7 @@
     },
     {
       "id": "ctfl4-0087",
+      "revision": 1,
       "chunk": "ch04-a",
       "chapter": 4,
       "section": "4.5",
@@ -2145,6 +2232,7 @@
     },
     {
       "id": "ctfl4-0088",
+      "revision": 2,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2169,6 +2257,7 @@
     },
     {
       "id": "ctfl4-0089",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2193,6 +2282,7 @@
     },
     {
       "id": "ctfl4-0090",
+      "revision": 2,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2217,6 +2307,7 @@
     },
     {
       "id": "ctfl4-0091",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2241,6 +2332,7 @@
     },
     {
       "id": "ctfl4-0092",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2265,6 +2357,7 @@
     },
     {
       "id": "ctfl4-0093",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2289,6 +2382,7 @@
     },
     {
       "id": "ctfl4-0094",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2313,6 +2407,7 @@
     },
     {
       "id": "ctfl4-0095",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2337,6 +2432,7 @@
     },
     {
       "id": "ctfl4-0096",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2361,6 +2457,7 @@
     },
     {
       "id": "ctfl4-0097",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2385,6 +2482,7 @@
     },
     {
       "id": "ctfl4-0098",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2409,6 +2507,7 @@
     },
     {
       "id": "ctfl4-0099",
+      "revision": 2,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2432,6 +2531,7 @@
     },
     {
       "id": "ctfl4-0100",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2455,6 +2555,7 @@
     },
     {
       "id": "ctfl4-0101",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.1",
@@ -2479,6 +2580,7 @@
     },
     {
       "id": "ctfl4-0102",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.2",
@@ -2504,6 +2606,7 @@
     },
     {
       "id": "ctfl4-0103",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.2",
@@ -2528,6 +2631,7 @@
     },
     {
       "id": "ctfl4-0104",
+      "revision": 2,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.2",
@@ -2553,6 +2657,7 @@
     },
     {
       "id": "ctfl4-0105",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.2",
@@ -2578,6 +2683,7 @@
     },
     {
       "id": "ctfl4-0106",
+      "revision": 2,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.2",
@@ -2603,6 +2709,7 @@
     },
     {
       "id": "ctfl4-0107",
+      "revision": 2,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.2",
@@ -2627,6 +2734,7 @@
     },
     {
       "id": "ctfl4-0108",
+      "revision": 2,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.3",
@@ -2651,6 +2759,7 @@
     },
     {
       "id": "ctfl4-0109",
+      "revision": 2,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.3",
@@ -2675,6 +2784,7 @@
     },
     {
       "id": "ctfl4-0110",
+      "revision": 2,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.3",
@@ -2700,6 +2810,7 @@
     },
     {
       "id": "ctfl4-0111",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.3",
@@ -2724,6 +2835,7 @@
     },
     {
       "id": "ctfl4-0112",
+      "revision": 2,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.4",
@@ -2749,6 +2861,7 @@
     },
     {
       "id": "ctfl4-0113",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.5",
@@ -2773,6 +2886,7 @@
     },
     {
       "id": "ctfl4-0114",
+      "revision": 1,
       "chunk": "ch05-a",
       "chapter": 5,
       "section": "5.5",
@@ -2798,6 +2912,7 @@
     },
     {
       "id": "ctfl4-0115",
+      "revision": 2,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -2822,6 +2937,7 @@
     },
     {
       "id": "ctfl4-0116",
+      "revision": 3,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -2846,6 +2962,7 @@
     },
     {
       "id": "ctfl4-0117",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.1",
@@ -2871,6 +2988,7 @@
     },
     {
       "id": "ctfl4-0118",
+      "revision": 2,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.2",
@@ -2895,6 +3013,7 @@
     },
     {
       "id": "ctfl4-0119",
+      "revision": 1,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.2",
@@ -2919,6 +3038,7 @@
     },
     {
       "id": "ctfl4-0120",
+      "revision": 2,
       "chunk": "ch06-a",
       "chapter": 6,
       "section": "6.2",
@@ -2944,6 +3064,7 @@
     },
     {
       "id": "ctfl4-0121",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.1",
@@ -2967,6 +3088,7 @@
     },
     {
       "id": "ctfl4-0122",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.1",
@@ -2990,6 +3112,7 @@
     },
     {
       "id": "ctfl4-0123",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.1",
@@ -3013,6 +3136,7 @@
     },
     {
       "id": "ctfl4-0124",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.1",
@@ -3037,6 +3161,7 @@
     },
     {
       "id": "ctfl4-0125",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.2",
@@ -3060,6 +3185,7 @@
     },
     {
       "id": "ctfl4-0126",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.2",
@@ -3083,6 +3209,7 @@
     },
     {
       "id": "ctfl4-0127",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.2",
@@ -3106,6 +3233,7 @@
     },
     {
       "id": "ctfl4-0128",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.2",
@@ -3129,6 +3257,7 @@
     },
     {
       "id": "ctfl4-0129",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.2",
@@ -3152,6 +3281,7 @@
     },
     {
       "id": "ctfl4-0130",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.4",
@@ -3175,6 +3305,7 @@
     },
     {
       "id": "ctfl4-0131",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.4",
@@ -3198,6 +3329,7 @@
     },
     {
       "id": "ctfl4-0132",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.4",
@@ -3221,6 +3353,7 @@
     },
     {
       "id": "ctfl4-0133",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.4",
@@ -3244,6 +3377,7 @@
     },
     {
       "id": "ctfl4-0134",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.4",
@@ -3267,6 +3401,7 @@
     },
     {
       "id": "ctfl4-0135",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.4",
@@ -3290,6 +3425,7 @@
     },
     {
       "id": "ctfl4-0136",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.4",
@@ -3313,6 +3449,7 @@
     },
     {
       "id": "ctfl4-0137",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.4",
@@ -3336,6 +3473,7 @@
     },
     {
       "id": "ctfl4-0138",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.4",
@@ -3359,6 +3497,7 @@
     },
     {
       "id": "ctfl4-0139",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.4",
@@ -3382,6 +3521,7 @@
     },
     {
       "id": "ctfl4-0140",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.4",
@@ -3405,6 +3545,7 @@
     },
     {
       "id": "ctfl4-0141",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.4",
@@ -3428,6 +3569,7 @@
     },
     {
       "id": "ctfl4-0142",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.4",
@@ -3451,6 +3593,7 @@
     },
     {
       "id": "ctfl4-0143",
+      "revision": 2,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.4",
@@ -3474,6 +3617,7 @@
     },
     {
       "id": "ctfl4-0144",
+      "revision": 2,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.5",
@@ -3497,6 +3641,7 @@
     },
     {
       "id": "ctfl4-0145",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.5",
@@ -3520,6 +3665,7 @@
     },
     {
       "id": "ctfl4-0146",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.5",
@@ -3543,6 +3689,7 @@
     },
     {
       "id": "ctfl4-0147",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.5",
@@ -3566,6 +3713,7 @@
     },
     {
       "id": "ctfl4-0148",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.5",
@@ -3589,6 +3737,7 @@
     },
     {
       "id": "ctfl4-0149",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.5",
@@ -3612,6 +3761,7 @@
     },
     {
       "id": "ctfl4-0150",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.5",
@@ -3635,6 +3785,7 @@
     },
     {
       "id": "ctfl4-0151",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.5",
@@ -3658,6 +3809,7 @@
     },
     {
       "id": "ctfl4-0152",
+      "revision": 1,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.5",
@@ -3681,6 +3833,7 @@
     },
     {
       "id": "ctfl4-0153",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -3705,6 +3858,7 @@
     },
     {
       "id": "ctfl4-0154",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -3729,6 +3883,7 @@
     },
     {
       "id": "ctfl4-0155",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -3753,6 +3908,7 @@
     },
     {
       "id": "ctfl4-0156",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -3777,6 +3933,7 @@
     },
     {
       "id": "ctfl4-0157",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -3803,6 +3960,7 @@
     },
     {
       "id": "ctfl4-0158",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -3827,6 +3985,7 @@
     },
     {
       "id": "ctfl4-0159",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -3851,6 +4010,7 @@
     },
     {
       "id": "ctfl4-0160",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -3875,6 +4035,7 @@
     },
     {
       "id": "ctfl4-0161",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -3899,6 +4060,7 @@
     },
     {
       "id": "ctfl4-0162",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -3924,6 +4086,7 @@
     },
     {
       "id": "ctfl4-0163",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -3948,6 +4111,7 @@
     },
     {
       "id": "ctfl4-0164",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -3972,6 +4136,7 @@
     },
     {
       "id": "ctfl4-0165",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -3996,6 +4161,7 @@
     },
     {
       "id": "ctfl4-0166",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -4020,6 +4186,7 @@
     },
     {
       "id": "ctfl4-0167",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -4045,6 +4212,7 @@
     },
     {
       "id": "ctfl4-0168",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.2",
@@ -4070,6 +4238,7 @@
     },
     {
       "id": "ctfl4-0169",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.2",
@@ -4094,6 +4263,7 @@
     },
     {
       "id": "ctfl4-0170",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.2",
@@ -4118,6 +4288,7 @@
     },
     {
       "id": "ctfl4-0171",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.2",
@@ -4143,6 +4314,7 @@
     },
     {
       "id": "ctfl4-0172",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.3",
@@ -4168,6 +4340,7 @@
     },
     {
       "id": "ctfl4-0173",
+      "revision": 1,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.3",
@@ -4193,6 +4366,7 @@
     },
     {
       "id": "ctfl4-0174",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.1",
@@ -4217,6 +4391,7 @@
     },
     {
       "id": "ctfl4-0175",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.1",
@@ -4241,6 +4416,7 @@
     },
     {
       "id": "ctfl4-0176",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.1",
@@ -4266,6 +4442,7 @@
     },
     {
       "id": "ctfl4-0177",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.1",
@@ -4291,6 +4468,7 @@
     },
     {
       "id": "ctfl4-0178",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.1",
@@ -4316,6 +4494,7 @@
     },
     {
       "id": "ctfl4-0179",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.1",
@@ -4341,6 +4520,7 @@
     },
     {
       "id": "ctfl4-0180",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.1",
@@ -4365,6 +4545,7 @@
     },
     {
       "id": "ctfl4-0181",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.1",
@@ -4389,6 +4570,7 @@
     },
     {
       "id": "ctfl4-0182",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.2",
@@ -4413,6 +4595,7 @@
     },
     {
       "id": "ctfl4-0183",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.2",
@@ -4437,6 +4620,7 @@
     },
     {
       "id": "ctfl4-0184",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.2",
@@ -4461,6 +4645,7 @@
     },
     {
       "id": "ctfl4-0185",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.2",
@@ -4485,6 +4670,7 @@
     },
     {
       "id": "ctfl4-0186",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.2",
@@ -4509,6 +4695,7 @@
     },
     {
       "id": "ctfl4-0187",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.2",
@@ -4533,6 +4720,7 @@
     },
     {
       "id": "ctfl4-0188",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.2",
@@ -4559,6 +4747,7 @@
     },
     {
       "id": "ctfl4-0189",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.2",
@@ -4583,6 +4772,7 @@
     },
     {
       "id": "ctfl4-0190",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.2",
@@ -4607,6 +4797,7 @@
     },
     {
       "id": "ctfl4-0191",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.2",
@@ -4631,6 +4822,7 @@
     },
     {
       "id": "ctfl4-0192",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.2",
@@ -4655,6 +4847,7 @@
     },
     {
       "id": "ctfl4-0193",
+      "revision": 1,
       "chunk": "ch03-b",
       "chapter": 3,
       "section": "3.2",
@@ -4679,6 +4872,7 @@
     },
     {
       "id": "ctfl4-0194",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.1",
@@ -4704,6 +4898,7 @@
     },
     {
       "id": "ctfl4-0195",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.1",
@@ -4729,6 +4924,7 @@
     },
     {
       "id": "ctfl4-0196",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.2",
@@ -4754,6 +4950,7 @@
     },
     {
       "id": "ctfl4-0197",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.3",
@@ -4779,6 +4976,7 @@
     },
     {
       "id": "ctfl4-0198",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.3",
@@ -4804,6 +5002,7 @@
     },
     {
       "id": "ctfl4-0199",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.3",
@@ -4829,6 +5028,7 @@
     },
     {
       "id": "ctfl4-0200",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.3",
@@ -4854,6 +5054,7 @@
     },
     {
       "id": "ctfl4-0201",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.3",
@@ -4879,6 +5080,7 @@
     },
     {
       "id": "ctfl4-0202",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.3",
@@ -4904,6 +5106,7 @@
     },
     {
       "id": "ctfl4-0203",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.4",
@@ -4929,6 +5132,7 @@
     },
     {
       "id": "ctfl4-0204",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.4",
@@ -4954,6 +5158,7 @@
     },
     {
       "id": "ctfl4-0205",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.4",
@@ -4979,6 +5184,7 @@
     },
     {
       "id": "ctfl4-0206",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.4",
@@ -5004,6 +5210,7 @@
     },
     {
       "id": "ctfl4-0207",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.4",
@@ -5029,6 +5236,7 @@
     },
     {
       "id": "ctfl4-0208",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.4",
@@ -5054,6 +5262,7 @@
     },
     {
       "id": "ctfl4-0209",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.5",
@@ -5080,6 +5289,7 @@
     },
     {
       "id": "ctfl4-0210",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.5",
@@ -5105,6 +5315,7 @@
     },
     {
       "id": "ctfl4-0211",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.5",
@@ -5130,6 +5341,7 @@
     },
     {
       "id": "ctfl4-0212",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.5",
@@ -5156,6 +5368,7 @@
     },
     {
       "id": "ctfl4-0213",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.5",
@@ -5181,6 +5394,7 @@
     },
     {
       "id": "ctfl4-0214",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.5",
@@ -5206,6 +5420,7 @@
     },
     {
       "id": "ctfl4-0215",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.5",
@@ -5231,6 +5446,7 @@
     },
     {
       "id": "ctfl4-0216",
+      "revision": 1,
       "chunk": "ch04-b",
       "chapter": 4,
       "section": "4.5",
@@ -5256,6 +5472,7 @@
     },
     {
       "id": "ctfl4-0217",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.1",
@@ -5280,6 +5497,7 @@
     },
     {
       "id": "ctfl4-0218",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.1",
@@ -5304,6 +5522,7 @@
     },
     {
       "id": "ctfl4-0219",
+      "revision": 2,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.1",
@@ -5328,6 +5547,7 @@
     },
     {
       "id": "ctfl4-0220",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.1",
@@ -5352,6 +5572,7 @@
     },
     {
       "id": "ctfl4-0221",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.1",
@@ -5376,6 +5597,7 @@
     },
     {
       "id": "ctfl4-0222",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.1",
@@ -5400,6 +5622,7 @@
     },
     {
       "id": "ctfl4-0223",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.1",
@@ -5424,6 +5647,7 @@
     },
     {
       "id": "ctfl4-0224",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.1",
@@ -5448,6 +5672,7 @@
     },
     {
       "id": "ctfl4-0225",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.1",
@@ -5472,6 +5697,7 @@
     },
     {
       "id": "ctfl4-0226",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.1",
@@ -5496,6 +5722,7 @@
     },
     {
       "id": "ctfl4-0227",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.1",
@@ -5520,6 +5747,7 @@
     },
     {
       "id": "ctfl4-0228",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.1",
@@ -5544,6 +5772,7 @@
     },
     {
       "id": "ctfl4-0229",
+      "revision": 2,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.1",
@@ -5568,6 +5797,7 @@
     },
     {
       "id": "ctfl4-0230",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.1",
@@ -5593,6 +5823,7 @@
     },
     {
       "id": "ctfl4-0231",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.2",
@@ -5617,6 +5848,7 @@
     },
     {
       "id": "ctfl4-0232",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.2",
@@ -5641,6 +5873,7 @@
     },
     {
       "id": "ctfl4-0233",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.2",
@@ -5665,6 +5898,7 @@
     },
     {
       "id": "ctfl4-0234",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.2",
@@ -5690,6 +5924,7 @@
     },
     {
       "id": "ctfl4-0235",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.2",
@@ -5714,6 +5949,7 @@
     },
     {
       "id": "ctfl4-0236",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.2",
@@ -5738,6 +5974,7 @@
     },
     {
       "id": "ctfl4-0237",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.2",
@@ -5762,6 +5999,7 @@
     },
     {
       "id": "ctfl4-0238",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.2",
@@ -5786,6 +6024,7 @@
     },
     {
       "id": "ctfl4-0239",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.2",
@@ -5810,6 +6049,7 @@
     },
     {
       "id": "ctfl4-0240",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.2",
@@ -5834,6 +6074,7 @@
     },
     {
       "id": "ctfl4-0241",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.3",
@@ -5858,6 +6099,7 @@
     },
     {
       "id": "ctfl4-0242",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.3",
@@ -5882,6 +6124,7 @@
     },
     {
       "id": "ctfl4-0243",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.3",
@@ -5906,6 +6149,7 @@
     },
     {
       "id": "ctfl4-0244",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.3",
@@ -5930,6 +6174,7 @@
     },
     {
       "id": "ctfl4-0245",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.3",
@@ -5954,6 +6199,7 @@
     },
     {
       "id": "ctfl4-0246",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.3",
@@ -5978,6 +6224,7 @@
     },
     {
       "id": "ctfl4-0247",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.3",
@@ -6002,6 +6249,7 @@
     },
     {
       "id": "ctfl4-0248",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.3",
@@ -6026,6 +6274,7 @@
     },
     {
       "id": "ctfl4-0249",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.4",
@@ -6050,6 +6299,7 @@
     },
     {
       "id": "ctfl4-0250",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.4",
@@ -6074,6 +6324,7 @@
     },
     {
       "id": "ctfl4-0251",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.4",
@@ -6098,6 +6349,7 @@
     },
     {
       "id": "ctfl4-0252",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.5",
@@ -6122,6 +6374,7 @@
     },
     {
       "id": "ctfl4-0253",
+      "revision": 1,
       "chunk": "ch05-b",
       "chapter": 5,
       "section": "5.5",
@@ -6146,6 +6399,7 @@
     },
     {
       "id": "ctfl4-0254",
+      "revision": 1,
       "chunk": "ch06-b",
       "chapter": 6,
       "section": "6.1",
@@ -6170,6 +6424,7 @@
     },
     {
       "id": "ctfl4-0255",
+      "revision": 1,
       "chunk": "ch06-b",
       "chapter": 6,
       "section": "6.2",
@@ -6195,6 +6450,7 @@
     },
     {
       "id": "ctfl4-0256",
+      "revision": 2,
       "chunk": "ch01-b",
       "chapter": 1,
       "section": "1.4",
@@ -6218,6 +6474,7 @@
     },
     {
       "id": "ctfl4-0257",
+      "revision": 2,
       "chunk": "ch02-b",
       "chapter": 2,
       "section": "2.1",
@@ -6242,6 +6499,7 @@
     },
     {
       "id": "ctfl4-0258",
+      "revision": 1,
       "chunk": "ch01-c",
       "chapter": 1,
       "section": "1.1",
@@ -6266,6 +6524,7 @@
     },
     {
       "id": "ctfl4-0259",
+      "revision": 1,
       "chunk": "ch01-c",
       "chapter": 1,
       "section": "1.1",
@@ -6290,6 +6549,7 @@
     },
     {
       "id": "ctfl4-0260",
+      "revision": 1,
       "chunk": "ch01-c",
       "chapter": 1,
       "section": "1.2",
@@ -6314,6 +6574,7 @@
     },
     {
       "id": "ctfl4-0261",
+      "revision": 1,
       "chunk": "ch01-c",
       "chapter": 1,
       "section": "1.2",
@@ -6338,6 +6599,7 @@
     },
     {
       "id": "ctfl4-0262",
+      "revision": 1,
       "chunk": "ch01-c",
       "chapter": 1,
       "section": "1.3",
@@ -6362,6 +6624,7 @@
     },
     {
       "id": "ctfl4-0263",
+      "revision": 1,
       "chunk": "ch01-c",
       "chapter": 1,
       "section": "1.4",
@@ -6386,6 +6649,7 @@
     },
     {
       "id": "ctfl4-0264",
+      "revision": 1,
       "chunk": "ch01-c",
       "chapter": 1,
       "section": "1.4",
@@ -6410,6 +6674,7 @@
     },
     {
       "id": "ctfl4-0265",
+      "revision": 1,
       "chunk": "ch01-c",
       "chapter": 1,
       "section": "1.4",
@@ -6434,6 +6699,7 @@
     },
     {
       "id": "ctfl4-0266",
+      "revision": 1,
       "chunk": "ch01-c",
       "chapter": 1,
       "section": "1.5",
@@ -6458,6 +6724,7 @@
     },
     {
       "id": "ctfl4-0267",
+      "revision": 1,
       "chunk": "ch01-c",
       "chapter": 1,
       "section": "1.5",
@@ -6482,6 +6749,7 @@
     },
     {
       "id": "ctfl4-0270",
+      "revision": 1,
       "chunk": "ch02-c",
       "chapter": 2,
       "section": "2.1",
@@ -6507,6 +6775,7 @@
     },
     {
       "id": "ctfl4-0271",
+      "revision": 1,
       "chunk": "ch02-c",
       "chapter": 2,
       "section": "2.1",
@@ -6533,6 +6802,7 @@
     },
     {
       "id": "ctfl4-0272",
+      "revision": 1,
       "chunk": "ch02-c",
       "chapter": 2,
       "section": "2.1",
@@ -6559,6 +6829,7 @@
     },
     {
       "id": "ctfl4-0273",
+      "revision": 1,
       "chunk": "ch02-c",
       "chapter": 2,
       "section": "2.1",
@@ -6584,6 +6855,7 @@
     },
     {
       "id": "ctfl4-0274",
+      "revision": 1,
       "chunk": "ch02-c",
       "chapter": 2,
       "section": "2.2",
@@ -6609,6 +6881,7 @@
     },
     {
       "id": "ctfl4-0275",
+      "revision": 1,
       "chunk": "ch02-c",
       "chapter": 2,
       "section": "2.2",
@@ -6634,6 +6907,7 @@
     },
     {
       "id": "ctfl4-0276",
+      "revision": 1,
       "chunk": "ch02-c",
       "chapter": 2,
       "section": "2.2",
@@ -6660,6 +6934,7 @@
     },
     {
       "id": "ctfl4-0280",
+      "revision": 1,
       "chunk": "ch03-c",
       "chapter": 3,
       "section": "3.1",
@@ -6685,6 +6960,7 @@
     },
     {
       "id": "ctfl4-0281",
+      "revision": 1,
       "chunk": "ch03-c",
       "chapter": 3,
       "section": "3.1",
@@ -6709,6 +6985,7 @@
     },
     {
       "id": "ctfl4-0282",
+      "revision": 1,
       "chunk": "ch03-c",
       "chapter": 3,
       "section": "3.2",
@@ -6733,6 +7010,7 @@
     },
     {
       "id": "ctfl4-0283",
+      "revision": 1,
       "chunk": "ch03-c",
       "chapter": 3,
       "section": "3.2",
@@ -6757,6 +7035,7 @@
     },
     {
       "id": "ctfl4-0284",
+      "revision": 1,
       "chunk": "ch03-c",
       "chapter": 3,
       "section": "3.2",
@@ -6781,6 +7060,7 @@
     },
     {
       "id": "ctfl4-0290",
+      "revision": 1,
       "chunk": "ch04-c",
       "chapter": 4,
       "section": "4.2",
@@ -6807,6 +7087,7 @@
     },
     {
       "id": "ctfl4-0291",
+      "revision": 1,
       "chunk": "ch04-c",
       "chapter": 4,
       "section": "4.2",
@@ -6833,6 +7114,7 @@
     },
     {
       "id": "ctfl4-0292",
+      "revision": 1,
       "chunk": "ch04-c",
       "chapter": 4,
       "section": "4.2",
@@ -6859,6 +7141,7 @@
     },
     {
       "id": "ctfl4-0293",
+      "revision": 1,
       "chunk": "ch04-c",
       "chapter": 4,
       "section": "4.2",
@@ -6885,6 +7168,7 @@
     },
     {
       "id": "ctfl4-0294",
+      "revision": 1,
       "chunk": "ch04-c",
       "chapter": 4,
       "section": "4.3",
@@ -6910,6 +7194,7 @@
     },
     {
       "id": "ctfl4-0295",
+      "revision": 1,
       "chunk": "ch04-c",
       "chapter": 4,
       "section": "4.3",
@@ -6935,6 +7220,7 @@
     },
     {
       "id": "ctfl4-0296",
+      "revision": 1,
       "chunk": "ch04-c",
       "chapter": 4,
       "section": "4.3",
@@ -6961,6 +7247,7 @@
     },
     {
       "id": "ctfl4-0297",
+      "revision": 1,
       "chunk": "ch04-c",
       "chapter": 4,
       "section": "4.4",
@@ -6986,6 +7273,7 @@
     },
     {
       "id": "ctfl4-0298",
+      "revision": 1,
       "chunk": "ch04-c",
       "chapter": 4,
       "section": "4.4",
@@ -7012,6 +7300,7 @@
     },
     {
       "id": "ctfl4-0299",
+      "revision": 1,
       "chunk": "ch04-c",
       "chapter": 4,
       "section": "4.4",
@@ -7038,6 +7327,7 @@
     },
     {
       "id": "ctfl4-0300",
+      "revision": 1,
       "chunk": "ch04-c",
       "chapter": 4,
       "section": "4.5",
@@ -7064,6 +7354,7 @@
     },
     {
       "id": "ctfl4-0301",
+      "revision": 1,
       "chunk": "ch04-c",
       "chapter": 4,
       "section": "4.5",
@@ -7089,6 +7380,7 @@
     },
     {
       "id": "ctfl4-0302",
+      "revision": 1,
       "chunk": "ch04-c",
       "chapter": 4,
       "section": "4.5",
@@ -7115,6 +7407,7 @@
     },
     {
       "id": "ctfl4-0306",
+      "revision": 1,
       "chunk": "ch05-c",
       "chapter": 5,
       "section": "5.1",
@@ -7139,6 +7432,7 @@
     },
     {
       "id": "ctfl4-0307",
+      "revision": 1,
       "chunk": "ch05-c",
       "chapter": 5,
       "section": "5.1",
@@ -7163,6 +7457,7 @@
     },
     {
       "id": "ctfl4-0308",
+      "revision": 1,
       "chunk": "ch05-c",
       "chapter": 5,
       "section": "5.1",
@@ -7188,6 +7483,7 @@
     },
     {
       "id": "ctfl4-0309",
+      "revision": 1,
       "chunk": "ch05-c",
       "chapter": 5,
       "section": "5.1",
@@ -7213,6 +7509,7 @@
     },
     {
       "id": "ctfl4-0310",
+      "revision": 1,
       "chunk": "ch05-c",
       "chapter": 5,
       "section": "5.1",
@@ -7237,6 +7534,7 @@
     },
     {
       "id": "ctfl4-0311",
+      "revision": 1,
       "chunk": "ch05-c",
       "chapter": 5,
       "section": "5.2",
@@ -7261,6 +7559,7 @@
     },
     {
       "id": "ctfl4-0312",
+      "revision": 1,
       "chunk": "ch05-c",
       "chapter": 5,
       "section": "5.2",
@@ -7285,6 +7584,7 @@
     },
     {
       "id": "ctfl4-0313",
+      "revision": 1,
       "chunk": "ch05-c",
       "chapter": 5,
       "section": "5.2",
@@ -7309,6 +7609,7 @@
     },
     {
       "id": "ctfl4-0314",
+      "revision": 1,
       "chunk": "ch05-c",
       "chapter": 5,
       "section": "5.3",
@@ -7333,6 +7634,7 @@
     },
     {
       "id": "ctfl4-0315",
+      "revision": 1,
       "chunk": "ch05-c",
       "chapter": 5,
       "section": "5.4",
@@ -7357,6 +7659,7 @@
     },
     {
       "id": "ctfl4-0316",
+      "revision": 1,
       "chunk": "ch05-c",
       "chapter": 5,
       "section": "5.5",
@@ -7381,6 +7684,7 @@
     },
     {
       "id": "ctfl4-0320",
+      "revision": 1,
       "chunk": "ch06-b",
       "chapter": 6,
       "section": "6.1",
@@ -7405,6 +7709,7 @@
     },
     {
       "id": "ctfl4-0321",
+      "revision": 1,
       "chunk": "ch06-b",
       "chapter": 6,
       "section": "6.2",

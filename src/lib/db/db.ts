@@ -114,6 +114,11 @@ export interface SrsCard {
   lastReviewedAt?: number;
   /** When the card entered the deck — the first wrong answer that put it there. */
   addedAt: number;
+  /**
+   * F3-11: the question's revision this card is scheduled against. Absent on
+   * cards written before it; not indexed, so the schema version is unchanged.
+   */
+  revision?: number;
 }
 
 export interface Bookmark {

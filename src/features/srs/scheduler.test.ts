@@ -2,12 +2,14 @@ import { describe, expect, it } from "vitest";
 import { fsrs, Rating, type Grade } from "ts-fsrs";
 
 import {
+  deckRevisions,
   deckUpdatesForWrongAnswers,
   fromFsrsCard,
   gradeCard,
   isDue,
   newCard,
   previewDue,
+  reviseCard,
   toFsrsCard,
 } from "./scheduler";
 import type { SrsCard } from "@/lib/db/db";
@@ -163,5 +165,108 @@ describe("deckUpdatesForWrongAnswers", () => {
     const updates = deckUpdatesForWrongAnswers(["ctfl4-0001", "ctfl4-0001"], new Map(), CERT, NOW);
 
     expect(updates).toHaveLength(1);
+  });
+});
+
+describe("deckUpdatesForWrongAnswers and revisions (F3-11)", () => {
+  const CERT = "ctfl-v4.0.1";
+  const revisionOf = (id: string) => (id === "ctfl4-0001" ? 3 : undefined);
+
+  it("records the revision the wrong answer was given to, on a new card and a failed one", () => {
+    const [added] = deckUpdatesForWrongAnswers(["ctfl4-0001"], new Map(), CERT, NOW, revisionOf);
+    expect(added?.revision).toBe(3);
+
+    const review = gradeCard(
+      newCard("ctfl4-0001", CERT, NOW - 30 * DAY, 2),
+      "easy",
+      NOW - 30 * DAY,
+    );
+    const [failed] = deckUpdatesForWrongAnswers(
+      ["ctfl4-0001"],
+      new Map([["ctfl4-0001", review]]),
+      CERT,
+      NOW,
+      revisionOf,
+    );
+    expect(failed).toMatchObject({ state: "relearning", revision: 3 });
+  });
+
+  it("keeps a card's revision through a grade", () => {
+    const card = newCard("ctfl4-0001", CERT, NOW, 2);
+
+    expect(gradeCard(card, "good", NOW).revision).toBe(2);
+  });
+});
+
+describe("reviseCard", () => {
+  const CERT = "ctfl-v4.0.1";
+  const review = (revision?: number): SrsCard => ({
+    ...gradeCard(newCard("ctfl4-0001", CERT, NOW - 30 * DAY), "easy", NOW - 30 * DAY),
+    ...(revision === undefined ? {} : { revision }),
+  });
+
+  it("sends a card in review back to relearning, due now, without counting a lapse", () => {
+    const before = review(1);
+    const revised = reviseCard(before, 2, NOW);
+
+    expect(revised).toMatchObject({
+      state: "relearning",
+      due: NOW,
+      learningSteps: 0,
+      revision: 2,
+      lapses: before.lapses,
+      stability: before.stability,
+      reps: before.reps,
+    });
+  });
+
+  it("leaves a card alone when the revision has not moved", () => {
+    expect(reviseCard(review(2), 2, NOW)).toBeNull();
+    expect(reviseCard(review(3), 2, NOW)).toBeNull();
+  });
+
+  it("lets a card written before F3-11 adopt the current revision and keep its schedule", () => {
+    const before = review();
+
+    expect(reviseCard(before, 4, NOW)).toEqual({ ...before, revision: 4 });
+  });
+
+  it("brings a card still being learned due now, in the state it is in", () => {
+    const learning = { ...gradeCard(newCard("ctfl4-0001", CERT, NOW, 1), "good", NOW) };
+    expect(learning.state).toBe("learning");
+
+    expect(reviseCard(learning, 2, NOW)).toMatchObject({
+      state: "learning",
+      due: NOW,
+      revision: 2,
+    });
+  });
+
+  it("leaves a revised card one the scheduler grades normally", () => {
+    const revised = reviseCard(review(1), 2, NOW);
+    if (!revised) throw new Error("expected a revised card");
+
+    const good = gradeCard(revised, "good", NOW);
+    expect(good.state).toBe("review");
+    expect(good.due).toBeGreaterThan(NOW);
+    expect(good.lapses).toBe(revised.lapses);
+  });
+});
+
+describe("deckRevisions", () => {
+  it("returns only the cards that change, and skips a question no longer in the index", () => {
+    const CERT = "ctfl-v4.0.1";
+    const stale = { ...gradeCard(newCard("ctfl4-0001", CERT, NOW - DAY, 1), "easy", NOW - DAY) };
+    const current = newCard("ctfl4-0002", CERT, NOW, 1);
+    const gone = newCard("ctfl4-0003", CERT, NOW, 1);
+    const revisions = new Map([
+      ["ctfl4-0001", 2],
+      ["ctfl4-0002", 1],
+    ]);
+
+    const rows = deckRevisions([stale, current, gone], (id) => revisions.get(id), NOW);
+
+    expect(rows.map((row) => row.questionId)).toEqual(["ctfl4-0001"]);
+    expect(rows[0]).toMatchObject({ state: "relearning", revision: 2 });
   });
 });

@@ -267,7 +267,15 @@ describe("useSessionStore", () => {
         "ctfl-v4.0.1",
         ["ctfl4-0002"],
         stored.submittedAt,
+        expect.any(Function),
       );
+
+      // F3-11: the deck learns which revision of each question was answered.
+      const revisionOf = addWrongAnswersToDeckMock.mock.calls.at(-1)?.[3] as (
+        id: string,
+      ) => number | undefined;
+      expect(revisionOf("ctfl4-0002")).toBe(1);
+      expect(revisionOf("ctfl4-9999")).toBeUndefined();
     });
 
     it("stores the verdict for a blueprint attempt", async () => {

@@ -21,8 +21,10 @@ features/exam/     Selection and scoring — selectQuestions (one entry point,
                    points (what a question of each K-level is worth, read
                    from the blueprint's groups)
 features/srs/      Spaced repetition — scheduler (the only ts-fsrs import:
-                   card <-> row, grading, the interval preview, and the rule
-                   for what a wrong answer does to the deck), interval,
+                   card <-> row, grading, the interval preview, the rule
+                   for what a wrong answer does to the deck, and reviseCard:
+                   a revised question sends a review card back to
+                   relearning and brings any other card due, F3-11), interval,
                    queue (what is due; the home count and /tekrar share it;
                    spreadSiblings keeps two cards of one LO apart;
                    forecastDue counts the next days for /tekrar)
@@ -35,7 +37,8 @@ lib/db/            Dexie/IndexedDB — the single place for persistence. db.ts
                    is unit-testable), objectiveProgress.ts (study mastery),
                    questionHistory.ts (the saved lists, derived from the
                    answers already stored — nothing new is persisted),
-                   srsCards.ts (the repetition deck), backup.ts (the
+                   srsCards.ts (the repetition deck; loadRevisedDeck checks
+                   it against the index first), backup.ts (the
                    progress file: export, validate, merge-import)
 lib/i18n/          UI language; question language is a separate concept (attempt.contentLang)
 lib/certification.ts  Which certification the screens show — the home

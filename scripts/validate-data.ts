@@ -1102,6 +1102,7 @@ function checkIndexConsistency(
   const declaredQuestions: any[] = Array.isArray(index.questions) ? index.questions : [];
   const declaredById = new Map(declaredQuestions.map((q) => [q.id, q]));
   const actualIds = new Set(chunkQuestions.map((q) => q.question.id));
+  const revisionById = new Map(chunkQuestions.map((q) => [q.question.id, q.question.revision]));
 
   for (const declared of declaredQuestions) {
     const actualChunk = chunkByQuestionId.get(declared.id);
@@ -1111,6 +1112,10 @@ function checkIndexConsistency(
     }
     if (declared.chunk !== actualChunk) {
       report(8, indexFile, declared.id, `index.json 'chunk' field is wrong. Expected: '${actualChunk}' (the file the question is actually in); Found: '${declared.chunk}'.`);
+    }
+    const actualRevision = revisionById.get(declared.id);
+    if (declared.revision !== actualRevision) {
+      report(8, indexFile, declared.id, `index.json 'revision' field is stale. Expected: ${actualRevision} (the chunk's revision); Found: ${declared.revision}. Run yarn build:index.`);
     }
   }
 

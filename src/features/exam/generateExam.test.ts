@@ -25,6 +25,7 @@ function buildPool(perObjective: number): QuestionIndexEntry[] {
     for (let i = 0; i < perObjective; i += 1) {
       pool.push({
         id: `${objective.code}#${i}`,
+        revision: 1,
         chunk: `ch0${objective.chapter}-a`,
         chapter: objective.chapter,
         objectives: [objective.code],

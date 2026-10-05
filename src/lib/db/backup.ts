@@ -151,7 +151,8 @@ const VALID_ROW: Record<TableName, (row: Row) => boolean> = {
     isNumber(row.lapses) &&
     SRS_STATES.has(row.state as string) &&
     isOptionalNumber(row.lastReviewedAt) &&
-    isNumber(row.addedAt),
+    isNumber(row.addedAt) &&
+    isOptionalNumber(row.revision),
   bookmarks: (row) => isString(row.questionId) && isString(row.certId) && isNumber(row.createdAt),
   settings: (row) => isString(row.key),
 };

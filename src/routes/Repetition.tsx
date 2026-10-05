@@ -39,7 +39,7 @@ import { GRADES, previewDue, type SrsGrade } from "@/features/srs/scheduler";
 import { otherLang, readSideBySide, writeSideBySide } from "@/lib/bilingual";
 import { contentClient } from "@/lib/content/contentClient";
 import type { SrsCard } from "@/lib/db/db";
-import { loadDeck, rateCard } from "@/lib/db/srsCards";
+import { loadRevisedDeck, rateCard } from "@/lib/db/srsCards";
 import { isTextEntry } from "@/lib/isTextEntry";
 import { useArrivalFocus } from "@/lib/useArrivalFocus";
 import { useAsyncData } from "@/lib/useAsyncData";
@@ -70,12 +70,15 @@ const BUTTON =
 
 async function loadRepetition(): Promise<RepetitionData> {
   const cert = await contentClient.getActiveCertification();
-  const [index, deck] = await Promise.all([contentClient.getIndex(cert.path), loadDeck(cert.id)]);
+  const index = await contentClient.getIndex(cert.path);
+  const loadedAt = Date.now();
+  // F3-11: a question revised since its card was scheduled comes back to relearning.
+  const revisions = new Map(index.questions.map((entry) => [entry.id, entry.revision]));
+  const deck = await loadRevisedDeck(cert.id, (id) => revisions.get(id), loadedAt);
 
   const publishedEntries = index.questions.filter((entry) => entry.status === "published");
   const published = new Set(publishedEntries.map((entry) => entry.id));
   const objectivesById = new Map(publishedEntries.map((entry) => [entry.id, entry.objectives]));
-  const loadedAt = Date.now();
   const summary = summarizeDeck(deck, published, loadedAt);
   // F3-03: a sibling is moved back, so one card's rationale does not answer the next.
   const due = spreadSiblings(summary.due, (id) => objectivesById.get(id) ?? []);

@@ -17,6 +17,11 @@
  * candidate to rate themselves instead of inferring it. So a wrong answer
  * outside the deck counts as a failed review ("Again") for a card already in
  * it, and a right answer outside the deck changes nothing.
+ *
+ * How a card leaves its schedule (F3-11): the question it stands for is
+ * revised. Each card remembers the revision it was scheduled against; a
+ * newer one means the candidate's memory is of a text that no longer exists,
+ * so a card in review goes back to relearning, due now.
  */
 
 import { createEmptyCard, fsrs, Rating, State, type Card, type Grade } from "ts-fsrs";
@@ -72,10 +77,13 @@ export function toFsrsCard(row: SrsCard, now: number): Card {
   };
 }
 
-/** The library's card as a row, keeping the row's identity and the moment it joined the deck. */
+/**
+ * The library's card as a row, keeping the row's identity, the moment it
+ * joined the deck and the question revision it is scheduled against.
+ */
 export function fromFsrsCard(
   card: Card,
-  identity: Pick<SrsCard, "questionId" | "certId" | "addedAt">,
+  identity: Pick<SrsCard, "questionId" | "certId" | "addedAt" | "revision">,
 ): SrsCard {
   const row: SrsCard = {
     questionId: identity.questionId,
@@ -92,12 +100,23 @@ export function fromFsrsCard(
   };
 
   if (card.last_review) row.lastReviewedAt = card.last_review.getTime();
+  if (identity.revision !== undefined) row.revision = identity.revision;
   return row;
 }
 
 /** A card that has never been reviewed, due immediately. */
-export function newCard(questionId: string, certId: string, now: number): SrsCard {
-  return fromFsrsCard(createEmptyCard(new Date(now)), { questionId, certId, addedAt: now });
+export function newCard(
+  questionId: string,
+  certId: string,
+  now: number,
+  revision?: number,
+): SrsCard {
+  return fromFsrsCard(createEmptyCard(new Date(now)), {
+    questionId,
+    certId,
+    addedAt: now,
+    revision,
+  });
 }
 
 /** The card after rating it `grade` at `now`. */
@@ -144,19 +163,59 @@ export function deckUpdatesForWrongAnswers(
   existing: ReadonlyMap<string, SrsCard>,
   certId: string,
   now: number,
+  revisionOf: (questionId: string) => number | undefined = () => undefined,
 ): SrsCard[] {
   const updates: SrsCard[] = [];
 
   for (const questionId of new Set(wrongQuestionIds)) {
     const card = existing.get(questionId);
+    const revision = revisionOf(questionId);
     if (!card) {
-      updates.push(newCard(questionId, certId, now));
+      updates.push(newCard(questionId, certId, now, revision));
       continue;
     }
     if (card.state === "new") continue;
 
-    updates.push(gradeCard(card, "again", now));
+    // The wrong answer was given to this revision's text.
+    const failed = gradeCard(card, "again", now);
+    updates.push(revision === undefined ? failed : { ...failed, revision });
   }
 
   return updates;
+}
+
+/**
+ * F3-11 — the card for a question that may have been revised, or null when
+ * nothing changes.
+ *
+ * A card with no revision predates F3-11: which text it was scheduled
+ * against is unknown, so it adopts the current one and keeps its schedule —
+ * sending every old card back to relearning would punish a change nobody can
+ * show happened. A newer revision resets what the candidate remembers: a card
+ * in review goes to relearning, due now, with its stability and difficulty
+ * kept for the scheduler's next step; one still being learned just comes due.
+ * No lapse is counted, because nothing was forgotten.
+ */
+export function reviseCard(card: SrsCard, revision: number, now: number): SrsCard | null {
+  if (card.revision === undefined) return { ...card, revision };
+  if (revision <= card.revision) return null;
+
+  if (card.state === "review") {
+    return { ...card, state: "relearning", due: now, learningSteps: 0, revision };
+  }
+  return { ...card, due: Math.min(card.due, now), revision };
+}
+
+/** The deck's revised cards, the rows to write. A question no longer in the index is left alone. */
+export function deckRevisions(
+  deck: readonly SrsCard[],
+  revisionOf: (questionId: string) => number | undefined,
+  now: number,
+): SrsCard[] {
+  return deck.flatMap((card) => {
+    const revision = revisionOf(card.questionId);
+    if (revision === undefined) return [];
+    const revised = reviseCard(card, revision, now);
+    return revised ? [revised] : [];
+  });
 }

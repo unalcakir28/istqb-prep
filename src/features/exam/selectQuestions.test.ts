@@ -6,6 +6,7 @@ import { selectQuestions } from "./selectQuestions";
 function entry(id: string, chapter: number, objective: string): QuestionIndexEntry {
   return {
     id,
+    revision: 1,
     chunk: `ch0${chapter}-a`,
     chapter,
     objectives: [objective],
