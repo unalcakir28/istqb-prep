@@ -91,7 +91,7 @@
 | F3-06 | **Readiness estimate** — based on the last 3 timed mock exams |
 | F3-07 | PWA: manifest, service worker, chunk caching, installability |
 | F3-08 | Progress export/import (JSON) |
-| F3-09 | Graduated hints; definition on term hover (tooltip) |
+| F3-09 | Graduated hints (nudge → hint → solution); the term definition shipped as F2-11, a disclosure in lesson cards |
 | F3-10 | **Content: grow to 300 questions** (≥3 per LO) |
 
 ---

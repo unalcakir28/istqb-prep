@@ -21,12 +21,13 @@ import { ContentLangToggle } from "@/components/ContentLangToggle";
 import { ErrorNotice } from "@/components/ErrorNotice";
 import { LessonCard } from "@/components/LessonCard";
 import { Spinner } from "@/components/Spinner";
+import { loadLessonGlossary, type LessonGlossary } from "@/features/glossary/lessonGlossary";
 import { useSessionStore } from "@/features/session/sessionStore";
 import { writeCertificationChoice } from "@/lib/certification";
 import { contentClient } from "@/lib/content/contentClient";
 import { markLessonRead, MASTERY_MIN_ANSWERED } from "@/lib/db/objectiveProgress";
 import { useAsyncData } from "@/lib/useAsyncData";
-import type { CertificationSummary, Lang, Lesson, Objective } from "@/types/content";
+import type { CertificationSummary, GlossaryIndex, Lang, Lesson, Objective } from "@/types/content";
 
 /**
  * The longest objective test. A single objective rarely carries more than a
@@ -40,6 +41,8 @@ interface ObjectiveData {
   cert: CertificationSummary;
   objective: Objective | null;
   lesson: Lesson | null;
+  /** The definitions the card's glossary terms open (F2-11); null without them. */
+  glossary: LessonGlossary | null;
   /** Published questions carrying this objective — drafts never enter a session. */
   available: number;
 }
@@ -73,9 +76,11 @@ async function certificationFor(
 async function loadObjective(loCode: string): Promise<ObjectiveData> {
   const { cert, objectives } = await certificationFor(loCode);
 
-  const [lesson, index] = await Promise.all([
+  const [lesson, index, glossaryIndex] = await Promise.all([
     contentClient.getLesson(cert.path, loCode),
     contentClient.getIndex(cert.path),
+    // F2-11 — an aid to the card, not part of it: a failure leaves the card unmarked.
+    contentClient.getGlossaryIndex(cert.path).catch(() => null),
   ]);
 
   const available = index.questions.filter(
@@ -86,8 +91,25 @@ async function loadObjective(loCode: string): Promise<ObjectiveData> {
     cert,
     objective: objectives.find((item) => item.code === loCode) ?? null,
     lesson,
+    glossary: lesson && glossaryIndex ? await glossaryFor(cert.path, lesson, glossaryIndex) : null,
     available,
   };
+}
+
+/**
+ * The definitions are an aid to the card, not part of it: if they fail to
+ * load, the card is shown unmarked rather than the screen failing.
+ */
+async function glossaryFor(
+  certPath: string,
+  lesson: Lesson,
+  index: GlossaryIndex,
+): Promise<LessonGlossary | null> {
+  try {
+    return await loadLessonGlossary(certPath, lesson, index);
+  } catch {
+    return null;
+  }
 }
 
 /**
@@ -132,7 +154,7 @@ function ObjectiveView({ loCode }: { loCode: string }) {
   if (failed) return <ErrorNotice onRetry={reload} />;
   if (!data) return <Spinner />;
 
-  const { cert, objective, lesson, available } = data;
+  const { cert, objective, lesson, glossary, available } = data;
 
   if (!objective) {
     return (
@@ -204,7 +226,7 @@ function ObjectiveView({ loCode }: { loCode: string }) {
         </h1>
       </header>
 
-      <LessonCard lesson={lesson} lang={contentLang} />
+      <LessonCard lesson={lesson} lang={contentLang} glossary={glossary} />
 
       <section className="flex flex-col gap-3 border-t border-border pt-6">
         {available === 0 ? (

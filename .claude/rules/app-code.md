@@ -28,10 +28,13 @@ features/srs/      Spaced repetition — scheduler (the only ts-fsrs import:
                    queue (what is due; the home count and /tekrar share it;
                    spreadSiblings keeps two cards of one LO apart;
                    forecastDue counts the next days for /tekrar)
+features/glossary/ F2-11 — markTerms (which words of a lesson card are ISTQB
+                   Glossary terms; first occurrence only), lessonGlossary
+                   (the definitions one card needs)
 features/progress/ What /ilerleme reads — examPoints, readiness (2 of the last
                    3 timed mock exams), chapterProgress, the forgiving streak
 lib/content/       Static JSON access + a two-tier cache (Map + Cache API
-                   named per dataVersion). Questions AND lessons.
+                   named per dataVersion). Questions, lessons, glossary.
 lib/db/            Dexie/IndexedDB — the single place for persistence. db.ts
                    (schema v3), migrations.ts (the v3 backfill, extracted so it
                    is unit-testable), objectiveProgress.ts (study mastery),
@@ -71,7 +74,7 @@ user-facing surface:
 /listelerim                    My lists — wrong · flagged · never right twice in a row
 /tekrar                        Repetition — the SRS deck's due cards, one at a time
 /ilerleme                      Progress — readiness estimate, streak, mock exams, per chapter
-/sozluk                        Glossary — the active certification's terms (97 CTFL · 156 CT-AI), no definitions (see F2-11)
+/sozluk                        Glossary — the active certification's terms (97 CTFL · 156 CT-AI), no definitions (those open in lesson cards, F2-11)
 /verilerim                     Your data — does this browser keep it (F3-12); download / load a progress file (F3-08)
 /sinav-sureci                  Taking the exam in Turkey — TTB registration, proctoring, result, retake (F4-07)
 /kaynaklar                     Sources

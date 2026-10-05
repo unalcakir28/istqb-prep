@@ -511,7 +511,7 @@ Written by `yarn fetch:glossary` (`scripts/fetch-glossary.ts`, F0-09), never by 
 
 > **Turkish definition rule (when one is added):** the primary source is **TTB's v4.0.1 Turkish syllabus**. TTB's separate glossary (v3.7-based, 564 terms) is used only as a secondary source, and only **after verification**. Every Turkish entry carries `trSource`, stating which document it came from.
 
-The app does not read `glossary/` yet: `/sozluk` lists `terms.json` pairs, and the definition tooltip is F2-11.
+The app reads `glossary/` in one place: a lesson card marks the terms it names and opens their definitions in place, with the index's source and licence beside them (F2-11, docs/06 §3.10). `/sozluk` still lists the `terms.json` pairs.
 
 ---
 

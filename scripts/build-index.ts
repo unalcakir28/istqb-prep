@@ -203,6 +203,14 @@ function buildLessonIndex(certPath: string, dataVersion: string): { count: numbe
   return { count: entries.length };
 }
 
+/**
+ * The index files this script writes, by their directory. Not every
+ * `index.json` is one: `glossary/index.json` is written by `yarn
+ * fetch:glossary`, the app reads it through the cache named after
+ * `dataVersion`, and so it has to move the version like any content file.
+ */
+const GENERATED_INDEX_DIRS = new Set(["questions", "lessons"]);
+
 /** Every JSON file under data/ except the ones this script writes. */
 function contentFiles(dir: string): string[] {
   const files: string[] = [];
@@ -213,7 +221,8 @@ function contentFiles(dir: string): string[] {
       continue;
     }
     if (!entry.name.endsWith(".json")) continue;
-    if (absPath === MANIFEST || entry.name === "index.json") continue;
+    if (absPath === MANIFEST) continue;
+    if (entry.name === "index.json" && GENERATED_INDEX_DIRS.has(path.basename(dir))) continue;
     files.push(absPath);
   }
   return files;

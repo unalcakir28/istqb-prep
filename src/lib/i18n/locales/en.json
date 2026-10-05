@@ -110,6 +110,9 @@
     "confirmFinish": "Yes, finish",
     "noQuestions": "There are no questions for this learning objective yet.",
     "lessonMissing": "The lesson content for this objective is not ready yet.",
+    "termDefinition": "{{term}} (show definition)",
+    "termEnglishOnly": "This is the ISTQB Glossary's English definition; a Turkish definition has no verified source yet.",
+    "termSource": "Source:",
     "nextObjective": "Next objective",
     "backToObjective": "Back to the objective"
   },
@@ -202,7 +205,7 @@
   "glossary": {
     "title": "Glossary",
     "intro": "{{count}} terms taken from the official syllabi's own per-chapter keyword lists, v{{version}}.",
-    "noDefinitions": "These are translations, not definitions. No definition text from the ISTQB Glossary is copied here, because its licence has not been verified yet.",
+    "noDefinitions": "These are translations, not definitions. The ISTQB Glossary's own definitions, in English, open from the marked terms in each objective's lesson card.",
     "searchLabel": "Search terms",
     "searchPlaceholder": "Type in Turkish or English",
     "chapterFilter": "Filter by chapter",

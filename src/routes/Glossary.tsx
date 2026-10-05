@@ -1,11 +1,10 @@
 /**
  * F2-05 — the glossary.
  *
- * What it is NOT: the ISTQB Glossary's definitions. Their licence is now
- * verified — CC BY 4.0, confirmed in the browser on 22.09.2026 (F0-02,
- * `docs/evidence/`) — but nothing has been copied yet, and rule 5 says a
- * screen does not imply content it does not have. So it says plainly that
- * these are translations rather than definitions.
+ * What it is NOT: the ISTQB Glossary's definitions. Those are copied
+ * (F0-09, CC BY 4.0) and open from the terms a lesson card names (F2-11,
+ * `GlossaryTerm`); this screen says plainly that its rows are translations
+ * rather than definitions, and where the definitions are.
  *
  * What it is: the 97 keyword pairs the two official syllabi publish in their
  * own per-chapter keyword lists, aligned positionally rather than translated

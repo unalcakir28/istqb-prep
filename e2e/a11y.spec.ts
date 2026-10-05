@@ -111,6 +111,18 @@ for (const theme of THEMES) {
     await scan(page);
   });
 
+  test(`a lesson card with a glossary definition open is accessible (${theme})`, async ({
+    page,
+  }) => {
+    await setTheme(page, theme);
+    await page.goto("/calisma/lo/FL-1.1.1");
+    const suffix = fill(en.study.termDefinition, { term: "" });
+    const term = page.getByRole("article").getByRole("button", { name: suffix }).first();
+    await term.click();
+    await expect(term).toHaveAttribute("aria-expanded", "true");
+    await scan(page);
+  });
+
   test(`the practice setup screen is accessible (${theme})`, async ({ page }) => {
     await setTheme(page, theme);
     await page.goto("/alistirma");

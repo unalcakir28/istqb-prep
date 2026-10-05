@@ -104,6 +104,7 @@ istqb-prep/
 │   │   ├── session/             # SessionRunner (the shell), sessionStore, routeForAttempt
 │   │   ├── exam/                # selectQuestions, generateExam, scoreExam, examTimer, rng, optionOrder
 │   │   ├── srs/                 # scheduler (the only ts-fsrs import), interval, queue
+│   │   ├── glossary/            # markTerms (which words a lesson card marks), lessonGlossary (F2-11)
 │   │   └── progress/            # examPoints, readiness, chapterProgress, streak (F3-05/F3-06)
 │   ├── components/              # QuestionCard, OptionList, RationalePanel, QuestionNavigator,
 │   │   │                        # ExamTimer, SubmitConfirm, ShortcutsOverlay, LessonCard,
@@ -113,11 +114,12 @@ istqb-prep/
 │   │   │                        # SegmentedControl (one single-select control, native
 │   │   │                        #   radios, used by the language toggle, the review
 │   │   │                        #   filter and the glossary chapter filter),
+│   │   │                        # GlossaryTerm (a lesson card's term and its definition, F2-11),
 │   │   │                        # StorageWarning (every screen: storage does not open),
 │   │   │                        # StorageSection (/verilerim: persistence, F3-12),
 │   │   └──                      # ReportQuestionLink (F2-08) …
 │   ├── lib/
-│   │   ├── content/             # contentClient, chunk cache (questions and lessons)
+│   │   ├── content/             # contentClient, chunk cache (questions, lessons, glossary)
 │   │   ├── db/                  # db.ts (Dexie v3), migrations.ts, objectiveProgress.ts,
 │   │   │                        # questionHistory.ts (the saved lists, derived),
 │   │   │                        # srsCards.ts (the repetition deck), backup.ts (export/import)
@@ -157,6 +159,9 @@ interface ContentClient {
   getLessonIndex(certId: string): Promise<LessonIndex>
   getLessonChunk(certId: string, chunk: string): Promise<LessonChunk>
   getLesson(certId: string, objectiveCode: string): Promise<Lesson | null>  // null = not written yet
+  getTerms(certId: string): Promise<Terms>              // the keyword pairs /sozluk lists
+  getGlossaryIndex(certId: string): Promise<GlossaryIndex>  // every glossary term, no definitions
+  getGlossaryChunk(certId: string, chunk: string): Promise<GlossaryChunk>  // definitions (F2-11)
 }
 ```
 
@@ -168,7 +173,7 @@ interface ContentClient {
 
 **Which certification (F4-01).** `getActiveCertification()` returns the candidate's pick from the home screen if it is still `active` in the manifest, else the first `active` one (`src/lib/certification.ts`, kept in localStorage like the theme). Every setup, study, list and glossary screen goes through it. A session, its result and its review never do: they load the content of their own `attempt.certId`, which is why check #25 holds the manifest `id`, its `path` and `meta.id` equal. IndexedDB needed no change — every progress row already carried `certId`, and the repetition deck is keyed by a question id that is unique across certifications (#25). The decision record: [`adr/0006-second-certification.md`](adr/0006-second-certification.md).
 
-**Cache invalidation:** the Cache API cache is named after `manifest.dataVersion` (`istqb-prep-content:<version>`), and every other content cache is deleted when a new version is first seen. The version used to be compared only with the last one the current page load had seen — none, on a fresh load — so a release between two visits cleared nothing and a returning visitor kept the old pool. `dataVersion` itself is a hash of every content file, computed by `yarn build:index`, so it changes exactly when the content does; it used to be a date typed by hand, and it read `2026.09.19` through two later content releases.
+**Cache invalidation:** the Cache API cache is named after `manifest.dataVersion` (`istqb-prep-content:<version>`), and every other content cache is deleted when a new version is first seen. The version used to be compared only with the last one the current page load had seen — none, on a fresh load — so a release between two visits cleared nothing and a returning visitor kept the old pool. `dataVersion` itself is a hash of every content file, computed by `yarn build:index`, so it changes exactly when the content does. Only the files `build:index` writes are left out (the manifest, `questions/index.json`, `lessons/index.json`), because they are derived from the hashed ones; `glossary/index.json` is hashed, since `yarn fetch:glossary` writes it; it used to be a date typed by hand, and it read `2026.09.19` through two later content releases.
 
 ---
 
@@ -296,7 +301,7 @@ jobs:
 | **Accessibility** | `@axe-core/playwright` + hand-written specs | Zero violations on every main route in both themes, **plus** the failures axe cannot see: focus destinations, accessible names, live-region behaviour |
 | **Visual** | Playwright snapshot | Not set up |
 
-Counts as of 05.10.2026: **224 unit tests in 29 files**, **82 end-to-end specs across 11 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
+Counts as of 05.10.2026: **242 unit tests in 30 files**, **85 end-to-end specs across 11 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
 
 > This is a **testing certification** project. Test discipline is part of the product itself here; the README will display a test-coverage badge.
 

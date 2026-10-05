@@ -23,6 +23,8 @@ import type {
   CertificationSummary,
   CertMeta,
   ExamBlueprint,
+  GlossaryChunk,
+  GlossaryIndex,
   Lesson,
   LessonChunk,
   LessonIndex,
@@ -208,6 +210,14 @@ export class ContentClient {
 
   getTerms(certPath: string): Promise<Terms> {
     return this.fetchJson<Terms>(dataUrl(certPath, "terms.json"), true);
+  }
+
+  getGlossaryIndex(certPath: string): Promise<GlossaryIndex> {
+    return this.fetchJson<GlossaryIndex>(dataUrl(certPath, "glossary", "index.json"), true);
+  }
+
+  getGlossaryChunk(certPath: string, chunk: string): Promise<GlossaryChunk> {
+    return this.fetchJson<GlossaryChunk>(dataUrl(certPath, "glossary", `${chunk}.json`), true);
   }
 
   getIndex(certPath: string): Promise<QuestionIndex> {

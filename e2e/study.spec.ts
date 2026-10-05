@@ -303,3 +303,31 @@ test("an objective test is untimed and always gives instant feedback", async ({ 
   await answerCurrentQuestion(page);
   await expect(page.getByRole("region", { name: en.review.whyTitle })).toBeVisible();
 });
+
+/**
+ * F2-11 — a glossary term in the lesson card opens the ISTQB Glossary's own
+ * definition in place, with the source and licence CC BY 4.0 asks for, and
+ * Escape hands focus back. Which terms a card marks is the unit tests'
+ * business (`markTerms.test.ts`); here it is enough that the card has one.
+ */
+test("a glossary term in the lesson opens its definition in place", async ({ page }) => {
+  await page.goto(`/calisma/lo/${LO_CODE}`);
+  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+
+  const suffix = fill(en.study.termDefinition, { term: "" });
+  const term = page.getByRole("article").getByRole("button", { name: suffix }).first();
+  await expect(term).toHaveAttribute("aria-expanded", "false");
+
+  await term.click();
+  await expect(term).toHaveAttribute("aria-expanded", "true");
+  const panel = page.locator(`[id="${await term.getAttribute("aria-controls")}"]`);
+  await expect(panel.getByRole("link", { name: "ISTQB Glossary" })).toHaveAttribute(
+    "href",
+    /^https:\/\/glossary\.istqb\.org\//,
+  );
+  await expect(panel.getByRole("link", { name: "CC BY 4.0" })).toBeVisible();
+
+  await page.keyboard.press("Escape");
+  await expect(term).toHaveAttribute("aria-expanded", "false");
+  await expect(term).toBeFocused();
+});

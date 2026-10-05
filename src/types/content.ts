@@ -290,6 +290,44 @@ export interface Terms {
   note?: string;
 }
 
+/**
+ * `glossary/index.json` (docs/04 §3.10) — written by `yarn fetch:glossary`
+ * from the ISTQB Glossary. It carries the attribution CC BY 4.0 asks for,
+ * which has to be shown wherever a definition is.
+ */
+export interface GlossaryIndex {
+  source: string;
+  sourceUrl: string;
+  license: string;
+  licenseUrl: string;
+  usedIn: { syllabus: string; version: string };
+  fetchedAt: string;
+  terms: GlossaryIndexEntry[];
+}
+
+export interface GlossaryIndexEntry {
+  slug: string;
+  en: string;
+  /** Only when `terms.json` has the term; there is no Turkish definition. */
+  tr?: string;
+  chunk: string;
+}
+
+/** One term in a `glossary/terms-*.json` chunk. The definition is English only. */
+export interface GlossaryEntry {
+  slug: string;
+  revision: number;
+  en: { term: string; definition: string };
+  tr?: { term: string };
+  trSource?: string;
+  source: string;
+  sourceUrl: string;
+}
+
+export interface GlossaryChunk {
+  terms: GlossaryEntry[];
+}
+
 export interface LessonContent {
   title: string;
   paragraphs: string[];

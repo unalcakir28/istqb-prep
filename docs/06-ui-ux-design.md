@@ -313,7 +313,7 @@ For CTFL, all 97 keyword pairs the two official syllabi publish in their own per
 - Where a term carries a `trForbidden` word, that word is shown in red. A candidate who learned *kusur* from an older book has to be told it is wrong — hiding it means they never find out.
 - The footer carries `trSource` and the mapping method, because a bilingual term list is only worth anything if the reader can see it was measured rather than translated.
 
-**No definitions.** Their licence is settled — the ISTQB Glossary footer was confirmed CC BY 4.0 in the browser on 22.09.2026 (F0-02, `docs/evidence/`) — but nothing has been copied yet, and the screen says so rather than looking unfinished. The term tooltip (F2-11) waits on the same content.
+**No definitions here.** The screen says its rows are translations, not definitions, and points to where the definitions are: the lesson cards (§3.10, F2-11).
 
 ### 3.9b My lists `/listelerim`
 
@@ -361,6 +361,15 @@ A short explanation of one learning objective, written from scratch: a title, a 
 Content lands objective by objective (Track C), so `lesson` is nullable throughout: an objective with no card yet still has questions, still records mastery, and still belongs in the chapter list. A missing card renders **a short honest placeholder, not an error**.
 
 Paragraphs are plain text, not Markdown — the project ships no Markdown renderer and this feature does not justify adding one.
+
+**Glossary terms (F2-11).** The first time a card names an ISTQB Glossary term — in its paragraphs, key points or common mistakes — the words become a button with a dotted underline (`GlossaryTerm`). Pressing it opens the glossary's own English definition in place, right after the term, with "Source: ISTQB Glossary · CC BY 4.0" linking the term's page and the licence, as CC BY 4.0 asks. Escape closes it and returns focus to the term.
+
+- **A disclosure, not a hover tooltip.** A tooltip cannot be opened on a touch screen, and one that stays open, can be hovered and can be dismissed (WCAG 1.4.13) is the kind of component the project would take from a library. A button that opens the text in place needs none of that, and a screen reader reads the definition next.
+- **Only the first occurrence** of each term on the card is marked, so the card still reads as prose. `test`, `testing`, `tester`, `failed` and `passed` are never marked: every card uses them and their definitions explain nothing.
+- **Matching** (`features/glossary/markTerms.ts`) is case-insensitive on the term as written: the glossary's English, or the Turkish from `terms.json`. English takes a plural `s`/`es`; Turkish takes any suffix, except on a verbal noun in `-ma`/`-me`: a one-word one (`sağlama`) is matched only as written, because `sağlamak`, `sağlaması` and `sağlamaya` are nearly always the verb "to ensure", and a longer one refuses only the infinitive (`gözden geçirmek`). Consonant softening is not undone, so such an occurrence stays plain. A hyphen is part of a word, and the longer of two terms starting at one place wins.
+- **There is no Turkish definition.** A Turkish card marks the Turkish term and opens the English definition, saying it is the glossary's English definition and a Turkish definition has no verified source yet (docs/04 §3.10).
+- **Only the chunks the card needs are fetched**; the glossary index is fetched beside the lesson. If the glossary fails to load, the card is shown unmarked rather than the screen failing.
+- Not in sessions: in a test, a definition one press away would be a hint.
 
 ---
 

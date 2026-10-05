@@ -110,6 +110,9 @@
     "confirmFinish": "Evet, bitir",
     "noQuestions": "Bu öğrenme hedefi için henüz soru yok.",
     "lessonMissing": "Bu öğrenme hedefi için ders içeriği henüz hazır değil.",
+    "termDefinition": "{{term}} (tanımı göster)",
+    "termEnglishOnly": "Bu, ISTQB Sözlüğü'nün İngilizce tanımıdır; Türkçe bir tanımın henüz doğrulanmış bir kaynağı yok.",
+    "termSource": "Kaynak:",
     "nextObjective": "Sonraki öğrenme hedefi",
     "backToObjective": "Öğrenme hedefine dön"
   },
@@ -202,7 +205,7 @@
   "glossary": {
     "title": "Terim sözlüğü",
     "intro": "Resmî müfredatın bölüm başı anahtar kelime listelerinden alınan {{count}} terim, v{{version}}.",
-    "noDefinitions": "Burada tanım yok, karşılık var. ISTQB Sözlüğü'ndeki tanımların lisansı henüz doğrulanmadığı için hiçbir tanım metni kopyalanmıyor.",
+    "noDefinitions": "Burada tanım yok, karşılık var. ISTQB Sözlüğü'nün kendi tanımları, İngilizce olarak, her öğrenme hedefinin ders kartındaki işaretli terimlerden açılır.",
     "searchLabel": "Terim ara",
     "searchPlaceholder": "Türkçe veya İngilizce yaz",
     "chapterFilter": "Bölüme göre süz",

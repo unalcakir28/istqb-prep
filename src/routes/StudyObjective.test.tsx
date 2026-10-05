@@ -96,6 +96,8 @@ vi.mock("@/lib/content/contentClient", () => ({
         chunks: ["ch01-a"],
         questions: published,
       } satisfies QuestionIndex),
+    // No glossary: the card renders unmarked, which is all these tests read.
+    getGlossaryIndex: () => Promise.reject(new Error("no glossary in this fixture")),
   },
 }));
 
