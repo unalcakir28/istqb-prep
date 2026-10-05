@@ -303,9 +303,9 @@
     "noneWrong": "Yanlış cevabın yok.",
     "back": "Sonuca dön",
     "report": "Sorunu bildir",
-    "reportLabel": "{{id}} sorusuyla ilgili sorun bildir",
+    "reportLabel": "Sorunu bildir: {{id}} sorusu",
     "discuss": "Tartış",
-    "discussLabel": "{{id}} sorusunu diğer adaylarla tartış"
+    "discussLabel": "Tartış: {{id}} sorusu, diğer adaylarla"
   },
   "question": {
     "objective": "Öğrenme hedefi",

@@ -8,7 +8,7 @@ If you spot a wrong answer, a bad translation, an incorrect syllabus reference, 
 
 ## Discussing a question
 
-The **Discuss** link under a question's rationale opens this repository's Discussions, searched for the question's id (F4-06). Look for an existing thread first. When you start one, put the question id at the start of the title — `ctfl4-0042: why is B not right?` — so the next candidate's search finds it. A thread is a conversation, not a report: if the question itself is wrong, open a Question Issue instead.
+The **Discuss** link under a question's rationale opens this repository's Discussions, searched for the question's id (F4-06). It is shown once Discussions is turned on for the repository (`DISCUSSIONS_ENABLED` in `src/lib/product.ts`). Look for an existing thread first. When you start one, put the question id at the start of the title — `ctfl4-0042: why is B not right?` — so the next candidate's search finds it. A thread is a conversation, not a report: if the question itself is wrong, open a Question Issue instead.
 
 Discussions about a question discuss its answer, so the link only appears once the answer is shown.
 

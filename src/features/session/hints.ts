@@ -5,9 +5,14 @@
  * the nudge is the question's learning objective, the solution is the answer
  * with its rationale. The hint is the question's own authored `hints` where
  * it has them (30 published CTFL questions, no CT-AI one, on 05.10.2026),
- * and otherwise one wrong option taken away,
- * with the rationale that says what that option actually describes — the
- * reviewed text the product already ships for every option (rule 2).
+ * and otherwise one wrong option taken away.
+ *
+ * The option is taken away WITHOUT its rationale (D-07). The rationales are
+ * written to be read beside the key, and many name it: a sweep of one third
+ * of the CTFL pool found 15 wrong-option rationales in 13 questions that
+ * quote or paraphrase the keyed option. Shown before the answer, any of them
+ * would have handed the key over. The rationale waits for the reveal, where
+ * it was always meant to be read.
  *
  * The option taken away is the first wrong one in the order shown, whatever
  * the candidate has picked. Following the picks would let a multi-select
@@ -19,7 +24,7 @@ import type { Lang, Question } from "@/types/content";
 
 export type Hint =
   | { kind: "authored"; texts: string[] }
-  | { kind: "eliminate"; optionId: string; optionText: string; rationale: string };
+  | { kind: "eliminate"; optionId: string; optionText: string };
 
 export function hintFor(question: Question, lang: Lang): Hint | null {
   const content = question.i18n[lang];
@@ -28,21 +33,17 @@ export function hintFor(question: Question, lang: Lang): Hint | null {
   const authored = content.hints?.filter((text) => text.trim() !== "") ?? [];
   if (authored.length > 0) return { kind: "authored", texts: authored };
 
-  const wrong = content.options.filter((option) => !question.correct.includes(option.id));
-  const target = wrong[0];
+  const target = content.options.find((option) => !question.correct.includes(option.id));
   if (!target) return null;
 
-  const rationale = content.rationale.byOption[target.id];
-  if (!rationale) return null;
-
-  return { kind: "eliminate", optionId: target.id, optionText: target.text, rationale };
+  return { kind: "eliminate", optionId: target.id, optionText: target.text };
 }
 
 /**
  * F3-14 — the same hint in the side-by-side mode's second language: the
- * other language's authored hints, or the same option (by id) with its
- * rationale in that language. Null when that language does not carry the
- * same kind of hint, so the two never disagree.
+ * other language's authored hints, or the same option (by id) in that
+ * language. Null when that language does not carry the same kind of hint,
+ * so the two never disagree.
  */
 export function hintIn(question: Question, hint: Hint, lang: Lang): Hint | null {
   const content = question.i18n[lang];
@@ -54,8 +55,7 @@ export function hintIn(question: Question, hint: Hint, lang: Lang): Hint | null 
   }
 
   const option = content.options.find((item) => item.id === hint.optionId);
-  const rationale = content.rationale.byOption[hint.optionId];
-  if (!option || !rationale) return null;
+  if (!option) return null;
 
-  return { kind: "eliminate", optionId: option.id, optionText: option.text, rationale };
+  return { kind: "eliminate", optionId: option.id, optionText: option.text };
 }

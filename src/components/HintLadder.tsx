@@ -4,8 +4,8 @@
  *   1. The nudge names what the question checks: its learning objective, in
  *      the question's language.
  *   2. The hint is `hintFor`'s (src/features/session/hints.ts): the
- *      question's authored hints, or the first wrong option shown taken away
- *      with its own rationale.
+ *      question's authored hints, or the first wrong option shown taken
+ *      away. Its rationale waits for the reveal (D-07).
  *   3. The solution reveals the answer through the same path a complete
  *      answer takes, so it locks the question. The button says what that
  *      costs before it is pressed: the question is scored as it stands and
@@ -59,15 +59,10 @@ function HintBody({ hint, lang, aside }: { hint: Hint; lang: Lang; aside?: boole
   }
 
   return (
-    <>
-      <p className="max-w-[65ch] text-[15px] font-medium leading-relaxed">
-        {aside ? null : <>{t("hints.notThis")} </>}
-        <span lang={lang}>“{hint.optionText}”</span>
-      </p>
-      <p lang={lang} className="max-w-[65ch] text-[15px] leading-relaxed text-fg-muted">
-        {hint.rationale}
-      </p>
-    </>
+    <p className="max-w-[65ch] text-[15px] font-medium leading-relaxed">
+      {aside ? null : <>{t("hints.notThis")} </>}
+      <span lang={lang}>“{hint.optionText}”</span>
+    </p>
   );
 }
 

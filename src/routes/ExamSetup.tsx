@@ -101,7 +101,7 @@ export default function ExamSetup() {
   const startSession = useSessionStore((state) => state.startSession);
   const starting = useSessionStore((state) => state.loading);
 
-  const { data, failed } = useAsyncData(loadSetup);
+  const { data, failed, reload } = useAsyncData(loadSetup);
   const [contentLang, setContentLang] = useState<Lang>(() =>
     i18n.language === "en" ? "en" : "tr",
   );
@@ -126,7 +126,7 @@ export default function ExamSetup() {
     [data, preview],
   );
 
-  if (failed) return <ErrorNotice />;
+  if (failed) return <ErrorNotice onRetry={reload} />;
   if (!data || !preview) return <Spinner />;
 
   const { cert, meta, blueprint } = data;

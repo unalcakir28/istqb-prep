@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { CitationChips } from "./CitationChips";
 import { DiscussQuestionLink } from "./DiscussQuestionLink";
 import { ReportQuestionLink } from "./ReportQuestionLink";
+import { DISCUSSIONS_ENABLED } from "@/lib/product";
 import type { Lang, Question } from "@/types/content";
 
 /**
@@ -169,7 +170,7 @@ export function RationalePanel({
             something is actually wrong. */}
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           {/* F4-06 — beside the report: both are about this question, after its key is shown. */}
-          <DiscussQuestionLink questionId={question.id} />
+          {DISCUSSIONS_ENABLED ? <DiscussQuestionLink questionId={question.id} /> : null}
           <ReportQuestionLink question={question} lang={lang} selected={selected} />
         </div>
       </div>

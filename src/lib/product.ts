@@ -21,3 +21,12 @@ export const PRODUCT_NAME = "ISTQB-PREP";
  * reviewable, exactly like the questions it is about (F2-08).
  */
 export const REPO_URL = "https://github.com/unalcakir28/istqb-prep";
+
+/**
+ * F4-06 — whether the repository has GitHub Discussions turned on. The
+ * Discuss link opens them, and a link to a feature the repository does not
+ * have is a 404 on every rationale panel. It is a repository setting, not
+ * something the build can see, so it is recorded here and turned on in the
+ * same change that confirms the setting.
+ */
+export const DISCUSSIONS_ENABLED = false;

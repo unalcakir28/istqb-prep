@@ -107,7 +107,7 @@ export default function PracticeSetup() {
   const startSession = useSessionStore((state) => state.startSession);
   const starting = useSessionStore((state) => state.loading);
 
-  const { data, failed } = useAsyncData(loadSetup);
+  const { data, failed, reload } = useAsyncData(loadSetup);
 
   const [scopeChoice, setScopeChoice] = useState<ScopeChoice>("all");
   const [selectedChapters, setSelectedChapters] = useState<number[]>([]);
@@ -139,7 +139,7 @@ export default function PracticeSetup() {
     });
   }, [data, scope]);
 
-  if (failed) return <ErrorNotice />;
+  if (failed) return <ErrorNotice onRetry={reload} />;
   if (!data) return <Spinner />;
 
   const { cert, syllabus, objectives } = data;

@@ -37,12 +37,11 @@ describe("hintFor", () => {
     });
   });
 
-  it("otherwise takes away the first wrong option in the order shown, with its rationale", () => {
+  it("otherwise takes away the first wrong option in the order shown, without its rationale (D-07)", () => {
     expect(hintFor(question(content(), content()), "en")).toEqual({
       kind: "eliminate",
       optionId: "c",
       optionText: "Option C",
-      rationale: "C describes a third thing.",
     });
   });
 
@@ -53,7 +52,6 @@ describe("hintFor", () => {
       kind: "eliminate",
       optionId: "b",
       optionText: "Option B",
-      rationale: "B describes something else.",
     });
   });
 
@@ -92,7 +90,6 @@ describe("hintIn (F3-14)", () => {
       kind: "eliminate",
       optionId: "c",
       optionText: "Şık C",
-      rationale: "C üçüncü bir şeyi anlatır.",
     });
   });
 
