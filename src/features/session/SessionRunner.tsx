@@ -555,6 +555,7 @@ export function SessionRunner({
                 key={question.id}
                 question={question}
                 lang={contentLang}
+                secondaryLang={sideBySide ? otherLang(contentLang) : undefined}
                 certId={attempt.certId}
                 level={hintLevels[question.id] ?? 0}
                 onStep={() =>

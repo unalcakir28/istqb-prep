@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { hintFor } from "./hints";
+import { hintFor, hintIn } from "./hints";
 import type { Question, QuestionContent } from "@/types/content";
 
 function content(overrides: Partial<QuestionContent> = {}): QuestionContent {
@@ -40,6 +40,7 @@ describe("hintFor", () => {
   it("otherwise takes away the first wrong option in the order shown, with its rationale", () => {
     expect(hintFor(question(content(), content()), "en")).toEqual({
       kind: "eliminate",
+      optionId: "c",
       optionText: "Option C",
       rationale: "C describes a third thing.",
     });
@@ -50,6 +51,7 @@ describe("hintFor", () => {
 
     expect(hintFor(multi, "en")).toEqual({
       kind: "eliminate",
+      optionId: "b",
       optionText: "Option B",
       rationale: "B describes something else.",
     });
@@ -66,5 +68,43 @@ describe("hintFor", () => {
 
   it("has nothing to take away when every option is correct", () => {
     expect(hintFor(question(content(), content(), ["a", "b", "c"]), "en")).toBeNull();
+  });
+});
+
+describe("hintIn (F3-14)", () => {
+  const turkish = content({
+    options: [
+      { id: "a", text: "Şık A" },
+      { id: "b", text: "Şık B" },
+      { id: "c", text: "Şık C" },
+    ],
+    rationale: {
+      summary: "A doğru.",
+      byOption: { a: "Doğru.", b: "B başka bir şeyi anlatır.", c: "C üçüncü bir şeyi anlatır." },
+    },
+  });
+
+  it("takes away the same option in the other language, whatever its position there", () => {
+    const q = question(turkish, content());
+    const english = hintFor(q, "en")!;
+
+    expect(hintIn(q, english, "tr")).toEqual({
+      kind: "eliminate",
+      optionId: "c",
+      optionText: "Şık C",
+      rationale: "C üçüncü bir şeyi anlatır.",
+    });
+  });
+
+  it("shows the other language's authored hints beside the first's", () => {
+    const q = question(content({ hints: ["X'i düşün."] }), content({ hints: ["Think about X."] }));
+
+    expect(hintIn(q, hintFor(q, "en")!, "tr")).toEqual({ kind: "authored", texts: ["X'i düşün."] });
+  });
+
+  it("shows nothing when the other language has no hint of the same kind", () => {
+    const q = question(content(), content({ hints: ["Think about X."] }));
+
+    expect(hintIn(q, hintFor(q, "en")!, "tr")).toBeNull();
   });
 });

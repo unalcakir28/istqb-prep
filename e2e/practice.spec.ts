@@ -317,3 +317,21 @@ test("with instant feedback off there is no hint ladder", async ({ page }) => {
 
   await expect(page.getByRole("region", { name: en.hints.stuck })).toHaveCount(0);
 });
+
+/**
+ * F3-14 — side by side, the ladder carries the second language the way the
+ * stem does: the objective and the hint each get the other language's text
+ * as an aside, marked with its own `lang`.
+ */
+test("side by side, the hint ladder shows the second language too", async ({ page }) => {
+  await startPractice(page, true);
+  await page.getByRole("radio", { name: en.question.showBoth }).check();
+
+  const ladder = page.getByRole("region", { name: en.hints.stuck });
+  await ladder.getByRole("button", { name: en.hints.nudge }).click();
+  await ladder.getByRole("button", { name: en.hints.hint }).click();
+
+  // Practice opens in the interface language, English here; Turkish is the aside.
+  await expect(ladder.locator('[lang="tr"]').first()).toBeVisible();
+  await expect(ladder.locator('[lang="en"]').first()).toBeVisible();
+});

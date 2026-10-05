@@ -279,6 +279,8 @@ The scope is **chosen, not fixed**. The setup screen offers:
 
 No new content is written for it: the nudge and the hint are text the product already ships and reviewed. Each step moves focus to what it added; the last needs nothing, because the shell focuses the rationale panel on a reveal. How far up the ladder a question is lives in the session screen only — a hint changes no score, and the step that does is stored as the reveal it is. A mock exam has no ladder: a hint would change what the score measures. Practice with instant feedback off has none either: nothing is revealed before the review.
 
+**Side by side (F3-14),** the ladder carries the second language the way the stem does: the objective, the authored hint, or the same option (matched by id, not position) and its rationale, each as a quieter aside under the reading language, marked with its own `lang` (`hintIn` in `features/session/hints.ts`). Where the second language has no hint of the same kind, nothing is shown for it rather than a mismatched one. The rationale panel is still in the reading language only.
+
 **Not built yet:** the "10 more from the same topic" follow-on. Re-queuing a missed question inside the same session is not planned: F2-02 starts a new practice attempt instead.
 
 ### 3.7 Study mode `/calisma`

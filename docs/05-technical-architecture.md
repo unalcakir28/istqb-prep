@@ -303,7 +303,7 @@ jobs:
 | **Accessibility** | `@axe-core/playwright` + hand-written specs | Zero violations on every main route in both themes, **plus** the failures axe cannot see: focus destinations, accessible names, live-region behaviour |
 | **Visual** | Playwright snapshot | Not set up |
 
-Counts as of 05.10.2026: **254 unit tests in 31 files**, **88 end-to-end specs across 12 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
+Counts as of 05.10.2026: **257 unit tests in 31 files**, **89 end-to-end specs across 12 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
 
 > This is a **testing certification** project. Test discipline is part of the product itself here; the README will display a test-coverage badge.
 

@@ -24,7 +24,7 @@
 import { useEffect, useId, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
-import { hintFor } from "@/features/session/hints";
+import { hintFor, hintIn, type Hint } from "@/features/session/hints";
 import { contentClient } from "@/lib/content/contentClient";
 import { useAsyncData } from "@/lib/useAsyncData";
 import type { Lang, Question } from "@/types/content";
@@ -34,6 +34,8 @@ export type HintLevel = 0 | 1 | 2;
 interface HintLadderProps {
   question: Question;
   lang: Lang;
+  /** F3-14 — the side-by-side mode's second language, shown as a quieter aside. */
+  secondaryLang?: Lang;
   /** The attempt's certification, which is also its content path. */
   certId: string;
   level: HintLevel;
@@ -41,10 +43,46 @@ interface HintLadderProps {
   onReveal: () => void;
 }
 
+/** The question card's own mark for the same text in the other language. */
+const ASIDE = "border-l-2 border-border pl-3 text-fg-muted";
+
+/** One hint in one language. The aside repeats the text, not the "Not this one:" label. */
+function HintBody({ hint, lang, aside }: { hint: Hint; lang: Lang; aside?: boolean }) {
+  const { t } = useTranslation();
+
+  if (hint.kind === "authored") {
+    return hint.texts.map((text) => (
+      <p key={text} lang={lang} className="max-w-[65ch] text-[15px] leading-relaxed">
+        {text}
+      </p>
+    ));
+  }
+
+  return (
+    <>
+      <p className="max-w-[65ch] text-[15px] font-medium leading-relaxed">
+        {aside ? null : <>{t("hints.notThis")} </>}
+        <span lang={lang}>“{hint.optionText}”</span>
+      </p>
+      <p lang={lang} className="max-w-[65ch] text-[15px] leading-relaxed text-fg-muted">
+        {hint.rationale}
+      </p>
+    </>
+  );
+}
+
 const STEP_BUTTON =
   "inline-flex min-h-11 w-fit items-center rounded-[var(--radius-btn)] border border-border bg-surface px-4 text-sm font-medium transition-colors hover:bg-surface-2";
 
-export function HintLadder({ question, lang, certId, level, onStep, onReveal }: HintLadderProps) {
+export function HintLadder({
+  question,
+  lang,
+  secondaryLang,
+  certId,
+  level,
+  onStep,
+  onReveal,
+}: HintLadderProps) {
   const { t } = useTranslation();
   const titleId = useId();
   const { data: objectives } = useAsyncData(() => contentClient.getObjectives(certId));
@@ -63,10 +101,15 @@ export function HintLadder({ question, lang, certId, level, onStep, onReveal }: 
   }, [level]);
 
   const hint = level >= 2 ? hintFor(question, lang) : null;
-  const tested = question.objectives.map((code) => ({
-    code,
-    text: objectives?.find((objective) => objective.code === code)?.text[lang] ?? null,
-  }));
+  const secondHint = hint && secondaryLang ? hintIn(question, hint, secondaryLang) : null;
+  const tested = question.objectives.map((code) => {
+    const objective = objectives?.find((item) => item.code === code);
+    return {
+      code,
+      text: objective?.text[lang] ?? null,
+      second: secondaryLang ? (objective?.text[secondaryLang] ?? null) : null,
+    };
+  });
 
   function step() {
     steppedRef.current = true;
@@ -88,15 +131,25 @@ export function HintLadder({ question, lang, certId, level, onStep, onReveal }: 
             {t("hints.nudgeLabel")}
           </h3>
           {tested.map((objective) => (
-            <p key={objective.code} className="max-w-[65ch] text-[15px] leading-relaxed">
-              <span className="font-mono text-sm text-accent">{objective.code}</span>
-              {objective.text ? (
-                <>
-                  {" "}
-                  <span lang={lang}>{objective.text}</span>
-                </>
+            <div key={objective.code} className="flex flex-col gap-1">
+              <p className="max-w-[65ch] text-[15px] leading-relaxed">
+                <span className="font-mono text-sm text-accent">{objective.code}</span>
+                {objective.text ? (
+                  <>
+                    {" "}
+                    <span lang={lang}>{objective.text}</span>
+                  </>
+                ) : null}
+              </p>
+              {objective.second ? (
+                <p
+                  lang={secondaryLang}
+                  className={`max-w-[65ch] text-[15px] leading-relaxed ${ASIDE}`}
+                >
+                  {objective.second}
+                </p>
               ) : null}
-            </p>
+            </div>
           ))}
         </div>
       ) : null}
@@ -106,22 +159,12 @@ export function HintLadder({ question, lang, certId, level, onStep, onReveal }: 
           <h3 className="text-xs font-semibold uppercase tracking-wide text-fg-muted">
             {t("hints.hintLabel")}
           </h3>
-          {hint.kind === "authored" ? (
-            hint.texts.map((text) => (
-              <p key={text} lang={lang} className="max-w-[65ch] text-[15px] leading-relaxed">
-                {text}
-              </p>
-            ))
-          ) : (
-            <>
-              <p className="max-w-[65ch] text-[15px] font-medium leading-relaxed">
-                {t("hints.notThis")} <span lang={lang}>“{hint.optionText}”</span>
-              </p>
-              <p lang={lang} className="max-w-[65ch] text-[15px] leading-relaxed text-fg-muted">
-                {hint.rationale}
-              </p>
-            </>
-          )}
+          <HintBody hint={hint} lang={lang} />
+          {secondHint && secondaryLang ? (
+            <div className={`flex flex-col gap-1 ${ASIDE}`}>
+              <HintBody hint={secondHint} lang={secondaryLang} aside />
+            </div>
+          ) : null}
         </div>
       ) : null}
 
