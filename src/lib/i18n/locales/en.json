@@ -318,6 +318,8 @@
   "common": {
     "loading": "Loading…",
     "errorTitle": "Something went wrong",
+    "offlineTitle": "Not available offline yet",
+    "offlineBody": "This content has not been opened on this device while online, so there is no copy of it here. It opens once you are back online; after that it works offline too.",
     "retry": "Try again",
     "cancel": "Cancel",
     "close": "Close",

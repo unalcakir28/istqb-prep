@@ -130,10 +130,11 @@ istqb-prep/
 │   │   ├── useDocumentTitle.ts · useArrivalFocus.ts · certification.ts
 │   │   ├── registerServiceWorker.ts  # registers build/pwa.ts's sw.js, production builds only
 │   │   ├── storage.ts · useStorageStatus.ts  # does this browser keep the data (F3-12)
+│   │   ├── useOnline.ts         # the browser's online state, for the offline notice (F3-13)
 │   ├── types/content.ts         # Data model types, hand-written against schemas/
 │   ├── test/                    # Vitest setup + shared fixtures
 │   └── styles/
-├── e2e/                         # Playwright — labels.ts, deck.ts + exam/practice/study/lists-and-glossary/repetition/my-data/storage/certification/progress/process/a11y specs
+├── e2e/                         # Playwright — labels.ts, deck.ts + exam/practice/study/lists-and-glossary/repetition/my-data/storage/offline/certification/progress/process/a11y specs
 ├── docs/
 └── .github/workflows/
     ├── ci.yml                   # lint → format → typecheck → test → validate:data → validate:i18n → build → e2e
@@ -302,7 +303,7 @@ jobs:
 | **Accessibility** | `@axe-core/playwright` + hand-written specs | Zero violations on every main route in both themes, **plus** the failures axe cannot see: focus destinations, accessible names, live-region behaviour |
 | **Visual** | Playwright snapshot | Not set up |
 
-Counts as of 05.10.2026: **253 unit tests in 31 files**, **87 end-to-end specs across 11 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
+Counts as of 05.10.2026: **253 unit tests in 31 files**, **88 end-to-end specs across 12 files** (`yarn e2e --list` is the count that does not go stale). Unit tests live beside the code they test.
 
 > This is a **testing certification** project. Test discipline is part of the product itself here; the README will display a test-coverage badge.
 

@@ -91,7 +91,7 @@ Detailed rationale and sources: [`docs/01-market-research.md`](docs/01-market-re
 | CT-AI v2.0          | ✅ Second certification: 43 lesson cards, 129 questions (3 per objective), 2-point K3 questions, a 44-point mock exam                                 |
 | SRS, glossary       | ✅ Wrong answers come back on a spaced-repetition schedule (`/tekrar`) · glossary of the picked certification's bilingual terms (97 CTFL · 156 CT-AI) |
 | Your data           | ✅ Download your progress as one file and load it in another browser — still no account (`/verilerim`)                                                |
-| Tests               | ✅ 253 unit tests (Vitest) · 87 end-to-end specs (Playwright, including axe scans of the main screens in both themes)                                 |
+| Tests               | ✅ 253 unit tests (Vitest) · 88 end-to-end specs (Playwright, including axe scans of the main screens in both themes)                                 |
 
 **Data accuracy.** The exam constants, learning objectives, and Turkish terms
 were extracted from the official ISTQB and TTB PDFs; none of it was hand-guessed.

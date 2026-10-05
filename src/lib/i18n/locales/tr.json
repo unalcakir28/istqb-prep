@@ -318,6 +318,8 @@
   "common": {
     "loading": "Yükleniyor…",
     "errorTitle": "Bir şeyler ters gitti",
+    "offlineTitle": "Henüz çevrimdışı kullanılamıyor",
+    "offlineBody": "Bu içerik bu cihazda çevrimiçiyken hiç açılmadı, bu yüzden burada bir kopyası yok. Yeniden çevrimiçi olduğunda açılır; sonrasında çevrimdışı da çalışır.",
     "retry": "Tekrar dene",
     "cancel": "Vazgeç",
     "close": "Kapat",
