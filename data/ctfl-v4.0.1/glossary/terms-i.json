@@ -1,0 +1,96 @@
+{
+  "terms": [
+    {
+      "slug": "impact-analysis",
+      "revision": 2,
+      "en": {
+        "term": "impact analysis",
+        "definition": "The identification of all work products affected by a change, including an estimate of the resources needed to accomplish the change."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/impact-analysis"
+    },
+    {
+      "slug": "incremental-development-model",
+      "revision": 2,
+      "en": {
+        "term": "incremental development model",
+        "definition": "A type of software development lifecycle model in which the component or system is developed through a series of increments."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/incremental-development-model"
+    },
+    {
+      "slug": "independence-of-testing",
+      "revision": 1,
+      "en": {
+        "term": "independence of testing",
+        "definition": "The separation of testing responsibilities from development for a test object."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/independence-of-testing"
+    },
+    {
+      "slug": "informal-review",
+      "revision": 3,
+      "en": {
+        "term": "informal review",
+        "definition": "A type of review that does not follow a defined process and has no formally documented output."
+      },
+      "tr": {
+        "term": "gayri resmi gözden geçirme"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/informal-review"
+    },
+    {
+      "slug": "inspection",
+      "revision": 3,
+      "en": {
+        "term": "inspection",
+        "definition": "A type of formal review that uses defined team roles and measurement to identify defects in a work product, and improve the review process and the software development process."
+      },
+      "tr": {
+        "term": "teftiş"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/inspection"
+    },
+    {
+      "slug": "integration-testing",
+      "revision": 2,
+      "en": {
+        "term": "integration testing",
+        "definition": "A test level that focuses on interactions between components or systems."
+      },
+      "tr": {
+        "term": "entegrasyon testi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/integration-testing"
+    },
+    {
+      "slug": "integrity",
+      "revision": 1,
+      "en": {
+        "term": "integrity",
+        "definition": "The degree to which only authorized access and modification is allowed to a component, a system or data."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/integrity"
+    },
+    {
+      "slug": "iterative-development-model",
+      "revision": 1,
+      "en": {
+        "term": "iterative development model",
+        "definition": "A type of software development lifecycle model in which the component or system is developed through a series of repeated cycles."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/iterative-development-model"
+    }
+  ]
+}

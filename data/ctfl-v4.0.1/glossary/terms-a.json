@@ -1,0 +1,120 @@
+{
+  "terms": [
+    {
+      "slug": "acceptance-criteria",
+      "revision": 3,
+      "en": {
+        "term": "acceptance criteria",
+        "definition": "The criteria that a work product must satisfy to be accepted by the stakeholders."
+      },
+      "tr": {
+        "term": "kabul kriterleri"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/acceptance-criteria"
+    },
+    {
+      "slug": "acceptance-test-driven-development",
+      "revision": 1,
+      "en": {
+        "term": "acceptance test-driven development",
+        "definition": "A collaboration-based test-first approach that defines acceptance tests in the stakeholders' domain language."
+      },
+      "tr": {
+        "term": "kabul testi güdümlü yazılım geliştirme"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/acceptance-test-driven-development"
+    },
+    {
+      "slug": "acceptance-testing",
+      "revision": 2,
+      "en": {
+        "term": "acceptance testing",
+        "definition": "A test level that focuses on determining whether to accept the system."
+      },
+      "tr": {
+        "term": "kabul testi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/acceptance-testing"
+    },
+    {
+      "slug": "actual-result",
+      "revision": 1,
+      "en": {
+        "term": "actual result",
+        "definition": "The behavior produced/observed when a component or system is tested."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/actual-result"
+    },
+    {
+      "slug": "agile-software-development",
+      "revision": 1,
+      "en": {
+        "term": "Agile software development",
+        "definition": "A group of software development lifecycle models based on iterative incremental development, where requirements and solutions evolve through collaboration between self-organizing cross-functional teams."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/agile-software-development"
+    },
+    {
+      "slug": "alpha-testing",
+      "revision": 3,
+      "en": {
+        "term": "alpha testing",
+        "definition": "A type of acceptance testing performed in the developer's test environment by roles outside the development organization."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/alpha-testing"
+    },
+    {
+      "slug": "anomaly",
+      "revision": 1,
+      "en": {
+        "term": "anomaly",
+        "definition": "A condition that deviates from expectation."
+      },
+      "tr": {
+        "term": "anomali"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/anomaly"
+    },
+    {
+      "slug": "api-testing",
+      "revision": 2,
+      "en": {
+        "term": "API testing",
+        "definition": "A test approach performed by submitting requests to a test object using its application programming interface."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/api-testing"
+    },
+    {
+      "slug": "audit",
+      "revision": 2,
+      "en": {
+        "term": "audit",
+        "definition": "An independent examination performed by a third party on a work product or process to assess whether it complies with specified criteria."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/audit"
+    },
+    {
+      "slug": "availability",
+      "revision": 2,
+      "en": {
+        "term": "availability",
+        "definition": "The degree to which a component or system is operational and accessible when required for use."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/availability"
+    }
+  ]
+}

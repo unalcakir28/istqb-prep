@@ -1,0 +1,28 @@
+{
+  "terms": [
+    {
+      "slug": "k-multisection-neuron-coverage",
+      "revision": 1,
+      "en": {
+        "term": "k-multisection neuron coverage",
+        "definition": "The coverage of sections of the output range of each neuron in a neural network, where the output range is divided into k sections."
+      },
+      "tr": {
+        "term": "k-bölümlü nöron kapsamı"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/k-multisection-neuron-coverage"
+    },
+    {
+      "slug": "keyword",
+      "revision": 1,
+      "en": {
+        "term": "keyword",
+        "definition": "A phrase that represents specific actions to be performed during test execution."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/keyword"
+    }
+  ]
+}

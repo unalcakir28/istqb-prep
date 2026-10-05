@@ -3,57 +3,166 @@
   "$id": "https://istqb-prep/schemas/meta.schema.json",
   "title": "Certification metadata",
   "type": "object",
-  "required": ["id", "name", "acronym", "syllabusVersion", "exam"],
+  "required": [
+    "id",
+    "name",
+    "acronym",
+    "syllabusVersion",
+    "exam"
+  ],
   "additionalProperties": false,
   "properties": {
-    "id": { "type": "string" },
+    "id": {
+      "type": "string"
+    },
     "name": {
       "type": "object",
-      "required": ["tr", "en"],
+      "required": [
+        "tr",
+        "en"
+      ],
       "additionalProperties": false,
-      "properties": { "tr": { "type": "string" }, "en": { "type": "string" } }
+      "properties": {
+        "tr": {
+          "type": "string"
+        },
+        "en": {
+          "type": "string"
+        }
+      }
     },
-    "acronym": { "type": "string" },
-    "stream": { "enum": ["core", "agile", "specialist"] },
-    "level": { "enum": ["foundation", "advanced", "expert", "specialist"] },
-    "syllabusVersion": { "type": "string" },
-    "syllabusReleaseDate": { "type": "string", "format": "date" },
+    "acronym": {
+      "type": "string"
+    },
+    "stream": {
+      "enum": [
+        "core",
+        "agile",
+        "specialist"
+      ]
+    },
+    "level": {
+      "enum": [
+        "foundation",
+        "advanced",
+        "expert",
+        "specialist"
+      ]
+    },
+    "syllabusVersion": {
+      "type": "string"
+    },
+    "syllabusReleaseDate": {
+      "type": "string",
+      "format": "date"
+    },
     "status": {
-      "enum": ["active", "draft", "retired"],
+      "enum": [
+        "active",
+        "draft",
+        "retired"
+      ],
       "description": "Copied into the manifest by yarn build:index. Only 'active' can be picked in the app (src/lib/certification.ts); a 'draft' certification is validated and indexed but not offered."
     },
     "exam": {
       "type": "object",
-      "required": ["questionCount", "totalPoints", "passPoints", "durationMinutes"],
+      "required": [
+        "questionCount",
+        "totalPoints",
+        "passPoints",
+        "durationMinutes"
+      ],
       "additionalProperties": false,
       "properties": {
-        "questionCount": { "type": "integer" },
-        "totalPoints": { "type": "integer" },
-        "passPoints": { "type": "integer" },
-        "passPercent": { "type": "number" },
-        "durationMinutes": { "type": "integer" },
-        "pointsPerQuestion": { "type": "integer" },
+        "questionCount": {
+          "type": "integer"
+        },
+        "totalPoints": {
+          "type": "integer"
+        },
+        "passPoints": {
+          "type": "integer"
+        },
+        "passPercent": {
+          "type": "number"
+        },
+        "durationMinutes": {
+          "type": "integer"
+        },
+        "pointsPerQuestion": {
+          "type": "integer"
+        },
         "negativeMarking": {
-          "type": ["boolean", "null"],
+          "type": [
+            "boolean",
+            "null"
+          ],
           "description": "null = not stated in official documents. Do NOT write false — do not make an unverified claim."
         },
-        "questionKLevelDistribution": { "type": "object" }
+        "questionKLevelDistribution": {
+          "type": "object"
+        }
       }
     },
-    "sources": { "type": "object" },
+    "glossaryUsedIn": {
+      "type": "object",
+      "description": "The ISTQB Glossary's own `used_in` value for this syllabus: which terms `yarn fetch:glossary` copies into glossary/.",
+      "required": [
+        "syllabus",
+        "version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "syllabus": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "sources": {
+      "type": "object",
+      "description": "Links shown on /kaynaklar, one per key. Values are URLs only: the screen renders each one as a link.",
+      "additionalProperties": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
     "officialSampleExams": {
       "type": "array",
       "description": "Where the official sample exams live on the member board's own site. Links only — their copyright notice permits attributed excerpts for non-commercial use and prohibits every other use without ISTQB's written approval, so their questions are never reproduced here (docs/08 K-1, ADR-0004).",
       "items": {
         "type": "object",
-        "required": ["set", "lang", "url", "publisher"],
+        "required": [
+          "set",
+          "lang",
+          "url",
+          "publisher"
+        ],
         "additionalProperties": false,
         "properties": {
-          "set": { "type": "string" },
-          "lang": { "enum": ["tr", "en"] },
-          "url": { "type": "string", "format": "uri" },
-          "publisher": { "type": "string" },
-          "documentVersion": { "type": "string" }
+          "set": {
+            "type": "string"
+          },
+          "lang": {
+            "enum": [
+              "tr",
+              "en"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "publisher": {
+            "type": "string"
+          },
+          "documentVersion": {
+            "type": "string"
+          }
         }
       }
     }

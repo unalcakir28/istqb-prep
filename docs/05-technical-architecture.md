@@ -79,7 +79,7 @@ istqb-prep/
 │   ├── publish-questions.ts     # review -> published, the only path that records a reviewer
 │   ├── stats.ts                 # Coverage report (questions per LO) -> docs/coverage.md
 │   ├── sync-data.ts             # data/ -> public/data/
-│   └── fetch-glossary.ts        # planned (F0-09): ISTQB Glossary API → glossary/
+│   └── fetch-glossary.ts        # ISTQB Glossary API -> data/<cert>/glossary/ (F0-09, yarn fetch:glossary)
 ├── src/
 │   ├── main.tsx
 │   ├── App.tsx                  # the route table — the source of truth for paths

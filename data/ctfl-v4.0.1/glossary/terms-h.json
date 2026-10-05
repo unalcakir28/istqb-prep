@@ -1,0 +1,14 @@
+{
+  "terms": [
+    {
+      "slug": "heuristic",
+      "revision": 1,
+      "en": {
+        "term": "heuristic",
+        "definition": "A generally recognized rule of thumb that helps to achieve a goal."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/heuristic"
+    }
+  ]
+}

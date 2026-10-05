@@ -1,0 +1,112 @@
+{
+  "terms": [
+    {
+      "slug": "pair-testing",
+      "revision": 1,
+      "en": {
+        "term": "pair testing",
+        "definition": "A test approach in which two team members simultaneously collaborate on testing a work product."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/pair-testing"
+    },
+    {
+      "slug": "passed",
+      "revision": 1,
+      "en": {
+        "term": "passed",
+        "definition": "A test result if the actual result matches the expected result."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/passed"
+    },
+    {
+      "slug": "performance-efficiency",
+      "revision": 3,
+      "en": {
+        "term": "performance efficiency",
+        "definition": "The degree to which a component or system performs its functions with efficient use of resources under specified conditions, throughput, and time."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/performance-efficiency"
+    },
+    {
+      "slug": "planning-poker",
+      "revision": 1,
+      "en": {
+        "term": "planning poker",
+        "definition": "A consensus-based estimation technique, mostly used to estimate effort or relative size of user stories in Agile software development. It is a variation of the Wideband Delphi method using a deck of cards with values representing the units in which the team estimates."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/planning-poker"
+    },
+    {
+      "slug": "portability",
+      "revision": 2,
+      "en": {
+        "term": "portability",
+        "definition": "The degree to which a component or system can be transferred from one hardware, software or other operational or usage environment to another."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/portability"
+    },
+    {
+      "slug": "postcondition",
+      "revision": 2,
+      "en": {
+        "term": "postcondition",
+        "definition": "The expected state of a test item and its test environment at the end of test execution."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/postcondition"
+    },
+    {
+      "slug": "precondition",
+      "revision": 2,
+      "en": {
+        "term": "precondition",
+        "definition": "The required state of a test item and its test environment prior to test execution."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/precondition"
+    },
+    {
+      "slug": "priority",
+      "revision": 1,
+      "en": {
+        "term": "priority",
+        "definition": "The level of importance assigned to a task according to specific criteria."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/priority"
+    },
+    {
+      "slug": "product-risk",
+      "revision": 2,
+      "en": {
+        "term": "product risk",
+        "definition": "A risk that impacts the quality of a product."
+      },
+      "tr": {
+        "term": "ürün riski"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/product-risk"
+    },
+    {
+      "slug": "project-risk",
+      "revision": 2,
+      "en": {
+        "term": "project risk",
+        "definition": "A risk that impacts project success."
+      },
+      "tr": {
+        "term": "proje riski"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/project-risk"
+    }
+  ]
+}

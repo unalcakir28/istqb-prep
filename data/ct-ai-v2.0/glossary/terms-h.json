@@ -1,0 +1,48 @@
+{
+  "terms": [
+    {
+      "slug": "human-centered-design",
+      "revision": 1,
+      "en": {
+        "term": "human-centered design",
+        "definition": "An approach to design that aims to make software products more usable by focusing on the use of the software products and applying human factors, ergonomics, and usability knowledge and techniques."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/human-centered-design"
+    },
+    {
+      "slug": "hyperparameter",
+      "revision": 1,
+      "en": {
+        "term": "hyperparameter",
+        "definition": "A parameter used to either control the training of an ML model or to set the configuration of an ML model."
+      },
+      "tr": {
+        "term": "hiperparametre"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/hyperparameter"
+    },
+    {
+      "slug": "hyperparameter-tuning",
+      "revision": 1,
+      "en": {
+        "term": "hyperparameter tuning",
+        "definition": "The activity of determining the optimal hyperparameters based on particular goals."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/hyperparameter-tuning"
+    },
+    {
+      "slug": "hypothesis-testing",
+      "revision": 1,
+      "en": {
+        "term": "hypothesis testing",
+        "definition": "The validation of a theory and its assumptions using sample data"
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/hypothesis-testing"
+    }
+  ]
+}

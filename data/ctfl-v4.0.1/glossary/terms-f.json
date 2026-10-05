@@ -1,0 +1,102 @@
+{
+  "terms": [
+    {
+      "slug": "failed",
+      "revision": 1,
+      "en": {
+        "term": "failed",
+        "definition": "A test result if the actual result does not match the expected result."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/failed"
+    },
+    {
+      "slug": "failure",
+      "revision": 3,
+      "en": {
+        "term": "failure",
+        "definition": "An event in which a component or system does not meet its requirements within specified limits during its execution."
+      },
+      "tr": {
+        "term": "arıza"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/failure"
+    },
+    {
+      "slug": "fault-attack",
+      "revision": 1,
+      "en": {
+        "term": "fault attack",
+        "definition": "A test technique to evaluate a specific quality characteristic of a test object by attempting to trigger specific failures."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/fault-attack"
+    },
+    {
+      "slug": "feature-driven-development",
+      "revision": 1,
+      "en": {
+        "term": "feature-driven development",
+        "definition": "An iterative and incremental software development process driven from a client-valued functionality (feature) perspective. Feature-driven development is mostly used in Agile software development."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/feature-driven-development"
+    },
+    {
+      "slug": "finding",
+      "revision": 1,
+      "en": {
+        "term": "finding",
+        "definition": "A result of an evaluation that identifies some important issue, problem, or opportunity."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/finding"
+    },
+    {
+      "slug": "formal-review",
+      "revision": 2,
+      "en": {
+        "term": "formal review",
+        "definition": "A review that follows a defined process with a formally documented output."
+      },
+      "tr": {
+        "term": "resmi gözden geçirme"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/formal-review"
+    },
+    {
+      "slug": "functional-appropriateness",
+      "revision": 3,
+      "en": {
+        "term": "functional appropriateness",
+        "definition": "The degree to which the functions facilitate the accomplishment of specified tasks and objectives."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/functional-appropriateness"
+    },
+    {
+      "slug": "functional-completeness",
+      "revision": 1,
+      "en": {
+        "term": "functional completeness",
+        "definition": "The degree to which the set of functions covers all the specified tasks and user objectives."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/functional-completeness"
+    },
+    {
+      "slug": "functional-correctness",
+      "revision": 2,
+      "en": {
+        "term": "functional correctness",
+        "definition": "The degree to which a component or system provides the correct results with the needed degree of precision."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/functional-correctness"
+    }
+  ]
+}

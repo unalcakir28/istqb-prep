@@ -23,13 +23,15 @@
       "K3": 4
     }
   },
+  "glossaryUsedIn": { "syllabus": "Specialist - AI Testing", "version": "v2.0" },
   "sources": {
     "syllabusEn": "https://istqb.org/?sdm_process_download=1&download_id=9558",
     "certificationPage": "https://istqb.org/certifications/certified-tester-ai-testing-ct-ai/",
     "examRules": "https://istqb.org/?sdm_process_download=1&download_id=3829",
     "examTables": "https://istqb.org/?sdm_process_download=1&download_id=3832",
     "ttbSyllabusPage": "https://www.turkishtestingboard.org/sertifikali-test-uzmani-yapay-zeka-testi-ct-ai-mufredati-v2-0-ingilizce/",
-    "ttbTerminologyV1Tr": "https://www.turkishtestingboard.org/files/ISTQB-CT-AI-Syllabus-v1-TR.pdf"
+    "ttbTerminologyV1Tr": "https://www.turkishtestingboard.org/files/ISTQB-CT-AI-Syllabus-v1-TR.pdf",
+    "glossaryApi": "https://api.glossary.istqb.org/v1/terms"
   },
   "officialSampleExams": [
     {

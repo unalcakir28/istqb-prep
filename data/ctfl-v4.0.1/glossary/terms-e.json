@@ -1,0 +1,162 @@
+{
+  "terms": [
+    {
+      "slug": "each-choice-coverage",
+      "revision": 2,
+      "en": {
+        "term": "each choice coverage",
+        "definition": "The coverage of equivalence partitions in multiple sets of partitions."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/each-choice-coverage"
+    },
+    {
+      "slug": "effectiveness",
+      "revision": 2,
+      "en": {
+        "term": "effectiveness",
+        "definition": "The extent to which correct and complete goals are achieved."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/effectiveness"
+    },
+    {
+      "slug": "efficiency",
+      "revision": 3,
+      "en": {
+        "term": "efficiency",
+        "definition": "The degree to which resources are expended in relation to results achieved."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/efficiency"
+    },
+    {
+      "slug": "entry-criteria",
+      "revision": 2,
+      "en": {
+        "term": "entry criteria",
+        "definition": "The set of conditions for officially starting a defined task."
+      },
+      "tr": {
+        "term": "giriş kriterleri"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/entry-criteria"
+    },
+    {
+      "slug": "equivalence-partition",
+      "revision": 4,
+      "en": {
+        "term": "equivalence partition",
+        "definition": "A subset of a value domain for which a component or system is expected to treat all values the same based on the specification."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/equivalence-partition"
+    },
+    {
+      "slug": "equivalence-partitioning",
+      "revision": 3,
+      "en": {
+        "term": "equivalence partitioning",
+        "definition": "A black-box test technique in which test conditions are equivalence partitions exercised by one representative member of each partition."
+      },
+      "tr": {
+        "term": "denklik paylarına ayırma"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/equivalence-partitioning"
+    },
+    {
+      "slug": "error",
+      "revision": 1,
+      "en": {
+        "term": "error",
+        "definition": "A human action that results in a defect."
+      },
+      "tr": {
+        "term": "insan hatası"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/error"
+    },
+    {
+      "slug": "error-guessing",
+      "revision": 3,
+      "en": {
+        "term": "error guessing",
+        "definition": "A test technique in which the tests conditions are based on the tester's knowledge of past failures or failure modes."
+      },
+      "tr": {
+        "term": "hata tahminleme"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/error-guessing"
+    },
+    {
+      "slug": "exhaustive-testing",
+      "revision": 1,
+      "en": {
+        "term": "exhaustive testing",
+        "definition": "A test approach in which the test suite comprises all combinations of input values and preconditions."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/exhaustive-testing"
+    },
+    {
+      "slug": "exit-criteria",
+      "revision": 2,
+      "en": {
+        "term": "exit criteria",
+        "definition": "The set of conditions for officially completing a defined task."
+      },
+      "tr": {
+        "term": "çıkış kriterleri"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/exit-criteria"
+    },
+    {
+      "slug": "expected-result",
+      "revision": 2,
+      "en": {
+        "term": "expected result",
+        "definition": "The observable predicted behavior of a test item under specified conditions based on its test basis."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/expected-result"
+    },
+    {
+      "slug": "experience-based-test-technique",
+      "revision": 4,
+      "en": {
+        "term": "experience-based test technique",
+        "definition": "A test technique based on the tester's experience, knowledge and intuition."
+      },
+      "tr": {
+        "term": "tecrübeye dayalı test tekniği"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/experience-based-test-technique"
+    },
+    {
+      "slug": "exploratory-testing",
+      "revision": 4,
+      "en": {
+        "term": "exploratory testing",
+        "definition": "A test approach in which tests are dynamically designed and executed based on tester's knowledge, exploration of a test item, and previous test results."
+      },
+      "tr": {
+        "term": "keşif testi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/exploratory-testing"
+    }
+  ]
+}

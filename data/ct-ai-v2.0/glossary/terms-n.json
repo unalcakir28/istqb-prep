@@ -1,0 +1,110 @@
+{
+  "terms": [
+    {
+      "slug": "narrow-ai",
+      "revision": 1,
+      "en": {
+        "term": "narrow AI",
+        "definition": "AI focused on a single well-defined task to address a specific problem."
+      },
+      "tr": {
+        "term": "dar yapay zekâ"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/narrow-ai"
+    },
+    {
+      "slug": "neural-network",
+      "revision": 1,
+      "en": {
+        "term": "neural network",
+        "definition": "A network of primitive processing elements connected by weighted links with adjustable weights, in which each element produces a value by applying a nonlinear function to its input values, and transmits it to other elements or presents it as an output value."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/neural-network"
+    },
+    {
+      "slug": "neuromorphic-processor",
+      "revision": 1,
+      "en": {
+        "term": "neuromorphic processor",
+        "definition": "An integrated circuit designed to mimic the biological neurons of the human brain."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/neuromorphic-processor"
+    },
+    {
+      "slug": "neuron",
+      "revision": 1,
+      "en": {
+        "term": "neuron",
+        "definition": "A node in a neural network, usually receiving multiple input values and generating an activation value."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/neuron"
+    },
+    {
+      "slug": "neuron-boundary-coverage",
+      "revision": 1,
+      "en": {
+        "term": "neuron boundary coverage",
+        "definition": "The coverage of neurons in a neural network where their output either exceeds the maximum achieved in training, or is less than the minimum achieved in training."
+      },
+      "tr": {
+        "term": "nöron sınır kapsamı"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/neuron-boundary-coverage"
+    },
+    {
+      "slug": "neuron-coverage",
+      "revision": 2,
+      "en": {
+        "term": "neuron coverage",
+        "definition": "The coverage of neurons in a neural network where their output exceeds a specified threshold."
+      },
+      "tr": {
+        "term": "nöron kapsamı"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/neuron-coverage"
+    },
+    {
+      "slug": "noise",
+      "revision": 1,
+      "en": {
+        "term": "noise",
+        "definition": "A distortion or corruption in data."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/noise"
+    },
+    {
+      "slug": "non-determinism",
+      "revision": 1,
+      "en": {
+        "term": "non-determinism",
+        "definition": "A property of a system or process in which an outcome is not uniquely determined by its initial conditions."
+      },
+      "tr": {
+        "term": "deterministik olmama"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/non-determinism"
+    },
+    {
+      "slug": "non-functional-testing",
+      "revision": 3,
+      "en": {
+        "term": "non-functional testing",
+        "definition": "A test type to evaluate that a component or system complies with non-functional requirements."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/non-functional-testing"
+    }
+  ]
+}

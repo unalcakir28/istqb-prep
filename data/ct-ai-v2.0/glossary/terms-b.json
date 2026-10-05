@@ -1,0 +1,78 @@
+{
+  "terms": [
+    {
+      "slug": "back-to-back-testing",
+      "revision": 2,
+      "en": {
+        "term": "back-to-back testing",
+        "definition": "A test approach in which a pseudo-oracle is used."
+      },
+      "tr": {
+        "term": "sırt sırta test"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/back-to-back-testing"
+    },
+    {
+      "slug": "bayesian-model",
+      "revision": 1,
+      "en": {
+        "term": "Bayesian model",
+        "definition": "A statistical model that uses probability to represent the uncertainty of both model inputs and outputs."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/bayesian-model"
+    },
+    {
+      "slug": "big-data",
+      "revision": 1,
+      "en": {
+        "term": "big data",
+        "definition": "Extensive datasets whose characteristics in terms of volume, variety, velocity and/or variability require specialized technologies and techniques to process."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/big-data"
+    },
+    {
+      "slug": "black-box-testing",
+      "revision": 3,
+      "en": {
+        "term": "black-box testing",
+        "definition": "A test approach based on the specification of a component or system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/black-box-testing"
+    },
+    {
+      "slug": "bootstrap-technique",
+      "revision": 1,
+      "en": {
+        "term": "bootstrap technique",
+        "definition": "A resampling technique that repeatedly draws samples with replacement from a training dataset to estimate the ML functional performance criteria of an ML model."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/bootstrap-technique"
+    },
+    {
+      "slug": "boundary-value-analysis",
+      "revision": 3,
+      "en": {
+        "term": "boundary value analysis",
+        "definition": "A black-box test technique in which the test conditions are boundary values."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/boundary-value-analysis"
+    },
+    {
+      "slug": "branch",
+      "revision": 2,
+      "en": {
+        "term": "branch",
+        "definition": "A transfer of control between two consecutive nodes in the control flow graph of a test item."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/branch"
+    }
+  ]
+}

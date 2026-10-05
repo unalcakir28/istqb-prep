@@ -1,0 +1,82 @@
+{
+  "terms": [
+    {
+      "slug": "behavior-driven-development",
+      "revision": 1,
+      "en": {
+        "term": "behavior-driven development",
+        "definition": "A collaborative approach to development in which the team is focusing on delivering expected behavior of a component or system for the customer, which forms the basis for testing."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/behavior-driven-development"
+    },
+    {
+      "slug": "beta-testing",
+      "revision": 3,
+      "en": {
+        "term": "beta testing",
+        "definition": "A type of acceptance testing performed at an external site to the developer's test environment by roles outside the development organization."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/beta-testing"
+    },
+    {
+      "slug": "black-box-test-technique",
+      "revision": 3,
+      "en": {
+        "term": "black-box test technique",
+        "definition": "A test technique based on the specification of a component or system."
+      },
+      "tr": {
+        "term": "kara kutu test tekniği"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/black-box-test-technique"
+    },
+    {
+      "slug": "boundary-value",
+      "revision": 2,
+      "en": {
+        "term": "boundary value",
+        "definition": "A minimum or maximum value of an ordered equivalence partition."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/boundary-value"
+    },
+    {
+      "slug": "branch",
+      "revision": 2,
+      "en": {
+        "term": "branch",
+        "definition": "A transfer of control between two consecutive nodes in the control flow graph of a test item."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/branch"
+    },
+    {
+      "slug": "branch-coverage",
+      "revision": 2,
+      "en": {
+        "term": "branch coverage",
+        "definition": "The coverage of branches in a control flow graph."
+      },
+      "tr": {
+        "term": "dal kapsamı"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/branch-coverage"
+    },
+    {
+      "slug": "branch-testing",
+      "revision": 1,
+      "en": {
+        "term": "branch testing",
+        "definition": "A white-box test technique in which the test conditions are branches."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/branch-testing"
+    }
+  ]
+}

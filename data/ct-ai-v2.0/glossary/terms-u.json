@@ -1,0 +1,72 @@
+{
+  "terms": [
+    {
+      "slug": "underfitting",
+      "revision": 1,
+      "en": {
+        "term": "underfitting  ",
+        "definition": "The generation of an ML model that does not reflect the underlying trend of the training dataset, resulting in a model that makes inaccurate predictions."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/underfitting"
+    },
+    {
+      "slug": "unsupervised-learning",
+      "revision": 1,
+      "en": {
+        "term": "unsupervised learning",
+        "definition": "An approach to training an ML model by using an unlabeled dataset."
+      },
+      "tr": {
+        "term": "denetimsiz öğrenme"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/unsupervised-learning"
+    },
+    {
+      "slug": "usability",
+      "revision": 3,
+      "en": {
+        "term": "usability",
+        "definition": "The degree to which a component or system can be used by specified users to achieve specified goals in a specified context of use."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/usability"
+    },
+    {
+      "slug": "usability-testing",
+      "revision": 2,
+      "en": {
+        "term": "usability testing",
+        "definition": "Testing to evaluate the degree to which the system can be used by specified users with effectiveness, efficiency and satisfaction in a specified context of use."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/usability-testing"
+    },
+    {
+      "slug": "user-controllability",
+      "revision": 1,
+      "en": {
+        "term": "user controllability",
+        "definition": "The degree to which a user can intervene in a system’s functioning in a timely manner."
+      },
+      "tr": {
+        "term": "kullanıcı kontrol edilebilirliği"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/user-controllability"
+    },
+    {
+      "slug": "user-interface",
+      "revision": 1,
+      "en": {
+        "term": "user interface",
+        "definition": "All components of a system that provide information and controls for the user to accomplish specific tasks with the system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/user-interface"
+    }
+  ]
+}

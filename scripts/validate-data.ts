@@ -1126,7 +1126,7 @@ function checkIndexConsistency(
 // ---------------------------------------------------------------------------
 
 function validateGlossaryDir(glossaryDir: string): void {
-  if (!fs.existsSync(glossaryDir)) return; // not built yet (F0-09) — nothing to validate
+  if (!fs.existsSync(glossaryDir)) return; // a certification without a glossary — nothing to validate
 
   const indexPath = path.join(glossaryDir, "index.json");
   const indexFile = toRel(indexPath);

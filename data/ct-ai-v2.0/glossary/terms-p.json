@@ -1,0 +1,140 @@
+{
+  "terms": [
+    {
+      "slug": "passed",
+      "revision": 1,
+      "en": {
+        "term": "passed",
+        "definition": "A test result if the actual result matches the expected result."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/passed"
+    },
+    {
+      "slug": "perceptron",
+      "revision": 1,
+      "en": {
+        "term": "perceptron",
+        "definition": "A neural network with just one layer and one neuron."
+      },
+      "tr": {
+        "term": "perseptron"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/perceptron"
+    },
+    {
+      "slug": "performance-efficiency",
+      "revision": 3,
+      "en": {
+        "term": "performance efficiency",
+        "definition": "The degree to which a component or system performs its functions with efficient use of resources under specified conditions, throughput, and time."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/performance-efficiency"
+    },
+    {
+      "slug": "performance-testing",
+      "revision": 2,
+      "en": {
+        "term": "performance testing",
+        "definition": "A test type to determine the performance efficiency of a component or system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/performance-testing"
+    },
+    {
+      "slug": "phishing",
+      "revision": 1,
+      "en": {
+        "term": "phishing",
+        "definition": "An attempt to acquire personal or sensitive information by masquerading as a trustworthy entity in an electronic communication."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/phishing"
+    },
+    {
+      "slug": "precision",
+      "revision": 1,
+      "en": {
+        "term": "precision",
+        "definition": "An ML functional performance metric used to evaluate a classifier, which measures the proportion of predicted positives that were correct."
+      },
+      "tr": {
+        "term": "hassasiyet"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/precision"
+    },
+    {
+      "slug": "precondition",
+      "revision": 2,
+      "en": {
+        "term": "precondition",
+        "definition": "The required state of a test item and its test environment prior to test execution."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/precondition"
+    },
+    {
+      "slug": "pretrained-model",
+      "revision": 1,
+      "en": {
+        "term": "pretrained model",
+        "definition": "An ML model that has already been trained on a large, general purpose dataset and can be reused or fine-tuned for specific tasks."
+      },
+      "tr": {
+        "term": "önceden eğitilmiş model"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/pretrained-model"
+    },
+    {
+      "slug": "probabilistic",
+      "revision": 1,
+      "en": {
+        "term": "probabilistic",
+        "definition": "Behavior described in terms of probabilities, where outcomes are uncertain and described by likelihoods rather than certainty."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/probabilistic"
+    },
+    {
+      "slug": "product-risk",
+      "revision": 2,
+      "en": {
+        "term": "product risk",
+        "definition": "A risk that impacts the quality of a product."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/product-risk"
+    },
+    {
+      "slug": "project-risk",
+      "revision": 2,
+      "en": {
+        "term": "project risk",
+        "definition": "A risk that impacts project success."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/project-risk"
+    },
+    {
+      "slug": "pseudo-oracle",
+      "revision": 1,
+      "en": {
+        "term": "pseudo-oracle",
+        "definition": "An independently derived variant of the test item used to generate results, which are compared with the results of the original test item based on the same test inputs."
+      },
+      "tr": {
+        "term": "sözde test doğrulayıcı"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/pseudo-oracle"
+    }
+  ]
+}

@@ -65,6 +65,8 @@ export interface CertMeta {
     negativeMarking: boolean | null;
     questionKLevelDistribution: Record<KLevel, number>;
   };
+  /** Which ISTQB Glossary terms `yarn fetch:glossary` copies for this syllabus. */
+  glossaryUsedIn?: { syllabus: string; version: string };
   sources: Record<string, string>;
   /**
    * Where the official sample exams live on the member board's own site.

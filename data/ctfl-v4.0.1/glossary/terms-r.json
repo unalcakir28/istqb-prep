@@ -1,0 +1,276 @@
+{
+  "terms": [
+    {
+      "slug": "regression-testing",
+      "revision": 3,
+      "en": {
+        "term": "regression testing",
+        "definition": "A type of change-related testing to detect whether defects have been introduced or uncovered in unchanged areas of the software."
+      },
+      "tr": {
+        "term": "regresyon testi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/regression-testing"
+    },
+    {
+      "slug": "regulatory-acceptance-testing",
+      "revision": 3,
+      "en": {
+        "term": "regulatory acceptance testing",
+        "definition": "A type of acceptance testing performed to determine the compliance of a test object."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/regulatory-acceptance-testing"
+    },
+    {
+      "slug": "reliability",
+      "revision": 2,
+      "en": {
+        "term": "reliability",
+        "definition": "The degree to which a component or system performs specified functions under specified conditions for a specified period of time."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/reliability"
+    },
+    {
+      "slug": "requirement",
+      "revision": 2,
+      "en": {
+        "term": "requirement",
+        "definition": "A provision that contains criteria to be fulfilled."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/requirement"
+    },
+    {
+      "slug": "retrospective",
+      "revision": 2,
+      "en": {
+        "term": "retrospective",
+        "definition": "A regular event in which team members discuss results, review their practices, and identify ways to improve."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/retrospective"
+    },
+    {
+      "slug": "review",
+      "revision": 4,
+      "en": {
+        "term": "review",
+        "definition": "A type of static testing in which the quality of a work product or process is evaluated by individuals."
+      },
+      "tr": {
+        "term": "gözden geçirme"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/review"
+    },
+    {
+      "slug": "reviewer",
+      "revision": 2,
+      "en": {
+        "term": "reviewer",
+        "definition": "A participant in a review who identifies defects in the work product."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/reviewer"
+    },
+    {
+      "slug": "risk",
+      "revision": 1,
+      "en": {
+        "term": "risk",
+        "definition": "A factor that could result in future negative consequences."
+      },
+      "tr": {
+        "term": "risk"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk"
+    },
+    {
+      "slug": "risk-analysis",
+      "revision": 2,
+      "en": {
+        "term": "risk analysis",
+        "definition": "The overall process of risk identification and risk assessment."
+      },
+      "tr": {
+        "term": "risk analizi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk-analysis"
+    },
+    {
+      "slug": "risk-assessment",
+      "revision": 2,
+      "en": {
+        "term": "risk assessment",
+        "definition": "The process to examine identified risks and determine the risk level."
+      },
+      "tr": {
+        "term": "risk değerlendirmesi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk-assessment"
+    },
+    {
+      "slug": "risk-based-testing",
+      "revision": 3,
+      "en": {
+        "term": "risk-based testing",
+        "definition": "A test approach in which the management, selection, prioritization, and use of test activities and resources are based on corresponding risk types and risk levels."
+      },
+      "tr": {
+        "term": "risk bazlı test"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk-based-testing"
+    },
+    {
+      "slug": "risk-control",
+      "revision": 1,
+      "en": {
+        "term": "risk control",
+        "definition": "The overall process of risk mitigation and risk monitoring."
+      },
+      "tr": {
+        "term": "risk kontrolü"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk-control"
+    },
+    {
+      "slug": "risk-identification",
+      "revision": 2,
+      "en": {
+        "term": "risk identification",
+        "definition": "The process of finding, recognizing and describing risks."
+      },
+      "tr": {
+        "term": "risk belirleme"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk-identification"
+    },
+    {
+      "slug": "risk-impact",
+      "revision": 1,
+      "en": {
+        "term": "risk impact",
+        "definition": "The damage that will be caused if a risk becomes an actual outcome or event."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk-impact"
+    },
+    {
+      "slug": "risk-level",
+      "revision": 2,
+      "en": {
+        "term": "risk level",
+        "definition": "The measure of a risk defined by risk impact and risk likelihood."
+      },
+      "tr": {
+        "term": "risk seviyesi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk-level"
+    },
+    {
+      "slug": "risk-likelihood",
+      "revision": 1,
+      "en": {
+        "term": "risk likelihood",
+        "definition": "The probability that a risk will become an actual outcome or event."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk-likelihood"
+    },
+    {
+      "slug": "risk-management",
+      "revision": 3,
+      "en": {
+        "term": "risk management",
+        "definition": "The process for handling risks."
+      },
+      "tr": {
+        "term": "risk yönetimi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk-management"
+    },
+    {
+      "slug": "risk-mitigation",
+      "revision": 2,
+      "en": {
+        "term": "risk mitigation",
+        "definition": "The process through which decisions are reached and protective measures are implemented for reducing or maintaining risks to specified levels."
+      },
+      "tr": {
+        "term": "risk azaltma"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk-mitigation"
+    },
+    {
+      "slug": "risk-monitoring",
+      "revision": 1,
+      "en": {
+        "term": "risk monitoring",
+        "definition": "The activity that checks and reports the status of known risks to stakeholders."
+      },
+      "tr": {
+        "term": "risk gözetimi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk-monitoring"
+    },
+    {
+      "slug": "risk-register",
+      "revision": 1,
+      "en": {
+        "term": "risk register",
+        "definition": "The documentation used in project management and governance to assess, prioritize, and track identified risks."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk-register"
+    },
+    {
+      "slug": "root-cause",
+      "revision": 1,
+      "en": {
+        "term": "root cause",
+        "definition": "A source of a defect such that if it is removed, the occurrence of the defect type is decreased or removed."
+      },
+      "tr": {
+        "term": "kök neden"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/root-cause"
+    },
+    {
+      "slug": "root-cause-analysis",
+      "revision": 2,
+      "en": {
+        "term": "root cause analysis",
+        "definition": "A process used to identify the root cause of a defect."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/root-cause-analysis"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "terms": [
+    {
+      "slug": "quality",
+      "revision": 4,
+      "en": {
+        "term": "quality",
+        "definition": "The degree to which a work product satisfies stated and implied requirements."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/quality"
+    },
+    {
+      "slug": "quality-assurance",
+      "revision": 2,
+      "en": {
+        "term": "quality assurance",
+        "definition": "Activities focused on providing confidence that quality requirements will be fulfilled."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/quality-assurance"
+    },
+    {
+      "slug": "quality-characteristic",
+      "revision": 3,
+      "en": {
+        "term": "quality characteristic",
+        "definition": "A category of quality attributes that bears on work product quality."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/quality-characteristic"
+    },
+    {
+      "slug": "quality-measure",
+      "revision": 1,
+      "en": {
+        "term": "quality measure",
+        "definition": "A group of preventive, detective or corrective activities to achieve a required quality level."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/quality-measure"
+    }
+  ]
+}

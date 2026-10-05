@@ -1,0 +1,168 @@
+{
+  "terms": [
+    {
+      "slug": "edge-ai",
+      "revision": 1,
+      "en": {
+        "term": "edge AI",
+        "definition": "The deployment of AI models on local edge devices, enabling real-time processing near the source of data without relying on cloud-based systems."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/edge-ai"
+    },
+    {
+      "slug": "edge-case",
+      "revision": 1,
+      "en": {
+        "term": "edge case",
+        "definition": "A test condition which is within the defined operational limits of a component or system but is uncommon, extreme, or atypical."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/edge-case"
+    },
+    {
+      "slug": "edge-computing",
+      "revision": 1,
+      "en": {
+        "term": "edge computing",
+        "definition": "The part of a distributed architecture in which information processing is performed close to where that information is used."
+      },
+      "tr": {
+        "term": "uç bilişim"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/edge-computing"
+    },
+    {
+      "slug": "effectiveness",
+      "revision": 2,
+      "en": {
+        "term": "effectiveness",
+        "definition": "The extent to which correct and complete goals are achieved."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/effectiveness"
+    },
+    {
+      "slug": "efficiency",
+      "revision": 3,
+      "en": {
+        "term": "efficiency",
+        "definition": "The degree to which resources are expended in relation to results achieved."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/efficiency"
+    },
+    {
+      "slug": "epoch",
+      "revision": 1,
+      "en": {
+        "term": "epoch",
+        "definition": "An iteration of ML training on the whole training dataset."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/epoch"
+    },
+    {
+      "slug": "error",
+      "revision": 1,
+      "en": {
+        "term": "error",
+        "definition": "A human action that results in a defect."
+      },
+      "tr": {
+        "term": "insan hatası"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/error"
+    },
+    {
+      "slug": "ethical-system-testing",
+      "revision": 1,
+      "en": {
+        "term": "ethical system testing",
+        "definition": "A test type that evaluates a system's design, interface, and potential societal and legal impacts against established ethical principles."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ethical-system-testing"
+    },
+    {
+      "slug": "expected-result",
+      "revision": 2,
+      "en": {
+        "term": "expected result",
+        "definition": "The observable predicted behavior of a test item under specified conditions based on its test basis."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/expected-result"
+    },
+    {
+      "slug": "expert-system",
+      "revision": 1,
+      "en": {
+        "term": "expert system",
+        "definition": "An AI-based system for solving problems in a particular domain or application area by drawing inferences from a knowledge base developed from human expertise."
+      },
+      "tr": {
+        "term": "uzman sistem"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/expert-system"
+    },
+    {
+      "slug": "explainability",
+      "revision": 1,
+      "en": {
+        "term": "explainability",
+        "definition": "The degree to which results from an AI-based system can be explained."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/explainability"
+    },
+    {
+      "slug": "explainable-ai",
+      "revision": 1,
+      "en": {
+        "term": "explainable AI",
+        "definition": "The field of study related to understanding the factors that influence AI system outputs."
+      },
+      "tr": {
+        "term": "açıklanabilir yapay zekâ"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/explainable-ai"
+    },
+    {
+      "slug": "exploratory-data-analysis",
+      "revision": 1,
+      "en": {
+        "term": "exploratory data analysis",
+        "definition": "An interactive, visual, and hypothesis-driven process to summarize, explore, and understand the main characteristics and patterns of data."
+      },
+      "tr": {
+        "term": "keşifsel veri analizi"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/exploratory-data-analysis"
+    },
+    {
+      "slug": "exploratory-testing",
+      "revision": 4,
+      "en": {
+        "term": "exploratory testing",
+        "definition": "A test approach in which tests are dynamically designed and executed based on tester's knowledge, exploration of a test item, and previous test results."
+      },
+      "tr": {
+        "term": "keşif testi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/exploratory-testing"
+    }
+  ]
+}

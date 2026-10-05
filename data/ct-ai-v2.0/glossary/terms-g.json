@@ -1,0 +1,56 @@
+{
+  "terms": [
+    {
+      "slug": "general-ai",
+      "revision": 1,
+      "en": {
+        "term": "general AI",
+        "definition": "A type of AI that can match human cognitive abilities across most intellectual tasks."
+      },
+      "tr": {
+        "term": "genel yapay zekâ"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/general-ai"
+    },
+    {
+      "slug": "generative-ai",
+      "revision": 1,
+      "en": {
+        "term": "generative AI",
+        "definition": "A type of AI that uses ML to generate new content that resembles human-created content."
+      },
+      "tr": {
+        "term": "üretken yapay zekâ"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/generative-ai"
+    },
+    {
+      "slug": "graphics-processing-unit",
+      "revision": 1,
+      "en": {
+        "term": "graphics processing unit",
+        "definition": "An application-specific integrated circuit designed to manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/graphics-processing-unit"
+    },
+    {
+      "slug": "ground-truth",
+      "revision": 1,
+      "en": {
+        "term": "ground truth",
+        "definition": "The information provided by direct observation and measurement that is known to be real or true."
+      },
+      "tr": {
+        "term": "gerçek değer"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ground-truth"
+    }
+  ]
+}

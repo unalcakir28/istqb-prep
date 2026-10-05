@@ -20,6 +20,7 @@
     "negativeMarking": null,
     "questionKLevelDistribution": { "K1": 8, "K2": 24, "K3": 8 }
   },
+  "glossaryUsedIn": { "syllabus": "Foundation", "version": "v4.0" },
   "sources": {
     "syllabusEn": "https://istqb.org/?sdm_process_download=1&download_id=3345",
     "syllabusTr": "https://www.turkishtestingboard.org/files/pdfs/ISTQB_CTFL_Syllabus-v4.0.1.pdf",

@@ -233,6 +233,7 @@ Verified:
 ### Turkish status
 
 - ⚠️ **No Turkish term translation found** in the ISTQB online glossary. There is a UI translation (`https://api.glossary.istqb.org/assets/translations/tr_TR.json`), but the Turkish version of the term definitions is not in the API. (Since it's an SPA, language-selector behavior could not be tested — not conclusive.)
+  Seen 05.10.2026: the per-term endpoint `https://api.glossary.istqb.org/v1/terms/<slug>` lists a `tr_TR` entry among each term's `languages` (checked for `test-case`). What it holds, and under which notice, was not checked; `yarn fetch:glossary` does not read it.
 - **TTB has its own separate Turkish glossary:** *"ISTQB® Yazılım Testi Terimler Sözlüğü"* [ISTQB® Software Testing Glossary of Terms] (564 terms)
   https://www.turkishtestingboard.org/yazilim-testi-terimler-sozlugu-glossary/
 - ⚠️ **This glossary is based on ISTQB Standard Glossary v3.7 — not compatible with CTFL v4.0.** v4.0 changed many terms (*artifacts → work products*, *performance → performance efficiency*, *test documentation → testware*).
@@ -246,7 +247,7 @@ Verified:
 The following items must **not be asserted** in the product:
 
 1. **Negative marking** — not mentioned in any official document; can't be said to exist, can't be said not to.
-2. ~~**The ISTQB Glossary's CC BY 4.0 license**~~ — **verified 22.09.2026** and removed from this list. The footer of the rendered page (`glossary.istqb.org/en_US/search`, glossary V4.8.1) reads *"Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license"*, linking to creativecommons.org. Screenshot: `docs/evidence/istqb-glossary-licence-2026-09-22.png`. Two caveats carried forward: the live glossary is **V4.8.1**, not the syllabus's v4.0.1, so a copied definition cites the glossary's own version; and *"except where otherwise noted"* makes the notice a default that a page can override, so each page is checked on its own.
+2. ~~**The ISTQB Glossary's CC BY 4.0 license**~~ — **verified 22.09.2026** and removed from this list. The footer of the rendered page (`glossary.istqb.org/en_US/search`, glossary V4.8.1) reads *"Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license"*, linking to creativecommons.org. Screenshot: `docs/evidence/istqb-glossary-licence-2026-09-22.png`. Two caveats carried forward: the live glossary is **V4.8.1**, not the syllabus's v4.0.1, and the API does not report the release, so the copied data records each term's `revision` and the index records `fetchedAt` (docs/08 §5); and *"except where otherwise noted"* makes the notice a default that a page can override, so each page is checked on its own.
 3. **Turkish term translation in the Glossary** — not found in the API.
 4. **Direct PDF addresses for TTB Turkish sample exams B/C/D.**
 5. **Expert Level exam parameters.**

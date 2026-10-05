@@ -1,0 +1,308 @@
+{
+  "terms": [
+    {
+      "slug": "dashboard",
+      "revision": 1,
+      "en": {
+        "term": "dashboard",
+        "definition": "A representation of dynamic measurements of operational performance for some organization or activity, using metrics represented via metaphors such as  visual dials, counters, and other devices resembling those on the dashboard of an automobile, so that the effects of events or activities can be easily understood and related to operational goals."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/dashboard"
+    },
+    {
+      "slug": "data-accuracy",
+      "revision": 1,
+      "en": {
+        "term": "data accuracy",
+        "definition": "The degree to which data correctly represents the real-world values it is intended to model."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/data-accuracy"
+    },
+    {
+      "slug": "data-acquisition",
+      "revision": 1,
+      "en": {
+        "term": "data acquisition",
+        "definition": "The activity of acquiring data relevant to the business problem to be solved by an ML model."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/data-acquisition"
+    },
+    {
+      "slug": "data-bias",
+      "revision": 1,
+      "en": {
+        "term": "data bias",
+        "definition": "A systematic error caused by inaccurate, incomplete, or unrepresentative training data that leads to unfair outcomes in ML models."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/data-bias"
+    },
+    {
+      "slug": "data-drift",
+      "revision": 1,
+      "en": {
+        "term": "data drift",
+        "definition": "A change in the distribution of input data over time that negatively impacts the ML functional performance of an operational ML model."
+      },
+      "tr": {
+        "term": "veri kayması"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/data-drift"
+    },
+    {
+      "slug": "data-pipeline",
+      "revision": 1,
+      "en": {
+        "term": "data pipeline",
+        "definition": "The implementation of data preparation activities to provide input data to support training by an ML algorithm or prediction by an ML model."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/data-pipeline"
+    },
+    {
+      "slug": "data-pipeline-testing",
+      "revision": 1,
+      "en": {
+        "term": "data pipeline testing",
+        "definition": "A test type that covers the training and operational data pipelines of a machine learning system."
+      },
+      "tr": {
+        "term": "veri hattı testi"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/data-pipeline-testing"
+    },
+    {
+      "slug": "data-point",
+      "revision": 1,
+      "en": {
+        "term": "data point",
+        "definition": "A set of one or more measurements comprising a single observation used as part of a dataset."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/data-point"
+    },
+    {
+      "slug": "data-preparation",
+      "revision": 1,
+      "en": {
+        "term": "data preparation",
+        "definition": "The activities of data acquisition, data preprocessing and feature engineering in the ML workflow."
+      },
+      "tr": {
+        "term": "veri hazırlığı"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/data-preparation"
+    },
+    {
+      "slug": "data-preprocessing",
+      "revision": 1,
+      "en": {
+        "term": "data preprocessing",
+        "definition": "The activities of data cleaning, data transformation, data augmentation, and data sampling in the ML workflow."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/data-preprocessing"
+    },
+    {
+      "slug": "data-privacy",
+      "revision": 1,
+      "en": {
+        "term": "data privacy",
+        "definition": "The protection of personally identifiable information or otherwise sensitive information from undesired disclosure."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/data-privacy"
+    },
+    {
+      "slug": "data-provenance-testing",
+      "revision": 1,
+      "en": {
+        "term": "data provenance testing",
+        "definition": "A test type to determine if data is sourced, managed, protected, and used in accordance with an organization&#039;s policies, standards, and regulatory obligations."
+      },
+      "tr": {
+        "term": "veri kaynağı izlenebilirliği testi"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/data-provenance-testing"
+    },
+    {
+      "slug": "data-representativeness-testing",
+      "revision": 1,
+      "en": {
+        "term": "data representativeness testing",
+        "definition": "A test type to determine if the datasets used for training an AI model are fair representations of the data expected to be encountered by the operational model."
+      },
+      "tr": {
+        "term": "veri temsil ediciliği testi"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/data-representativeness-testing"
+    },
+    {
+      "slug": "dataset",
+      "revision": 1,
+      "en": {
+        "term": "dataset",
+        "definition": "A collection of data used for training, evaluation, testing and prediction in ML."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/dataset"
+    },
+    {
+      "slug": "dataset-constraint-testing",
+      "revision": 1,
+      "en": {
+        "term": "dataset constraint testing",
+        "definition": "A type of static testing to determine if logical or specified constraints are followed on a dataset."
+      },
+      "tr": {
+        "term": "veri seti kısıt testi"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/dataset-constraint-testing"
+    },
+    {
+      "slug": "decision-tree",
+      "revision": 1,
+      "en": {
+        "term": "decision tree",
+        "definition": "A tree-like ML model whose nodes represent decisions, and whose branches represent possible outcomes."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/decision-tree"
+    },
+    {
+      "slug": "deep-learning",
+      "revision": 1,
+      "en": {
+        "term": "deep learning",
+        "definition": "An ML approach that uses deep neural networks to automatically learn patterns from data."
+      },
+      "tr": {
+        "term": "derin öğrenme"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/deep-learning"
+    },
+    {
+      "slug": "deep-neural-network",
+      "revision": 1,
+      "en": {
+        "term": "deep neural network",
+        "definition": "A neural network comprised of several layers of neurons."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/deep-neural-network"
+    },
+    {
+      "slug": "deepfake",
+      "revision": 1,
+      "en": {
+        "term": "deepfake",
+        "definition": "Synthetic media, such as video, audio, or images, created or edited using AI to convincingly mimic or impersonate real people or events."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/deepfake"
+    },
+    {
+      "slug": "defect",
+      "revision": 3,
+      "en": {
+        "term": "defect",
+        "definition": "An imperfection or deficiency in a work product where it does not meet its requirements or specifications or impairs its intended use."
+      },
+      "tr": {
+        "term": "hata"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/defect"
+    },
+    {
+      "slug": "defect-prediction",
+      "revision": 1,
+      "en": {
+        "term": "defect prediction",
+        "definition": "A technique to predict the areas within the test object in which defects will occur or the quantity of defects that are present"
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/defect-prediction"
+    },
+    {
+      "slug": "deterministic",
+      "revision": 1,
+      "en": {
+        "term": "deterministic",
+        "definition": "Producing the same set of outputs and final state from a given set of inputs and starting state."
+      },
+      "tr": {
+        "term": "deterministik"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/deterministic"
+    },
+    {
+      "slug": "disparate-impact-analysis",
+      "revision": 1,
+      "en": {
+        "term": "disparate impact analysis",
+        "definition": "A technique for detecting bias by comparing decisions on original scenarios with their counterfactual versions, where sensitive attributes are swapped."
+      },
+      "tr": {
+        "term": "orantısız etki analizi"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/disparate-impact-analysis"
+    },
+    {
+      "slug": "drift-testing",
+      "revision": 1,
+      "en": {
+        "term": "drift testing",
+        "definition": "A type of maintenance testing that evaluates the degree to which data drift, concept drift or both occur."
+      },
+      "tr": {
+        "term": "kayma testi"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/drift-testing"
+    },
+    {
+      "slug": "driver",
+      "revision": 2,
+      "en": {
+        "term": "driver",
+        "definition": "A component or tool that temporarily replaces another component and controls or calls a test item in isolation."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/driver"
+    },
+    {
+      "slug": "dynamic-testing",
+      "revision": 2,
+      "en": {
+        "term": "dynamic testing",
+        "definition": "A test approach that involves test execution of a test item."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/dynamic-testing"
+    }
+  ]
+}

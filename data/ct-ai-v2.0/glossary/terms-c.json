@@ -1,0 +1,214 @@
+{
+  "terms": [
+    {
+      "slug": "certification",
+      "revision": 1,
+      "en": {
+        "term": "certification",
+        "definition": "The process of confirming that a component, system or person complies with specified requirements."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/certification"
+    },
+    {
+      "slug": "chatbot",
+      "revision": 1,
+      "en": {
+        "term": "chatbot",
+        "definition": "An application used to conduct a conversation via text or text-to speech."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/chatbot"
+    },
+    {
+      "slug": "classification",
+      "revision": 1,
+      "en": {
+        "term": "classification",
+        "definition": "An ML function that predicts the output class for a given input."
+      },
+      "tr": {
+        "term": "sınıflandırma"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/classification"
+    },
+    {
+      "slug": "classifier",
+      "revision": 1,
+      "en": {
+        "term": "classifier",
+        "definition": "An ML model used for classification."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/classifier"
+    },
+    {
+      "slug": "clustering",
+      "revision": 1,
+      "en": {
+        "term": "clustering",
+        "definition": "An ML function that groups similar data points together."
+      },
+      "tr": {
+        "term": "kümeleme"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/clustering"
+    },
+    {
+      "slug": "clustering-algorithm",
+      "revision": 1,
+      "en": {
+        "term": "clustering algorithm",
+        "definition": "A type of ML algorithm used to group similar objects into clusters."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/clustering-algorithm"
+    },
+    {
+      "slug": "compatibility",
+      "revision": 1,
+      "en": {
+        "term": "compatibility",
+        "definition": "The degree to which a component or system can exchange information with other components or systems, and/or perform its required functions while sharing the same hardware or software environment."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/compatibility"
+    },
+    {
+      "slug": "compliance",
+      "revision": 2,
+      "en": {
+        "term": "compliance",
+        "definition": "Adherence of a work product to standards, conventions or regulations in laws and similar prescriptions."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/compliance"
+    },
+    {
+      "slug": "component",
+      "revision": 2,
+      "en": {
+        "term": "component",
+        "definition": "A part of a system that can be tested in isolation."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/component"
+    },
+    {
+      "slug": "component-integration-testing",
+      "revision": 3,
+      "en": {
+        "term": "component integration testing",
+        "definition": "The integration testing of components."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/component-integration-testing"
+    },
+    {
+      "slug": "component-testing",
+      "revision": 3,
+      "en": {
+        "term": "component testing",
+        "definition": "A test level that focuses on individual hardware or software components."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/component-testing"
+    },
+    {
+      "slug": "concept-drift",
+      "revision": 1,
+      "en": {
+        "term": "concept drift",
+        "definition": "A change in user expectations, behavior or the operational environment over time that negatively impacts the ML functional performance of an operational ML model."
+      },
+      "tr": {
+        "term": "kavram kayması"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/concept-drift"
+    },
+    {
+      "slug": "confidence-interval",
+      "revision": 1,
+      "en": {
+        "term": "confidence interval",
+        "definition": "In managing project risks, the period of time within which a contingency action must be implemented in order to be effective in reducing the impact of the risk."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/confidence-interval"
+    },
+    {
+      "slug": "confirmation-testing",
+      "revision": 3,
+      "en": {
+        "term": "confirmation testing",
+        "definition": "A type of change-related testing performed after fixing a defect to confirm that a failure caused by that defect does not reoccur."
+      },
+      "tr": {
+        "term": "onaylama testi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/confirmation-testing"
+    },
+    {
+      "slug": "confusion-matrix",
+      "revision": 1,
+      "en": {
+        "term": "confusion matrix",
+        "definition": "A technique for summarizing the ML functional performance of a classification algorithm."
+      },
+      "tr": {
+        "term": "karışıklık matrisi"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/confusion-matrix"
+    },
+    {
+      "slug": "convolutional-neural-network",
+      "revision": 1,
+      "en": {
+        "term": "convolutional neural network",
+        "definition": "A type of deep learning model designed to process grid-like data such as images, enabling it to recognize spatial patterns and features through layered operations."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/convolutional-neural-network"
+    },
+    {
+      "slug": "coverage",
+      "revision": 3,
+      "en": {
+        "term": "coverage",
+        "definition": "The degree to which specified coverage items are exercised by a test suite, expressed as a percentage."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/coverage"
+    },
+    {
+      "slug": "cross-device-testing",
+      "revision": 1,
+      "en": {
+        "term": "cross-device testing",
+        "definition": "A test type to determine whether a component or system performs correctly across its intended range of devices."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/cross-device-testing"
+    },
+    {
+      "slug": "cross-prompt-injection-attack",
+      "revision": 1,
+      "en": {
+        "term": "cross-prompt injection attack",
+        "definition": "An attack in which malicious instructions in one prompt or context segment disrupt an AI model’s behavior in a different prompt, turn, or context segment."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/cross-prompt-injection-attack"
+    }
+  ]
+}

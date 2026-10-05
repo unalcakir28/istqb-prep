@@ -21,7 +21,7 @@
 | F0-06 | `objectives.json` — 64 LOs, TR+EN text, K-levels | Verified data |
 | F0-07 | `syllabus.json` + `meta.json` + `certifications.json` | Verified data |
 | F0-08 | JSON Schema files + `validate-data` script | Validator running in CI |
-| F0-09 | Pull the 215 CTFL terms from the Glossary API, map their TR equivalents from the TTB syllabus | `glossary/` |
+| F0-09 | Pull the 215 CTFL terms from the Glossary API, map their TR equivalents from the TTB syllabus. **Done 05.10.2026** — 215 CTFL and 280 CT-AI terms, `yarn fetch:glossary` | `glossary/` |
 | F0-10 | Write the first 20 questions (from Chapters 1 and 4) — format test | Sample data |
 
 **Phase 0 is done when:** `yarn validate:data` is green; the blueprint sums to 40 questions and the 8/6/4/11/9/2 distribution; the 20 sample questions conform to the schema.

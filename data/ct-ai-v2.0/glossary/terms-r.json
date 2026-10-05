@@ -1,0 +1,202 @@
+{
+  "terms": [
+    {
+      "slug": "random-forest",
+      "revision": 1,
+      "en": {
+        "term": "random forest",
+        "definition": "Ensemble ML technology for classification, ML regression and other tasks that operate by constructing and running many decision trees and then either outputting the mode of the class or the mean prediction of the individual trees."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/random-forest"
+    },
+    {
+      "slug": "recall",
+      "revision": 1,
+      "en": {
+        "term": "recall",
+        "definition": "An ML functional performance metric used to evaluate a classifier, which measures the proportion of actual positives that were predicted correctly."
+      },
+      "tr": {
+        "term": "hatırlama"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/recall"
+    },
+    {
+      "slug": "recurrent-neural-network",
+      "revision": 1,
+      "en": {
+        "term": "recurrent neural network",
+        "definition": "A type of deep learning model designed to process sequential data, enabling it to recognize patterns and dependencies over time."
+      },
+      "tr": {
+        "term": "tekrarlayan sinir ağı"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/recurrent-neural-network"
+    },
+    {
+      "slug": "red-teaming",
+      "revision": 1,
+      "en": {
+        "term": "red teaming",
+        "definition": "A test approach that involves attacking a system to deliberately cause it to produce harmful or undesirable results."
+      },
+      "tr": {
+        "term": "kırmızı takım çalışması"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/red-teaming"
+    },
+    {
+      "slug": "regression-testing",
+      "revision": 3,
+      "en": {
+        "term": "regression testing",
+        "definition": "A type of change-related testing to detect whether defects have been introduced or uncovered in unchanged areas of the software."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/regression-testing"
+    },
+    {
+      "slug": "reinforcement-learning",
+      "revision": 1,
+      "en": {
+        "term": "reinforcement learning  ",
+        "definition": "An approach in which an ML model, known as an agent, learns by using a trial-and-reward feedback loop with its environment to achieve specific objectives."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/reinforcement-learning"
+    },
+    {
+      "slug": "reliability",
+      "revision": 2,
+      "en": {
+        "term": "reliability",
+        "definition": "The degree to which a component or system performs specified functions under specified conditions for a specified period of time."
+      },
+      "tr": {
+        "term": "güvenilirlik"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/reliability"
+    },
+    {
+      "slug": "requirement",
+      "revision": 2,
+      "en": {
+        "term": "requirement",
+        "definition": "A provision that contains criteria to be fulfilled."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/requirement"
+    },
+    {
+      "slug": "resource-utilization",
+      "revision": 2,
+      "en": {
+        "term": "resource utilization",
+        "definition": "The degree to which a component or system uses no more than the specified amount of resources to perform its function under specified conditions."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/resource-utilization"
+    },
+    {
+      "slug": "retrieval-augmented-generation",
+      "revision": 1,
+      "en": {
+        "term": "retrieval-augmented generation",
+        "definition": "An approach where a GenAI system retrieves relevant external information to supplement its internal knowledge and generate more accurate, contextually relevant responses."
+      },
+      "tr": {
+        "term": "erişimle artırılmış üretim"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/retrieval-augmented-generation"
+    },
+    {
+      "slug": "review",
+      "revision": 4,
+      "en": {
+        "term": "review",
+        "definition": "A type of static testing in which the quality of a work product or process is evaluated by individuals."
+      },
+      "tr": {
+        "term": "gözden geçirme"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/review"
+    },
+    {
+      "slug": "reward-function",
+      "revision": 1,
+      "en": {
+        "term": "reward function",
+        "definition": "A function that defines the success of reinforcement learning."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/reward-function"
+    },
+    {
+      "slug": "reward-hacking",
+      "revision": 1,
+      "en": {
+        "term": "reward hacking",
+        "definition": "The activity performed by an intelligent agent to maximize its reward function to the detriment of meeting the original objective."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/reward-hacking"
+    },
+    {
+      "slug": "risk",
+      "revision": 1,
+      "en": {
+        "term": "risk",
+        "definition": "A factor that could result in future negative consequences."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk"
+    },
+    {
+      "slug": "risk-based-testing",
+      "revision": 3,
+      "en": {
+        "term": "risk-based testing",
+        "definition": "A test approach in which the management, selection, prioritization, and use of test activities and resources are based on corresponding risk types and risk levels."
+      },
+      "tr": {
+        "term": "risk bazlı test"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk-based-testing"
+    },
+    {
+      "slug": "risk-mitigation",
+      "revision": 2,
+      "en": {
+        "term": "risk mitigation",
+        "definition": "The process through which decisions are reached and protective measures are implemented for reducing or maintaining risks to specified levels."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/risk-mitigation"
+    },
+    {
+      "slug": "robustness",
+      "revision": 2,
+      "en": {
+        "term": "robustness",
+        "definition": "The degree to which a component or system maintains its level of performance under any circumstances."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/robustness"
+    }
+  ]
+}

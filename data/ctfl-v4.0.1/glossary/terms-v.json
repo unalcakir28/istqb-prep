@@ -1,0 +1,52 @@
+{
+  "terms": [
+    {
+      "slug": "v-model",
+      "revision": 2,
+      "en": {
+        "term": "V-model",
+        "definition": "A sequential software development lifecycle model describing a one-for-one relationship between major phases of software development from business requirements specification to delivery, and corresponding test levels from acceptance testing to component testing."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/v-model"
+    },
+    {
+      "slug": "validation",
+      "revision": 2,
+      "en": {
+        "term": "validation",
+        "definition": "Confirmation by examination that a work product matches a stakeholder&#039;s needs."
+      },
+      "tr": {
+        "term": "sağlama"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/validation"
+    },
+    {
+      "slug": "verification",
+      "revision": 2,
+      "en": {
+        "term": "verification",
+        "definition": "The process of confirming that a work product fulfills its specification."
+      },
+      "tr": {
+        "term": "doğrulama"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/verification"
+    },
+    {
+      "slug": "version-control",
+      "revision": 1,
+      "en": {
+        "term": "version control",
+        "definition": "A process that records changes to configuration items over time."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/version-control"
+    }
+  ]
+}

@@ -75,6 +75,7 @@ yarn validate:data      # JSON Schema (#1) + 23 consistency checks (#2-#26; #14,
 yarn validate:i18n      # src/lib/i18n/locales/*.json key parity (TR/EN), CI gate
 yarn build:index        # builds questions/index.json, lessons/index.json + the manifest (certification list from each meta.json, counts from the chunks)
 yarn stats              # per-LO coverage → docs/coverage.md + README badges
+yarn fetch:glossary     # ISTQB Glossary API → data/<cert>/glossary/ (EN definitions, TR terms from terms.json); network
 yarn publish:questions  # review -> published; --reviewer is mandatory (the only path through); --cert <id> too once the manifest lists more than one certification
 yarn publish:lessons    # the same script with --kind lessons; --reviewer is mandatory
 yarn sync:data          # data/ -> public/data/ (needed when data/ changes while the dev server runs)
@@ -102,7 +103,7 @@ yarn format:write       # prettier --write (yarn format is check-only, it fails 
 data/       Content — indexed, chunked static JSON (NO single file)
 schemas/    JSON Schema — CI gate
 docs/       Project docs + adr/
-scripts/    validate-data, check-i18n, build-index, stats, sync-data, publish-questions
+scripts/    validate-data, check-i18n, build-index, stats, sync-data, fetch-glossary, publish-questions
 src/        The app (Vite + React + TS) — module map and routes: .claude/rules/app-code.md
 e2e/        Playwright: flow + accessibility
 ```

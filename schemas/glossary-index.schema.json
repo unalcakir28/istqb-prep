@@ -2,22 +2,82 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://istqb-prep/schemas/glossary-index.schema.json",
   "title": "Glossary term index (for search)",
-  "description": "data/<cert>/glossary/index.json. docs/04-data-model.md §3.9. Carries only each term's slug/tr/en/chunk, not its definitions.",
+  "description": "data/<cert>/glossary/index.json, written by `yarn fetch:glossary`. docs/04-data-model.md §3.10. Carries each term's slug/en/tr/chunk, not its definitions, plus the attribution the CC BY 4.0 licence asks for.",
   "type": "object",
-  "required": ["terms"],
+  "required": [
+    "source",
+    "sourceUrl",
+    "license",
+    "licenseUrl",
+    "usedIn",
+    "fetchedAt",
+    "terms"
+  ],
   "additionalProperties": false,
   "properties": {
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1
+    },
+    "licenseUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "usedIn": {
+      "type": "object",
+      "required": [
+        "syllabus",
+        "version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "syllabus": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "fetchedAt": {
+      "type": "string",
+      "format": "date"
+    },
     "terms": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["slug", "tr", "en", "chunk"],
+        "required": [
+          "slug",
+          "en",
+          "chunk"
+        ],
         "additionalProperties": false,
         "properties": {
-          "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
-          "tr": { "type": "string", "minLength": 1 },
-          "en": { "type": "string", "minLength": 1 },
-          "chunk": { "type": "string", "pattern": "^terms-[a-z]$" }
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "en": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tr": {
+            "type": "string",
+            "minLength": 1
+          },
+          "chunk": {
+            "type": "string",
+            "pattern": "^terms-[a-z0-9]$"
+          }
         }
       }
     }

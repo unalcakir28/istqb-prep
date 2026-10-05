@@ -1,0 +1,670 @@
+{
+  "terms": [
+    {
+      "slug": "technical-review",
+      "revision": 3,
+      "en": {
+        "term": "technical review",
+        "definition": "A formal review by technical experts that examine the quality of a work product and identify discrepancies from specifications and standards."
+      },
+      "tr": {
+        "term": "teknik gözden geçirme"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/technical-review"
+    },
+    {
+      "slug": "test",
+      "revision": 1,
+      "en": {
+        "term": "test",
+        "definition": "A set of one or more test cases."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test"
+    },
+    {
+      "slug": "test-analysis",
+      "revision": 2,
+      "en": {
+        "term": "test analysis",
+        "definition": "The activity that identifies test conditions by analyzing the test basis."
+      },
+      "tr": {
+        "term": "test analizi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-analysis"
+    },
+    {
+      "slug": "test-approach",
+      "revision": 3,
+      "en": {
+        "term": "test approach",
+        "definition": "The manner of implementing test tasks."
+      },
+      "tr": {
+        "term": "test yaklaşımı"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-approach"
+    },
+    {
+      "slug": "test-automation",
+      "revision": 3,
+      "en": {
+        "term": "test automation",
+        "definition": "The conversion of test activities to automated operation."
+      },
+      "tr": {
+        "term": "test otomasyonu"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-automation"
+    },
+    {
+      "slug": "test-automation-approach",
+      "revision": 1,
+      "en": {
+        "term": "test automation approach",
+        "definition": "A test approach to automate test activities."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-automation-approach"
+    },
+    {
+      "slug": "test-automation-framework",
+      "revision": 2,
+      "en": {
+        "term": "test automation framework",
+        "definition": "A set of test harnesses and test libraries for test automation."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-automation-framework"
+    },
+    {
+      "slug": "test-basis",
+      "revision": 2,
+      "en": {
+        "term": "test basis",
+        "definition": "The body of knowledge used as the basis for test analysis and test design."
+      },
+      "tr": {
+        "term": "test esası"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-basis"
+    },
+    {
+      "slug": "test-case",
+      "revision": 2,
+      "en": {
+        "term": "test case",
+        "definition": "A set of preconditions, inputs, actions (where applicable), expected results and postconditions, developed based on test conditions."
+      },
+      "tr": {
+        "term": "test senaryosu"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-case"
+    },
+    {
+      "slug": "test-charter",
+      "revision": 3,
+      "en": {
+        "term": "test charter",
+        "definition": "A mission statement that guides an exploratory test session."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-charter"
+    },
+    {
+      "slug": "test-completion",
+      "revision": 2,
+      "en": {
+        "term": "test completion",
+        "definition": "The activity that makes testware available for later use, leaves test environments in a satisfactory condition and communicates the results of testing to relevant stakeholders."
+      },
+      "tr": {
+        "term": "test tamamlama"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-completion"
+    },
+    {
+      "slug": "test-completion-report",
+      "revision": 3,
+      "en": {
+        "term": "test completion report",
+        "definition": "A type of test report produced at completion milestones that provides an evaluation of the corresponding test items against exit criteria."
+      },
+      "tr": {
+        "term": "test tamamlama raporu"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-completion-report"
+    },
+    {
+      "slug": "test-condition",
+      "revision": 4,
+      "en": {
+        "term": "test condition",
+        "definition": "A testable aspect of a component or system that is intended to be tested."
+      },
+      "tr": {
+        "term": "test koşulu"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-condition"
+    },
+    {
+      "slug": "test-control",
+      "revision": 2,
+      "en": {
+        "term": "test control",
+        "definition": "The activity that develops and applies corrective actions to get a test project on track when it deviates from what was planned."
+      },
+      "tr": {
+        "term": "test kontrolü"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-control"
+    },
+    {
+      "slug": "test-cycle",
+      "revision": 1,
+      "en": {
+        "term": "test cycle",
+        "definition": "An instance of the test process against a single identifiable version of the test object."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-cycle"
+    },
+    {
+      "slug": "test-data",
+      "revision": 3,
+      "en": {
+        "term": "test data",
+        "definition": "Data needed for test execution."
+      },
+      "tr": {
+        "term": "test verisi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-data"
+    },
+    {
+      "slug": "test-design",
+      "revision": 3,
+      "en": {
+        "term": "test design",
+        "definition": "The activity that derives and specifies test cases from test conditions."
+      },
+      "tr": {
+        "term": "test tasarımı"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-design"
+    },
+    {
+      "slug": "test-driven-development",
+      "revision": 2,
+      "en": {
+        "term": "test-driven development",
+        "definition": "A software development technique in which the test cases are developed, automated and then the software is developed incrementally to pass those test cases."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-driven-development"
+    },
+    {
+      "slug": "test-environment",
+      "revision": 1,
+      "en": {
+        "term": "test environment",
+        "definition": "An environment containing hardware, instrumentation, simulators, software tools, and other support elements needed to perform a test."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-environment"
+    },
+    {
+      "slug": "test-estimation",
+      "revision": 2,
+      "en": {
+        "term": "test estimation",
+        "definition": "An approximation related to various aspects of testing."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-estimation"
+    },
+    {
+      "slug": "test-execution",
+      "revision": 2,
+      "en": {
+        "term": "test execution",
+        "definition": "The activity that runs a test on a component or system producing actual results."
+      },
+      "tr": {
+        "term": "test koşumu"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-execution"
+    },
+    {
+      "slug": "test-execution-schedule",
+      "revision": 2,
+      "en": {
+        "term": "test execution schedule",
+        "definition": "A schedule for the execution of test suites within a test cycle."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-execution-schedule"
+    },
+    {
+      "slug": "test-first-approach",
+      "revision": 1,
+      "en": {
+        "term": "test-first approach",
+        "definition": "An approach to software development in which the test cases are designed and implemented before the associated component or system is developed."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-first-approach"
+    },
+    {
+      "slug": "test-harness",
+      "revision": 2,
+      "en": {
+        "term": "test harness",
+        "definition": "A collection of drivers and test doubles needed to execute a test suite."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-harness"
+    },
+    {
+      "slug": "test-implementation",
+      "revision": 3,
+      "en": {
+        "term": "test implementation",
+        "definition": "The activity that prepares the testware needed for test execution."
+      },
+      "tr": {
+        "term": "test uyarlama"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-implementation"
+    },
+    {
+      "slug": "test-item",
+      "revision": 2,
+      "en": {
+        "term": "test item",
+        "definition": "A part of a test object used in the test process."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-item"
+    },
+    {
+      "slug": "test-level",
+      "revision": 2,
+      "en": {
+        "term": "test level",
+        "definition": "A specific instantiation of a test process."
+      },
+      "tr": {
+        "term": "test seviyesi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-level"
+    },
+    {
+      "slug": "test-log",
+      "revision": 1,
+      "en": {
+        "term": "test log",
+        "definition": "A chronological record of relevant details about test execution."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-log"
+    },
+    {
+      "slug": "test-management",
+      "revision": 2,
+      "en": {
+        "term": "test management",
+        "definition": "The process of planning, scheduling, estimating, monitoring, reporting, controlling, and completing test activities."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-management"
+    },
+    {
+      "slug": "test-manager",
+      "revision": 2,
+      "en": {
+        "term": "test manager",
+        "definition": "The person responsible for managing test activities, test resources, and evaluating the test object."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-manager"
+    },
+    {
+      "slug": "test-monitoring",
+      "revision": 3,
+      "en": {
+        "term": "test monitoring",
+        "definition": "The activity that checks the status of testing activities, identifies any variances from planned or expected, and reports status to stakeholders."
+      },
+      "tr": {
+        "term": "test gözetimi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-monitoring"
+    },
+    {
+      "slug": "test-object",
+      "revision": 2,
+      "en": {
+        "term": "test object",
+        "definition": "The work product to be tested."
+      },
+      "tr": {
+        "term": "test nesnesi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-object"
+    },
+    {
+      "slug": "test-objective",
+      "revision": 3,
+      "en": {
+        "term": "test objective",
+        "definition": "The purpose for testing."
+      },
+      "tr": {
+        "term": "test hedefi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-objective"
+    },
+    {
+      "slug": "test-planning",
+      "revision": 1,
+      "en": {
+        "term": "test planning",
+        "definition": "The activity of establishing or updating a test plan."
+      },
+      "tr": {
+        "term": "test planlama"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-planning"
+    },
+    {
+      "slug": "test-policy",
+      "revision": 1,
+      "en": {
+        "term": "test policy",
+        "definition": "High-level documentation describing the principles, approach and major objectives of the organization regarding testing."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-policy"
+    },
+    {
+      "slug": "test-procedure",
+      "revision": 1,
+      "en": {
+        "term": "test procedure",
+        "definition": "A sequence of test cases in execution order and any associated actions that may be required to set up the initial preconditions and any wrap-up activities after execution."
+      },
+      "tr": {
+        "term": "test prosedürü"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-procedure"
+    },
+    {
+      "slug": "test-progress",
+      "revision": 1,
+      "en": {
+        "term": "test progress",
+        "definition": "The progress of testing against a baseline."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-progress"
+    },
+    {
+      "slug": "test-progress-report",
+      "revision": 4,
+      "en": {
+        "term": "test progress report",
+        "definition": "A type of periodic test report that includes the progress of test activities against a baseline, risks, and alternatives requiring a decision."
+      },
+      "tr": {
+        "term": "test ilerleme raporu"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-progress-report"
+    },
+    {
+      "slug": "test-pyramid",
+      "revision": 1,
+      "en": {
+        "term": "test pyramid",
+        "definition": "A graphical model representing the relationship of the amount of testing per level, with more at the bottom than at the top."
+      },
+      "tr": {
+        "term": "test piramidi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-pyramid"
+    },
+    {
+      "slug": "test-report",
+      "revision": 1,
+      "en": {
+        "term": "test report",
+        "definition": "Documentation summarizing testing and test results."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-report"
+    },
+    {
+      "slug": "test-reporting",
+      "revision": 2,
+      "en": {
+        "term": "test reporting",
+        "definition": "The activity that consolidates test monitoring information and evaluates whether test objectives have been reached to inform stakeholders."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-reporting"
+    },
+    {
+      "slug": "test-run",
+      "revision": 1,
+      "en": {
+        "term": "test run",
+        "definition": "The execution of a test suite on a specific version of the test object."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-run"
+    },
+    {
+      "slug": "test-schedule",
+      "revision": 1,
+      "en": {
+        "term": "test schedule",
+        "definition": "A list of activities, tasks, and milestones of the test process, their intended start and finish dates and interdependencies."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-schedule"
+    },
+    {
+      "slug": "test-script",
+      "revision": 2,
+      "en": {
+        "term": "test script",
+        "definition": "A sequence of instructions for the execution of a test."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-script"
+    },
+    {
+      "slug": "test-session",
+      "revision": 1,
+      "en": {
+        "term": "test session",
+        "definition": "An uninterrupted period of time spent in executing tests."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-session"
+    },
+    {
+      "slug": "test-strategy",
+      "revision": 4,
+      "en": {
+        "term": "test strategy",
+        "definition": "A description of how to perform testing to reach test objectives under given circumstances."
+      },
+      "tr": {
+        "term": "test stratejisi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-strategy"
+    },
+    {
+      "slug": "test-suite",
+      "revision": 3,
+      "en": {
+        "term": "test suite",
+        "definition": "A set of test scripts or test procedures to be executed in a specific test run."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-suite"
+    },
+    {
+      "slug": "test-technique",
+      "revision": 3,
+      "en": {
+        "term": "test technique",
+        "definition": "A procedure used to define test conditions, design test cases, and specify test data."
+      },
+      "tr": {
+        "term": "test tekniği"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-technique"
+    },
+    {
+      "slug": "test-type",
+      "revision": 2,
+      "en": {
+        "term": "test type",
+        "definition": "A group of test activities based on specific test objectives aimed at specific characteristics of a component or system."
+      },
+      "tr": {
+        "term": "test çeşidi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-type"
+    },
+    {
+      "slug": "testability",
+      "revision": 3,
+      "en": {
+        "term": "testability",
+        "definition": "The degree to which test conditions can be established for a component or system, and tests can be performed to determine whether those test conditions have been met."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/testability"
+    },
+    {
+      "slug": "tester",
+      "revision": 2,
+      "en": {
+        "term": "tester",
+        "definition": "A person who performs testing."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/tester"
+    },
+    {
+      "slug": "testing",
+      "revision": 3,
+      "en": {
+        "term": "testing",
+        "definition": "The process within the software development lifecycle that evaluates the quality of a component or system and related work products."
+      },
+      "tr": {
+        "term": "test etme"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/testing"
+    },
+    {
+      "slug": "testing-quadrants",
+      "revision": 1,
+      "en": {
+        "term": "testing quadrants",
+        "definition": "A classification model of test types/test levels in four quadrants, relating them to two dimensions of test objectives: supporting the product team versus critiquing the product, and technology-facing versus business-facing."
+      },
+      "tr": {
+        "term": "test çeyrekleri"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/testing-quadrants"
+    },
+    {
+      "slug": "testware",
+      "revision": 2,
+      "en": {
+        "term": "testware",
+        "definition": "Work products produced during the test process for use in planning, designing, executing, evaluating and reporting on testing."
+      },
+      "tr": {
+        "term": "test çalışma ürünleri"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/testware"
+    },
+    {
+      "slug": "traceability",
+      "revision": 3,
+      "en": {
+        "term": "traceability",
+        "definition": "The ability to establish explicit relationships between related work products or items within work products."
+      },
+      "tr": {
+        "term": "izlenebilirlik"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/traceability"
+    }
+  ]
+}

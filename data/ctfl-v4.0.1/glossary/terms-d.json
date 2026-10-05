@@ -1,0 +1,128 @@
+{
+  "terms": [
+    {
+      "slug": "dashboard",
+      "revision": 1,
+      "en": {
+        "term": "dashboard",
+        "definition": "A representation of dynamic measurements of operational performance for some organization or activity, using metrics represented via metaphors such as  visual dials, counters, and other devices resembling those on the dashboard of an automobile, so that the effects of events or activities can be easily understood and related to operational goals."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/dashboard"
+    },
+    {
+      "slug": "debugging",
+      "revision": 2,
+      "en": {
+        "term": "debugging",
+        "definition": "The process of finding, analyzing and removing the causes of failures in a component or system."
+      },
+      "tr": {
+        "term": "hata ayıklama"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/debugging"
+    },
+    {
+      "slug": "decision-table-testing",
+      "revision": 4,
+      "en": {
+        "term": "decision table testing",
+        "definition": "A black-box test technique in which the test conditions are the combinations of conditions and the resulting actions shown in a decision table."
+      },
+      "tr": {
+        "term": "karar tablosu testi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/decision-table-testing"
+    },
+    {
+      "slug": "defect",
+      "revision": 3,
+      "en": {
+        "term": "defect",
+        "definition": "An imperfection or deficiency in a work product where it does not meet its requirements or specifications or impairs its intended use."
+      },
+      "tr": {
+        "term": "hata"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/defect"
+    },
+    {
+      "slug": "defect-density",
+      "revision": 2,
+      "en": {
+        "term": "defect density",
+        "definition": "The number of defects per unit size of a work product."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/defect-density"
+    },
+    {
+      "slug": "defect-detection-percentage",
+      "revision": 1,
+      "en": {
+        "term": "defect detection percentage",
+        "definition": "The number of defects found by a test level, divided by the number found by that test level and any other means afterwards."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/defect-detection-percentage"
+    },
+    {
+      "slug": "defect-management",
+      "revision": 4,
+      "en": {
+        "term": "defect management",
+        "definition": "The process of recognizing, recording, classifying, investigating, fixing and disposing of defects."
+      },
+      "tr": {
+        "term": "hata yönetimi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/defect-management"
+    },
+    {
+      "slug": "defect-report",
+      "revision": 2,
+      "en": {
+        "term": "defect report",
+        "definition": "Documentation of the occurrence, nature, and status of a defect."
+      },
+      "tr": {
+        "term": "hata raporu"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/defect-report"
+    },
+    {
+      "slug": "driver",
+      "revision": 2,
+      "en": {
+        "term": "driver",
+        "definition": "A component or tool that temporarily replaces another component and controls or calls a test item in isolation."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/driver"
+    },
+    {
+      "slug": "dynamic-testing",
+      "revision": 2,
+      "en": {
+        "term": "dynamic testing",
+        "definition": "A test approach that involves test execution of a test item."
+      },
+      "tr": {
+        "term": "dinamik test"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/dynamic-testing"
+    }
+  ]
+}

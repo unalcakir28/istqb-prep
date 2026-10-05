@@ -1,0 +1,116 @@
+{
+  "terms": [
+    {
+      "slug": "impact-analysis",
+      "revision": 2,
+      "en": {
+        "term": "impact analysis",
+        "definition": "The identification of all work products affected by a change, including an estimate of the resources needed to accomplish the change."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/impact-analysis"
+    },
+    {
+      "slug": "independence-of-testing",
+      "revision": 1,
+      "en": {
+        "term": "independence of testing",
+        "definition": "The separation of testing responsibilities from development for a test object."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/independence-of-testing"
+    },
+    {
+      "slug": "input-data-testing",
+      "revision": 1,
+      "en": {
+        "term": "input data testing",
+        "definition": "A test level that focuses on the quality of data used for training an ML model."
+      },
+      "tr": {
+        "term": "girdi verisi testi"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/input-data-testing"
+    },
+    {
+      "slug": "inspection",
+      "revision": 3,
+      "en": {
+        "term": "inspection",
+        "definition": "A type of formal review that uses defined team roles and measurement to identify defects in a work product, and improve the review process and the software development process."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/inspection"
+    },
+    {
+      "slug": "installability",
+      "revision": 2,
+      "en": {
+        "term": "installability",
+        "definition": "The degree to which a component or system can be successfully installed and/or uninstalled in a specified environment."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/installability"
+    },
+    {
+      "slug": "integrity",
+      "revision": 1,
+      "en": {
+        "term": "integrity",
+        "definition": "The degree to which only authorized access and modification is allowed to a component, a system or data."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/integrity"
+    },
+    {
+      "slug": "intelligent-agent",
+      "revision": 1,
+      "en": {
+        "term": "intelligent agent",
+        "definition": "An autonomous program which directs its activity towards achieving goals using observations and actions."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/intelligent-agent"
+    },
+    {
+      "slug": "inter-annotator-agreement",
+      "revision": 1,
+      "en": {
+        "term": "inter-annotator agreement",
+        "definition": "The degree of consensus or similarity among the annotations made by different annotators on the same data."
+      },
+      "tr": {
+        "term": "etiketleyiciler arası uyum"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/inter-annotator-agreement"
+    },
+    {
+      "slug": "interaction-capability",
+      "revision": 1,
+      "en": {
+        "term": "interaction capability",
+        "definition": "The degree to which a component or system can exchange information via the user interface with its specified users to complete an intended task."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/interaction-capability"
+    },
+    {
+      "slug": "intervenability",
+      "revision": 1,
+      "en": {
+        "term": "intervenability",
+        "definition": "The degree to which an operator can intervene in a system’s functioning in a timely manner to prevent harm or hazard."
+      },
+      "tr": {
+        "term": "müdahale edilebilirlik"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/intervenability"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "terms": [
+    {
+      "slug": "walkthrough",
+      "revision": 3,
+      "en": {
+        "term": "walkthrough",
+        "definition": "A type of formal review in which an author leads members of the review through a work product and the members ask questions and make comments."
+      },
+      "tr": {
+        "term": "üzerinden geçme"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/walkthrough"
+    },
+    {
+      "slug": "white-box-test-technique",
+      "revision": 3,
+      "en": {
+        "term": "white-box test technique",
+        "definition": "A test technique based on the internal structure of a component or system."
+      },
+      "tr": {
+        "term": "beyaz kutu test tekniği"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/white-box-test-technique"
+    },
+    {
+      "slug": "wideband-delphi",
+      "revision": 1,
+      "en": {
+        "term": "Wideband Delphi",
+        "definition": "An expert-based test estimation technique that aims at making an accurate estimation using the collective wisdom of the team members."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/wideband-delphi"
+    }
+  ]
+}

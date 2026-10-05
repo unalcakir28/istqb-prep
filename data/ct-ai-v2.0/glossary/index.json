@@ -1,0 +1,1517 @@
+{
+  "source": "ISTQB Glossary",
+  "sourceUrl": "https://glossary.istqb.org/",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "usedIn": {
+    "syllabus": "Specialist - AI Testing",
+    "version": "v2.0"
+  },
+  "fetchedAt": "2026-10-05",
+  "terms": [
+    {
+      "slug": "ab-testing",
+      "en": "A/B testing",
+      "tr": "A/B testi",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "acceptance-criteria",
+      "en": "acceptance criteria",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "acceptance-testing",
+      "en": "acceptance testing",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "accountability",
+      "en": "accountability",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "accuracy",
+      "en": "accuracy",
+      "tr": "doğruluk",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "activation-function",
+      "en": "activation function",
+      "tr": "aktivasyon fonksiyonu",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "activation-value",
+      "en": "activation value",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "adaptability",
+      "en": "adaptability",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "adaptive-ai-based-system",
+      "en": "adaptive AI-based system",
+      "tr": "uyarlanabilir yapay zekâ tabanlı sistem",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "adversarial-attack",
+      "en": "adversarial attack",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "adversarial-example",
+      "en": "adversarial example",
+      "tr": "karşıt örnek",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "adversarial-testing",
+      "en": "adversarial testing",
+      "tr": "karşıt test",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "ai-as-a-service",
+      "en": "AI as a Service",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "ai-based-system",
+      "en": "AI-based system",
+      "tr": "yapay zekâ tabanlı sistem",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "ai-component",
+      "en": "AI component",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "ai-model",
+      "en": "AI model",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "algorithmic-bias",
+      "en": "algorithmic bias",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "annotation",
+      "en": "annotation",
+      "tr": "etiketleme",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "api-testing",
+      "en": "API testing",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "application-programming-interface",
+      "en": "application programming interface",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "artificial-intelligence",
+      "en": "artificial intelligence",
+      "tr": "yapay zekâ",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "association",
+      "en": "association",
+      "tr": "ilişkilendirme",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "attack",
+      "en": "attack",
+      "tr": "saldırı",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "attack-vector",
+      "en": "attack vector",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "audit",
+      "en": "audit",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "augmentation",
+      "en": "augmentation",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "automotive-safety-integrity-level",
+      "en": "automotive safety integrity level",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "availability",
+      "en": "availability",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "back-to-back-testing",
+      "en": "back-to-back testing",
+      "tr": "sırt sırta test",
+      "chunk": "terms-b"
+    },
+    {
+      "slug": "bayesian-model",
+      "en": "Bayesian model",
+      "chunk": "terms-b"
+    },
+    {
+      "slug": "big-data",
+      "en": "big data",
+      "chunk": "terms-b"
+    },
+    {
+      "slug": "black-box-testing",
+      "en": "black-box testing",
+      "chunk": "terms-b"
+    },
+    {
+      "slug": "bootstrap-technique",
+      "en": "bootstrap technique",
+      "chunk": "terms-b"
+    },
+    {
+      "slug": "boundary-value-analysis",
+      "en": "boundary value analysis",
+      "chunk": "terms-b"
+    },
+    {
+      "slug": "branch",
+      "en": "branch",
+      "chunk": "terms-b"
+    },
+    {
+      "slug": "certification",
+      "en": "certification",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "chatbot",
+      "en": "chatbot",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "classification",
+      "en": "classification",
+      "tr": "sınıflandırma",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "classifier",
+      "en": "classifier",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "clustering",
+      "en": "clustering",
+      "tr": "kümeleme",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "clustering-algorithm",
+      "en": "clustering algorithm",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "compatibility",
+      "en": "compatibility",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "compliance",
+      "en": "compliance",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "component",
+      "en": "component",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "component-integration-testing",
+      "en": "component integration testing",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "component-testing",
+      "en": "component testing",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "concept-drift",
+      "en": "concept drift",
+      "tr": "kavram kayması",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "confidence-interval",
+      "en": "confidence interval",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "confirmation-testing",
+      "en": "confirmation testing",
+      "tr": "onaylama testi",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "confusion-matrix",
+      "en": "confusion matrix",
+      "tr": "karışıklık matrisi",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "convolutional-neural-network",
+      "en": "convolutional neural network",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "coverage",
+      "en": "coverage",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "cross-device-testing",
+      "en": "cross-device testing",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "cross-prompt-injection-attack",
+      "en": "cross-prompt injection attack",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "dashboard",
+      "en": "dashboard",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "data-accuracy",
+      "en": "data accuracy",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "data-acquisition",
+      "en": "data acquisition",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "data-bias",
+      "en": "data bias",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "data-drift",
+      "en": "data drift",
+      "tr": "veri kayması",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "data-pipeline",
+      "en": "data pipeline",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "data-pipeline-testing",
+      "en": "data pipeline testing",
+      "tr": "veri hattı testi",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "data-point",
+      "en": "data point",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "data-preparation",
+      "en": "data preparation",
+      "tr": "veri hazırlığı",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "data-preprocessing",
+      "en": "data preprocessing",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "data-privacy",
+      "en": "data privacy",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "data-provenance-testing",
+      "en": "data provenance testing",
+      "tr": "veri kaynağı izlenebilirliği testi",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "data-representativeness-testing",
+      "en": "data representativeness testing",
+      "tr": "veri temsil ediciliği testi",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "dataset",
+      "en": "dataset",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "dataset-constraint-testing",
+      "en": "dataset constraint testing",
+      "tr": "veri seti kısıt testi",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "decision-tree",
+      "en": "decision tree",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "deep-learning",
+      "en": "deep learning",
+      "tr": "derin öğrenme",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "deep-neural-network",
+      "en": "deep neural network",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "deepfake",
+      "en": "deepfake",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "defect",
+      "en": "defect",
+      "tr": "hata",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "defect-prediction",
+      "en": "defect prediction",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "deterministic",
+      "en": "deterministic",
+      "tr": "deterministik",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "disparate-impact-analysis",
+      "en": "disparate impact analysis",
+      "tr": "orantısız etki analizi",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "drift-testing",
+      "en": "drift testing",
+      "tr": "kayma testi",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "driver",
+      "en": "driver",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "dynamic-testing",
+      "en": "dynamic testing",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "edge-ai",
+      "en": "edge AI",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "edge-case",
+      "en": "edge case",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "edge-computing",
+      "en": "edge computing",
+      "tr": "uç bilişim",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "effectiveness",
+      "en": "effectiveness",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "efficiency",
+      "en": "efficiency",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "epoch",
+      "en": "epoch",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "error",
+      "en": "error",
+      "tr": "insan hatası",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "ethical-system-testing",
+      "en": "ethical system testing",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "expected-result",
+      "en": "expected result",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "expert-system",
+      "en": "expert system",
+      "tr": "uzman sistem",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "explainability",
+      "en": "explainability",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "explainable-ai",
+      "en": "explainable AI",
+      "tr": "açıklanabilir yapay zekâ",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "exploratory-data-analysis",
+      "en": "exploratory data analysis",
+      "tr": "keşifsel veri analizi",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "exploratory-testing",
+      "en": "exploratory testing",
+      "tr": "keşif testi",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "f1-score",
+      "en": "F1-Score",
+      "tr": "F1 skoru",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "failed",
+      "en": "failed",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "failure",
+      "en": "failure",
+      "tr": "arıza",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "false-negative",
+      "en": "false negative",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "false-positive",
+      "en": "false positive",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "fault-attack",
+      "en": "fault attack",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "fault-injection",
+      "en": "fault injection",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "feature",
+      "en": "feature",
+      "tr": "öznitelik",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "feature-engineering",
+      "en": "feature engineering",
+      "tr": "öznitelik mühendisliği",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "feature-testing",
+      "en": "feature testing",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "finding",
+      "en": "finding",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "flexibility",
+      "en": "flexibility",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "follow-up-test-case",
+      "en": "follow-up test case",
+      "tr": "takip test senaryosu",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "foundation-model",
+      "en": "foundation model",
+      "tr": "temel model",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "frontier-ai",
+      "en": "frontier AI",
+      "tr": "öncü yapay zekâ",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "functional-adaptability",
+      "en": "functional adaptability",
+      "tr": "fonksiyonel uyarlanabilirlik",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "functional-correctness",
+      "en": "functional correctness",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "functional-safety",
+      "en": "functional safety",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "functional-suitability",
+      "en": "functional suitability",
+      "tr": "fonksiyonel uygunluk",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "functional-testing",
+      "en": "functional testing",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "fuzz-testing",
+      "en": "fuzz testing",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "fuzzy-logic",
+      "en": "fuzzy logic",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "general-ai",
+      "en": "general AI",
+      "tr": "genel yapay zekâ",
+      "chunk": "terms-g"
+    },
+    {
+      "slug": "generative-ai",
+      "en": "generative AI",
+      "tr": "üretken yapay zekâ",
+      "chunk": "terms-g"
+    },
+    {
+      "slug": "graphics-processing-unit",
+      "en": "graphics processing unit",
+      "chunk": "terms-g"
+    },
+    {
+      "slug": "ground-truth",
+      "en": "ground truth",
+      "tr": "gerçek değer",
+      "chunk": "terms-g"
+    },
+    {
+      "slug": "human-centered-design",
+      "en": "human-centered design",
+      "chunk": "terms-h"
+    },
+    {
+      "slug": "hyperparameter",
+      "en": "hyperparameter",
+      "tr": "hiperparametre",
+      "chunk": "terms-h"
+    },
+    {
+      "slug": "hyperparameter-tuning",
+      "en": "hyperparameter tuning",
+      "chunk": "terms-h"
+    },
+    {
+      "slug": "hypothesis-testing",
+      "en": "hypothesis testing",
+      "chunk": "terms-h"
+    },
+    {
+      "slug": "impact-analysis",
+      "en": "impact analysis",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "independence-of-testing",
+      "en": "independence of testing",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "input-data-testing",
+      "en": "input data testing",
+      "tr": "girdi verisi testi",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "inspection",
+      "en": "inspection",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "installability",
+      "en": "installability",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "integrity",
+      "en": "integrity",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "intelligent-agent",
+      "en": "intelligent agent",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "inter-annotator-agreement",
+      "en": "inter-annotator agreement",
+      "tr": "etiketleyiciler arası uyum",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "interaction-capability",
+      "en": "interaction capability",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "intervenability",
+      "en": "intervenability",
+      "tr": "müdahale edilebilirlik",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "k-multisection-neuron-coverage",
+      "en": "k-multisection neuron coverage",
+      "tr": "k-bölümlü nöron kapsamı",
+      "chunk": "terms-k"
+    },
+    {
+      "slug": "keyword",
+      "en": "keyword",
+      "chunk": "terms-k"
+    },
+    {
+      "slug": "label-correctness-testing",
+      "en": "label correctness testing",
+      "tr": "etiket doğruluğu testi",
+      "chunk": "terms-l"
+    },
+    {
+      "slug": "large-language-model",
+      "en": "large language model",
+      "tr": "büyük dil modeli",
+      "chunk": "terms-l"
+    },
+    {
+      "slug": "linear-regression",
+      "en": "linear regression",
+      "chunk": "terms-l"
+    },
+    {
+      "slug": "locked-ai-based-system",
+      "en": "locked AI-based system",
+      "tr": "kilitli yapay zekâ tabanlı sistem",
+      "chunk": "terms-l"
+    },
+    {
+      "slug": "machine-learning",
+      "en": "machine learning",
+      "tr": "makine öğrenimi",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "maintainability",
+      "en": "maintainability",
+      "tr": "bakım yapılabilirlik",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "maintenance",
+      "en": "maintenance",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "malware",
+      "en": "malware",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "maturity",
+      "en": "maturity",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "metamorphic-relation",
+      "en": "metamorphic relation",
+      "tr": "metamorfik ilişki",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "metamorphic-testing",
+      "en": "metamorphic testing",
+      "tr": "metamorfik test",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "metric",
+      "en": "metric",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "ml-algorithm",
+      "en": "ML algorithm",
+      "tr": "MÖ algoritması",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "ml-development-framework",
+      "en": "ML development framework",
+      "tr": "MÖ geliştirme çerçevesi",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "ml-function",
+      "en": "ML function",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "ml-functional-performance",
+      "en": "ML functional performance",
+      "tr": "MÖ fonksiyonel performansı",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "ml-functional-performance-criteria",
+      "en": "ML functional performance criteria",
+      "tr": "MÖ fonksiyonel performans kriterleri",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "ml-functional-performance-metrics",
+      "en": "ML functional performance metric",
+      "tr": "MÖ fonksiyonel performans metriği",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "ml-model",
+      "en": "ML model",
+      "tr": "MÖ modeli",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "ml-model-testing",
+      "en": "ML model testing",
+      "tr": "MÖ model testi",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "ml-regression",
+      "en": "ML regression",
+      "tr": "MÖ regresyonu",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "ml-workflow",
+      "en": "ML workflow",
+      "tr": "MÖ iş akışı",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "mls",
+      "en": "MLS",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "model-confidence-score-analysis",
+      "en": "model confidence score analysis",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "model-conversion-testing",
+      "en": "model conversion testing",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "model-loss-analysis",
+      "en": "model loss analysis",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "monitoring-tool",
+      "en": "monitoring tool",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "multimodal-model",
+      "en": "multimodal model",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "multiple-annotation",
+      "en": "multiple annotation",
+      "tr": "çoklu etiketleme",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "narrow-ai",
+      "en": "narrow AI",
+      "tr": "dar yapay zekâ",
+      "chunk": "terms-n"
+    },
+    {
+      "slug": "neural-network",
+      "en": "neural network",
+      "chunk": "terms-n"
+    },
+    {
+      "slug": "neuromorphic-processor",
+      "en": "neuromorphic processor",
+      "chunk": "terms-n"
+    },
+    {
+      "slug": "neuron",
+      "en": "neuron",
+      "chunk": "terms-n"
+    },
+    {
+      "slug": "neuron-boundary-coverage",
+      "en": "neuron boundary coverage",
+      "tr": "nöron sınır kapsamı",
+      "chunk": "terms-n"
+    },
+    {
+      "slug": "neuron-coverage",
+      "en": "neuron coverage",
+      "tr": "nöron kapsamı",
+      "chunk": "terms-n"
+    },
+    {
+      "slug": "noise",
+      "en": "noise",
+      "chunk": "terms-n"
+    },
+    {
+      "slug": "non-determinism",
+      "en": "non-determinism",
+      "tr": "deterministik olmama",
+      "chunk": "terms-n"
+    },
+    {
+      "slug": "non-functional-testing",
+      "en": "non-functional testing",
+      "chunk": "terms-n"
+    },
+    {
+      "slug": "outlier",
+      "en": "outlier",
+      "chunk": "terms-o"
+    },
+    {
+      "slug": "overfitting",
+      "en": "overfitting  ",
+      "chunk": "terms-o"
+    },
+    {
+      "slug": "passed",
+      "en": "passed",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "perceptron",
+      "en": "perceptron",
+      "tr": "perseptron",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "performance-efficiency",
+      "en": "performance efficiency",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "performance-testing",
+      "en": "performance testing",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "phishing",
+      "en": "phishing",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "precision",
+      "en": "precision",
+      "tr": "hassasiyet",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "precondition",
+      "en": "precondition",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "pretrained-model",
+      "en": "pretrained model",
+      "tr": "önceden eğitilmiş model",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "probabilistic",
+      "en": "probabilistic",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "product-risk",
+      "en": "product risk",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "project-risk",
+      "en": "project risk",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "pseudo-oracle",
+      "en": "pseudo-oracle",
+      "tr": "sözde test doğrulayıcı",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "quality",
+      "en": "quality",
+      "chunk": "terms-q"
+    },
+    {
+      "slug": "quality-assurance",
+      "en": "quality assurance",
+      "chunk": "terms-q"
+    },
+    {
+      "slug": "quality-characteristic",
+      "en": "quality characteristic",
+      "chunk": "terms-q"
+    },
+    {
+      "slug": "quality-measure",
+      "en": "quality measure",
+      "chunk": "terms-q"
+    },
+    {
+      "slug": "random-forest",
+      "en": "random forest",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "recall",
+      "en": "recall",
+      "tr": "hatırlama",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "recurrent-neural-network",
+      "en": "recurrent neural network",
+      "tr": "tekrarlayan sinir ağı",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "red-teaming",
+      "en": "red teaming",
+      "tr": "kırmızı takım çalışması",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "regression-testing",
+      "en": "regression testing",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "reinforcement-learning",
+      "en": "reinforcement learning  ",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "reliability",
+      "en": "reliability",
+      "tr": "güvenilirlik",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "requirement",
+      "en": "requirement",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "resource-utilization",
+      "en": "resource utilization",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "retrieval-augmented-generation",
+      "en": "retrieval-augmented generation",
+      "tr": "erişimle artırılmış üretim",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "review",
+      "en": "review",
+      "tr": "gözden geçirme",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "reward-function",
+      "en": "reward function",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "reward-hacking",
+      "en": "reward hacking",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk",
+      "en": "risk",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk-based-testing",
+      "en": "risk-based testing",
+      "tr": "risk bazlı test",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk-mitigation",
+      "en": "risk mitigation",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "robustness",
+      "en": "robustness",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "safety",
+      "en": "safety",
+      "tr": "emniyet",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "scalability",
+      "en": "scalability",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "search-algorithm",
+      "en": "search algorithm",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "security",
+      "en": "security",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "security-testing",
+      "en": "security testing",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "self-learning-system",
+      "en": "self-learning system",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "sensitive-attributes",
+      "en": "sensitive attributes",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "sentiment-analysis",
+      "en": "sentiment analysis",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "shadow-testing",
+      "en": "shadow testing",
+      "tr": "gölge testi",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "side-effects-testing",
+      "en": "side-effects testing",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "smoke-testing",
+      "en": "smoke testing",
+      "tr": "duman testi",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "societal-and-ethical-risk-mitigation",
+      "en": "societal and ethical risk mitigation",
+      "tr": "toplumsal ve etik risk azaltma",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "source-test-case",
+      "en": "source test case",
+      "tr": "kaynak test senaryosu",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "static-analysis",
+      "en": "static analysis",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "stratified-sampling",
+      "en": "stratified sampling",
+      "tr": "tabakalı örnekleme",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "structural-coverage",
+      "en": "structural coverage",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "super-ai",
+      "en": "super AI",
+      "tr": "süper yapay zekâ",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "supervised-learning",
+      "en": "supervised learning",
+      "tr": "denetimli öğrenme",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "support-vector-machine",
+      "en": "support vector machine",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "system-integration-testing",
+      "en": "system integration testing",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "system-testing",
+      "en": "system testing",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "system-under-test",
+      "en": "system under test",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "technological-singularity",
+      "en": "technological singularity",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "temperature",
+      "en": "temperature",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test",
+      "en": "test",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-analyst",
+      "en": "test analyst",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-approach",
+      "en": "test approach",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-automation",
+      "en": "test automation",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-case",
+      "en": "test case",
+      "tr": "test senaryosu",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-condition",
+      "en": "test condition",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-data",
+      "en": "test data",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-environment",
+      "en": "test environment",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-level",
+      "en": "test level",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-management",
+      "en": "test management",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-manager",
+      "en": "test manager",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-object",
+      "en": "test object",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-objective",
+      "en": "test objective",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-oracle",
+      "en": "test oracle",
+      "tr": "test doğrulayıcı",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-oracle-problem",
+      "en": "test oracle problem",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-process",
+      "en": "test process",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-report",
+      "en": "test report",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-result",
+      "en": "test result",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-run",
+      "en": "test run",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-strategy",
+      "en": "test strategy",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-suite",
+      "en": "test suite",
+      "tr": "test paketi",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-technique",
+      "en": "test technique",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-type",
+      "en": "test type",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "testability",
+      "en": "testability",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "tester",
+      "en": "tester",
+      "tr": "test uzmanı",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "testing",
+      "en": "testing",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "testing-for-bias",
+      "en": "testing for bias",
+      "tr": "yanlılık testi",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "testing-in-production",
+      "en": "testing in production",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "traceability",
+      "en": "traceability",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "training-dataset",
+      "en": "training dataset",
+      "tr": "eğitim veri seti",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "transformer",
+      "en": "transformer",
+      "tr": "dönüştürücü",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "transparency",
+      "en": "transparency",
+      "tr": "şeffaflık",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "true-negative",
+      "en": "true negative",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "true-positive",
+      "en": "true positive",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "underfitting",
+      "en": "underfitting  ",
+      "chunk": "terms-u"
+    },
+    {
+      "slug": "unsupervised-learning",
+      "en": "unsupervised learning",
+      "tr": "denetimsiz öğrenme",
+      "chunk": "terms-u"
+    },
+    {
+      "slug": "usability",
+      "en": "usability",
+      "chunk": "terms-u"
+    },
+    {
+      "slug": "usability-testing",
+      "en": "usability testing",
+      "chunk": "terms-u"
+    },
+    {
+      "slug": "user-controllability",
+      "en": "user controllability",
+      "tr": "kullanıcı kontrol edilebilirliği",
+      "chunk": "terms-u"
+    },
+    {
+      "slug": "user-interface",
+      "en": "user interface",
+      "chunk": "terms-u"
+    },
+    {
+      "slug": "validation",
+      "en": "validation",
+      "tr": "sağlama",
+      "chunk": "terms-v"
+    },
+    {
+      "slug": "validation-dataset",
+      "en": "validation dataset",
+      "tr": "doğrulama veri seti",
+      "chunk": "terms-v"
+    },
+    {
+      "slug": "verification",
+      "en": "verification",
+      "tr": "doğrulama",
+      "chunk": "terms-v"
+    },
+    {
+      "slug": "von-neumann-architecture",
+      "en": "von Neumann architecture",
+      "chunk": "terms-v"
+    },
+    {
+      "slug": "weakness",
+      "en": "weakness",
+      "chunk": "terms-w"
+    },
+    {
+      "slug": "weight",
+      "en": "weight",
+      "chunk": "terms-w"
+    },
+    {
+      "slug": "white-box-testing",
+      "en": "white-box testing",
+      "chunk": "terms-w"
+    }
+  ]
+}

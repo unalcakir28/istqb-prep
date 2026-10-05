@@ -1,0 +1,24 @@
+{
+  "terms": [
+    {
+      "slug": "outlier",
+      "revision": 1,
+      "en": {
+        "term": "outlier",
+        "definition": "An observation that lies outside the overall pattern of the data distribution."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/outlier"
+    },
+    {
+      "slug": "overfitting",
+      "revision": 1,
+      "en": {
+        "term": "overfitting  ",
+        "definition": "The generation of an ML model that corresponds too closely to the training dataset, resulting in a model that finds it difficult to generalize to new data."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/overfitting"
+    }
+  ]
+}

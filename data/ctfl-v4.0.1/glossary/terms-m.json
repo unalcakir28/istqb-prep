@@ -1,0 +1,88 @@
+{
+  "terms": [
+    {
+      "slug": "maintainability",
+      "revision": 2,
+      "en": {
+        "term": "maintainability",
+        "definition": "The degree to which a component or system can be modified by the intended maintainers."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/maintainability"
+    },
+    {
+      "slug": "maintenance",
+      "revision": 2,
+      "en": {
+        "term": "maintenance",
+        "definition": "The process of modifying a component or system after delivery to correct defects, improve quality characteristics, or adapt to a changed environment."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/maintenance"
+    },
+    {
+      "slug": "maintenance-testing",
+      "revision": 1,
+      "en": {
+        "term": "maintenance testing",
+        "definition": "A test type that evaluates the effect of changes made to an operational system or its environment."
+      },
+      "tr": {
+        "term": "bakım testi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/maintenance-testing"
+    },
+    {
+      "slug": "maturity",
+      "revision": 2,
+      "en": {
+        "term": "maturity",
+        "definition": "(1) The capability of an organization with respect to the effectiveness and efficiency of its processes and work practices. (2) The degree to which a component or system meets needs for reliability under normal operation."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/maturity"
+    },
+    {
+      "slug": "mean-time-to-failure",
+      "revision": 1,
+      "en": {
+        "term": "mean time to failure",
+        "definition": "The average time from the start of operation to a failure for a component or system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/mean-time-to-failure"
+    },
+    {
+      "slug": "measurement",
+      "revision": 1,
+      "en": {
+        "term": "measurement",
+        "definition": "The process of assigning a number or category to an entity to describe an attribute of that entity."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/measurement"
+    },
+    {
+      "slug": "metric",
+      "revision": 1,
+      "en": {
+        "term": "metric",
+        "definition": "A measurement scale and the method used for measurement."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/metric"
+    },
+    {
+      "slug": "moderator",
+      "revision": 4,
+      "en": {
+        "term": "moderator",
+        "definition": "(1) The person responsible for running review meetings. (2) The person who performs a usability test session."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/moderator"
+    }
+  ]
+}

@@ -3,52 +3,111 @@
   "$id": "https://istqb-prep/schemas/glossary.schema.json",
   "title": "Glossary terms chunk",
   "type": "object",
-  "required": ["terms"],
+  "required": [
+    "terms"
+  ],
   "additionalProperties": false,
   "properties": {
     "terms": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["slug", "en", "tr", "source", "trSource"],
+        "required": [
+          "slug",
+          "en",
+          "source",
+          "sourceUrl"
+        ],
         "additionalProperties": false,
         "properties": {
-          "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "The term's own version in the ISTQB Glossary (the API's `version`), not the glossary release."
+          },
           "en": {
             "type": "object",
-            "required": ["term", "definition"],
+            "required": [
+              "term",
+              "definition"
+            ],
             "additionalProperties": false,
             "properties": {
-              "term": { "type": "string", "minLength": 1 },
-              "definition": { "type": "string", "minLength": 1 }
+              "term": {
+                "type": "string",
+                "minLength": 1
+              },
+              "definition": {
+                "type": "string",
+                "minLength": 1
+              }
             }
           },
           "tr": {
             "type": "object",
-            "required": ["term", "definition"],
+            "required": [
+              "term"
+            ],
             "additionalProperties": false,
+            "description": "Absent when the certification's terms.json has no Turkish term for it; never guessed.",
             "properties": {
-              "term": { "type": "string", "minLength": 1 },
-              "definition": { "type": "string", "minLength": 1 }
+              "term": {
+                "type": "string",
+                "minLength": 1
+              },
+              "definition": {
+                "type": "string",
+                "minLength": 1
+              }
             }
           },
           "usedIn": {
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["syllabus", "version"],
+              "required": [
+                "syllabus",
+                "version"
+              ],
               "properties": {
-                "syllabus": { "type": "string" },
-                "version": { "type": "string" }
+                "syllabus": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                }
               }
             }
           },
-          "source": { "type": "string", "minLength": 1 },
-          "sourceUrl": { "type": "string", "format": "uri" },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceUrl": {
+            "type": "string",
+            "format": "uri"
+          },
           "trSource": {
-            "enum": ["ttb-syllabus-v4.0.1", "ttb-glossary-v3.7", "editorial"],
-            "description": "Source of the Turkish equivalent. See docs/07-content-authoring-guide.md §5 for the source hierarchy."
+            "enum": [
+              "ttb-syllabus-v4.0.1",
+              "ttb-ct-ai-v1.0",
+              "ttb-glossary-v3.7",
+              "editorial"
+            ],
+            "description": "Source of the Turkish term, carried over from terms.json. See docs/07-content-authoring-guide.md §5 for the source hierarchy."
           }
+        },
+        "dependentRequired": {
+          "tr": [
+            "trSource"
+          ],
+          "trSource": [
+            "tr"
+          ]
         }
       }
     }

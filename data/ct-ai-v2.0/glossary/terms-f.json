@@ -1,0 +1,260 @@
+{
+  "terms": [
+    {
+      "slug": "f1-score",
+      "revision": 1,
+      "en": {
+        "term": "F1-Score",
+        "definition": "An ML functional performance metric used to evaluate a classifier which provides a balance between recall and precision."
+      },
+      "tr": {
+        "term": "F1 skoru"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/f1-score"
+    },
+    {
+      "slug": "failed",
+      "revision": 1,
+      "en": {
+        "term": "failed",
+        "definition": "A test result if the actual result does not match the expected result."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/failed"
+    },
+    {
+      "slug": "failure",
+      "revision": 3,
+      "en": {
+        "term": "failure",
+        "definition": "An event in which a component or system does not meet its requirements within specified limits during its execution."
+      },
+      "tr": {
+        "term": "arıza"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/failure"
+    },
+    {
+      "slug": "false-negative",
+      "revision": 1,
+      "en": {
+        "term": "false negative",
+        "definition": "An ML model prediction in which the model mistakenly predicts the negative. class."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/false-negative"
+    },
+    {
+      "slug": "false-positive",
+      "revision": 1,
+      "en": {
+        "term": "false positive",
+        "definition": "An ML model prediction in which the model mistakenly predicts the positive class."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/false-positive"
+    },
+    {
+      "slug": "fault-attack",
+      "revision": 1,
+      "en": {
+        "term": "fault attack",
+        "definition": "A test technique to evaluate a specific quality characteristic of a test object by attempting to trigger specific failures."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/fault-attack"
+    },
+    {
+      "slug": "fault-injection",
+      "revision": 2,
+      "en": {
+        "term": "fault injection",
+        "definition": "A technique for creating adverse conditions to evaluate whether a component or system can detect them and show reliable behavior."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/fault-injection"
+    },
+    {
+      "slug": "feature",
+      "revision": 2,
+      "en": {
+        "term": "feature",
+        "definition": "An individual measurable attribute of the input data used for training by an ML algorithm and for prediction by an ML model."
+      },
+      "tr": {
+        "term": "öznitelik"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/feature"
+    },
+    {
+      "slug": "feature-engineering",
+      "revision": 1,
+      "en": {
+        "term": "feature engineering",
+        "definition": "The activity in which those attributes in the raw data that best represent the underlying relationships that should appear in the ML model are identified for use in the training data."
+      },
+      "tr": {
+        "term": "öznitelik mühendisliği"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/feature-engineering"
+    },
+    {
+      "slug": "feature-testing",
+      "revision": 1,
+      "en": {
+        "term": "feature testing",
+        "definition": "A test type to determine if an AI model training dataset contains an appropriate set of features."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/feature-testing"
+    },
+    {
+      "slug": "finding",
+      "revision": 1,
+      "en": {
+        "term": "finding",
+        "definition": "A result of an evaluation that identifies some important issue, problem, or opportunity."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/finding"
+    },
+    {
+      "slug": "flexibility",
+      "revision": 1,
+      "en": {
+        "term": "flexibility",
+        "definition": "The degree to which a component or system can be adapted to changes in its requirements, contexts of use, or system environment."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/flexibility"
+    },
+    {
+      "slug": "follow-up-test-case",
+      "revision": 1,
+      "en": {
+        "term": "follow-up test case",
+        "definition": "A test case generated by applying a metamorphic relation to a source test case during metamorphic testing."
+      },
+      "tr": {
+        "term": "takip test senaryosu"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/follow-up-test-case"
+    },
+    {
+      "slug": "foundation-model",
+      "revision": 1,
+      "en": {
+        "term": "foundation model",
+        "definition": "A large-scale ML model trained on large datasets using self-supervised learning, designed as a versatile base that can be fine-tuned or adapted to a wide range of tasks across different domains."
+      },
+      "tr": {
+        "term": "temel model"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/foundation-model"
+    },
+    {
+      "slug": "frontier-ai",
+      "revision": 1,
+      "en": {
+        "term": "frontier AI",
+        "definition": "A general-purpose AI-based system that exceeds the capabilities of today’s most advanced AI systems."
+      },
+      "tr": {
+        "term": "öncü yapay zekâ"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/frontier-ai"
+    },
+    {
+      "slug": "functional-adaptability",
+      "revision": 1,
+      "en": {
+        "term": "functional adaptability",
+        "definition": "The degree to which an AI-based system can acquire information from data or previous actions to make future predictions."
+      },
+      "tr": {
+        "term": "fonksiyonel uyarlanabilirlik"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/functional-adaptability"
+    },
+    {
+      "slug": "functional-correctness",
+      "revision": 2,
+      "en": {
+        "term": "functional correctness",
+        "definition": "The degree to which a component or system provides the correct results with the needed degree of precision."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/functional-correctness"
+    },
+    {
+      "slug": "functional-safety",
+      "revision": 1,
+      "en": {
+        "term": "functional safety",
+        "definition": "The absence of unreasonable risk due to hazards caused by malfunctioning behavior of electric/electronic systems."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/functional-safety"
+    },
+    {
+      "slug": "functional-suitability",
+      "revision": 2,
+      "en": {
+        "term": "functional suitability",
+        "definition": "The degree to which a component or system provides functions that meet stated and implied needs when used under specified conditions."
+      },
+      "tr": {
+        "term": "fonksiyonel uygunluk"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/functional-suitability"
+    },
+    {
+      "slug": "functional-testing",
+      "revision": 4,
+      "en": {
+        "term": "functional testing",
+        "definition": "A test type to determine the functional suitability of a test object."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/functional-testing"
+    },
+    {
+      "slug": "fuzz-testing",
+      "revision": 2,
+      "en": {
+        "term": "fuzz testing",
+        "definition": "A test technique in which high volumes of random data are used to generate test inputs."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/fuzz-testing"
+    },
+    {
+      "slug": "fuzzy-logic",
+      "revision": 1,
+      "en": {
+        "term": "fuzzy logic",
+        "definition": "A type of logic based on the concept of partial truth represented by certainty factors between 0 and 1."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/fuzzy-logic"
+    }
+  ]
+}

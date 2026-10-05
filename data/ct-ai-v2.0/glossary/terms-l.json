@@ -1,0 +1,56 @@
+{
+  "terms": [
+    {
+      "slug": "label-correctness-testing",
+      "revision": 1,
+      "en": {
+        "term": "label correctness testing",
+        "definition": "A test type to determine the accuracy and consistency of labels assigned to examples in a dataset."
+      },
+      "tr": {
+        "term": "etiket doğruluğu testi"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/label-correctness-testing"
+    },
+    {
+      "slug": "large-language-model",
+      "revision": 1,
+      "en": {
+        "term": "large language model",
+        "definition": "A generative AI system trained on very large collections of language data."
+      },
+      "tr": {
+        "term": "büyük dil modeli"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/large-language-model"
+    },
+    {
+      "slug": "linear-regression",
+      "revision": 1,
+      "en": {
+        "term": "linear regression",
+        "definition": "A statistical technique that models the relationship between variables by fitting a linear equation to the observed data when the target variable is numeric."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/linear-regression"
+    },
+    {
+      "slug": "locked-ai-based-system",
+      "revision": 1,
+      "en": {
+        "term": "locked AI-based system",
+        "definition": "A deterministic AI-based system with a fixed unchanging model which does not change its behavior once it is deployed."
+      },
+      "tr": {
+        "term": "kilitli yapay zekâ tabanlı sistem"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/locked-ai-based-system"
+    }
+  ]
+}

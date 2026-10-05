@@ -1,0 +1,56 @@
+{
+  "terms": [
+    {
+      "slug": "validation",
+      "revision": 2,
+      "en": {
+        "term": "validation",
+        "definition": "Confirmation by examination that a work product matches a stakeholder&#039;s needs."
+      },
+      "tr": {
+        "term": "sağlama"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/validation"
+    },
+    {
+      "slug": "validation-dataset",
+      "revision": 1,
+      "en": {
+        "term": "validation dataset",
+        "definition": "A dataset used to evaluate a trained ML model with the purpose of tuning the model."
+      },
+      "tr": {
+        "term": "doğrulama veri seti"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/validation-dataset"
+    },
+    {
+      "slug": "verification",
+      "revision": 2,
+      "en": {
+        "term": "verification",
+        "definition": "The process of confirming that a work product fulfills its specification."
+      },
+      "tr": {
+        "term": "doğrulama"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/verification"
+    },
+    {
+      "slug": "von-neumann-architecture",
+      "revision": 1,
+      "en": {
+        "term": "von Neumann architecture",
+        "definition": "A computer architecture which consists of five main components: memory, a central processing unit, a control unit, input, and output."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/von-neumann-architecture"
+    }
+  ]
+}

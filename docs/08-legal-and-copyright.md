@@ -47,7 +47,7 @@ The *Exam Structures & Rules* and *Exam Tables* documents carry the same 5 claus
 | Explaining the exam mechanics (40 questions / 26 points / 60 min) | ✅ | Factual information; not a copyright matter |
 | **Our own original questions** | ✅ | Not a derivative work. **This is our core content strategy.** |
 | Linking to the official PDFs | ✅ | Linking isn't copying |
-| Showing glossary terms | ⚠️→✅ | Probably CC BY 4.0 — see §5, **verification needed** |
+| Showing glossary terms and definitions | ✅ | CC BY 4.0, verified 22.09.2026 — see §5; shown with attribution |
 | Showing a few official questions as examples, with attribution | ⚠️ | "Extract" is arguable, but a **website isn't** in the list of permitted uses |
 | **Putting all 186 official sample questions on the site** | ❌ | Not an "extract" — the whole document. Also, the permitted uses are limited to an *accredited training course* and *articles/books* |
 | Ad or subscription revenue | ❌ | The permission is explicitly limited to **non-commercial** use |
@@ -121,9 +121,9 @@ So it is CC BY 4.0: the definitions may be reproduced with attribution, even com
 
 Three things that verification did **not** settle, carried forward:
 
-1. **The version.** The live glossary is **V4.8.1**; our content is written against CTFL **v4.0.1**. A copied definition cites the glossary's own version, not the syllabus's, or the two get conflated.
+1. **The version.** The live glossary is **V4.8.1**; our content is written against CTFL **v4.0.1**. A copied definition is dated by the glossary, not the syllabus, or the two get conflated; how the copy records it is in point 3.
 2. **"Except where otherwise noted"** makes the notice a default, not a blanket. A page carrying its own notice overrides it, so each definition is checked on the page it came from.
-3. **Nothing has been copied yet.** This unblocks copying; it does not perform it. `/sozluk` currently ships each certification's keyword pairs (97 CTFL · 156 CT-AI) and says outright that it carries no definitions.
+3. **Copied on 05.10.2026 (F0-09), not shown yet.** `yarn fetch:glossary` writes the English definitions of the terms each syllabus uses (215 CTFL · 280 CT-AI) into `data/<cert>/glossary/`, verbatim, each with its term page as `sourceUrl`; the index carries the source, the licence and the fetch date. On point 2: the API records carry no notice of their own (their fields are id, term, slug, version, definition, references, used_in), so the site default applies. On point 1: the API does not report the glossary release, so the data records `fetchedAt` and each term's own `revision`; V4.8.1 is the release the footer showed on 22.09.2026. `/sozluk` still ships only each certification's keyword pairs (97 CTFL · 156 CT-AI) and says it carries no definitions; showing them, with the attribution, is F2-11.
 
 ---
 

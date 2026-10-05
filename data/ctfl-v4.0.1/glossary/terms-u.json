@@ -1,0 +1,74 @@
+{
+  "terms": [
+    {
+      "slug": "unit-test-framework",
+      "revision": 2,
+      "en": {
+        "term": "unit test framework",
+        "definition": "A tool that provides an environment for testing a unit in isolation."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/unit-test-framework"
+    },
+    {
+      "slug": "usability",
+      "revision": 3,
+      "en": {
+        "term": "usability",
+        "definition": "The degree to which a component or system can be used by specified users to achieve specified goals in a specified context of use."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/usability"
+    },
+    {
+      "slug": "usability-lab",
+      "revision": 1,
+      "en": {
+        "term": "usability lab",
+        "definition": "A test facility in which unintrusive observation of participant reactions and responses to software takes place."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/usability-lab"
+    },
+    {
+      "slug": "usability-testing",
+      "revision": 2,
+      "en": {
+        "term": "usability testing",
+        "definition": "Testing to evaluate the degree to which the system can be used by specified users with effectiveness, efficiency and satisfaction in a specified context of use."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/usability-testing"
+    },
+    {
+      "slug": "user-acceptance-testing",
+      "revision": 4,
+      "en": {
+        "term": "user acceptance testing",
+        "definition": "A type of acceptance testing performed to determine if intended users accept the system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/user-acceptance-testing"
+    },
+    {
+      "slug": "user-experience",
+      "revision": 1,
+      "en": {
+        "term": "user experience",
+        "definition": "A person's perceptions and responses resulting from the use or anticipated use of a software product."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/user-experience"
+    },
+    {
+      "slug": "user-story",
+      "revision": 4,
+      "en": {
+        "term": "user story",
+        "definition": "A short narrative describing a need from a user’s perspective together with the expected benefit when this need is satisfied."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/user-story"
+    }
+  ]
+}

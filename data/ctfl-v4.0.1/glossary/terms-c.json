@@ -1,0 +1,232 @@
+{
+  "terms": [
+    {
+      "slug": "cause-effect-diagram",
+      "revision": 1,
+      "en": {
+        "term": "cause-effect diagram",
+        "definition": "A graphical representation used to organize and display the interrelationships of various possible root causes of a problem. Possible causes of a real or potential defect or failure are organized in categories and subcategories in a horizontal tree-structure, with the (potential) defect or failure as the root node."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/cause-effect-diagram"
+    },
+    {
+      "slug": "checklist-based-review",
+      "revision": 1,
+      "en": {
+        "term": "checklist-based reviewing",
+        "definition": "A review technique guided by a list of questions or required attributes."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/checklist-based-review"
+    },
+    {
+      "slug": "checklist-based-testing",
+      "revision": 3,
+      "en": {
+        "term": "checklist-based testing",
+        "definition": "An experience-based test technique in which test cases are designed to exercise the items of a checklist."
+      },
+      "tr": {
+        "term": "kontrol listesine dayalı test etme"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/checklist-based-testing"
+    },
+    {
+      "slug": "coding-standard",
+      "revision": 2,
+      "en": {
+        "term": "coding standard",
+        "definition": "A quality standard that defines required characteristics of code."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/coding-standard"
+    },
+    {
+      "slug": "collaboration-based-test-approach",
+      "revision": 1,
+      "en": {
+        "term": "collaboration-based test approach",
+        "definition": "An approach to testing that focuses on defect avoidance by collaborating among stakeholders."
+      },
+      "tr": {
+        "term": "iş birliğine dayalı test yaklaşımı"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/collaboration-based-test-approach"
+    },
+    {
+      "slug": "compatibility",
+      "revision": 1,
+      "en": {
+        "term": "compatibility",
+        "definition": "The degree to which a component or system can exchange information with other components or systems, and/or perform its required functions while sharing the same hardware or software environment."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/compatibility"
+    },
+    {
+      "slug": "compliance",
+      "revision": 2,
+      "en": {
+        "term": "compliance",
+        "definition": "Adherence of a work product to standards, conventions or regulations in laws and similar prescriptions."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/compliance"
+    },
+    {
+      "slug": "component",
+      "revision": 2,
+      "en": {
+        "term": "component",
+        "definition": "A part of a system that can be tested in isolation."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/component"
+    },
+    {
+      "slug": "component-integration-testing",
+      "revision": 3,
+      "en": {
+        "term": "component integration testing",
+        "definition": "The integration testing of components."
+      },
+      "tr": {
+        "term": "bileşen entegrasyon testi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/component-integration-testing"
+    },
+    {
+      "slug": "component-testing",
+      "revision": 3,
+      "en": {
+        "term": "component testing",
+        "definition": "A test level that focuses on individual hardware or software components."
+      },
+      "tr": {
+        "term": "bileşen testi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/component-testing"
+    },
+    {
+      "slug": "confirmation-testing",
+      "revision": 3,
+      "en": {
+        "term": "confirmation testing",
+        "definition": "A type of change-related testing performed after fixing a defect to confirm that a failure caused by that defect does not reoccur."
+      },
+      "tr": {
+        "term": "onaylama testi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/confirmation-testing"
+    },
+    {
+      "slug": "continuous-delivery",
+      "revision": 1,
+      "en": {
+        "term": "continuous delivery",
+        "definition": "An automated software development procedure in which code changes are automatically built, tested, and prepared for a release to production."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/continuous-delivery"
+    },
+    {
+      "slug": "continuous-deployment",
+      "revision": 1,
+      "en": {
+        "term": "continuous deployment",
+        "definition": "An automated software release procedure in which all code changes are deployed to production after all specified tests have passed."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/continuous-deployment"
+    },
+    {
+      "slug": "continuous-integration",
+      "revision": 1,
+      "en": {
+        "term": "continuous integration",
+        "definition": "An automated software development procedure that merges, integrates and tests all changes as soon as they are committed."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/continuous-integration"
+    },
+    {
+      "slug": "continuous-testing",
+      "revision": 2,
+      "en": {
+        "term": "continuous testing",
+        "definition": "A test approach that performs testing throughout the software development lifecycle, early and often, and automates tests to obtain feedback as quickly as possible on software release candidates."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/continuous-testing"
+    },
+    {
+      "slug": "control-flow",
+      "revision": 3,
+      "en": {
+        "term": "control flow",
+        "definition": "The sequence in which operations are performed by a business process, component or system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/control-flow"
+    },
+    {
+      "slug": "cost-of-quality",
+      "revision": 1,
+      "en": {
+        "term": "cost of quality",
+        "definition": "The total costs incurred on quality activities and defects, consisting of the costs of defect prevention, appraisal, internal failure, and external failure."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/cost-of-quality"
+    },
+    {
+      "slug": "coverage",
+      "revision": 3,
+      "en": {
+        "term": "coverage",
+        "definition": "The degree to which specified coverage items are exercised by a test suite, expressed as a percentage."
+      },
+      "tr": {
+        "term": "kapsam"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/coverage"
+    },
+    {
+      "slug": "coverage-criteria",
+      "revision": 1,
+      "en": {
+        "term": "coverage criteria",
+        "definition": "The criteria to define the coverage items required to reach a test objective."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/coverage-criteria"
+    },
+    {
+      "slug": "coverage-item",
+      "revision": 2,
+      "en": {
+        "term": "coverage item",
+        "definition": "An attribute or combination of attributes derived from one or more test conditions by using a test technique."
+      },
+      "tr": {
+        "term": "kapsam öğesi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/coverage-item"
+    }
+  ]
+}

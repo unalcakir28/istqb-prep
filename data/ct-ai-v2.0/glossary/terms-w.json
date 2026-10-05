@@ -1,0 +1,34 @@
+{
+  "terms": [
+    {
+      "slug": "weakness",
+      "revision": 2,
+      "en": {
+        "term": "weakness",
+        "definition": "A condition that may lead to undesirable behavior."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/weakness"
+    },
+    {
+      "slug": "weight",
+      "revision": 1,
+      "en": {
+        "term": "weight",
+        "definition": "An internal variable of a connection between neurons in a neural network that affects how it computes its outputs and that changes as the neural network is trained."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/weight"
+    },
+    {
+      "slug": "white-box-testing",
+      "revision": 2,
+      "en": {
+        "term": "white-box testing",
+        "definition": "A test approach based on the internal structure of a component or system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/white-box-testing"
+    }
+  ]
+}

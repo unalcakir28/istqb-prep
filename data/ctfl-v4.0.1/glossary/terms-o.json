@@ -1,0 +1,14 @@
+{
+  "terms": [
+    {
+      "slug": "operational-acceptance-testing",
+      "revision": 3,
+      "en": {
+        "term": "operational acceptance testing",
+        "definition": "A type of acceptance testing performed to determine whether the organization responsible for operating the system can accept it."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/operational-acceptance-testing"
+    }
+  ]
+}

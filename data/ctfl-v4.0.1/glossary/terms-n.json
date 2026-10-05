@@ -1,0 +1,38 @@
+{
+  "terms": [
+    {
+      "slug": "n-switch-coverage",
+      "revision": 1,
+      "en": {
+        "term": "N-switch coverage",
+        "definition": "The coverage of sequences of N+1 transitions."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/n-switch-coverage"
+    },
+    {
+      "slug": "negative-testing",
+      "revision": 1,
+      "en": {
+        "term": "negative testing",
+        "definition": "A test type in which a component or system is used in a way that it is not intended."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/negative-testing"
+    },
+    {
+      "slug": "non-functional-testing",
+      "revision": 3,
+      "en": {
+        "term": "non-functional testing",
+        "definition": "A test type to evaluate that a component or system complies with non-functional requirements."
+      },
+      "tr": {
+        "term": "fonksiyonel olmayan test"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/non-functional-testing"
+    }
+  ]
+}

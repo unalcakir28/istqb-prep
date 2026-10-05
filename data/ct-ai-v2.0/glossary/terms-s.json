@@ -1,0 +1,256 @@
+{
+  "terms": [
+    {
+      "slug": "safety",
+      "revision": 2,
+      "en": {
+        "term": "safety",
+        "definition": "The degree to which a component or system under defined conditions can avoid endangering human life, health, property, or the environment."
+      },
+      "tr": {
+        "term": "emniyet"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/safety"
+    },
+    {
+      "slug": "scalability",
+      "revision": 1,
+      "en": {
+        "term": "scalability",
+        "definition": "The degree to which a component or system can be adjusted for changing capacity."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/scalability"
+    },
+    {
+      "slug": "search-algorithm",
+      "revision": 1,
+      "en": {
+        "term": "search algorithm",
+        "definition": "An algorithm that systematically visits a subset of all possible states or structures until the goal state or structure is reached."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/search-algorithm"
+    },
+    {
+      "slug": "security",
+      "revision": 4,
+      "en": {
+        "term": "security",
+        "definition": "The degree to which a component or system defends against security attacks and provides access appropriate to types and levels of authorization."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/security"
+    },
+    {
+      "slug": "security-testing",
+      "revision": 1,
+      "en": {
+        "term": "security testing",
+        "definition": "A test type to determine the security of a component or system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/security-testing"
+    },
+    {
+      "slug": "self-learning-system",
+      "revision": 1,
+      "en": {
+        "term": "self-learning system",
+        "definition": "An adaptive system that changes its behavior based on learning through trial and error."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/self-learning-system"
+    },
+    {
+      "slug": "sensitive-attributes",
+      "revision": 1,
+      "en": {
+        "term": "sensitive attributes",
+        "definition": "Characteristics that define legally or ethically protected groups and individuals that must be controlled to prevent discrimination."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/sensitive-attributes"
+    },
+    {
+      "slug": "sentiment-analysis",
+      "revision": 1,
+      "en": {
+        "term": "sentiment analysis",
+        "definition": "The use of natural language processing and machine learning to identify and classify the emotional tone expressed in text."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/sentiment-analysis"
+    },
+    {
+      "slug": "shadow-testing",
+      "revision": 1,
+      "en": {
+        "term": "shadow testing",
+        "definition": "A test type used to compare a new version of a component or system with the current version by running the former in the background."
+      },
+      "tr": {
+        "term": "gölge testi"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/shadow-testing"
+    },
+    {
+      "slug": "side-effects-testing",
+      "revision": 1,
+      "en": {
+        "term": "side-effects testing",
+        "definition": "A test type to determine if executing a test object leads to unforeseen consequences."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/side-effects-testing"
+    },
+    {
+      "slug": "smoke-testing",
+      "revision": 1,
+      "en": {
+        "term": "smoke testing",
+        "definition": "A test type to gain sufficient confidence that a test object is ready for planned testing."
+      },
+      "tr": {
+        "term": "duman testi"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/smoke-testing"
+    },
+    {
+      "slug": "societal-and-ethical-risk-mitigation",
+      "revision": 1,
+      "en": {
+        "term": "societal and ethical risk mitigation",
+        "definition": "The degree to which an AI-based system avoids risks to society arising from its operation."
+      },
+      "tr": {
+        "term": "toplumsal ve etik risk azaltma"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/societal-and-ethical-risk-mitigation"
+    },
+    {
+      "slug": "source-test-case",
+      "revision": 1,
+      "en": {
+        "term": "source test case",
+        "definition": "A test case that passed and is used as the basis of follow-up test cases in metamorphic testing."
+      },
+      "tr": {
+        "term": "kaynak test senaryosu"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/source-test-case"
+    },
+    {
+      "slug": "static-analysis",
+      "revision": 2,
+      "en": {
+        "term": "static analysis",
+        "definition": "The automated process of evaluating a component or system without executing it, based on its form, structure, content, or documentation."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/static-analysis"
+    },
+    {
+      "slug": "stratified-sampling",
+      "revision": 1,
+      "en": {
+        "term": "stratified sampling",
+        "definition": "A technique to confirm if a sample proportionally represents different sub-populations within the overall population."
+      },
+      "tr": {
+        "term": "tabakalı örnekleme"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/stratified-sampling"
+    },
+    {
+      "slug": "structural-coverage",
+      "revision": 1,
+      "en": {
+        "term": "structural coverage",
+        "definition": "Coverage measures based on the internal structure of a component or system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/structural-coverage"
+    },
+    {
+      "slug": "super-ai",
+      "revision": 1,
+      "en": {
+        "term": "super AI",
+        "definition": "A type of AI that far exceeds human capabilities."
+      },
+      "tr": {
+        "term": "süper yapay zekâ"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/super-ai"
+    },
+    {
+      "slug": "supervised-learning",
+      "revision": 1,
+      "en": {
+        "term": "supervised learning",
+        "definition": "An approach to training an ML model by using a labeled dataset."
+      },
+      "tr": {
+        "term": "denetimli öğrenme"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/supervised-learning"
+    },
+    {
+      "slug": "support-vector-machine",
+      "revision": 1,
+      "en": {
+        "term": "support vector machine",
+        "definition": "A supervised ML algorithm that finds the optimal hyperplane between data points for classification or ML regression tasks."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/support-vector-machine"
+    },
+    {
+      "slug": "system-integration-testing",
+      "revision": 4,
+      "en": {
+        "term": "system integration testing",
+        "definition": "A test level that focuses on the integration of systems."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/system-integration-testing"
+    },
+    {
+      "slug": "system-testing",
+      "revision": 2,
+      "en": {
+        "term": "system testing",
+        "definition": "A test level that focuses on verifying that a system as a whole meets specified requirements."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/system-testing"
+    },
+    {
+      "slug": "system-under-test",
+      "revision": 2,
+      "en": {
+        "term": "system under test",
+        "definition": "A type of test object that is a system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/system-under-test"
+    }
+  ]
+}

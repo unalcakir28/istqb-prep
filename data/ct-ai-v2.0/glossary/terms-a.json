@@ -1,0 +1,328 @@
+{
+  "terms": [
+    {
+      "slug": "ab-testing",
+      "revision": 2,
+      "en": {
+        "term": "A/B testing",
+        "definition": "A test approach in which two variants of a test object are statistically evaluated to determine which performs better for specified characteristics."
+      },
+      "tr": {
+        "term": "A/B testi"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ab-testing"
+    },
+    {
+      "slug": "acceptance-criteria",
+      "revision": 3,
+      "en": {
+        "term": "acceptance criteria",
+        "definition": "The criteria that a work product must satisfy to be accepted by the stakeholders."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/acceptance-criteria"
+    },
+    {
+      "slug": "acceptance-testing",
+      "revision": 2,
+      "en": {
+        "term": "acceptance testing",
+        "definition": "A test level that focuses on determining whether to accept the system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/acceptance-testing"
+    },
+    {
+      "slug": "accountability",
+      "revision": 1,
+      "en": {
+        "term": "accountability",
+        "definition": "The degree to which the actions of an entity can be traced uniquely to that entity."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/accountability"
+    },
+    {
+      "slug": "accuracy",
+      "revision": 1,
+      "en": {
+        "term": "accuracy",
+        "definition": "The ML functional performance metric used to evaluate a classifier, which measures the proportion of predictions that were correct."
+      },
+      "tr": {
+        "term": "doğruluk"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/accuracy"
+    },
+    {
+      "slug": "activation-function",
+      "revision": 1,
+      "en": {
+        "term": "activation function",
+        "definition": "The formula associated with a neuron in a neural network that determines the output of the neuron from the inputs to the neuron."
+      },
+      "tr": {
+        "term": "aktivasyon fonksiyonu"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/activation-function"
+    },
+    {
+      "slug": "activation-value",
+      "revision": 1,
+      "en": {
+        "term": "activation value",
+        "definition": "The output of an activation function of a neuron in a neural network."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/activation-value"
+    },
+    {
+      "slug": "adaptability",
+      "revision": 3,
+      "en": {
+        "term": "adaptability",
+        "definition": "The degree to which a component or system can be adapted to various or evolving hardware, software, or other operational or usage environments."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/adaptability"
+    },
+    {
+      "slug": "adaptive-ai-based-system",
+      "revision": 1,
+      "en": {
+        "term": "adaptive AI-based system",
+        "definition": "An AI-based system that adjusts its behavior in response to changes in its operational environment."
+      },
+      "tr": {
+        "term": "uyarlanabilir yapay zekâ tabanlı sistem"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/adaptive-ai-based-system"
+    },
+    {
+      "slug": "adversarial-attack",
+      "revision": 1,
+      "en": {
+        "term": "adversarial attack",
+        "definition": "The deliberate use of adversarial examples to cause an ML model to fail."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/adversarial-attack"
+    },
+    {
+      "slug": "adversarial-example",
+      "revision": 1,
+      "en": {
+        "term": "adversarial example",
+        "definition": "An input to an ML model created by applying small perturbations to a working example that results in the model outputting an incorrect result with high confidence."
+      },
+      "tr": {
+        "term": "karşıt örnek"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/adversarial-example"
+    },
+    {
+      "slug": "adversarial-testing",
+      "revision": 2,
+      "en": {
+        "term": "adversarial testing",
+        "definition": "A test technique in which tests are designed based on adversarial examples."
+      },
+      "tr": {
+        "term": "karşıt test"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/adversarial-testing"
+    },
+    {
+      "slug": "ai-as-a-service",
+      "revision": 1,
+      "en": {
+        "term": "AI as a Service",
+        "definition": "A software licensing and delivery model in which AI and AI development services are centrally hosted."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ai-as-a-service"
+    },
+    {
+      "slug": "ai-based-system",
+      "revision": 1,
+      "en": {
+        "term": "AI-based system",
+        "definition": "A system that incorporates one or more AI components."
+      },
+      "tr": {
+        "term": "yapay zekâ tabanlı sistem"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ai-based-system"
+    },
+    {
+      "slug": "ai-component",
+      "revision": 1,
+      "en": {
+        "term": "AI component",
+        "definition": "A component that provides AI functionality."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ai-component"
+    },
+    {
+      "slug": "ai-model",
+      "revision": 1,
+      "en": {
+        "term": "AI model",
+        "definition": "A computer program that implements AI."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ai-model"
+    },
+    {
+      "slug": "algorithmic-bias",
+      "revision": 1,
+      "en": {
+        "term": "algorithmic bias",
+        "definition": "A type of bias caused by the ML algorithm."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/algorithmic-bias"
+    },
+    {
+      "slug": "annotation",
+      "revision": 1,
+      "en": {
+        "term": "annotation",
+        "definition": "The activity of identifying objects in images with bounding boxes to provide labelled data for classification."
+      },
+      "tr": {
+        "term": "etiketleme"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/annotation"
+    },
+    {
+      "slug": "api-testing",
+      "revision": 2,
+      "en": {
+        "term": "API testing",
+        "definition": "A test approach performed by submitting requests to a test object using its application programming interface."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/api-testing"
+    },
+    {
+      "slug": "application-programming-interface",
+      "revision": 1,
+      "en": {
+        "term": "application programming interface",
+        "definition": "A type of interface in which the components or systems involved exchange information in a defined formal structure."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/application-programming-interface"
+    },
+    {
+      "slug": "artificial-intelligence",
+      "revision": 1,
+      "en": {
+        "term": "artificial intelligence",
+        "definition": "The capability of an engineered system to acquire, process, create and apply knowledge and skills."
+      },
+      "tr": {
+        "term": "yapay zekâ"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/artificial-intelligence"
+    },
+    {
+      "slug": "association",
+      "revision": 1,
+      "en": {
+        "term": "association",
+        "definition": "An unsupervised ML learning technique that identifies relationships and dependencies between samples."
+      },
+      "tr": {
+        "term": "ilişkilendirme"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/association"
+    },
+    {
+      "slug": "attack",
+      "revision": 1,
+      "en": {
+        "term": "attack",
+        "definition": "A test approach in which a set of deliberate actions is used to reveal a particular defect type."
+      },
+      "tr": {
+        "term": "saldırı"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/attack"
+    },
+    {
+      "slug": "attack-vector",
+      "revision": 1,
+      "en": {
+        "term": "attack vector",
+        "definition": "A path or means by which an attacker can gain access to a system for malicious purposes."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/attack-vector"
+    },
+    {
+      "slug": "audit",
+      "revision": 2,
+      "en": {
+        "term": "audit",
+        "definition": "An independent examination performed by a third party on a work product or process to assess whether it complies with specified criteria."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/audit"
+    },
+    {
+      "slug": "augmentation",
+      "revision": 1,
+      "en": {
+        "term": "augmentation",
+        "definition": "The activity of creating new data points based on an existing dataset."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/augmentation"
+    },
+    {
+      "slug": "automotive-safety-integrity-level",
+      "revision": 1,
+      "en": {
+        "term": "automotive safety integrity level",
+        "definition": "One of four levels that specify the item's or element's necessary requirements of ISO 26262 and safety measures to avoid an unreasonable residual risk."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/automotive-safety-integrity-level"
+    },
+    {
+      "slug": "availability",
+      "revision": 2,
+      "en": {
+        "term": "availability",
+        "definition": "The degree to which a component or system is operational and accessible when required for use."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/availability"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "terms": [
+    {
+      "slug": "safety",
+      "revision": 2,
+      "en": {
+        "term": "safety",
+        "definition": "The degree to which a component or system under defined conditions can avoid endangering human life, health, property, or the environment."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/safety"
+    },
+    {
+      "slug": "scalability",
+      "revision": 1,
+      "en": {
+        "term": "scalability",
+        "definition": "The degree to which a component or system can be adjusted for changing capacity."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/scalability"
+    },
+    {
+      "slug": "scenario-based-review",
+      "revision": 2,
+      "en": {
+        "term": "scenario-based reviewing",
+        "definition": "A review technique in which a work product is evaluated to determine its ability to address specific scenarios."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/scenario-based-review"
+    },
+    {
+      "slug": "scribe",
+      "revision": 2,
+      "en": {
+        "term": "scribe",
+        "definition": "A person who records information at a review meeting."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/scribe"
+    },
+    {
+      "slug": "security",
+      "revision": 4,
+      "en": {
+        "term": "security",
+        "definition": "The degree to which a component or system defends against security attacks and provides access appropriate to types and levels of authorization."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/security"
+    },
+    {
+      "slug": "sequential-development-model",
+      "revision": 2,
+      "en": {
+        "term": "sequential development model",
+        "definition": "A type of software development lifecycle model in which a complete system is developed in a linear way of several discrete and successive phases with no overlap between them."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/sequential-development-model"
+    },
+    {
+      "slug": "service-virtualization",
+      "revision": 1,
+      "en": {
+        "term": "service virtualization",
+        "definition": "A technique to enable the delivery of virtual services which are deployed, accessed and managed remotely."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/service-virtualization"
+    },
+    {
+      "slug": "session-based-testing",
+      "revision": 1,
+      "en": {
+        "term": "session-based testing",
+        "definition": "A test approach in which test activities are planned as test sessions."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/session-based-testing"
+    },
+    {
+      "slug": "severity",
+      "revision": 1,
+      "en": {
+        "term": "severity",
+        "definition": "The degree of impact that a defect has on the development, testing or operation of a component or system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/severity"
+    },
+    {
+      "slug": "shift-left",
+      "revision": 1,
+      "en": {
+        "term": "shift left",
+        "definition": "A test approach to perform testing and quality assurance activities as early as possible in the software development lifecycle."
+      },
+      "tr": {
+        "term": "shift-left"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/shift-left"
+    },
+    {
+      "slug": "simulator",
+      "revision": 2,
+      "en": {
+        "term": "simulator",
+        "definition": "A component or system used during testing which behaves or operates like a given component or system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/simulator"
+    },
+    {
+      "slug": "software-development-lifecycle",
+      "revision": 1,
+      "en": {
+        "term": "software development lifecycle",
+        "definition": "The activities performed at each phase in software development, and how they relate to one another logically and chronologically."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/software-development-lifecycle"
+    },
+    {
+      "slug": "state-transition-testing",
+      "revision": 3,
+      "en": {
+        "term": "state transition testing",
+        "definition": "A black-box test technique in which test conditions are state transitions or sequences of them."
+      },
+      "tr": {
+        "term": "durum geçişi testi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/state-transition-testing"
+    },
+    {
+      "slug": "static-analysis",
+      "revision": 2,
+      "en": {
+        "term": "static analysis",
+        "definition": "The automated process of evaluating a component or system without executing it, based on its form, structure, content, or documentation."
+      },
+      "tr": {
+        "term": "statik analiz"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/static-analysis"
+    },
+    {
+      "slug": "static-testing",
+      "revision": 4,
+      "en": {
+        "term": "static testing",
+        "definition": "A test approach that does not involve the execution of a test item."
+      },
+      "tr": {
+        "term": "statik test"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/static-testing"
+    },
+    {
+      "slug": "stub",
+      "revision": 2,
+      "en": {
+        "term": "stub",
+        "definition": "A type of test double providing predefined responses."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/stub"
+    },
+    {
+      "slug": "system-integration-testing",
+      "revision": 4,
+      "en": {
+        "term": "system integration testing",
+        "definition": "A test level that focuses on the integration of systems."
+      },
+      "tr": {
+        "term": "sistem entegrasyon testi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/system-integration-testing"
+    },
+    {
+      "slug": "system-testing",
+      "revision": 2,
+      "en": {
+        "term": "system testing",
+        "definition": "A test level that focuses on verifying that a system as a whole meets specified requirements."
+      },
+      "tr": {
+        "term": "sistem testi"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/system-testing"
+    },
+    {
+      "slug": "system-under-test",
+      "revision": 2,
+      "en": {
+        "term": "system under test",
+        "definition": "A type of test object that is a system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/system-under-test"
+    }
+  ]
+}

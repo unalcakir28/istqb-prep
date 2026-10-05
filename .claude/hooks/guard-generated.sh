@@ -2,7 +2,8 @@
 # PreToolUse guard: generated files are outputs, not sources.
 #
 # These are tracked in git, which makes them look editable. They are not: the
-# next `yarn build:index` or `yarn stats` overwrites them, and until it runs the
+# next `yarn build:index`, `yarn stats`, `yarn fetch:glossary` or
+# `yarn sync:data` overwrites them, and until it runs the
 # data set quietly disagrees with itself.
 set -uo pipefail
 
@@ -17,6 +18,8 @@ case $file_path in
     producer="yarn build:index" ;;
   */data/manifest.json|data/manifest.json)
     producer="yarn build:index" ;;
+  */glossary/index.json|*/glossary/terms-*.json)
+    producer="yarn fetch:glossary" ;;
   */docs/coverage.md|docs/coverage.md)
     producer="yarn stats" ;;
   */public/data/*|public/data/*)

@@ -1,0 +1,62 @@
+{
+  "terms": [
+    {
+      "slug": "quality",
+      "revision": 4,
+      "en": {
+        "term": "quality",
+        "definition": "The degree to which a work product satisfies stated and implied requirements."
+      },
+      "tr": {
+        "term": "kalite"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/quality"
+    },
+    {
+      "slug": "quality-assurance",
+      "revision": 2,
+      "en": {
+        "term": "quality assurance",
+        "definition": "Activities focused on providing confidence that quality requirements will be fulfilled."
+      },
+      "tr": {
+        "term": "kalite güvence"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/quality-assurance"
+    },
+    {
+      "slug": "quality-characteristic",
+      "revision": 3,
+      "en": {
+        "term": "quality characteristic",
+        "definition": "A category of quality attributes that bears on work product quality."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/quality-characteristic"
+    },
+    {
+      "slug": "quality-control",
+      "revision": 1,
+      "en": {
+        "term": "quality control",
+        "definition": "Activities designed to evaluate the quality of a component or system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/quality-control"
+    },
+    {
+      "slug": "quality-risk",
+      "revision": 2,
+      "en": {
+        "term": "quality risk",
+        "definition": "A product risk or a project risk impacting quality management."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/quality-risk"
+    }
+  ]
+}

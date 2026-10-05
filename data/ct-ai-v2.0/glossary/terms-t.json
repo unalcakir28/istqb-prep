@@ -1,0 +1,396 @@
+{
+  "terms": [
+    {
+      "slug": "technological-singularity",
+      "revision": 1,
+      "en": {
+        "term": "technological singularity",
+        "definition": "A point in the future when technological advances are no longer controllable by people."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/technological-singularity"
+    },
+    {
+      "slug": "temperature",
+      "revision": 1,
+      "en": {
+        "term": "temperature",
+        "definition": "A parameter that controls the randomness of GenAI outputs, with lower values generating more predictable results and higher values generating more creative results."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/temperature"
+    },
+    {
+      "slug": "test",
+      "revision": 1,
+      "en": {
+        "term": "test",
+        "definition": "A set of one or more test cases."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test"
+    },
+    {
+      "slug": "test-analyst",
+      "revision": 1,
+      "en": {
+        "term": "test analyst",
+        "definition": "A person responsible for test analysis, test design, test implementation, and test execution, focusing on non-technical aspects of software."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-analyst"
+    },
+    {
+      "slug": "test-approach",
+      "revision": 3,
+      "en": {
+        "term": "test approach",
+        "definition": "The manner of implementing test tasks."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-approach"
+    },
+    {
+      "slug": "test-automation",
+      "revision": 3,
+      "en": {
+        "term": "test automation",
+        "definition": "The conversion of test activities to automated operation."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-automation"
+    },
+    {
+      "slug": "test-case",
+      "revision": 2,
+      "en": {
+        "term": "test case",
+        "definition": "A set of preconditions, inputs, actions (where applicable), expected results and postconditions, developed based on test conditions."
+      },
+      "tr": {
+        "term": "test senaryosu"
+      },
+      "trSource": "ttb-syllabus-v4.0.1",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-case"
+    },
+    {
+      "slug": "test-condition",
+      "revision": 4,
+      "en": {
+        "term": "test condition",
+        "definition": "A testable aspect of a component or system that is intended to be tested."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-condition"
+    },
+    {
+      "slug": "test-data",
+      "revision": 3,
+      "en": {
+        "term": "test data",
+        "definition": "Data needed for test execution."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-data"
+    },
+    {
+      "slug": "test-environment",
+      "revision": 1,
+      "en": {
+        "term": "test environment",
+        "definition": "An environment containing hardware, instrumentation, simulators, software tools, and other support elements needed to perform a test."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-environment"
+    },
+    {
+      "slug": "test-level",
+      "revision": 2,
+      "en": {
+        "term": "test level",
+        "definition": "A specific instantiation of a test process."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-level"
+    },
+    {
+      "slug": "test-management",
+      "revision": 2,
+      "en": {
+        "term": "test management",
+        "definition": "The process of planning, scheduling, estimating, monitoring, reporting, controlling, and completing test activities."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-management"
+    },
+    {
+      "slug": "test-manager",
+      "revision": 2,
+      "en": {
+        "term": "test manager",
+        "definition": "The person responsible for managing test activities, test resources, and evaluating the test object."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-manager"
+    },
+    {
+      "slug": "test-object",
+      "revision": 2,
+      "en": {
+        "term": "test object",
+        "definition": "The work product to be tested."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-object"
+    },
+    {
+      "slug": "test-objective",
+      "revision": 3,
+      "en": {
+        "term": "test objective",
+        "definition": "The purpose for testing."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-objective"
+    },
+    {
+      "slug": "test-oracle",
+      "revision": 2,
+      "en": {
+        "term": "test oracle",
+        "definition": "A source to determine an expected result."
+      },
+      "tr": {
+        "term": "test doğrulayıcı"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-oracle"
+    },
+    {
+      "slug": "test-oracle-problem",
+      "revision": 1,
+      "en": {
+        "term": "test oracle problem",
+        "definition": "The challenge of determining whether a test has passed or failed for a given set of test inputs and state."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-oracle-problem"
+    },
+    {
+      "slug": "test-process",
+      "revision": 3,
+      "en": {
+        "term": "test process",
+        "definition": "A set of test activities performed to achieve a test objective."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-process"
+    },
+    {
+      "slug": "test-report",
+      "revision": 1,
+      "en": {
+        "term": "test report",
+        "definition": "Documentation summarizing testing and test results."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-report"
+    },
+    {
+      "slug": "test-result",
+      "revision": 2,
+      "en": {
+        "term": "test result",
+        "definition": "The status of the execution of a test."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-result"
+    },
+    {
+      "slug": "test-run",
+      "revision": 1,
+      "en": {
+        "term": "test run",
+        "definition": "The execution of a test suite on a specific version of the test object."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-run"
+    },
+    {
+      "slug": "test-strategy",
+      "revision": 4,
+      "en": {
+        "term": "test strategy",
+        "definition": "A description of how to perform testing to reach test objectives under given circumstances."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-strategy"
+    },
+    {
+      "slug": "test-suite",
+      "revision": 3,
+      "en": {
+        "term": "test suite",
+        "definition": "A set of test scripts or test procedures to be executed in a specific test run."
+      },
+      "tr": {
+        "term": "test paketi"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-suite"
+    },
+    {
+      "slug": "test-technique",
+      "revision": 3,
+      "en": {
+        "term": "test technique",
+        "definition": "A procedure used to define test conditions, design test cases, and specify test data."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-technique"
+    },
+    {
+      "slug": "test-type",
+      "revision": 2,
+      "en": {
+        "term": "test type",
+        "definition": "A group of test activities based on specific test objectives aimed at specific characteristics of a component or system."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/test-type"
+    },
+    {
+      "slug": "testability",
+      "revision": 3,
+      "en": {
+        "term": "testability",
+        "definition": "The degree to which test conditions can be established for a component or system, and tests can be performed to determine whether those test conditions have been met."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/testability"
+    },
+    {
+      "slug": "tester",
+      "revision": 2,
+      "en": {
+        "term": "tester",
+        "definition": "A person who performs testing."
+      },
+      "tr": {
+        "term": "test uzmanı"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/tester"
+    },
+    {
+      "slug": "testing",
+      "revision": 3,
+      "en": {
+        "term": "testing",
+        "definition": "The process within the software development lifecycle that evaluates the quality of a component or system and related work products."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/testing"
+    },
+    {
+      "slug": "testing-for-bias",
+      "revision": 1,
+      "en": {
+        "term": "testing for bias",
+        "definition": "A test type to detect bias in input data, an AI model, or an AI-based system."
+      },
+      "tr": {
+        "term": "yanlılık testi"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/testing-for-bias"
+    },
+    {
+      "slug": "testing-in-production",
+      "revision": 1,
+      "en": {
+        "term": "testing in production",
+        "definition": "A test level that focuses on validating a system in a production environment."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/testing-in-production"
+    },
+    {
+      "slug": "traceability",
+      "revision": 3,
+      "en": {
+        "term": "traceability",
+        "definition": "The ability to establish explicit relationships between related work products or items within work products."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/traceability"
+    },
+    {
+      "slug": "training-dataset",
+      "revision": 1,
+      "en": {
+        "term": "training dataset",
+        "definition": "A dataset used to train an ML model."
+      },
+      "tr": {
+        "term": "eğitim veri seti"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/training-dataset"
+    },
+    {
+      "slug": "transformer",
+      "revision": 1,
+      "en": {
+        "term": "transformer",
+        "definition": "A neural network architecture that compares different parts of the input and assigns relative weights based on their relevance, capturing long-range dependencies."
+      },
+      "tr": {
+        "term": "dönüştürücü"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/transformer"
+    },
+    {
+      "slug": "transparency",
+      "revision": 1,
+      "en": {
+        "term": "transparency",
+        "definition": "The degree to which appropriate information about an AI-based system is communicated to relevant stakeholders."
+      },
+      "tr": {
+        "term": "şeffaflık"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/transparency"
+    },
+    {
+      "slug": "true-negative",
+      "revision": 1,
+      "en": {
+        "term": "true negative",
+        "definition": "A prediction in which the model correctly predicts the negative class."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/true-negative"
+    },
+    {
+      "slug": "true-positive",
+      "revision": 1,
+      "en": {
+        "term": "true positive",
+        "definition": "A prediction in which the model correctly predicts the positive class."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/true-positive"
+    }
+  ]
+}

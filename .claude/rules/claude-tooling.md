@@ -24,7 +24,9 @@ PreToolUse guards block Edit/Write with exit 2 — by design:
   a lesson (F2-12). The only path is `yarn publish:questions|publish:lessons
 --reviewer "<name>" --cert <id>`, the one place the reviewer gets recorded.
 - `guard-generated.sh` — `questions/index.json`, `lessons/index.json`,
-  `data/manifest.json`, `docs/coverage.md`, `public/data/*`, `yarn.lock`.
+  `data/manifest.json`, `glossary/index.json` and `glossary/terms-*.json` (from
+  `yarn fetch:glossary`),
+  `docs/coverage.md`, `public/data/*`, `yarn.lock`.
 
 PostToolUse, each scoped to the paths it cares about:
 

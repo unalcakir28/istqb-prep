@@ -1,0 +1,310 @@
+{
+  "terms": [
+    {
+      "slug": "machine-learning",
+      "revision": 1,
+      "en": {
+        "term": "machine learning",
+        "definition": "The process of using computational techniques to enable systems to learn from data or experience."
+      },
+      "tr": {
+        "term": "makine öğrenimi"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/machine-learning"
+    },
+    {
+      "slug": "maintainability",
+      "revision": 2,
+      "en": {
+        "term": "maintainability",
+        "definition": "The degree to which a component or system can be modified by the intended maintainers."
+      },
+      "tr": {
+        "term": "bakım yapılabilirlik"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/maintainability"
+    },
+    {
+      "slug": "maintenance",
+      "revision": 2,
+      "en": {
+        "term": "maintenance",
+        "definition": "The process of modifying a component or system after delivery to correct defects, improve quality characteristics, or adapt to a changed environment."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/maintenance"
+    },
+    {
+      "slug": "malware",
+      "revision": 1,
+      "en": {
+        "term": "malware",
+        "definition": "Software that is intended to harm a system or its components."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/malware"
+    },
+    {
+      "slug": "maturity",
+      "revision": 2,
+      "en": {
+        "term": "maturity",
+        "definition": "(1) The capability of an organization with respect to the effectiveness and efficiency of its processes and work practices. (2) The degree to which a component or system meets needs for reliability under normal operation."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/maturity"
+    },
+    {
+      "slug": "metamorphic-relation",
+      "revision": 1,
+      "en": {
+        "term": "metamorphic relation",
+        "definition": "A description of how a change to an input for a test case affects an expected result based on the required behavior of a test item."
+      },
+      "tr": {
+        "term": "metamorfik ilişki"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/metamorphic-relation"
+    },
+    {
+      "slug": "metamorphic-testing",
+      "revision": 2,
+      "en": {
+        "term": "metamorphic testing",
+        "definition": "A test technique in which test conditions are metamorphic relations."
+      },
+      "tr": {
+        "term": "metamorfik test"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/metamorphic-testing"
+    },
+    {
+      "slug": "metric",
+      "revision": 1,
+      "en": {
+        "term": "metric",
+        "definition": "A measurement scale and the method used for measurement."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/metric"
+    },
+    {
+      "slug": "ml-algorithm",
+      "revision": 1,
+      "en": {
+        "term": "ML algorithm",
+        "definition": "An algorithm used to create an ML model from a training dataset."
+      },
+      "tr": {
+        "term": "MÖ algoritması"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ml-algorithm"
+    },
+    {
+      "slug": "ml-development-framework",
+      "revision": 1,
+      "en": {
+        "term": "ML development framework",
+        "definition": "A software platform that provides tools and libraries to build, train, and deploy ML models."
+      },
+      "tr": {
+        "term": "MÖ geliştirme çerçevesi"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ml-development-framework"
+    },
+    {
+      "slug": "ml-function",
+      "revision": 1,
+      "en": {
+        "term": "ML function",
+        "definition": "Functionality implemented by an ML model, such as classification, ML regression or clustering."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ml-function"
+    },
+    {
+      "slug": "ml-functional-performance",
+      "revision": 1,
+      "en": {
+        "term": "ML functional performance",
+        "definition": "The degree to which an ML model meets ML functional performance criteria."
+      },
+      "tr": {
+        "term": "MÖ fonksiyonel performansı"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ml-functional-performance"
+    },
+    {
+      "slug": "ml-functional-performance-criteria",
+      "revision": 1,
+      "en": {
+        "term": "ML functional performance criteria",
+        "definition": "Criteria based on ML functional performance metrics used as a basis for model evaluation, tuning and testing."
+      },
+      "tr": {
+        "term": "MÖ fonksiyonel performans kriterleri"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ml-functional-performance-criteria"
+    },
+    {
+      "slug": "ml-functional-performance-metrics",
+      "revision": 1,
+      "en": {
+        "term": "ML functional performance metric",
+        "definition": "A measure that relates to the functional correctness of an ML model."
+      },
+      "tr": {
+        "term": "MÖ fonksiyonel performans metriği"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ml-functional-performance-metrics"
+    },
+    {
+      "slug": "ml-model",
+      "revision": 1,
+      "en": {
+        "term": "ML model",
+        "definition": "An implementation of machine learning that generates a prediction, classification or recommendation based on input data."
+      },
+      "tr": {
+        "term": "MÖ modeli"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ml-model"
+    },
+    {
+      "slug": "ml-model-testing",
+      "revision": 1,
+      "en": {
+        "term": "ML model testing",
+        "definition": "A test level that focuses on the ability of an ML model to meet required ML functional performance criteria and non-functional criteria."
+      },
+      "tr": {
+        "term": "MÖ model testi"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ml-model-testing"
+    },
+    {
+      "slug": "ml-regression",
+      "revision": 1,
+      "en": {
+        "term": "ML regression",
+        "definition": "A type of ML function that results in a numerical or continuous output value for a given input."
+      },
+      "tr": {
+        "term": "MÖ regresyonu"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ml-regression"
+    },
+    {
+      "slug": "ml-workflow",
+      "revision": 1,
+      "en": {
+        "term": "ML workflow",
+        "definition": "The set of activities used to develop, deploy and operate an ML model."
+      },
+      "tr": {
+        "term": "MÖ iş akışı"
+      },
+      "trSource": "ttb-ct-ai-v1.0",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/ml-workflow"
+    },
+    {
+      "slug": "mls",
+      "revision": 1,
+      "en": {
+        "term": "MLS",
+        "definition": "A system that integrates one or more ML models."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/mls"
+    },
+    {
+      "slug": "model-confidence-score-analysis",
+      "revision": 1,
+      "en": {
+        "term": "model confidence score analysis",
+        "definition": "A technique that identifies data points with low confidence scores from training, which are indicators for mislabeled data points."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/model-confidence-score-analysis"
+    },
+    {
+      "slug": "model-conversion-testing",
+      "revision": 1,
+      "en": {
+        "term": "model conversion testing",
+        "definition": "A test type to determine whether an ML model converted for deployment retains acceptable predictive accuracy, consistent behavior, and operational efficiency."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/model-conversion-testing"
+    },
+    {
+      "slug": "model-loss-analysis",
+      "revision": 1,
+      "en": {
+        "term": "model loss analysis",
+        "definition": "A technique that identifies data points with high loss values during training, which are indicators for mislabeled data points."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/model-loss-analysis"
+    },
+    {
+      "slug": "monitoring-tool",
+      "revision": 2,
+      "en": {
+        "term": "monitoring tool",
+        "definition": "A software tool or hardware device that runs concurrently with a system under test and supervises, records and/or analyzes its behavior."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/monitoring-tool"
+    },
+    {
+      "slug": "multimodal-model",
+      "revision": 1,
+      "en": {
+        "term": "multimodal model",
+        "definition": "An ML model capable of processing text, images, audio, and video and other data modalities."
+      },
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/multimodal-model"
+    },
+    {
+      "slug": "multiple-annotation",
+      "revision": 1,
+      "en": {
+        "term": "multiple annotation",
+        "definition": "An approach in which labelled data points from multiple annotators are compared."
+      },
+      "tr": {
+        "term": "çoklu etiketleme"
+      },
+      "trSource": "editorial",
+      "source": "ISTQB Glossary",
+      "sourceUrl": "https://glossary.istqb.org/en_US/term/multiple-annotation"
+    }
+  ]
+}

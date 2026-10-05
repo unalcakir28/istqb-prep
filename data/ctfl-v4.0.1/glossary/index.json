@@ -1,0 +1,1177 @@
+{
+  "source": "ISTQB Glossary",
+  "sourceUrl": "https://glossary.istqb.org/",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "usedIn": {
+    "syllabus": "Foundation",
+    "version": "v4.0"
+  },
+  "fetchedAt": "2026-10-05",
+  "terms": [
+    {
+      "slug": "acceptance-criteria",
+      "en": "acceptance criteria",
+      "tr": "kabul kriterleri",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "acceptance-test-driven-development",
+      "en": "acceptance test-driven development",
+      "tr": "kabul testi güdümlü yazılım geliştirme",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "acceptance-testing",
+      "en": "acceptance testing",
+      "tr": "kabul testi",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "actual-result",
+      "en": "actual result",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "agile-software-development",
+      "en": "Agile software development",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "alpha-testing",
+      "en": "alpha testing",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "anomaly",
+      "en": "anomaly",
+      "tr": "anomali",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "api-testing",
+      "en": "API testing",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "audit",
+      "en": "audit",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "availability",
+      "en": "availability",
+      "chunk": "terms-a"
+    },
+    {
+      "slug": "behavior-driven-development",
+      "en": "behavior-driven development",
+      "chunk": "terms-b"
+    },
+    {
+      "slug": "beta-testing",
+      "en": "beta testing",
+      "chunk": "terms-b"
+    },
+    {
+      "slug": "black-box-test-technique",
+      "en": "black-box test technique",
+      "tr": "kara kutu test tekniği",
+      "chunk": "terms-b"
+    },
+    {
+      "slug": "boundary-value",
+      "en": "boundary value",
+      "chunk": "terms-b"
+    },
+    {
+      "slug": "branch",
+      "en": "branch",
+      "chunk": "terms-b"
+    },
+    {
+      "slug": "branch-coverage",
+      "en": "branch coverage",
+      "tr": "dal kapsamı",
+      "chunk": "terms-b"
+    },
+    {
+      "slug": "branch-testing",
+      "en": "branch testing",
+      "chunk": "terms-b"
+    },
+    {
+      "slug": "cause-effect-diagram",
+      "en": "cause-effect diagram",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "checklist-based-review",
+      "en": "checklist-based reviewing",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "checklist-based-testing",
+      "en": "checklist-based testing",
+      "tr": "kontrol listesine dayalı test etme",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "coding-standard",
+      "en": "coding standard",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "collaboration-based-test-approach",
+      "en": "collaboration-based test approach",
+      "tr": "iş birliğine dayalı test yaklaşımı",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "compatibility",
+      "en": "compatibility",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "compliance",
+      "en": "compliance",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "component",
+      "en": "component",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "component-integration-testing",
+      "en": "component integration testing",
+      "tr": "bileşen entegrasyon testi",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "component-testing",
+      "en": "component testing",
+      "tr": "bileşen testi",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "confirmation-testing",
+      "en": "confirmation testing",
+      "tr": "onaylama testi",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "continuous-delivery",
+      "en": "continuous delivery",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "continuous-deployment",
+      "en": "continuous deployment",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "continuous-integration",
+      "en": "continuous integration",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "continuous-testing",
+      "en": "continuous testing",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "control-flow",
+      "en": "control flow",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "cost-of-quality",
+      "en": "cost of quality",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "coverage",
+      "en": "coverage",
+      "tr": "kapsam",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "coverage-criteria",
+      "en": "coverage criteria",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "coverage-item",
+      "en": "coverage item",
+      "tr": "kapsam öğesi",
+      "chunk": "terms-c"
+    },
+    {
+      "slug": "dashboard",
+      "en": "dashboard",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "debugging",
+      "en": "debugging",
+      "tr": "hata ayıklama",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "decision-table-testing",
+      "en": "decision table testing",
+      "tr": "karar tablosu testi",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "defect",
+      "en": "defect",
+      "tr": "hata",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "defect-density",
+      "en": "defect density",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "defect-detection-percentage",
+      "en": "defect detection percentage",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "defect-management",
+      "en": "defect management",
+      "tr": "hata yönetimi",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "defect-report",
+      "en": "defect report",
+      "tr": "hata raporu",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "driver",
+      "en": "driver",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "dynamic-testing",
+      "en": "dynamic testing",
+      "tr": "dinamik test",
+      "chunk": "terms-d"
+    },
+    {
+      "slug": "each-choice-coverage",
+      "en": "each choice coverage",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "effectiveness",
+      "en": "effectiveness",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "efficiency",
+      "en": "efficiency",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "entry-criteria",
+      "en": "entry criteria",
+      "tr": "giriş kriterleri",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "equivalence-partition",
+      "en": "equivalence partition",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "equivalence-partitioning",
+      "en": "equivalence partitioning",
+      "tr": "denklik paylarına ayırma",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "error",
+      "en": "error",
+      "tr": "insan hatası",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "error-guessing",
+      "en": "error guessing",
+      "tr": "hata tahminleme",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "exhaustive-testing",
+      "en": "exhaustive testing",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "exit-criteria",
+      "en": "exit criteria",
+      "tr": "çıkış kriterleri",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "expected-result",
+      "en": "expected result",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "experience-based-test-technique",
+      "en": "experience-based test technique",
+      "tr": "tecrübeye dayalı test tekniği",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "exploratory-testing",
+      "en": "exploratory testing",
+      "tr": "keşif testi",
+      "chunk": "terms-e"
+    },
+    {
+      "slug": "failed",
+      "en": "failed",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "failure",
+      "en": "failure",
+      "tr": "arıza",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "fault-attack",
+      "en": "fault attack",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "feature-driven-development",
+      "en": "feature-driven development",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "finding",
+      "en": "finding",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "formal-review",
+      "en": "formal review",
+      "tr": "resmi gözden geçirme",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "functional-appropriateness",
+      "en": "functional appropriateness",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "functional-completeness",
+      "en": "functional completeness",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "functional-correctness",
+      "en": "functional correctness",
+      "chunk": "terms-f"
+    },
+    {
+      "slug": "heuristic",
+      "en": "heuristic",
+      "chunk": "terms-h"
+    },
+    {
+      "slug": "impact-analysis",
+      "en": "impact analysis",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "incremental-development-model",
+      "en": "incremental development model",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "independence-of-testing",
+      "en": "independence of testing",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "informal-review",
+      "en": "informal review",
+      "tr": "gayri resmi gözden geçirme",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "inspection",
+      "en": "inspection",
+      "tr": "teftiş",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "integration-testing",
+      "en": "integration testing",
+      "tr": "entegrasyon testi",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "integrity",
+      "en": "integrity",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "iterative-development-model",
+      "en": "iterative development model",
+      "chunk": "terms-i"
+    },
+    {
+      "slug": "maintainability",
+      "en": "maintainability",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "maintenance",
+      "en": "maintenance",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "maintenance-testing",
+      "en": "maintenance testing",
+      "tr": "bakım testi",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "maturity",
+      "en": "maturity",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "mean-time-to-failure",
+      "en": "mean time to failure",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "measurement",
+      "en": "measurement",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "metric",
+      "en": "metric",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "moderator",
+      "en": "moderator",
+      "chunk": "terms-m"
+    },
+    {
+      "slug": "n-switch-coverage",
+      "en": "N-switch coverage",
+      "chunk": "terms-n"
+    },
+    {
+      "slug": "negative-testing",
+      "en": "negative testing",
+      "chunk": "terms-n"
+    },
+    {
+      "slug": "non-functional-testing",
+      "en": "non-functional testing",
+      "tr": "fonksiyonel olmayan test",
+      "chunk": "terms-n"
+    },
+    {
+      "slug": "operational-acceptance-testing",
+      "en": "operational acceptance testing",
+      "chunk": "terms-o"
+    },
+    {
+      "slug": "pair-testing",
+      "en": "pair testing",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "passed",
+      "en": "passed",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "performance-efficiency",
+      "en": "performance efficiency",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "planning-poker",
+      "en": "planning poker",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "portability",
+      "en": "portability",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "postcondition",
+      "en": "postcondition",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "precondition",
+      "en": "precondition",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "priority",
+      "en": "priority",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "product-risk",
+      "en": "product risk",
+      "tr": "ürün riski",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "project-risk",
+      "en": "project risk",
+      "tr": "proje riski",
+      "chunk": "terms-p"
+    },
+    {
+      "slug": "quality",
+      "en": "quality",
+      "tr": "kalite",
+      "chunk": "terms-q"
+    },
+    {
+      "slug": "quality-assurance",
+      "en": "quality assurance",
+      "tr": "kalite güvence",
+      "chunk": "terms-q"
+    },
+    {
+      "slug": "quality-characteristic",
+      "en": "quality characteristic",
+      "chunk": "terms-q"
+    },
+    {
+      "slug": "quality-control",
+      "en": "quality control",
+      "chunk": "terms-q"
+    },
+    {
+      "slug": "quality-risk",
+      "en": "quality risk",
+      "chunk": "terms-q"
+    },
+    {
+      "slug": "regression-testing",
+      "en": "regression testing",
+      "tr": "regresyon testi",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "regulatory-acceptance-testing",
+      "en": "regulatory acceptance testing",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "reliability",
+      "en": "reliability",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "requirement",
+      "en": "requirement",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "retrospective",
+      "en": "retrospective",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "review",
+      "en": "review",
+      "tr": "gözden geçirme",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "reviewer",
+      "en": "reviewer",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk",
+      "en": "risk",
+      "tr": "risk",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk-analysis",
+      "en": "risk analysis",
+      "tr": "risk analizi",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk-assessment",
+      "en": "risk assessment",
+      "tr": "risk değerlendirmesi",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk-based-testing",
+      "en": "risk-based testing",
+      "tr": "risk bazlı test",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk-control",
+      "en": "risk control",
+      "tr": "risk kontrolü",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk-identification",
+      "en": "risk identification",
+      "tr": "risk belirleme",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk-impact",
+      "en": "risk impact",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk-level",
+      "en": "risk level",
+      "tr": "risk seviyesi",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk-likelihood",
+      "en": "risk likelihood",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk-management",
+      "en": "risk management",
+      "tr": "risk yönetimi",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk-mitigation",
+      "en": "risk mitigation",
+      "tr": "risk azaltma",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk-monitoring",
+      "en": "risk monitoring",
+      "tr": "risk gözetimi",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "risk-register",
+      "en": "risk register",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "root-cause",
+      "en": "root cause",
+      "tr": "kök neden",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "root-cause-analysis",
+      "en": "root cause analysis",
+      "chunk": "terms-r"
+    },
+    {
+      "slug": "safety",
+      "en": "safety",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "scalability",
+      "en": "scalability",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "scenario-based-review",
+      "en": "scenario-based reviewing",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "scribe",
+      "en": "scribe",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "security",
+      "en": "security",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "sequential-development-model",
+      "en": "sequential development model",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "service-virtualization",
+      "en": "service virtualization",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "session-based-testing",
+      "en": "session-based testing",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "severity",
+      "en": "severity",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "shift-left",
+      "en": "shift left",
+      "tr": "shift-left",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "simulator",
+      "en": "simulator",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "software-development-lifecycle",
+      "en": "software development lifecycle",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "state-transition-testing",
+      "en": "state transition testing",
+      "tr": "durum geçişi testi",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "static-analysis",
+      "en": "static analysis",
+      "tr": "statik analiz",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "static-testing",
+      "en": "static testing",
+      "tr": "statik test",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "stub",
+      "en": "stub",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "system-integration-testing",
+      "en": "system integration testing",
+      "tr": "sistem entegrasyon testi",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "system-testing",
+      "en": "system testing",
+      "tr": "sistem testi",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "system-under-test",
+      "en": "system under test",
+      "chunk": "terms-s"
+    },
+    {
+      "slug": "technical-review",
+      "en": "technical review",
+      "tr": "teknik gözden geçirme",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test",
+      "en": "test",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-analysis",
+      "en": "test analysis",
+      "tr": "test analizi",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-approach",
+      "en": "test approach",
+      "tr": "test yaklaşımı",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-automation",
+      "en": "test automation",
+      "tr": "test otomasyonu",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-automation-approach",
+      "en": "test automation approach",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-automation-framework",
+      "en": "test automation framework",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-basis",
+      "en": "test basis",
+      "tr": "test esası",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-case",
+      "en": "test case",
+      "tr": "test senaryosu",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-charter",
+      "en": "test charter",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-completion",
+      "en": "test completion",
+      "tr": "test tamamlama",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-completion-report",
+      "en": "test completion report",
+      "tr": "test tamamlama raporu",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-condition",
+      "en": "test condition",
+      "tr": "test koşulu",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-control",
+      "en": "test control",
+      "tr": "test kontrolü",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-cycle",
+      "en": "test cycle",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-data",
+      "en": "test data",
+      "tr": "test verisi",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-design",
+      "en": "test design",
+      "tr": "test tasarımı",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-driven-development",
+      "en": "test-driven development",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-environment",
+      "en": "test environment",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-estimation",
+      "en": "test estimation",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-execution",
+      "en": "test execution",
+      "tr": "test koşumu",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-execution-schedule",
+      "en": "test execution schedule",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-first-approach",
+      "en": "test-first approach",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-harness",
+      "en": "test harness",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-implementation",
+      "en": "test implementation",
+      "tr": "test uyarlama",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-item",
+      "en": "test item",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-level",
+      "en": "test level",
+      "tr": "test seviyesi",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-log",
+      "en": "test log",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-management",
+      "en": "test management",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-manager",
+      "en": "test manager",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-monitoring",
+      "en": "test monitoring",
+      "tr": "test gözetimi",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-object",
+      "en": "test object",
+      "tr": "test nesnesi",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-objective",
+      "en": "test objective",
+      "tr": "test hedefi",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-planning",
+      "en": "test planning",
+      "tr": "test planlama",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-policy",
+      "en": "test policy",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-procedure",
+      "en": "test procedure",
+      "tr": "test prosedürü",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-progress",
+      "en": "test progress",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-progress-report",
+      "en": "test progress report",
+      "tr": "test ilerleme raporu",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-pyramid",
+      "en": "test pyramid",
+      "tr": "test piramidi",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-report",
+      "en": "test report",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-reporting",
+      "en": "test reporting",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-run",
+      "en": "test run",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-schedule",
+      "en": "test schedule",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-script",
+      "en": "test script",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-session",
+      "en": "test session",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-strategy",
+      "en": "test strategy",
+      "tr": "test stratejisi",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-suite",
+      "en": "test suite",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-technique",
+      "en": "test technique",
+      "tr": "test tekniği",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "test-type",
+      "en": "test type",
+      "tr": "test çeşidi",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "testability",
+      "en": "testability",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "tester",
+      "en": "tester",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "testing",
+      "en": "testing",
+      "tr": "test etme",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "testing-quadrants",
+      "en": "testing quadrants",
+      "tr": "test çeyrekleri",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "testware",
+      "en": "testware",
+      "tr": "test çalışma ürünleri",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "traceability",
+      "en": "traceability",
+      "tr": "izlenebilirlik",
+      "chunk": "terms-t"
+    },
+    {
+      "slug": "unit-test-framework",
+      "en": "unit test framework",
+      "chunk": "terms-u"
+    },
+    {
+      "slug": "usability",
+      "en": "usability",
+      "chunk": "terms-u"
+    },
+    {
+      "slug": "usability-lab",
+      "en": "usability lab",
+      "chunk": "terms-u"
+    },
+    {
+      "slug": "usability-testing",
+      "en": "usability testing",
+      "chunk": "terms-u"
+    },
+    {
+      "slug": "user-acceptance-testing",
+      "en": "user acceptance testing",
+      "chunk": "terms-u"
+    },
+    {
+      "slug": "user-experience",
+      "en": "user experience",
+      "chunk": "terms-u"
+    },
+    {
+      "slug": "user-story",
+      "en": "user story",
+      "chunk": "terms-u"
+    },
+    {
+      "slug": "v-model",
+      "en": "V-model",
+      "chunk": "terms-v"
+    },
+    {
+      "slug": "validation",
+      "en": "validation",
+      "tr": "sağlama",
+      "chunk": "terms-v"
+    },
+    {
+      "slug": "verification",
+      "en": "verification",
+      "tr": "doğrulama",
+      "chunk": "terms-v"
+    },
+    {
+      "slug": "version-control",
+      "en": "version control",
+      "chunk": "terms-v"
+    },
+    {
+      "slug": "walkthrough",
+      "en": "walkthrough",
+      "tr": "üzerinden geçme",
+      "chunk": "terms-w"
+    },
+    {
+      "slug": "white-box-test-technique",
+      "en": "white-box test technique",
+      "tr": "beyaz kutu test tekniği",
+      "chunk": "terms-w"
+    },
+    {
+      "slug": "wideband-delphi",
+      "en": "Wideband Delphi",
+      "chunk": "terms-w"
+    }
+  ]
+}
