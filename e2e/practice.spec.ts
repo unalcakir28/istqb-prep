@@ -58,6 +58,10 @@ test("instant feedback reveals the rationale and locks every option", async ({ p
   await expect(rationale(page)).toBeVisible();
   // The product's differentiator: the panel is per-option, not a single verdict.
   await expect(rationale(page).getByText(en.review.perOption)).toBeVisible();
+  // F4-06: the discussion link sits beside the report, once the key is shown.
+  await expect(
+    rationale(page).getByRole("link", { name: partial(en.review.discussLabel, { id: ".+" }) }),
+  ).toHaveAttribute("href", /\/discussions\?discussions_q=/);
 
   const inputs = optionInputs(page);
   const count = await inputs.count();

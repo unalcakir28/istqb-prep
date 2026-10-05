@@ -29,4 +29,4 @@ export const REPO_URL = "https://github.com/unalcakir28/istqb-prep";
  * something the build can see, so it is recorded here and turned on in the
  * same change that confirms the setting.
  */
-export const DISCUSSIONS_ENABLED = false;
+export const DISCUSSIONS_ENABLED = true;
