@@ -288,6 +288,12 @@ export interface Terms {
   };
   /** Editorial note on `trForbidden`, in Turkish. Not rendered. */
   note?: string;
+  /**
+   * F4-10 — renderings the content uses for terms outside the keyword lists.
+   * Guarded by the terminology checks (#13, #21); not shown on /sozluk.
+   */
+  contentTerms?: Pick<Term, "en" | "tr" | "trForbidden" | "trSource">[];
+  contentTermsNote?: string;
 }
 
 /**

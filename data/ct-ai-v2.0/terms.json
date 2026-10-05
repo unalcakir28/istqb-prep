@@ -1418,5 +1418,43 @@
       ],
       "trSource": "ttb-ct-ai-v1.0"
     }
-  ]
+  ],
+  "contentTerms": [
+    {
+      "en": "System-on-a-Chip",
+      "tr": "tümleşik sistem çipi",
+      "trSource": "editorial"
+    },
+    {
+      "en": "proxy oracle",
+      "tr": "vekil test doğrulayıcı",
+      "trSource": "editorial"
+    },
+    {
+      "en": "model conversion testing",
+      "tr": "model dönüştürme testi",
+      "trSource": "editorial"
+    },
+    {
+      "en": "cross-device testing",
+      "tr": "cihazlar arası test",
+      "trSource": "editorial"
+    },
+    {
+      "en": "usability testing",
+      "tr": "kullanılabilirlik testi",
+      "trSource": "editorial"
+    },
+    {
+      "en": "operational efficiency",
+      "tr": "işletim verimliliği",
+      "trSource": "editorial"
+    },
+    {
+      "en": "safety guard",
+      "tr": "emniyet koruyucusu",
+      "trSource": "editorial"
+    }
+  ],
+  "contentTermsNote": "contentTerms are not in the v2.0 keyword lists, so they are not part of 'terms', 'termCount' or /sozluk. They are the renderings this project's CT-AI questions and lessons already use for terms the syllabus body names (F4-10, found by the F4-01b verifiers), recorded so checks #13 and #21 guard them as they guard 'terms'. Every one is editorial."
 }

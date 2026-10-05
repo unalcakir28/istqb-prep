@@ -50,8 +50,8 @@ see the correction box in `docs/07-content-authoring-guide.md §5`.
   untranslated **English** word in Turkish text; #21 catches a banned **Turkish**
   word (`term.trForbidden`). Neither covers the other, and #21 deliberately skips
   `kapsama`, `test durumu`, `teknik gözden geçirme` and `testware` because each
-  is ordinary Turkish in another role. A term with no `trForbidden` list is
-  invisible to both — `test uygulama` for _test implementation_ and
+  is ordinary Turkish in another role. A term that is in neither `terms` nor `contentTerms` (CT-AI, F4-10) is
+  invisible to both, and one with no `trForbidden` list is invisible to #21 — `test uygulama` for _test implementation_ and
   `test yürütme` for _test execution_ shipped into published content that way.
 - **Options are shuffled per attempt (D-03), so the authored letter never reaches
   a candidate.** Checks #14 (letter balance) and #23 (letter rotation) were

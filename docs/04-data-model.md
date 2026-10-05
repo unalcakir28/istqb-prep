@@ -54,7 +54,7 @@ data/
         └── mock-001.json            # Question ID list + order
 ```
 
-> `terms.json` also sits at the certification root: the Turkish terminology mapping, aligned from the official keyword lists. It is the single source of truth for CI check #13.
+> `terms.json` also sits at the certification root: the Turkish terminology mapping, aligned from the official keyword lists. It is the single source of truth for CI checks #13 and #21. CT-AI's also carries `contentTerms` (F4-10): renderings its content uses for terms the syllabus body names but the keyword lists do not, all `editorial`. The checks guard them like `terms`; they are not counted in `termCount` and `/sozluk` does not list them.
 
 ### Chunking rule
 - **Question chunk:** chapter-based, **at most 40 questions** per chunk (≈ 50–60 KB uncompressed).

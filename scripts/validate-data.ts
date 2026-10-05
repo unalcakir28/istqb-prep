@@ -201,6 +201,17 @@ function validateAgainstSchema(key: SchemaKey, data: unknown, file: string): voi
 // A list copied here by hand would inevitably go stale; in fact its first
 // version carried mappings like "defect -> kusur" that CONTRADICTED the
 // official syllabus and steered authors toward the wrong term.
+/**
+ * Every term the terminology checks guard: the keyword-list `terms`, plus
+ * `contentTerms` — renderings the content uses for terms outside those lists
+ * (F4-10), which /sozluk does not show but #13 and #21 must still see.
+ */
+function guardedTerms(termsDoc: any): any[] {
+  const terms: any[] = Array.isArray(termsDoc?.terms) ? termsDoc.terms : [];
+  const extra: any[] = Array.isArray(termsDoc?.contentTerms) ? termsDoc.contentTerms : [];
+  return [...terms, ...extra];
+}
+
 interface LeakPattern {
   en: string;
   tr: string;
@@ -208,7 +219,7 @@ interface LeakPattern {
 }
 
 function buildLeakPatterns(termsDoc: any): LeakPattern[] {
-  const terms: any[] = Array.isArray(termsDoc?.terms) ? termsDoc.terms : [];
+  const terms = guardedTerms(termsDoc);
   const patterns: LeakPattern[] = [];
 
   for (const term of terms) {
@@ -333,7 +344,7 @@ function foldTr(text: string): string {
 }
 
 function buildForbiddenPatterns(termsDoc: any): ForbiddenPattern[] {
-  const terms: any[] = Array.isArray(termsDoc?.terms) ? termsDoc.terms : [];
+  const terms = guardedTerms(termsDoc);
   const correctTr = new Set(terms.map((term) => foldTr(String(term?.tr ?? "").trim())).filter((tr) => tr.length > 0));
   const patterns = new Map<string, ForbiddenPattern>();
 
