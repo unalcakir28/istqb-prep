@@ -37,7 +37,9 @@ class FakeCaches {
   }
 }
 
-const INDEX_URL = "/data/ctfl-v4.0.1/questions/index.json";
+// CI builds for GitHub Pages, where Vite's base is "/istqb-prep/"; the client prefixes it.
+const BASE = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
+const INDEX_URL = `${BASE}/data/ctfl-v4.0.1/questions/index.json`;
 
 function serve(version: string, questionCount: number) {
   return vi.fn(async (url: string) => {
