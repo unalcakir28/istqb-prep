@@ -105,9 +105,9 @@
 | F4-03 | CT-PT (Performance Testing) |
 | F4-04 | CTAL-TA v4.0 — first Advanced module (multi-point questions → scoring engine expands) |
 | F4-05 | Community question contributions: PR template, originality declaration, review flow. **Done 05.10.2026** — `CONTRIBUTING.md`, `docs/07` §9 |
-| F4-06 | Per-question discussion (ExamTopics' most-loved feature — via GitHub Discussions, serverless) |
+| F4-06 | Per-question discussion (ExamTopics' most-loved feature — via GitHub Discussions, serverless). **Done 05.10.2026** — a link in the rationale panel, not an embed (rule 7) |
 | F4-07 | Turkish process guide: registration, online proctoring, results, retake rights (a gap found in the market research). **Done 05.10.2026** — `/sinav-sureci` (docs/03 §9) |
-| F4-08 | Global accuracy rate per question (anonymous, aggregate — how to preserve privacy? → needs research) |
+| F4-08 | Global accuracy rate per question (anonymous, aggregate — how to preserve privacy? → needs research). **Decided 05.10.2026: not collected** — [ADR-0008](adr/0008-global-question-accuracy.md) |
 
 ---
 

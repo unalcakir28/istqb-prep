@@ -56,7 +56,7 @@ Probability and impact: **D** (low) · **O** (medium) · **Y** (high)
 | LO coverage | 64/64 (≥1 question) → 64/64 (≥3 questions) |
 | Distractor rationale completeness | **100%** (CI enforced) |
 | Open question error reports | < 5, average closure < 7 days |
-| Per-question accuracy rate distribution | 30–85% (outliers get reviewed) |
+| Per-question accuracy rate distribution | Not collected ([ADR-0008](adr/0008-global-question-accuracy.md)): it is an aggregate of user answers, which never leave the device |
 
 ### Technical metrics
 
@@ -87,7 +87,7 @@ Probability and impact: **D** (low) · **O** (medium) · **Y** (high)
 |---|---|
 | Page views, event counts | Cookie-free counter that retains no IPs (Umami / GoatCounter) |
 | Mock exam completion, rationale expansion | Aggregate event counter — no user identity |
-| Per-question accuracy rate | ⚠️ **Requires a server.** Not collected in v1. In Phase 4, how to do this while preserving privacy will be researched (e.g. fully anonymous, session-based batch submission) |
+| Per-question accuracy rate | **Not collected** — researched in F4-08 and decided in [ADR-0008](adr/0008-global-question-accuracy.md): every option either sends answers to a server (rule 7) or publishes a self-selected sample as if it were a measurement (rule 5) |
 | Return rate | Counter-side, no fingerprinting; rough estimates are acceptable |
 | Impact metrics | Voluntary survey link (on the results screen, dismissible) |
 
@@ -105,7 +105,7 @@ To be checked every 3 months:
 - [ ] Has the Exam Structures & Rules tables version changed? (affects the blueprint)
 - [ ] Has any term changed in the Glossary? (API `version` field)
 - [ ] Coverage report: which LOs are still short?
-- [ ] Are there questions with an abnormal accuracy rate?
+- [ ] Are there questions the error reports keep naming? (There is no global accuracy rate to read: ADR-0008.)
 - [ ] Open error reports
 - [ ] Dependency security advisories
 - [ ] Where do metrics stand against targets?
